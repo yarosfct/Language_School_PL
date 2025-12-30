@@ -1,0 +1,60 @@
+{
+  "level": "A1",
+  "topics": [
+    {
+      "id": "topic-greetings",
+      "title": "Greetings & Introductions",
+      "icon": "HandWaving",
+      "sublevel": "A1.1",
+      "order": 1,
+      "vocabCount": 40,
+      "exerciseCount": 80
+    },
+    {
+      "id": "topic-numbers-time",
+      "title": "Numbers, Dates & Time",
+      "icon": "Clock",
+      "sublevel": "A1.1",
+      "order": 2,
+      "vocabCount": 50,
+      "exerciseCount": 100
+    },
+    {
+      "id": "topic-food",
+      "title": "Food & Restaurant",
+      "icon": "Utensils",
+      "sublevel": "A1.1",
+      "order": 3,
+      "vocabCount": 50,
+      "exerciseCount": 100
+    },
+    {
+      "id": "topic-household",
+      "title": "Household & Furniture",
+      "icon": "Home",
+      "sublevel": "A1.2",
+      "order": 4,
+      "vocabCount": 40,
+      "exerciseCount": 80
+    },
+    {
+      "id": "topic-shopping",
+      "title": "Shopping & Clothing",
+      "icon": "ShoppingBag",
+      "sublevel": "A1.2",
+      "order": 5,
+      "vocabCount": 45,
+      "exerciseCount": 90
+    },
+    {
+      "id": "topic-city-transport",
+      "title": "City & Transport",
+      "icon": "Bus",
+      "sublevel": "A1.2",
+      "order": 6,
+      "vocabCount": 45,
+      "exerciseCount": 90
+    }
+  ],
+  "lastUpdated": "2025-01-01"
+}

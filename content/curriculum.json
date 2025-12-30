@@ -1,0 +1,506 @@
+[
+  {
+    "id": "unit-01",
+    "title": "Wprowadzenie (Introduction)",
+    "description": "Learn basic Polish greetings, introductions, and the verb 'to be'",
+    "level": "A1",
+    "order": 1,
+    "lessons": [
+      {
+        "id": "lesson-01-01",
+        "unitId": "unit-01",
+        "title": "Greetings and Basic Phrases",
+        "description": "Learn how to greet people and say goodbye in Polish",
+        "order": 1,
+        "grammarTopics": ["basic-phrases", "greetings"],
+        "vocabularyIntroduced": [
+          {
+            "polish": "dzień dobry",
+            "english": "good morning/good day",
+            "partOfSpeech": "phrase",
+            "tags": [
+              { "type": "topic", "value": "greetings" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "dobranoc",
+            "english": "good night",
+            "partOfSpeech": "phrase",
+            "tags": [
+              { "type": "topic", "value": "greetings" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "do widzenia",
+            "english": "goodbye",
+            "partOfSpeech": "phrase",
+            "tags": [
+              { "type": "topic", "value": "greetings" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "cześć",
+            "english": "hi/bye (informal)",
+            "partOfSpeech": "phrase",
+            "tags": [
+              { "type": "topic", "value": "greetings" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "dziękuję",
+            "english": "thank you",
+            "partOfSpeech": "phrase",
+            "tags": [
+              { "type": "topic", "value": "greetings" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex-01-01-01",
+            "type": "mcq",
+            "question": "How do you say 'Good morning' in Polish?",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "greetings" },
+              { "type": "grammar", "value": "basic-phrases" }
+            ],
+            "data": {
+              "options": [
+                { "id": "a", "text": "Dzień dobry" },
+                { "id": "b", "text": "Dobranoc" },
+                { "id": "c", "text": "Do widzenia" },
+                { "id": "d", "text": "Cześć" }
+              ],
+              "correctOptionId": "a"
+            },
+            "solution": "a",
+            "explanation": "'Dzień dobry' is the formal greeting used during the day. 'Dobranoc' means good night, 'Do widzenia' is goodbye, and 'Cześć' is an informal hi/bye."
+          },
+          {
+            "id": "ex-01-01-02",
+            "type": "mcq",
+            "question": "Which phrase would you use to say goodbye formally?",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "greetings" },
+              { "type": "grammar", "value": "basic-phrases" }
+            ],
+            "data": {
+              "options": [
+                { "id": "a", "text": "Cześć" },
+                { "id": "b", "text": "Do widzenia" },
+                { "id": "c", "text": "Dzień dobry" },
+                { "id": "d", "text": "Dziękuję" }
+              ],
+              "correctOptionId": "b"
+            },
+            "solution": "b",
+            "explanation": "'Do widzenia' is the formal way to say goodbye. 'Cześć' is informal and can mean both hi and bye."
+          },
+          {
+            "id": "ex-01-01-03",
+            "type": "match",
+            "question": "Match the Polish phrases with their English meanings.",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "greetings" },
+              { "type": "grammar", "value": "vocabulary" }
+            ],
+            "data": {
+              "pairs": [
+                { "left": "Dzień dobry", "right": "Good morning" },
+                { "left": "Dobranoc", "right": "Good night" },
+                { "left": "Dziękuję", "right": "Thank you" },
+                { "left": "Do widzenia", "right": "Goodbye" },
+                { "left": "Cześć", "right": "Hi/Bye (informal)" }
+              ],
+              "shuffleRight": true
+            },
+            "solution": {
+              "Dzień dobry": "Good morning",
+              "Dobranoc": "Good night",
+              "Dziękuję": "Thank you",
+              "Do widzenia": "Goodbye",
+              "Cześć": "Hi/Bye (informal)"
+            }
+          },
+          {
+            "id": "ex-01-01-04",
+            "type": "typed-answer",
+            "question": "Type the Polish word for 'Thank you'",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "greetings" },
+              { "type": "grammar", "value": "vocabulary" }
+            ],
+            "data": {
+              "acceptedAnswers": ["dziękuję", "dziekuje"],
+              "evaluationRules": {
+                "allowDiacriticErrors": true,
+                "allowTypos": true,
+                "caseSensitive": false
+              }
+            },
+            "solution": ["dziękuję"],
+            "explanation": "'Dziękuję' is how you say thank you in Polish. Note the special character 'ę'.",
+            "hints": ["It starts with 'dzi'", "It has 8 letters"]
+          },
+          {
+            "id": "ex-01-01-05",
+            "type": "ordering",
+            "question": "Arrange these greetings from morning to night:",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "greetings" },
+              { "type": "grammar", "value": "basic-phrases" }
+            ],
+            "data": {
+              "items": ["Dzień dobry", "Dobry wieczór", "Dobranoc"],
+              "scrambled": ["Dobranoc", "Dzień dobry", "Dobry wieczór"]
+            },
+            "solution": ["Dzień dobry", "Dobry wieczór", "Dobranoc"],
+            "explanation": "The order is: Dzień dobry (good morning/day), Dobry wieczór (good evening), Dobranoc (good night)."
+          }
+        ]
+      },
+      {
+        "id": "lesson-01-02",
+        "unitId": "unit-01",
+        "title": "Introductions - The Verb 'być' (to be)",
+        "description": "Learn how to introduce yourself and conjugate the verb 'być'",
+        "order": 2,
+        "grammarTopics": ["verb-być", "conjugation-present"],
+        "vocabularyIntroduced": [
+          {
+            "polish": "być",
+            "english": "to be",
+            "partOfSpeech": "verb",
+            "tags": [
+              { "type": "grammar", "value": "verb:być" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "jestem",
+            "english": "I am",
+            "partOfSpeech": "verb",
+            "tags": [
+              { "type": "grammar", "value": "verb:być" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "student",
+            "english": "student (male)",
+            "partOfSpeech": "noun",
+            "gender": "masculine",
+            "tags": [
+              { "type": "topic", "value": "education" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "studentka",
+            "english": "student (female)",
+            "partOfSpeech": "noun",
+            "gender": "feminine",
+            "tags": [
+              { "type": "topic", "value": "education" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex-01-02-01",
+            "type": "fill-blank",
+            "question": "Complete the sentence with the correct form of 'być' (to be).",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "grammar", "value": "verb:być" },
+              { "type": "grammar", "value": "conjugation:present" }
+            ],
+            "data": {
+              "template": "Ja ___ studentem.",
+              "blanks": [
+                {
+                  "position": 0,
+                  "acceptedAnswers": ["jestem"],
+                  "caseSensitive": false
+                }
+              ]
+            },
+            "solution": ["jestem"],
+            "explanation": "'Jestem' is the first-person singular form of 'być'. Remember: ja jestem, ty jesteś, on/ona/ono jest.",
+            "hints": ["Think about the 'I am' form", "It starts with 'j'"]
+          },
+          {
+            "id": "ex-01-02-02",
+            "type": "mcq",
+            "question": "What is the correct form of 'być' for 'you are' (singular, informal)?",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "grammar", "value": "verb:być" },
+              { "type": "grammar", "value": "conjugation:present" }
+            ],
+            "data": {
+              "options": [
+                { "id": "a", "text": "jestem" },
+                { "id": "b", "text": "jesteś" },
+                { "id": "c", "text": "jest" },
+                { "id": "d", "text": "jesteśmy" }
+              ],
+              "correctOptionId": "b"
+            },
+            "solution": "b",
+            "explanation": "'Jesteś' is used for 'you are' in the informal singular form (ty jesteś)."
+          },
+          {
+            "id": "ex-01-02-03",
+            "type": "connect",
+            "question": "Connect the pronouns with their correct forms of 'być'.",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "grammar", "value": "verb:być" },
+              { "type": "grammar", "value": "conjugation:present" }
+            ],
+            "data": {
+              "leftItems": [
+                { "id": "ja", "text": "ja (I)" },
+                { "id": "ty", "text": "ty (you)" },
+                { "id": "on", "text": "on/ona (he/she)" }
+              ],
+              "rightItems": [
+                { "id": "jestem", "text": "jestem" },
+                { "id": "jestes", "text": "jesteś" },
+                { "id": "jest", "text": "jest" }
+              ],
+              "correctPairs": [
+                { "leftId": "ja", "rightId": "jestem" },
+                { "leftId": "ty", "rightId": "jestes" },
+                { "leftId": "on", "rightId": "jest" }
+              ]
+            },
+            "solution": {
+              "ja": "jestem",
+              "ty": "jesteś",
+              "on": "jest"
+            }
+          },
+          {
+            "id": "ex-01-02-04",
+            "type": "typed-answer",
+            "question": "How do you say 'I am a student' in Polish? (male form)",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "grammar", "value": "verb:być" },
+              { "type": "topic", "value": "introductions" }
+            ],
+            "data": {
+              "acceptedAnswers": ["jestem studentem", "Jestem studentem"],
+              "evaluationRules": {
+                "allowDiacriticErrors": false,
+                "allowTypos": true,
+                "caseSensitive": false
+              }
+            },
+            "solution": ["Jestem studentem"],
+            "explanation": "In Polish, you say 'Jestem studentem' (I am a student - masculine). The word 'student' changes to 'studentem' in this construction (instrumental case)."
+          },
+          {
+            "id": "ex-01-02-05",
+            "type": "fill-blank",
+            "question": "Complete: Ty ___ studentką. (You are a student - feminine)",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "grammar", "value": "verb:być" },
+              { "type": "grammar", "value": "conjugation:present" }
+            ],
+            "data": {
+              "template": "Ty ___ studentką.",
+              "blanks": [
+                {
+                  "position": 0,
+                  "acceptedAnswers": ["jesteś", "jestes"],
+                  "caseSensitive": false
+                }
+              ]
+            },
+            "solution": ["jesteś"],
+            "explanation": "'Jesteś' is the form for 'you are' (informal singular).",
+            "hints": ["Second person singular", "It ends with 'ś'"]
+          }
+        ]
+      },
+      {
+        "id": "lesson-01-03",
+        "unitId": "unit-01",
+        "title": "Numbers 1-10",
+        "description": "Learn to count from 1 to 10 in Polish",
+        "order": 3,
+        "grammarTopics": ["numbers", "vocabulary"],
+        "vocabularyIntroduced": [
+          {
+            "polish": "jeden",
+            "english": "one",
+            "partOfSpeech": "numeral",
+            "tags": [
+              { "type": "topic", "value": "numbers" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "dwa",
+            "english": "two",
+            "partOfSpeech": "numeral",
+            "tags": [
+              { "type": "topic", "value": "numbers" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "trzy",
+            "english": "three",
+            "partOfSpeech": "numeral",
+            "tags": [
+              { "type": "topic", "value": "numbers" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "cztery",
+            "english": "four",
+            "partOfSpeech": "numeral",
+            "tags": [
+              { "type": "topic", "value": "numbers" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          },
+          {
+            "polish": "pięć",
+            "english": "five",
+            "partOfSpeech": "numeral",
+            "tags": [
+              { "type": "topic", "value": "numbers" },
+              { "type": "difficulty", "value": "A1" }
+            ]
+          }
+        ],
+        "exercises": [
+          {
+            "id": "ex-01-03-01",
+            "type": "mcq",
+            "question": "What is 'three' in Polish?",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "numbers" },
+              { "type": "grammar", "value": "vocabulary" }
+            ],
+            "data": {
+              "options": [
+                { "id": "a", "text": "dwa" },
+                { "id": "b", "text": "trzy" },
+                { "id": "c", "text": "cztery" },
+                { "id": "d", "text": "pięć" }
+              ],
+              "correctOptionId": "b"
+            },
+            "solution": "b",
+            "explanation": "'Trzy' means three in Polish."
+          },
+          {
+            "id": "ex-01-03-02",
+            "type": "match",
+            "question": "Match the Polish numbers with their English equivalents.",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "numbers" },
+              { "type": "grammar", "value": "vocabulary" }
+            ],
+            "data": {
+              "pairs": [
+                { "left": "jeden", "right": "one" },
+                { "left": "dwa", "right": "two" },
+                { "left": "trzy", "right": "three" },
+                { "left": "cztery", "right": "four" },
+                { "left": "pięć", "right": "five" }
+              ],
+              "shuffleRight": true
+            },
+            "solution": {
+              "jeden": "one",
+              "dwa": "two",
+              "trzy": "three",
+              "cztery": "four",
+              "pięć": "five"
+            }
+          },
+          {
+            "id": "ex-01-03-03",
+            "type": "typed-answer",
+            "question": "Type the Polish word for 'five'",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "numbers" },
+              { "type": "grammar", "value": "vocabulary" }
+            ],
+            "data": {
+              "acceptedAnswers": ["pięć", "piec"],
+              "evaluationRules": {
+                "allowDiacriticErrors": true,
+                "allowTypos": true,
+                "caseSensitive": false
+              }
+            },
+            "solution": ["pięć"],
+            "explanation": "'Pięć' is five in Polish. Note the special character 'ę'.",
+            "hints": ["It starts with 'p'", "It has 4 letters"]
+          },
+          {
+            "id": "ex-01-03-04",
+            "type": "ordering",
+            "question": "Put these numbers in order from 1 to 5:",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "numbers" },
+              { "type": "grammar", "value": "vocabulary" }
+            ],
+            "data": {
+              "items": ["jeden", "dwa", "trzy", "cztery", "pięć"],
+              "scrambled": ["trzy", "pięć", "jeden", "cztery", "dwa"]
+            },
+            "solution": ["jeden", "dwa", "trzy", "cztery", "pięć"],
+            "explanation": "The numbers 1-5 in Polish are: jeden (1), dwa (2), trzy (3), cztery (4), pięć (5)."
+          },
+          {
+            "id": "ex-01-03-05",
+            "type": "mcq",
+            "question": "What number comes after 'trzy'?",
+            "tags": [
+              { "type": "difficulty", "value": "A1" },
+              { "type": "topic", "value": "numbers" },
+              { "type": "grammar", "value": "vocabulary" }
+            ],
+            "data": {
+              "options": [
+                { "id": "a", "text": "dwa" },
+                { "id": "b", "text": "cztery" },
+                { "id": "c", "text": "pięć" },
+                { "id": "d", "text": "jeden" }
+              ],
+              "correctOptionId": "b"
+            },
+            "solution": "b",
+            "explanation": "After 'trzy' (three) comes 'cztery' (four)."
+          }
+        ]
+      }
+    ]
+  }
+]
