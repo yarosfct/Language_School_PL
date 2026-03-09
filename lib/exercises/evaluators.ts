@@ -13,10 +13,12 @@ import type {
   DictationData,
   ImageMatchData,
   DialogueCompData,
+  FlashcardData,
 } from '@/types/curriculum';
 
 export interface EvaluationResult {
   correct: boolean;
+  partialCorrect?: boolean; // For 3-tier feedback: correct, partially correct, wrong
   feedback?: string;
   errorType?: 'diacritics' | 'word-order' | 'wrong-form' | 'wrong-word' | 'spelling' | 'other';
 }
@@ -37,7 +39,7 @@ export function evaluateAnswer(exercise: Exercise, userAnswer: unknown): Evaluat
       return evaluateConnect(exercise.data as ConnectData, userAnswer as Array<{leftId: string, rightId: string}>);
     // New exercise types
     case 'flashcard':
-      return evaluateFlashcard(userAnswer as boolean);
+      return evaluateFlashcard(exercise.data as FlashcardData, userAnswer as string);
     case 'image-match':
       return evaluateImageMatch(exercise.data as ImageMatchData, userAnswer as Array<{imageId: string, wordId: string}>);
     case 'listening-choice':
@@ -230,10 +232,48 @@ function evaluateConnect(
 // NEW EXERCISE TYPE EVALUATORS
 // ============================================
 
-function evaluateFlashcard(userAnswer: boolean): EvaluationResult {
-  // Flashcards are self-assessed: true = "I know this", false = "I don't know"
-  // Both are valid responses, we just track them for spaced repetition
-  return { correct: userAnswer };
+function evaluateFlashcard(data: FlashcardData, userAnswer: string): EvaluationResult {
+  const normalized = userAnswer.trim().toLowerCase();
+  const target = data.word.toLowerCase();
+  
+  // 1. Exact match (case-insensitive, trimmed)
+  if (normalized === target) {
+    return { 
+      correct: true, 
+      partialCorrect: false,
+    };
+  }
+  
+  // 2. Diacritic-only error
+  if (removeDiacritics(normalized) === removeDiacritics(target)) {
+    return { 
+      correct: true,
+      partialCorrect: true,
+      feedback: "Almost! Remember to use Polish diacritics: ą, ć, ę, ł, ń, ó, ś, ź, ż",
+      errorType: 'diacritics',
+    };
+  }
+  
+  // 3. Minor typo (Levenshtein distance)
+  // Allow distance of 1 for short words (≤5 chars), 2 for longer words
+  const distance = levenshteinDistance(normalized, target);
+  const threshold = target.length <= 5 ? 1 : 2;
+  
+  if (distance <= threshold) {
+    return { 
+      correct: true,
+      partialCorrect: true,
+      feedback: "Close! Minor spelling error detected.",
+      errorType: 'spelling',
+    };
+  }
+  
+  // 4. Wrong answer
+  return { 
+    correct: false,
+    partialCorrect: false,
+    feedback: `The correct answer is: ${data.word}`,
+  };
 }
 
 function evaluateImageMatch(

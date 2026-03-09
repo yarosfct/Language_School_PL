@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { MatchData } from '@/types/curriculum';
 import { shuffle } from '@/lib/utils/string';
+import { TTSIconButton } from '@/components/ui/TTSButton';
 
 interface MatchExerciseProps {
   data: MatchData;
@@ -54,8 +55,9 @@ export function MatchExercise({
         <div className="space-y-2">
           {leftItems.map((left) => (
             <div key={left} className="p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-              <div className="font-semibold text-gray-900 dark:text-white mb-2">
-                {left}
+              <div className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center justify-between">
+                <span>{left}</span>
+                <TTSIconButton text={left} />
               </div>
               <select
                 value={matches[left] || ''}
@@ -70,6 +72,12 @@ export function MatchExercise({
                   </option>
                 ))}
               </select>
+              {matches[left] && (
+                <div className="mt-2 flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
+                  <span>Matched: {matches[left]}</span>
+                  <TTSIconButton text={matches[left]} />
+                </div>
+              )}
             </div>
           ))}
         </div>

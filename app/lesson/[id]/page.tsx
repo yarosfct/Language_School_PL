@@ -152,6 +152,7 @@ export default function LessonPage({ params }: { params: Promise<{ id: string }>
           showFeedback={showFeedback}
           feedbackMessage={evaluationResult?.feedback}
           isCorrect={evaluationResult?.correct}
+          partialCorrect={evaluationResult?.partialCorrect}
         />
       </div>
 

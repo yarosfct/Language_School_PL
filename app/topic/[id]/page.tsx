@@ -482,6 +482,7 @@ export default function TopicPage({ params }: { params: Promise<{ id: string }> 
             showFeedback={showFeedback}
             feedbackMessage={evaluationResult?.feedback}
             isCorrect={evaluationResult?.correct}
+            partialCorrect={evaluationResult?.partialCorrect}
             autoPlayTTS={true}
           />
 
@@ -618,6 +619,7 @@ export default function TopicPage({ params }: { params: Promise<{ id: string }> 
                 showFeedback={showFeedback}
                 feedbackMessage={evaluationResult?.feedback}
                 isCorrect={evaluationResult?.correct}
+                partialCorrect={evaluationResult?.partialCorrect}
               />
 
               {showFeedback && (

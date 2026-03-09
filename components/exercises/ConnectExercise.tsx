@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ConnectData } from '@/types/curriculum';
+import { TTSIconButton } from '@/components/ui/TTSButton';
 
 interface ConnectExerciseProps {
   data: ConnectData;
@@ -51,27 +52,39 @@ export function ConnectExercise({
           
           return (
             <div key={leftItem.id} className="flex items-center gap-4">
-              <div className="flex-1 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                <span className="text-gray-900 dark:text-white font-medium">
+              <div className="flex-1 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg relative">
+                <span className="text-gray-900 dark:text-white font-medium pr-8">
                   {leftItem.text}
                 </span>
+                <div className="absolute right-2 top-1/2 -translate-y-1/2">
+                  <TTSIconButton text={leftItem.text} />
+                </div>
               </div>
               
               <div className="w-8 h-0.5 bg-gray-300 dark:bg-gray-600"></div>
               
-              <select
-                value={selectedRight || ''}
-                onChange={(e) => handleConnect(leftItem.id, e.target.value)}
-                disabled={submitted}
-                className="flex-1 p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-              >
-                <option value="">Select...</option>
-                {data.rightItems.map((rightItem) => (
-                  <option key={rightItem.id} value={rightItem.id}>
-                    {rightItem.text}
-                  </option>
-                ))}
-              </select>
+              <div className="flex-1 relative">
+                <select
+                  value={selectedRight || ''}
+                  onChange={(e) => handleConnect(leftItem.id, e.target.value)}
+                  disabled={submitted}
+                  className="w-full p-4 pr-12 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                >
+                  <option value="">Select...</option>
+                  {data.rightItems.map((rightItem) => (
+                    <option key={rightItem.id} value={rightItem.id}>
+                      {rightItem.text}
+                    </option>
+                  ))}
+                </select>
+                {selectedRight && (
+                  <div className="absolute right-2 top-1/2 -translate-y-1/2">
+                    <TTSIconButton 
+                      text={data.rightItems.find(r => r.id === selectedRight)?.text || ''} 
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           );
         })}

@@ -32,6 +32,7 @@ interface ExerciseRendererProps {
   showFeedback?: boolean;
   feedbackMessage?: string;
   isCorrect?: boolean;
+  partialCorrect?: boolean;
   autoPlayTTS?: boolean;
 }
 
@@ -41,6 +42,7 @@ export function ExerciseRenderer({
   showFeedback,
   feedbackMessage,
   isCorrect,
+  partialCorrect,
   autoPlayTTS = false,
 }: ExerciseRendererProps) {
   const commonProps = {
@@ -76,9 +78,10 @@ export function ExerciseRenderer({
       return (
         <FlashcardExercise 
           data={exercise.data as FlashcardData} 
-          onSubmit={onSubmit as (answer: boolean) => void}
+          onSubmit={onSubmit as (answer: string) => void}
           showFeedback={showFeedback}
           isCorrect={isCorrect}
+          partialCorrect={partialCorrect}
           explanation={exercise.explanation}
           autoPlayTTS={autoPlayTTS}
         />

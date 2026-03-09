@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { DictationData } from '@/types/curriculum';
 import { speakPolish, isTTSSupported, isSpeaking, stopSpeaking, setRate } from '@/lib/tts';
-import { evaluateTypedAnswer } from '@/lib/exercises/evaluators';
 import { Volume2, VolumeX, RefreshCw, Lightbulb, Check, X } from 'lucide-react';
+import { DiacriticsKeyboard } from '@/components/ui/DiacriticsKeyboard';
 
 interface DictationExerciseProps {
   data: DictationData;
@@ -108,9 +108,6 @@ export function DictationExercise({
     }
   };
 
-  // Polish diacritics helper buttons
-  const diacritics = ['ą', 'ć', 'ę', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż'];
-
   const insertDiacritic = (char: string) => {
     if (inputRef.current) {
       const start = inputRef.current.selectionStart || 0;
@@ -197,18 +194,14 @@ export function DictationExercise({
           spellCheck={false}
         />
 
-        {/* Diacritics helper */}
+        {/* Polish diacritics keyboard */}
         {!submitted && (
-          <div className="flex flex-wrap gap-1 justify-center">
-            {diacritics.map((char) => (
-              <button
-                key={char}
-                onClick={() => insertDiacritic(char)}
-                className="diacritics-btn"
-              >
-                {char}
-              </button>
-            ))}
+          <div className="flex justify-center">
+            <DiacriticsKeyboard 
+              onCharacter={insertDiacritic}
+              compact={true}
+              className="diacritics-keyboard"
+            />
           </div>
         )}
       </div>

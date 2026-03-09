@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { Header } from "@/components/layout/Header";
+import { TTSInitializer } from "@/components/TTSInitializer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <TTSInitializer />
         <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
           <Sidebar />
           <div className="flex flex-col flex-1 overflow-hidden">

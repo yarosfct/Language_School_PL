@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Button } from './button';
 
 // Polish special characters
 const POLISH_DIACRITICS = [
@@ -31,19 +30,22 @@ export function DiacriticsKeyboard({
 }: DiacriticsKeyboardProps) {
   return (
     <div
-      className={`flex flex-wrap gap-1 p-2 bg-secondary/50 rounded-lg border border-border ${className}`}
+      className={`flex flex-wrap gap-1 p-2 bg-gray-100 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 ${className}`}
     >
       {POLISH_DIACRITICS.map((char) => (
-        <Button
+        <button
           key={char.lower}
           type="button"
-          variant="outline"
-          size={compact ? 'sm' : 'default'}
-          className={`${compact ? 'w-8 h-8 p-0' : 'w-10 h-10 p-0'} font-medium text-lg hover:bg-primary hover:text-primary-foreground transition-colors`}
+          className={`${compact ? 'w-8 h-8' : 'w-10 h-10'} p-0 font-medium text-lg 
+            bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md
+            text-gray-700 dark:text-gray-300
+            hover:bg-primary-100 dark:hover:bg-primary-900/30 hover:text-primary-700 dark:hover:text-primary-300 
+            hover:border-primary-300 dark:hover:border-primary-700
+            transition-colors`}
           onClick={() => onCharacter(uppercase ? char.upper : char.lower)}
         >
           {uppercase ? char.upper : char.lower}
-        </Button>
+        </button>
       ))}
     </div>
   );

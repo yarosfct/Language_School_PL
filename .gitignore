@@ -46,3 +46,9 @@ next-env.d.ts
 # OS
 .DS_Store
 Thumbs.db
+
+# TTS Cache and Voice Models
+/public/audio-cache/*
+!/public/audio-cache/.gitkeep
+/public/voices/*.onnx
+/public/voices/*.json

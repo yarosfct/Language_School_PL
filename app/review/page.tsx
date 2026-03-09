@@ -252,6 +252,7 @@ export default function ReviewPage() {
           showFeedback={showFeedback}
           feedbackMessage={evaluationResult?.feedback}
           isCorrect={evaluationResult?.correct}
+          partialCorrect={evaluationResult?.partialCorrect}
         />
       </div>
     </div>

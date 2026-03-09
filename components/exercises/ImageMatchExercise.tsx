@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { ImageMatchData } from '@/types/curriculum';
 import { Check, X, Image as ImageIcon } from 'lucide-react';
 import { shuffle } from '@/lib/utils/string';
+import { TTSIconButton } from '@/components/ui/TTSButton';
+import { speak } from '@/lib/tts';
 
 interface ImageMatchExerciseProps {
   data: ImageMatchData;
@@ -57,6 +59,12 @@ export function ImageMatchExercise({
     newMatches.set(selectedImage, wordId);
     setMatches(newMatches);
     setSelectedImage(null);
+    
+    // Play TTS for matched word
+    const word = data.words.find(w => w.id === wordId);
+    if (word) {
+      speak(word.text);
+    }
   };
 
   const getWordForImage = (imageId: string): string | undefined => {
@@ -200,24 +208,28 @@ export function ImageMatchExercise({
           const isCorrectMatch = submitted && isUsed && !isIncorrect;
 
           return (
-            <button
-              key={word.id}
-              onClick={() => handleWordClick(word.id)}
-              disabled={submitted || (isUsed && !selectedImage)}
-              className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                isCorrectMatch
-                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 cursor-default'
-                  : isIncorrect
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 cursor-default'
-                  : isUsed
-                  ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 opacity-50'
-                  : selectedImage
-                  ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 cursor-pointer'
-                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
-              }`}
-            >
-              {word.text}
-            </button>
+            <div key={word.id} className="relative">
+              <button
+                onClick={() => handleWordClick(word.id)}
+                disabled={submitted || (isUsed && !selectedImage)}
+                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                  isCorrectMatch
+                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 cursor-default'
+                    : isIncorrect
+                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 cursor-default'
+                    : isUsed
+                    ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 opacity-50'
+                    : selectedImage
+                    ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 hover:bg-primary-200 cursor-pointer'
+                    : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300'
+                } pr-8`}
+              >
+                {word.text}
+              </button>
+              <div className="absolute right-1 top-1/2 -translate-y-1/2">
+                <TTSIconButton text={word.text} />
+              </div>
+            </div>
           );
         })}
       </div>

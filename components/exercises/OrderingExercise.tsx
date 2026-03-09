@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { OrderingData } from '@/types/curriculum';
 import { shuffle } from '@/lib/utils/string';
 import { ArrowUp, ArrowDown, GripVertical } from 'lucide-react';
+import { TTSButton } from '@/components/ui/TTSButton';
+import { TTSControls } from '@/components/ui/TTSControls';
 
 interface OrderingExerciseProps {
   data: OrderingData;
@@ -11,6 +13,7 @@ interface OrderingExerciseProps {
   showFeedback?: boolean;
   isCorrect?: boolean;
   explanation?: string;
+  autoPlayTTS?: boolean;
 }
 
 export function OrderingExercise({ 
@@ -18,12 +21,14 @@ export function OrderingExercise({
   onSubmit, 
   showFeedback, 
   isCorrect,
-  explanation 
+  explanation,
+  autoPlayTTS = false,
 }: OrderingExerciseProps) {
   const [items, setItems] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
   const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
+  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
 
   useEffect(() => {
     // Initialize with scrambled items
@@ -80,16 +85,26 @@ export function OrderingExercise({
 
   return (
     <div className="space-y-4">
-      {/* Instructions */}
-      <p className="text-sm text-gray-600 dark:text-gray-400 italic">
-        💡 Drag items to reorder them, or use the arrow buttons
-      </p>
+      {/* Instructions with Play All */}
+      <div className="flex items-center justify-between">
+        <p className="text-sm text-gray-600 dark:text-gray-400 italic">
+          💡 Drag items to reorder them, or use the arrow buttons
+        </p>
+        {submitted && showFeedback && isCorrect && (
+          <TTSControls 
+            text={data.items.join('. ')}
+            showSlowToggle={true}
+            showReplayButton={false}
+          />
+        )}
+      </div>
 
       {/* Ordering list */}
       <div className="space-y-2">
         {items.map((item, index) => {
           const isDragging = draggedIndex === index;
           const isDragOver = dragOverIndex === index;
+          const isPlaying = playingIndex === index;
           
           return (
             <div 
@@ -139,9 +154,22 @@ export function OrderingExercise({
                     ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
                     : 'border-red-500 bg-red-50 dark:bg-red-900/20'
                   : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800'
-              } ${!submitted && 'hover:border-gray-400 dark:hover:border-gray-500'}`}>
-                <span className="text-gray-600 dark:text-gray-400 mr-2">{index + 1}.</span>
-                <span className="text-gray-900 dark:text-white">{item}</span>
+              } ${!submitted && 'hover:border-gray-400 dark:hover:border-gray-500'} ${
+                isPlaying ? 'ring-2 ring-primary-500' : ''
+              }`}>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <span className="text-gray-600 dark:text-gray-400 mr-2">{index + 1}.</span>
+                    <span className="text-gray-900 dark:text-white">{item}</span>
+                  </div>
+                  <TTSButton 
+                    text={item}
+                    size="sm"
+                    variant="minimal"
+                    onStart={() => setPlayingIndex(index)}
+                    onEnd={() => setPlayingIndex(null)}
+                  />
+                </div>
               </div>
             </div>
           );

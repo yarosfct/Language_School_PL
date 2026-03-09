@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 import { DialogueCompData } from '@/types/curriculum';
-import { speakPolish, isTTSSupported, isSpeaking, stopSpeaking } from '@/lib/tts';
-import { Volume2, VolumeX, MessageCircle, Check, X, ChevronRight } from 'lucide-react';
+import { speakPolish, speakSlow, isTTSSupported, isSpeaking, stopSpeaking } from '@/lib/tts';
+import { Volume2, VolumeX, MessageCircle, Check, X, ChevronRight, Turtle, Zap } from 'lucide-react';
+import { SpeakerIconAnimated } from '@/components/ui/TTSVisualFeedback';
 
 interface DialogueCompExerciseProps {
   data: DialogueCompData;
@@ -25,6 +26,7 @@ export function DialogueCompExercise({
   const [answers, setAnswers] = useState<Record<number, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const [playingLine, setPlayingLine] = useState<number | null>(null);
+  const [slowMode, setSlowMode] = useState(false);
 
   const currentQuestion = data.questions[currentQuestionIndex];
   const allQuestionsAnswered = Object.keys(answers).length === data.questions.length;
@@ -38,7 +40,8 @@ export function DialogueCompExercise({
     }
 
     setPlayingLine(index);
-    speakPolish(text, () => {
+    const speakFn = slowMode ? speakSlow : speakPolish;
+    speakFn(text, () => {
       setPlayingLine(null);
     });
   };
@@ -51,10 +54,11 @@ export function DialogueCompExercise({
     }
 
     let index = 0;
+    const speakFn = slowMode ? speakSlow : speakPolish;
     const playNext = () => {
       if (index < data.dialogue.length) {
         setPlayingLine(index);
-        speakPolish(data.dialogue[index].text, () => {
+        speakFn(data.dialogue[index].text, () => {
           index++;
           setTimeout(playNext, 500);
         });
@@ -128,20 +132,31 @@ export function DialogueCompExercise({
             </button>
             
             {isTTSSupported() && (
-              <button
-                onClick={handlePlayAll}
-                className={`px-3 py-1 rounded-lg transition-colors ${
-                  playingLine !== null
-                    ? 'bg-primary-500 text-white'
-                    : 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
-                }`}
-              >
-                {playingLine !== null ? (
-                  <VolumeX className="w-4 h-4" />
-                ) : (
-                  <Volume2 className="w-4 h-4" />
-                )}
-              </button>
+              <>
+                <button
+                  onClick={() => setSlowMode(!slowMode)}
+                  className={`px-3 py-1 rounded-lg transition-colors ${
+                    slowMode
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                  }`}
+                  title={slowMode ? 'Normal speed' : 'Slow speed'}
+                >
+                  {slowMode ? <Turtle className="w-4 h-4" /> : <Zap className="w-4 h-4" />}
+                </button>
+                
+                <button
+                  onClick={handlePlayAll}
+                  className={`px-3 py-1 rounded-lg transition-colors flex items-center gap-1 ${
+                    playingLine !== null
+                      ? 'bg-primary-500 text-white'
+                      : 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
+                  }`}
+                >
+                  <SpeakerIconAnimated isPlaying={playingLine !== null} size="sm" />
+                  <span className="text-sm">Play All</span>
+                </button>
+              </>
             )}
           </div>
         </div>
