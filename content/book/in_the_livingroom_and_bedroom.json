@@ -1,0 +1,571 @@
+{
+  "section_number": 19,
+  "topic_en": "In the Living Room or Bedroom",
+  "topic_pl": "W salonie lub sypialni",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "stół", "en": ["table"], "category": "noun" },
+    { "pl": "krzesło", "en": ["chair"], "category": "noun" },
+    { "pl": "fotel", "en": ["armchair"], "category": "noun" },
+    { "pl": "sofa", "en": ["sofa"], "category": "noun" },
+    { "pl": "kanapa", "en": ["sofa"], "category": "noun" },
+    { "pl": "stolik kawowy", "en": ["coffee table"], "category": "phrase" },
+    { "pl": "półka", "en": ["shelf"], "category": "noun" },
+    { "pl": "półka na książki", "en": ["bookshelf"], "category": "phrase" },
+    { "pl": "regał na książki", "en": ["bookcase"], "category": "phrase" },
+    { "pl": "obraz", "en": ["painting", "picture"], "category": "noun" },
+    { "pl": "dywan", "en": ["carpet"], "category": "noun" },
+    { "pl": "zasłony", "en": ["curtains"], "category": "noun_plural" },
+    { "pl": "kominek", "en": ["fireplace"], "category": "noun" },
+    { "pl": "biurko", "en": ["desk"], "category": "noun" },
+    { "pl": "telewizor", "en": ["TV set", "television"], "category": "noun" },
+    { "pl": "pilot", "en": ["remote", "remote control"], "category": "noun" },
+    { "pl": "łóżko", "en": ["bed"], "category": "noun" },
+    { "pl": "stolik nocny", "en": ["bedside table"], "category": "phrase" },
+    { "pl": "budzik", "en": ["alarm clock"], "category": "noun" },
+    { "pl": "szafa", "en": ["wardrobe"], "category": "noun" },
+    { "pl": "szuflada", "en": ["drawer"], "category": "noun" },
+    { "pl": "komoda", "en": ["chest of drawers"], "category": "noun" },
+    { "pl": "poduszka", "en": ["pillow"], "category": "noun" },
+    { "pl": "koc", "en": ["blanket"], "category": "noun" },
+    { "pl": "materac", "en": ["mattress"], "category": "noun" },
+    { "pl": "zegar", "en": ["clock"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "wooden_glass_antique_table",
+      "content": "Useful phrases:",
+      "examples": [
+        "drewniany stół = a wooden table",
+        "szklany stół = a glass table",
+        "antyczny stół = an antique table"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "jaki_jaka_jakie_exclamations",
+      "content": "To express admiration or surprise with 'what a + adjective + noun', use 'jaki' with masculine nouns, 'jaka' with feminine nouns, and 'jakie' with neuter nouns.",
+      "examples": [
+        "Jaki wygodny fotel! = What a comfortable armchair!",
+        "Jaki piękny widok! = What a beautiful view!",
+        "Jaka piękna pogoda! = What beautiful weather!",
+        "Jakie pyszne ciasto! = What a delicious cake!"
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "dzwonic_can_mean_ring",
+      "content": "'Dzwonić' can mean not only 'to call' but also 'to ring'."
+    },
+    {
+      "id": 6,
+      "topic": "telling_time_reference",
+      "content": "The note points to time-telling material elsewhere in the book for phrases like 'o siódmej'."
+    },
+    {
+      "id": 9,
+      "topic": "wisiec_present_tense",
+      "content": "Present tense of the verb 'wisieć' (to hang). It is semi-regular and especially notable in the 1st person singular and 3rd person plural.",
+      "tables": {
+        "present_tense": {
+          "ja": "wiszę",
+          "ty": "wisisz",
+          "on_ona_ono": "wisi",
+          "my": "wisimy",
+          "wy": "wisicie",
+          "oni_one": "wiszą"
+        }
+      },
+      "examples": [
+        "Ten obraz, który tam wisi, jest bardzo ładny. = That painting hanging there is very nice.",
+        "Moje zdjęcia rodzinne wiszą na ścianie. = My family photos hang on the wall."
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "locative_after_w_szufladzie",
+      "content": "Usually the locative case is used after the preposition 'w'. 'Szufladzie' is the locative of 'szuflada'."
+    },
+    {
+      "id": 24,
+      "topic": "winter_translation_and_przy_locative",
+      "content": "In winter can be translated as either 'w zimie' or 'zimą'. After the preposition 'przy' (by, next to, beside), use the locative case."
+    },
+    {
+      "id": 24,
+      "topic": "pic_accusative",
+      "content": "The verb 'pić' (to drink) is followed by the accusative case."
+    },
+    {
+      "id": 25,
+      "topic": "mattress_adjectives",
+      "content": "A mattress ('materac') can be described with adjectives such as:",
+      "examples": [
+        "wygodny = comfortable",
+        "twardy = hard, firm",
+        "miękki = soft"
+      ]
+    },
+    {
+      "id": 26,
+      "topic": "locative_after_w_w_tym_fotelu",
+      "content": "After the preposition 'w', usually use the locative case. That is why we say 'w tym fotelu' (not 'w ten fotel')."
+    },
+    {
+      "id": 27,
+      "topic": "polki_plural",
+      "content": "'Półki' is the plural of 'półka' (shelf)."
+    },
+    {
+      "id": 30,
+      "topic": "z_plus_genitive_from",
+      "content": "Use the genitive after 'z' when it means 'from'. 'Tamtej szuflady' is the genitive of 'tamta szuflada'."
+    },
+    {
+      "id": 31,
+      "topic": "na_plus_locative_for_location_of_object",
+      "content": "In sentence 31, after the preposition 'na' meaning 'on', use the locative when referring to the location of an object. 'Biurku' is the locative of 'biurko'."
+    },
+    {
+      "id": 32,
+      "topic": "wiedziec_present_tense",
+      "content": "Conjugation of the verb 'wiedzieć' (to know):",
+      "tables": {
+        "present_tense": {
+          "ja": "wiem",
+          "ty": "wiesz",
+          "on_ona_ono": "wie",
+          "my": "wiemy",
+          "wy": "wiecie",
+          "oni_one": "wiedzą"
+        }
+      },
+      "content_note": "It is irregular, so it is best learned by heart."
+    },
+    {
+      "id": 33,
+      "topic": "wlaczony_vs_wylaczony",
+      "content": "Useful pair:",
+      "examples": [
+        "włączony = on, turned on",
+        "wyłączony = off, turned off"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Is this a wooden table?",
+      "pl": "(Czy) to (jest) drewniany stół?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To drewniany stół?"],
+      "focus_words": ["to", "drewniany stół"],
+      "grammar_tags": ["question", "furniture"]
+    },
+    {
+      "id": 2,
+      "en": "This chair is too low for me.",
+      "pl": "To krzesło jest dla mnie za/zbyt niskie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To krzesło jest dla mnie zbyt niskie."],
+      "focus_words": ["to krzesło", "jest dla mnie", "za niskie"],
+      "grammar_tags": ["furniture", "degree"]
+    },
+    {
+      "id": 3,
+      "en": "Oh! What a comfortable armchair!",
+      "pl": "O! Jaki/Ale wygodny fotel!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ale wygodny fotel!"],
+      "focus_words": ["jaki", "ale", "wygodny fotel"],
+      "grammar_tags": ["exclamation", "furniture"]
+    },
+    {
+      "id": 4,
+      "en": "This chest of drawers is huge.",
+      "pl": "Ta komoda jest ogromna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta komoda", "jest ogromna"],
+      "grammar_tags": ["furniture", "description"]
+    },
+    {
+      "id": 5,
+      "en": "Do you (pl.) know where the remote (control) is?",
+      "pl": "(Czy) wiecie, gdzie jest pilot?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wiecie, gdzie jest pilot?"],
+      "focus_words": ["wiecie", "gdzie", "jest pilot"],
+      "grammar_tags": ["question", "room", "subordinate_clause"]
+    },
+    {
+      "id": 6,
+      "en": "My alarm clock rings at seven every day.",
+      "pl": "Mój budzik dzwoni codziennie o siódmej.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój budzik", "dzwoni", "codziennie", "o siódmej"],
+      "grammar_tags": ["room", "time_expression"]
+    },
+    {
+      "id": 7,
+      "en": "The carpet, the curtains and the sofa are grey.",
+      "pl": "Dywan, zasłony i sofa/kanapa są szare.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dywan, zasłony i kanapa są szare."],
+      "focus_words": ["dywan", "zasłony", "sofa", "kanapa", "są szare"],
+      "grammar_tags": ["room", "plural_subject"]
+    },
+    {
+      "id": 8,
+      "en": "Is the drawer empty or full?",
+      "pl": "(Czy) szuflada jest pusta, czy pełna?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Szuflada jest pusta czy pełna?"],
+      "focus_words": ["szuflada", "jest pusta", "czy", "pełna"],
+      "grammar_tags": ["question", "furniture"]
+    },
+    {
+      "id": 9,
+      "en": "This painting is hanging in the living room now.",
+      "pl": "Teraz ten obraz wisi w salonie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["teraz", "ten obraz", "wisi", "w salonie"],
+      "grammar_tags": ["room", "locative"]
+    },
+    {
+      "id": 10,
+      "en": "I'm sleepy. I'm going to bed now (lit. already).",
+      "pl": "Jestem śpiący / Chce mi się spać. Idę już do łóżka.",
+      "literal_en": null,
+      "english_variants": ["I'm sleepy. I'm going to bed now."],
+      "polish_alternatives": ["Chce mi się spać. Idę już do łóżka."],
+      "focus_words": ["jestem śpiący", "chce mi się spać", "idę już do łóżka"],
+      "grammar_tags": ["room", "state", "movement"]
+    },
+    {
+      "id": 11,
+      "en": "This bookshelf is a little old.",
+      "pl": "Ta półka na książki jest trochę stara.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ten regał na książki jest trochę stary."],
+      "focus_words": ["ta półka na książki", "jest trochę stara"],
+      "grammar_tags": ["furniture", "description"]
+    },
+    {
+      "id": 12,
+      "en": "Can you pass me that blanket, please?",
+      "pl": "(Czy) możesz podać mi tamten koc?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Możesz podać mi tamten koc?"],
+      "focus_words": ["możesz podać mi", "tamten koc"],
+      "grammar_tags": ["question", "room", "accusative_basic"]
+    },
+    {
+      "id": 13,
+      "en": "We keep the key in the drawer.",
+      "pl": "Trzymamy klucz w szufladzie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["trzymamy", "klucz", "w szufladzie"],
+      "grammar_tags": ["room", "locative"]
+    },
+    {
+      "id": 14,
+      "en": "This wardrobe is already too small for my clothes.",
+      "pl": "Ta szafa jest już za/zbyt mała na moje ubrania.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta szafa jest już zbyt mała na moje ubrania."],
+      "focus_words": ["ta szafa", "jest już za mała", "na moje ubrania"],
+      "grammar_tags": ["furniture", "degree"]
+    },
+    {
+      "id": 15,
+      "en": "Your alarm clock rang for a long time.",
+      "pl": "Twój budzik długo dzwonił.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["twój budzik", "długo dzwonił"],
+      "grammar_tags": ["room", "past_tense"]
+    },
+    {
+      "id": 16,
+      "en": "Where can I buy a cheap mattress?",
+      "pl": "Gdzie mogę kupić tani materac?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie mogę", "kupić", "tani materac"],
+      "grammar_tags": ["question", "furniture", "accusative_basic"]
+    },
+    {
+      "id": 17,
+      "en": "Can she see your painting (asking for permission)?",
+      "pl": "(Czy) ona może zobaczyć twój obraz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ona może zobaczyć twój obraz?"],
+      "focus_words": ["ona może zobaczyć", "twój obraz"],
+      "grammar_tags": ["question", "room", "accusative_basic"]
+    },
+    {
+      "id": 18,
+      "en": "We found a beautiful and elegant bedside table.",
+      "pl": "Znaleźliśmy piękny i elegancki stolik nocny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["znaleźliśmy", "piękny", "elegancki", "stolik nocny"],
+      "grammar_tags": ["furniture", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 19,
+      "en": "We bought a new bookcase because the old one was too small.",
+      "pl": "Kupiliśmy nowy regał na książki, bo stary był zbyt/za mały.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kupiliśmy nowy regał na książki, bo stary był za mały."],
+      "focus_words": ["kupiliśmy nowy regał na książki", "bo", "stary był za mały"],
+      "grammar_tags": ["furniture", "past_tense", "subordinate_clause"]
+    },
+    {
+      "id": 20,
+      "en": "There's a big clock in the living room.",
+      "pl": "W salonie jest duży zegar.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w salonie", "jest duży zegar"],
+      "grammar_tags": ["room", "locative", "existential"]
+    },
+    {
+      "id": 21,
+      "en": "We've finally found the perfect table.",
+      "pl": "W końcu znaleźliśmy idealny stół.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w końcu", "znaleźliśmy", "idealny stół"],
+      "grammar_tags": ["furniture", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 22,
+      "en": "Can we have an extra pillow, please?",
+      "pl": "(Czy) możemy prosić (o) dodatkową poduszkę?",
+      "literal_en": null,
+      "english_variants": ["Can we get an extra pillow?"],
+      "polish_alternatives": ["Czy możemy prosić o dodatkową poduszkę?"],
+      "focus_words": ["czy możemy prosić", "o", "dodatkową poduszkę"],
+      "grammar_tags": ["question", "room", "accusative_basic"]
+    },
+    {
+      "id": 23,
+      "en": "Is there another empty seat (lit. free chair)?",
+      "pl": "(Czy) jest jeszcze jedno wolne krzesło?",
+      "literal_en": null,
+      "english_variants": ["Is there another free chair?"],
+      "polish_alternatives": ["Jest jeszcze jedno wolne krzesło?"],
+      "focus_words": ["jest jeszcze jedno", "wolne krzesło"],
+      "grammar_tags": ["question", "room", "existential"]
+    },
+    {
+      "id": 24,
+      "en": "In winter, I like to sit by the fireplace and drink hot tea.",
+      "pl": "W zimie lubię siedzieć przy kominku i pić gorącą herbatę.",
+      "literal_en": null,
+      "english_variants": ["In winter, I like sitting by the fireplace and drinking hot tea."],
+      "polish_alternatives": ["Zimą lubię siedzieć przy kominku i pić gorącą herbatę."],
+      "focus_words": ["w zimie", "lubię siedzieć", "przy kominku", "pić gorącą herbatę"],
+      "grammar_tags": ["room", "locative", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 25,
+      "en": "Is a hard mattress better?",
+      "pl": "(Czy) twardy materac jest lepszy?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Twardy materac jest lepszy?"],
+      "focus_words": ["twardy materac", "jest lepszy"],
+      "grammar_tags": ["question", "furniture", "comparison"]
+    },
+    {
+      "id": 26,
+      "en": "I like spending evenings in this armchair.",
+      "pl": "Lubię spędzać wieczory w tym fotelu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię spędzać", "wieczory", "w tym fotelu"],
+      "grammar_tags": ["room", "locative", "two_verbs_rule"]
+    },
+    {
+      "id": 27,
+      "en": "There will be more space here for the new shelves now.",
+      "pl": "Teraz będzie tu/tutaj więcej miejsca na nowe półki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Teraz będzie tutaj więcej miejsca na nowe półki."],
+      "focus_words": ["teraz", "będzie tu", "więcej miejsca", "na nowe półki"],
+      "grammar_tags": ["room", "future_tense", "genitive_amount"]
+    },
+    {
+      "id": 28,
+      "en": "I like to have good light when I'm working.",
+      "pl": "Lubię mieć dobre światło, kiedy pracuję.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię mieć", "dobre światło", "kiedy pracuję"],
+      "grammar_tags": ["room", "two_verbs_rule", "subordinate_clause"]
+    },
+    {
+      "id": 29,
+      "en": "The clock will be hung (lit. will hang) near the coffee table.",
+      "pl": "Zegar będzie wisieć przy stoliku kawowym.",
+      "literal_en": null,
+      "english_variants": ["The clock will hang by the coffee table."],
+      "polish_alternatives": [],
+      "focus_words": ["zegar", "będzie wisieć", "przy stoliku kawowym"],
+      "grammar_tags": ["room", "future_tense", "locative"]
+    },
+    {
+      "id": 30,
+      "en": "Can you pass me the scissors from that drawer, please?",
+      "pl": "(Czy) możesz podać mi nożyczki z tamtej szuflady?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Możesz podać mi nożyczki z tamtej szuflady?"],
+      "focus_words": ["możesz podać mi", "nożyczki", "z tamtej szuflady"],
+      "grammar_tags": ["question", "room", "genitive_after_z"]
+    },
+    {
+      "id": 31,
+      "en": "Is there some room for a computer on the desk?",
+      "pl": "(Czy) na biurku jest miejsce na komputer?",
+      "literal_en": null,
+      "english_variants": ["Is there space for a computer on the desk?"],
+      "polish_alternatives": ["Na biurku jest miejsce na komputer?"],
+      "focus_words": ["na biurku", "jest miejsce", "na komputer"],
+      "grammar_tags": ["question", "room", "locative", "existential"]
+    },
+    {
+      "id": 32,
+      "en": "Do you (pl.) know who painted this painting?",
+      "pl": "(Czy) wiecie, kto namalował ten obraz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wiecie, kto namalował ten obraz?"],
+      "focus_words": ["wiecie", "kto", "namalował", "ten obraz"],
+      "grammar_tags": ["question", "room", "subordinate_clause", "past_tense"]
+    },
+    {
+      "id": 33,
+      "en": "Is the TV on?",
+      "pl": "(Czy) telewizor jest włączony?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Telewizor jest włączony?"],
+      "focus_words": ["telewizor", "jest włączony"],
+      "grammar_tags": ["question", "room", "state"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "stół",
+      "krzesło",
+      "fotel",
+      "sofa",
+      "kanapa",
+      "stolik kawowy",
+      "półka",
+      "półka na książki",
+      "regał na książki",
+      "obraz",
+      "dywan",
+      "zasłony",
+      "kominek",
+      "biurko",
+      "telewizor",
+      "pilot",
+      "łóżko",
+      "stolik nocny",
+      "budzik",
+      "szafa",
+      "szuflada",
+      "komoda",
+      "poduszka",
+      "koc",
+      "materac",
+      "zegar"
+    ],
+    "sentence_cards_priority": [1, 3, 5, 6, 9, 10, 12, 13, 16, 18, 19, 20, 22, 24, 26, 30, 31, 32, 33]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Is there some room for a computer on the desk?'",
+      "correct_answer": "Czy na biurku jest miejsce na komputer?",
+      "distractors": [
+        "Czy na biurko jest miejsce komputer?",
+        "Czy w biurku jest miejsce na komputer?",
+        "Czy na biurku jest komputer miejsce?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'My alarm clock rings at seven every day.'",
+      "answer_pl": "Mój budzik dzwoni codziennie o siódmej.",
+      "word_bank": ["Mój", "budzik", "dzwoni", "codziennie", "o", "siódmej"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'The TV is on.'",
+      "accepted_answers": [
+        "Telewizor jest włączony.",
+        "Czy telewizor jest włączony?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

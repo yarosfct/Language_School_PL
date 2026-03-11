@@ -1,0 +1,630 @@
+{
+  "section_number": 22,
+  "topic_en": "Useful Verbs. Part 2",
+  "topic_pl": "Przydatne czasowniki. Część 2",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "budować", "en": ["to build"], "category": "verb" },
+    { "pl": "kontynuować", "en": ["to continue"], "category": "verb" },
+    { "pl": "kończyć", "en": ["to finish"], "category": "verb" },
+    { "pl": "kończyć się", "en": ["to end", "to be over"], "category": "verb" },
+    { "pl": "kosztować", "en": ["to cost"], "category": "verb" },
+    { "pl": "mieć nadzieję", "en": ["to hope"], "category": "phrase" },
+    { "pl": "nienawidzić", "en": ["to hate"], "category": "verb" },
+    { "pl": "organizować", "en": ["to organise"], "category": "verb" },
+    { "pl": "palić", "en": ["to smoke"], "category": "verb" },
+    { "pl": "parkować", "en": ["to park"], "category": "verb" },
+    { "pl": "płakać", "en": ["to cry"], "category": "verb" },
+    { "pl": "pływać", "en": ["to swim"], "category": "verb" },
+    { "pl": "powtarzać", "en": ["to repeat", "to revise"], "category": "verb" },
+    { "pl": "prosić", "en": ["to ask for", "to ask to do"], "category": "verb" },
+    { "pl": "próbować", "en": ["to try", "to taste"], "category": "verb" },
+    { "pl": "przygotowywać", "en": ["to prepare"], "category": "verb" },
+    { "pl": "przynosić", "en": ["to bring"], "category": "verb" },
+    { "pl": "pytać", "en": ["to ask about", "to ask"], "category": "verb" },
+    { "pl": "siedzieć", "en": ["to sit"], "category": "verb" },
+    { "pl": "spać", "en": ["to sleep"], "category": "verb" },
+    { "pl": "spędzać", "en": ["to spend"], "category": "verb" },
+    { "pl": "spotkać się", "en": ["to meet"], "category": "verb" },
+    { "pl": "sprzątać", "en": ["to clean"], "category": "verb" },
+    { "pl": "stać", "en": ["to stand"], "category": "verb" },
+    { "pl": "starać się", "en": ["to try", "to make an effort"], "category": "verb" },
+    { "pl": "szukać", "en": ["to look for"], "category": "verb" },
+    { "pl": "zgadzać się", "en": ["to agree"], "category": "verb" },
+    { "pl": "znaczyć", "en": ["to mean"], "category": "verb" },
+    { "pl": "zwiedzać", "en": ["to visit", "to sightsee"], "category": "verb" }
+  ],
+  "tips": [
+    {
+      "id": 2,
+      "topic": "pytac_vs_prosic",
+      "content": "'Pytać' and 'prosić' can both translate as 'to ask', but they are used differently. 'Prosić' is used for requests; 'pytać' is used for asking about information, details, or facts.",
+      "examples": [
+        "prosić o pomoc = to ask for help",
+        "prosić o kawę = to ask for coffee",
+        "pytać o cenę = to ask about the price",
+        "pytać o godzinę = to ask the time"
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "accusative_after_pytac_and_prosic",
+      "content": "Use the accusative after both these verbs in the patterns shown in the note."
+    },
+    {
+      "id": 3,
+      "topic": "nienawidzic_synonyms",
+      "content": "Synonyms of 'nienawidzić' include 'nie cierpieć' and 'nie znosić'."
+    },
+    {
+      "id": 6,
+      "topic": "mowic_po_language",
+      "content": "When listing languages someone speaks, use the preposition 'po' after 'mówić' and change the language ending to -u or -sku.",
+      "examples": [
+        "polski → mówić po polsku",
+        "niemiecki → mówić po niemiecku",
+        "hiszpański → mówić po hiszpańsku",
+        "angielski → mówić po angielsku"
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "owa_to_uj_in_conjugation",
+      "content": "Infinitive verbs ending in -ować usually change -owa- to -uj- in conjugation.",
+      "examples": [
+        "budować → ja buduję, ty budujesz, on buduje"
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "blisko_niedaleko_genitive",
+      "content": "Use the genitive after 'blisko' and 'niedaleko'."
+    },
+    {
+      "id": 8,
+      "topic": "miec_nadzieje_ze",
+      "content": "After 'mieć nadzieję', always use 'że'.",
+      "examples": [
+        "Mam nadzieję, że jutro będzie ładna pogoda."
+      ]
+    },
+    {
+      "id": 10,
+      "topic": "kontynuowac_without_z",
+      "content": "After 'kontynuować', do not use 'z' as English uses 'with'."
+    },
+    {
+      "id": 10,
+      "topic": "szukac_genitive_no_preposition",
+      "content": "After 'szukać', use the genitive and do not use prepositions like 'dla' or 'na'."
+    },
+    {
+      "id": 12,
+      "topic": "zwiedzac_vs_odwiedzac",
+      "content": "'Zwiedzać' and 'odwiedzać' can both mean 'to visit', but they differ. 'Zwiedzać' is for visiting places such as museums, landmarks, cities, or for sightseeing. 'Odwiedzać' is for visiting people or casually visiting places regularly.",
+      "examples": [
+        "Dzisiaj zwiedzamy Kraków. = Today we are visiting Krakow.",
+        "Odwiedzam moją babcię co tydzień. = I visit my grandma every week."
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "accusative_after_zwiedzac_i_odwiedzac",
+      "content": "After both verbs, use the accusative."
+    },
+    {
+      "id": 12,
+      "topic": "currently_translations",
+      "content": "'Currently' can be translated as 'obecnie' or 'aktualnie'. Note that 'aktualnie' is a false friend of English 'actually'."
+    },
+    {
+      "id": 14,
+      "topic": "wychodzic_z_plus_genitive",
+      "content": "After 'wychodzić' (to leave), use the preposition 'z' followed by the genitive case.",
+      "tables": {
+        "examples": [
+          ["wychodzić z pracy", "to leave work"],
+          ["wychodzić z domu", "to leave home"],
+          ["wychodzić z banku", "to leave the bank"]
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "topic": "o_ktorej_godzinie_shorter_version",
+      "content": "'O której godzinie' means 'what time'. A shorter version, 'O której', is used in semi-formal and informal conversations."
+    },
+    {
+      "id": 15,
+      "topic": "spotkac_sie_vs_poznac",
+      "content": "'To meet' usually translates as 'spotkać się' or 'poznać'. 'Spotkać się' is used for meeting someone in the sense of having a meeting / getting together; 'poznać' is often for meeting someone for the first time.",
+      "examples": [
+        "Wczoraj poznałem jej siostrę. = Yesterday I met her sister for the first time."
+      ]
+    },
+    {
+      "id": 18,
+      "topic": "plakac_present_tense",
+      "content": "The verb 'płakać' is irregular; memorise its conjugation:",
+      "tables": {
+        "present_tense": {
+          "ja": "płaczę",
+          "ty": "płaczesz",
+          "on_ona_ono": "płacze",
+          "my": "płaczemy",
+          "wy": "płaczecie",
+          "oni_one": "płaczą"
+        }
+      }
+    },
+    {
+      "id": 22,
+      "topic": "spedzac_vs_wydawac",
+      "content": "'Spędzać' is used when talking about spending time or holidays. 'Wydawać' is used for spending money.",
+      "examples": [
+        "Lubię spędzać czas z rodziną.",
+        "Lubię wydawać pieniądze na buty."
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "organizowac_accusative_and_dla_genitive",
+      "content": "After 'organizować', use the accusative. After 'dla' (for), use the genitive."
+    },
+    {
+      "id": 25,
+      "topic": "juz_vs_juz_nie",
+      "content": "Useful contrast:",
+      "examples": [
+        "już = already",
+        "już nie = any more"
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "z_przodu_vs_z_tylu",
+      "content": "Useful location phrases:",
+      "examples": [
+        "z przodu = in the front",
+        "z tyłu = in the back"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "forms_of_address_pan_pani_panstwo",
+      "content": "Different forms of address are used depending on politeness and relationship. 'Ty' / 'wy' are for family, friends, and children. For strangers or polite address, use 'pan', 'pani', 'panowie', 'panie', or 'państwo'. These polite forms require the 3rd-person verb form."
+    },
+    {
+      "id": 34,
+      "topic": "a_lot_vs_duzo",
+      "content": "Remember that 'a lot' is 'dużo', not 'duży'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Do you agree that life is beautiful?",
+      "pl": "(Czy) zgadzasz się, że życie jest piękne?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zgadzasz się, że życie jest piękne?"],
+      "focus_words": ["zgadzasz się", "że", "życie jest piękne"],
+      "grammar_tags": ["question", "verb_usage", "subordinate_clause", "reflexive_verb"]
+    },
+    {
+      "id": 2,
+      "en": "Can I ask for help, please?",
+      "pl": "(Czy) mogę prosić o pomoc?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mogę prosić o pomoc?"],
+      "focus_words": ["mogę prosić", "o pomoc"],
+      "grammar_tags": ["question", "verb_usage", "accusative_basic"]
+    },
+    {
+      "id": 3,
+      "en": "I hate cleaning.",
+      "pl": "Nienawidzę sprzątać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nienawidzę", "sprzątać"],
+      "grammar_tags": ["verb_usage", "two_verbs_rule"]
+    },
+    {
+      "id": 4,
+      "en": "How much did this pizza cost?",
+      "pl": "Ile kosztowała ta pizza?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ile", "kosztowała", "ta pizza"],
+      "grammar_tags": ["question", "verb_usage", "past_tense"]
+    },
+    {
+      "id": 5,
+      "en": "What does 'szukać' mean?",
+      "pl": "Co znaczy „szukać”?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["co znaczy", "szukać"],
+      "grammar_tags": ["question", "verb_usage"]
+    },
+    {
+      "id": 6,
+      "en": "I try to speak Polish every day.",
+      "pl": "Codziennie staram się / próbuję mówić po polsku.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Codziennie staram się mówić po polsku.", "Codziennie próbuję mówić po polsku."],
+      "focus_words": ["codziennie", "staram się", "próbuję", "mówić po polsku"],
+      "grammar_tags": ["verb_usage", "reflexive_verb", "two_verbs_rule"]
+    },
+    {
+      "id": 7,
+      "en": "They're building a new hospital near my house.",
+      "pl": "Budują nowy szpital niedaleko/blisko mojego domu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Budują nowy szpital blisko mojego domu."],
+      "focus_words": ["budują", "nowy szpital", "niedaleko", "blisko", "mojego domu"],
+      "grammar_tags": ["verb_usage", "genitive_after_blisko"]
+    },
+    {
+      "id": 8,
+      "en": "I hope things will get better (lit. I hope it will be better).",
+      "pl": "Mam nadzieję, że będzie lepiej.",
+      "literal_en": null,
+      "english_variants": ["I hope it will get better."],
+      "polish_alternatives": [],
+      "focus_words": ["mam nadzieję", "że", "będzie lepiej"],
+      "grammar_tags": ["verb_usage", "subordinate_clause", "future_tense"]
+    },
+    {
+      "id": 9,
+      "en": "Children like asking about lots of things.",
+      "pl": "Dzieci lubią pytać o dużo rzeczy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dzieci", "lubią pytać", "o dużo rzeczy"],
+      "grammar_tags": ["verb_usage", "two_verbs_rule"]
+    },
+    {
+      "id": 10,
+      "en": "Will you continue with the Polish course?",
+      "pl": "(Czy) będziesz kontynuować kurs polski?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy będziesz kontynuować kurs polskiego?"],
+      "focus_words": ["będziesz kontynuować", "kurs polski"],
+      "grammar_tags": ["question", "verb_usage", "future_tense"]
+    },
+    {
+      "id": 11,
+      "en": "Will you (pl.) be looking for a new flat?",
+      "pl": "(Czy) będziecie szukać nowego mieszkania?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Będziecie szukać nowego mieszkania?"],
+      "focus_words": ["będziecie szukać", "nowego mieszkania"],
+      "grammar_tags": ["question", "verb_usage", "future_tense", "genitive_after_szukac"]
+    },
+    {
+      "id": 12,
+      "en": "His sister is currently visiting Europe.",
+      "pl": "Jego siostra obecnie zwiedza Europę.",
+      "literal_en": null,
+      "english_variants": ["His sister is currently travelling around Europe."],
+      "polish_alternatives": ["Jego siostra aktualnie zwiedza Europę."],
+      "focus_words": ["jego siostra", "obecnie", "zwiedza Europę"],
+      "grammar_tags": ["verb_usage", "accusative_basic"]
+    },
+    {
+      "id": 13,
+      "en": "This woman is asking if it’s OK to park here.",
+      "pl": "Ta kobieta pyta, czy można tu/tutaj parkować.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta kobieta pyta, czy tutaj można parkować."],
+      "focus_words": ["ta kobieta", "pyta", "czy można parkować"],
+      "grammar_tags": ["verb_usage", "subordinate_clause"]
+    },
+    {
+      "id": 14,
+      "en": "What time are you leaving work today?",
+      "pl": "O której (godzinie) wychodzisz dzisiaj/dziś z pracy?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["O której wychodzisz dziś z pracy?"],
+      "focus_words": ["o której", "wychodzisz", "dziś", "z pracy"],
+      "grammar_tags": ["question", "verb_usage", "genitive_after_z", "time_expression"]
+    },
+    {
+      "id": 15,
+      "en": "We met on Friday.",
+      "pl": "Spotkaliśmy się w piątek.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["spotkaliśmy się", "w piątek"],
+      "grammar_tags": ["verb_usage", "past_tense", "reflexive_verb"]
+    },
+    {
+      "id": 16,
+      "en": "I’m finishing my workout late today.",
+      "pl": "Dzisiaj/Dziś kończę trening późno.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dziś kończę trening późno."],
+      "focus_words": ["dziś kończę", "trening", "późno"],
+      "grammar_tags": ["verb_usage", "present_tense"]
+    },
+    {
+      "id": 17,
+      "en": "I’m trying to change.",
+      "pl": "Staram/Próbuję się zmienić.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Staram się zmienić.", "Próbuję się zmienić."],
+      "focus_words": ["staram się", "próbuję się", "zmienić"],
+      "grammar_tags": ["verb_usage", "reflexive_verb", "two_verbs_rule"]
+    },
+    {
+      "id": 18,
+      "en": "Why is she crying?",
+      "pl": "Dlaczego ona płacze?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dlaczego płacze?"],
+      "focus_words": ["dlaczego", "ona płacze"],
+      "grammar_tags": ["question", "verb_usage"]
+    },
+    {
+      "id": 19,
+      "en": "Who’s bringing drinks and who’s bringing food to the picnic?",
+      "pl": "Kto przynosi napoje, a kto (przynosi) jedzenie na piknik?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kto przynosi napoje, a kto jedzenie na piknik?"],
+      "focus_words": ["kto przynosi napoje", "a kto", "jedzenie na piknik"],
+      "grammar_tags": ["question", "verb_usage", "contrast"]
+    },
+    {
+      "id": 20,
+      "en": "At weekends, we clean the entire flat together.",
+      "pl": "W weekendy razem sprzątamy całe mieszkanie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w weekendy", "razem sprzątamy", "całe mieszkanie"],
+      "grammar_tags": ["verb_usage", "accusative_basic"]
+    },
+    {
+      "id": 21,
+      "en": "Every morning (lit. Every day morning), we revise new words.",
+      "pl": "Codziennie rano powtarzaliśmy nowe słowa.",
+      "literal_en": null,
+      "english_variants": ["Every morning, we revised new words."],
+      "polish_alternatives": [],
+      "focus_words": ["codziennie rano", "powtarzaliśmy", "nowe słowa"],
+      "grammar_tags": ["verb_usage", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 22,
+      "en": "Our uncle spent his holidays there every year.",
+      "pl": "Nasz wujek co roku spędzał tam wakacje.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasz wujek", "co roku", "spędzał tam wakacje"],
+      "grammar_tags": ["verb_usage", "past_tense", "time_expression"]
+    },
+    {
+      "id": 23,
+      "en": "Where will we look for information on this topic?",
+      "pl": "Gdzie będziemy szukać informacji na ten temat?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie będziemy szukać", "informacji", "na ten temat"],
+      "grammar_tags": ["question", "verb_usage", "future_tense", "genitive_after_szukac"]
+    },
+    {
+      "id": 24,
+      "en": "We’re organising a birthday party for Magda.",
+      "pl": "Organizujemy imprezę urodzinową dla Magdy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["organizujemy", "imprezę urodzinową", "dla Magdy"],
+      "grammar_tags": ["verb_usage", "accusative_basic", "genitive_after_dla"]
+    },
+    {
+      "id": 25,
+      "en": "\"Will your mum show up (lit. be) too?\" \"Yes, she’s already here (lit. already is). She’s sitting in the front.\"",
+      "pl": "– (Czy) twoja mama też będzie? – Tak, już jest. Siedzi z przodu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Twoja mama też będzie? Tak, już jest. Siedzi z przodu."],
+      "focus_words": ["twoja mama też będzie", "tak", "już jest", "siedzi z przodu"],
+      "grammar_tags": ["dialogue", "verb_usage", "future_tense"]
+    },
+    {
+      "id": 26,
+      "en": "The plane tickets cost (past tense) a lot.",
+      "pl": "Bilety lotnicze dużo kosztowały.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["bilety lotnicze", "dużo kosztowały"],
+      "grammar_tags": ["verb_usage", "past_tense"]
+    },
+    {
+      "id": 27,
+      "en": "Tomorrow, we will look for a birthday present for her (lit. for a present for her birthday).",
+      "pl": "Jutro będziemy szukać prezentu na jej urodziny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jutro", "będziemy szukać", "prezentu", "na jej urodziny"],
+      "grammar_tags": ["verb_usage", "future_tense", "genitive_after_szukac"]
+    },
+    {
+      "id": 28,
+      "en": "I’m just finishing (making) dinner/lunch.",
+      "pl": "Właśnie kończę (robić) obiad.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Właśnie kończę obiad."],
+      "focus_words": ["właśnie kończę", "robić obiad"],
+      "grammar_tags": ["verb_usage", "present_tense"]
+    },
+    {
+      "id": 29,
+      "en": "Summer will be over soon.",
+      "pl": "Niedługo/Wkrótce kończy się lato.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wkrótce kończy się lato."],
+      "focus_words": ["niedługo", "wkrótce", "kończy się lato"],
+      "grammar_tags": ["verb_usage", "reflexive_verb", "time_expression"]
+    },
+    {
+      "id": 30,
+      "en": "I don’t have time to prepare anything.",
+      "pl": "Nie mam czasu nic przygotowywać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nie mam czasu", "nic przygotowywać"],
+      "grammar_tags": ["verb_usage", "negation", "two_verbs_rule"]
+    },
+    {
+      "id": 31,
+      "en": "Do you smoke, sir?",
+      "pl": "(Czy) pan pali?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pan pali?"],
+      "focus_words": ["pan", "pali"],
+      "grammar_tags": ["question", "verb_usage", "formal"]
+    },
+    {
+      "id": 32,
+      "en": "My fiancé brings fresh bread every morning.",
+      "pl": "Mój narzeczony codziennie rano przynosi świeży chleb.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój narzeczony", "codziennie rano", "przynosi", "świeży chleb"],
+      "grammar_tags": ["verb_usage", "time_expression", "accusative_basic"]
+    },
+    {
+      "id": 33,
+      "en": "They swim a lot when it’s hot.",
+      "pl": "(Oni) dużo pływają, kiedy jest gorąco.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dużo pływają", "kiedy jest gorąco"],
+      "grammar_tags": ["verb_usage", "subordinate_clause"]
+    },
+    {
+      "id": 34,
+      "en": "Did you sleep well, sir?",
+      "pl": "(Czy) dobrze pan spał?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dobrze pan spał?"],
+      "focus_words": ["dobrze", "pan spał"],
+      "grammar_tags": ["question", "verb_usage", "formal", "past_tense"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "budować",
+      "kontynuować",
+      "kończyć",
+      "kończyć się",
+      "kosztować",
+      "mieć nadzieję",
+      "nienawidzić",
+      "organizować",
+      "palić",
+      "parkować",
+      "płakać",
+      "pływać",
+      "powtarzać",
+      "prosić",
+      "próbować",
+      "przygotowywać",
+      "przynosić",
+      "pytać",
+      "siedzieć",
+      "spać",
+      "spędzać",
+      "spotkać się",
+      "sprzątać",
+      "stać",
+      "starać się",
+      "szukać",
+      "zgadzać się",
+      "znaczyć",
+      "zwiedzać"
+    ],
+    "sentence_cards_priority": [1, 2, 3, 6, 7, 8, 10, 11, 12, 13, 14, 15, 18, 19, 23, 24, 27, 29, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'I hope things will get better.'",
+      "correct_answer": "Mam nadzieję, że będzie lepiej.",
+      "distractors": [
+        "Mam nadzieję będzie lepiej.",
+        "Mam nadzieję na będzie lepiej.",
+        "Mam nadzieję, będzie lepiej."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Do you agree that life is beautiful?'",
+      "answer_pl": "Czy zgadzasz się, że życie jest piękne?",
+      "word_bank": ["Czy", "zgadzasz", "się", "że", "życie", "jest", "piękne"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Tomorrow, we will look for a birthday present for her.'",
+      "accepted_answers": [
+        "Jutro będziemy szukać prezentu na jej urodziny."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

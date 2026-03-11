@@ -1,0 +1,637 @@
+{
+  "section_number": 34,
+  "topic_en": "Geography",
+  "topic_pl": "Geografia",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "kontynent", "en": ["continent"], "category": "noun" },
+    { "pl": "kraj", "en": ["country"], "category": "noun" },
+    { "pl": "miasto", "en": ["city", "town"], "category": "noun" },
+    { "pl": "wieś", "en": ["countryside", "village"], "category": "noun" },
+    { "pl": "mapa", "en": ["map"], "category": "noun" },
+    { "pl": "wschód", "en": ["east"], "category": "noun" },
+    { "pl": "zachód", "en": ["west"], "category": "noun" },
+    { "pl": "północ", "en": ["north"], "category": "noun" },
+    { "pl": "południe", "en": ["south"], "category": "noun" },
+    { "pl": "pora roku", "en": ["season"], "category": "phrase" },
+    { "pl": "wiosna", "en": ["spring"], "category": "noun" },
+    { "pl": "lato", "en": ["summer"], "category": "noun" },
+    { "pl": "jesień", "en": ["autumn"], "category": "noun" },
+    { "pl": "zima", "en": ["winter"], "category": "noun" },
+    { "pl": "świat", "en": ["world"], "category": "noun" },
+    { "pl": "góra", "en": ["mountain"], "category": "noun" },
+    { "pl": "szczyt (górski)", "en": ["mountain top", "peak"], "category": "phrase" },
+    { "pl": "plaża", "en": ["beach"], "category": "noun" },
+    { "pl": "piasek", "en": ["sand"], "category": "noun" },
+    { "pl": "morze", "en": ["sea"], "category": "noun" },
+    { "pl": "ocean", "en": ["ocean"], "category": "noun" },
+    { "pl": "jezioro", "en": ["lake"], "category": "noun" },
+    { "pl": "wyspa", "en": ["island"], "category": "noun" },
+    { "pl": "fala", "en": ["wave"], "category": "noun" },
+    { "pl": "pustynia", "en": ["desert"], "category": "noun" },
+    { "pl": "jaskinia", "en": ["cave"], "category": "noun" },
+    { "pl": "powietrze", "en": ["air"], "category": "noun" },
+    { "pl": "chmura", "en": ["cloud"], "category": "noun" },
+    { "pl": "słońce", "en": ["the sun"], "category": "noun" },
+    { "pl": "księżyc", "en": ["the moon"], "category": "noun" },
+    { "pl": "gwiazda", "en": ["star"], "category": "noun" },
+    { "pl": "planeta", "en": ["planet"], "category": "noun" },
+    { "pl": "ziemia", "en": ["earth"], "category": "noun" },
+    { "pl": "miejsce", "en": ["place"], "category": "noun" },
+    { "pl": "widok", "en": ["view"], "category": "noun" },
+    { "pl": "zachodzić", "en": ["to set (of the sun)"], "category": "verb" },
+    { "pl": "wschód słońca", "en": ["sunrise"], "category": "phrase" },
+    { "pl": "zachód słońca", "en": ["sunset"], "category": "phrase" },
+    { "pl": "Ocean Spokojny", "en": ["the Pacific Ocean"], "category": "proper_noun" },
+    { "pl": "Ocean Atlantycki", "en": ["the Atlantic Ocean"], "category": "proper_noun" },
+    { "pl": "Ocean Indyjski", "en": ["the Indian Ocean"], "category": "proper_noun" },
+    { "pl": "Ocean Arktyczny", "en": ["the Arctic Ocean"], "category": "proper_noun" },
+    { "pl": "Ocean Południowy", "en": ["the Southern Ocean"], "category": "proper_noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "kraj_as_country_or_state",
+      "content": "A synonym for the noun 'kraj' (country) is 'państwo'. In different contexts, 'państwo' can also be a formal form of address meaning 'you' (plural/polite)."
+    },
+    {
+      "id": 2,
+      "topic": "na_swiecie_not_w_swiecie",
+      "content": "Say 'na świecie' for 'in the world', not 'w świecie'."
+    },
+    {
+      "id": 3,
+      "topic": "sun_related_phrases",
+      "content": "Useful sun-related phrases:",
+      "examples": [
+        "wschód słońca = sunrise",
+        "zachód słońca = sunset",
+        "wschodzić = to rise",
+        "zachodzić = to set"
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "names_of_oceans",
+      "content": "Polish names of the oceans:",
+      "examples": [
+        "Ocean Atlantycki = the Atlantic Ocean",
+        "Ocean Arktyczny = the Arctic Ocean",
+        "Ocean Spokojny = the Pacific Ocean",
+        "Ocean Indyjski = the Indian Ocean",
+        "Ocean Południowy = the Southern Ocean"
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "antarktyda_phrase",
+      "content": "You can say 'Antarktyda' or 'największa pustynia na świecie' in the sentence about Antarctica."
+    },
+    {
+      "id": 11,
+      "topic": "sciagac_synonym",
+      "content": "Remember that 'ściągać' (to download) is a synonym of 'pobierać'."
+    },
+    {
+      "id": 12,
+      "topic": "continents_names",
+      "content": "Names of all the continents:",
+      "examples": [
+        "Azja = Asia",
+        "Europa = Europe",
+        "Afryka = Africa",
+        "Australia = Australia",
+        "Ameryka Północna = North America",
+        "Ameryka Południowa = South America",
+        "Antarktyda = Antarctica"
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "zmienilem_zdanie",
+      "content": "Memorise: 'Zmieniłem (f.) zdanie' = 'I changed my mind.'"
+    },
+    {
+      "id": 15,
+      "topic": "na_do_nad_for_places",
+      "content": "To learn more about when to use 'na', 'do', and 'nad' with places, see the book's grammar notes. This section uses several travel/place patterns."
+    },
+    {
+      "id": 16,
+      "topic": "after_znalezc_accusative",
+      "content": "After the verb 'znaleźć' (to find), use the accusative case."
+    },
+    {
+      "id": 18,
+      "topic": "na_plus_locative_with_seasons",
+      "content": "In the sentence about spring or winter, after the preposition 'na', use the locative case."
+    },
+    {
+      "id": 18,
+      "topic": "na_plus_locative_with_moon",
+      "content": "In the sentence with 'look at the moon', the note says to use 'na' with the accusative for looking at something."
+    },
+    {
+      "id": 19,
+      "topic": "seasons_mistakes",
+      "content": "Do not confuse 'wiosna' and 'zima'. Also remember:",
+      "examples": [
+        "jesienią = in the autumn",
+        "latem = in the summer"
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "directions_with_na",
+      "content": "With names of directions, Polish uses 'na':",
+      "examples": [
+        "na północ = north",
+        "na południe = south",
+        "na zachód = west",
+        "na wschód = east"
+      ],
+      "content_note": "The note also pairs these with movement verbs and state/location verbs."
+    },
+    {
+      "id": 24,
+      "topic": "nad_and_po_for_bodies_of_water",
+      "content": "Use the preposition 'nad' before names of bodies of water like a lake or sea.",
+      "examples": [
+        "nad jeziorem = by the lake",
+        "nad morzem = by the sea"
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "jesienia_accusative",
+      "content": "After 'lubić' (to like), use the accusative case."
+    },
+    {
+      "id": 29,
+      "topic": "planet_names",
+      "content": "Planet names:",
+      "examples": [
+        "Jowisz = Jupiter",
+        "Saturn = Saturn",
+        "Wenus = Venus",
+        "Mars = Mars",
+        "Merkury = Mercury"
+      ]
+    },
+    {
+      "id": 32,
+      "topic": "o_plus_locative_when_many_places",
+      "content": "In sentences with 'o' referring to many places, use the locative plural."
+    },
+    {
+      "id": 33,
+      "topic": "nie_moge_sie_doczekac",
+      "content": "The phrase 'Nie mogę się doczekać' means 'I can't wait'."
+    },
+    {
+      "id": 34,
+      "topic": "wyspa_small_and_tylko_jedna",
+      "content": "The sentence uses 'tu/tutaj' and 'tylko jedna plaża' = 'only one beach'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "My country has a rich history and culture.",
+      "pl": "Mój kraj ma bogatą historię i kulturę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Moje państwo ma bogatą historię i kulturę."],
+      "focus_words": ["mój kraj", "ma bogatą historię i kulturę"],
+      "grammar_tags": ["geography", "accusative_basic"]
+    },
+    {
+      "id": 2,
+      "en": "What is the tallest mountain in the world?",
+      "pl": "Jaka jest najwyższa góra na świecie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jaka jest", "najwyższa góra", "na świecie"],
+      "grammar_tags": ["geography", "question", "superlative"]
+    },
+    {
+      "id": 3,
+      "en": "Look! The sun is starting to set.",
+      "pl": "Spójrz! Słońce zaczyna zachodzić.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["spójrz", "słońce", "zaczyna zachodzić"],
+      "grammar_tags": ["geography", "exclamation", "two_verbs_rule"]
+    },
+    {
+      "id": 4,
+      "en": "How big is the Pacific Ocean?",
+      "pl": "Jak duży jest Ocean Spokojny?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jak duży", "jest", "Ocean Spokojny"],
+      "grammar_tags": ["geography", "question"]
+    },
+    {
+      "id": 5,
+      "en": "It's my favourite place on earth.",
+      "pl": "To (jest) moje ulubione miejsce na ziemi.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To moje ulubione miejsce na ziemi."],
+      "focus_words": ["to jest", "moje ulubione miejsce", "na ziemi"],
+      "grammar_tags": ["geography", "fixed_expression"]
+    },
+    {
+      "id": 6,
+      "en": "The air is very fresh here. That's why she likes being here.",
+      "pl": "Powietrze jest tu/tutaj czyste/świeże. Dlatego (ona) lubi tu/tutaj być.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Powietrze jest tutaj świeże. Dlatego lubi tutaj być."],
+      "focus_words": ["powietrze jest tutaj świeże", "dlatego", "lubi tutaj być"],
+      "grammar_tags": ["geography", "two_verbs_rule", "subordinate_meaning"]
+    },
+    {
+      "id": 7,
+      "en": "This summer, we are going to the countryside. We'll be renovating our old house there.",
+      "pl": "Tego lata jedziemy na wieś. Będziemy remontować tam nasz stary dom.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["tego lata", "jedziemy na wieś", "będziemy remontować", "tam nasz stary dom"],
+      "grammar_tags": ["geography", "future_tense", "time_expression"]
+    },
+    {
+      "id": 8,
+      "en": "When it rains, the sky is grey.",
+      "pl": "Kiedy pada (deszcz), niebo jest szare.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kiedy pada, niebo jest szare."],
+      "focus_words": ["kiedy pada", "niebo jest szare"],
+      "grammar_tags": ["geography", "weather", "subordinate_clause"]
+    },
+    {
+      "id": 9,
+      "en": "Antarctica is the biggest desert in the world.",
+      "pl": "Antarktyda jest największą pustynią na świecie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Antarktyda to największa pustynia na świecie."],
+      "focus_words": ["Antarktyda", "jest największą pustynią", "na świecie"],
+      "grammar_tags": ["geography", "superlative", "instrumental_basic"]
+    },
+    {
+      "id": 10,
+      "en": "In Poland, there's a sea in the north and mountains in the south.",
+      "pl": "W Polsce (na północy) jest morze, a na południu (są) góry.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["W Polsce jest morze na północy, a góry na południu."],
+      "focus_words": ["w Polsce", "na północy jest morze", "na południu są góry"],
+      "grammar_tags": ["geography", "locative", "directions"]
+    },
+    {
+      "id": 11,
+      "en": "We're downloading offline maps.",
+      "pl": "Pobieramy mapy offline.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ściągamy mapy offline."],
+      "focus_words": ["pobieramy", "mapy offline"],
+      "grammar_tags": ["geography", "accusative_basic"]
+    },
+    {
+      "id": 12,
+      "en": "I think Africa is the most beautiful continent in the world.",
+      "pl": "Myślę, że Afryka jest najpiękniejszym kontynentem na świecie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["myślę, że", "Afryka jest najpiękniejszym kontynentem", "na świecie"],
+      "grammar_tags": ["geography", "subordinate_clause", "superlative", "instrumental_basic"]
+    },
+    {
+      "id": 13,
+      "en": "The view was wonderful!",
+      "pl": "Widok był wspaniały!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["widok", "był wspaniały"],
+      "grammar_tags": ["geography", "past_tense", "exclamation"]
+    },
+    {
+      "id": 14,
+      "en": "This island makes a big impression.",
+      "pl": "Ta wyspa robi duże wrażenie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta wyspa", "robi duże wrażenie"],
+      "grammar_tags": ["geography", "fixed_expression"]
+    },
+    {
+      "id": 15,
+      "en": "I've changed my mind. We're going to the desert today, not tomorrow.",
+      "pl": "Zmieniłem zdanie. Jedziemy na pustynię dziś/dzisiaj, nie jutro.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zmieniłam zdanie. Jedziemy na pustynię dziś, nie jutro."],
+      "focus_words": ["zmieniłem zdanie", "jedziemy na pustynię", "dziś, nie jutro"],
+      "grammar_tags": ["geography", "past_tense", "travel", "negation"]
+    },
+    {
+      "id": 16,
+      "en": "We found a small cave.",
+      "pl": "Znaleźliśmy małą jaskinię.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["znaleźliśmy", "małą jaskinię"],
+      "grammar_tags": ["geography", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 17,
+      "en": "What is your favourite season?",
+      "pl": "Jaka jest twoja ulubiona pora roku?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jaka jest", "twoja ulubiona pora roku"],
+      "grammar_tags": ["geography", "question"]
+    },
+    {
+      "id": 18,
+      "en": "We sat on the sand and watched the stars.",
+      "pl": "Usiedliśmy na piasku i oglądaliśmy gwiazdy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["usiedliśmy na piasku", "i oglądaliśmy gwiazdy"],
+      "grammar_tags": ["geography", "past_tense", "locative", "accusative_basic"]
+    },
+    {
+      "id": 19,
+      "en": "I'd rather go west than go east.",
+      "pl": "Wolę jechać na zachód niż na wschód.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wolę jechać", "na zachód", "niż na wschód"],
+      "grammar_tags": ["geography", "comparison", "travel"]
+    },
+    {
+      "id": 20,
+      "en": "I'm going to be there in the spring or in the winter.",
+      "pl": "Będę tam wiosną lub zimą.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["będę tam", "wiosną", "lub zimą"],
+      "grammar_tags": ["geography", "future_tense", "instrumental_time"]
+    },
+    {
+      "id": 21,
+      "en": "I like to watch (lit. look at) the moon.",
+      "pl": "Lubię patrzeć na Księżyc.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Lubię oglądać księżyc."],
+      "focus_words": ["lubię patrzeć", "na Księżyc"],
+      "grammar_tags": ["geography", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 22,
+      "en": "I can see (lit. I see) some dark clouds. I think it's going to rain.",
+      "pl": "Widzę ciemne chmury. Myślę, że będzie padać (deszcz).",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Widzę ciemne chmury. Myślę, że będzie padać."],
+      "focus_words": ["widzę ciemne chmury", "myślę, że", "będzie padać"],
+      "grammar_tags": ["geography", "weather", "subordinate_clause", "future_tense"]
+    },
+    {
+      "id": 23,
+      "en": "The waves are too high today. I won't swim.",
+      "pl": "Fale są dziś/dzisiaj za/zbyt wysokie. Nie będę pływać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Fale są dzisiaj zbyt wysokie. Nie będę pływać."],
+      "focus_words": ["fale są zbyt wysokie", "nie będę pływać"],
+      "grammar_tags": ["geography", "future_tense", "negation"]
+    },
+    {
+      "id": 24,
+      "en": "I like the silence by the lake.",
+      "pl": "Lubię ciszę nad jeziorem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię ciszę", "nad jeziorem"],
+      "grammar_tags": ["geography", "accusative_basic", "instrumental_phrase"]
+    },
+    {
+      "id": 25,
+      "en": "The mountain top is close now (lit. already almost there we are).",
+      "pl": "Szczyt jest już blisko. Już prawie tam jesteśmy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["szczyt jest już blisko", "już prawie tam jesteśmy"],
+      "grammar_tags": ["geography", "adverbs"]
+    },
+    {
+      "id": 26,
+      "en": "We found a beautiful beach.",
+      "pl": "Znaleźliśmy piękną plażę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["znaleźliśmy", "piękną plażę"],
+      "grammar_tags": ["geography", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 27,
+      "en": "Soon you will be watching the sunset by the lake every day.",
+      "pl": "Niedługo/Wkrótce codziennie będziesz oglądać zachód słońca nad jeziorem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wkrótce codziennie będziesz oglądać zachód słońca nad jeziorem."],
+      "focus_words": ["niedługo", "codziennie", "będziesz oglądać", "zachód słońca", "nad jeziorem"],
+      "grammar_tags": ["geography", "future_tense", "time_expression"]
+    },
+    {
+      "id": 28,
+      "en": "In autumn, leaves change colour.",
+      "pl": "Jesienią liście zmieniają kolor.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jesienią", "liście zmieniają kolor"],
+      "grammar_tags": ["geography", "instrumental_time", "present_tense"]
+    },
+    {
+      "id": 29,
+      "en": "My son likes to read books about planets.",
+      "pl": "Mój syn lubi czytać książki o planetach.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój syn", "lubi czytać", "książki o planetach"],
+      "grammar_tags": ["geography", "two_verbs_rule", "locative_plural"]
+    },
+    {
+      "id": 30,
+      "en": "This time next week (lit. already in a week), this time, we'll be walking by the sea. I can't wait!",
+      "pl": "Już za tydzień o tej porze będziemy spacerować nad morzem. Nie mogę się doczekać!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["już za tydzień", "o tej porze", "będziemy spacerować", "nad morzem", "nie mogę się doczekać"],
+      "grammar_tags": ["geography", "future_tense", "time_expression", "fixed_expression"]
+    },
+    {
+      "id": 31,
+      "en": "What is the largest city in Poland?",
+      "pl": "Jakie jest największe miasto w Polsce?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jakie jest", "największe miasto", "w Polsce"],
+      "grammar_tags": ["geography", "question", "superlative", "locative"]
+    },
+    {
+      "id": 32,
+      "en": "A long time ago, we lived in this country.",
+      "pl": "Dawno temu mieszkaliśmy w tym kraju.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dawno temu", "mieszkaliśmy", "w tym kraju"],
+      "grammar_tags": ["geography", "past_tense", "locative"]
+    },
+    {
+      "id": 33,
+      "en": "The world is beautiful, isn't it?",
+      "pl": "Świat jest piękny, prawda?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["świat jest piękny", "prawda"],
+      "grammar_tags": ["geography", "question_tag"]
+    },
+    {
+      "id": 34,
+      "en": "This island is small. There's only one beach here.",
+      "pl": "Ta wyspa jest mała. Jest tu/tutaj tylko jedna plaża.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta wyspa jest mała. Jest tutaj tylko jedna plaża."],
+      "focus_words": ["ta wyspa jest mała", "jest tutaj tylko jedna plaża"],
+      "grammar_tags": ["geography", "description"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "kontynent",
+      "kraj",
+      "miasto",
+      "wieś",
+      "mapa",
+      "wschód",
+      "zachód",
+      "północ",
+      "południe",
+      "pora roku",
+      "wiosna",
+      "lato",
+      "jesień",
+      "zima",
+      "świat",
+      "góra",
+      "szczyt (górski)",
+      "plaża",
+      "piasek",
+      "morze",
+      "ocean",
+      "jezioro",
+      "wyspa",
+      "fala",
+      "pustynia",
+      "jaskinia",
+      "powietrze",
+      "chmura",
+      "słońce",
+      "księżyc",
+      "gwiazda",
+      "planeta",
+      "ziemia",
+      "miejsce",
+      "widok",
+      "wschód słońca",
+      "zachód słońca",
+      "Ocean Spokojny",
+      "Ocean Atlantycki",
+      "Ocean Indyjski",
+      "Ocean Arktyczny",
+      "Ocean Południowy"
+    ],
+    "sentence_cards_priority": [1, 2, 3, 4, 5, 7, 8, 9, 10, 12, 15, 17, 18, 19, 20, 22, 24, 27, 29, 30, 31, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'What is the tallest mountain in the world?'",
+      "correct_answer": "Jaka jest najwyższa góra na świecie?",
+      "distractors": [
+        "Która góra jest na świecie?",
+        "Jaka jest wysoka góra w świecie?",
+        "Co jest najwyższa góra na świecie?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'We found a beautiful beach.'",
+      "answer_pl": "Znaleźliśmy piękną plażę.",
+      "word_bank": ["Znaleźliśmy", "piękną", "plażę"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'The world is beautiful, isn't it?'",
+      "accepted_answers": [
+        "Świat jest piękny, prawda?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

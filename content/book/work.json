@@ -1,0 +1,638 @@
+{
+  "section_number": 35,
+  "topic_en": "Work",
+  "topic_pl": "Praca",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "firma", "en": ["company"], "category": "noun" },
+    { "pl": "biznes", "en": ["business"], "category": "noun" },
+    { "pl": "praca", "en": ["job", "work"], "category": "noun" },
+    { "pl": "pracownik", "en": ["employee", "worker"], "category": "noun" },
+    { "pl": "menedżer", "en": ["manager"], "category": "noun" },
+    { "pl": "szef", "en": ["boss"], "category": "noun" },
+    { "pl": "kolega z pracy", "en": ["colleague"], "category": "phrase" },
+    { "pl": "klient", "en": ["client", "customer"], "category": "noun" },
+    { "pl": "recepcja", "en": ["reception", "reception desk"], "category": "noun" },
+    { "pl": "biurko", "en": ["desk"], "category": "noun" },
+    { "pl": "dział", "en": ["department"], "category": "noun" },
+    { "pl": "zadanie", "en": ["task"], "category": "noun" },
+    { "pl": "podpisać", "en": ["to sign"], "category": "verb" },
+    { "pl": "zarobić", "en": ["to earn"], "category": "verb" },
+    { "pl": "zatrudnić", "en": ["to hire", "to employ"], "category": "verb" },
+    { "pl": "zwalniać", "en": ["to fire", "to sack"], "category": "verb" },
+    { "pl": "wypełnić", "en": ["to fill in a form"], "category": "verb" },
+    { "pl": "formularz", "en": ["form"], "category": "noun" },
+    { "pl": "spotkanie", "en": ["meeting"], "category": "noun" },
+    { "pl": "umowa", "en": ["contract"], "category": "noun" },
+    { "pl": "dokument", "en": ["document"], "category": "noun" },
+    { "pl": "prezentacja", "en": ["presentation"], "category": "noun" },
+    { "pl": "rozmowa kwalifikacyjna", "en": ["job interview"], "category": "phrase" },
+    { "pl": "doświadczenie", "en": ["experience"], "category": "noun" },
+    { "pl": "pensja", "en": ["salary"], "category": "noun" },
+    { "pl": "awans", "en": ["promotion"], "category": "noun" },
+    { "pl": "podwyżka", "en": ["pay rise"], "category": "noun" },
+    { "pl": "szkolenie", "en": ["training course", "training session"], "category": "noun" },
+    { "pl": "urlop", "en": ["holiday", "leave"], "category": "noun" },
+    { "pl": "wakacje", "en": ["holidays"], "category": "noun_plural" },
+    { "pl": "bezrobotny", "en": ["unemployed"], "category": "adjective" },
+    { "pl": "dział marketingu", "en": ["marketing department"], "category": "phrase" },
+    { "pl": "dział sprzedaży", "en": ["sales department"], "category": "phrase" },
+    { "pl": "dział finansowy", "en": ["finance department"], "category": "phrase" },
+    { "pl": "dział księgowości", "en": ["accounting department"], "category": "phrase" },
+    { "pl": "dział HR", "en": ["HR department"], "category": "phrase" },
+    { "pl": "dział kadr", "en": ["HR department"], "category": "phrase" },
+    { "pl": "pracować zdalnie", "en": ["to work remotely"], "category": "phrase" },
+    { "pl": "na recepcji", "en": ["at reception"], "category": "phrase" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "w_plus_locative",
+      "content": "After the preposition 'w' (in), usually the locative case is used."
+    },
+    {
+      "id": 2,
+      "topic": "work_remotely_expressions",
+      "content": "Useful expressions:",
+      "examples": [
+        "pracować zdalnie = to work remotely",
+        "praca zdalna = remote work/job"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "szukac_genitive",
+      "content": "After the verb 'szukać' (to look for), use the genitive case."
+    },
+    {
+      "id": 5,
+      "topic": "praca_collocations",
+      "content": "Useful collocations with 'praca':",
+      "examples": [
+        "szukać pracy = to look for work/a job",
+        "znaleźć pracę = to find a job",
+        "dostać pracę = to get a job",
+        "zmienić pracę = to change jobs"
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "glad_expression_variants",
+      "content": "Depending on context, 'I'm glad' can be expressed as 'cieszę się', 'jestem zadowolony', or 'zadowolona'."
+    },
+    {
+      "id": 7,
+      "topic": "documents_papiery",
+      "content": "In everyday language, documents are informally called 'papiery'."
+    },
+    {
+      "id": 10,
+      "topic": "w_pracy_locative",
+      "content": "After the preposition 'w' (in/at), use the locative case in the sentence about work."
+    },
+    {
+      "id": 11,
+      "topic": "kolega_false_friend",
+      "content": "Do not confuse Polish 'kolega' with English 'colleague'.",
+      "examples": [
+        "kolega = male friend / male acquaintance",
+        "koleżanka z pracy = female colleague from work"
+      ]
+    },
+    {
+      "id": 15,
+      "topic": "pensja_synonym",
+      "content": "Another word for 'pensja' is 'wynagrodzenie'."
+    },
+    {
+      "id": 16,
+      "topic": "starts_at_sharp",
+      "content": "Remember that 'równo o' means 'at + time + sharp'.",
+      "examples": [
+        "o ósmej = at eight",
+        "równo o ósmej = at eight sharp"
+      ]
+    },
+    {
+      "id": 18,
+      "topic": "widzec_past_note",
+      "content": "The note points back to the past-tense conjugation of 'widzieć' (to see)."
+    },
+    {
+      "id": 20,
+      "topic": "byc_plus_instrumental",
+      "content": "After the verb 'być' (to be), use the instrumental case."
+    },
+    {
+      "id": 21,
+      "topic": "expected_to_or_going_to",
+      "content": "The construction in the sentence can mean either 'to be going to' or 'to be supposed to' depending on context."
+    },
+    {
+      "id": 22,
+      "topic": "nic_dziwnego",
+      "content": "The expression 'nic dziwnego' means 'no wonder'."
+    },
+    {
+      "id": 23,
+      "topic": "rozmawiac_o_plus_locative",
+      "content": "Remember to use the locative case after 'rozmawiać o'."
+    },
+    {
+      "id": 26,
+      "topic": "szkolenie_vs_training",
+      "content": "In Polish, 'training' can be translated as 'szkolenie' or 'trening', but they are used differently.",
+      "examples": [
+        "szkolenie = a training session/course for improving professional skills",
+        "trening = physical training, sports practice"
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "umowa_types",
+      "content": "Common types of contracts:",
+      "examples": [
+        "umowa o pracę = employment contract",
+        "umowa na czas nieokreślony = permanent contract",
+        "umowa na okres próbny = trial period contract",
+        "umowa czasowa = fixed-term contract",
+        "umowa o dzieło = specific-task contract"
+      ]
+    },
+    {
+      "id": 29,
+      "topic": "rozmowa_o_prace_synonym",
+      "content": "'Rozmowa o pracę' is a synonym for 'rozmowa kwalifikacyjna'."
+    },
+    {
+      "id": 29,
+      "topic": "miec_plus_accusative",
+      "content": "After the verb 'mieć' (to have), use the accusative case."
+    },
+    {
+      "id": 30,
+      "topic": "floor_names",
+      "content": "In Polish, floor numbers differ from English wording:",
+      "examples": [
+        "na pierwszym piętrze = on the first floor",
+        "na drugim piętrze = on the second floor",
+        "na trzecim piętrze = on the third floor"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "both_work_and_job_praca",
+      "content": "Both 'work' and 'job' can often be translated as 'praca'."
+    },
+    {
+      "id": 34,
+      "topic": "department_names",
+      "content": "Department names in companies:",
+      "examples": [
+        "dział marketingu = marketing",
+        "dział sprzedaży = sales",
+        "dział finansowy = finance",
+        "dział księgowości = accounting",
+        "dział HR / dział kadr = HR"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "What company does your husband work for? / What company does your husband work in?",
+      "pl": "W jakiej firmie pracuje twój mąż?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w jakiej firmie", "pracuje", "twój mąż"],
+      "grammar_tags": ["work", "question", "locative"]
+    },
+    {
+      "id": 2,
+      "en": "I prefer to work in the office or remotely / at home?",
+      "pl": "(Czy) wolisz pracować w biurze, czy zdalnie / w domu?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wolisz pracować w biurze czy zdalnie?"],
+      "focus_words": ["wolisz pracować", "w biurze", "czy zdalnie"],
+      "grammar_tags": ["work", "question", "locative", "two_verbs_rule"]
+    },
+    {
+      "id": 3,
+      "en": "The HR department is looking for a new employee.",
+      "pl": "Dział HR szuka nowego pracownika.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dział kadr szuka nowego pracownika."],
+      "focus_words": ["dział HR", "szuka", "nowego pracownika"],
+      "grammar_tags": ["work", "genitive_after_szukac"]
+    },
+    {
+      "id": 4,
+      "en": "I'm glad that she got a new job.",
+      "pl": "Cieszę się, że dostała nową pracę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem zadowolony, że dostała nową pracę."],
+      "focus_words": ["cieszę się", "że dostała", "nową pracę"],
+      "grammar_tags": ["work", "subordinate_clause", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 5,
+      "en": "We'll have a long holiday in the summer / this summer.",
+      "pl": "Będziemy mieć długi urlop latem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Będziemy mieć długi urlop tego lata."],
+      "focus_words": ["będziemy mieć", "długi urlop", "latem"],
+      "grammar_tags": ["work", "future_tense", "accusative_basic"]
+    },
+    {
+      "id": 6,
+      "en": "Our manager is organising a training course/session this week.",
+      "pl": "Nasz menedżer w tym tygodniu organizuje szkolenie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasz menedżer", "w tym tygodniu", "organizuje szkolenie"],
+      "grammar_tags": ["work", "time_expression", "accusative_basic"]
+    },
+    {
+      "id": 7,
+      "en": "He started (lit. opened) his own business a few years ago.",
+      "pl": "(On) otworzył własny biznes kilka lat temu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["otworzył", "własny biznes", "kilka lat temu"],
+      "grammar_tags": ["work", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 8,
+      "en": "We clean all the desks every day.",
+      "pl": "Codziennie sprzątamy wszystkie biurka.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["codziennie", "sprzątamy", "wszystkie biurka"],
+      "grammar_tags": ["work", "accusative_basic", "frequency"]
+    },
+    {
+      "id": 9,
+      "en": "I hope (lit. I have hope that) we have all the necessary documents.",
+      "pl": "Mam nadzieję, że mamy wszystkie niezbędne dokumenty.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam nadzieję, że", "mamy", "wszystkie niezbędne dokumenty"],
+      "grammar_tags": ["work", "subordinate_clause", "accusative_basic"]
+    },
+    {
+      "id": 10,
+      "en": "I'm waiting for the keys at reception.",
+      "pl": "Czekam na klucze w recepcji.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czekam na klucze na recepcji."],
+      "focus_words": ["czekam na klucze", "w recepcji"],
+      "grammar_tags": ["work", "accusative_basic", "locative"]
+    },
+    {
+      "id": 11,
+      "en": "Do you know my colleague Łukasz?",
+      "pl": "(Czy) znasz mojego kolegę z pracy, Łukasza?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["znasz", "mojego kolegę z pracy", "Łukasza"],
+      "grammar_tags": ["work", "question", "accusative_basic"]
+    },
+    {
+      "id": 12,
+      "en": "We've got a meeting with a new client tomorrow.",
+      "pl": "Jutro mamy spotkanie z nowym klientem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jutro", "mamy spotkanie", "z nowym klientem"],
+      "grammar_tags": ["work", "time_expression", "instrumental_basic"]
+    },
+    {
+      "id": 13,
+      "en": "We hope (lit. We have hope that) our presentation was interesting.",
+      "pl": "Mamy nadzieję, że nasza prezentacja była ciekawa.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mamy nadzieję, że", "nasza prezentacja była ciekawa"],
+      "grammar_tags": ["work", "subordinate_clause", "past_tense"]
+    },
+    {
+      "id": 14,
+      "en": "Is it necessary for you to have any experience to get this job?",
+      "pl": "(Czy) musisz mieć jakieś doświadczenie, żeby dostać tę pracę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["musisz mieć", "jakieś doświadczenie", "żeby dostać tę pracę"],
+      "grammar_tags": ["work", "question", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 15,
+      "en": "What will your salary be?",
+      "pl": "Jaka będzie twoja pensja?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jakie będzie twoje wynagrodzenie?"],
+      "focus_words": ["jaka będzie", "twoja pensja"],
+      "grammar_tags": ["work", "question", "future_tense"]
+    },
+    {
+      "id": 16,
+      "en": "The meeting starts at eight o'clock sharp.",
+      "pl": "Spotkanie zaczyna się równo o ósmej.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["spotkanie", "zaczyna się", "równo o ósmej"],
+      "grammar_tags": ["work", "time_expression", "reflexive_verb"]
+    },
+    {
+      "id": 17,
+      "en": "Why do they fire people so often?",
+      "pl": "Dlaczego oni tak często zwalniają ludzi?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dlaczego", "tak często", "zwalniają ludzi"],
+      "grammar_tags": ["work", "question", "accusative_basic"]
+    },
+    {
+      "id": 18,
+      "en": "Have you seen my pen? It was (lit. was lying) on the desk.",
+      "pl": "(Czy) widziałeś mój długopis? Leżał na biurku.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Widziałeś mój długopis? Leżał na biurku."],
+      "focus_words": ["widziałeś mój długopis", "leżał na biurku"],
+      "grammar_tags": ["work", "question", "past_tense", "locative", "accusative_basic"]
+    },
+    {
+      "id": 19,
+      "en": "I have a new task for you today.",
+      "pl": "Mam dziś/dzisiaj dla ciebie nowe zadanie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mam dzisiaj dla ciebie nowe zadanie."],
+      "focus_words": ["mam dziś", "dla ciebie", "nowe zadanie"],
+      "grammar_tags": ["work", "accusative_basic", "time_expression"]
+    },
+    {
+      "id": 20,
+      "en": "Who is his boss?",
+      "pl": "Kto jest jego szefem?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kto jest", "jego szefem"],
+      "grammar_tags": ["work", "question", "instrumental_basic"]
+    },
+    {
+      "id": 21,
+      "en": "Where am I supposed to sign this form?",
+      "pl": "Gdzie mam podpisać ten formularz?",
+      "literal_en": null,
+      "english_variants": ["Where am I to sign this form?"],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie mam podpisać", "ten formularz"],
+      "grammar_tags": ["work", "question", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 22,
+      "en": "No wonder the boss is angry.",
+      "pl": "Nic dziwnego, że szef jest zły.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nic dziwnego", "że szef jest zły"],
+      "grammar_tags": ["work", "subordinate_clause", "fixed_expression"]
+    },
+    {
+      "id": 23,
+      "en": "Yesterday, we talked about his promotion for a long time.",
+      "pl": "Wczoraj długo rozmawialiśmy o jego awansie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wczoraj", "długo rozmawialiśmy", "o jego awansie"],
+      "grammar_tags": ["work", "past_tense", "locative"]
+    },
+    {
+      "id": 24,
+      "en": "Do you know any companies that are currently hiring (lit. new people)?",
+      "pl": "(Czy) znasz jakieś firmy, które aktualnie zatrudniają nowe osoby?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["znasz jakieś firmy", "które aktualnie zatrudniają", "nowe osoby"],
+      "grammar_tags": ["work", "question", "relative_clause", "accusative_basic"]
+    },
+    {
+      "id": 25,
+      "en": "My neighbour is unemployed so he's looking for a job.",
+      "pl": "Mój sąsiad jest bezrobotny, więc szuka pracy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój sąsiad", "jest bezrobotny", "więc szuka pracy"],
+      "grammar_tags": ["work", "genitive_after_szukac"]
+    },
+    {
+      "id": 26,
+      "en": "The training course/session will last all day.",
+      "pl": "Szkolenie będzie trwać cały dzień.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["szkolenie", "będzie trwać", "cały dzień"],
+      "grammar_tags": ["work", "future_tense", "time_expression"]
+    },
+    {
+      "id": 27,
+      "en": "Your contract expires (lit. ends) soon.",
+      "pl": "Umowa niedługo/Wkrótce kończy się twoja.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Twoja umowa niedługo się kończy.", "Wkrótce kończy się twoja umowa."],
+      "focus_words": ["umowa", "niedługo się kończy"],
+      "grammar_tags": ["work", "present_tense", "reflexive_verb"],
+      "note": "The printed line in the photo appears visually awkward; intended meaning is clearly 'Your contract will expire soon.'"
+    },
+    {
+      "id": 28,
+      "en": "How big was your last (pay) rise? I'd like to earn more.",
+      "pl": "Jak duża była twoja ostatnia podwyżka? Chciałbym więcej zarabiać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Chciałabym więcej zarabiać."],
+      "focus_words": ["jak duża była", "twoja ostatnia podwyżka", "chciałbym więcej zarabiać"],
+      "grammar_tags": ["work", "question", "past_tense", "two_verbs_rule"]
+    },
+    {
+      "id": 29,
+      "en": "I have a job interview today.",
+      "pl": "Mam dzisiaj/dziś rozmowę kwalifikacyjną.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mam dziś rozmowę o pracę."],
+      "focus_words": ["mam dziś", "rozmowę kwalifikacyjną"],
+      "grammar_tags": ["work", "accusative_basic", "time_expression"]
+    },
+    {
+      "id": 30,
+      "en": "Our office is on the third floor.",
+      "pl": "Nasze biuro jest na trzecim piętrze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasze biuro", "jest na trzecim piętrze"],
+      "grammar_tags": ["work", "locative"]
+    },
+    {
+      "id": 31,
+      "en": "I'm planning to change jobs (lit. the job). I have too much work, and I'm very tired.",
+      "pl": "Planuję zmienić pracę. Mam za dużo pracy i jestem bardzo zmęczony.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem bardzo zmęczona."],
+      "focus_words": ["planuję zmienić pracę", "mam za dużo pracy", "jestem bardzo zmęczony"],
+      "grammar_tags": ["work", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 32,
+      "en": "You can fill in this form online, sir.",
+      "pl": "Może pan wypełnić ten formularz online.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["może pan wypełnić", "ten formularz", "online"],
+      "grammar_tags": ["work", "formal_address", "accusative_basic"]
+    },
+    {
+      "id": 33,
+      "en": "When will you be ready to sign the contract, I wonder?",
+      "pl": "Kiedy będzie pan gotowy, żeby podpisać umowę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kiedy będzie pani gotowa, żeby podpisać umowę?"],
+      "focus_words": ["kiedy będzie pan gotowy", "żeby podpisać umowę"],
+      "grammar_tags": ["work", "question", "formal_address", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 34,
+      "en": "I work in the marketing department.",
+      "pl": "Pracuję w dziale marketingu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pracuję w dziale sprzedaży.", "Pracuję w dziale HR."],
+      "focus_words": ["pracuję", "w dziale marketingu"],
+      "grammar_tags": ["work", "locative"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "firma",
+      "biznes",
+      "praca",
+      "pracownik",
+      "menedżer",
+      "szef",
+      "kolega z pracy",
+      "klient",
+      "recepcja",
+      "biurko",
+      "dział",
+      "zadanie",
+      "podpisać",
+      "zarobić",
+      "zatrudnić",
+      "zwalniać",
+      "wypełnić",
+      "formularz",
+      "spotkanie",
+      "umowa",
+      "dokument",
+      "prezentacja",
+      "rozmowa kwalifikacyjna",
+      "doświadczenie",
+      "pensja",
+      "awans",
+      "podwyżka",
+      "szkolenie",
+      "urlop",
+      "wakacje",
+      "bezrobotny",
+      "dział marketingu",
+      "dział sprzedaży",
+      "dział finansowy",
+      "dział księgowości",
+      "dział HR",
+      "dział kadr",
+      "pracować zdalnie",
+      "na recepcji"
+    ],
+    "sentence_cards_priority": [1, 2, 3, 4, 5, 6, 9, 11, 12, 14, 15, 16, 20, 21, 22, 23, 24, 25, 28, 29, 31, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'The HR department is looking for a new employee.'",
+      "correct_answer": "Dział HR szuka nowego pracownika.",
+      "distractors": [
+        "Dział HR znajduje nowy pracownik.",
+        "Dział HR szuka nowy pracownik.",
+        "Dział HR ma nowego pracownika."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Our office is on the third floor.'",
+      "answer_pl": "Nasze biuro jest na trzecim piętrze.",
+      "word_bank": ["Nasze", "biuro", "jest", "na", "trzecim", "piętrze"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'I work in the marketing department.'",
+      "accepted_answers": [
+        "Pracuję w dziale marketingu."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

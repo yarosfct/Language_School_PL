@@ -1,0 +1,437 @@
+{
+  "section_number": 38,
+  "topic_en": "Culture & Art",
+  "topic_pl": "Kultura i sztuka",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "kino", "en": ["cinema"], "category": "noun" },
+    { "pl": "aktor", "en": ["actor"], "category": "noun" },
+    { "pl": "aktorka", "en": ["actress"], "category": "noun" },
+    { "pl": "reżyser", "en": ["director"], "category": "noun" },
+    { "pl": "film", "en": ["film", "movie"], "category": "noun" },
+    { "pl": "film akcji", "en": ["action film"], "category": "phrase" },
+    { "pl": "komedia", "en": ["comedy"], "category": "noun" },
+    { "pl": "film kryminalny", "en": ["detective film", "crime film"], "category": "phrase" },
+    { "pl": "horror", "en": ["horror film"], "category": "noun" },
+    { "pl": "bajka", "en": ["fairy tale"], "category": "noun" },
+    { "pl": "teatr", "en": ["theatre"], "category": "noun" },
+    { "pl": "sztuka (teatralna)", "en": ["play"], "category": "phrase" },
+    { "pl": "grać", "en": ["to play", "to act"], "category": "verb" },
+    { "pl": "scena", "en": ["stage", "scene"], "category": "noun" },
+    { "pl": "opera", "en": ["opera house", "opera"], "category": "noun" },
+    { "pl": "festiwal", "en": ["festival"], "category": "noun" },
+    { "pl": "wystawa", "en": ["exhibition"], "category": "noun" },
+    { "pl": "muzeum", "en": ["museum"], "category": "noun" },
+    { "pl": "nowoczesny", "en": ["modern"], "category": "adjective" },
+    { "pl": "obraz", "en": ["painting", "picture"], "category": "noun" },
+    { "pl": "rysować", "en": ["to draw"], "category": "verb" },
+    { "pl": "projektować", "en": ["to design"], "category": "verb" },
+    { "pl": "projektant", "en": ["designer"], "category": "noun" },
+    { "pl": "fotograf", "en": ["photographer"], "category": "noun" },
+    { "pl": "zdjęcie", "en": ["photo"], "category": "noun" },
+    { "pl": "literatura", "en": ["literature"], "category": "noun" },
+    { "pl": "powieść", "en": ["novel"], "category": "noun" },
+    { "pl": "wiersz", "en": ["poem"], "category": "noun" },
+    { "pl": "poezja", "en": ["poetry"], "category": "noun" },
+    { "pl": "znany", "en": ["famous"], "category": "adjective" },
+    { "pl": "główna rola", "en": ["main role", "lead role"], "category": "phrase" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "movie_genres",
+      "content": "Some Polish movie genres: komedia (comedy), musical, film science fiction, horror, film przygodowy (adventure film), film biograficzny (biopic)."
+    },
+    {
+      "id": 4,
+      "topic": "rezyser_vs_dyrektor",
+      "content": "The correct word for a film director is reżyser. Dyrektor usually means a manager or administrative director, not a film director."
+    },
+    {
+      "id": 7,
+      "topic": "widziales_vs_ogladasz",
+      "content": "Use widzieć for 'to see' and oglądać for 'to watch'.",
+      "examples": [
+        "Widziałeś ten nowy film? = Did you see that new film?",
+        "Oglądasz teraz ten film? = Are you watching that film now?"
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "kryminal_as_noun",
+      "content": "You can also say kryminał. In Polish, this noun can describe both a detective film and a detective story."
+    },
+    {
+      "id": 10,
+      "topic": "robic_zdjecia",
+      "content": "The plural noun zdjęcia often translates as photos. The expression robić zdjęcia means to take photos. After znać (to know), use the accusative case."
+    },
+    {
+      "id": 11,
+      "topic": "do_plus_genitive",
+      "content": "After the preposition do (for / to), use the genitive case."
+    },
+    {
+      "id": 13,
+      "topic": "przedstawienie",
+      "content": "Przedstawienie can be used as a synonym for sztuka and may also mean a performance."
+    },
+    {
+      "id": 14,
+      "topic": "czasowa_wystawa",
+      "content": "Wystawa czasowa means temporary exhibition."
+    },
+    {
+      "id": 16,
+      "topic": "powiesc_plural",
+      "content": "Powieść is the singular form; the plural is powieści."
+    },
+    {
+      "id": 17,
+      "topic": "na_pamiec",
+      "content": "Na pamięć means by heart (lit. on memory)."
+    },
+    {
+      "id": 18,
+      "topic": "opera_cases",
+      "content": "Opera can mean either opera or opera house. In the sentence with staging, use the locative case after w.",
+      "examples": [
+        "w operze = at the opera / in the opera house"
+      ]
+    },
+    {
+      "id": 19,
+      "topic": "ogladac_accusative",
+      "content": "After the verb oglądać (to watch), use the accusative case."
+    },
+    {
+      "id": 23,
+      "topic": "fairy_tales_vocab",
+      "content": "Useful fairy tale titles:",
+      "examples": [
+        "Śpiąca Królewna = Sleeping Beauty",
+        "Królewna Śnieżka i siedmiu krasnoludków = Snow White and the Seven Dwarfs",
+        "Alicja w Krainie Czarów = Alice's Adventures in Wonderland",
+        "Pinokio = Pinocchio",
+        "Księżniczka na ziarnku grochu = The Princess and the Pea",
+        "Calineczka = Thumbelina"
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "grac_accusative",
+      "content": "After the verb grać in the meaning 'to play a role', use the accusative case."
+    },
+    {
+      "id": 27,
+      "topic": "slyszec_o_locative",
+      "content": "After słyszeć (to hear) in the expression słyszeć o (hear about), use the locative case."
+    },
+    {
+      "id": 29,
+      "topic": "z_instrumental",
+      "content": "After the preposition z meaning with, use the instrumental case."
+    },
+    {
+      "id": 31,
+      "topic": "czytac_case",
+      "content": "Use the accusative case after the verb czytać (to read). With nowela, the adjective ending does not change in the example because nowela is feminine."
+    },
+    {
+      "id": 32,
+      "topic": "projektant_false_friend",
+      "content": "Projektant means designer. It is a common mistake to translate a long time ago as długi czas temu. The correct form is dawno temu."
+    },
+    {
+      "id": 33,
+      "topic": "od_plus_genitive_and_byc_instrumental",
+      "content": "After the preposition od (from), use the genitive case. After the verb być (to be), use the instrumental case where required."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "What kind of films do you like watching?",
+      "pl": "Jakie filmy lubisz oglądać?",
+      "grammar_tags": ["question", "accusative", "two_verbs_rule"]
+    },
+    {
+      "id": 2,
+      "en": "I like comedies the most.",
+      "pl": "Najbardziej lubię komedie.",
+      "grammar_tags": ["accusative"]
+    },
+    {
+      "id": 3,
+      "en": "Our son wants to be an actor, but I think it's a hard job (lit. profession).",
+      "pl": "Nasz syn chce być aktorem, ale myślę, że to trudny zawód.",
+      "grammar_tags": ["instrumental", "subordinate_clause"]
+    },
+    {
+      "id": 4,
+      "en": "Why did the director suddenly stop talking?",
+      "pl": "Dlaczego reżyser nagle przestał mówić?",
+      "grammar_tags": ["question", "past_tense", "two_verbs_rule"]
+    },
+    {
+      "id": 5,
+      "en": "This horror film was very good and there were great special effects.",
+      "pl": "Ten horror był bardzo dobry i były świetne efekty specjalne.",
+      "grammar_tags": ["past_tense"]
+    },
+    {
+      "id": 6,
+      "en": "We were in Gdańsk, we visited the new museum in Gdańsk.",
+      "pl": "W Gdańsku zwiedzaliśmy nowe muzeum.",
+      "grammar_tags": ["past_tense", "accusative", "locative"]
+    },
+    {
+      "id": 7,
+      "en": "Have you seen/watched this film yet?",
+      "pl": "(Czy) widzieliście/oglądaliście już ten film?",
+      "grammar_tags": ["question", "past_tense", "accusative"]
+    },
+    {
+      "id": 8,
+      "en": "Do you like modern art?",
+      "pl": "(Czy) lubisz sztukę nowoczesną?",
+      "grammar_tags": ["question", "accusative"]
+    },
+    {
+      "id": 9,
+      "en": "It's not a detective film. It's an action film.",
+      "pl": "To nie (jest) film kryminalny. To (jest) film akcji.",
+      "grammar_tags": ["nominative"]
+    },
+    {
+      "id": 10,
+      "en": "Who took these photos? Do you know this photographer?",
+      "pl": "Kto robił te zdjęcia? Znasz tego fotografa?",
+      "grammar_tags": ["question", "past_tense", "accusative"]
+    },
+    {
+      "id": 11,
+      "en": "He got an Oscar for best actor.",
+      "pl": "On dostał Oscara dla najlepszego aktora.",
+      "grammar_tags": ["past_tense", "genitive"]
+    },
+    {
+      "id": 12,
+      "en": "What are they playing at the cinema now?",
+      "pl": "Co grają teraz w kinie?",
+      "grammar_tags": ["question", "locative"]
+    },
+    {
+      "id": 13,
+      "en": "Have you heard about their newest theatre?",
+      "pl": "(Czy) słyszałeś o ich najnowszej sztuce teatralnej?",
+      "grammar_tags": ["question", "past_tense", "locative"]
+    },
+    {
+      "id": 14,
+      "en": "There's an interesting temporary exhibition at the museum.",
+      "pl": "W muzeum jest ciekawa wystawa czasowa.",
+      "grammar_tags": ["locative"]
+    },
+    {
+      "id": 15,
+      "en": "I don't understand poetry.",
+      "pl": "Nie rozumiem poezji.",
+      "grammar_tags": ["negation", "genitive"]
+    },
+    {
+      "id": 16,
+      "en": "I'm interested in literature. I love reading classic novels.",
+      "pl": "Interesuję się literaturą. Kocham czytać klasyczne powieści.",
+      "grammar_tags": ["instrumental", "accusative", "two_verbs_rule"]
+    },
+    {
+      "id": 17,
+      "en": "Do you really know this poem by heart?",
+      "pl": "Naprawdę znasz ten wiersz na pamięć?",
+      "grammar_tags": ["question", "accusative"]
+    },
+    {
+      "id": 18,
+      "en": "Will this play be staged at the theatre or at the opera?",
+      "pl": "(Czy) ta sztuka będzie w teatrze, czy w operze?",
+      "grammar_tags": ["question", "future_tense", "locative"]
+    },
+    {
+      "id": 19,
+      "en": "We can't stop laughing when we watch this film.",
+      "pl": "Nie możemy przestać się śmiać, kiedy oglądamy ten film.",
+      "grammar_tags": ["negation", "subordinate_clause", "accusative"]
+    },
+    {
+      "id": 20,
+      "en": "Adam studied drawing (lit. to draw) when he was very young.",
+      "pl": "Adam uczył się rysować, kiedy był bardzo młody.",
+      "grammar_tags": ["past_tense", "subordinate_clause", "two_verbs_rule"]
+    },
+    {
+      "id": 21,
+      "en": "The film festival will be held in Venice, right?",
+      "pl": "Ten festiwal filmowy będzie w Wenecji, prawda?",
+      "grammar_tags": ["future_tense", "locative"]
+    },
+    {
+      "id": 22,
+      "en": "They're designing a modern museum in the city centre.",
+      "pl": "(Oni) projektują nowoczesne muzeum w centrum miasta.",
+      "grammar_tags": ["accusative", "locative", "genitive"]
+    },
+    {
+      "id": 23,
+      "en": "What was your favourite fairy tale when you were a child?",
+      "pl": "Jaka była twoja ulubiona bajka, kiedy byłeś dzieckiem?",
+      "grammar_tags": ["question", "past_tense", "instrumental", "subordinate_clause"]
+    },
+    {
+      "id": 24,
+      "en": "This actress will play the lead role.",
+      "pl": "Ta aktorka będzie grać główną rolę.",
+      "grammar_tags": ["future_tense", "accusative"]
+    },
+    {
+      "id": 25,
+      "en": "Mona Lisa is a very famous painting by da Vinci.",
+      "pl": "Mona Lisa to bardzo znany obraz da Vinci.",
+      "grammar_tags": ["nominative"]
+    },
+    {
+      "id": 26,
+      "en": "The actress who/that played the main role was fantastic.",
+      "pl": "Aktorka, która grała główną rolę, była fantastyczna.",
+      "grammar_tags": ["past_tense", "relative_clause", "accusative"]
+    },
+    {
+      "id": 27,
+      "en": "I've heard about this festival.",
+      "pl": "Słyszałem o tym festiwalu.",
+      "grammar_tags": ["past_tense", "locative"]
+    },
+    {
+      "id": 28,
+      "en": "Can I take photos here, please? (lit. Is it possible to make here photos?)",
+      "pl": "(Czy) można robić tutaj zdjęcia?",
+      "grammar_tags": ["question", "fixed_expression"]
+    },
+    {
+      "id": 29,
+      "en": "Did you see how well the children acted on stage?",
+      "pl": "(Czy) widzieliście, jak dobrze dzieci grały na scenie?",
+      "grammar_tags": ["question", "past_tense", "subordinate_clause", "locative"]
+    },
+    {
+      "id": 30,
+      "en": "They bought the painting of (lit. with) a beautiful sunset.",
+      "pl": "Kupili obraz z pięknym zachodem słońca.",
+      "grammar_tags": ["past_tense", "accusative", "instrumental", "genitive"]
+    },
+    {
+      "id": 31,
+      "en": "Today I'm starting to read a new novel.",
+      "pl": "Dziś/Dzisiaj zaczynam czytać nową powieść.",
+      "grammar_tags": ["accusative", "two_verbs_rule"]
+    },
+    {
+      "id": 32,
+      "en": "This designer stopped designing a long time ago.",
+      "pl": "Ten projektant przestał projektować dawno temu.",
+      "grammar_tags": ["past_tense", "two_verbs_rule"]
+    },
+    {
+      "id": 33,
+      "en": "This celebrity's autograph (lit. An autograph from this celebrity) will be a cool souvenir.",
+      "pl": "Autograf od tego celebryty będzie fajną pamiątką.",
+      "grammar_tags": ["future_tense", "genitive", "instrumental"]
+    },
+    {
+      "id": 34,
+      "en": "What are the opening hours of the exhibition?",
+      "pl": "Jakie są godziny otwarcia wystawy?",
+      "grammar_tags": ["question", "genitive"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "kino",
+      "aktor",
+      "aktorka",
+      "reżyser",
+      "film",
+      "film akcji",
+      "komedia",
+      "film kryminalny",
+      "horror",
+      "bajka",
+      "teatr",
+      "sztuka teatralna",
+      "scena",
+      "opera",
+      "festiwal",
+      "wystawa",
+      "muzeum",
+      "obraz",
+      "fotograf",
+      "powieść",
+      "wiersz",
+      "poezja",
+      "główna rola"
+    ],
+    "sentence_cards_priority": [1, 4, 7, 8, 13, 17, 18, 19, 23, 24, 26, 28, 29, 33, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Do you really know this poem by heart?'",
+      "correct_answer": "Naprawdę znasz ten wiersz na pamięć?",
+      "distractors": [
+        "Naprawdę oglądasz ten wiersz na pamięć?",
+        "Naprawdę znasz tę poezję w pamięci?",
+        "Naprawdę czytasz ten wiersz do pamięci?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'This actress will play the lead role.'",
+      "answer_pl": "Ta aktorka będzie grać główną rolę.",
+      "word_bank": ["Ta", "aktorka", "będzie", "grać", "główną", "rolę"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'I've heard about this festival.'",
+      "accepted_answers": [
+        "Słyszałem o tym festiwalu.",
+        "Słyszałam o tym festiwalu."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

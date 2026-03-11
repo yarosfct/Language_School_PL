@@ -1,0 +1,492 @@
+{
+  "section_number": 37,
+  "topic_en": "Computers & the Internet",
+  "topic_pl": "Komputery i internet",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "internet", "en": ["internet"], "category": "noun" },
+    { "pl": "komputer", "en": ["computer", "PC"], "category": "noun" },
+    { "pl": "laptop", "en": ["laptop"], "category": "noun" },
+    { "pl": "drukarka", "en": ["printer"], "category": "noun" },
+    { "pl": "ekran", "en": ["screen"], "category": "noun" },
+    { "pl": "myszka", "en": ["mouse"], "category": "noun" },
+    { "pl": "ładowarka", "en": ["charger"], "category": "noun" },
+    { "pl": "słuchawki", "en": ["headphones"], "category": "noun_plural" },
+    { "pl": "głośnik", "en": ["speaker"], "category": "noun" },
+    { "pl": "pendrive", "en": ["pen drive", "memory stick"], "category": "noun" },
+    { "pl": "plik", "en": ["file"], "category": "noun" },
+    { "pl": "pulpit", "en": ["desktop"], "category": "noun" },
+    { "pl": "aplikacja", "en": ["application", "app"], "category": "noun" },
+    { "pl": "e-mail", "en": ["e-mail", "e-mail address"], "category": "noun" },
+    { "pl": "skrzynka pocztowa", "en": ["mailbox"], "category": "phrase" },
+    { "pl": "wiadomość", "en": ["message"], "category": "noun" },
+    { "pl": "załącznik", "en": ["attachment"], "category": "noun" },
+    { "pl": "hasło", "en": ["password"], "category": "noun" },
+    { "pl": "strona internetowa", "en": ["website"], "category": "phrase" },
+    { "pl": "online", "en": ["online"], "category": "adverb" },
+    { "pl": "zainstalować", "en": ["to install"], "category": "verb" },
+    { "pl": "usuwać", "en": ["to delete"], "category": "verb" },
+    { "pl": "pobierać", "en": ["to download"], "category": "verb" },
+    { "pl": "zalogować się", "en": ["to log in"], "category": "verb" },
+    { "pl": "wylogować się", "en": ["to log out"], "category": "verb" },
+    { "pl": "włączyć", "en": ["to turn on", "to switch on"], "category": "verb" },
+    { "pl": "rozładowany", "en": ["dead", "flat (battery)"], "category": "adjective" },
+    { "pl": "połączenie", "en": ["connection"], "category": "noun" },
+    { "pl": "zapisać", "en": ["to save"], "category": "verb" },
+    { "pl": "mikrofon", "en": ["microphone", "mic"], "category": "noun" },
+    { "pl": "konto", "en": ["account"], "category": "noun" },
+    { "pl": "Wi-Fi", "en": ["Wi-Fi"], "category": "noun" },
+    { "pl": "kopiować", "en": ["to copy"], "category": "verb" },
+    { "pl": "małpa", "en": ["at sign"], "category": "noun_symbol" },
+    { "pl": "kropka", "en": ["dot"], "category": "noun_symbol" },
+    { "pl": "myślnik", "en": ["dash"], "category": "noun_symbol" },
+    { "pl": "podkreślnik", "en": ["underscore"], "category": "noun_symbol" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "aplikacja_shortened",
+      "content": "Informally, 'aplikacja' can be shortened to 'apka' (app)."
+    },
+    {
+      "id": 3,
+      "topic": "rozladowana_bateria",
+      "content": "You can colloquially say 'bateria padła' for 'the battery is dead/flat'."
+    },
+    {
+      "id": 4,
+      "topic": "z_plus_genitive",
+      "content": "After the preposition 'z' meaning 'from', use the genitive case."
+    },
+    {
+      "id": 5,
+      "topic": "daleko_od_genitive",
+      "content": "After 'blisko' and 'daleko od', use the genitive case.",
+      "examples": [
+        "Sklep jest blisko domu. = The shop is close to home.",
+        "Sklep jest daleko od mojego domu. = The shop is far from my home."
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "bon_zgubic_and_stracic",
+      "content": "Both 'zgubić' and 'stracić' can translate as 'to lose', but they differ. 'Zgubić' is used when you can't find something because you misplaced it. 'Stracić' can mean lose more generally, including losing money, time, a connection, an opportunity, etc."
+    },
+    {
+      "id": 9,
+      "topic": "pobrac_accusative",
+      "content": "After the verb 'pobrać / pobierać' (to download), use the accusative case. A synonym is 'ściągnąć'."
+    },
+    {
+      "id": 15,
+      "topic": "email_symbols",
+      "content": "In the table of email-related terms, you will also find names of symbols used in email and web addresses:",
+      "examples": [
+        "@ = małpa",
+        ". = kropka",
+        "- = myślnik",
+        "_ = podkreślnik"
+      ]
+    },
+    {
+      "id": 17,
+      "topic": "co_jest_nie_tak",
+      "content": "The phrase 'Co jest nie tak?' translates as 'What's wrong?' and is perfectly OK. It means wrong or not right."
+    },
+    {
+      "id": 18,
+      "topic": "z_plus_instrumental",
+      "content": "After the preposition 'z' meaning 'with', use the instrumental case."
+    },
+    {
+      "id": 19,
+      "topic": "w_plus_locative",
+      "content": "After the preposition 'w' (where: in), usually the locative case is used."
+    },
+    {
+      "id": 20,
+      "topic": "information_uncountable",
+      "content": "Unlike English, the noun 'informacja' in Polish is countable. Its plural form is 'informacje'."
+    },
+    {
+      "id": 21,
+      "topic": "with_wifi_phrase",
+      "content": "You can use phrases like:",
+      "examples": [
+        "dobre Wi-Fi = good Wi-Fi",
+        "szybkie Wi-Fi = fast Wi-Fi",
+        "wolne Wi-Fi = slow Wi-Fi",
+        "słabe Wi-Fi = weak Wi-Fi"
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "zainstalowac_accusative",
+      "content": "After the verb 'zainstalować' (to install), use the accusative case."
+    },
+    {
+      "id": 22,
+      "topic": "strona_internetowa",
+      "content": "'Strona internetowa' literally means internet page."
+    },
+    {
+      "id": 26,
+      "topic": "wiadomosc_feminine",
+      "content": "The noun 'wiadomość' is feminine, so with this noun the form 'ta' is used."
+    },
+    {
+      "id": 27,
+      "topic": "na_plus_locative",
+      "content": "After the preposition 'na' meaning 'here: on', usually the locative case is used."
+    },
+    {
+      "id": 30,
+      "topic": "na_razie",
+      "content": "'Na razie' means 'for now' or 'so far', depending on context.",
+      "examples": [
+        "Na razie mieszkam z rodzicami. = For now I live with my parents.",
+        "Na razie! Do zobaczenia! = See you later / Bye for now!"
+      ]
+    },
+    {
+      "id": 32,
+      "topic": "z_plus_genitive_from",
+      "content": "After the preposition 'z' meaning 'from', use the genitive case."
+    },
+    {
+      "id": 34,
+      "topic": "wiadomosc_plural",
+      "content": "The noun 'wiadomość' has the plural form 'wiadomości'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "This application works very well.",
+      "pl": "Ta aplikacja działa bardzo dobrze.",
+      "focus_words": ["ta aplikacja", "działa bardzo dobrze"],
+      "grammar_tags": ["description"]
+    },
+    {
+      "id": 2,
+      "en": "I decided on a new laptop because the old one stopped working.",
+      "pl": "Zdecydowałem się na nowy laptop, bo stary przestał działać.",
+      "focus_words": ["zdecydowałem się na", "nowy laptop", "stary przestał działać"],
+      "grammar_tags": ["past_tense", "na_plus_accusative", "two_verbs_rule"]
+    },
+    {
+      "id": 3,
+      "en": "The battery is dead. Do you have a charger?",
+      "pl": "Bateria jest rozładowana. (Czy) masz ładowarkę?",
+      "focus_words": ["bateria jest rozładowana", "masz ładowarkę"],
+      "grammar_tags": ["question", "accusative_basic"]
+    },
+    {
+      "id": 4,
+      "en": "You can pick up the new mouse from the office.",
+      "pl": "Możesz odebrać nową myszkę z biura.",
+      "focus_words": ["możesz odebrać", "nową myszkę", "z biura"],
+      "grammar_tags": ["accusative_basic", "z_plus_genitive"]
+    },
+    {
+      "id": 5,
+      "en": "You're sitting too close to the screen.",
+      "pl": "Siedzisz za/zbyt blisko ekranu.",
+      "focus_words": ["siedzisz", "zbyt blisko", "ekranu"],
+      "grammar_tags": ["genitive_after_blisko"]
+    },
+    {
+      "id": 6,
+      "en": "Can I log in for a moment and log out later, please?",
+      "pl": "(Czy) mogę zalogować się na chwilę, a potem się wylogować?",
+      "focus_words": ["mogę zalogować się", "na chwilę", "a potem się wylogować"],
+      "grammar_tags": ["question", "two_verbs_rule", "reflexive_verb"]
+    },
+    {
+      "id": 7,
+      "en": "Did anyone else lose the connection?",
+      "pl": "(Czy) ktoś jeszcze stracił połączenie?",
+      "focus_words": ["ktoś jeszcze", "stracił połączenie"],
+      "grammar_tags": ["question", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 8,
+      "en": "I only shop online.",
+      "pl": "Robię zakupy tylko przez internet.",
+      "focus_words": ["robię zakupy", "tylko przez internet"],
+      "grammar_tags": ["fixed_expression"]
+    },
+    {
+      "id": 9,
+      "en": "Have you downloaded this application yet?",
+      "pl": "(Czy) pobrałeś już tę aplikację?",
+      "focus_words": ["pobrałeś już", "tę aplikację"],
+      "grammar_tags": ["question", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 10,
+      "en": "Can you give me the Wi-Fi password (lit. the password to the Wi-Fi), please?",
+      "pl": "(Czy) możesz jej dać hasło do Wi-fi?",
+      "focus_words": ["możesz dać", "hasło do Wi-Fi"],
+      "grammar_tags": ["question", "accusative_basic"],
+      "note": "The printed Polish line appears to use 'jej', which may reflect a specific context or a print issue. Intended meaning is clearly about giving the Wi-Fi password."
+    },
+    {
+      "id": 11,
+      "en": "We will order computers with bigger screens this month as recently, we often do.",
+      "pl": "Będziemy zamawiać komputery z większym ekranem.",
+      "focus_words": ["będziemy zamawiać", "komputery", "z większym ekranem"],
+      "grammar_tags": ["future_tense", "instrumental_basic"]
+    },
+    {
+      "id": 12,
+      "en": "Who turned my computer off?",
+      "pl": "Kto wyłączył mój komputer?",
+      "focus_words": ["kto wyłączył", "mój komputer"],
+      "grammar_tags": ["question", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 13,
+      "en": "As you can see, I regularly clean up my desktop.",
+      "pl": "Jak widzisz, regularnie sprzątam pulpit.",
+      "focus_words": ["jak widzisz", "regularnie sprzątam", "pulpit"],
+      "grammar_tags": ["subordinate_clause", "accusative_basic"]
+    },
+    {
+      "id": 14,
+      "en": "Does this printer still work?",
+      "pl": "(Czy) ta drukarka jeszcze/nadal działa?",
+      "focus_words": ["ta drukarka", "jeszcze działa"],
+      "grammar_tags": ["question"]
+    },
+    {
+      "id": 15,
+      "en": "Can I have your e-mail address (lit. e-mail), please?",
+      "pl": "(Czy) mogę prosić o (twój) e-mail?",
+      "focus_words": ["mogę prosić o", "twój e-mail"],
+      "grammar_tags": ["question", "o_plus_accusative"]
+    },
+    {
+      "id": 16,
+      "en": "We want to borrow his speaker for the party.",
+      "pl": "Chcemy pożyczyć jego głośnik na imprezę.",
+      "focus_words": ["chcemy pożyczyć", "jego głośnik", "na imprezę"],
+      "grammar_tags": ["two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 17,
+      "en": "\"What's going on / What's wrong?\" \"I can't log in to my account.\"",
+      "pl": "– Co się dzieje? / Co jest nie tak? – Nie mogę się zalogować na moje konto.",
+      "focus_words": ["co się dzieje", "co jest nie tak", "nie mogę się zalogować", "na moje konto"],
+      "grammar_tags": ["question", "negation", "reflexive_verb"]
+    },
+    {
+      "id": 18,
+      "en": "Finally, we have a computer with a large screen.",
+      "pl": "W końcu mamy komputer z dużym ekranem.",
+      "focus_words": ["w końcu", "mamy komputer", "z dużym ekranem"],
+      "grammar_tags": ["instrumental_basic"]
+    },
+    {
+      "id": 19,
+      "en": "All the information is in the attachment.",
+      "pl": "Wszystkie informacje są w załączniku.",
+      "focus_words": ["wszystkie informacje", "są w załączniku"],
+      "grammar_tags": ["locative"]
+    },
+    {
+      "id": 20,
+      "en": "The Wi-Fi connection (lit. Wi-Fi) is weak here.",
+      "pl": "Wi-Fi jest tu/tutaj słabe.",
+      "focus_words": ["Wi-Fi", "jest tutaj słabe"],
+      "grammar_tags": ["description"]
+    },
+    {
+      "id": 21,
+      "en": "Do you (pl.) know how to install this application?",
+      "pl": "(Czy) wiecie, jak zainstalować tę aplikację?",
+      "focus_words": ["wiecie", "jak zainstalować", "tę aplikację"],
+      "grammar_tags": ["question", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 22,
+      "en": "It's worth checking (it) on their official website.",
+      "pl": "Warto to sprawdzić na ich oficjalnej stronie internetowej.",
+      "focus_words": ["warto to sprawdzić", "na ich oficjalnej stronie internetowej"],
+      "grammar_tags": ["two_verbs_rule", "locative"]
+    },
+    {
+      "id": 23,
+      "en": "Your mailbox is full.",
+      "pl": "Twoja skrzynka pocztowa jest pełna.",
+      "focus_words": ["twoja skrzynka pocztowa", "jest pełna"],
+      "grammar_tags": ["description"]
+    },
+    {
+      "id": 24,
+      "en": "We're wondering which headphones to choose.",
+      "pl": "Zastanawiamy się, które słuchawki wybrać.",
+      "focus_words": ["zastanawiamy się", "które słuchawki wybrać"],
+      "grammar_tags": ["reflexive_verb", "question_clause", "two_verbs_rule"]
+    },
+    {
+      "id": 25,
+      "en": "Did you turn on the printer? We are going to print invitations for our wedding.",
+      "pl": "(Czy) włączyłeś drukarkę? Będziemy drukować zaproszenia na nasz ślub.",
+      "focus_words": ["włączyłeś drukarkę", "będziemy drukować", "zaproszenia", "na nasz ślub"],
+      "grammar_tags": ["question", "past_tense", "future_tense", "accusative_basic"]
+    },
+    {
+      "id": 26,
+      "en": "That message was very important.",
+      "pl": "Ta wiadomość była bardzo ważna.",
+      "focus_words": ["ta wiadomość", "była bardzo ważna"],
+      "grammar_tags": ["past_tense"]
+    },
+    {
+      "id": 27,
+      "en": "You can save this file on the desktop.",
+      "pl": "Możesz zapisać ten plik na pulpicie.",
+      "focus_words": ["możesz zapisać", "ten plik", "na pulpicie"],
+      "grammar_tags": ["accusative_basic", "locative"]
+    },
+    {
+      "id": 28,
+      "en": "I (f.) bought headphones and a microphone.",
+      "pl": "Kupiłam słuchawki i mikrofon.",
+      "focus_words": ["kupiłam", "słuchawki", "i mikrofon"],
+      "grammar_tags": ["past_tense", "accusative_basic"]
+    },
+    {
+      "id": 29,
+      "en": "They always pay bills online.",
+      "pl": "Zawsze płacą rachunki przez internet / online.",
+      "focus_words": ["zawsze płacą", "rachunki", "przez internet"],
+      "grammar_tags": ["accusative_basic", "adverbs"]
+    },
+    {
+      "id": 30,
+      "en": "So far, we've only talked about it (lit. on it) for the time, not face to face.",
+      "pl": "Na razie rozmawialiśmy o tym tylko na czacie, nie twarzą w twarz.",
+      "focus_words": ["na razie", "rozmawialiśmy o tym", "tylko na czacie", "nie twarzą w twarz"],
+      "grammar_tags": ["past_tense", "locative", "fixed_expression"]
+    },
+    {
+      "id": 31,
+      "en": "When I was leaving for home, I logged out.",
+      "pl": "Wylogowałem się, kiedy wychodziłem do domu.",
+      "focus_words": ["wylogowałem się", "kiedy wychodziłem do domu"],
+      "grammar_tags": ["past_tense", "reflexive_verb", "subordinate_clause"]
+    },
+    {
+      "id": 32,
+      "en": "You can download this programme from the internet for free.",
+      "pl": "Możesz pobrać ten program z internetu za darmo.",
+      "focus_words": ["możesz pobrać", "ten program", "z internetu", "za darmo"],
+      "grammar_tags": ["accusative_basic", "z_plus_genitive"]
+    },
+    {
+      "id": 33,
+      "en": "Have you (pl.) copied the files onto your pen drive / memory stick?",
+      "pl": "(Czy) kopiujecie te pliki na pendrive?",
+      "focus_words": ["kopiujecie", "te pliki", "na pendrive"],
+      "grammar_tags": ["question", "accusative_basic"],
+      "note": "The English suggests a completed action, but the printed Polish appears present-tense. I kept the printed form."
+    },
+    {
+      "id": 34,
+      "en": "I'm just deleting some old messages.",
+      "pl": "Właśnie usuwam stare wiadomości.",
+      "focus_words": ["właśnie usuwam", "stare wiadomości"],
+      "grammar_tags": ["accusative_basic"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "internet",
+      "komputer",
+      "laptop",
+      "drukarka",
+      "ekran",
+      "myszka",
+      "ładowarka",
+      "słuchawki",
+      "głośnik",
+      "pendrive",
+      "plik",
+      "pulpit",
+      "aplikacja",
+      "e-mail",
+      "skrzynka pocztowa",
+      "wiadomość",
+      "załącznik",
+      "hasło",
+      "strona internetowa",
+      "online",
+      "zainstalować",
+      "usuwać",
+      "pobierać",
+      "zalogować się",
+      "wylogować się",
+      "włączyć",
+      "rozładowany",
+      "połączenie",
+      "zapisać",
+      "mikrofon",
+      "konto"
+    ],
+    "sentence_cards_priority": [1, 2, 3, 4, 6, 7, 9, 12, 14, 15, 17, 19, 21, 22, 24, 25, 27, 30, 31, 32, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'All the information is in the attachment.'",
+      "correct_answer": "Wszystkie informacje są w załączniku.",
+      "distractors": [
+        "Wszystka informacja jest na załączniku.",
+        "Wszystkie informacje są na załącznik.",
+        "Cała informacja jest w załącznik."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Your mailbox is full.'",
+      "answer_pl": "Twoja skrzynka pocztowa jest pełna.",
+      "word_bank": ["Twoja", "skrzynka", "pocztowa", "jest", "pełna"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Can I have your e-mail address, please?'",
+      "accepted_answers": [
+        "Czy mogę prosić o twój e-mail?",
+        "Mogę prosić o twój e-mail?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

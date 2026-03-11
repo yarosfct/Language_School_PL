@@ -1,0 +1,62 @@
+{
+  "test_number": 3,
+  "pages": [183, 184],
+  "answer_parts": [
+    {
+      "part_number": 1,
+      "type": "fill_in_the_gaps",
+      "has_fixed_answers": true
+    },
+    {
+      "part_number": 2,
+      "type": "matching",
+      "has_fixed_answers": true,
+      "format": "number_to_letter"
+    },
+    {
+      "part_number": 3,
+      "type": "crossword",
+      "has_fixed_answers": true,
+      "format": "completed_grid_and_word_list"
+    },
+    {
+      "part_number": 4,
+      "type": "multiple_choice",
+      "has_fixed_answers": true,
+      "format": "question_to_option_letter"
+    },
+    {
+      "part_number": 5,
+      "type": "translate_words_into_english",
+      "has_fixed_answers": true
+    },
+    {
+      "part_number": 6,
+      "type": "matching",
+      "has_fixed_answers": true,
+      "format": "grouped_number_to_letter"
+    },
+    {
+      "part_number": 7,
+      "type": "complete_by_adding_letters",
+      "has_fixed_answers": true
+    },
+    {
+      "part_number": 8,
+      "type": "opposites",
+      "has_fixed_answers": true
+    },
+    {
+      "part_number": 9,
+      "type": "choose_correct_translations",
+      "has_fixed_answers": true,
+      "format": "question_to_option_letter"
+    },
+    {
+      "part_number": 10,
+      "type": "sample_answers",
+      "has_fixed_answers": false,
+      "format": "model_responses"
+    }
+  ]
+}

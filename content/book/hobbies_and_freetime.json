@@ -1,0 +1,627 @@
+{
+  "section_number": 26,
+  "topic_en": "Hobbies & Free Time",
+  "topic_pl": "Hobby i czas wolny",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "hobby", "en": ["hobby"], "category": "noun" },
+    { "pl": "czas wolny", "en": ["free time"], "category": "phrase" },
+    { "pl": "grać", "en": ["to play"], "category": "verb" },
+    { "pl": "gra planszowa", "en": ["board game"], "category": "phrase" },
+    { "pl": "gra", "en": ["game"], "category": "noun" },
+    { "pl": "szachy", "en": ["chess"], "category": "noun_plural" },
+    { "pl": "zabawka", "en": ["toy"], "category": "noun" },
+    { "pl": "muzyka", "en": ["music"], "category": "noun" },
+    { "pl": "instrument", "en": ["instrument"], "category": "noun" },
+    { "pl": "kino", "en": ["cinema"], "category": "noun" },
+    { "pl": "badminton", "en": ["badminton"], "category": "noun" },
+    { "pl": "zakupy", "en": ["shopping"], "category": "noun_plural" },
+    { "pl": "siłownia", "en": ["gym"], "category": "noun" },
+    { "pl": "impreza", "en": ["party"], "category": "noun" },
+    { "pl": "malować", "en": ["to paint"], "category": "verb" },
+    { "pl": "słuchać", "en": ["to listen"], "category": "verb" },
+    { "pl": "kurs tańca", "en": ["dance course"], "category": "phrase" },
+    { "pl": "tańczyć", "en": ["to dance"], "category": "verb" },
+    { "pl": "iść na drinka", "en": ["to go for a drink"], "category": "phrase" },
+    { "pl": "pływać", "en": ["to swim"], "category": "verb" },
+    { "pl": "jeździć na rowerze", "en": ["to cycle", "to ride a bike"], "category": "phrase" },
+    { "pl": "spacerować", "en": ["to walk"], "category": "verb" },
+    { "pl": "zapisać się na", "en": ["to sign up for"], "category": "phrase" },
+    { "pl": "odpoczywać", "en": ["to rest"], "category": "verb" },
+    { "pl": "relaksować się", "en": ["to relax"], "category": "verb" },
+    { "pl": "robić zdjęcia", "en": ["to take photos"], "category": "phrase" },
+    { "pl": "chodzić po górach", "en": ["to go hiking in the mountains"], "category": "phrase" },
+    { "pl": "robić serial", "en": ["TV series"], "category": "noun_phrase_misread" },
+    { "pl": "oglądać serial", "en": ["to watch a (TV) series"], "category": "phrase" },
+    { "pl": "oglądać filmy", "en": ["to watch films"], "category": "phrase" },
+    { "pl": "pracować", "en": ["to work"], "category": "verb" },
+    { "pl": "ćwiczyć jogę", "en": ["to practise yoga"], "category": "phrase" },
+    { "pl": "medytować", "en": ["to meditate"], "category": "verb" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "dobry_at_something",
+      "content": "To say that someone is good or not good at something, use 'dobry/dobra + w' followed by the locative.",
+      "examples": [
+        "dobry w szachach"
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "grac_prepositions_and_cases",
+      "content": "After the verb 'grać' (to play), you can use different patterns depending on the meaning. Use 'w' or 'na' depending on context. Use 'na' to refer to playing a musical instrument.",
+      "examples": [
+        "grać w karty = to play cards",
+        "grać w gry = to play computer games",
+        "grać na pianinie = to play the piano",
+        "grać na skrzypcach = to play the violin",
+        "grać na perkusji/bębnach = to play the drums",
+        "grać na gitarze = to play the guitar"
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "sluchac_genitive",
+      "content": "'Słuchać' takes the genitive case. The note says to keep full forms like 'Jakiej muzyki słuchasz?' for now."
+    },
+    {
+      "id": 7,
+      "topic": "mountain_ranges_names",
+      "content": "The note gives names of southern Polish mountain ranges:",
+      "examples": [
+        "Sudety = the Sudetes",
+        "Beskidy = the Beskids",
+        "Bieszczady = the Bieszczady mountains"
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "jezdzic_rowerem_alternative",
+      "content": "You can also say 'jeździć rowerem' for 'to cycle / ride a bike'."
+    },
+    {
+      "id": 12,
+      "topic": "tanczyc_vs_taniec",
+      "content": "'Tańczyć' means to dance, while 'taniec' is the noun dance. Some borrowed dance names may stay unchanged in Polish.",
+      "examples": [
+        "bachata",
+        "tango",
+        "hip-hop"
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "zapisać_się_na_plus_accusative",
+      "content": "Use the preposition 'na' after 'zapisać się' and then the accusative case.",
+      "examples": [
+        "kurs polskiego"
+      ]
+    },
+    {
+      "id": 16,
+      "topic": "byc_zaproszonym",
+      "content": "The note says you can also say 'być zaproszonym' in a future + infinitive pattern in some contexts."
+    },
+    {
+      "id": 18,
+      "topic": "music_genres",
+      "content": "Examples of music genres:",
+      "examples": [
+        "rock",
+        "jazz",
+        "soul",
+        "funk"
+      ]
+    },
+    {
+      "id": 18,
+      "topic": "different_verbs_for_liking",
+      "content": "In Polish, different verbs can translate English 'to like':",
+      "examples": [
+        "lubić = like in general",
+        "podobać się = like / appeal to aesthetically",
+        "wyglądać (jak) = look like"
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "party_types",
+      "content": "Popular kinds of parties:",
+      "examples": [
+        "impreza rodzinna = family party",
+        "impreza urodzinowa = birthday party",
+        "impreza przebierana / bal przebierańców = fancy dress party"
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "isc_present_tense_reference",
+      "content": "The note reminds that the verb 'iść' (to go) is irregular and points back to an earlier chapter."
+    },
+    {
+      "id": 23,
+      "topic": "rozne_and_rozny",
+      "content": "'Różne/różny' can translate words like different, distinct, diverse, or various depending on context.",
+      "examples": [
+        "W zoo widzieliśmy różne zwierzęta. = At the zoo we saw different animals."
+      ]
+    },
+    {
+      "id": 25,
+      "topic": "three_vs_different_brands",
+      "content": "The note explains a nuance: 'mam trzy różne znaczki' emphasizes they are all different from one another, while 'mam trzy znaczki' just counts them."
+    },
+    {
+      "id": 27,
+      "topic": "w_halo_locative",
+      "content": "After the preposition 'w' ('in' the sense of inside a film/series/program context), use the locative case."
+    },
+    {
+      "id": 28,
+      "topic": "film_genres",
+      "content": "Examples of Polish film genre names:",
+      "examples": [
+        "gatunki filmowe",
+        "dramat",
+        "science fiction",
+        "thriller",
+        "komedia"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "gry_planszowe",
+      "content": "'Gry planszowe' translates as board games."
+    },
+    {
+      "id": 33,
+      "topic": "nature_translation",
+      "content": "In Polish, 'in nature' here is 'na łonie natury'. A more direct phrase is 'w naturze', but that does not fit this meaning."
+    },
+    {
+      "id": 34,
+      "topic": "with_someone_after_isc",
+      "content": "To translate phrases like 'with someone' after 'iść', Polish often uses 'z'.",
+      "examples": [
+        "iść z tobą do kina = to go to the cinema with you"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "She has a new hobby.",
+      "pl": "(Ona) ma nowe hobby.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ma", "nowe hobby"],
+      "grammar_tags": ["hobbies", "description"]
+    },
+    {
+      "id": 2,
+      "en": "How do you spend your free time?",
+      "pl": "Jak spędzasz czas wolny?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jak", "spędzasz", "czas wolny"],
+      "grammar_tags": ["hobbies", "question", "accusative_basic"]
+    },
+    {
+      "id": 3,
+      "en": "I’m not good at chess.",
+      "pl": "Nie jestem dobra w szachach.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie jestem dobry w szachach."],
+      "focus_words": ["nie jestem dobra", "w szachach"],
+      "grammar_tags": ["hobbies", "negation", "locative"]
+    },
+    {
+      "id": 4,
+      "en": "When I’m tired, I like resting here.",
+      "pl": "Kiedy jestem zmęczony, lubię tu/tutaj odpoczywać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kiedy jestem zmęczona, lubię tutaj odpoczywać."],
+      "focus_words": ["kiedy jestem zmęczony", "lubię tutaj odpoczywać"],
+      "grammar_tags": ["hobbies", "subordinate_clause", "two_verbs_rule"]
+    },
+    {
+      "id": 5,
+      "en": "How often do you play cards?",
+      "pl": "Jak często grasz w karty?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jak często", "grasz w karty"],
+      "grammar_tags": ["hobbies", "question"]
+    },
+    {
+      "id": 6,
+      "en": "My friend (f.) meditates every day and says that it really helps.",
+      "pl": "Moja przyjaciółka medytuje codziennie i mówi, że to bardzo pomaga.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja przyjaciółka", "medytuje codziennie", "mówi, że", "to bardzo pomaga"],
+      "grammar_tags": ["hobbies", "subordinate_clause"]
+    },
+    {
+      "id": 7,
+      "en": "I used to go to the cinema alone, and I really liked it.",
+      "pl": "Kiedyś chodziłem do kina sam i bardzo to lubiłem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kiedyś chodziłam do kina sama i bardzo to lubiłam."],
+      "focus_words": ["kiedyś", "chodziłem do kina sam", "bardzo to lubiłem"],
+      "grammar_tags": ["hobbies", "past_tense"]
+    },
+    {
+      "id": 8,
+      "en": "What kind of music do you like listening to?",
+      "pl": "Jakiej muzyki lubisz słuchać?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jakiej muzyki", "lubisz słuchać"],
+      "grammar_tags": ["hobbies", "question", "genitive_after_sluchac", "two_verbs_rule"]
+    },
+    {
+      "id": 9,
+      "en": "Next year I will ride a bike regularly to be in better shape.",
+      "pl": "W następnym/przyszłym roku będę regularnie jeździć na rowerze, żeby być w lepszej formie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["W przyszłym roku będę regularnie jeździć na rowerze, żeby być w lepszej formie."],
+      "focus_words": ["w następnym roku", "będę regularnie jeździć na rowerze", "żeby być w lepszej formie"],
+      "grammar_tags": ["hobbies", "future_tense", "subordinate_clause"]
+    },
+    {
+      "id": 10,
+      "en": "Is there a gym near here?",
+      "pl": "(Czy) niedaleko stąd jest jakaś siłownia?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Niedaleko stąd jest jakaś siłownia?"],
+      "focus_words": ["niedaleko stąd", "jest jakaś siłownia"],
+      "grammar_tags": ["hobbies", "question", "existential"]
+    },
+    {
+      "id": 11,
+      "en": "That’s why I go hiking in the mountains as often as I can.",
+      "pl": "Dlatego chodzę po górach tak często, jak mogę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dlatego", "chodzę po górach", "tak często, jak mogę"],
+      "grammar_tags": ["hobbies", "comparison"]
+    },
+    {
+      "id": 12,
+      "en": "Is your instrument new or used?",
+      "pl": "Używany instrument jest nowy, czy używany?",
+      "literal_en": "Your instrument is new, or used?",
+      "english_variants": ["Is your instrument new or second-hand?"],
+      "polish_alternatives": ["Twój instrument jest nowy czy używany?"],
+      "focus_words": ["instrument", "nowy", "czy używany"],
+      "grammar_tags": ["hobbies", "question"],
+      "quality_note": "The printed Polish appears odd here; a more natural version would be 'Twój instrument jest nowy czy używany?'"
+    },
+    {
+      "id": 13,
+      "en": "How long have you been dancing hip-hop?",
+      "pl": "Jak długo tańczysz hip-hop?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jak długo", "tańczysz hip-hop"],
+      "grammar_tags": ["hobbies", "question"]
+    },
+    {
+      "id": 14,
+      "en": "I would like to take professional photos.",
+      "pl": "Chciałbym robić profesjonalne zdjęcia.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Chciałabym robić profesjonalne zdjęcia."],
+      "focus_words": ["chciałbym", "robić profesjonalne zdjęcia"],
+      "grammar_tags": ["hobbies", "two_verbs_rule"]
+    },
+    {
+      "id": 15,
+      "en": "Weronika is planning to sign up for a dance course.",
+      "pl": "Weronika ma zamiar / zamierza zapisać się na kurs tańca.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Weronika zamierza zapisać się na kurs tańca."],
+      "focus_words": ["ma zamiar", "zamierza", "zapisać się na", "kurs tańca"],
+      "grammar_tags": ["hobbies", "reflexive_verb", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 16,
+      "en": "We’ve heard that you’re also invited to the party on Friday.",
+      "pl": "Słyszeliśmy, że też jesteś zaproszony na imprezę w piątek.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Słyszeliśmy, że też jesteś zaproszona na imprezę w piątek."],
+      "focus_words": ["słyszeliśmy, że", "też jesteś zaproszony", "na imprezę", "w piątek"],
+      "grammar_tags": ["hobbies", "subordinate_clause", "past_tense"]
+    },
+    {
+      "id": 17,
+      "en": "I’ll be practising yoga on the beach tomorrow morning. Do you want to join me?",
+      "pl": "Jutro rano będę ćwiczyć jogę na plaży. Chcesz dołączyć do mnie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jutro rano", "będę ćwiczyć jogę", "na plaży", "chcesz dołączyć do mnie"],
+      "grammar_tags": ["hobbies", "future_tense", "two_verbs_rule"]
+    },
+    {
+      "id": 18,
+      "en": "I like different types of music: rock, jazz, and soul.",
+      "pl": "Lubię różne rodzaje muzyki: rock, jazz i soul.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię", "różne rodzaje muzyki", "rock", "jazz", "soul"],
+      "grammar_tags": ["hobbies", "genitive_after_rodzaje"]
+    },
+    {
+      "id": 19,
+      "en": "Whose toy is this?",
+      "pl": "Czyja to (jest) zabawka?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czyja to zabawka?"],
+      "focus_words": ["czyja", "to zabawka"],
+      "grammar_tags": ["hobbies", "question"]
+    },
+    {
+      "id": 20,
+      "en": "Is it going to be a family party?",
+      "pl": "(Czy) to będzie impreza rodzinna?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To będzie impreza rodzinna?"],
+      "focus_words": ["to będzie", "impreza rodzinna"],
+      "grammar_tags": ["hobbies", "question", "future_tense"]
+    },
+    {
+      "id": 21,
+      "en": "Tomorrow I want to work all day and then go for a drink. Do you want to join us?",
+      "pl": "Jutro chcę pracować cały dzień, a potem iść na drinka. Chcesz dołączyć?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jutro chcę pracować", "cały dzień", "a potem", "iść na drinka", "chcesz dołączyć"],
+      "grammar_tags": ["hobbies", "two_verbs_rule", "subordinate_sequence"]
+    },
+    {
+      "id": 22,
+      "en": "I enjoy different activities, for example doing yoga, playing badminton or chess, or exercising yoga.",
+      "pl": "Lubię różne zajęcia, na przykład grać w badmintona albo ćwiczyć jogę.",
+      "literal_en": null,
+      "english_variants": ["I like different activities, for example playing badminton or practising yoga."],
+      "polish_alternatives": [],
+      "focus_words": ["lubię różne zajęcia", "na przykład", "grać w badmintona", "albo ćwiczyć jogę"],
+      "grammar_tags": ["hobbies", "two_verbs_rule"],
+      "quality_note": "The English printed example appears a bit awkward; the Polish sentence clearly gives badminton and yoga as examples."
+    },
+    {
+      "id": 23,
+      "en": "They’ve never learnt to swim.",
+      "pl": "(Oni) nigdy nie uczyli się pływać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nigdy nie uczyli się", "pływać"],
+      "grammar_tags": ["hobbies", "negation", "past_tense", "reflexive_verb"]
+    },
+    {
+      "id": 24,
+      "en": "I’m trying to watch Polish films, but I still don’t understand much.",
+      "pl": "Staram się / Próbuję oglądać polskie filmy, ale jeszcze nie rozumiem aż/zbyt dużo.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Staram się oglądać polskie filmy, ale jeszcze nie rozumiem zbyt dużo."],
+      "focus_words": ["staram się", "próbuję oglądać", "polskie filmy", "ale jeszcze nie rozumiem zbyt dużo"],
+      "grammar_tags": ["hobbies", "two_verbs_rule", "negation", "contrast"]
+    },
+    {
+      "id": 25,
+      "en": "When I paint, time passes quickly.",
+      "pl": "Kiedy maluję, czas szybko mija.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kiedy maluję", "czas szybko mija"],
+      "grammar_tags": ["hobbies", "subordinate_clause"]
+    },
+    {
+      "id": 26,
+      "en": "Kasia bought a new camera that takes better photos.",
+      "pl": "Kasia kupiła nowy aparat (fotograficzny), który robi lepsze zdjęcia.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kasia kupiła nowy aparat, który robi lepsze zdjęcia."],
+      "focus_words": ["Kasia kupiła nowy aparat", "który robi lepsze zdjęcia"],
+      "grammar_tags": ["hobbies", "past_tense", "relative_clause", "accusative_basic"]
+    },
+    {
+      "id": 27,
+      "en": "What’s on at the cinema now? (lit. What they’re playing at the cinema now?)",
+      "pl": "Co grają teraz w kinie?",
+      "literal_en": null,
+      "english_variants": ["What are they showing at the cinema now?"],
+      "polish_alternatives": [],
+      "focus_words": ["co grają", "teraz", "w kinie"],
+      "grammar_tags": ["hobbies", "question", "locative"]
+    },
+    {
+      "id": 28,
+      "en": "We’re planning on watching a (TV) series all weekend and eating delicious snacks all weekend.",
+      "pl": "Cały weekend będziemy oglądać serial. Jest pyszne. Przekąski.",
+      "literal_en": null,
+      "english_variants": ["We’ll be watching a TV series all weekend and eating delicious snacks all weekend."],
+      "polish_alternatives": [],
+      "focus_words": ["cały weekend", "będziemy oglądać serial", "pyszne przekąski"],
+      "grammar_tags": ["hobbies", "future_tense"],
+      "quality_note": "The printed Polish here appears fragmented/possibly affected by layout. A natural reconstruction would be: 'Cały weekend będziemy oglądać serial i jeść pyszne przekąski.'"
+    },
+    {
+      "id": 29,
+      "en": "I love shopping.",
+      "pl": "Kocham robić zakupy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kocham robić zakupy"],
+      "grammar_tags": ["hobbies", "two_verbs_rule"]
+    },
+    {
+      "id": 30,
+      "en": "Do you always hike alone in the mountains?",
+      "pl": "(Czy) zawsze chodzisz sam po górach?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy zawsze chodzisz sama po górach?"],
+      "focus_words": ["zawsze chodzisz sam", "po górach"],
+      "grammar_tags": ["hobbies", "question"]
+    },
+    {
+      "id": 31,
+      "en": "What board games do you recommend?",
+      "pl": "Jakie gry planszowe polecasz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jakie", "gry planszowe", "polecasz"],
+      "grammar_tags": ["hobbies", "question", "accusative_basic"]
+    },
+    {
+      "id": 32,
+      "en": "I’m wondering what would be better for me – a city bike or a mountain bike.",
+      "pl": "Zastanawiam się, co będzie dla mnie lepsze – rower miejski czy rower górski.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zastanawiam się", "co będzie dla mnie lepsze", "rower miejski", "rower górski"],
+      "grammar_tags": ["hobbies", "subordinate_clause", "future_tense", "reflexive_verb"]
+    },
+    {
+      "id": 33,
+      "en": "I relax best in nature.",
+      "pl": "Najlepiej relaksuję się na łonie natury.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["najlepiej", "relaksuję się", "na łonie natury"],
+      "grammar_tags": ["hobbies", "reflexive_verb", "fixed_expression"]
+    },
+    {
+      "id": 34,
+      "en": "I don’t want to go to the cinema with you.",
+      "pl": "Nie chcę iść z tobą do kina.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nie chcę iść", "z tobą", "do kina"],
+      "grammar_tags": ["hobbies", "negation", "two_verbs_rule"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "hobby",
+      "czas wolny",
+      "grać",
+      "gra planszowa",
+      "gra",
+      "szachy",
+      "zabawka",
+      "muzyka",
+      "instrument",
+      "kino",
+      "badminton",
+      "zakupy",
+      "siłownia",
+      "impreza",
+      "malować",
+      "słuchać",
+      "kurs tańca",
+      "tańczyć",
+      "iść na drinka",
+      "pływać",
+      "jeździć na rowerze",
+      "spacerować",
+      "zapisać się na",
+      "odpoczywać",
+      "relaksować się",
+      "robić zdjęcia",
+      "chodzić po górach",
+      "oglądać serial",
+      "oglądać filmy",
+      "ćwiczyć jogę",
+      "medytować"
+    ],
+    "sentence_cards_priority": [2, 5, 8, 9, 10, 11, 13, 15, 17, 18, 20, 21, 23, 24, 25, 26, 29, 31, 32, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'What kind of music do you like listening to?'",
+      "correct_answer": "Jakiej muzyki lubisz słuchać?",
+      "distractors": [
+        "Jaką muzykę lubisz słuchać?",
+        "Jaka muzyka lubisz słuchać?",
+        "Jakiej muzyki lubisz słuchasz?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'I love shopping.'",
+      "answer_pl": "Kocham robić zakupy.",
+      "word_bank": ["Kocham", "robić", "zakupy"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'I don’t want to go to the cinema with you.'",
+      "accepted_answers": [
+        "Nie chcę iść z tobą do kina."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true,
+    "quality_flags": [
+      "Section 26 sentence 12 appears misprinted in the provided image; a natural Polish reconstruction is included in the quality note.",
+      "Section 26 sentence 28 appears fragmented/misprinted in the provided image; the printed text is preserved as much as possible and a natural reconstruction is noted."
+    ]
+  }
+}

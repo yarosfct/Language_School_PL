@@ -1,0 +1,342 @@
+{
+  "section_number": 10,
+  "topic_en": "Colours",
+  "topic_pl": "Kolory",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "czarny", "en": ["black"], "category": "adjective" },
+    { "pl": "biały", "en": ["white"], "category": "adjective" },
+    { "pl": "niebieski", "en": ["blue"], "category": "adjective" },
+    { "pl": "zielony", "en": ["green"], "category": "adjective" },
+    { "pl": "czerwony", "en": ["red"], "category": "adjective" },
+    { "pl": "żółty", "en": ["yellow"], "category": "adjective" },
+    { "pl": "pomarańczowy", "en": ["orange"], "category": "adjective" },
+    { "pl": "różowy", "en": ["pink"], "category": "adjective" },
+    { "pl": "brązowy", "en": ["brown"], "category": "adjective" },
+    { "pl": "szary", "en": ["grey"], "category": "adjective" },
+    { "pl": "siwy", "en": ["grey", "grey-haired"], "category": "adjective" },
+    { "pl": "fioletowy", "en": ["purple"], "category": "adjective" },
+    { "pl": "złoty", "en": ["gold", "golden"], "category": "adjective" },
+    { "pl": "granatowy", "en": ["navy blue"], "category": "adjective" },
+    { "pl": "beżowy", "en": ["beige"], "category": "adjective" },
+    { "pl": "ciemny", "en": ["dark"], "category": "adjective" },
+    { "pl": "jasny", "en": ["light"], "category": "adjective" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "miec_accusative_and_wesele",
+      "content": "Use the accusative after the verb 'mieć' (to have). Also, 'wesele' means a wedding reception, while 'ślub' means wedding."
+    },
+    {
+      "id": 4,
+      "topic": "lubic_accusative",
+      "content": "Use the accusative after the verb 'lubić' (to like)."
+    },
+    {
+      "id": 5,
+      "topic": "meble_plural",
+      "content": "'Meble' (furniture) is a plural noun in Polish. Its singular form is 'mebel' (a piece of furniture)."
+    },
+    {
+      "id": 7,
+      "topic": "mixed_colours_hyphen",
+      "content": "When combining two colours into one mixed colour, the first adjective should end in -o and the two colours are joined with a hyphen.",
+      "examples": [
+        "szaro-zielony = grey-green",
+        "biało-czerwony = white-red"
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "flaga_polski",
+      "content": "The flag of Poland is 'flaga Polski'. Polish uses the declined form 'Polski' here, not 'Polska'."
+    },
+    {
+      "id": 9,
+      "topic": "pomadka",
+      "content": "Another word for 'szminka' (lipstick) is 'pomadka'."
+    },
+    {
+      "id": 9,
+      "topic": "podobac_sie_for_appearance",
+      "content": "If you want to say that you appreciate the look of something or somebody, it is often better to use 'podoba mi się' rather than 'lubię'."
+    },
+    {
+      "id": 10,
+      "topic": "kupic_accusative",
+      "content": "Use the accusative after the verb 'kupić' (to buy)."
+    },
+    {
+      "id": 13,
+      "topic": "pasowac",
+      "content": "The verb 'pasować' can mean to match, suit, or fit. With a singular noun, use the 3rd-person singular form 'pasuje'; with a plural noun, use 'pasują'.",
+      "examples": [
+        "Ten sweter na mnie nie pasuje, jest za duży. = This sweater doesn't fit me, it's too big.",
+        "Ten niebieski krawat idealnie pasuje do twojej koszuli. = This blue tie matches your shirt perfectly.",
+        "Ten kolor ci pasuje. = This colour suits you."
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "wlosy_plural",
+      "content": "'Włos' is the singular form of 'hair' (one hair). Hair on your head is usually expressed with the plural noun 'włosy'.",
+      "examples": [
+        "Jej włosy są piękne. = Her hair is beautiful."
+      ]
+    },
+    {
+      "id": 16,
+      "topic": "nie_stac_mnie_na",
+      "content": "'Nie stać mnie na...' means 'I can't afford...'. It is followed by the accusative.",
+      "examples": [
+        "Nie stać mnie na nowy samochód. = I can't afford a new car."
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "I have a blue dress for the wedding reception.",
+      "pl": "Mam niebieską sukienkę na wesele.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam", "niebieską sukienkę", "na wesele"],
+      "grammar_tags": ["accusative_basic", "clothes", "colour"]
+    },
+    {
+      "id": 2,
+      "en": "Where is my black jacket?",
+      "pl": "Gdzie jest moja czarna kurtka?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie", "moja", "czarna kurtka"],
+      "grammar_tags": ["question", "colour", "clothes"]
+    },
+    {
+      "id": 3,
+      "en": "Brown and purple cars aren't very popular.",
+      "pl": "Brązowe i fioletowe samochody nie są bardzo popularne.",
+      "literal_en": null,
+      "english_variants": ["Brown and purple cars are not very popular."],
+      "polish_alternatives": [],
+      "focus_words": ["brązowe", "fioletowe", "samochody", "nie są", "bardzo popularne"],
+      "grammar_tags": ["plural_adjectives", "negation", "colour"]
+    },
+    {
+      "id": 4,
+      "en": "Do you like dark chocolate?",
+      "pl": "(Czy) lubisz ciemną czekoladę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Lubisz ciemną czekoladę?"],
+      "focus_words": ["lubisz", "ciemną czekoladę"],
+      "grammar_tags": ["question", "accusative_basic", "food", "colour"]
+    },
+    {
+      "id": 5,
+      "en": "The beige furniture in the living room looks beautiful.",
+      "pl": "Beżowe meble w salonie wyglądają pięknie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["beżowe meble", "w salonie", "wyglądają pięknie"],
+      "grammar_tags": ["plural_noun", "appearance", "colour"]
+    },
+    {
+      "id": 6,
+      "en": "You've got beautiful golden earrings.",
+      "pl": "Masz piękne złote kolczyki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["masz", "piękne", "złote kolczyki"],
+      "grammar_tags": ["accusative_basic", "plural_noun", "colour"]
+    },
+    {
+      "id": 7,
+      "en": "She has grey-green eyes.",
+      "pl": "(Ona) ma szaro-zielone oczy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ma", "szaro-zielone oczy"],
+      "grammar_tags": ["mixed_colour", "accusative_basic", "body"]
+    },
+    {
+      "id": 8,
+      "en": "The flag of Poland is red and white (lit. white-red).",
+      "pl": "Flaga Polski jest biało-czerwona.",
+      "literal_en": "The flag of Poland is white-red.",
+      "english_variants": ["The flag of Poland is red and white."],
+      "polish_alternatives": [],
+      "focus_words": ["flaga Polski", "biało-czerwona"],
+      "grammar_tags": ["mixed_colour", "nationality_context"]
+    },
+    {
+      "id": 9,
+      "en": "I like this pink lipstick. I like light colours.",
+      "pl": "Podoba mi się ta różowa szminka. Lubię jasne kolory.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Podoba mi się ta różowa pomadka. Lubię jasne kolory."],
+      "focus_words": ["podoba mi się", "ta różowa szminka", "lubię", "jasne kolory"],
+      "grammar_tags": ["appearance_preference", "accusative_basic", "colour"]
+    },
+    {
+      "id": 10,
+      "en": "I'm planning to buy a navy-blue jacket for autumn.",
+      "pl": "Planuję kupić granatową kurtkę na jesień.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["planuję kupić", "granatową kurtkę", "na jesień"],
+      "grammar_tags": ["accusative_basic", "season_expression", "colour"]
+    },
+    {
+      "id": 11,
+      "en": "In my opinion, yellow will work (lit. be) better than purple.",
+      "pl": "Moim zdaniem żółty będzie lepszy niż fioletowy.",
+      "literal_en": "In my opinion, yellow will be better than purple.",
+      "english_variants": ["In my opinion, yellow will work better than purple."],
+      "polish_alternatives": [],
+      "focus_words": ["moim zdaniem", "żółty", "będzie lepszy", "niż", "fioletowy"],
+      "grammar_tags": ["opinion_phrase", "future_tense", "colour"]
+    },
+    {
+      "id": 12,
+      "en": "\"What's your favourite colour?\" \"I think it is (lit. I think that) pink or yellow.\"",
+      "pl": "– Jaki jest twój ulubiony kolor? – Myślę, że różowy albo/lub żółty.",
+      "literal_en": "I think that pink or yellow.",
+      "english_variants": ["What's your favourite colour? I think pink or yellow."],
+      "polish_alternatives": [],
+      "focus_words": ["jaki", "twój ulubiony kolor", "myślę, że", "różowy", "żółty"],
+      "grammar_tags": ["dialogue", "question", "colour"]
+    },
+    {
+      "id": 13,
+      "en": "I think that orange and navy-blue match quite well.",
+      "pl": "Myślę, że pomarańczowy i granatowy pasują całkiem dobrze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["myślę, że", "pomarańczowy", "granatowy", "pasują", "całkiem dobrze"],
+      "grammar_tags": ["subordinate_clause", "plural_verb", "colour"]
+    },
+    {
+      "id": 14,
+      "en": "Oh no! My first grey hair. I can't believe it!",
+      "pl": "O nie! Moje pierwsze siwe włosy. Nie mogę w to uwierzyć!",
+      "literal_en": null,
+      "english_variants": ["Oh no! My first grey hairs. I can't believe it!"],
+      "polish_alternatives": [],
+      "focus_words": ["o nie", "moje pierwsze siwe włosy", "nie mogę w to uwierzyć"],
+      "grammar_tags": ["hair", "exclamation", "colour"]
+    },
+    {
+      "id": 15,
+      "en": "Is this white pen drive yours?",
+      "pl": "(Czy) ten biały pendrive jest twój?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ten biały pendrive jest twój?"],
+      "focus_words": ["ten biały pendrive", "jest twój"],
+      "grammar_tags": ["question", "colour", "object"]
+    },
+    {
+      "id": 16,
+      "en": "I can't afford a new suit. Do you think my old green one will be good?",
+      "pl": "Nie stać mnie na nowy garnitur. (Czy) myślisz, że mój stary zielony będzie dobry?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie stać mnie na nowy garnitur. Myślisz, że mój stary zielony będzie dobry?"],
+      "focus_words": ["nie stać mnie na", "nowy garnitur", "myślisz, że", "mój stary zielony", "będzie dobry"],
+      "grammar_tags": ["subordinate_clause", "question", "colour", "clothes"]
+    },
+    {
+      "id": 17,
+      "en": "I like wearing this brown sweater/jumper.",
+      "pl": "Lubię nosić ten brązowy sweter.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię nosić", "ten brązowy sweter"],
+      "grammar_tags": ["two_verbs_rule", "accusative_basic", "colour", "clothes"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "czarny",
+      "biały",
+      "niebieski",
+      "zielony",
+      "czerwony",
+      "żółty",
+      "pomarańczowy",
+      "różowy",
+      "brązowy",
+      "szary",
+      "siwy",
+      "fioletowy",
+      "złoty",
+      "granatowy",
+      "beżowy",
+      "ciemny",
+      "jasny"
+    ],
+    "sentence_cards_priority": [1, 4, 7, 8, 9, 10, 12, 13, 16, 17]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Do you like dark chocolate?'",
+      "correct_answer": "Czy lubisz ciemną czekoladę?",
+      "distractors": [
+        "Czy lubisz czarną czekoladę?",
+        "Czy masz ciemną czekoladę?",
+        "Czy kupujesz ciemna czekolada?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'The flag of Poland is red and white.'",
+      "answer_pl": "Flaga Polski jest biało-czerwona.",
+      "word_bank": ["Flaga", "Polski", "jest", "biało-czerwona"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'I like wearing this brown sweater.'",
+      "accepted_answers": [
+        "Lubię nosić ten brązowy sweter."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

@@ -1,0 +1,654 @@
+{
+  "section_number": 5,
+  "topic_en": "Food",
+  "topic_pl": "Jedzenie",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "chleb", "en": ["bread"], "category": "noun" },
+    { "pl": "masło", "en": ["butter"], "category": "noun" },
+    { "pl": "płatki (śniadaniowe)", "en": ["cereal", "breakfast cereal"], "category": "noun" },
+    { "pl": "ser", "en": ["cheese"], "category": "noun" },
+    { "pl": "kanapka", "en": ["sandwich"], "category": "noun" },
+    { "pl": "cukier", "en": ["sugar"], "category": "noun" },
+    { "pl": "czekolada", "en": ["chocolate"], "category": "noun" },
+    { "pl": "ciasto", "en": ["cake"], "category": "noun" },
+    { "pl": "naleśnik", "en": ["pancake", "crêpe"], "category": "noun" },
+    { "pl": "miód", "en": ["honey"], "category": "noun" },
+    { "pl": "śmietana", "en": ["sour cream"], "category": "noun" },
+    { "pl": "lody", "en": ["ice cream"], "category": "noun" },
+    { "pl": "makaron", "en": ["pasta"], "category": "noun" },
+    { "pl": "spaghetti", "en": ["spaghetti"], "category": "noun" },
+    { "pl": "pizza", "en": ["pizza"], "category": "noun" },
+    { "pl": "ryż", "en": ["rice"], "category": "noun" },
+    { "pl": "frytki", "en": ["chips", "fries"], "category": "noun" },
+    { "pl": "czipsy", "en": ["crisps"], "category": "noun" },
+    { "pl": "sałatka", "en": ["salad"], "category": "noun" },
+    { "pl": "sól", "en": ["salt"], "category": "noun" },
+    { "pl": "pieprz", "en": ["pepper"], "category": "noun" },
+    { "pl": "ketchup", "en": ["ketchup"], "category": "noun" },
+    { "pl": "majonez", "en": ["mayonnaise"], "category": "noun" },
+    { "pl": "sos", "en": ["sauce"], "category": "noun" },
+    { "pl": "olej", "en": ["oil"], "category": "noun" },
+    { "pl": "zupa", "en": ["soup"], "category": "noun" },
+    { "pl": "kiełbasa", "en": ["sausage"], "category": "noun" },
+    { "pl": "mięso", "en": ["meat"], "category": "noun" },
+    { "pl": "świeży", "en": ["fresh"], "category": "adjective" },
+    { "pl": "stek", "en": ["steak"], "category": "noun" },
+    { "pl": "owoce morza", "en": ["seafood"], "category": "noun" },
+    { "pl": "domowe jedzenie", "en": ["homemade food"], "category": "phrase" },
+    { "pl": "resztki jedzenia", "en": ["leftovers"], "category": "phrase" },
+    { "pl": "przyprawy", "en": ["spices"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "salata_vs_salatka",
+      "content": "Do not confuse 'sałata' (lettuce) with 'sałatka' (salad).",
+      "examples": [
+        "ciasto (cake) vs ciastko (biscuit)",
+        "biuro (office) vs biurko (desk)",
+        "kanapa (couch) vs kanapka (sandwich)"
+      ]
+    },
+    {
+      "id": 1,
+      "topic": "types_of_salad",
+      "content": "Examples of salad types:",
+      "examples": [
+        "sałatka grecka = Greek salad",
+        "sałatka owocowa = fruit salad",
+        "sałatka Cezar = Caesar salad"
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "bread_is_countable",
+      "content": "In Polish, 'chleb' is countable. You can say 'proszę dwa chleby' or 'proszę dwa bochenki chleba'."
+    },
+    {
+      "id": 2,
+      "topic": "moge_and_requests",
+      "content": "'możesz' can translate as 'you can'. For now, you can learn the full present tense of 'móc' from the book. Unlike English, you do not always need to add 'proszę' when making a request.",
+      "tables": {
+        "present_tense_moc": {
+          "ja": "mogę",
+          "ty": "możesz",
+          "on_ona_ono": "może",
+          "my": "możemy",
+          "wy": "możecie",
+          "oni_one": "mogą"
+        }
+      },
+      "examples": [
+        "Czy możesz otworzyć okno? = Can you open the window?"
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "rano_not_w_rano",
+      "content": "Say 'rano' for 'in the morning', not 'w rano'."
+    },
+    {
+      "id": 7,
+      "topic": "prosic_accusative",
+      "content": "After 'prosić' (to ask for), use the accusative. The book notes that at this stage, using the basic form may still often be understood, but accusative is the target structure."
+    },
+    {
+      "id": 10,
+      "topic": "favourite_question_pattern",
+      "content": "For questions like 'What is your favourite ...?', do not start with 'co'. Use 'jaki / jaka / jakie'.",
+      "examples": [
+        "Jaki jest twój ulubiony sok?"
+      ]
+    },
+    {
+      "id": 10,
+      "topic": "popular_soups",
+      "content": "Examples of popular soups in Poland:",
+      "examples": [
+        "zupa pomidorowa = tomato soup",
+        "żurek = sour rye soup",
+        "zupa jarzynowa = vegetable soup",
+        "rosół = chicken broth/soup",
+        "zupa ogórkowa = dill pickle soup",
+        "barszcz czerwony = beetroot soup, borscht"
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "miec_ochote_na",
+      "content": "Use the preposition 'na' after 'mieć ochotę' and then the accusative.",
+      "examples": [
+        "Mam ochotę na kakao. = I feel like having some cocoa."
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "jest_meaning",
+      "content": "'jest' can mean either 'is' or 'there is', depending on context."
+    },
+    {
+      "id": 13,
+      "topic": "mam_czas_vs_nie_mam_czasu",
+      "content": "'Mam czas.' means 'I have time.' 'Nie mam czasu.' means 'I don't have time.'"
+    },
+    {
+      "id": 14,
+      "topic": "chciec_accusative",
+      "content": "Use the accusative after the verb 'chcieć' (to want)."
+    },
+    {
+      "id": 16,
+      "topic": "crisps_vs_chips_vs_fries",
+      "content": "'czipsy' means crisps (UK) / chips (US), while 'frytki' means chips (UK) / fries (US)."
+    },
+    {
+      "id": 20,
+      "topic": "types_of_oil",
+      "content": "Examples of oils:",
+      "examples": [
+        "olej słonecznikowy = sunflower oil",
+        "oliwa = olive oil",
+        "olej kokosowy = coconut oil"
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "uczulony_na_and_seafood",
+      "content": "After 'uczulony' (allergic), use the preposition 'na'. 'owoce morza' literally means 'sea fruits'.",
+      "examples": [
+        "homar = lobster",
+        "małże = clams",
+        "ośmiornica = octopus",
+        "mule = mussels",
+        "ostrygi = oysters",
+        "kalmary = squid",
+        "krewetki = prawns, shrimps"
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "adjectives_for_good_food",
+      "content": "Useful adjectives for good food:",
+      "examples": [
+        "pyszny = delicious",
+        "smaczny = tasty",
+        "dobry = good",
+        "niezły = not bad, pretty good"
+      ]
+    },
+    {
+      "id": 26,
+      "topic": "slodzic",
+      "content": "'słodzić' means 'to take sugar'."
+    },
+    {
+      "id": 27,
+      "topic": "wegetarianin_vs_wegetarianka",
+      "content": "A woman would say 'jestem wegetarianką'."
+    },
+    {
+      "id": 29,
+      "topic": "popular_polish_cakes",
+      "content": "Examples of popular Polish cakes:",
+      "examples": [
+        "sernik = cheesecake",
+        "makowiec = poppy seed cake",
+        "szarlotka = apple pie",
+        "piernik = gingerbread cake",
+        "ciasto drożdżowe = yeast cake",
+        "babka = bundt cake"
+      ]
+    },
+    {
+      "id": 33,
+      "topic": "dobry_lepszy_najlepszy_and_spaghetti",
+      "content": "'dobry' means good, 'lepszy' means better, and 'najlepszy' means the best. 'spaghetti' is a neuter noun, so use neuter adjective endings.",
+      "examples": [
+        "dobre spaghetti"
+      ]
+    },
+    {
+      "id": 35,
+      "topic": "smakowac_uses_adverbs",
+      "content": "With 'smakować' (to taste), use adverbs instead of adjectives, unlike English.",
+      "examples": [
+        "To dobrze smakuje. = It tastes good.",
+        "dobry / świetny are adjectives; dobrze / świetnie are adverbs"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "The salad will be ready in five minutes. Are you hungry?",
+      "pl": "Sałatka będzie gotowa za pięć minut. (Czy) jesteś głodny?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Sałatka będzie gotowa za pięć minut. Jesteś głodny?"],
+      "focus_words": ["sałatka", "będzie gotowa", "za pięć minut", "jesteś głodny"],
+      "grammar_tags": ["future_tense", "question"]
+    },
+    {
+      "id": 2,
+      "en": "Can you buy (some) bread, cheese and spices, please?",
+      "pl": "(Czy) możesz kupić chleb, ser i przyprawy?",
+      "literal_en": null,
+      "english_variants": ["Can you buy bread, cheese and spices, please?"],
+      "polish_alternatives": [],
+      "focus_words": ["możesz", "kupić", "chleb", "ser", "przyprawy"],
+      "grammar_tags": ["request", "question"]
+    },
+    {
+      "id": 3,
+      "en": "This steak is good.",
+      "pl": "Ten stek jest dobry.",
+      "literal_en": null,
+      "english_variants": ["This steak is nice."],
+      "polish_alternatives": ["Ten stek jest smaczny."],
+      "focus_words": ["ten", "stek", "dobry"],
+      "grammar_tags": ["masculine_noun"]
+    },
+    {
+      "id": 4,
+      "en": "In the morning, I usually eat cereal(s).",
+      "pl": "Rano zwykle jem płatki (śniadaniowe).",
+      "literal_en": null,
+      "english_variants": ["I usually eat cereal in the morning."],
+      "polish_alternatives": [],
+      "focus_words": ["rano", "zwykle", "jem", "płatki śniadaniowe"],
+      "grammar_tags": ["time_expression", "present_tense"]
+    },
+    {
+      "id": 5,
+      "en": "This sandwich is very good.",
+      "pl": "Ta kanapka jest bardzo dobra.",
+      "literal_en": null,
+      "english_variants": ["This sandwich is very nice."],
+      "polish_alternatives": ["Ta kanapka jest bardzo smaczna."],
+      "focus_words": ["ta", "kanapka", "bardzo dobra"],
+      "grammar_tags": ["feminine_noun"]
+    },
+    {
+      "id": 6,
+      "en": "What sauce for you, madam? Garlic, spicy or mild?",
+      "pl": "Jaki sos dla pani? Czosnkowy, ostry czy łagodny?",
+      "literal_en": null,
+      "english_variants": ["Which sauce for you, madam? Garlic, spicy or mild?"],
+      "polish_alternatives": [],
+      "focus_words": ["jaki sos", "dla pani", "czosnkowy", "ostry", "łagodny"],
+      "grammar_tags": ["service_phrase", "question"]
+    },
+    {
+      "id": 7,
+      "en": "Can I have a hot chocolate, please?",
+      "pl": "(Czy) mogę prosić gorącą czekoladę?",
+      "literal_en": null,
+      "english_variants": ["May I have a hot chocolate, please?"],
+      "polish_alternatives": ["Czy mogę prosić o gorącą czekoladę?"],
+      "focus_words": ["mogę", "prosić", "gorącą czekoladę"],
+      "grammar_tags": ["request", "accusative_basic"]
+    },
+    {
+      "id": 8,
+      "en": "Shall we go (lit. We go) for ice cream?",
+      "pl": "Idziemy na lody?",
+      "literal_en": "We go for ice cream?",
+      "english_variants": ["Shall we go for ice cream?"],
+      "polish_alternatives": [],
+      "focus_words": ["idziemy", "na lody"],
+      "grammar_tags": ["question", "fixed_expression"]
+    },
+    {
+      "id": 9,
+      "en": "This sausage will be great barbecued / for a barbecue.",
+      "pl": "Ta kiełbasa będzie świetna na grilla.",
+      "literal_en": null,
+      "english_variants": ["This sausage will be great for the barbecue."],
+      "polish_alternatives": [],
+      "focus_words": ["ta", "kiełbasa", "będzie świetna", "na grilla"],
+      "grammar_tags": ["future_tense", "feminine_noun"]
+    },
+    {
+      "id": 10,
+      "en": "What is your favourite soup?",
+      "pl": "Jaka jest twoja ulubiona zupa?",
+      "literal_en": null,
+      "english_variants": ["What's your favourite soup?"],
+      "polish_alternatives": [],
+      "focus_words": ["jaka", "twoja", "ulubiona", "zupa"],
+      "grammar_tags": ["question", "feminine_noun"]
+    },
+    {
+      "id": 11,
+      "en": "Is this sour cream fresh?",
+      "pl": "(Czy) ta śmietana jest świeża?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta śmietana jest świeża?"],
+      "focus_words": ["ta", "śmietana", "świeża"],
+      "grammar_tags": ["question", "feminine_noun"]
+    },
+    {
+      "id": 12,
+      "en": "I feel like (having) something sweet. Is there some cake left (lit. still cake)?",
+      "pl": "Mam ochotę na coś słodkiego. (Czy) jest jeszcze ciasto?",
+      "literal_en": "I have a craving for something sweet. Is there still cake?",
+      "english_variants": ["I feel like something sweet. Is there any cake left?"],
+      "polish_alternatives": [],
+      "focus_words": ["mam ochotę na", "coś słodkiego", "jest jeszcze", "ciasto"],
+      "grammar_tags": ["fixed_expression", "question"]
+    },
+    {
+      "id": 13,
+      "en": "I don't have time to cook, so today it'll be just pasta for dinner/lunch.",
+      "pl": "Nie mam czasu gotować, więc dziś/dzisiaj na obiad będzie tylko makaron.",
+      "literal_en": null,
+      "english_variants": ["I don't have time to cook, so today it'll just be pasta for lunch/dinner."],
+      "polish_alternatives": [],
+      "focus_words": ["nie mam czasu", "gotować", "więc", "na obiad", "będzie", "tylko", "makaron"],
+      "grammar_tags": ["negation", "future_tense"]
+    },
+    {
+      "id": 14,
+      "en": "Do you (pl.) want some/a sausage or spaghetti in the evening?",
+      "pl": "(Czy) chcecie kiełbasę, czy spaghetti wieczorem?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Chcecie kiełbasę czy spaghetti wieczorem?"],
+      "focus_words": ["chcecie", "kiełbasę", "czy", "spaghetti", "wieczorem"],
+      "grammar_tags": ["question", "plural_you"]
+    },
+    {
+      "id": 15,
+      "en": "I guess your cake is in the fridge.",
+      "pl": "Twoje ciasto jest chyba w lodówce.",
+      "literal_en": null,
+      "english_variants": ["I think your cake is in the fridge."],
+      "polish_alternatives": [],
+      "focus_words": ["twoje", "ciasto", "chyba", "w lodówce"],
+      "grammar_tags": ["neuter_noun"]
+    },
+    {
+      "id": 16,
+      "en": "Do they sell crisps there?",
+      "pl": "(Czy) sprzedają tam czipsy?",
+      "literal_en": null,
+      "english_variants": ["Do they sell crisps there?"],
+      "polish_alternatives": [],
+      "focus_words": ["sprzedają", "tam", "czipsy"],
+      "grammar_tags": ["question", "plural_noun"]
+    },
+    {
+      "id": 17,
+      "en": "Can you pass me the salt and pepper, please?",
+      "pl": "(Czy) możesz mi podać sól i pieprz?",
+      "literal_en": null,
+      "english_variants": ["Can you pass me the salt and pepper?"],
+      "polish_alternatives": [],
+      "focus_words": ["możesz", "mi", "podać", "sól", "pieprz"],
+      "grammar_tags": ["request", "question"]
+    },
+    {
+      "id": 18,
+      "en": "I like homemade food.",
+      "pl": "Lubię domowe jedzenie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię", "domowe jedzenie"],
+      "grammar_tags": ["present_tense"]
+    },
+    {
+      "id": 19,
+      "en": "This pizza isn't bad.",
+      "pl": "Ta pizza nie jest zła.",
+      "literal_en": null,
+      "english_variants": ["This pizza is not bad."],
+      "polish_alternatives": ["Ta pizza jest niezła."],
+      "focus_words": ["ta", "pizza", "nie jest zła"],
+      "grammar_tags": ["negation", "feminine_noun"]
+    },
+    {
+      "id": 20,
+      "en": "What oil did you (f.) buy?",
+      "pl": "Jaki olej kupiłaś?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jaki", "olej", "kupiłaś"],
+      "grammar_tags": ["question", "feminine_past_tense"]
+    },
+    {
+      "id": 21,
+      "en": "Can you bring some ketchup and mayonnaise?",
+      "pl": "(Czy) możesz przynieść ketchup i majonez?",
+      "literal_en": null,
+      "english_variants": ["Can you bring ketchup and mayonnaise?"],
+      "polish_alternatives": [],
+      "focus_words": ["możesz", "przynieść", "ketchup", "majonez"],
+      "grammar_tags": ["request", "question"]
+    },
+    {
+      "id": 22,
+      "en": "I'm allergic to seafood.",
+      "pl": "Jestem uczulony na owoce morza.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem uczulona na owoce morza."],
+      "focus_words": ["jestem uczulony", "na", "owoce morza"],
+      "grammar_tags": ["fixed_expression", "masculine_form"]
+    },
+    {
+      "id": 23,
+      "en": "Regular chips, please.",
+      "pl": "Poproszę/Proszę średnie frytki.",
+      "literal_en": null,
+      "english_variants": ["Medium fries, please."],
+      "polish_alternatives": ["Poproszę średnie frytki."],
+      "focus_words": ["poproszę", "średnie", "frytki"],
+      "grammar_tags": ["service_phrase", "plural_noun"]
+    },
+    {
+      "id": 24,
+      "en": "The steak was delicious.",
+      "pl": "Stek był pyszny.",
+      "literal_en": null,
+      "english_variants": ["The steak was tasty."],
+      "polish_alternatives": ["Stek był smaczny."],
+      "focus_words": ["stek", "był", "pyszny"],
+      "grammar_tags": ["past_tense", "masculine_noun"]
+    },
+    {
+      "id": 25,
+      "en": "The only food I have is yesterday's leftovers (lit. I have only leftovers of food from yesterday).",
+      "pl": "Mam tylko resztki jedzenia z wczoraj.",
+      "literal_en": "I only have leftovers of food from yesterday.",
+      "english_variants": ["All I have is yesterday's leftovers."],
+      "polish_alternatives": [],
+      "focus_words": ["mam tylko", "resztki jedzenia", "z wczoraj"],
+      "grammar_tags": ["time_expression"]
+    },
+    {
+      "id": 26,
+      "en": "Do you take sugar? Do you want some sugar or honey?",
+      "pl": "Słodzisz? (Czy) chcesz cukier lub/albo miód?",
+      "literal_en": null,
+      "english_variants": ["Do you take sugar? Do you want sugar or honey?"],
+      "polish_alternatives": ["Słodzisz? Chcesz cukier albo miód?"],
+      "focus_words": ["słodzisz", "chcesz", "cukier", "miód"],
+      "grammar_tags": ["question", "present_tense"]
+    },
+    {
+      "id": 27,
+      "en": "\"Do you eat meat?\" \"No, I don't (lit. don't eat). I'm vegetarian.\"",
+      "pl": "– (Czy) jesz mięso? – Nie, nie jem. Jestem wegetarianinem.",
+      "literal_en": "No, I don't eat. I'm a vegetarian.",
+      "english_variants": ["Do you eat meat? No, I don't. I'm vegetarian."],
+      "polish_alternatives": ["– Jesz mięso? – Nie, nie jem. Jestem wegetarianką."],
+      "focus_words": ["jesz", "mięso", "nie jem", "jestem wegetarianinem"],
+      "grammar_tags": ["dialogue", "negation"]
+    },
+    {
+      "id": 28,
+      "en": "The crêpe was tasty, thank you.",
+      "pl": "Naleśnik był smaczny, dziękuję.",
+      "literal_en": null,
+      "english_variants": ["The pancake was tasty, thank you."],
+      "polish_alternatives": ["Naleśnik był pyszny, dziękuję."],
+      "focus_words": ["naleśnik", "był smaczny", "dziękuję"],
+      "grammar_tags": ["past_tense", "masculine_noun"]
+    },
+    {
+      "id": 29,
+      "en": "Can I have the recipe for this cake, please?",
+      "pl": "(Czy) mogę prosić o przepis na to ciasto?",
+      "literal_en": null,
+      "english_variants": ["May I have the recipe for this cake, please?"],
+      "polish_alternatives": ["Czy mogę prosić przepis na to ciasto?"],
+      "focus_words": ["mogę", "prosić o", "przepis", "na", "to ciasto"],
+      "grammar_tags": ["request", "question"]
+    },
+    {
+      "id": 30,
+      "en": "Do you want some butter?",
+      "pl": "(Czy) chcesz masło?",
+      "literal_en": null,
+      "english_variants": ["Would you like some butter?"],
+      "polish_alternatives": [],
+      "focus_words": ["chcesz", "masło"],
+      "grammar_tags": ["question", "accusative_basic"]
+    },
+    {
+      "id": 31,
+      "en": "Where is the salt?",
+      "pl": "Gdzie jest sól?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie", "jest", "sól"],
+      "grammar_tags": ["question"]
+    },
+    {
+      "id": 32,
+      "en": "Is this homemade pasta?",
+      "pl": "(Czy) to (jest) makaron domowej roboty?",
+      "literal_en": null,
+      "english_variants": ["Is this homemade pasta?"],
+      "polish_alternatives": ["To makaron domowej roboty?"],
+      "focus_words": ["to", "makaron", "domowej roboty"],
+      "grammar_tags": ["question", "fixed_expression"]
+    },
+    {
+      "id": 33,
+      "en": "My mum makes the best spaghetti.",
+      "pl": "Moja mama robi najlepsze spaghetti.",
+      "literal_en": null,
+      "english_variants": ["My mum makes the best spaghetti."],
+      "polish_alternatives": [],
+      "focus_words": ["moja mama", "robi", "najlepsze", "spaghetti"],
+      "grammar_tags": ["superlative", "neuter_noun"]
+    },
+    {
+      "id": 34,
+      "en": "I often make curry rice (lit. rice with curry).",
+      "pl": "Często robię ryż z curry.",
+      "literal_en": "I often make rice with curry.",
+      "english_variants": ["I often make curry rice."],
+      "polish_alternatives": [],
+      "focus_words": ["często", "robię", "ryż z curry"],
+      "grammar_tags": ["present_tense"]
+    },
+    {
+      "id": 35,
+      "en": "The cake is delicious. It tastes great.",
+      "pl": "Ciasto jest pyszne. Świetnie smakuje.",
+      "literal_en": null,
+      "english_variants": ["The cake is delicious. It tastes great."],
+      "polish_alternatives": ["Ciasto jest smaczne. Bardzo dobrze smakuje."],
+      "focus_words": ["ciasto", "pyszne", "świetnie smakuje"],
+      "grammar_tags": ["neuter_noun", "adverb_with_smakowac"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "chleb",
+      "ser",
+      "kanapka",
+      "cukier",
+      "miód",
+      "śmietana",
+      "lody",
+      "makaron",
+      "spaghetti",
+      "pizza",
+      "ryż",
+      "frytki",
+      "czipsy",
+      "sałatka",
+      "sól",
+      "pieprz",
+      "ketchup",
+      "majonez",
+      "zupa",
+      "kiełbasa",
+      "mięso",
+      "stek",
+      "owoce morza",
+      "przyprawy"
+    ],
+    "sentence_cards_priority": [1, 2, 4, 6, 7, 8, 10, 12, 13, 17, 22, 27, 29, 33, 35]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'What is your favourite soup?'",
+      "correct_answer": "Jaka jest twoja ulubiona zupa?",
+      "distractors": [
+        "Co jest twoja ulubiona zupa?",
+        "Jaki jest twoja ulubiona zupa?",
+        "Która jest twoja zupa?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'I like homemade food.'",
+      "answer_pl": "Lubię domowe jedzenie.",
+      "word_bank": ["Lubię", "domowe", "jedzenie"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'I'm allergic to seafood.'",
+      "accepted_answers": [
+        "Jestem uczulony na owoce morza.",
+        "Jestem uczulona na owoce morza."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

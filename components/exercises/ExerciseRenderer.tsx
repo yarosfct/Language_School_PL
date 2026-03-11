@@ -34,6 +34,8 @@ interface ExerciseRendererProps {
   isCorrect?: boolean;
   partialCorrect?: boolean;
   autoPlayTTS?: boolean;
+  referenceAnswerText?: string;
+  referenceSectionId?: string;
 }
 
 export function ExerciseRenderer({ 
@@ -44,6 +46,8 @@ export function ExerciseRenderer({
   isCorrect,
   partialCorrect,
   autoPlayTTS = false,
+  referenceAnswerText,
+  referenceSectionId,
 }: ExerciseRendererProps) {
   const commonProps = {
     onSubmit,
@@ -52,6 +56,8 @@ export function ExerciseRenderer({
     isCorrect,
     explanation: exercise.explanation,
     hints: exercise.hints,
+    referenceAnswerText,
+    referenceSectionId,
   };
 
   switch (exercise.type) {
@@ -65,7 +71,13 @@ export function ExerciseRenderer({
       return <FillBlankExercise data={exercise.data as FillBlankData} {...commonProps} />;
     
     case 'typed-answer':
-      return <TypedAnswerExercise data={exercise.data as TypedAnswerData} {...commonProps} />;
+      return (
+        <TypedAnswerExercise
+          data={exercise.data as TypedAnswerData}
+          {...commonProps}
+          partialCorrect={partialCorrect}
+        />
+      );
     
     case 'ordering':
       return <OrderingExercise data={exercise.data as OrderingData} {...commonProps} />;

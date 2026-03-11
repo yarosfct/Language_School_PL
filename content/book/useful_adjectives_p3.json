@@ -1,0 +1,412 @@
+{
+  "section_number": 40,
+  "topic_en": "Useful Adjectives. Part 3",
+  "topic_pl": "Przydatne przymiotniki. Część 3",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "bezdomny", "en": ["homeless"], "category": "adjective" },
+    { "pl": "cichy", "en": ["quiet"], "category": "adjective" },
+    { "pl": "dostępny", "en": ["available"], "category": "adjective" },
+    { "pl": "genialny", "en": ["brilliant"], "category": "adjective" },
+    { "pl": "głośny", "en": ["loud"], "category": "adjective" },
+    { "pl": "główny", "en": ["main"], "category": "adjective" },
+    { "pl": "lokalny", "en": ["local"], "category": "adjective" },
+    { "pl": "międzynarodowy", "en": ["international"], "category": "adjective" },
+    { "pl": "malowniczy", "en": ["picturesque"], "category": "adjective" },
+    { "pl": "miękki", "en": ["soft"], "category": "adjective" },
+    { "pl": "okropny", "en": ["awful", "terrible"], "category": "adjective" },
+    { "pl": "ostateczny", "en": ["final"], "category": "adjective" },
+    { "pl": "przydatny", "en": ["useful"], "category": "adjective" },
+    { "pl": "przyjemny", "en": ["pleasant"], "category": "adjective" },
+    { "pl": "rewelacyjny", "en": ["awesome", "excellent"], "category": "adjective" },
+    { "pl": "sprawiedliwy", "en": ["fair"], "category": "adjective" },
+    { "pl": "stresujący", "en": ["stressful"], "category": "adjective" },
+    { "pl": "twardy", "en": ["hard", "not soft"], "category": "adjective" },
+    { "pl": "uroczy", "en": ["cute"], "category": "adjective" },
+    { "pl": "własny", "en": ["own"], "category": "adjective" },
+    { "pl": "zadowolony", "en": ["glad", "happy"], "category": "adjective" },
+    { "pl": "zaskakujący", "en": ["surprising"], "category": "adjective" },
+    { "pl": "zatłoczony", "en": ["crowded"], "category": "adjective" },
+    { "pl": "znakomity", "en": ["excellent"], "category": "adjective" }
+  ],
+  "tips": [
+    {
+      "id": 2,
+      "topic": "szukac_genitive",
+      "content": "After the verb szukać (to look for), use the genitive case."
+    },
+    {
+      "id": 3,
+      "topic": "moge_prosic_o",
+      "content": "In questions like 'Czy mogę prosić...?' see Chapter 2, Note on Sentence 10."
+    },
+    {
+      "id": 7,
+      "topic": "zaskoczony_vs_zaskakujacy",
+      "content": "Don't mix up zaskoczony (surprised) with zaskakujący (surprising).",
+      "examples": [
+        "Jestem zaskoczony. = I'm surprised.",
+        "To jest zaskakujące. = That's surprising."
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "interesujacy_vs_stresujacy",
+      "content": "Other useful -ujący adjectives include interesujący (interesting) and stresujący (stressful)."
+    },
+    {
+      "id": 11,
+      "topic": "szczesliwy_vs_zadowolony",
+      "content": "Both szczęśliwy and zadowolony can relate to happiness, but szczęśliwy usually refers to long-lasting or deep happiness, while zadowolony often refers to being pleased with something specific."
+    },
+    {
+      "id": 18,
+      "topic": "poland_phrases",
+      "content": "Useful phrases:",
+      "examples": [
+        "do Polski = to Poland",
+        "z Polski = from Poland",
+        "w Polsce = in Poland"
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "zly_meanings",
+      "content": "The adjective zły has several meanings, including bad and angry.",
+      "examples": [
+        "Mam złe wieści. = I have bad news.",
+        "Czy jesteś zły? = Are you angry?"
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "miec_wlasny",
+      "content": "On signs or notices around Polish houses, własny can mean private property."
+    },
+    {
+      "id": 22,
+      "topic": "true_love",
+      "content": "Words like prawdziwy and similar adjectives often require attention to gender and agreement."
+    },
+    {
+      "id": 23,
+      "topic": "dziekowac_accusative_object",
+      "content": "Use the accusative case after dziękować for the direct thanked thing in the example structure shown."
+    },
+    {
+      "id": 24,
+      "topic": "daj_mi_minute",
+      "content": "Useful expressions:",
+      "examples": [
+        "daj mi chwilę = give me a moment",
+        "daj mi minutę = give me a minute"
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "nie_lubie_genitive",
+      "content": "If you want to express dislike for something, use nie lubię and the genitive case.",
+      "examples": [
+        "Nie lubię kawy. = I don't like coffee.",
+        "Nie znoszę tego. = I can't stand that."
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "pleasant_opposite",
+      "content": "The opposite of przyjemny is nieprzyjemny."
+    },
+    {
+      "id": 33,
+      "topic": "mezczyzna",
+      "content": "Mężczyzna means man. Kobieta means woman."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "This hotel is not available anymore.",
+      "pl": "Ten hotel nie jest już dostępny.",
+      "grammar_tags": ["negation"]
+    },
+    {
+      "id": 2,
+      "en": "I'm looking for a quiet place.",
+      "pl": "Szukam cichego miejsca.",
+      "grammar_tags": ["genitive"]
+    },
+    {
+      "id": 3,
+      "en": "Can I have some extra garlic sauce, please?",
+      "pl": "(Czy) mogę prosić (o) dodatkowy sos czosnkowy?",
+      "grammar_tags": ["question", "accusative"]
+    },
+    {
+      "id": 4,
+      "en": "Where is the main entrance?",
+      "pl": "Gdzie jest główne wejście?",
+      "grammar_tags": ["question"]
+    },
+    {
+      "id": 5,
+      "en": "A local guide says that a famous artist used to live here.",
+      "pl": "Lokalny przewodnik mówi, że kiedyś mieszkał tu/tutaj znany artysta.",
+      "grammar_tags": ["subordinate_clause", "past_tense"]
+    },
+    {
+      "id": 6,
+      "en": "Is this your final decision?",
+      "pl": "(Czy) to (jest) twoja ostateczna decyzja?",
+      "grammar_tags": ["question"]
+    },
+    {
+      "id": 7,
+      "en": "The concert was simply awesome. I'm not surprised.",
+      "pl": "Koncert był po prostu rewelacyjny. Nie jestem zaskoczony.",
+      "grammar_tags": ["past_tense", "negation"]
+    },
+    {
+      "id": 8,
+      "en": "Mum is making a tasty soup for dinner/lunch.",
+      "pl": "Mama robi smaczną zupę na obiad.",
+      "grammar_tags": ["accusative"]
+    },
+    {
+      "id": 9,
+      "en": "On Saturday, the market is always crowded.",
+      "pl": "W sobotę targ jest zawsze zatłoczony.",
+      "grammar_tags": ["locative"]
+    },
+    {
+      "id": 10,
+      "en": "That's not fair!",
+      "pl": "To nie jest sprawiedliwe/fa ir!",
+      "grammar_tags": ["negation"],
+      "note": "Printed page gives sprawiedliwe/fair. Normalized intended Polish: 'To nie jest sprawiedliwe!'"
+    },
+    {
+      "id": 11,
+      "en": "I'm very happy/glad (f.) that my husband is finally coming back to Poland.",
+      "pl": "Jestem bardzo zadowolona, że mój mąż w końcu wraca do Polski.",
+      "grammar_tags": ["subordinate_clause"]
+    },
+    {
+      "id": 12,
+      "en": "I miss home because the weather here is awful.",
+      "pl": "Tęsknię za domem, bo pogoda tutaj/tu jest okropna.",
+      "grammar_tags": ["instrumental", "subordinate_clause"]
+    },
+    {
+      "id": 13,
+      "en": "He always has brilliant ideas.",
+      "pl": "(On) zawsze ma genialne pomysły.",
+      "grammar_tags": ["accusative"]
+    },
+    {
+      "id": 14,
+      "en": "It's good to know that your job isn't stressful.",
+      "pl": "Dobrze wiedzieć, że twoja praca nie jest stresująca.",
+      "grammar_tags": ["subordinate_clause", "negation"]
+    },
+    {
+      "id": 15,
+      "en": "Next year, they will be building a huge international airport there.",
+      "pl": "W przyszłym/następnym roku będą tam budować ogromne międzynarodowe lotnisko.",
+      "grammar_tags": ["future_tense", "accusative"]
+    },
+    {
+      "id": 16,
+      "en": "It was a tasty breakfast. Thank you.",
+      "pl": "To było smaczne śniadanie. Dziękuję.",
+      "grammar_tags": ["past_tense"]
+    },
+    {
+      "id": 17,
+      "en": "What a stressful evening!",
+      "pl": "Jaki/Ale stresujący wieczór!",
+      "grammar_tags": ["exclamation"]
+    },
+    {
+      "id": 18,
+      "en": "It's a very picturesque village.",
+      "pl": "To (jest) bardzo malownicza wieś.",
+      "grammar_tags": []
+    },
+    {
+      "id": 19,
+      "en": "Do you prefer a hard or a soft pillow?",
+      "pl": "(Czy) wolisz twardą, czy miękką poduszkę?",
+      "grammar_tags": ["question", "accusative"]
+    },
+    {
+      "id": 20,
+      "en": "We've had a bad, stressful day.",
+      "pl": "Mieliśmy zły, stresujący dzień.",
+      "grammar_tags": ["past_tense", "accusative"]
+    },
+    {
+      "id": 21,
+      "en": "The book was awful/terrible, but its (screen) adaptation is awesome. That's quite surprising, isn't it?",
+      "pl": "Książka była okropna, ale jej ekranizacja jest rewelacyjna. To dość zaskakujące, prawda?",
+      "grammar_tags": ["past_tense", "question_tag"]
+    },
+    {
+      "id": 22,
+      "en": "She was sure it was (lit. it is) true love.",
+      "pl": "Była pewna, że to (jest) prawdziwa miłość.",
+      "grammar_tags": ["past_tense", "subordinate_clause"]
+    },
+    {
+      "id": 23,
+      "en": "Thank you for the excellent dinner/lunch. It was really delicious.",
+      "pl": "Dziękuję za znakomity obiad. Był naprawdę pyszny.",
+      "grammar_tags": ["accusative", "past_tense"]
+    },
+    {
+      "id": 24,
+      "en": "Give me a minute, please. I'm not (fully) dressed.",
+      "pl": "Daj mi minutę. Nie jestem ubrany.",
+      "grammar_tags": ["accusative", "negation"]
+    },
+    {
+      "id": 25,
+      "en": "I chose the books that were (lit. are) useful.",
+      "pl": "Wybrałem książki, które są przydatne.",
+      "grammar_tags": ["past_tense", "relative_clause"]
+    },
+    {
+      "id": 26,
+      "en": "It isn't surprising!",
+      "pl": "To nie jest zaskakujące!",
+      "grammar_tags": ["negation"]
+    },
+    {
+      "id": 27,
+      "en": "I hate this bed. It's too hard.",
+      "pl": "Nienawidzę tego łóżka. Jest za/zbyt twarde.",
+      "grammar_tags": ["genitive", "description"]
+    },
+    {
+      "id": 28,
+      "en": "We saw it with our own eyes (lit. We saw it on own eyes).",
+      "pl": "Widzieliśmy to na własne oczy.",
+      "grammar_tags": ["past_tense", "accusative", "fixed_expression"]
+    },
+    {
+      "id": 29,
+      "en": "Are you surprised that he's worried?",
+      "pl": "(Czy) jesteś zaskoczony, że (on) się martwi?",
+      "grammar_tags": ["question", "subordinate_clause"]
+    },
+    {
+      "id": 30,
+      "en": "The street is very loud.",
+      "pl": "Ta ulica jest bardzo głośna.",
+      "grammar_tags": []
+    },
+    {
+      "id": 31,
+      "en": "It was a pleasant evening.",
+      "pl": "To był przyjemny wieczór.",
+      "grammar_tags": ["past_tense"]
+    },
+    {
+      "id": 32,
+      "en": "This cake is excellent. Can I have the recipe, please?",
+      "pl": "To ciasto jest znakomite. (Czy) mogę prosić (o) przepis?",
+      "grammar_tags": ["question", "accusative"]
+    },
+    {
+      "id": 33,
+      "en": "This homeless man had a very hard life.",
+      "pl": "Ten bezdomny mężczyzna miał bardzo trudne życie.",
+      "grammar_tags": ["past_tense", "accusative"]
+    },
+    {
+      "id": 34,
+      "en": "New parking spots will be available soon.",
+      "pl": "Wkrótce/Niedługo będą dostępne nowe miejsca parkingowe.",
+      "grammar_tags": ["future_tense"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "bezdomny",
+      "cichy",
+      "dostępny",
+      "genialny",
+      "głośny",
+      "główny",
+      "lokalny",
+      "międzynarodowy",
+      "malowniczy",
+      "miękki",
+      "okropny",
+      "ostateczny",
+      "przydatny",
+      "przyjemny",
+      "rewelacyjny",
+      "sprawiedliwy",
+      "stresujący",
+      "twardy",
+      "uroczy",
+      "własny",
+      "zadowolony",
+      "zaskakujący",
+      "zatłoczony",
+      "znakomity"
+    ],
+    "sentence_cards_priority": [2, 3, 5, 7, 11, 12, 14, 17, 19, 21, 23, 24, 27, 28, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'I'm looking for a quiet place.'",
+      "correct_answer": "Szukam cichego miejsca.",
+      "distractors": [
+        "Szukam ciche miejsce.",
+        "Szukam spokojne miejsce.",
+        "Patrzę za cichym miejscem."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'We saw it with our own eyes.'",
+      "answer_pl": "Widzieliśmy to na własne oczy.",
+      "word_bank": ["Widzieliśmy", "to", "na", "własne", "oczy"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'This cake is excellent.'",
+      "accepted_answers": [
+        "To ciasto jest znakomite."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

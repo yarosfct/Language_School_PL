@@ -6,11 +6,14 @@ import {
   ReviewCard, 
   Mistake, 
   UserProgress,
+  BookPathProgress,
   TopicProgress,
   VocabReviewCard,
   UserPreferences,
   DailyStats
 } from '@/types/progress';
+import type { CustomFlashcardSet } from '@/types/flashcards';
+import type { UserWordOverride } from '@/types/translations';
 
 export interface AttemptWithId extends AttemptRecord {
   id?: number;
@@ -37,9 +40,38 @@ export class PolskiOdZeraDB extends Dexie {
   vocabReviewCards!: Table<VocabReviewCard, string>;
   preferences!: Table<PreferencesRecord, string>;
   dailyStats!: Table<DailyStats, string>;
+  customFlashcardSets!: Table<CustomFlashcardSet, string>;
+  userWordOverrides!: Table<UserWordOverride, string>;
   
   constructor() {
     super('PolskiOdZeraDB');
+
+    // Version 4: Add local word overrides for missing translations
+    this.version(4).stores({
+      attempts: '++id, exerciseId, topicId, timestamp',
+      mistakes: 'id, exerciseId, topicId, timestamp, reviewed, errorType',
+      reviewCards: 'id, exerciseId, topicId, vocabId, cardType, due',
+      progress: 'id',
+      topicProgress: 'id, topicId, lastAccessed',
+      vocabReviewCards: 'id, topicId, due, state',
+      preferences: 'id',
+      dailyStats: 'date',
+      customFlashcardSets: 'id, name, updatedAt',
+      userWordOverrides: 'id, normalizedToken, sectionId, updatedAt'
+    });
+
+    // Version 3: Add custom flashcard sets
+    this.version(3).stores({
+      attempts: '++id, exerciseId, topicId, timestamp',
+      mistakes: 'id, exerciseId, topicId, timestamp, reviewed, errorType',
+      reviewCards: 'id, exerciseId, topicId, vocabId, cardType, due',
+      progress: 'id',
+      topicProgress: 'id, topicId, lastAccessed',
+      vocabReviewCards: 'id, topicId, due, state',
+      preferences: 'id',
+      dailyStats: 'date',
+      customFlashcardSets: 'id, name, updatedAt'
+    });
     
     // Version 2: Add topic-related tables
     this.version(2).stores({
@@ -50,7 +82,8 @@ export class PolskiOdZeraDB extends Dexie {
       topicProgress: 'id, topicId, lastAccessed',
       vocabReviewCards: 'id, topicId, due, state',
       preferences: 'id',
-      dailyStats: 'date'
+      dailyStats: 'date',
+      customFlashcardSets: 'id, name, updatedAt'
     }).upgrade(tx => {
       // Migration: add default cardType to existing review cards
       return tx.table('reviewCards').toCollection().modify(card => {
@@ -65,7 +98,8 @@ export class PolskiOdZeraDB extends Dexie {
       attempts: '++id, exerciseId, timestamp',
       mistakes: 'id, exerciseId, timestamp, reviewed',
       reviewCards: 'id, exerciseId, due',
-      progress: 'id'
+      progress: 'id',
+      customFlashcardSets: 'id, name, updatedAt'
     });
   }
 }
@@ -90,6 +124,10 @@ export async function getExerciseAttempts(exerciseId: string): Promise<AttemptWi
 
 export async function getTopicAttempts(topicId: string): Promise<AttemptWithId[]> {
   return await db.attempts.where('topicId').equals(topicId).toArray();
+}
+
+export async function getAllAttempts(): Promise<AttemptWithId[]> {
+  return await db.attempts.toArray();
 }
 
 // ============================================
@@ -214,11 +252,18 @@ const defaultPreferences: UserPreferences = {
   dailyGoal: 20,
   reviewNotifications: true,
   soundEnabled: true,
+  devModeEnabled: false,
   ttsRate: 1.0,
   ttsPitch: 1.0,
   showDiacriticsHelper: true,
   autoPlayTTS: false,
   darkMode: 'system',
+};
+
+const defaultBookPath: BookPathProgress = {
+  currentSectionId: null,
+  currentDifficulty: 'level_1',
+  updatedAt: Date.now(),
 };
 
 export async function getUserProgress(): Promise<UserProgress> {
@@ -229,6 +274,10 @@ export async function getUserProgress(): Promise<UserProgress> {
       ...record.data,
       topicsStarted: record.data.topicsStarted ?? [],
       topicsCompleted: record.data.topicsCompleted ?? [],
+      bookPath: {
+        ...defaultBookPath,
+        ...(record.data.bookPath ?? {}),
+      },
     };
   }
   
@@ -242,6 +291,7 @@ export async function getUserProgress(): Promise<UserProgress> {
     lastActiveDate: new Date().toISOString().split('T')[0],
     topicsStarted: [],
     topicsCompleted: [],
+    bookPath: defaultBookPath,
   };
   
   await db.progress.put({ id: 'main', data: defaultProgress });
@@ -250,6 +300,31 @@ export async function getUserProgress(): Promise<UserProgress> {
 
 export async function saveUserProgress(progress: UserProgress): Promise<void> {
   await db.progress.put({ id: 'main', data: progress });
+}
+
+export async function getBookPathProgress(): Promise<BookPathProgress> {
+  const progress = await getUserProgress();
+  return progress.bookPath;
+}
+
+export async function saveBookPathProgress(bookPath: BookPathProgress): Promise<void> {
+  const progress = await getUserProgress();
+  progress.bookPath = {
+    ...bookPath,
+    updatedAt: Date.now(),
+  };
+  await saveUserProgress(progress);
+}
+
+export async function updateBookPathProgress(patch: Partial<BookPathProgress>): Promise<BookPathProgress> {
+  const current = await getBookPathProgress();
+  const next = {
+    ...current,
+    ...patch,
+    updatedAt: Date.now(),
+  };
+  await saveBookPathProgress(next);
+  return next;
 }
 
 export async function markLessonComplete(lessonId: string): Promise<void> {
@@ -418,6 +493,62 @@ export async function saveUserPreferences(prefs: Partial<UserPreferences>): Prom
 }
 
 // ============================================
+// CUSTOM FLASHCARD SET HELPERS
+// ============================================
+
+export async function getCustomFlashcardSet(id: string): Promise<CustomFlashcardSet | undefined> {
+  return await db.customFlashcardSets.get(id);
+}
+
+export async function getAllCustomFlashcardSets(): Promise<CustomFlashcardSet[]> {
+  return await db.customFlashcardSets.orderBy('updatedAt').reverse().toArray();
+}
+
+export async function saveCustomFlashcardSet(set: CustomFlashcardSet): Promise<string> {
+  return await db.customFlashcardSets.put({
+    ...set,
+    updatedAt: Date.now(),
+  });
+}
+
+export async function deleteCustomFlashcardSet(id: string): Promise<void> {
+  await db.customFlashcardSets.delete(id);
+}
+
+// ============================================
+// LOCAL WORD OVERRIDE HELPERS
+// ============================================
+
+export async function getAllUserWordOverrides(): Promise<UserWordOverride[]> {
+  return await db.userWordOverrides.toArray();
+}
+
+export async function saveUserWordOverride(
+  override: Omit<UserWordOverride, 'id' | 'createdAt' | 'updatedAt'> & { id?: string }
+): Promise<string> {
+  const normalizedToken = override.normalizedToken.trim();
+  const sectionPrefix = override.sectionId ? override.sectionId : 'global';
+  const id = override.id ?? `${sectionPrefix}:${normalizedToken}`;
+  const existing = await db.userWordOverrides.get(id);
+  const now = Date.now();
+
+  await db.userWordOverrides.put({
+    ...existing,
+    ...override,
+    id,
+    normalizedToken,
+    createdAt: existing?.createdAt ?? now,
+    updatedAt: now,
+  });
+
+  return id;
+}
+
+export async function deleteUserWordOverride(id: string): Promise<void> {
+  await db.userWordOverrides.delete(id);
+}
+
+// ============================================
 // DAILY STATS HELPERS
 // ============================================
 
@@ -487,6 +618,8 @@ export async function clearAllData(): Promise<void> {
   await db.vocabReviewCards.clear();
   await db.preferences.clear();
   await db.dailyStats.clear();
+  await db.customFlashcardSets.clear();
+  await db.userWordOverrides.clear();
 }
 
 export async function exportData(): Promise<{
@@ -496,6 +629,8 @@ export async function exportData(): Promise<{
   progress: UserProgress;
   topicProgress: TopicProgress[];
   preferences: UserPreferences;
+  customFlashcardSets: CustomFlashcardSet[];
+  userWordOverrides: UserWordOverride[];
 }> {
   return {
     attempts: await db.attempts.toArray(),
@@ -504,5 +639,7 @@ export async function exportData(): Promise<{
     progress: await getUserProgress(),
     topicProgress: await getAllTopicProgress(),
     preferences: await getUserPreferences(),
+    customFlashcardSets: await getAllCustomFlashcardSets(),
+    userWordOverrides: await getAllUserWordOverrides(),
   };
 }

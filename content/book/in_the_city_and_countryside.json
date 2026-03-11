@@ -1,0 +1,598 @@
+{
+  "section_number": 15,
+  "topic_en": "In the City and Countryside",
+  "topic_pl": "W mieście i na wsi",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "miasto", "en": ["city", "town"], "category": "noun" },
+    { "pl": "wieś", "en": ["countryside", "village"], "category": "noun" },
+    { "pl": "budynek", "en": ["building"], "category": "noun" },
+    { "pl": "ulica", "en": ["street"], "category": "noun" },
+    { "pl": "droga", "en": ["road"], "category": "noun" },
+    { "pl": "centrum (miasta)", "en": ["city centre"], "category": "phrase" },
+    { "pl": "rynek", "en": ["market square"], "category": "noun" },
+    { "pl": "bank", "en": ["bank"], "category": "noun" },
+    { "pl": "poczta", "en": ["post office"], "category": "noun" },
+    { "pl": "hotel", "en": ["hotel"], "category": "noun" },
+    { "pl": "uniwersytet", "en": ["university"], "category": "noun" },
+    { "pl": "biblioteka", "en": ["library"], "category": "noun" },
+    { "pl": "teatr", "en": ["theatre"], "category": "noun" },
+    { "pl": "muzeum", "en": ["museum"], "category": "noun" },
+    { "pl": "supermarket", "en": ["supermarket"], "category": "noun" },
+    { "pl": "sklep", "en": ["shop"], "category": "noun" },
+    { "pl": "centrum handlowe / galeria handlowa", "en": ["shopping centre", "shopping mall"], "category": "phrase" },
+    { "pl": "stacja benzynowa", "en": ["petrol station"], "category": "phrase" },
+    { "pl": "siłownia", "en": ["gym"], "category": "noun" },
+    { "pl": "basen", "en": ["swimming pool"], "category": "noun" },
+    { "pl": "zoo", "en": ["zoo"], "category": "noun" },
+    { "pl": "restauracja", "en": ["restaurant"], "category": "noun" },
+    { "pl": "bar", "en": ["bar"], "category": "noun" },
+    { "pl": "kawiarnia", "en": ["café"], "category": "noun" },
+    { "pl": "pub", "en": ["pub"], "category": "noun" },
+    { "pl": "klub", "en": ["club"], "category": "noun" },
+    { "pl": "lotnisko", "en": ["airport"], "category": "noun" },
+    { "pl": "przystanek autobusowy", "en": ["bus stop"], "category": "phrase" },
+    { "pl": "park", "en": ["park"], "category": "noun" },
+    { "pl": "policja", "en": ["police station", "police"], "category": "noun" },
+    { "pl": "komisariat", "en": ["police station"], "category": "noun" },
+    { "pl": "kantor", "en": ["exchange office", "bureau de change"], "category": "noun" },
+    { "pl": "okolica", "en": ["neighbourhood", "area"], "category": "noun" },
+    { "pl": "dworzec kolejowy / PKP", "en": ["train station", "railway station"], "category": "phrase" }
+  ],
+  "tips": [
+    {
+      "id": 6,
+      "topic": "dojsc_vs_dojechac",
+      "content": "'Dojść' and 'dojechać' can both mean 'to get to' in English. Use 'dojechać' for arriving by transport and 'dojść' when someone gets somewhere on foot."
+    },
+    {
+      "id": 6,
+      "topic": "genitive_after_do_with_movement",
+      "content": "After the preposition 'do', use the genitive case.",
+      "examples": [
+        "do kina",
+        "do klubu",
+        "do hotelu",
+        "do domu",
+        "do banku",
+        "do sklepu",
+        "do restauracji",
+        "do pracy",
+        "do centrum handlowego",
+        "do muzeum"
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "studiowac_vs_uczyc_sie",
+      "content": "'Studiować' can mean to study in a university or to major in a subject. 'Uczyć się' is the general verb for to study or to learn.",
+      "examples": [
+        "Magda chce studiować w Warszawie. = Magda wants to study in Warsaw.",
+        "Adam studiuje medycynę. = Adam studies medicine.",
+        "Uczę się do egzaminu. = I'm studying for the exam."
+      ]
+    },
+    {
+      "id": 10,
+      "topic": "wstep",
+      "content": "'Wstęp wolny' means 'free admission' or 'free entrance'."
+    },
+    {
+      "id": 12,
+      "topic": "jakis_jakas_jakies_jakas_i_some_any",
+      "content": "'Jakiś/jakaś/jakieś' can translate as some, any, or simply a/an depending on context. In the plural, 'jakieś' is used for non-masculine-personal nouns.",
+      "examples": [
+        "jakaś dziewczyna = some/a girl",
+        "jakiś mężczyzna = some/a man",
+        "jakieś restauracje = some/any restaurants"
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "isc_po_coffee_and_po_with_purpose",
+      "content": "The pattern 'iść/jechać po ...' means to go somewhere to get or fetch something.",
+      "examples": [
+        "iść po kawę",
+        "iść po chleb"
+      ]
+    },
+    {
+      "id": 16,
+      "topic": "do_vs_na_with_isc_jechac",
+      "content": "With 'iść' or 'jechać', Polish usually uses 'do' before the names of places like restaurants or cinemas. Some building names take 'na' instead.",
+      "tables": {
+        "basic_noun_to_place": [
+          ["poczta", "na pocztę"],
+          ["basen", "na basen"],
+          ["stacja benzynowa", "na stację benzynową"],
+          ["uniwersytet", "na uniwersytet"],
+          ["dworzec kolejowy/PKP", "na dworzec kolejowy/PKP"],
+          ["lotnisko", "na lotnisko"],
+          ["policja", "na policję"]
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "topic": "ulica_before_street_name",
+      "content": "'Ulica' means street, and in the expression 'na ulicy ...', the noun 'ulica' comes before the street name.",
+      "examples": [
+        "Centrum handlowe / Galeria handlowa jest na ulicy Bolech. = The shopping centre is on Bolech Street."
+      ]
+    },
+    {
+      "id": 19,
+      "topic": "kantor_and_szukac_genitive",
+      "content": "An exchange office is called 'kantor'. After 'szukać' (to look for), use the genitive case.",
+      "examples": [
+        "szukam kantoru",
+        "szukam sklepu"
+      ]
+    },
+    {
+      "id": 23,
+      "topic": "rynek",
+      "content": "'Rynek' means market square, usually in a city centre, often with a town hall and surrounded by old buildings and monuments."
+    },
+    {
+      "id": 26,
+      "topic": "blisko_genitive",
+      "content": "Use the genitive case after the adverb 'blisko'."
+    },
+    {
+      "id": 28,
+      "topic": "pkp",
+      "content": "'PKP' stands for 'Polskie Koleje Państwowe' (the Polish State Railways)."
+    },
+    {
+      "id": 29,
+      "topic": "dzien_vs_doba",
+      "content": "'Dzień' and 'doba' both mean day, but 'doba' refers to the whole 24-hour period, while 'dzień' can mean daytime."
+    },
+    {
+      "id": 31,
+      "topic": "z_plus_genitive_from",
+      "content": "After 'z' in the sense of 'from', use the genitive case."
+    },
+    {
+      "id": 33,
+      "topic": "gdzie_znajduje_sie",
+      "content": "You may hear or use 'gdzie znajduje się...?' meaning 'where is ... located?'. The 3rd-person singular or plural forms are commonly used.",
+      "examples": [
+        "Gdzie znajduje się kawiarnia? = Where is the café?",
+        "Jakie sklepy znajdują się w tym centrum handlowym? = What shops are in this shopping centre?"
+      ]
+    },
+    {
+      "id": 34,
+      "topic": "pracowac_vs_dzialac",
+      "content": "Both 'pracować' and 'działać' can sometimes translate as 'to work'. 'Działać' refers to machines or systems functioning. 'Pracować' usually refers to people doing work."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "We love the countryside. The city is too big.",
+      "pl": "Kochamy wieś. Miasto jest za/zbyt duże.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kochamy wieś. Miasto jest zbyt duże."],
+      "focus_words": ["kochamy wieś", "miasto", "jest za duże"],
+      "grammar_tags": ["city", "contrast", "degree"]
+    },
+    {
+      "id": 2,
+      "en": "Is this the best university in Warsaw?",
+      "pl": "(Czy) to (jest) najlepszy uniwersytet w Warszawie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To najlepszy uniwersytet w Warszawie?"],
+      "focus_words": ["to", "najlepszy uniwersytet", "w Warszawie"],
+      "grammar_tags": ["question", "city", "superlative"]
+    },
+    {
+      "id": 3,
+      "en": "How can I get to the city centre?",
+      "pl": "Jak mogę dojechać/dojść do centrum miasta?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jak mogę", "dojechać", "dojść", "do centrum miasta"],
+      "grammar_tags": ["question", "movement", "city"]
+    },
+    {
+      "id": 4,
+      "en": "This is my favourite neighbourhood. It's very nice.",
+      "pl": "To jest moja ulubiona okolica. Jest bardzo ładna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To moja ulubiona okolica. Jest bardzo ładna."],
+      "focus_words": ["moja ulubiona okolica", "jest bardzo ładna"],
+      "grammar_tags": ["city", "description"]
+    },
+    {
+      "id": 5,
+      "en": "Is this Piotrkowska Street?",
+      "pl": "(Czy) to ulica Piotrkowska?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To ulica Piotrkowska?"],
+      "focus_words": ["to", "ulica Piotrkowska"],
+      "grammar_tags": ["question", "city"]
+    },
+    {
+      "id": 6,
+      "en": "Do you want to go to a pub?",
+      "pl": "(Czy) chcesz iść do pubu?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Chcesz iść do pubu?"],
+      "focus_words": ["chcesz iść", "do pubu"],
+      "grammar_tags": ["question", "movement", "city"]
+    },
+    {
+      "id": 7,
+      "en": "Do you know this club in the (city) centre?",
+      "pl": "(Czy) znasz ten klub w centrum (miasta)?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Znasz ten klub w centrum miasta?"],
+      "focus_words": ["znasz", "ten klub", "w centrum miasta"],
+      "grammar_tags": ["question", "city"]
+    },
+    {
+      "id": 8,
+      "en": "What is the tallest building in Warsaw?",
+      "pl": "Jaki jest najwyższy budynek w Warszawie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jaki", "najwyższy budynek", "w Warszawie"],
+      "grammar_tags": ["question", "city", "superlative"]
+    },
+    {
+      "id": 9,
+      "en": "I'm going to the library. It's quiet there so I can study.",
+      "pl": "Idę do biblioteki. Jest tam cicho, więc mogę się uczyć.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["idę do biblioteki", "jest tam cicho", "więc", "mogę się uczyć"],
+      "grammar_tags": ["movement", "city", "reflexive_verb"]
+    },
+    {
+      "id": 10,
+      "en": "The zoo offers free admission at the weekend.",
+      "pl": "Zoo oferuje wolny wstęp w weekend.",
+      "literal_en": null,
+      "english_variants": ["The zoo offers free admission on the weekend."],
+      "polish_alternatives": [],
+      "focus_words": ["zoo", "oferuje", "wolny wstęp", "w weekend"],
+      "grammar_tags": ["city", "present_tense"]
+    },
+    {
+      "id": 11,
+      "en": "The tickets to the museum aren't expensive.",
+      "pl": "Bilety do muzeum nie są drogie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["bilety do muzeum", "nie są drogie"],
+      "grammar_tags": ["city", "negation", "plural_noun"]
+    },
+    {
+      "id": 12,
+      "en": "Is there a gym nearby?",
+      "pl": "(Czy) tu/tutaj niedaleko / w pobliżu jest siłownia.",
+      "literal_en": null,
+      "english_variants": ["Is there a gym close by?"],
+      "polish_alternatives": ["Czy w pobliżu jest siłownia?", "Czy tu niedaleko jest siłownia?"],
+      "focus_words": ["czy", "tu", "w pobliżu", "jest", "siłownia"],
+      "grammar_tags": ["question", "existential", "city"]
+    },
+    {
+      "id": 13,
+      "en": "When are we going to the cinema? What films are playing now?",
+      "pl": "Kiedy idziemy do kina? Jakie filmy teraz grają?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kiedy idziemy", "do kina", "jakie filmy", "teraz grają"],
+      "grammar_tags": ["question", "movement", "city"]
+    },
+    {
+      "id": 14,
+      "en": "I'm going (on foot) to the café to get a take-away coffee.",
+      "pl": "Idę do kawiarni po kawę na wynos.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["idę do kawiarni", "po kawę", "na wynos"],
+      "grammar_tags": ["movement", "city", "food"]
+    },
+    {
+      "id": 15,
+      "en": "I need to go (on foot) to the bank to get some money.",
+      "pl": "Muszę iść do banku po pieniądze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["muszę iść", "do banku", "po pieniądze"],
+      "grammar_tags": ["movement", "city"]
+    },
+    {
+      "id": 16,
+      "en": "I'm going (on foot) to the post office to send a package.",
+      "pl": "Idę na pocztę, żeby wysłać paczkę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Idę na pocztę wysłać paczkę."],
+      "focus_words": ["idę na pocztę", "żeby wysłać paczkę"],
+      "grammar_tags": ["movement", "city", "purpose_clause"]
+    },
+    {
+      "id": 17,
+      "en": "We are going (on foot) shopping to the shopping centre.",
+      "pl": "Idziemy do centrum handlowego / galerii handlowej na zakupy.",
+      "literal_en": null,
+      "english_variants": ["We are going to the shopping centre to go shopping."],
+      "polish_alternatives": [],
+      "focus_words": ["idziemy", "do centrum handlowego", "galerii handlowej", "na zakupy"],
+      "grammar_tags": ["movement", "city", "shopping"]
+    },
+    {
+      "id": 18,
+      "en": "I live on Bagno Street.",
+      "pl": "Mieszkam na ulicy Bagno.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mieszkam", "na ulicy Bagno"],
+      "grammar_tags": ["city", "location"]
+    },
+    {
+      "id": 19,
+      "en": "Excuse me. I'm looking for an exchange office and for a shop.",
+      "pl": "Przepraszam. Szukam kantoru i sklepu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["przepraszam", "szukam", "kantoru", "sklepu"],
+      "grammar_tags": ["city", "genitive_after_szukac"]
+    },
+    {
+      "id": 20,
+      "en": "This neighbourhood is interesting. There's a bar and a club here.",
+      "pl": "Ta okolica jest ciekawa. Jest tu/tutaj bar i klub.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta okolica jest ciekawa. Tutaj jest bar i klub."],
+      "focus_words": ["ta okolica", "jest ciekawa", "jest tu", "bar", "klub"],
+      "grammar_tags": ["city", "existential"]
+    },
+    {
+      "id": 21,
+      "en": "We can go to the cinema or to the theatre. What do you prefer?",
+      "pl": "Możemy iść/jechać do kina albo do teatru. Co wolisz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["możemy iść", "jechać", "do kina", "albo do teatru", "co wolisz"],
+      "grammar_tags": ["movement", "question", "city"]
+    },
+    {
+      "id": 22,
+      "en": "Are you going (on foot) to the supermarket? Can you buy something for tomorrow's supper?",
+      "pl": "(Czy) idziesz do supermarketu? (Czy) możesz kupić coś na jutro na kolację?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Idziesz do supermarketu? Możesz kupić coś na jutro na kolację?"],
+      "focus_words": ["idziesz do supermarketu", "możesz kupić", "coś", "na jutro", "na kolację"],
+      "grammar_tags": ["question", "movement", "shopping"]
+    },
+    {
+      "id": 23,
+      "en": "The market square in Wroclaw is beautiful.",
+      "pl": "Rynek we Wrocławiu jest piękny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["rynek", "we Wrocławiu", "jest piękny"],
+      "grammar_tags": ["city", "location"]
+    },
+    {
+      "id": 24,
+      "en": "I'm going to the restaurant on the corner. It's open.",
+      "pl": "Idę do restauracji na rogu. Jest otwarta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["idę do restauracji", "na rogu", "jest otwarta"],
+      "grammar_tags": ["movement", "city", "restaurant"]
+    },
+    {
+      "id": 25,
+      "en": "Are there any vegetarian dishes there?",
+      "pl": "(Czy) są tam wegetariańskie dania?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Są tam wegetariańskie dania?"],
+      "focus_words": ["czy są", "tam", "wegetariańskie dania"],
+      "grammar_tags": ["question", "existential", "city"]
+    },
+    {
+      "id": 26,
+      "en": "We are going (on foot) to the park near the shopping centre for a picnic.",
+      "pl": "Idziemy na piknik do parku blisko centrum handlowego / galerii handlowej.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["idziemy na piknik", "do parku", "blisko centrum handlowego", "galerii handlowej"],
+      "grammar_tags": ["movement", "city", "genitive_after_blisko"]
+    },
+    {
+      "id": 27,
+      "en": "Does this road lead to the centre? And is there a bus stop over there?",
+      "pl": "(Czy) ta droga prowadzi do centrum? I czy jest tam przystanek autobusowy?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta droga prowadzi do centrum? I czy jest tam przystanek autobusowy?"],
+      "focus_words": ["ta droga", "prowadzi do centrum", "i czy jest tam", "przystanek autobusowy"],
+      "grammar_tags": ["question", "city"]
+    },
+    {
+      "id": 28,
+      "en": "We are on the way to the train station.",
+      "pl": "Jesteśmy w drodze na dworzec kolejowy/PKP.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jesteśmy w drodze", "na dworzec kolejowy", "PKP"],
+      "grammar_tags": ["movement", "city"]
+    },
+    {
+      "id": 29,
+      "en": "Is the petrol station open 24 hours a day (lit. the whole day)?",
+      "pl": "(Czy) stacja benzynowa jest otwarta całą dobę?",
+      "literal_en": "Is the petrol station open the whole 24-hour period?",
+      "english_variants": ["Is the petrol station open 24 hours a day?"],
+      "polish_alternatives": [],
+      "focus_words": ["stacja benzynowa", "jest otwarta", "całą dobę"],
+      "grammar_tags": ["question", "city", "time_expression"]
+    },
+    {
+      "id": 30,
+      "en": "Is this hotel far away?",
+      "pl": "(Czy) ten hotel jest daleko?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ten hotel jest daleko?"],
+      "focus_words": ["ten hotel", "jest daleko"],
+      "grammar_tags": ["question", "city"]
+    },
+    {
+      "id": 31,
+      "en": "We want to order a taxi from the hotel to the airport.",
+      "pl": "Chcemy zamówić taksówkę z hotelu na lotnisko.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["chcemy zamówić", "taksówkę", "z hotelu", "na lotnisko"],
+      "grammar_tags": ["movement", "city", "genitive_after_z"]
+    },
+    {
+      "id": 32,
+      "en": "Is the swimming pool deep?",
+      "pl": "(Czy) basen jest głęboki?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Basen jest głęboki?"],
+      "focus_words": ["basen", "jest głęboki"],
+      "grammar_tags": ["question", "city"]
+    },
+    {
+      "id": 33,
+      "en": "Where is the nearest shopping centre?",
+      "pl": "Gdzie jest najbliższe centrum handlowe / najbliższa galeria handlowa?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Gdzie jest najbliższe centrum handlowe?", "Gdzie jest najbliższa galeria handlowa?"],
+      "focus_words": ["gdzie", "najbliższe centrum handlowe", "najbliższa galeria handlowa"],
+      "grammar_tags": ["question", "city", "superlative"]
+    },
+    {
+      "id": 34,
+      "en": "Unfortunately, the lift isn't working.",
+      "pl": "Niestety winda nie działa.",
+      "literal_en": null,
+      "english_variants": ["Unfortunately, the lift doesn't work."],
+      "polish_alternatives": [],
+      "focus_words": ["niestety", "winda", "nie działa"],
+      "grammar_tags": ["negation", "city", "machine_function"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "miasto",
+      "wieś",
+      "ulica",
+      "droga",
+      "centrum miasta",
+      "rynek",
+      "bank",
+      "poczta",
+      "hotel",
+      "uniwersytet",
+      "biblioteka",
+      "teatr",
+      "muzeum",
+      "supermarket",
+      "centrum handlowe",
+      "galeria handlowa",
+      "stacja benzynowa",
+      "siłownia",
+      "basen",
+      "kawiarnia",
+      "lotnisko",
+      "przystanek autobusowy",
+      "park",
+      "kantor",
+      "okolica",
+      "dworzec kolejowy",
+      "PKP"
+    ],
+    "sentence_cards_priority": [2, 3, 6, 9, 12, 13, 15, 16, 17, 19, 21, 22, 24, 27, 29, 31, 33, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'I need to go to the bank to get some money.'",
+      "correct_answer": "Muszę iść do banku po pieniądze.",
+      "distractors": [
+        "Muszę iść na bank po pieniądze.",
+        "Muszę jechać do bank po pieniądze.",
+        "Muszę iść do banku na pieniądze."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Unfortunately, the lift isn't working.'",
+      "answer_pl": "Niestety winda nie działa.",
+      "word_bank": ["Niestety", "winda", "nie", "działa"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Where is the nearest shopping centre?'",
+      "accepted_answers": [
+        "Gdzie jest najbliższe centrum handlowe?",
+        "Gdzie jest najbliższa galeria handlowa?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

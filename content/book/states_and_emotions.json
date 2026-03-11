@@ -1,0 +1,308 @@
+{
+  "section_number": 11,
+  "topic_en": "States & Emotions",
+  "topic_pl": "Stany i emocje",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "zajęty", "en": ["busy"], "category": "adjective" },
+    { "pl": "wolny", "en": ["free"], "category": "adjective" },
+    { "pl": "zmęczony", "en": ["tired"], "category": "adjective" },
+    { "pl": "śpiący", "en": ["sleepy"], "category": "adjective" },
+    { "pl": "zadowolony", "en": ["glad", "happy"], "category": "adjective" },
+    { "pl": "zaskoczony", "en": ["surprised"], "category": "adjective" },
+    { "pl": "szczęśliwy", "en": ["happy"], "category": "adjective" },
+    { "pl": "smutny", "en": ["sad"], "category": "adjective" },
+    { "pl": "głodny", "en": ["hungry"], "category": "adjective" },
+    { "pl": "zmartwiony", "en": ["worried"], "category": "adjective" },
+    { "pl": "zły", "en": ["angry"], "category": "adjective" },
+    { "pl": "chory", "en": ["ill", "sick"], "category": "adjective" },
+    { "pl": "gotowy", "en": ["ready"], "category": "adjective" },
+    { "pl": "spóźniony", "en": ["late"], "category": "adjective" },
+    { "pl": "gorąco", "en": ["hot"], "category": "adverb" },
+    { "pl": "zimno", "en": ["cold"], "category": "adverb" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "spiacy_vs_chce_mi_sie_spac",
+      "content": "You can use 'jestem śpiąca/śpiący' and 'chce mi się spać' for 'I'm sleepy'. The second is a bit more common in everyday speech."
+    },
+    {
+      "id": 6,
+      "topic": "spozniony_vs_pozny_vs_pozno",
+      "content": "English 'late' can map to several Polish forms depending on use. Use 'spóźniony' for a person or means of transport that is late. Use 'późny' for something that happens later than expected. Use 'późno' as the adverb.",
+      "examples": [
+        "Jesteś spóźniony! = You are late!",
+        "Autobus jest spóźniony. = The bus is late.",
+        "To było późne spotkanie. = It was a late meeting.",
+        "Jest za późno, żeby teraz iść. = It's too late to go now.",
+        "Jest późno, więc idę spać. = It's late, so I'm going to sleep."
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "szef_false_friend",
+      "content": "'Szef' (boss) is often confused with the English noun 'chef', which in Polish is 'szef kuchni'."
+    },
+    {
+      "id": 12,
+      "topic": "goraco_mi_vs_jestem_goracy",
+      "content": "Do not say 'jestem gorący' in this sense. For feeling hot, say 'gorąco mi'. Similarly, for feeling cold, say 'zimno mi'. 'Jestem zimny' usually describes another person's perception of you, not your internal feeling."
+    },
+    {
+      "id": 14,
+      "topic": "thirst_expressions",
+      "content": "To say that you are thirsty, use 'Chce mi się pić'. To ask someone if they are thirsty, use '(Czy) chce ci się pić?'."
+    },
+    {
+      "id": 14,
+      "topic": "or_in_questions_often_omitted",
+      "content": "In questions, the word 'or' is often rendered just by 'czy', e.g. 'Kawa czy herbata?'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "I can't concentrate, I'm sleepy (f.).",
+      "pl": "Nie mogę się skoncentrować, jestem śpiąca.",
+      "literal_en": null,
+      "english_variants": ["I can't concentrate, I'm sleepy."],
+      "polish_alternatives": ["Nie mogę się skoncentrować, chce mi się spać."],
+      "focus_words": ["nie mogę się skoncentrować", "jestem śpiąca"],
+      "grammar_tags": ["state", "feminine_form"]
+    },
+    {
+      "id": 2,
+      "en": "Marcin is ready. He's waiting for you.",
+      "pl": "Marcin jest gotowy. Czeka na ciebie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["Marcin", "jest gotowy", "czeka na ciebie"],
+      "grammar_tags": ["state", "present_tense"]
+    },
+    {
+      "id": 3,
+      "en": "Why are you worried (f.)?",
+      "pl": "Dlaczego jesteś zmartwiona?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dlaczego", "jesteś", "zmartwiona"],
+      "grammar_tags": ["question", "state", "feminine_form"]
+    },
+    {
+      "id": 4,
+      "en": "Unfortunately, she's not glad/happy.",
+      "pl": "Niestety (ona) nie jest zadowolona.",
+      "literal_en": null,
+      "english_variants": ["Unfortunately, she isn't happy."],
+      "polish_alternatives": ["Niestety nie jest zadowolona."],
+      "focus_words": ["niestety", "nie jest", "zadowolona"],
+      "grammar_tags": ["negation", "state"]
+    },
+    {
+      "id": 5,
+      "en": "I'm surprised that the restaurant is closed today.",
+      "pl": "Jestem zaskoczony, że restauracja jest dziś/dzisiaj zamknięta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem zaskoczona, że restauracja jest dziś zamknięta."],
+      "focus_words": ["jestem zaskoczony", "że", "restauracja", "jest zamknięta"],
+      "grammar_tags": ["subordinate_clause", "state"]
+    },
+    {
+      "id": 6,
+      "en": "Are you ready? You're late again! Hurry up!",
+      "pl": "(Czy) jesteś gotowy? Znów/Znowu jesteś spóźniony! Pospiesz się!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jesteś gotowy? Znowu jesteś spóźniony! Pospiesz się!"],
+      "focus_words": ["jesteś gotowy", "znowu", "jesteś spóźniony", "pospiesz się"],
+      "grammar_tags": ["question", "state", "imperative"]
+    },
+    {
+      "id": 7,
+      "en": "Are you ill (f.) or just tired?",
+      "pl": "(Czy) jesteś chora, czy po prostu zmęczona?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jesteś chora", "czy", "po prostu", "zmęczona"],
+      "grammar_tags": ["question", "state", "feminine_form"]
+    },
+    {
+      "id": 8,
+      "en": "Is the boss free or busy now?",
+      "pl": "(Czy) szef jest teraz wolny, czy zajęty?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["szef", "jest teraz", "wolny", "czy", "zajęty"],
+      "grammar_tags": ["question", "state"]
+    },
+    {
+      "id": 9,
+      "en": "Why are you angry? What happened?",
+      "pl": "Dlaczego jesteś zły? Co się stało?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dlaczego jesteś zła? Co się stało?"],
+      "focus_words": ["dlaczego", "jesteś zły", "co się stało"],
+      "grammar_tags": ["question", "state"]
+    },
+    {
+      "id": 10,
+      "en": "He isn't able to work because he's ill.",
+      "pl": "Nie jest w stanie pracować, bo jest chory.",
+      "literal_en": null,
+      "english_variants": ["He can't work because he's ill."],
+      "polish_alternatives": [],
+      "focus_words": ["nie jest w stanie", "pracować", "bo", "jest chory"],
+      "grammar_tags": ["negation", "state", "subordinate_clause"]
+    },
+    {
+      "id": 11,
+      "en": "We can meet this afternoon. I'm free then.",
+      "pl": "Możemy się spotkać dziś/dzisiaj po południu. Jestem wtedy wolny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Możemy się spotkać dziś po południu. Jestem wtedy wolna."],
+      "focus_words": ["możemy się spotkać", "dziś po południu", "jestem wtedy wolny"],
+      "grammar_tags": ["time_expression", "state"]
+    },
+    {
+      "id": 12,
+      "en": "I'm / I feel hot! Can you open the door, please?",
+      "pl": "Gorąco mi! (Czy) możesz, proszę, otworzyć drzwi?",
+      "literal_en": null,
+      "english_variants": ["I'm hot! Can you open the door, please?"],
+      "polish_alternatives": [],
+      "focus_words": ["gorąco mi", "możesz", "proszę", "otworzyć drzwi"],
+      "grammar_tags": ["feeling_expression", "request"]
+    },
+    {
+      "id": 13,
+      "en": "Mum was sad yesterday.",
+      "pl": "Mama była wczoraj smutna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mama", "była", "wczoraj", "smutna"],
+      "grammar_tags": ["past_tense", "state"]
+    },
+    {
+      "id": 14,
+      "en": "Are you hungry or thirsty?",
+      "pl": "(Czy) jesteś głodny, czy chce ci się pić?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy jesteś głodna, czy chce ci się pić?"],
+      "focus_words": ["jesteś głodny", "czy", "chce ci się pić"],
+      "grammar_tags": ["question", "state"]
+    },
+    {
+      "id": 15,
+      "en": "Why is she worried? What's going on?",
+      "pl": "Dlaczego ona jest zmartwiona? Co się dzieje?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dlaczego jest zmartwiona? Co się dzieje?"],
+      "focus_words": ["dlaczego", "ona jest zmartwiona", "co się dzieje"],
+      "grammar_tags": ["question", "state"]
+    },
+    {
+      "id": 16,
+      "en": "I'm really glad/happy.",
+      "pl": "Jestem naprawdę zadowolony.",
+      "literal_en": null,
+      "english_variants": ["I'm really happy."],
+      "polish_alternatives": ["Jestem naprawdę zadowolona."],
+      "focus_words": ["jestem naprawdę zadowolony"],
+      "grammar_tags": ["state"]
+    },
+    {
+      "id": 17,
+      "en": "I'm very tired (f.). What time is it?",
+      "pl": "Jestem bardzo zmęczona. Która (jest) godzina?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jestem bardzo zmęczona", "która godzina"],
+      "grammar_tags": ["state", "question", "feminine_form"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "zajęty",
+      "wolny",
+      "zmęczony",
+      "śpiący",
+      "zadowolony",
+      "zaskoczony",
+      "szczęśliwy",
+      "smutny",
+      "głodny",
+      "zmartwiony",
+      "zły",
+      "chory",
+      "gotowy",
+      "spóźniony",
+      "gorąco",
+      "zimno"
+    ],
+    "sentence_cards_priority": [1, 3, 5, 6, 7, 8, 9, 10, 12, 14, 15, 17]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Why are you angry? What happened?'",
+      "correct_answer": "Dlaczego jesteś zły? Co się stało?",
+      "distractors": [
+        "Dlaczego jesteś smutny? Co się dzieje?",
+        "Dlaczego jesteś zmartwiony? Co się stało?",
+        "Dlaczego jesteś zły? Co się dzieje?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'I'm very tired. What time is it?'",
+      "answer_pl": "Jestem bardzo zmęczona. Która godzina?",
+      "word_bank": ["Jestem", "bardzo", "zmęczona", "Która", "godzina"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'I'm surprised that the restaurant is closed today.'",
+      "accepted_answers": [
+        "Jestem zaskoczony, że restauracja jest dziś zamknięta.",
+        "Jestem zaskoczona, że restauracja jest dzisiaj zamknięta."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

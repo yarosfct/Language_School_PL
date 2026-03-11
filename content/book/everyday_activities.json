@@ -1,0 +1,612 @@
+{
+  "section_number": 21,
+  "topic_en": "Everyday Activities",
+  "topic_pl": "Codzienne czynności",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "budzić się", "en": ["to wake up"], "category": "verb" },
+    { "pl": "wstawać", "en": ["to get up"], "category": "verb" },
+    { "pl": "ścielić łóżko", "en": ["to make one's bed"], "category": "phrase" },
+    { "pl": "brać prysznic", "en": ["to have a shower", "to take a shower"], "category": "phrase" },
+    { "pl": "myć włosy", "en": ["to wash one's hair"], "category": "phrase" },
+    { "pl": "czesać włosy", "en": ["to comb one's hair"], "category": "phrase" },
+    { "pl": "golić się", "en": ["to shave"], "category": "verb" },
+    { "pl": "ubierać się", "en": ["to get dressed"], "category": "verb" },
+    { "pl": "robić śniadanie/obiad/kolację", "en": ["to make breakfast", "to make dinner", "to make supper"], "category": "phrase" },
+    { "pl": "jeść", "en": ["to eat"], "category": "verb" },
+    { "pl": "iść do pracy/szkoły", "en": ["to go to work", "to go to school"], "category": "phrase" },
+    { "pl": "pracować", "en": ["to work"], "category": "verb" },
+    { "pl": "wracać do domu", "en": ["to go back home", "to come back home"], "category": "phrase" },
+    { "pl": "prać ubrania (ręcznie)", "en": ["to wash clothes", "to wash clothes by hand"], "category": "phrase" },
+    { "pl": "wychodzić z domu", "en": ["to leave home", "to leave the house"], "category": "phrase" },
+    { "pl": "iść na spacer", "en": ["to go for a walk"], "category": "phrase" },
+    { "pl": "gotować", "en": ["to cook"], "category": "verb" },
+    { "pl": "iść z psem na spacer", "en": ["to walk the dog"], "category": "phrase" },
+    { "pl": "robić zakupy (spożywcze)", "en": ["to do the shopping", "to do the groceries", "to grocery shop"], "category": "phrase" },
+    { "pl": "sprzątać", "en": ["to clean"], "category": "verb" },
+    { "pl": "prasować", "en": ["to iron"], "category": "verb" },
+    { "pl": "odkurzać", "en": ["to hoover", "to vacuum"], "category": "verb" },
+    { "pl": "odpoczywać", "en": ["to rest"], "category": "verb" },
+    { "pl": "oglądać telewizję", "en": ["to watch TV"], "category": "phrase" },
+    { "pl": "spędzać czas z rodziną", "en": ["to spend time with one's family"], "category": "phrase" },
+    { "pl": "iść spać", "en": ["to go to bed"], "category": "phrase" }
+  ],
+  "tips": [
+    {
+      "id": 2,
+      "topic": "wstawac_present_tense",
+      "content": "Present tense of 'wstawać' (to get up):",
+      "tables": {
+        "present_tense": {
+          "ja": "wstaję",
+          "ty": "wstajesz",
+          "on_ona_ono": "wstaje",
+          "my": "wstajemy",
+          "wy": "wstajecie",
+          "oni_one": "wstają"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "topic": "brac_prysznic_not_miec_prysznic",
+      "content": "In Polish, you say 'brać prysznic' for 'to take/have a shower'. 'Mieć prysznic' would mean to have a shower installation somewhere."
+    },
+    {
+      "id": 5,
+      "topic": "jesc_names_of_meals",
+      "content": "In Polish, you do not say 'mieć śniadanie' in this context. Always use 'jeść' with meal names, e.g. 'jeść śniadanie', 'jeść obiad'."
+    },
+    {
+      "id": 6,
+      "topic": "multiple_reflexive_verbs_only_one_sie",
+      "content": "If two or more reflexive verbs appear one after another in one sentence, you usually only use 'się' once, generally before the first reflexive verb."
+    },
+    {
+      "id": 7,
+      "topic": "no_possessive_adjectives_needed",
+      "content": "In English, possessive adjectives like my, your, their are often needed in these routines, but in Polish they are usually omitted."
+    },
+    {
+      "id": 9,
+      "topic": "wyjsc_z_domu",
+      "content": "Say 'wyjść z domu' (to leave home). The preposition 'z' is required and it is followed by the genitive case.",
+      "examples": [
+        "z domu"
+      ]
+    },
+    {
+      "id": 10,
+      "topic": "robic_zakupy_spozywcze",
+      "content": "Use 'robić zakupy (spożywcze)' when referring to groceries. 'Iść na zakupy' is a more general meaning of going shopping."
+    },
+    {
+      "id": 10,
+      "topic": "mozna_vs_mozesz_reference",
+      "content": "The note refers back to an earlier explanation distinguishing 'można' from 'możesz'."
+    },
+    {
+      "id": 12,
+      "topic": "zdarza_mi_sie",
+      "content": "'Zdarza mi się coś robić' means 'I sometimes do something' or 'it happens to me to do something'.",
+      "examples": [
+        "Zdarza mi się późno wstać w weekendy. = Sometimes I get up late at weekends."
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "isc_vs_chodzic",
+      "content": "'Iść' and 'chodzić' both mean to go on foot, but 'iść' is for one-off current movement, while 'chodzić' is used for regular actions or habits.",
+      "examples": [
+        "Idę do sklepu. = I'm going to the shop.",
+        "Chodzę do kina w każdy wtorek. = I go to the cinema every Tuesday."
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "zaraz_vs_wkrotce_niedlugo",
+      "content": "'Zaraz' and 'wkrótce/niedługo' can all translate as soon, but they differ slightly in use. 'Zaraz' is for something about to happen in a moment; 'wkrótce/niedługo' is for something happening soon in the near future.",
+      "examples": [
+        "Zaraz idziemy spać. = We're going to bed soon.",
+        "Zaraz zacznie padać. = It'll start raining soon.",
+        "Wkrótce/Niedługo będą wybory. = Soon there will be elections."
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "za_kazdym_razem",
+      "content": "'Each time' translates as 'za każdym razem' (not 'każdy czas').",
+      "examples": [
+        "Za każdym razem, kiedy jesteśmy w Warszawie, idziemy do tej restauracji. = Each time we're in Warsaw, we go to this restaurant."
+      ]
+    },
+    {
+      "id": 16,
+      "topic": "at_the_same_time_translation",
+      "content": "Pay attention to translating 'at the same time' correctly. Here it is 'o tej samej porze/godzinie'. There is no separate word for 'time' in the Polish version of this expression."
+    },
+    {
+      "id": 17,
+      "topic": "pracowac_vs_prasowac",
+      "content": "'Pracować' (to work) and 'prasować' (to iron) differ by only one letter, but both follow the same conjugation pattern.",
+      "examples": [
+        "ja pracuję",
+        "ja prasuję"
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "isc_like_walking",
+      "content": "'Iść' is like walking in general / going on foot, while 'spacerować' means strolling without a specific destination."
+    },
+    {
+      "id": 23,
+      "topic": "uses_of_to",
+      "content": "The word 'to' can be used in several ways: pointing to something, in questions like 'Co to jest?', in noun sentences such as 'To jest Paweł', and in expressions of reaction such as 'To zostajmy w domu'."
+    },
+    {
+      "id": 28,
+      "topic": "odkurzacz_from_odkurzac",
+      "content": "The noun 'odkurzacz' (hoover / vacuum cleaner) is derived from the verb 'odkurzać' (to hoover / vacuum)."
+    },
+    {
+      "id": 29,
+      "topic": "ogladac_telewizje_not_telewizor",
+      "content": "Say 'oglądać telewizję' to watch TV, not 'oglądać telewizor'. 'Telewizor' is the device; 'telewizja' refers to shows and TV content."
+    },
+    {
+      "id": 29,
+      "topic": "caly_vs_wszystkie",
+      "content": "Do not say 'wszystkie weekend'. The correct form is 'cały weekend'. 'Cały' means whole / entire, while 'wszystkie' means all in the sense of each and every.",
+      "examples": [
+        "cały dzień",
+        "cała rodzina",
+        "wszystkie książki"
+      ]
+    },
+    {
+      "id": 35,
+      "topic": "ale",
+      "content": "'Ale' usually means but. At the beginning of a sentence it can also mean something like wow / such when expressing emphasis or reaction.",
+      "examples": [
+        "Ale piękne! = They're so beautiful!",
+        "Ale jestem głodny! = I'm so hungry!",
+        "Ale fajny film! = It's such a cool film!"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Every day, I wake up very early.",
+      "pl": "Codziennie budzę się bardzo wcześnie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["codziennie", "budzę się", "bardzo wcześnie"],
+      "grammar_tags": ["daily_routine", "reflexive_verb"]
+    },
+    {
+      "id": 2,
+      "en": "I get up ten minutes later and make my bed.",
+      "pl": "Wstaję dziesięć minut później i ścielę łóżko.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wstaję", "dziesięć minut później", "ścielę łóżko"],
+      "grammar_tags": ["daily_routine", "time_expression"]
+    },
+    {
+      "id": 3,
+      "en": "I go to the bathroom and have a shower.",
+      "pl": "Idę do łazienki i biorę prysznic.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["idę do łazienki", "biorę prysznic"],
+      "grammar_tags": ["daily_routine", "movement"]
+    },
+    {
+      "id": 4,
+      "en": "I make breakfast at seven.",
+      "pl": "Robię śniadanie o siódmej.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["robię śniadanie", "o siódmej"],
+      "grammar_tags": ["daily_routine", "time_expression"]
+    },
+    {
+      "id": 5,
+      "en": "What time do you (pl.) have breakfast?",
+      "pl": "O której (godzinie) jecie śniadanie?",
+      "literal_en": null,
+      "english_variants": ["At what time do you eat breakfast?"],
+      "polish_alternatives": [],
+      "focus_words": ["o której", "jecie śniadanie"],
+      "grammar_tags": ["question", "daily_routine", "time_expression"]
+    },
+    {
+      "id": 6,
+      "en": "I always shave and get dressed quickly.",
+      "pl": "Zawsze szybko się golę i ubieram.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zawsze szybko się golę i się ubieram."],
+      "focus_words": ["zawsze", "szybko się golę", "ubieram"],
+      "grammar_tags": ["daily_routine", "reflexive_verb"]
+    },
+    {
+      "id": 7,
+      "en": "Some people wash their hair every day.",
+      "pl": "Niektórzy (ludzie) myją włosy codziennie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Niektórzy myją włosy codziennie."],
+      "focus_words": ["niektórzy", "myją włosy", "codziennie"],
+      "grammar_tags": ["daily_routine", "plural_subject"]
+    },
+    {
+      "id": 8,
+      "en": "Nowhere do I rest as well as in the mountains.",
+      "pl": "Nigdzie nie odpoczywam tak dobrze, jak w górach.",
+      "literal_en": null,
+      "english_variants": ["I rest nowhere as well as in the mountains."],
+      "polish_alternatives": [],
+      "focus_words": ["nigdzie nie odpoczywam", "tak dobrze", "jak w górach"],
+      "grammar_tags": ["daily_routine", "negation", "comparison"]
+    },
+    {
+      "id": 9,
+      "en": "We are just leaving (home). Why are you calling?",
+      "pl": "Właśnie wychodzimy z domu. Dlaczego dzwonisz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["właśnie wychodzimy z domu", "dlaczego dzwonisz"],
+      "grammar_tags": ["daily_routine", "movement", "genitive_after_z"]
+    },
+    {
+      "id": 10,
+      "en": "Do you know that you can now do your grocery shopping through applications?",
+      "pl": "(Czy) wiesz, że można/możesz teraz robić zakupy (spożywcze) przez aplikacje?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy wiesz, że teraz można robić zakupy przez aplikacje?"],
+      "focus_words": ["wiesz, że", "można", "możesz", "teraz", "robić zakupy", "przez aplikacje"],
+      "grammar_tags": ["question", "daily_routine", "subordinate_clause"]
+    },
+    {
+      "id": 11,
+      "en": "Do you also get up early at weekends?",
+      "pl": "(Czy) też wstajesz wcześnie w weekendy?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Też wstajesz wcześnie w weekendy?"],
+      "focus_words": ["też", "wstajesz wcześnie", "w weekendy"],
+      "grammar_tags": ["question", "daily_routine", "time_expression"]
+    },
+    {
+      "id": 12,
+      "en": "I sometimes go to bed late.",
+      "pl": "Zdarza mi się chodzić późno spać. / Czasami chodzę późno spać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czasami chodzę późno spać."],
+      "focus_words": ["zdarza mi się", "chodzić późno spać", "czasami"],
+      "grammar_tags": ["daily_routine", "fixed_expression"]
+    },
+    {
+      "id": 13,
+      "en": "We're going to bed soon.",
+      "pl": "Zaraz idziemy spać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zaraz", "idziemy spać"],
+      "grammar_tags": ["daily_routine", "time_expression"]
+    },
+    {
+      "id": 14,
+      "en": "You don't have to leave the room every time he calls.",
+      "pl": "Nie musisz wychodzić z pokoju za każdym razem, kiedy (on) dzwoni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nie musisz wychodzić", "z pokoju", "za każdym razem", "kiedy dzwoni"],
+      "grammar_tags": ["daily_routine", "negation", "subordinate_clause", "genitive_after_z"]
+    },
+    {
+      "id": 15,
+      "en": "Today, we are cooking a popular dish – spaghetti bolognese.",
+      "pl": "Dziś/Dzisiaj gotujemy popularną potrawę – spaghetti bolognese.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dzisiaj gotujemy popularną potrawę – spaghetti bolognese."],
+      "focus_words": ["dziś gotujemy", "popularną potrawę", "spaghetti bolognese"],
+      "grammar_tags": ["daily_routine", "accusative_basic"]
+    },
+    {
+      "id": 16,
+      "en": "She always gets up at the same time.",
+      "pl": "(Ona) zawsze wstaje o tej samej porze/godzinie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zawsze wstaje", "o tej samej porze", "godzinie"],
+      "grammar_tags": ["daily_routine", "time_expression"]
+    },
+    {
+      "id": 17,
+      "en": "I usually watch (TV) series when I'm ironing.",
+      "pl": "Zwykle oglądam seriale, kiedy prasuję.",
+      "literal_en": null,
+      "english_variants": ["I usually watch series when I iron."],
+      "polish_alternatives": [],
+      "focus_words": ["zwykle oglądam seriale", "kiedy prasuję"],
+      "grammar_tags": ["daily_routine", "subordinate_clause"]
+    },
+    {
+      "id": 18,
+      "en": "They work from home when it's possible.",
+      "pl": "Pracują z domu, kiedy to możliwe.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["pracują z domu", "kiedy to możliwe"],
+      "grammar_tags": ["daily_routine", "subordinate_clause", "genitive_after_z"]
+    },
+    {
+      "id": 19,
+      "en": "Every day, we try to make dinner/lunch at home.",
+      "pl": "Codziennie staramy się robić obiad w domu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Codziennie próbujemy robić obiad w domu."],
+      "focus_words": ["codziennie", "staramy się", "robić obiad", "w domu"],
+      "grammar_tags": ["daily_routine", "reflexive_verb", "locative"]
+    },
+    {
+      "id": 20,
+      "en": "My daughter sometimes wakes up at night.",
+      "pl": "Moja córka czasami budzi się w nocy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja córka", "czasami budzi się", "w nocy"],
+      "grammar_tags": ["daily_routine", "reflexive_verb", "locative"]
+    },
+    {
+      "id": 21,
+      "en": "I used to wash clothes by hand.",
+      "pl": "Kiedyś prałam ubrania ręcznie.",
+      "literal_en": null,
+      "english_variants": ["I washed clothes by hand in the past."],
+      "polish_alternatives": [],
+      "focus_words": ["kiedyś", "prałam ubrania", "ręcznie"],
+      "grammar_tags": ["daily_routine", "past_tense", "feminine_form"]
+    },
+    {
+      "id": 22,
+      "en": "She can't go to work today.",
+      "pl": "(Ona) nie może iść/jechać dzisiaj/dziś do pracy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie może dziś iść do pracy."],
+      "focus_words": ["nie może", "iść", "jechać", "dziś", "do pracy"],
+      "grammar_tags": ["daily_routine", "negation", "movement"]
+    },
+    {
+      "id": 23,
+      "en": "If you want to work now, then I'm going back home.",
+      "pl": "Jeśli chcesz teraz pracować, to ja wracam do domu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jeśli chcesz", "teraz pracować", "to", "ja wracam do domu"],
+      "grammar_tags": ["daily_routine", "conditional_clause", "movement"]
+    },
+    {
+      "id": 24,
+      "en": "You must remember to lock the door when you leave the house.",
+      "pl": "Musisz pamiętać, żeby zamykać drzwi na klucz, kiedy wychodzisz z domu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["musisz pamiętać", "żeby zamykać drzwi na klucz", "kiedy wychodzisz z domu"],
+      "grammar_tags": ["daily_routine", "subordinate_clause", "genitive_after_z"]
+    },
+    {
+      "id": 25,
+      "en": "She worked a lot during the week, but spent weekends with her family.",
+      "pl": "(Ona) dużo pracowała w tygodniu, ale weekendy spędzała z rodziną.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dużo pracowała", "w tygodniu", "ale", "weekendy spędzała z rodziną"],
+      "grammar_tags": ["daily_routine", "past_tense", "contrast"]
+    },
+    {
+      "id": 26,
+      "en": "Have you (f.) already combed your hair?",
+      "pl": "(Czy) czesałaś już włosy?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czesałaś już włosy?"],
+      "focus_words": ["czesałaś", "już", "włosy"],
+      "grammar_tags": ["question", "daily_routine", "past_tense", "feminine_form"]
+    },
+    {
+      "id": 27,
+      "en": "I slept like a baby.",
+      "pl": "Spałem jak dziecko.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Spałam jak dziecko."],
+      "focus_words": ["spałem", "jak dziecko"],
+      "grammar_tags": ["daily_routine", "past_tense"]
+    },
+    {
+      "id": 28,
+      "en": "All right, I will hoover every week.",
+      "pl": "Dobrze, będę odkurzać co tydzień.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dobrze, będę odkurzał co tydzień."],
+      "focus_words": ["dobrze", "będę odkurzać", "co tydzień"],
+      "grammar_tags": ["daily_routine", "future_tense"]
+    },
+    {
+      "id": 29,
+      "en": "I (f.) watched TV all weekend.",
+      "pl": "Oglądałam telewizję (przez) cały weekend.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Oglądałam telewizję cały weekend."],
+      "focus_words": ["oglądałam telewizję", "cały weekend"],
+      "grammar_tags": ["daily_routine", "past_tense", "feminine_form"]
+    },
+    {
+      "id": 30,
+      "en": "Every day my husband comes (back) home at the same time.",
+      "pl": "Mój mąż codziennie wraca do domu o tej samej porze/godzinie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój mąż", "codziennie wraca do domu", "o tej samej porze"],
+      "grammar_tags": ["daily_routine", "time_expression", "movement"]
+    },
+    {
+      "id": 31,
+      "en": "She says she likes cleaning and that it’s a pleasure, not a chore.",
+      "pl": "(Ona) mówi, że lubi sprzątać i że to jest przyjemność, nie obowiązek.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mówi, że lubi sprzątać i że to przyjemność, nie obowiązek."],
+      "focus_words": ["mówi, że", "lubi sprzątać", "że to jest przyjemność", "nie obowiązek"],
+      "grammar_tags": ["daily_routine", "subordinate_clause"]
+    },
+    {
+      "id": 32,
+      "en": "Do they prefer to go for a walk in the morning or in the afternoon?",
+      "pl": "(Czy oni) wolą iść na spacer rano, czy po południu?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wolą iść na spacer rano czy po południu?"],
+      "focus_words": ["wolą", "iść na spacer", "rano", "czy", "po południu"],
+      "grammar_tags": ["question", "daily_routine", "movement"]
+    },
+    {
+      "id": 33,
+      "en": "I’m cooking rice for my children.",
+      "pl": "Gotuję ryż dla dzieci.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gotuję ryż", "dla dzieci"],
+      "grammar_tags": ["daily_routine", "genitive_after_dla"]
+    },
+    {
+      "id": 34,
+      "en": "It’s raining today, so I’m watching TV.",
+      "pl": "Dzisiaj/Dziś pada (deszcz), więc oglądam telewizję.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dziś pada, więc oglądam telewizję."],
+      "focus_words": ["dziś pada", "więc", "oglądam telewizję"],
+      "grammar_tags": ["daily_routine", "subordinate_clause"]
+    },
+    {
+      "id": 35,
+      "en": "It’s so delicious! Thanks for always making dinner/lunch for me when I’m busy (f.).",
+      "pl": "Ale pyszne! Dzięki, że zawsze robisz dla mnie obiad, kiedy jestem zajęta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ale pyszne", "dzięki, że", "zawsze robisz dla mnie obiad", "kiedy jestem zajęta"],
+      "grammar_tags": ["daily_routine", "subordinate_clause", "feminine_form"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "budzić się",
+      "wstawać",
+      "ścielić łóżko",
+      "brać prysznic",
+      "myć włosy",
+      "czesać włosy",
+      "golić się",
+      "ubierać się",
+      "robić śniadanie",
+      "jeść",
+      "iść do pracy",
+      "pracować",
+      "wracać do domu",
+      "prać ubrania",
+      "wychodzić z domu",
+      "iść na spacer",
+      "gotować",
+      "robić zakupy",
+      "sprzątać",
+      "prasować",
+      "odkurzać",
+      "odpoczywać",
+      "oglądać telewizję",
+      "spędzać czas z rodziną",
+      "iść spać"
+    ],
+    "sentence_cards_priority": [1, 3, 5, 6, 8, 9, 10, 12, 13, 14, 16, 19, 21, 24, 25, 29, 31, 34, 35]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'We are just leaving home. Why are you calling?'",
+      "correct_answer": "Właśnie wychodzimy z domu. Dlaczego dzwonisz?",
+      "distractors": [
+        "Właśnie wychodzimy domu. Dlaczego dzwonisz?",
+        "Właśnie idziemy z domu. Dlaczego telefonujesz?",
+        "Właśnie wychodzimy do domu. Dlaczego dzwonisz?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'We’re going to bed soon.'",
+      "answer_pl": "Zaraz idziemy spać.",
+      "word_bank": ["Zaraz", "idziemy", "spać"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'I used to wash clothes by hand.'",
+      "accepted_answers": [
+        "Kiedyś prałam ubrania ręcznie.",
+        "Kiedyś prałem ubrania ręcznie."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

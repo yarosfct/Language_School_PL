@@ -1,0 +1,580 @@
+{
+  "section_number": 13,
+  "topic_en": "Character & Personality",
+  "topic_pl": "Charakter i osobowość",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "ambitny", "en": ["ambitious"], "category": "adjective" },
+    { "pl": "cierpliwy", "en": ["patient"], "category": "adjective" },
+    { "pl": "dobrze zorganizowany", "en": ["well organised"], "category": "adjective_phrase" },
+    { "pl": "inteligentny", "en": ["intelligent"], "category": "adjective" },
+    { "pl": "kreatywny", "en": ["creative"], "category": "adjective" },
+    { "pl": "miły", "en": ["nice"], "category": "adjective" },
+    { "pl": "niegrzeczny", "en": ["rude", "naughty"], "category": "adjective" },
+    { "pl": "nieśmiały", "en": ["shy"], "category": "adjective" },
+    { "pl": "niemiły", "en": ["impolite"], "category": "adjective" },
+    { "pl": "odpowiedzialny", "en": ["responsible"], "category": "adjective" },
+    { "pl": "pewny siebie", "en": ["self-confident"], "category": "adjective_phrase" },
+    { "pl": "pomocny", "en": ["helpful"], "category": "adjective" },
+    { "pl": "pracowity", "en": ["hardworking"], "category": "adjective" },
+    { "pl": "przyjazny", "en": ["friendly"], "category": "adjective" },
+    { "pl": "spokojny", "en": ["calm"], "category": "adjective" },
+    { "pl": "spontaniczny", "en": ["spontaneous"], "category": "adjective" },
+    { "pl": "szczery", "en": ["honest"], "category": "adjective" },
+    { "pl": "towarzyski", "en": ["sociable"], "category": "adjective" },
+    { "pl": "upart y", "en": ["stubborn"], "category": "adjective", "normalized_pl": "uparty" },
+    { "pl": "wrażliwy", "en": ["sensitive"], "category": "adjective" },
+    { "pl": "zdecydowany", "en": ["decisive"], "category": "adjective" },
+    { "pl": "leniwy", "en": ["lazy"], "category": "adjective" },
+    { "pl": "imprezowicz", "en": ["party animal"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "zdecydowany_and_decision",
+      "content": "The opposite of 'zdecydowany' is 'niezdecydowany'. Also remember that 'to make a decision' is 'podjąć decyzję', not 'robić decyzję'."
+    },
+    {
+      "id": 3,
+      "topic": "w_ostatniej_chwili",
+      "content": "'w ostatniej chwili' means 'at the last minute'."
+    },
+    {
+      "id": 5,
+      "topic": "musiec_present_tense",
+      "content": "'musieć' is a modal verb and is followed by another verb in the infinitive. Present tense forms:",
+      "tables": {
+        "present_tense": {
+          "ja": "muszę",
+          "ty": "musisz",
+          "on_ona_ono": "musi",
+          "my": "musimy",
+          "wy": "musicie",
+          "oni_one": "muszą"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "topic": "seem_to_be",
+      "content": "After 'wydawać się', natural Polish often uses the structure 'seem + to be', i.e. 'wydaje się być...'."
+    },
+    {
+      "id": 8,
+      "topic": "businesswoman_spelling",
+      "content": "Although the English and Polish words look similar, note the spelling and pronunciation difference: 'businesswoman' vs 'biznesmen / businesswoman'. The book highlights 'businesswoman' here."
+    },
+    {
+      "id": 11,
+      "topic": "staram_sie_vs_probuje_byc",
+      "content": "Both 'Staram się być...' and 'Próbuję być...' can translate as 'I'm trying to be...'. 'starać się' often emphasizes the effort put into doing something.",
+      "examples": [
+        "Staram się być cierpliwy. = I'm trying to be patient."
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "zastanawiac_sie_vs_ciekawe",
+      "content": "'zastanawiać się' means 'to wonder'. In colloquial speech, you can also use 'ciekawe...' to mean 'I wonder...'."
+    },
+    {
+      "id": 15,
+      "topic": "szczery_vs_uczciwy",
+      "content": "'Honest' can mean either 'szczery' or 'uczciwy'. 'szczery' means truthful and not hiding feelings. 'uczciwy' means honest in the sense of fair or morally upright."
+    },
+    {
+      "id": 17,
+      "topic": "robic_zdjecia_and_ktory",
+      "content": "'To take photos' is 'robić zdjęcia'. 'który' can mean who, which, what, or that depending on context."
+    },
+    {
+      "id": 18,
+      "topic": "odpowiedzialny_za",
+      "content": "After the adjective 'odpowiedzialny' (responsible), use the preposition 'za'.",
+      "examples": [
+        "odpowiedzialny za projekt = responsible for a project"
+      ]
+    },
+    {
+      "id": 19,
+      "topic": "prosze_cie_and_badz",
+      "content": "'Proszę cię!' means 'Come on!'. 'Bądź' is the imperative form of 'być'.",
+      "examples": [
+        "Bądź cierpliwy! = Be patient!"
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "dobrze_sie_bawic",
+      "content": "The informal expression 'dobrze się bawić' means 'to have a good time' or 'to have fun'."
+    },
+    {
+      "id": 24,
+      "topic": "pensja_vs_emerytura_and_duzo_wiecej_najwiecej",
+      "content": "'pensja' means salary, not pension. Also remember: 'dużo' = a lot, 'więcej' = more, 'najwięcej' = the most."
+    },
+    {
+      "id": 25,
+      "topic": "nauczyciel",
+      "content": "A male teacher is 'nauczyciel' in Polish."
+    },
+    {
+      "id": 26,
+      "topic": "imprezowicz",
+      "content": "'Imprezowicz' means 'party animal'."
+    },
+    {
+      "id": 28,
+      "topic": "ze_mna",
+      "content": "'ze mną' translates as 'with me'."
+    },
+    {
+      "id": 29,
+      "topic": "reflexive_sie_changes_meaning",
+      "content": "Forgetting 'się' can completely change the meaning of some verbs.",
+      "examples": [
+        "uczyć = to teach",
+        "uczyć się = to study, to learn",
+        "urodzić = to give birth",
+        "urodzić się = to be born"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "isc_present_tense",
+      "content": "Present tense of 'iść' (to go on foot):",
+      "tables": {
+        "present_tense": {
+          "ja": "idę",
+          "ty": "idziesz",
+          "on_ona_ono": "idzie",
+          "my": "idziemy",
+          "wy": "idziecie",
+          "oni_one": "idą"
+        }
+      }
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "I'm decisive so I make decisions quickly.",
+      "pl": "Jestem zdecydowany, więc szybko podejmuję decyzje.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem zdecydowana, więc szybko podejmuję decyzje."],
+      "focus_words": ["jestem zdecydowany", "więc", "szybko", "podejmuję decyzje"],
+      "grammar_tags": ["personality", "present_tense"]
+    },
+    {
+      "id": 2,
+      "en": "He's really nice.",
+      "pl": "(On) jest naprawdę miły.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jest naprawdę miły."],
+      "focus_words": ["jest naprawdę miły"],
+      "grammar_tags": ["personality", "description"]
+    },
+    {
+      "id": 3,
+      "en": "I'm not well organised and I do everything at the last minute.",
+      "pl": "Nie jestem dobrze zorganizowany. Wszystko robię w ostatniej chwili.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie jestem dobrze zorganizowana. Wszystko robię w ostatniej chwili."],
+      "focus_words": ["nie jestem dobrze zorganizowany", "wszystko robię", "w ostatniej chwili"],
+      "grammar_tags": ["personality", "negation"]
+    },
+    {
+      "id": 4,
+      "en": "He was always very stubborn.",
+      "pl": "Zawsze był bardzo uparty.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zawsze", "był", "bardzo uparty"],
+      "grammar_tags": ["personality", "past_tense"]
+    },
+    {
+      "id": 5,
+      "en": "You need to be patient when you're learning Polish.",
+      "pl": "Musisz być cierpliwy, kiedy uczysz się polskiego.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Musisz być cierpliwa, kiedy uczysz się polskiego."],
+      "focus_words": ["musisz być cierpliwy", "kiedy", "uczysz się polskiego"],
+      "grammar_tags": ["personality", "present_tense", "reflexive_verb"]
+    },
+    {
+      "id": 6,
+      "en": "She seems to be very self-confident.",
+      "pl": "(Ona) wydaje się bardzo pewna siebie.",
+      "literal_en": null,
+      "english_variants": ["She seems very self-confident."],
+      "polish_alternatives": ["Ona wydaje się być bardzo pewna siebie."],
+      "focus_words": ["wydaje się", "bardzo pewna siebie"],
+      "grammar_tags": ["personality", "seems_structure"]
+    },
+    {
+      "id": 7,
+      "en": "You are very helpful.",
+      "pl": "Jesteś bardzo pomocny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jesteś bardzo pomocna."],
+      "focus_words": ["jesteś bardzo pomocny"],
+      "grammar_tags": ["personality", "description"]
+    },
+    {
+      "id": 8,
+      "en": "She is a young, ambitious businesswoman.",
+      "pl": "(Ona) jest młodą, ambitną businesswoman.",
+      "literal_en": null,
+      "english_variants": ["She is a young, ambitious businesswoman."],
+      "polish_alternatives": ["Ona jest młodą, ambitną bizneswoman."],
+      "focus_words": ["jest młodą", "ambitną", "businesswoman"],
+      "grammar_tags": ["personality", "instrumental_after_byc"]
+    },
+    {
+      "id": 9,
+      "en": "Your neighbour isn't friendly, is he?",
+      "pl": "Twój sąsiad nie jest przyjazny, prawda?",
+      "literal_en": null,
+      "english_variants": ["Your neighbour isn't friendly, right?"],
+      "polish_alternatives": [],
+      "focus_words": ["twój sąsiad", "nie jest przyjazny", "prawda"],
+      "grammar_tags": ["personality", "negation", "tag_question"]
+    },
+    {
+      "id": 10,
+      "en": "I don't want to be rude, but I'm not interested.",
+      "pl": "Nie chcę być niemiły, ale nie jestem zainteresowany.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie chcę być niemiła, ale nie jestem zainteresowana."],
+      "focus_words": ["nie chcę być niemiły", "ale", "nie jestem zainteresowany"],
+      "grammar_tags": ["personality", "negation"]
+    },
+    {
+      "id": 11,
+      "en": "At work, I try to be creative (f.).",
+      "pl": "W pracy staram się / próbuję być kreatywna.",
+      "literal_en": null,
+      "english_variants": ["At work, I try to be creative."],
+      "polish_alternatives": ["W pracy staram się być kreatywna.", "W pracy próbuję być kreatywna."],
+      "focus_words": ["w pracy", "staram się", "próbuję", "być kreatywna"],
+      "grammar_tags": ["personality", "feminine_form"]
+    },
+    {
+      "id": 12,
+      "en": "Sometimes you're too sensitive (f.).",
+      "pl": "Czasami jesteś zbyt/za wrażliwa.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czasami jesteś za wrażliwa."],
+      "focus_words": ["czasami", "jesteś", "zbyt", "za", "wrażliwa"],
+      "grammar_tags": ["personality", "feminine_form", "degree"]
+    },
+    {
+      "id": 13,
+      "en": "I wonder if he's always impolite.",
+      "pl": "Zastanawiam się, czy on zawsze jest niemiły.",
+      "literal_en": null,
+      "english_variants": ["I wonder whether he is always impolite."],
+      "polish_alternatives": ["Ciekawe, czy on zawsze jest niemiły."],
+      "focus_words": ["zastanawiam się", "czy", "on", "zawsze", "jest niemiły"],
+      "grammar_tags": ["personality", "subordinate_clause"]
+    },
+    {
+      "id": 14,
+      "en": "How come (lit. How is it possible that) you're always calm?",
+      "pl": "Jak to możliwe, że zawsze jesteś spokojny?",
+      "literal_en": null,
+      "english_variants": ["How is it possible that you're always calm?"],
+      "polish_alternatives": ["Jak to możliwe, że zawsze jesteś spokojna?"],
+      "focus_words": ["jak to możliwe", "że", "zawsze", "jesteś spokojny"],
+      "grammar_tags": ["personality", "subordinate_clause"]
+    },
+    {
+      "id": 15,
+      "en": "I appreciate it / him / her when someone is honest.",
+      "pl": "Doceniam, kiedy ktoś jest szczery.",
+      "literal_en": null,
+      "english_variants": ["I appreciate it when someone is honest."],
+      "polish_alternatives": [],
+      "focus_words": ["doceniam", "kiedy", "ktoś", "jest szczery"],
+      "grammar_tags": ["personality", "subordinate_clause"]
+    },
+    {
+      "id": 16,
+      "en": "My sister is very spontaneous and always has good ideas.",
+      "pl": "Moja siostra jest bardzo spontaniczna i zawsze ma dobre pomysły.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja siostra", "jest bardzo spontaniczna", "zawsze ma dobre pomysły"],
+      "grammar_tags": ["personality", "present_tense"]
+    },
+    {
+      "id": 17,
+      "en": "This is a very creative photographer who takes beautiful pictures.",
+      "pl": "To (jest) bardzo kreatywny fotograf, który robi piękne zdjęcia.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["to", "bardzo kreatywny fotograf", "który", "robi piękne zdjęcia"],
+      "grammar_tags": ["personality", "relative_clause"]
+    },
+    {
+      "id": 18,
+      "en": "She isn't responsible for your decisions.",
+      "pl": "(Ona) nie jest odpowiedzialna za twoje decyzje.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie jest odpowiedzialna za twoje decyzje."],
+      "focus_words": ["nie jest odpowiedzialna", "za", "twoje decyzje"],
+      "grammar_tags": ["personality", "negation"]
+    },
+    {
+      "id": 19,
+      "en": "Come on! Don't be lazy!",
+      "pl": "Proszę cię! Nie bądź leniwy!",
+      "literal_en": null,
+      "english_variants": ["Come on! Don't be lazy!"],
+      "polish_alternatives": ["Proszę cię! Nie bądź leniwa!"],
+      "focus_words": ["proszę cię", "nie bądź leniwy"],
+      "grammar_tags": ["personality", "imperative", "negation"]
+    },
+    {
+      "id": 20,
+      "en": "I always try to be nice (f.).",
+      "pl": "Zawsze staram się / próbuję być miła.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zawsze staram się być miła.", "Zawsze próbuję być miła."],
+      "focus_words": ["zawsze", "staram się", "próbuję", "być miła"],
+      "grammar_tags": ["personality", "feminine_form"]
+    },
+    {
+      "id": 21,
+      "en": "You need to be very well organised at work.",
+      "pl": "Musisz być bardzo dobrze zorganizowany w pracy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Musisz być bardzo dobrze zorganizowana w pracy."],
+      "focus_words": ["musisz być", "bardzo dobrze zorganizowany", "w pracy"],
+      "grammar_tags": ["personality", "present_tense"]
+    },
+    {
+      "id": 22,
+      "en": "She was a bit shy at the beginning, but she's having a good time now.",
+      "pl": "Na początku była trochę nieśmiała, ale teraz się dobrze bawi.",
+      "literal_en": null,
+      "english_variants": ["At first she was a bit shy, but now she's having fun."],
+      "polish_alternatives": [],
+      "focus_words": ["na początku", "była trochę nieśmiała", "ale teraz", "się dobrze bawi"],
+      "grammar_tags": ["personality", "past_and_present", "reflexive_verb"]
+    },
+    {
+      "id": 23,
+      "en": "I'm very spontaneous, and I like surprises.",
+      "pl": "Jestem bardzo spontaniczny i lubię niespodzianki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem bardzo spontaniczna i lubię niespodzianki."],
+      "focus_words": ["jestem bardzo spontaniczny", "i", "lubię niespodzianki"],
+      "grammar_tags": ["personality", "accusative_basic"]
+    },
+    {
+      "id": 24,
+      "en": "He's very intelligent. He earns the most in the company.",
+      "pl": "(On) jest bardzo inteligentny. Zarabia najwięcej w firmie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jest bardzo inteligentny", "zarabia najwięcej", "w firmie"],
+      "grammar_tags": ["personality", "superlative_degree"]
+    },
+    {
+      "id": 25,
+      "en": "My teacher (f.) is patient.",
+      "pl": "Moja nauczycielka jest cierpliwa.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja nauczycielka", "jest cierpliwa"],
+      "grammar_tags": ["personality", "feminine_form"]
+    },
+    {
+      "id": 26,
+      "en": "Adam is very sociable. He's a real party animal.",
+      "pl": "Adam jest bardzo towarzyski. To prawdziwy imprezowicz!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["Adam", "jest bardzo towarzyski", "to prawdziwy imprezowicz"],
+      "grammar_tags": ["personality", "description"]
+    },
+    {
+      "id": 27,
+      "en": "Yes, I know. I (f.) haven't been sociable lately.",
+      "pl": "Tak, wiem. Nie jestem ostatnio towarzyska.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["tak, wiem", "nie jestem ostatnio towarzyska"],
+      "grammar_tags": ["personality", "negation", "feminine_form"]
+    },
+    {
+      "id": 28,
+      "en": "Be honest with me.",
+      "pl": "Bądź ze mną szczery.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Bądź ze mną szczera."],
+      "focus_words": ["bądź", "ze mną", "szczery"],
+      "grammar_tags": ["personality", "imperative"]
+    },
+    {
+      "id": 29,
+      "en": "Weronika is ambitious and enjoys studying.",
+      "pl": "Weronika jest ambitna i lubi się uczyć.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["Weronika", "jest ambitna", "lubi się uczyć"],
+      "grammar_tags": ["personality", "reflexive_verb", "two_verbs_rule"]
+    },
+    {
+      "id": 30,
+      "en": "Don't be stubborn!",
+      "pl": "Nie bądź uparty!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie bądź uparta!"],
+      "focus_words": ["nie bądź uparty"],
+      "grammar_tags": ["personality", "imperative", "negation"]
+    },
+    {
+      "id": 31,
+      "en": "I'm not lazy. I'm going (on foot) to work.",
+      "pl": "Nie jestem leniwa. Idę do pracy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie jestem leniwy. Idę do pracy."],
+      "focus_words": ["nie jestem leniwa", "idę do pracy"],
+      "grammar_tags": ["personality", "negation", "movement"]
+    },
+    {
+      "id": 32,
+      "en": "I like to be well organised and have everything planned.",
+      "pl": "Lubię być dobrze zorganizowany i mieć wszystko zaplanowane.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Lubię być dobrze zorganizowana i mieć wszystko zaplanowane."],
+      "focus_words": ["lubię być", "dobrze zorganizowany", "i mieć", "wszystko zaplanowane"],
+      "grammar_tags": ["personality", "two_verbs_rule"]
+    },
+    {
+      "id": 33,
+      "en": "My sister is extremely hardworking.",
+      "pl": "Moja siostra jest niezwykle pracowita.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja siostra", "jest niezwykle pracowita"],
+      "grammar_tags": ["personality", "description"]
+    },
+    {
+      "id": 34,
+      "en": "The lazy boy spends every afternoon in front of the TV.",
+      "pl": "Ten leniwy chłopak spędza każde popołudnie przed telewizorem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten leniwy chłopak", "spędza", "każde popołudnie", "przed telewizorem"],
+      "grammar_tags": ["personality", "present_tense"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "ambitny",
+      "cierpliwy",
+      "dobrze zorganizowany",
+      "inteligentny",
+      "kreatywny",
+      "miły",
+      "niegrzeczny",
+      "nieśmiały",
+      "niemiły",
+      "odpowiedzialny",
+      "pewny siebie",
+      "pomocny",
+      "pracowity",
+      "przyjazny",
+      "spokojny",
+      "spontaniczny",
+      "szczery",
+      "towarzyski",
+      "uparty",
+      "wrażliwy",
+      "zdecydowany",
+      "leniwy",
+      "imprezowicz"
+    ],
+    "sentence_cards_priority": [1, 3, 5, 6, 8, 10, 11, 13, 14, 18, 19, 21, 22, 24, 26, 29, 32]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Be honest with me.'",
+      "correct_answer": "Bądź ze mną szczery.",
+      "distractors": [
+        "Bądź mnie szczery.",
+        "Jesteś ze mną szczery.",
+        "Bądź z mną uczciwy."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Adam is very sociable. He's a real party animal.'",
+      "answer_pl": "Adam jest bardzo towarzyski. To prawdziwy imprezowicz!",
+      "word_bank": ["Adam", "jest", "bardzo", "towarzyski", "To", "prawdziwy", "imprezowicz"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'She isn't responsible for your decisions.'",
+      "accepted_answers": [
+        "Ona nie jest odpowiedzialna za twoje decyzje.",
+        "Nie jest odpowiedzialna za twoje decyzje."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

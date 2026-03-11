@@ -1,0 +1,279 @@
+{
+  "section_number": 39,
+  "topic_en": "Music",
+  "topic_pl": "Muzyka",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "muzyka", "en": ["music"], "category": "noun" },
+    { "pl": "śpiewać", "en": ["to sing"], "category": "verb" },
+    { "pl": "piosenkarz", "en": ["singer"], "category": "noun" },
+    { "pl": "piosenka", "en": ["song"], "category": "noun" },
+    { "pl": "zespół", "en": ["music band", "group"], "category": "noun" },
+    { "pl": "orkiestra", "en": ["orchestra"], "category": "noun" },
+    { "pl": "chór", "en": ["choir"], "category": "noun" },
+    { "pl": "koncert", "en": ["concert"], "category": "noun" },
+    { "pl": "musical", "en": ["musical"], "category": "noun" },
+    { "pl": "piano", "en": ["piano"], "category": "noun" },
+    { "pl": "gitara", "en": ["guitar"], "category": "noun" },
+    { "pl": "skrzypce", "en": ["violin"], "category": "noun_plural" },
+    { "pl": "album", "en": ["album"], "category": "noun" },
+    { "pl": "muzyka klasyczna", "en": ["classical music"], "category": "phrase" },
+    { "pl": "komponować", "en": ["to compose"], "category": "verb" },
+    { "pl": "tańczyć", "en": ["to dance"], "category": "verb" },
+    { "pl": "tekst piosenki", "en": ["song lyrics"], "category": "phrase" },
+    { "pl": "na żywo", "en": ["live", "live (of music)"], "category": "phrase" },
+    { "pl": "rock", "en": ["rock"], "category": "noun" },
+    { "pl": "pop", "en": ["pop"], "category": "noun" },
+    { "pl": "country", "en": ["country"], "category": "noun" },
+    { "pl": "jazz", "en": ["jazz"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "music_genres",
+      "content": "Examples of music genres: muzyka klasyczna, ty, rock, pop, dance, folk, współczesna (modern music), country, jazz, film music, rap."
+    },
+    {
+      "id": 1,
+      "topic": "collocations_with_muzyka",
+      "content": "Useful collocations with muzyka:",
+      "examples": [
+        "słuchać muzyki = to listen to music",
+        "włączyć muzykę = to put on music",
+        "podgłośnić muzykę = to turn up the music",
+        "wyłączyć muzykę = to turn off the music",
+        "komponować muzykę = to write/compose music"
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "sluchac_muzyki",
+      "content": "To express 'listen to music', use słuchać muzyki, not a direct literal structure."
+    },
+    {
+      "id": 5,
+      "topic": "grac_na_locative",
+      "content": "After grać na (to play on an instrument), use the locative case."
+    },
+    {
+      "id": 6,
+      "topic": "piosenka_plural",
+      "content": "Piosenki is the plural form of piosenka."
+    },
+    {
+      "id": 9,
+      "topic": "zespol",
+      "content": "Zespół can refer to a music band or a team at work."
+    },
+    {
+      "id": 11,
+      "topic": "accepting_invitation_phrases",
+      "content": "Some phrases for accepting an invitation:",
+      "examples": [
+        "Bardzo chętnie! = I'd love to!",
+        "Chętnie. = Sure / gladly.",
+        "Dobrze. = OK / all right.",
+        "No pewnie. = Sure thing."
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "skrzypce_plural",
+      "content": "Skrzypce (violin) is a plural noun in Polish."
+    },
+    {
+      "id": 15,
+      "topic": "z_pronoun_phrases",
+      "content": "Remember the following phrases:",
+      "examples": [
+        "ze mną = with me",
+        "z nami = with us",
+        "z nim = with him",
+        "z nią = with her",
+        "z nimi = with them"
+      ]
+    },
+    {
+      "id": 15,
+      "topic": "do_plus_genitive",
+      "content": "Use the genitive case after the preposition do."
+    },
+    {
+      "id": 16,
+      "topic": "piosenkarka",
+      "content": "A female singer is piosenkarka."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Can you put some Polish music on? Perhaps some rock music.",
+      "pl": "(Czy) możesz włączyć polską muzykę? Może rock?",
+      "grammar_tags": ["question", "accusative"]
+    },
+    {
+      "id": 2,
+      "en": "Fantastic concert! The atmosphere was great and everyone sang with us.",
+      "pl": "Fantastyczny koncert! Była świetna atmosfera i wszyscy śpiewali z nami.",
+      "grammar_tags": ["past_tense", "instrumental"]
+    },
+    {
+      "id": 3,
+      "en": "The orchestra was playing beautiful classical music.",
+      "pl": "Orkiestra grała piękną muzykę klasyczną.",
+      "grammar_tags": ["past_tense", "accusative"]
+    },
+    {
+      "id": 4,
+      "en": "Have you ever listened to live reggae music?",
+      "pl": "(Czy) kiedykolwiek słuchałeś muzyki reggae na żywo?",
+      "grammar_tags": ["question", "genitive"]
+    },
+    {
+      "id": 5,
+      "en": "I've always dreamt of playing the piano or the guitar.",
+      "pl": "Zawsze marzyłem, żeby grać na pianinie lub gitarze.",
+      "grammar_tags": ["past_tense", "subordinate_clause", "locative"]
+    },
+    {
+      "id": 6,
+      "en": "I know three Polish songs.",
+      "pl": "Znam trzy polskie piosenki.",
+      "grammar_tags": ["accusative"]
+    },
+    {
+      "id": 7,
+      "en": "His new album is fantastic!",
+      "pl": "Jego nowy album jest fantastyczny!",
+      "grammar_tags": []
+    },
+    {
+      "id": 8,
+      "en": "We danced all evening.",
+      "pl": "Tańczyliśmy cały wieczór.",
+      "grammar_tags": ["past_tense", "time_expression"]
+    },
+    {
+      "id": 9,
+      "en": "What kind of music does this band play? Pop, rock, or jazz?",
+      "pl": "Jaką muzykę gra ten zespół? Pop, rock czy jazz?",
+      "grammar_tags": ["question", "accusative"]
+    },
+    {
+      "id": 10,
+      "en": "This year there will be a new musical at the theatre.",
+      "pl": "W tym roku w teatrze będzie nowy musical.",
+      "grammar_tags": ["future_tense", "locative"]
+    },
+    {
+      "id": 11,
+      "en": "Chopin composed beautiful classical music.",
+      "pl": "Szopen komponował piękną muzykę klasyczną.",
+      "grammar_tags": ["past_tense", "accusative"]
+    },
+    {
+      "id": 12,
+      "en": "\"Do you want to go / Fancy going to the concert with me?\" \"I'd love to!\"",
+      "pl": "– Chcesz iść ze mną na koncert? – Bardzo chętnie!",
+      "grammar_tags": ["question", "instrumental"]
+    },
+    {
+      "id": 13,
+      "en": "When I was a child, I played the violin.",
+      "pl": "Kiedy byłem dzieckiem, grałem na skrzypcach.",
+      "grammar_tags": ["past_tense", "subordinate_clause", "locative"]
+    },
+    {
+      "id": 14,
+      "en": "Our favourite song has beautiful lyrics.",
+      "pl": "Nasza ulubiona piosenka ma piękny tekst.",
+      "grammar_tags": ["accusative"]
+    },
+    {
+      "id": 15,
+      "en": "Would you like to join our choir and sing with us?",
+      "pl": "(Czy) chciałbyś dołączyć do chóru i śpiewać z nami?",
+      "grammar_tags": ["question", "do_plus_genitive", "instrumental", "two_verbs_rule"]
+    },
+    {
+      "id": 16,
+      "en": "When does this singer have his next concert?",
+      "pl": "Kiedy ten piosenkarz ma następny koncert?",
+      "grammar_tags": ["question", "accusative"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "muzyka",
+      "śpiewać",
+      "piosenkarz",
+      "piosenka",
+      "zespół",
+      "orkiestra",
+      "chór",
+      "koncert",
+      "musical",
+      "piano",
+      "gitara",
+      "skrzypce",
+      "album",
+      "muzyka klasyczna",
+      "komponować",
+      "tańczyć",
+      "na żywo",
+      "tekst piosenki"
+    ],
+    "sentence_cards_priority": [1, 2, 4, 5, 9, 10, 12, 13, 15, 16]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'We danced all evening.'",
+      "correct_answer": "Tańczyliśmy cały wieczór.",
+      "distractors": [
+        "Śpiewaliśmy cały wieczór.",
+        "Graliśmy cały wieczór.",
+        "Tańczymy cały wieczór."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'I know three Polish songs.'",
+      "answer_pl": "Znam trzy polskie piosenki.",
+      "word_bank": ["Znam", "trzy", "polskie", "piosenki"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'His new album is fantastic!'",
+      "accepted_answers": [
+        "Jego nowy album jest fantastyczny!"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

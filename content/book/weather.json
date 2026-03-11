@@ -1,0 +1,608 @@
+{
+  "section_number": 31,
+  "topic_en": "The Weather",
+  "topic_pl": "Pogoda",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "gorąco", "en": ["hot"], "category": "adverb" },
+    { "pl": "zimno", "en": ["cold"], "category": "adverb" },
+    { "pl": "ciepło", "en": ["warm"], "category": "adverb" },
+    { "pl": "pochmurno", "en": ["cloudy"], "category": "adverb" },
+    { "pl": "suchy", "en": ["dry"], "category": "adjective" },
+    { "pl": "wilgotny", "en": ["humid", "wet"], "category": "adjective" },
+    { "pl": "silny", "en": ["strong"], "category": "adjective" },
+    { "pl": "słońce", "en": ["sun"], "category": "noun" },
+    { "pl": "słonecznie", "en": ["sunny"], "category": "adverb" },
+    { "pl": "padać", "en": ["to rain", "to snow", "to fall (precipitation)"], "category": "verb" },
+    { "pl": "pada deszcz", "en": ["it's raining"], "category": "phrase" },
+    { "pl": "wiatr", "en": ["wind"], "category": "noun" },
+    { "pl": "wietrznie", "en": ["windy"], "category": "adverb" },
+    { "pl": "mgła", "en": ["fog"], "category": "noun" },
+    { "pl": "mgliście", "en": ["foggy"], "category": "adverb" },
+    { "pl": "pogoda", "en": ["weather"], "category": "noun" },
+    { "pl": "prognoza pogody", "en": ["weather forecast"], "category": "phrase" },
+    { "pl": "klimat", "en": ["climate"], "category": "noun" },
+    { "pl": "temperatura", "en": ["temperature"], "category": "noun" },
+    { "pl": "termometr", "en": ["thermometer"], "category": "noun" },
+    { "pl": "stopnie Celsjusza", "en": ["degrees Celsius"], "category": "phrase" },
+    { "pl": "minus", "en": ["minus", "below zero"], "category": "particle" },
+    { "pl": "poniżej zera", "en": ["below zero"], "category": "phrase" },
+    { "pl": "świecić", "en": ["to shine"], "category": "verb" },
+    { "pl": "wschodzić", "en": ["to rise", "to come up (of the sun)"], "category": "verb" },
+    { "pl": "zachodzić", "en": ["to set (of the sun)"], "category": "verb" },
+    { "pl": "zmieniać się", "en": ["to change"], "category": "verb" },
+    { "pl": "huragan", "en": ["hurricane"], "category": "noun" },
+    { "pl": "burza", "en": ["storm"], "category": "noun" },
+    { "pl": "grzmot", "en": ["clap of thunder", "thunder"], "category": "noun" },
+    { "pl": "niebo", "en": ["sky"], "category": "noun" },
+    { "pl": "cień", "en": ["shade", "shadow"], "category": "noun" },
+    { "pl": "pada śnieg", "en": ["it's snowing"], "category": "phrase" },
+    { "pl": "leje", "en": ["it's pouring"], "category": "verb_phrase" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "padac_with_precipitation",
+      "content": "The verb 'padać' is commonly used with weather nouns like rain, snow, and hail.",
+      "examples": [
+        "Rano padał deszcz. = It rained in the morning.",
+        "Często pada tu grad. = It often hails here.",
+        "Kiedy ostatnio padał śnieg? = When was the last time it snowed?"
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "spoken_weather_short_forms",
+      "content": "When it's raining, you can say 'pada deszcz'. In spoken, informal Polish you can also shorten it to just 'pada'. You can also use 'leje' when it's pouring.",
+      "examples": [
+        "Pada deszcz.",
+        "Pada.",
+        "Leje."
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "single_present_tense_weather",
+      "content": "Polish has only one present tense, so depending on context, 'pada deszcz' can be understood as 'it's raining' or 'it rains'."
+    },
+    {
+      "id": 4,
+      "topic": "heavy_rain_light_rain",
+      "content": "Useful weather expressions to memorise:",
+      "examples": [
+        "ulewny deszcz = heavy rain",
+        "lekki deszcz = light rain",
+        "Mocno pada. = It's raining heavily."
+      ]
+    },
+    {
+      "id": 11,
+      "topic": "temperature_question_alternative",
+      "content": "You can also ask about temperature with 'Ile jest dziś stopni?', which has the same meaning as 'Jaka jest dziś temperatura?'"
+    },
+    {
+      "id": 12,
+      "topic": "stopien_number_forms",
+      "content": "The noun 'stopień' (degree) changes depending on the number that precedes it.",
+      "examples": [
+        "1 stopień",
+        "2, 3, 4 stopnie",
+        "5, 6, 7, 8, 9, 10 stopni",
+        "22 stopnie",
+        "15 stopni",
+        "113 stopni",
+        "4 stopnie",
+        "1 stopień"
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "cien_and_w_cieniu",
+      "content": "'Cień' means shade or shadow. 'W cieniu' means 'in the shade'."
+    },
+    {
+      "id": 14,
+      "topic": "celsjusza_in_spoken_polish",
+      "content": "In spoken Polish, it's not very common to explicitly say 'Celsjusza' when talking about temperature. You're more likely to hear it in forecasts."
+    },
+    {
+      "id": 16,
+      "topic": "trzeba_impersonal",
+      "content": "'Trzeba' is a very useful impersonal word. It is a less formal way to say something is necessary or needs to be done.",
+      "examples": [
+        "Trzeba jechać metrem. = You need to take the underground.",
+        "Trzeba iść do sklepu. = You need to go to the shop."
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "compass_points_with_na",
+      "content": "Use these phrases to talk about compass directions:",
+      "examples": [
+        "na północy = in the north",
+        "na południu = in the south",
+        "na zachodzie = in the west",
+        "na wschodzie = in the east"
+      ],
+      "content_note": "With compass points, Polish uses the preposition 'na', not 'w'."
+    },
+    {
+      "id": 24,
+      "topic": "wieje_wiatr",
+      "content": "A common phrase is 'wieje wiatr' = 'the wind is blowing'."
+    },
+    {
+      "id": 27,
+      "topic": "duzo_tutaj_pada_not_duzo_pada_deszcz",
+      "content": "The book notes that the form 'Dużo tutaj/tu pada' sounds more natural than a more literal construction with 'deszcz'."
+    },
+    {
+      "id": 29,
+      "topic": "weather_describing_adjectives",
+      "content": "Useful adjectives for describing weather:",
+      "examples": [
+        "piękna = beautiful",
+        "ładna = nice",
+        "brzydka = ugly / bad",
+        "okropna = terrible",
+        "zmienna = changeable"
+      ]
+    },
+    {
+      "id": 30,
+      "topic": "wysoka_niska_temperatura",
+      "content": "The feminine adjectives 'wysoka' and 'niska' describe temperature here. In other contexts, they can mean tall and short / high and low."
+    },
+    {
+      "id": 34,
+      "topic": "w_koncu_vs_na_koncu",
+      "content": "Do not confuse 'w końcu' with 'na końcu'. 'W końcu' means finally / in the end. 'Na końcu' means at the end.",
+      "examples": [
+        "W końcu to zrobiłeś! = You finally did it!",
+        "Mój dom jest na końcu ulicy. = My house is at the end of the street."
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Is it raining now?",
+      "pl": "(Czy) teraz pada (deszcz)?",
+      "literal_en": null,
+      "english_variants": ["Is it raining right now?"],
+      "polish_alternatives": ["Teraz pada deszcz?", "Teraz pada?"],
+      "focus_words": ["teraz", "pada deszcz"],
+      "grammar_tags": ["weather", "question", "present_tense"]
+    },
+    {
+      "id": 2,
+      "en": "What’s the weather like today?",
+      "pl": "Jaka jest dzisiaj/dziś pogoda?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jaka jest dziś pogoda?"],
+      "focus_words": ["jaka jest", "dziś", "pogoda"],
+      "grammar_tags": ["weather", "question"]
+    },
+    {
+      "id": 3,
+      "en": "It was warm but windy.",
+      "pl": "Było ciepło, ale wietrznie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["było ciepło", "ale wietrznie"],
+      "grammar_tags": ["weather", "past_tense", "contrast"]
+    },
+    {
+      "id": 4,
+      "en": "What was the weather like yesterday?",
+      "pl": "Jaka była wczoraj pogoda?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jaka była", "wczoraj", "pogoda"],
+      "grammar_tags": ["weather", "question", "past_tense"]
+    },
+    {
+      "id": 5,
+      "en": "It was sunny.",
+      "pl": "Było słonecznie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["było słonecznie"],
+      "grammar_tags": ["weather", "past_tense"]
+    },
+    {
+      "id": 6,
+      "en": "Did you (pl.) hear that (clap of) thunder?",
+      "pl": "(Czy) słyszeliście ten grzmot?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Słyszeliście ten grzmot?"],
+      "focus_words": ["słyszeliście", "ten grzmot"],
+      "grammar_tags": ["weather", "question", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 7,
+      "en": "There’s fog everywhere.",
+      "pl": "Wszędzie jest mgła.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wszędzie", "jest mgła"],
+      "grammar_tags": ["weather", "existential"]
+    },
+    {
+      "id": 8,
+      "en": "The weather is changing. It’ll rain this week.",
+      "pl": "Pogoda się zmienia. W tym tygodniu będzie padać (deszcz).",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pogoda się zmienia. W tym tygodniu będzie padać."],
+      "focus_words": ["pogoda się zmienia", "w tym tygodniu", "będzie padać"],
+      "grammar_tags": ["weather", "future_tense", "reflexive_verb"]
+    },
+    {
+      "id": 9,
+      "en": "It’s not raining, and the sun is shining today.",
+      "pl": "Dzisiaj/Dziś nie pada (deszcz) i świeci słońce.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dziś nie pada i świeci słońce."],
+      "focus_words": ["dziś", "nie pada", "i świeci słońce"],
+      "grammar_tags": ["weather", "negation", "present_tense"]
+    },
+    {
+      "id": 10,
+      "en": "Yesterday, when I was coming back home, it was snowing.",
+      "pl": "Wczoraj, kiedy wracałem do domu, padał śnieg.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wczoraj, kiedy wracałam do domu, padał śnieg."],
+      "focus_words": ["wczoraj", "kiedy wracałem do domu", "padał śnieg"],
+      "grammar_tags": ["weather", "past_tense", "subordinate_clause"]
+    },
+    {
+      "id": 11,
+      "en": "What’s the temperature today?",
+      "pl": "Jaka jest dzisiaj/dziś temperatura?",
+      "literal_en": null,
+      "english_variants": ["What is the temperature today?"],
+      "polish_alternatives": ["Jaka jest dziś temperatura?", "Ile jest dziś stopni?"],
+      "focus_words": ["jaka jest", "dziś", "temperatura"],
+      "grammar_tags": ["weather", "question"]
+    },
+    {
+      "id": 12,
+      "en": "It’s five degrees below zero (lit. minus five degrees).",
+      "pl": "Jest minus pięć stopni.",
+      "literal_en": null,
+      "english_variants": ["It’s minus five degrees."],
+      "polish_alternatives": ["Jest pięć stopni poniżej zera."],
+      "focus_words": ["jest minus pięć stopni"],
+      "grammar_tags": ["weather", "numbers", "temperature"]
+    },
+    {
+      "id": 13,
+      "en": "It’s very hot, almost forty degrees (Celsius) in the shade.",
+      "pl": "Jest bardzo gorąco, prawie czterdzieści stopni (Celsjusza) w cieniu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jest bardzo gorąco, prawie czterdzieści stopni w cieniu."],
+      "focus_words": ["jest bardzo gorąco", "prawie czterdzieści stopni", "w cieniu"],
+      "grammar_tags": ["weather", "numbers", "temperature", "locative"]
+    },
+    {
+      "id": 14,
+      "en": "What’s the weather forecast for tomorrow?",
+      "pl": "Jaka jest prognoza pogody na jutro?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jaka jest", "prognoza pogody", "na jutro"],
+      "grammar_tags": ["weather", "question"]
+    },
+    {
+      "id": 15,
+      "en": "It’s cloudy. I think it’s going to rain.",
+      "pl": "Jest pochmurno. Myślę, że będzie padać (deszcz).",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jest pochmurno. Myślę, że będzie padać."],
+      "focus_words": ["jest pochmurno", "myślę, że", "będzie padać"],
+      "grammar_tags": ["weather", "future_tense", "subordinate_clause"]
+    },
+    {
+      "id": 16,
+      "en": "When it’s sunny, you need to (impersonal: one should) remember to drink a lot of water.",
+      "pl": "Kiedy jest słonecznie, trzeba pamiętać, żeby pić dużo wody.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kiedy jest słonecznie", "trzeba pamiętać", "żeby pić dużo wody"],
+      "grammar_tags": ["weather", "impersonal", "subordinate_clause", "genitive_basic"]
+    },
+    {
+      "id": 17,
+      "en": "What time does the sun set?",
+      "pl": "O której (godzinie) zachodzi słońce?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["O której zachodzi słońce?"],
+      "focus_words": ["o której", "zachodzi słońce"],
+      "grammar_tags": ["weather", "question", "time_expression"]
+    },
+    {
+      "id": 18,
+      "en": "There was a storm yesterday, and it was very windy.",
+      "pl": "Wczoraj była burza i było bardzo wietrznie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wczoraj była burza", "i było bardzo wietrznie"],
+      "grammar_tags": ["weather", "past_tense"]
+    },
+    {
+      "id": 19,
+      "en": "Look! The weather forecast for tomorrow!",
+      "pl": "Spójrz! Prognoza pogody na jutro!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["spójrz", "prognoza pogody", "na jutro"],
+      "grammar_tags": ["weather", "exclamation"]
+    },
+    {
+      "id": 20,
+      "en": "It’s going to rain in the north, and it’ll be quite cold.",
+      "pl": "Na północy będzie padać (deszcz) i będzie dość zimno.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Na północy będzie padać i będzie dość zimno."],
+      "focus_words": ["na północy", "będzie padać", "i będzie dość zimno"],
+      "grammar_tags": ["weather", "future_tense", "compass_points"]
+    },
+    {
+      "id": 21,
+      "en": "It will be sunny in the south.",
+      "pl": "Na południu będzie słonecznie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["na południu", "będzie słonecznie"],
+      "grammar_tags": ["weather", "future_tense", "compass_points"]
+    },
+    {
+      "id": 22,
+      "en": "It will be cloudy and foggy in the west.",
+      "pl": "Na zachodzie będzie pochmurno i mgliście.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["na zachodzie", "będzie pochmurno", "i mgliście"],
+      "grammar_tags": ["weather", "future_tense", "compass_points"]
+    },
+    {
+      "id": 23,
+      "en": "What a beautiful day! Shall we go for a walk?",
+      "pl": "Jaki/Ale piękny dzień! Idziemy na spacer?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jaki piękny dzień! Idziemy na spacer?"],
+      "focus_words": ["jaki piękny dzień", "idziemy na spacer"],
+      "grammar_tags": ["weather", "exclamation", "question"]
+    },
+    {
+      "id": 24,
+      "en": "There’s a strong wind today.",
+      "pl": "Dzisiaj/Dziś jest silny wiatr.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dziś jest silny wiatr."],
+      "focus_words": ["dziś", "jest silny wiatr"],
+      "grammar_tags": ["weather", "description"]
+    },
+    {
+      "id": 25,
+      "en": "Did you check (lit. look at) the thermometer this morning?",
+      "pl": "(Czy) patrzyłeś rano na termometr?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Patrzyłaś rano na termometr?"],
+      "focus_words": ["patrzyłeś rano", "na termometr"],
+      "grammar_tags": ["weather", "question", "past_tense"]
+    },
+    {
+      "id": 26,
+      "en": "How long did the last hurricane last?",
+      "pl": "Jak długo trwał ostatni huragan?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jak długo", "trwał", "ostatni huragan"],
+      "grammar_tags": ["weather", "question", "past_tense"]
+    },
+    {
+      "id": 27,
+      "en": "It rains a lot here. The climate is very humid/wet.",
+      "pl": "Dużo tutaj/tu pada. Jest bardzo wilgotny klimat.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dużo tu pada. Klimat jest bardzo wilgotny."],
+      "focus_words": ["dużo tu pada", "jest bardzo wilgotny klimat"],
+      "grammar_tags": ["weather", "present_tense", "description"]
+    },
+    {
+      "id": 28,
+      "en": "In Africa, the climate is very dry.",
+      "pl": "W Afryce klimat jest bardzo suchy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w Afryce", "klimat", "jest bardzo suchy"],
+      "grammar_tags": ["weather", "locative", "description"]
+    },
+    {
+      "id": 29,
+      "en": "The weather is terrible today. It’s fifteen degrees below zero.",
+      "pl": "Pogoda jest dzisiaj/dziś okropna. Jest minus piętnaście stopni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dziś pogoda jest okropna. Jest minus piętnaście stopni."],
+      "focus_words": ["pogoda jest dziś okropna", "jest minus piętnaście stopni"],
+      "grammar_tags": ["weather", "temperature", "numbers"]
+    },
+    {
+      "id": 30,
+      "en": "The temperature is quite high.",
+      "pl": "Temperatura jest całkiem wysoka.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["temperatura", "jest całkiem wysoka"],
+      "grammar_tags": ["weather", "description"]
+    },
+    {
+      "id": 31,
+      "en": "Is it snowing? I can’t believe it.",
+      "pl": "(Czy) pada śnieg? Nie mogę w to uwierzyć.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pada śnieg? Nie mogę w to uwierzyć."],
+      "focus_words": ["pada śnieg", "nie mogę w to uwierzyć"],
+      "grammar_tags": ["weather", "question", "negation"]
+    },
+    {
+      "id": 32,
+      "en": "I like a warm wind at the beach.",
+      "pl": "Lubię ciepły wiatr na plaży.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię", "ciepły wiatr", "na plaży"],
+      "grammar_tags": ["weather", "accusative_basic", "locative"]
+    },
+    {
+      "id": 33,
+      "en": "Look at the sky! There’s a storm coming.",
+      "pl": "Spójrz na niebo! Idzie burza.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["spójrz na niebo", "idzie burza"],
+      "grammar_tags": ["weather", "exclamation", "accusative_basic"]
+    },
+    {
+      "id": 34,
+      "en": "Finally, it’s hot, but it’s still raining.",
+      "pl": "W końcu jest gorąco, ale nadal/jeszcze pada (deszcz).",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["W końcu jest gorąco, ale jeszcze pada."],
+      "focus_words": ["w końcu", "jest gorąco", "ale", "nadal pada"],
+      "grammar_tags": ["weather", "contrast", "present_tense"]
+    },
+    {
+      "id": 35,
+      "en": "In the summer, the sun rises early in the morning.",
+      "pl": "Latem słońce wschodzi wcześnie rano.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["latem", "słońce wschodzi", "wcześnie rano"],
+      "grammar_tags": ["weather", "time_expression", "present_tense"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "gorąco",
+      "zimno",
+      "ciepło",
+      "pochmurno",
+      "suchy",
+      "wilgotny",
+      "silny",
+      "słońce",
+      "słonecznie",
+      "padać",
+      "pada deszcz",
+      "wiatr",
+      "wietrznie",
+      "mgła",
+      "mgliście",
+      "pogoda",
+      "prognoza pogody",
+      "klimat",
+      "temperatura",
+      "termometr",
+      "stopnie Celsjusza",
+      "minus",
+      "poniżej zera",
+      "świecić",
+      "wschodzić",
+      "zachodzić",
+      "zmieniać się",
+      "huragan",
+      "burza",
+      "grzmot",
+      "niebo",
+      "cień",
+      "pada śnieg",
+      "leje"
+    ],
+    "sentence_cards_priority": [1, 2, 4, 8, 9, 11, 12, 13, 14, 15, 16, 17, 20, 21, 22, 23, 27, 29, 31, 33, 35]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'What’s the weather like today?'",
+      "correct_answer": "Jaka jest dziś pogoda?",
+      "distractors": [
+        "Ile jest dziś pogoda?",
+        "Co jest dziś pogoda?",
+        "Jaka ma dziś pogoda?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'It was warm but windy.'",
+      "answer_pl": "Było ciepło, ale wietrznie.",
+      "word_bank": ["Było", "ciepło", "ale", "wietrznie"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'The weather forecast for tomorrow.'",
+      "accepted_answers": [
+        "Prognoza pogody na jutro."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

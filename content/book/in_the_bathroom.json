@@ -1,0 +1,617 @@
+{
+  "section_number": 20,
+  "topic_en": "In the Bathroom",
+  "topic_pl": "W łazience",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "wanna", "en": ["bath", "bathtub"], "category": "noun" },
+    { "pl": "prysznic", "en": ["shower"], "category": "noun" },
+    { "pl": "brać kąpiel", "en": ["to have a bath"], "category": "phrase" },
+    { "pl": "brać prysznic", "en": ["to have", "to take a shower"], "category": "phrase" },
+    { "pl": "umywalka", "en": ["washbasin", "sink"], "category": "noun" },
+    { "pl": "toaleta", "en": ["toilet"], "category": "noun" },
+    { "pl": "papier toaletowy", "en": ["toilet paper"], "category": "phrase" },
+    { "pl": "lustro", "en": ["mirror"], "category": "noun" },
+    { "pl": "ręcznik", "en": ["towel"], "category": "noun" },
+    { "pl": "suszarka do włosów", "en": ["hairdryer"], "category": "phrase" },
+    { "pl": "czesać", "en": ["to comb"], "category": "verb" },
+    { "pl": "grzebień", "en": ["comb"], "category": "noun" },
+    { "pl": "szczotka do włosów", "en": ["hairbrush"], "category": "phrase" },
+    { "pl": "szczoteczka do zębów", "en": ["(electric) toothbrush", "toothbrush"], "category": "phrase" },
+    { "pl": "pasta do zębów", "en": ["toothpaste"], "category": "phrase" },
+    { "pl": "mydło", "en": ["soap"], "category": "noun" },
+    { "pl": "żel pod prysznic", "en": ["shower gel"], "category": "phrase" },
+    { "pl": "szampon", "en": ["shampoo"], "category": "noun" },
+    { "pl": "odżywka (do włosów)", "en": ["hair conditioner", "conditioner"], "category": "phrase" },
+    { "pl": "kosmetyki", "en": ["cosmetics"], "category": "noun_plural" },
+    { "pl": "krem", "en": ["cream"], "category": "noun" },
+    { "pl": "perfumy", "en": ["perfume"], "category": "noun_plural" },
+    { "pl": "żelazko", "en": ["iron"], "category": "noun" },
+    { "pl": "pralka", "en": ["washing machine"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "laundry_products",
+      "content": "For doing laundry ('robić pranie'), useful detergent words include:",
+      "examples": [
+        "proszek do prania = washing powder",
+        "płyn do płukania = fabric softener",
+        "kapsułki do prania = washing capsules/pods",
+        "odplamiacz = stain remover"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "czyj_czyja_czyje",
+      "content": "'Czyj', 'czyja', and 'czyje' all mean 'whose'. Use 'czyj' with masculine nouns, 'czyja' with feminine nouns, and 'czyje' with neuter nouns."
+    },
+    {
+      "id": 6,
+      "topic": "perfumy_plural",
+      "content": "'Perfumy' is a plural noun in Polish, so it takes a plural verb."
+    },
+    {
+      "id": 9,
+      "topic": "brac_present_tense_and_wanna_vs_kapiel",
+      "content": "'Biorę' is the 1st-person singular form of 'brać' (to take), which is irregular in the present tense.",
+      "tables": {
+        "present_tense": {
+          "ja": "biorę",
+          "ty": "bierzesz",
+          "on_ona_ono": "bierze",
+          "my": "bierzemy",
+          "wy": "bierzecie",
+          "oni_one": "biorą"
+        }
+      },
+      "content_note": "Learners often mix up 'wanna' and 'kąpiel'. 'Wanna' is the bathtub itself; 'kąpiel' is the bath as an activity."
+    },
+    {
+      "id": 10,
+      "topic": "juz_meanings",
+      "content": "'Już' is very common and can mean already, (right) now, or anymore in negative sentences depending on context."
+    },
+    {
+      "id": 12,
+      "topic": "konczyc_sie",
+      "content": "'Kończyć się' is used when something comes to an end or is running out. It usually appears at the end of the sentence and sounds more natural there.",
+      "examples": [
+        "Film kończy się o 8:00.",
+        "Adam kończy pracę o 8:00."
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "not_all_reflexive_verbs_are_reflexive_in_english",
+      "content": "Not all Polish reflexive verbs correspond to reflexive verbs in English.",
+      "examples": [
+        "myć się = to wash oneself / to get washed",
+        "czesać się = to comb one's hair",
+        "golić się = to shave"
+      ]
+    },
+    {
+      "id": 17,
+      "topic": "types_of_cream",
+      "content": "Useful types of cream:",
+      "examples": [
+        "krem do twarzy = face cream",
+        "krem do rąk = hand cream",
+        "krem do stóp = foot cream",
+        "krem do golenia = shaving cream",
+        "krem przeciwsłoneczny / krem z filtrem = sunscreen"
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "meskie_vs_damskie",
+      "content": "The adjective 'męski' refers to something associated with men, and 'damski' refers to something associated with women.",
+      "examples": [
+        "męska koszula = a shirt for men",
+        "damska torebka = a handbag",
+        "damskie buty = women's shoes"
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "wolec_accusative",
+      "content": "After the verb 'woleć' (to prefer), use the accusative case.",
+      "examples": [
+        "Szczotkę do włosów is the accusative of szczotka do włosów."
+      ]
+    },
+    {
+      "id": 23,
+      "topic": "mydlo_w_plynie_vs_w_kostce",
+      "content": "Useful soap expressions:",
+      "examples": [
+        "mydło w płynie = liquid soap",
+        "mydło w kostce = a bar of soap"
+      ]
+    },
+    {
+      "id": 28,
+      "topic": "sprawiac_ze",
+      "content": "When translating 'to make + adjective / feeling', Polish often uses 'sprawiać, że ...'.",
+      "examples": [
+        "Moja ulubiona muzyka sprawia, że jestem szczęśliwy. = My favourite music makes me happy.",
+        "Ta praca sprawia, że czuję się lepiej. = This job makes me feel better."
+      ]
+    },
+    {
+      "id": 29,
+      "topic": "pod_plus_instrumental",
+      "content": "After the preposition 'pod' (under), use the instrumental case. 'Prysznicem' is the instrumental of 'prysznic'."
+    },
+    {
+      "id": 30,
+      "topic": "nad_plus_instrumental",
+      "content": "After the preposition 'nad' (above), also use the instrumental case."
+    },
+    {
+      "id": 32,
+      "topic": "uzywac_genitive",
+      "content": "After the verb 'używać' (to use), use the genitive case."
+    },
+    {
+      "id": 33,
+      "topic": "szukac_genitive",
+      "content": "After the verb 'szukać' (to look for), also use the genitive case."
+    },
+    {
+      "id": 35,
+      "topic": "types_of_towels",
+      "content": "Useful towel names:",
+      "examples": [
+        "ręcznik plażowy = beach towel",
+        "ręcznik do rąk = hand towel",
+        "ręcznik kąpielowy = bath towel"
+      ]
+    },
+    {
+      "id": 36,
+      "topic": "niezbedny",
+      "content": "'Niezbędny' means necessary or essential."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "This washing machine is new.",
+      "pl": "Ta pralka jest nowa.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta pralka", "jest nowa"],
+      "grammar_tags": ["bathroom", "description"]
+    },
+    {
+      "id": 2,
+      "en": "Can I borrow your comb, please?",
+      "pl": "(Czy) mogę pożyczyć twój grzebień?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mogę pożyczyć twój grzebień?"],
+      "focus_words": ["mogę pożyczyć", "twój grzebień"],
+      "grammar_tags": ["question", "bathroom", "accusative_basic"]
+    },
+    {
+      "id": 3,
+      "en": "Whose is this blue toothbrush?",
+      "pl": "Czyja jest ta niebieska szczoteczka do zębów?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["czyja", "ta niebieska szczoteczka do zębów"],
+      "grammar_tags": ["question", "bathroom"]
+    },
+    {
+      "id": 4,
+      "en": "Are these cosmetics natural?",
+      "pl": "(Czy) te kosmetyki są naturalne?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Te kosmetyki są naturalne?"],
+      "focus_words": ["te kosmetyki", "są naturalne"],
+      "grammar_tags": ["question", "bathroom", "plural_noun"]
+    },
+    {
+      "id": 5,
+      "en": "We are planning a bathroom renovation and we're wondering what would (lit. will) be better: a bath/bathtub or a shower?",
+      "pl": "Planujemy remont łazienki i zastanawiamy się, co będzie lepsze: wanna czy prysznic?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["planujemy remont łazienki", "zastanawiamy się", "co będzie lepsze", "wanna", "prysznic"],
+      "grammar_tags": ["bathroom", "subordinate_clause", "future_tense"]
+    },
+    {
+      "id": 6,
+      "en": "This perfume has a beautiful scent.",
+      "pl": "Te perfumy mają piękny zapach.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["te perfumy", "mają", "piękny zapach"],
+      "grammar_tags": ["bathroom", "plural_noun"]
+    },
+    {
+      "id": 7,
+      "en": "Excuse me, is this a paid toilet?",
+      "pl": "Przepraszam, (czy) to płatna toaleta?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Przepraszam, to płatna toaleta?"],
+      "focus_words": ["przepraszam", "to płatna toaleta"],
+      "grammar_tags": ["question", "bathroom"]
+    },
+    {
+      "id": 8,
+      "en": "There's a washbasin and a toilet by the pool.",
+      "pl": "Obok basenu jest umywalka i toaleta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["obok basenu", "jest umywalka", "toaleta"],
+      "grammar_tags": ["bathroom", "existential", "genitive_after_obok"]
+    },
+    {
+      "id": 9,
+      "en": "I'm taking a bath and then (lit. and) I'm going to the cinema.",
+      "pl": "Biorę kąpiel i idę/jadę do kina.",
+      "literal_en": null,
+      "english_variants": ["I'm having a bath and then going to the cinema."],
+      "polish_alternatives": [],
+      "focus_words": ["biorę kąpiel", "i", "idę", "jadę", "do kina"],
+      "grammar_tags": ["bathroom", "present_tense", "movement"]
+    },
+    {
+      "id": 10,
+      "en": "The washing machine isn't working again. I don't know what to do anymore.",
+      "pl": "Pralka znowu/znów nie działa. Nie wiem już, co robić.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pralka znowu nie działa. Nie wiem już, co robić."],
+      "focus_words": ["pralka", "znowu", "nie działa", "nie wiem już", "co robić"],
+      "grammar_tags": ["bathroom", "negation", "subordinate_clause"]
+    },
+    {
+      "id": 11,
+      "en": "This shampoo is cheap.",
+      "pl": "Ten szampon jest tani.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten szampon", "jest tani"],
+      "grammar_tags": ["bathroom", "description"]
+    },
+    {
+      "id": 12,
+      "en": "The toilet paper is running out (lit. toilet paper is ending).",
+      "pl": "Papier toaletowy się kończy.",
+      "literal_en": null,
+      "english_variants": ["The toilet paper is running out."],
+      "polish_alternatives": [],
+      "focus_words": ["papier toaletowy", "się kończy"],
+      "grammar_tags": ["bathroom", "reflexive_verb"]
+    },
+    {
+      "id": 13,
+      "en": "When it's hot, I often have a cold shower.",
+      "pl": "Kiedy jest gorąco, często biorę zimny prysznic.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kiedy jest gorąco", "często", "biorę zimny prysznic"],
+      "grammar_tags": ["bathroom", "subordinate_clause", "accusative_basic"]
+    },
+    {
+      "id": 14,
+      "en": "Some children don't like to comb their hair (lit. don't like to comb themselves).",
+      "pl": "Niektóre dzieci nie lubią się czesać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["niektóre dzieci", "nie lubią się czesać"],
+      "grammar_tags": ["bathroom", "negation", "reflexive_verb"]
+    },
+    {
+      "id": 15,
+      "en": "There are dry towels in the bathroom.",
+      "pl": "W łazience są suche ręczniki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w łazience", "są suche ręczniki"],
+      "grammar_tags": ["bathroom", "locative", "plural_noun"]
+    },
+    {
+      "id": 16,
+      "en": "This bath/bathtub is quite large.",
+      "pl": "Ta wanna jest dość duża.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta wanna", "jest dość duża"],
+      "grammar_tags": ["bathroom", "description"]
+    },
+    {
+      "id": 17,
+      "en": "This cream smells beautiful.",
+      "pl": "Ten krem pięknie pachnie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten krem", "pięknie pachnie"],
+      "grammar_tags": ["bathroom", "description"]
+    },
+    {
+      "id": 18,
+      "en": "I always have a small comb on me.",
+      "pl": "Zawsze mam przy sobie mały grzebień.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zawsze mam przy sobie", "mały grzebień"],
+      "grammar_tags": ["bathroom", "accusative_basic"]
+    },
+    {
+      "id": 19,
+      "en": "This is my favourite toothpaste.",
+      "pl": "To (jest) moja ulubiona pasta do zębów.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To moja ulubiona pasta do zębów."],
+      "focus_words": ["to", "moja ulubiona pasta do zębów"],
+      "grammar_tags": ["bathroom", "description"]
+    },
+    {
+      "id": 20,
+      "en": "Is this men's or women's perfume?",
+      "pl": "(Czy) to (są) męskie czy damskie perfumy?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To są męskie czy damskie perfumy?"],
+      "focus_words": ["to", "męskie", "czy", "damskie perfumy"],
+      "grammar_tags": ["question", "bathroom", "plural_noun"]
+    },
+    {
+      "id": 21,
+      "en": "I prefer a hairbrush over a comb.",
+      "pl": "Wolę szczotkę do włosów niż grzebień.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wolę", "szczotkę do włosów", "niż", "grzebień"],
+      "grammar_tags": ["bathroom", "comparison", "accusative_basic"]
+    },
+    {
+      "id": 22,
+      "en": "Her toothbrush is electric.",
+      "pl": "Jej szczoteczka do zębów jest elektryczna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jej szczoteczka do zębów", "jest elektryczna"],
+      "grammar_tags": ["bathroom", "description"]
+    },
+    {
+      "id": 23,
+      "en": "Do you remember where you bought the soap?",
+      "pl": "(Czy) pamiętasz, gdzie kupiłeś mydło?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pamiętasz, gdzie kupiłeś mydło?"],
+      "focus_words": ["pamiętasz", "gdzie", "kupiłeś", "mydło"],
+      "grammar_tags": ["question", "bathroom", "subordinate_clause", "past_tense"]
+    },
+    {
+      "id": 24,
+      "en": "She always has a quick cold shower before work.",
+      "pl": "(Ona) zawsze bierze szybki zimny prysznic przed pracą.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zawsze bierze", "szybki zimny prysznic", "przed pracą"],
+      "grammar_tags": ["bathroom", "present_tense", "accusative_basic"]
+    },
+    {
+      "id": 25,
+      "en": "Be careful, the iron is hot.",
+      "pl": "Uważaj, żelazko jest gorące.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["uważaj", "żelazko", "jest gorące"],
+      "grammar_tags": ["bathroom", "warning", "imperative"]
+    },
+    {
+      "id": 26,
+      "en": "There was an elegant white bath/bathtub in the bathroom.",
+      "pl": "W łazience była elegancka biała wanna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w łazience", "była", "elegancka biała wanna"],
+      "grammar_tags": ["bathroom", "past_tense", "locative"]
+    },
+    {
+      "id": 27,
+      "en": "This toothpaste has a strange colour, doesn't it?",
+      "pl": "Ta pasta do zębów ma dziwny kolor, nie?",
+      "literal_en": null,
+      "english_variants": ["This toothpaste has a strange colour, right?"],
+      "polish_alternatives": [],
+      "focus_words": ["ta pasta do zębów", "ma dziwny kolor", "nie"],
+      "grammar_tags": ["bathroom", "tag_question"]
+    },
+    {
+      "id": 28,
+      "en": "This shampoo makes my hair soft (lit. makes that my hairs are soft).",
+      "pl": "Ten szampon sprawia, że moje włosy są miękkie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten szampon", "sprawia, że", "moje włosy", "są miękkie"],
+      "grammar_tags": ["bathroom", "subordinate_clause"]
+    },
+    {
+      "id": 29,
+      "en": "My husband always sings in the shower (lit. under the shower).",
+      "pl": "Mój mąż zawsze śpiewa pod prysznicem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój mąż", "zawsze śpiewa", "pod prysznicem"],
+      "grammar_tags": ["bathroom", "instrumental_basic"]
+    },
+    {
+      "id": 30,
+      "en": "The mirror above the washbasin is practical.",
+      "pl": "Lustro nad umywalką jest praktyczne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lustro", "nad umywalką", "jest praktyczne"],
+      "grammar_tags": ["bathroom", "instrumental_basic"]
+    },
+    {
+      "id": 31,
+      "en": "Here are some fresh towels.",
+      "pl": "Tutaj/Tu są świeże ręczniki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Tu są świeże ręczniki."],
+      "focus_words": ["tutaj", "tu", "są świeże ręczniki"],
+      "grammar_tags": ["bathroom", "existential", "plural_noun"]
+    },
+    {
+      "id": 32,
+      "en": "I don't use soap. I prefer shower gel.",
+      "pl": "Nie używam mydła. Wolę żel pod prysznic.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nie używam", "mydła", "wolę", "żel pod prysznic"],
+      "grammar_tags": ["bathroom", "negation", "genitive_after_uzywac", "accusative_basic"]
+    },
+    {
+      "id": 33,
+      "en": "I'm looking for a good (hair) conditioner.",
+      "pl": "Szukam dobrej odżywki (do włosów).",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Szukam dobrej odżywki do włosów."],
+      "focus_words": ["szukam", "dobrej odżywki", "do włosów"],
+      "grammar_tags": ["bathroom", "genitive_after_szukac"]
+    },
+    {
+      "id": 34,
+      "en": "We've been looking for the iron since this morning. Do you know where it is?",
+      "pl": "Od rana szukamy żelazka. (Czy) wiesz, gdzie jest?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Od rana szukamy żelazka. Wiesz, gdzie jest?"],
+      "focus_words": ["od rana", "szukamy żelazka", "wiesz", "gdzie jest"],
+      "grammar_tags": ["bathroom", "genitive_after_szukac", "subordinate_clause"]
+    },
+    {
+      "id": 35,
+      "en": "Are you (pl.) bringing (lit. Are you taking) this big colourful towel to the beach?",
+      "pl": "(Czy) bierzecie ten duży kolorowy ręcznik na plażę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Bierzecie ten duży kolorowy ręcznik na plażę?"],
+      "focus_words": ["bierzecie", "ten duży kolorowy ręcznik", "na plażę"],
+      "grammar_tags": ["question", "bathroom", "accusative_basic"]
+    },
+    {
+      "id": 36,
+      "en": "A hairdryer is necessary/essential at home.",
+      "pl": "Suszarka do włosów jest niezbędna w domu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["suszarka do włosów", "jest niezbędna", "w domu"],
+      "grammar_tags": ["bathroom", "locative", "description"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "wanna",
+      "prysznic",
+      "umywalka",
+      "toaleta",
+      "papier toaletowy",
+      "lustro",
+      "ręcznik",
+      "suszarka do włosów",
+      "grzebień",
+      "szczotka do włosów",
+      "szczoteczka do zębów",
+      "pasta do zębów",
+      "mydło",
+      "żel pod prysznic",
+      "szampon",
+      "odżywka do włosów",
+      "kosmetyki",
+      "krem",
+      "perfumy",
+      "żelazko",
+      "pralka"
+    ],
+    "sentence_cards_priority": [2, 3, 5, 9, 10, 12, 13, 14, 17, 20, 21, 23, 24, 28, 29, 30, 32, 33, 36]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'I prefer a hairbrush over a comb.'",
+      "correct_answer": "Wolę szczotkę do włosów niż grzebień.",
+      "distractors": [
+        "Wolę szczotka do włosów niż grzebień.",
+        "Wolę szczotkę do włosów od grzebień.",
+        "Lubię szczotkę do włosów niż grzebień."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'The toilet paper is running out.'",
+      "answer_pl": "Papier toaletowy się kończy.",
+      "word_bank": ["Papier", "toaletowy", "się", "kończy"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'The mirror above the washbasin is practical.'",
+      "accepted_answers": [
+        "Lustro nad umywalką jest praktyczne."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

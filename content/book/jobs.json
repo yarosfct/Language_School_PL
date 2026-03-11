@@ -1,0 +1,610 @@
+{
+  "section_number": 14,
+  "topic_en": "Jobs",
+  "topic_pl": "Zawody",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "aktor", "en": ["actor"], "category": "noun" },
+    { "pl": "architekt", "en": ["architect"], "category": "noun" },
+    { "pl": "artysta", "en": ["artist"], "category": "noun" },
+    { "pl": "dziennikarz", "en": ["journalist"], "category": "noun" },
+    { "pl": "fotograf", "en": ["photographer"], "category": "noun" },
+    { "pl": "fryzjer", "en": ["hairdresser"], "category": "noun" },
+    { "pl": "hydraulik", "en": ["plumber"], "category": "noun" },
+    { "pl": "kelner", "en": ["waiter"], "category": "noun" },
+    { "pl": "lekarz", "en": ["doctor"], "category": "noun" },
+    { "pl": "listonosz", "en": ["postman", "postperson"], "category": "noun" },
+    { "pl": "malarz", "en": ["painter"], "category": "noun" },
+    { "pl": "mechanik", "en": ["mechanic"], "category": "noun" },
+    { "pl": "menedżer", "en": ["manager"], "category": "noun" },
+    { "pl": "model", "en": ["model"], "category": "noun" },
+    { "pl": "muzyk", "en": ["musician"], "category": "noun" },
+    { "pl": "ochroniarz", "en": ["security guard"], "category": "noun" },
+    { "pl": "ogrodnik", "en": ["gardener"], "category": "noun" },
+    { "pl": "pielęgniarz", "en": ["nurse", "male nurse"], "category": "noun" },
+    { "pl": "piosenkarz", "en": ["singer"], "category": "noun" },
+    { "pl": "policjant", "en": ["police officer"], "category": "noun" },
+    { "pl": "prawnik", "en": ["lawyer"], "category": "noun" },
+    { "pl": "recepcjonista", "en": ["receptionist"], "category": "noun" },
+    { "pl": "sprzedawca", "en": ["salesperson"], "category": "noun" },
+    { "pl": "stewardesa", "en": ["flight attendant", "female"], "category": "noun" },
+    { "pl": "szef", "en": ["boss"], "category": "noun" },
+    { "pl": "szef kuchni", "en": ["chef"], "category": "phrase" },
+    { "pl": "weterynarz", "en": ["vet"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "czym_sie_zajmujesz",
+      "content": "'Czym się zajmujesz?' is a common way to ask about someone's profession, though it is not literally 'What do you do?'. Another frequent question is 'Jaka masz pracę?' meaning roughly 'Which job do you have?'."
+    },
+    {
+      "id": 1,
+      "topic": "byc_and_pracowac_jako",
+      "content": "After the verb 'być', professions typically use the instrumental case. You can also use 'pracować jako' + noun in the basic form.",
+      "examples": [
+        "Jestem architektem. = I'm an architect.",
+        "Pracuję jako architekt. = I work as an architect."
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "polak_polka",
+      "content": "'Polak' translates as Polish man, and 'Polka' as Polish woman."
+    },
+    {
+      "id": 5,
+      "topic": "feminine_profession_forms",
+      "content": "The feminine form of many professions is made by adding -ka to the masculine stem, but there are exceptions.",
+      "tables": {
+        "profession_pairs": [
+          ["nauczyciel", "nauczycielka", "teacher"],
+          ["dentysta", "dentystka", "dentist"],
+          ["architekt", "architektka", "architect"],
+          ["lekarz", "lekarka", "doctor"],
+          ["kelner", "kelnerka", "waiter/waitress"],
+          ["fotograf", "fotografka", "photographer"],
+          ["fryzjer", "fryzjerka", "hairdresser"],
+          ["listonosz", "listonoszka", "postman/postwoman"],
+          ["kucharz", "kucharka", "cook"],
+          ["piosenkarz", "piosenkarka", "singer"]
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "topic": "other_profession_pairs",
+      "content": "Other profession-related examples:",
+      "examples": [
+        "sprzedawca / sprzedawczyni = salesperson",
+        "szef / szefowa = boss"
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "same_profession_terms_both_genders",
+      "content": "Some profession names are the same regardless of gender.",
+      "examples": [
+        "muzyk",
+        "weterynarz"
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "stewardesa",
+      "content": "A female flight attendant is called 'stewardesa' in Polish."
+    },
+    {
+      "id": 10,
+      "topic": "poprosic_kelnera_not_kelner",
+      "content": "Say 'poprosić kelnera', not 'poprosić kelner'. In Polish, after 'poprosić' here, the accusative is used."
+    },
+    {
+      "id": 12,
+      "topic": "umowic_sie_do",
+      "content": "'Umówić się' means to make an appointment or arrange to meet. Use the preposition 'do' after it when booking with a professional.",
+      "examples": [
+        "umówić się do lekarza",
+        "umówić się do fryzjera"
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "znalezc_accusative",
+      "content": "After the verb 'znaleźć' (to find), use the accusative."
+    },
+    {
+      "id": 15,
+      "topic": "past_tense_quick_reminder",
+      "content": "From this point on, the book uses more past tense. Quick reminder: remove the infinitive ending -ć and add the appropriate past ending.",
+      "tables": {
+        "singular": {
+          "ja_masculine": "-łem",
+          "ja_feminine": "-łam",
+          "ty_masculine": "-łeś",
+          "ty_feminine": "-łaś",
+          "on": "-ł",
+          "ona": "-ła"
+        },
+        "plural": {
+          "my_masculine_personal": "-liśmy",
+          "my_non_masculine_personal": "-łyśmy",
+          "wy_masculine_personal": "-liście",
+          "wy_non_masculine_personal": "-łyście",
+          "oni": "-li",
+          "one": "-ły"
+        },
+        "example": {
+          "verb": "pić",
+          "forms": [
+            "piłem/piłam",
+            "piłeś/piłaś",
+            "pił/piła",
+            "piliśmy/piłyśmy",
+            "piliście/piłyście",
+            "pili/piły"
+          ]
+        }
+      }
+    },
+    {
+      "id": 19,
+      "topic": "szukac_genitive",
+      "content": "Use the genitive case after the verb 'szukać' (to look for)."
+    },
+    {
+      "id": 21,
+      "topic": "karta_pobytu_and_dostac",
+      "content": "'karta pobytu' means residence permit/card. The book notes that after 'dostać' (to get), the accusative is usually used."
+    },
+    {
+      "id": 22,
+      "topic": "mowic_ze",
+      "content": "After the verb 'mówić' (to say, tell, speak), use 'że' in this sentence pattern. In Polish it is necessary here.",
+      "examples": [
+        "Lekarz mówił, że muszę więcej odpoczywać."
+      ]
+    },
+    {
+      "id": 25,
+      "topic": "do_klubu",
+      "content": "You say 'klub means club, do klubu means to the club'. After the preposition 'do', the noun changes form."
+    },
+    {
+      "id": 31,
+      "topic": "play_instrument_phrases",
+      "content": "Useful phrases for playing instruments:",
+      "examples": [
+        "grać na gitarze = to play the guitar",
+        "grać na pianinie = to play the piano",
+        "grać na perkusji/bębnach = to play the drums",
+        "grać na skrzypcach = to play the violin"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "\"What do you do?\" \"I'm an architect.\"",
+      "pl": "– Czym się zajmujesz? – Jestem architektem.",
+      "literal_en": null,
+      "english_variants": ["What do you do? I'm an architect."],
+      "polish_alternatives": [],
+      "focus_words": ["czym się zajmujesz", "jestem architektem"],
+      "grammar_tags": ["jobs", "dialogue", "instrumental_after_byc"]
+    },
+    {
+      "id": 2,
+      "en": "\"What does your brother do?\" \"He's a lawyer.\"",
+      "pl": "– Czym zajmuje się twój brat? – Jest prawnikiem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["czym zajmuje się", "twój brat", "jest prawnikiem"],
+      "grammar_tags": ["jobs", "dialogue", "instrumental_after_byc"]
+    },
+    {
+      "id": 3,
+      "en": "I'm a postwoman and my husband is a gardener.",
+      "pl": "Ja jestem listonoszką, a (mój) mąż jest ogrodnikiem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jestem listonoszką", "a", "mąż", "jest ogrodnikiem"],
+      "grammar_tags": ["jobs", "instrumental_after_byc"]
+    },
+    {
+      "id": 4,
+      "en": "Is your boss Polish (lit. a Polish man)?",
+      "pl": "(Czy) twój szef jest Polakiem?",
+      "literal_en": null,
+      "english_variants": ["Is your boss Polish?"],
+      "polish_alternatives": ["Czy twoja szefowa jest Polką?"],
+      "focus_words": ["twój szef", "jest Polakiem"],
+      "grammar_tags": ["jobs", "question", "instrumental_after_byc"]
+    },
+    {
+      "id": 5,
+      "en": "This teacher speaks too fast.",
+      "pl": "Ten nauczyciel mówi za/zbyt szybko.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta nauczycielka mówi za szybko."],
+      "focus_words": ["ten nauczyciel", "mówi", "za", "zbyt", "szybko"],
+      "grammar_tags": ["jobs", "degree"]
+    },
+    {
+      "id": 6,
+      "en": "Is this hairdresser available tomorrow?",
+      "pl": "(Czy) ten fryzjer jest jutro dostępny?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy ta fryzjerka jest jutro dostępna?"],
+      "focus_words": ["ten fryzjer", "jest jutro dostępny"],
+      "grammar_tags": ["jobs", "question"]
+    },
+    {
+      "id": 7,
+      "en": "The flight attendant speaks English and Polish.",
+      "pl": "Steward mówi po angielsku i po polsku.",
+      "literal_en": null,
+      "english_variants": ["The flight attendant speaks English and Polish."],
+      "polish_alternatives": ["Stewardesa mówi po angielsku i po polsku."],
+      "focus_words": ["steward", "mówi po angielsku", "i po polsku"],
+      "grammar_tags": ["jobs", "present_tense"]
+    },
+    {
+      "id": 8,
+      "en": "Every dancer exercises regularly.",
+      "pl": "Każdy tancerz ćwiczy regularnie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["każdy tancerz", "ćwiczy regularnie"],
+      "grammar_tags": ["jobs", "present_tense"]
+    },
+    {
+      "id": 9,
+      "en": "The receptionist can book a ticket for me.",
+      "pl": "Recepcjonista może zarezerwować dla mnie bilet.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Recepcjonistka może zarezerwować dla mnie bilet."],
+      "focus_words": ["recepcjonista", "może zarezerwować", "dla mnie", "bilet"],
+      "grammar_tags": ["jobs", "present_tense"]
+    },
+    {
+      "id": 10,
+      "en": "Should/Shall I ask the waiter for (a) beer?",
+      "pl": "Poprosić kelnera o piwo?",
+      "literal_en": null,
+      "english_variants": ["Should I ask the waiter for a beer?"],
+      "polish_alternatives": ["Mam poprosić kelnera o piwo?"],
+      "focus_words": ["poprosić", "kelnera", "o piwo"],
+      "grammar_tags": ["jobs", "infinitive_question"]
+    },
+    {
+      "id": 11,
+      "en": "This actress is very talented.",
+      "pl": "Ta aktorka jest bardzo utalentowana.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta aktorka", "jest bardzo utalentowana"],
+      "grammar_tags": ["jobs", "description"]
+    },
+    {
+      "id": 12,
+      "en": "I need to make an appointment with (lit. to) the dentist.",
+      "pl": "Muszę umówić się do dentysty.",
+      "literal_en": null,
+      "english_variants": ["I need to make an appointment with the dentist."],
+      "polish_alternatives": [],
+      "focus_words": ["muszę", "umówić się", "do dentysty"],
+      "grammar_tags": ["jobs", "reflexive_verb"]
+    },
+    {
+      "id": 13,
+      "en": "Where can I find a job as a painter (f.)?",
+      "pl": "Gdzie mogę znaleźć pracę jako malarka?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie mogę", "znaleźć pracę", "jako malarka"],
+      "grammar_tags": ["jobs", "question"]
+    },
+    {
+      "id": 14,
+      "en": "This saleswoman is very helpful.",
+      "pl": "Ta sprzedawczyni jest bardzo pomocna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta sprzedawczyni", "jest bardzo pomocna"],
+      "grammar_tags": ["jobs", "description"]
+    },
+    {
+      "id": 15,
+      "en": "He's a great actor. He got an Oscar last year.",
+      "pl": "(On) jest świetnym aktorem. Dostał Oskara w zeszłym roku.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jest świetnym aktorem", "dostał Oskara", "w zeszłym roku"],
+      "grammar_tags": ["jobs", "instrumental_after_byc", "past_tense"]
+    },
+    {
+      "id": 16,
+      "en": "She's a nurse. Sometimes she works at night, and sometimes during (lit. in) the day.",
+      "pl": "(Ona) jest pielęgniarką. Czasami pracuje w nocy, a czasami w dzień.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jest pielęgniarką", "czasami pracuje w nocy", "a czasami w dzień"],
+      "grammar_tags": ["jobs", "instrumental_after_byc", "present_tense"]
+    },
+    {
+      "id": 17,
+      "en": "My Polish teacher (f.) lives in Krakow.",
+      "pl": "Moja nauczycielka polskiego mieszka w Krakowie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja nauczycielka polskiego", "mieszka w Krakowie"],
+      "grammar_tags": ["jobs", "location"]
+    },
+    {
+      "id": 18,
+      "en": "The mechanic diagnosed the problem very quickly.",
+      "pl": "Mechanik zdiagnozował problem bardzo szybko.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mechanik", "zdiagnozował problem", "bardzo szybko"],
+      "grammar_tags": ["jobs", "past_tense"]
+    },
+    {
+      "id": 19,
+      "en": "We're looking for a photographer for our wedding.",
+      "pl": "Szukamy fotografa na nasz ślub.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["szukamy", "fotografa", "na nasz ślub"],
+      "grammar_tags": ["jobs", "genitive_after_szukac"]
+    },
+    {
+      "id": 20,
+      "en": "My favourite Polish singer has a concert in Warsaw on Saturday.",
+      "pl": "W sobotę mój ulubiony polski piosenkarz ma koncert w Warszawie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w sobotę", "mój ulubiony polski piosenkarz", "ma koncert", "w Warszawie"],
+      "grammar_tags": ["jobs", "time_expression"]
+    },
+    {
+      "id": 21,
+      "en": "This lawyer helps you to get (lit. helps to get) a residence permit.",
+      "pl": "Ten prawnik pomaga dostać kartę pobytu.",
+      "literal_en": null,
+      "english_variants": ["This lawyer helps to get a residence permit."],
+      "polish_alternatives": [],
+      "focus_words": ["ten prawnik", "pomaga", "dostać", "kartę pobytu"],
+      "grammar_tags": ["jobs", "accusative_basic"]
+    },
+    {
+      "id": 22,
+      "en": "The doctor said (that) I needed to rest more.",
+      "pl": "Lekarz mówił, że muszę więcej odpoczywać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lekarz mówił", "że", "muszę więcej odpoczywać"],
+      "grammar_tags": ["jobs", "past_and_present", "subordinate_clause"]
+    },
+    {
+      "id": 23,
+      "en": "My uncle worked as a police officer for twenty years.",
+      "pl": "Mój wujek pracował jako policjant (przez) dwadzieścia lat.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mój wujek pracował jako policjant dwadzieścia lat."],
+      "focus_words": ["mój wujek", "pracował jako policjant", "przez dwadzieścia lat"],
+      "grammar_tags": ["jobs", "past_tense"]
+    },
+    {
+      "id": 24,
+      "en": "Yesterday, the plumber fixed the sink.",
+      "pl": "Wczoraj hydraulik naprawił zlew.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wczoraj", "hydraulik", "naprawił zlew"],
+      "grammar_tags": ["jobs", "past_tense"]
+    },
+    {
+      "id": 25,
+      "en": "The security guard is checking the entrance to the club.",
+      "pl": "Ochroniarz sprawdza wejście do klubu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ochroniarz", "sprawdza", "wejście do klubu"],
+      "grammar_tags": ["jobs", "present_tense"]
+    },
+    {
+      "id": 26,
+      "en": "The party was wonderful. There was even a beautiful dancer (f.) there.",
+      "pl": "Impreza była wspaniała. Była tam nawet piękna tancerka.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["impreza była wspaniała", "była tam nawet", "piękna tancerka"],
+      "grammar_tags": ["jobs", "past_tense"]
+    },
+    {
+      "id": 27,
+      "en": "Does this plumber also work at weekends?",
+      "pl": "(Czy) ten hydraulik pracuje też w weekendy?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ten hydraulik pracuje też w weekendy?"],
+      "focus_words": ["ten hydraulik", "pracuje też", "w weekendy"],
+      "grammar_tags": ["jobs", "question"]
+    },
+    {
+      "id": 28,
+      "en": "My sister wants to be a model.",
+      "pl": "Moja siostra chce być modelką.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja siostra", "chce być modelką"],
+      "grammar_tags": ["jobs", "instrumental_after_byc"]
+    },
+    {
+      "id": 29,
+      "en": "Should/Shall I ask the waiter for the bill, or do you want something else?",
+      "pl": "Poprosić kelnera o rachunek czy chcesz coś jeszcze?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mam poprosić kelnera o rachunek czy chcesz coś jeszcze?"],
+      "focus_words": ["poprosić", "kelnera", "o rachunek", "czy", "chcesz coś jeszcze"],
+      "grammar_tags": ["jobs", "infinitive_question"]
+    },
+    {
+      "id": 30,
+      "en": "Today, I met with her new manager at work.",
+      "pl": "Dzisiaj/Dziś spotkałem się z jej nowym menedżerem w pracy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dziś spotkałam się z jej nowym menedżerem w pracy."],
+      "focus_words": ["dziś", "spotkałem się z", "jej nowym menedżerem", "w pracy"],
+      "grammar_tags": ["jobs", "past_tense", "instrumental_basic"]
+    },
+    {
+      "id": 31,
+      "en": "Does this musician play (lit. play on) the guitar or the drums?",
+      "pl": "(Czy) ten muzyk gra na gitarze, czy (na) perkusji/bębnach?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ten muzyk gra na gitarze czy na perkusji?"],
+      "focus_words": ["ten muzyk", "gra na gitarze", "czy", "na perkusji", "bębnach"],
+      "grammar_tags": ["jobs", "question", "music"]
+    },
+    {
+      "id": 32,
+      "en": "I'm looking for a good vet.",
+      "pl": "Szukam dobrego weterynarza.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["szukam", "dobrego weterynarza"],
+      "grammar_tags": ["jobs", "genitive_after_szukac"]
+    },
+    {
+      "id": 33,
+      "en": "The journalist is talking to the actor now.",
+      "pl": "Dziennikarz rozmawia teraz z aktorem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dziennikarz", "rozmawia teraz", "z aktorem"],
+      "grammar_tags": ["jobs", "present_tense", "instrumental_basic"]
+    },
+    {
+      "id": 34,
+      "en": "The chef is making a vegetarian dish for me.",
+      "pl": "Szef kuchni robi dla mnie wegetariańskie danie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["szef kuchni", "robi dla mnie", "wegetariańskie danie"],
+      "grammar_tags": ["jobs", "present_tense"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "aktor",
+      "architekt",
+      "artysta",
+      "dziennikarz",
+      "fotograf",
+      "fryzjer",
+      "hydraulik",
+      "kelner",
+      "lekarz",
+      "listonosz",
+      "malarz",
+      "mechanik",
+      "menedżer",
+      "model",
+      "muzyk",
+      "ochroniarz",
+      "ogrodnik",
+      "pielęgniarz",
+      "piosenkarz",
+      "policjant",
+      "prawnik",
+      "recepcjonista",
+      "sprzedawca",
+      "stewardesa",
+      "szef",
+      "szef kuchni",
+      "weterynarz"
+    ],
+    "sentence_cards_priority": [1, 2, 4, 6, 10, 12, 15, 17, 19, 21, 22, 24, 28, 29, 31, 32, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'I'm looking for a good vet.'",
+      "correct_answer": "Szukam dobrego weterynarza.",
+      "distractors": [
+        "Szukam dobry weterynarz.",
+        "Znajduję dobrego weterynarza.",
+        "Szukam dobrego lekarza."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'My sister wants to be a model.'",
+      "answer_pl": "Moja siostra chce być modelką.",
+      "word_bank": ["Moja", "siostra", "chce", "być", "modelką"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'The plumber fixed the sink yesterday.'",
+      "accepted_answers": [
+        "Wczoraj hydraulik naprawił zlew."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

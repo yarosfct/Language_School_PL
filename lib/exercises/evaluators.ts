@@ -98,48 +98,50 @@ export function evaluateTypedAnswer(
   data: TypedAnswerData,
   userAnswer: string
 ): EvaluationResult {
-  const normalized = data.evaluationRules.caseSensitive 
-    ? userAnswer.trim() 
+  const normalized = data.evaluationRules.caseSensitive
+    ? userAnswer.trim()
     : userAnswer.trim().toLowerCase();
-  
+
   for (const accepted of data.acceptedAnswers) {
-    const target = data.evaluationRules.caseSensitive 
-      ? accepted 
+    const target = data.evaluationRules.caseSensitive
+      ? accepted
       : accepted.toLowerCase();
-    
+
     // Exact match
     if (normalized === target) {
-      return { correct: true };
+      return { correct: true, partialCorrect: false };
     }
-    
+
     // Diacritic-insensitive match
     if (data.evaluationRules.allowDiacriticErrors) {
       if (removeDiacritics(normalized) === removeDiacritics(target)) {
-        return { 
+        return {
           correct: true,
-          feedback: "Correct! (Remember to use proper diacritics: ą, ę, ć, ł, ń, ó, ś, ź, ż)",
+          partialCorrect: true,
+          feedback: `Accepted with warning. Suggested spelling: "${accepted}".`,
           errorType: 'diacritics',
         };
       }
     }
-    
-    // Typo tolerance (Levenshtein distance ≤ 1)
+
+    // Typo tolerance
     if (data.evaluationRules.allowTypos) {
-      if (levenshteinDistance(normalized, target) <= 1) {
-        return { 
+      const threshold = getTypedAnswerTypoThreshold(target);
+      if (levenshteinDistance(normalized, target) <= threshold) {
+        return {
           correct: true,
-          feedback: "Correct! (Small typo detected, but accepted)",
+          partialCorrect: true,
+          feedback: `Accepted with warning. Suggested spelling: "${accepted}".`,
           errorType: 'spelling',
         };
       }
     }
   }
-  
+
   // Provide structured feedback hints
   const { feedback, errorType } = generateTypedAnswerFeedback(normalized, data);
   return { correct: false, feedback, errorType };
 }
-
 function generateTypedAnswerFeedback(
   userAnswer: string, 
   data: TypedAnswerData
@@ -189,6 +191,15 @@ function generateTypedAnswerFeedback(
     feedback: "Not quite. Check the hints or try again.",
     errorType: 'other',
   };
+}
+
+function getTypedAnswerTypoThreshold(target: string): number {
+  const compactTarget = target.replace(/\s+/g, '');
+  if (compactTarget.length <= 10) {
+    return 1;
+  }
+
+  return 2;
 }
 
 function evaluateOrdering(data: OrderingData, userAnswer: string[]): EvaluationResult {
@@ -422,3 +433,5 @@ export function analyzeTypedAnswerError(
     hasWordOrderIssue,
   };
 }
+
+

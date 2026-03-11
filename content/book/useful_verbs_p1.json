@@ -1,0 +1,607 @@
+{
+  "section_number": 1,
+  "topic_en": "Useful Verbs. Part 1",
+  "topic_pl": "Przydatne czasowniki. Część 1",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": [
+      "word",
+      "sentence"
+    ],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "być", "en": ["to be"], "category": "verb" },
+    { "pl": "czekać", "en": ["to wait"], "category": "verb" },
+    { "pl": "czytać", "en": ["to read"], "category": "verb" },
+    { "pl": "dziękować", "en": ["to thank"], "category": "verb" },
+    { "pl": "gotować", "en": ["to cook"], "category": "verb" },
+    { "pl": "kochać", "en": ["to love"], "category": "verb" },
+    { "pl": "lubić", "en": ["to like"], "category": "verb" },
+    { "pl": "mieć", "en": ["to have"], "category": "verb" },
+    { "pl": "mieszkać", "en": ["to live", "to live somewhere"], "category": "verb" },
+    { "pl": "mówić", "en": ["to speak"], "category": "verb" },
+    { "pl": "myśleć", "en": ["to think"], "category": "verb" },
+    { "pl": "odpoczywać", "en": ["to rest"], "category": "verb" },
+    { "pl": "oglądać", "en": ["to watch"], "category": "verb" },
+    { "pl": "pamiętać", "en": ["to remember"], "category": "verb" },
+    { "pl": "płacić", "en": ["to pay"], "category": "verb" },
+    { "pl": "podróżować", "en": ["to travel"], "category": "verb" },
+    { "pl": "pracować", "en": ["to work"], "category": "verb" },
+    { "pl": "przepraszać", "en": ["to be sorry", "to apologise"], "category": "verb" },
+    { "pl": "robić", "en": ["to do", "to make"], "category": "verb" },
+    { "pl": "rozumieć", "en": ["to understand"], "category": "verb" },
+    { "pl": "słuchać", "en": ["to listen"], "category": "verb" },
+    { "pl": "słyszeć", "en": ["to hear"], "category": "verb" },
+    { "pl": "spieszyć się", "en": ["to be in a hurry"], "category": "verb" },
+    { "pl": "spóźniać się", "en": ["to be late"], "category": "verb" },
+    { "pl": "studiować", "en": ["to study", "to study at university"], "category": "verb" },
+    { "pl": "zaczynać", "en": ["to start", "to begin"], "category": "verb" },
+    { "pl": "zamykać", "en": ["to close"], "category": "verb" },
+    { "pl": "zapraszać", "en": ["to invite"], "category": "verb" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "present_tense_basics",
+      "content": "Polish has one present tense. To form it, remove the infinitive ending (usually -ć) and add endings. Simplified pattern: ja: -m/-ę, ty: -sz, on/ona/ono: often based on the ty form without -sz, my: -my, wy: -cie, oni/one: -ją/-ą.",
+      "examples": [
+        "robić -> robię, robisz, robi, robimy, robicie, robią",
+        "czytać -> czytam, czytasz, czyta, czytamy, czytacie, czytają"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "watch_netflix",
+      "content": "To watch Netflix is translated as 'oglądać Netflixa', not 'oglądać Netflix'."
+    },
+    {
+      "id": 7,
+      "topic": "word_order",
+      "content": "Polish word order can differ from English. The book uses the most natural-sounding Polish order. English-like order may still be understandable, but can sound awkward."
+    },
+    {
+      "id": 8,
+      "topic": "short_words_at_sentence_end",
+      "content": "If the word 'to' (it) appears in a sentence with at least two other words, it should not be placed directly before the full stop. The same often applies to 'nic' and 'tu/tutaj'. Avoid ending sentences with very short words when possible."
+    },
+    {
+      "id": 10,
+      "topic": "czekac_with_na",
+      "content": "The verb 'czekać' is usually followed by the preposition 'na'.",
+      "examples": [
+        "czekać na autobus",
+        "czekać na spotkanie"
+      ]
+    },
+    {
+      "id": 11,
+      "topic": "niestety_vs_na_szczescie",
+      "content": "'niestety' means 'unfortunately'; 'na szczęście' means 'fortunately'."
+    },
+    {
+      "id": 12,
+      "topic": "double_negative",
+      "content": "Polish requires a double negative, unlike English.",
+      "examples": [
+        "Nigdy nie piję kawy. = I never drink coffee."
+      ]
+    },
+    {
+      "id": 15,
+      "topic": "verbs_with_owac",
+      "content": "If the infinitive contains '-owa-' (e.g. pracować, gotować), in conjugation it usually changes to '-uj-'.",
+      "examples": [
+        "pracować -> pracuję, pracujesz, pracuje, pracujemy, pracujecie, pracują"
+      ]
+    },
+    {
+      "id": 18,
+      "topic": "dziekowac_za",
+      "content": "If you want to be specific about what you are thanking for, use 'za' after 'dziękować'.",
+      "examples": [
+        "Dziękuję za te piękne kwiaty. = Thank you for these beautiful flowers."
+      ]
+    },
+    {
+      "id": 19,
+      "topic": "questions_with_czy",
+      "content": "You can say 'Czy tu studiujesz?' or 'Czy pracujesz?'. In spoken Polish, 'czy' is often omitted and a question is formed by intonation."
+    },
+    {
+      "id": 21,
+      "topic": "stad",
+      "content": "'stąd' means 'from here' or sometimes 'here'. It is related to 'skąd' meaning 'where from'."
+    },
+    {
+      "id": 22,
+      "topic": "placement_of_sie",
+      "content": "With verbs containing 'się', it is often more natural not to leave 'się' at the very end of the sentence if there are more than two words.",
+      "examples": [
+        "Lubię się uczyć. (more natural)",
+        "Lubię uczyć się. (less natural)"
+      ]
+    },
+    {
+      "id": 23,
+      "topic": "two_verbs_rule",
+      "content": "If two verbs come one after another in one sentence, only the first one is conjugated."
+    },
+    {
+      "id": 24,
+      "topic": "byc_and_miec_irregular",
+      "content": "The verbs 'być' and 'mieć' are irregular.",
+      "tables": {
+        "byc": {
+          "ja": "jestem",
+          "ty": "jesteś",
+          "on_ona_ono": "jest",
+          "my": "jesteśmy",
+          "wy": "jesteście",
+          "oni_one": "są"
+        },
+        "miec": {
+          "ja": "mam",
+          "ty": "masz",
+          "on_ona_ono": "ma",
+          "my": "mamy",
+          "wy": "macie",
+          "oni_one": "mają"
+        }
+      }
+    },
+    {
+      "id": 28,
+      "topic": "przepraszam_vs_przykro_mi",
+      "content": "Use 'przepraszam' when apologising for something. Use 'przykro mi' when you feel sorry for someone or sympathise with them.",
+      "examples": [
+        "Przepraszam. = I'm sorry.",
+        "Przykro mi, że jesteś chory. = I'm sorry that you're ill."
+      ]
+    },
+    {
+      "id": 33,
+      "topic": "ze_is_required",
+      "content": "When expressing an opinion, 'że' is obligatory in Polish even when 'that' is optional in English. In writing, use a comma before 'że'."
+    },
+    {
+      "id": 35,
+      "topic": "slyszec_vs_sluchac",
+      "content": "Do not add 'móc' before verbs of the senses the way English does. Also do not confuse 'słyszeć' (to hear) with 'słuchać' (to listen).",
+      "examples": [
+        "Nie słyszę cię. = I can't hear you.",
+        "Czy widzisz Adama? = Can you see Adam?"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "What are you doing?",
+      "pl": "Co robisz?",
+      "literal_en": null,
+      "english_variants": ["What are you doing right now?"],
+      "polish_alternatives": ["Co ty robisz?"],
+      "focus_words": ["co", "robić"],
+      "grammar_tags": ["present_tense", "question"]
+    },
+    {
+      "id": 2,
+      "en": "I understand everything.",
+      "pl": "Wszystko rozumiem.",
+      "literal_en": null,
+      "english_variants": ["I understand it all."],
+      "polish_alternatives": ["Rozumiem wszystko."],
+      "focus_words": ["wszystko", "rozumieć"],
+      "grammar_tags": ["present_tense", "word_order"]
+    },
+    {
+      "id": 3,
+      "en": "They watch Netflix every day.",
+      "pl": "Codziennie oglądają Netflixa.",
+      "literal_en": null,
+      "english_variants": ["They watch Netflix daily."],
+      "polish_alternatives": ["Oglądają Netflixa codziennie."],
+      "focus_words": ["codziennie", "oglądać", "Netflixa"],
+      "grammar_tags": ["present_tense", "frequency"]
+    },
+    {
+      "id": 4,
+      "en": "I live there.",
+      "pl": "Mieszkam tam.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mieszkać", "tam"],
+      "grammar_tags": ["present_tense"]
+    },
+    {
+      "id": 5,
+      "en": "I'm sorry, but I don't remember.",
+      "pl": "Przepraszam, ale nie pamiętam.",
+      "literal_en": null,
+      "english_variants": ["Sorry, but I don't remember."],
+      "polish_alternatives": [],
+      "focus_words": ["przepraszać", "ale", "nie", "pamiętać"],
+      "grammar_tags": ["present_tense", "negation"]
+    },
+    {
+      "id": 6,
+      "en": "He doesn't speak Polish.",
+      "pl": "(On) nie mówi po polsku.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie mówi po polsku."],
+      "focus_words": ["mówić", "po polsku"],
+      "grammar_tags": ["present_tense", "negation"]
+    },
+    {
+      "id": 7,
+      "en": "We often watch it.",
+      "pl": "Często to oglądamy.",
+      "literal_en": null,
+      "english_variants": ["We watch it often."],
+      "polish_alternatives": ["To często oglądamy."],
+      "focus_words": ["często", "to", "oglądać"],
+      "grammar_tags": ["present_tense", "adverb_placement"]
+    },
+    {
+      "id": 8,
+      "en": "She doesn't understand anything.",
+      "pl": "(Ona) nic nie rozumie.",
+      "literal_en": null,
+      "english_variants": ["She understands nothing."],
+      "polish_alternatives": ["Nic nie rozumie."],
+      "focus_words": ["nic", "nie", "rozumieć"],
+      "grammar_tags": ["present_tense", "negation", "double_negative"]
+    },
+    {
+      "id": 9,
+      "en": "We usually rest here.",
+      "pl": "Zwykle tu/tutaj odpoczywamy.",
+      "literal_en": null,
+      "english_variants": ["We usually relax here."],
+      "polish_alternatives": ["Tutaj zwykle odpoczywamy."],
+      "focus_words": ["zwykle", "tu", "tutaj", "odpoczywać"],
+      "grammar_tags": ["present_tense", "location"]
+    },
+    {
+      "id": 10,
+      "en": "I'm waiting for the bus.",
+      "pl": "Czekam na autobus.",
+      "literal_en": null,
+      "english_variants": ["I am waiting for a bus."],
+      "polish_alternatives": [],
+      "focus_words": ["czekać", "na", "autobus"],
+      "grammar_tags": ["present_tense", "preposition_na"]
+    },
+    {
+      "id": 11,
+      "en": "Unfortunately, we are already closing, please come back tomorrow. (lit. We invite tomorrow.)",
+      "pl": "Niestety już zamykamy. Zapraszamy jutro.",
+      "literal_en": "Unfortunately, we're already closing. We invite tomorrow.",
+      "english_variants": ["Unfortunately, we're already closing. Please come back tomorrow."],
+      "polish_alternatives": ["Niestety już zamykamy. Proszę przyjść jutro."],
+      "focus_words": ["niestety", "już", "zamykać", "zapraszać", "jutro"],
+      "grammar_tags": ["present_tense", "shop_phrase"]
+    },
+    {
+      "id": 12,
+      "en": "You never listen!",
+      "pl": "Nigdy nie słuchasz!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nigdy", "nie", "słuchać"],
+      "grammar_tags": ["present_tense", "double_negative", "exclamation"]
+    },
+    {
+      "id": 13,
+      "en": "You speak all the time!",
+      "pl": "Cały czas mówisz!",
+      "literal_en": null,
+      "english_variants": ["You're talking all the time!"],
+      "polish_alternatives": [],
+      "focus_words": ["cały czas", "mówić"],
+      "grammar_tags": ["present_tense", "exclamation"]
+    },
+    {
+      "id": 14,
+      "en": "We're paying together.",
+      "pl": "Płacimy razem.",
+      "literal_en": null,
+      "english_variants": ["We'll pay together."],
+      "polish_alternatives": ["Razem płacimy."],
+      "focus_words": ["płacić", "razem"],
+      "grammar_tags": ["present_tense"]
+    },
+    {
+      "id": 15,
+      "en": "Honey, what are you cooking?",
+      "pl": "Kochanie, co gotujesz?",
+      "literal_en": null,
+      "english_variants": ["Darling, what are you cooking?"],
+      "polish_alternatives": [],
+      "focus_words": ["kochanie", "co", "gotować"],
+      "grammar_tags": ["present_tense", "direct_address"]
+    },
+    {
+      "id": 16,
+      "en": "We remember it very well.",
+      "pl": "Pamiętamy to bardzo dobrze.",
+      "literal_en": null,
+      "english_variants": ["We remember it really well."],
+      "polish_alternatives": ["Bardzo dobrze to pamiętamy."],
+      "focus_words": ["pamiętać", "to", "bardzo dobrze"],
+      "grammar_tags": ["present_tense", "adverb_placement"]
+    },
+    {
+      "id": 17,
+      "en": "What are you doing here?",
+      "pl": "Co ty tutaj/tu robisz?",
+      "literal_en": null,
+      "english_variants": ["What are you doing here?"],
+      "polish_alternatives": ["Co tu robisz?"],
+      "focus_words": ["co", "tu", "tutaj", "robić"],
+      "grammar_tags": ["present_tense", "question", "emphasis"]
+    },
+    {
+      "id": 18,
+      "en": "Thank you for your gift. (lit. I thank for gift.)",
+      "pl": "Dziękuję za prezent.",
+      "literal_en": "I thank for the gift.",
+      "english_variants": ["Thanks for the gift."],
+      "polish_alternatives": ["Dzięki za prezent."],
+      "focus_words": ["dziękować", "za", "prezent"],
+      "grammar_tags": ["fixed_expression", "preposition_za"]
+    },
+    {
+      "id": 19,
+      "en": "Do you study here? Do you work?",
+      "pl": "Studiujesz tu/tutaj? Pracujesz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy tu studiujesz? Czy pracujesz?"],
+      "focus_words": ["studiować", "pracować", "tu", "tutaj"],
+      "grammar_tags": ["present_tense", "question", "czy_optional"]
+    },
+    {
+      "id": 20,
+      "en": "She works a lot.",
+      "pl": "(Ona) dużo pracuje.",
+      "literal_en": null,
+      "english_variants": ["She works a lot."],
+      "polish_alternatives": ["Dużo pracuje."],
+      "focus_words": ["dużo", "pracować"],
+      "grammar_tags": ["present_tense"]
+    },
+    {
+      "id": 21,
+      "en": "They live not far from here.",
+      "pl": "(Oni) mieszkają niedaleko stąd.",
+      "literal_en": null,
+      "english_variants": ["They live nearby.", "They don't live far from here."],
+      "polish_alternatives": ["Mieszkają niedaleko stąd."],
+      "focus_words": ["mieszkać", "niedaleko", "stąd"],
+      "grammar_tags": ["present_tense", "location"]
+    },
+    {
+      "id": 22,
+      "en": "Thanks, but we're in a hurry.",
+      "pl": "Dzięki, ale się spieszymy.",
+      "literal_en": null,
+      "english_variants": ["Thanks, but we're in a rush."],
+      "polish_alternatives": ["Dziękujemy, ale się spieszymy."],
+      "focus_words": ["dzięki", "ale", "się", "spieszyć się"],
+      "grammar_tags": ["present_tense", "reflexive_verb"]
+    },
+    {
+      "id": 23,
+      "en": "We love reading and travelling.",
+      "pl": "Kochamy czytać i podróżować.",
+      "literal_en": null,
+      "english_variants": ["We love to read and travel."],
+      "polish_alternatives": ["Lubimy czytać i podróżować."],
+      "focus_words": ["kochać", "czytać", "podróżować"],
+      "grammar_tags": ["two_verbs_rule", "infinitive"]
+    },
+    {
+      "id": 24,
+      "en": "Where are you?",
+      "pl": "Gdzie jesteś?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie", "być"],
+      "grammar_tags": ["question", "irregular_verb"]
+    },
+    {
+      "id": 25,
+      "en": "Maybe he's having a bad day.",
+      "pl": "Może (on) ma zły dzień.",
+      "literal_en": null,
+      "english_variants": ["Maybe he's having an off day."],
+      "polish_alternatives": ["Może ma dziś zły dzień."],
+      "focus_words": ["może", "mieć", "zły dzień"],
+      "grammar_tags": ["present_tense", "irregular_verb"]
+    },
+    {
+      "id": 26,
+      "en": "Everything is new and difficult for me.",
+      "pl": "Wszystko jest dla mnie nowe i trudne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dla mnie wszystko jest nowe i trudne."],
+      "focus_words": ["wszystko", "być", "dla mnie", "nowe", "trudne"],
+      "grammar_tags": ["present_tense", "adjective_agreement"]
+    },
+    {
+      "id": 27,
+      "en": "I understand that it's important, but he is resting now.",
+      "pl": "Rozumiem, że to jest ważne, ale on teraz odpoczywa.",
+      "literal_en": null,
+      "english_variants": ["I understand that it's important, but he's resting now."],
+      "polish_alternatives": ["Rozumiem, że to ważne, ale on teraz odpoczywa."],
+      "focus_words": ["rozumieć", "że", "ważne", "ale", "teraz", "odpoczywać"],
+      "grammar_tags": ["present_tense", "subordinate_clause", "ze_required"]
+    },
+    {
+      "id": 28,
+      "en": "I'm sorry. Your flight is / has been cancelled.",
+      "pl": "Przykro mi. Twój lot jest odwołany.",
+      "literal_en": null,
+      "english_variants": ["I'm sorry. Your flight has been cancelled."],
+      "polish_alternatives": ["Przykro mi, twój lot jest odwołany."],
+      "focus_words": ["przykro mi", "twój", "lot", "odwołany"],
+      "grammar_tags": ["fixed_expression", "sympathy"]
+    },
+    {
+      "id": 29,
+      "en": "I love making cakes!",
+      "pl": "Kocham robić ciasta!",
+      "literal_en": null,
+      "english_variants": ["I love baking cakes!"],
+      "polish_alternatives": ["Uwielbiam robić ciasta!"],
+      "focus_words": ["kochać", "robić", "ciasta"],
+      "grammar_tags": ["two_verbs_rule", "infinitive", "exclamation"]
+    },
+    {
+      "id": 30,
+      "en": "We don't have children.",
+      "pl": "Nie mamy dzieci.",
+      "literal_en": null,
+      "english_variants": ["We have no children."],
+      "polish_alternatives": [],
+      "focus_words": ["nie", "mieć", "dzieci"],
+      "grammar_tags": ["present_tense", "negation", "irregular_verb"]
+    },
+    {
+      "id": 31,
+      "en": "Is he very busy?",
+      "pl": "(Czy on) jest bardzo zajęty?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["On jest bardzo zajęty?", "Jest bardzo zajęty?"],
+      "focus_words": ["czy", "być", "bardzo", "zajęty"],
+      "grammar_tags": ["question", "irregular_verb"]
+    },
+    {
+      "id": 32,
+      "en": "I travel a lot.",
+      "pl": "Dużo podróżuję.",
+      "literal_en": null,
+      "english_variants": ["I travel a lot."],
+      "polish_alternatives": ["Często podróżuję."],
+      "focus_words": ["dużo", "podróżować"],
+      "grammar_tags": ["present_tense"]
+    },
+    {
+      "id": 33,
+      "en": "I think you're late too often.",
+      "pl": "Myślę, że za/zbyt często się spóźniasz.",
+      "literal_en": null,
+      "english_variants": ["I think you're late too often."],
+      "polish_alternatives": ["Myślę, że spóźniasz się zbyt często."],
+      "focus_words": ["myśleć", "że", "za często", "zbyt często", "się", "spóźniać się"],
+      "grammar_tags": ["subordinate_clause", "reflexive_verb", "ze_required"]
+    },
+    {
+      "id": 34,
+      "en": "I'm sorry, but we're closing in ten minutes.",
+      "pl": "Przepraszam, ale zamykamy za dziesięć minut.",
+      "literal_en": null,
+      "english_variants": ["Sorry, but we close in ten minutes."],
+      "polish_alternatives": [],
+      "focus_words": ["przepraszam", "ale", "zamykać", "za dziesięć minut"],
+      "grammar_tags": ["present_tense", "time_expression"]
+    },
+    {
+      "id": 35,
+      "en": "Can you hear it? (lit. You hear it?)",
+      "pl": "Słyszysz to?",
+      "literal_en": "You hear it?",
+      "english_variants": ["Do you hear it?"],
+      "polish_alternatives": [],
+      "focus_words": ["słyszeć", "to"],
+      "grammar_tags": ["question", "sense_verb"]
+    },
+    {
+      "id": 36,
+      "en": "Shall we start? (lit. We start?) Are you ready?",
+      "pl": "Zaczynamy? (Czy) jesteś gotowy?",
+      "literal_en": "We start? Are you ready?",
+      "english_variants": ["Shall we begin? Are you ready?"],
+      "polish_alternatives": ["Zaczynamy? Jesteś gotowy?"],
+      "focus_words": ["zaczynać", "czy", "być", "gotowy"],
+      "grammar_tags": ["question", "present_tense"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "być",
+      "mieć",
+      "robić",
+      "rozumieć",
+      "mówić",
+      "słyszeć",
+      "słuchać",
+      "studiować",
+      "pracować",
+      "pamiętać",
+      "odpoczywać",
+      "spóźniać się",
+      "spieszyć się",
+      "podróżować",
+      "zapraszać",
+      "zamykać"
+    ],
+    "sentence_cards_priority": [1, 3, 5, 10, 18, 22, 23, 24, 27, 28, 33, 35, 36]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'I think you're late too often.'",
+      "correct_answer": "Myślę, że za często się spóźniasz.",
+      "distractors": [
+        "Myślę, że za często słuchasz.",
+        "Myślę, że za często pracujesz.",
+        "Myślę, że za często się spieszymy."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Thanks, but we're in a hurry.'",
+      "answer_pl": "Dzięki, ale się spieszymy.",
+      "word_bank": ["Dzięki", "ale", "się", "spieszymy"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Can you hear it?'",
+      "accepted_answers": [
+        "Słyszysz to?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

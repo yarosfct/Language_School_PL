@@ -1,0 +1,522 @@
+{
+  "test_number": 4,
+  "title": "Test 4",
+  "source_type": "book_test",
+  "pages": [176, 177, 178, 179, 180, 181],
+  "skills_tested": [
+    "vocabulary recall",
+    "translation",
+    "common collocations",
+    "grammar",
+    "sentence completion",
+    "crossword",
+    "short speaking prompts"
+  ],
+  "parts": [
+    {
+      "part_number": 1,
+      "type": "fill_in_the_gaps_with_translations",
+      "instruction_en": "Fill in the gaps with translations of the words in brackets.",
+      "items": [
+        { "id": 1, "prompt_en": "(warm), (windy), (it's raining)", "sentence_pl": "Dzisiaj _____, ale _____ i _____." },
+        { "id": 2, "prompt_en": "(the sun is shining), (hot)", "sentence_pl": "Dzisiaj _____ i jest _____." },
+        { "id": 3, "prompt_en": "(cloudy), (degrees)", "sentence_pl": "Jest _____ i są tylko cztery _____." },
+        { "id": 4, "prompt_en": "(an invitation), (wedding)", "sentence_pl": "Dostaliśmy _____ na _____." },
+        { "id": 5, "prompt_en": "(balloons), (birthday cake), (candles)", "sentence_pl": "Musimy kupić _____ i fajny _____ _____." },
+        { "id": 6, "prompt_en": "(in), (Christmas), (honeymoon)", "sentence_pl": "Bardzo lubię _____ i właśnie zaczynamy _____." },
+        { "id": 7, "prompt_en": "(bank holiday)", "sentence_pl": "Mówił, że jest _____." },
+        { "id": 8, "prompt_en": "(arrived)", "sentence_pl": "Wszystko jest zamknięte, bo dzisiaj jest _____. " },
+        { "id": 9, "prompt_en": "(The message)", "sentence_pl": "Moi rodzice _____ wczoraj do Polski." },
+        { "id": 10, "prompt_en": "(the charger)", "sentence_pl": "Długo _____ _____?" },
+        { "id": 11, "prompt_en": "(surprising), (brilliant)", "sentence_pl": "Wiesz, gdzie jest moja _____?" },
+        { "id": 12, "prompt_en": "(message)", "sentence_pl": "Twoja _____ była _____." },
+        { "id": 13, "prompt_en": "(button)", "sentence_pl": "Lubię ten _____." },
+        { "id": 14, "prompt_en": "(song)", "sentence_pl": "To jest moja ulubiona _____." },
+        { "id": 15, "prompt_en": "(exhibition)", "sentence_pl": "Od kiedy będzie otwarta ta _____?" },
+        { "id": 16, "prompt_en": "(the countryside)", "sentence_pl": "Bardzo dziękuję za _____." },
+        { "id": 17, "prompt_en": "(experience), (salary)", "sentence_pl": "Latem jedziemy na wieś. _____." },
+        { "id": 18, "prompt_en": "(The training course)", "sentence_pl": "On ma duże _____, ale jego _____ jest niska." },
+        { "id": 19, "prompt_en": "(the training course)", "sentence_pl": "Czy _____ będzie w czwartek czy w piątek?" }
+      ]
+    },
+    {
+      "part_number": 2,
+      "type": "match_words_to_form_common_phrases",
+      "instruction_en": "Match the words to form common phrases.",
+      "groups": [
+        {
+          "group": "A",
+          "left_column": [
+            "prognoza",
+            "ulubiona",
+            "święto",
+            "pogoda",
+            "panna",
+            "sytuacja",
+            "suknia"
+          ],
+          "right_column": [
+            "Narodzenie",
+            "młoda",
+            "pogody",
+            "urodzinowe",
+            "ślubna",
+            "piosenka",
+            "brzydka"
+          ]
+        },
+        {
+          "group": "B",
+          "left_column": [
+            "znany",
+            "własny",
+            "świeże",
+            "wysoka",
+            "miasto",
+            "duże",
+            "główna",
+            "rozmowa"
+          ],
+          "right_column": [
+            "miasto",
+            "miejsce",
+            "powietrze",
+            "gorączka",
+            "akcja",
+            "kwalifikacyjna",
+            "biznes"
+          ]
+        },
+        {
+          "group": "C",
+          "left_column": [
+            "kolega",
+            "wysoka",
+            "strona",
+            "film",
+            "dodatkowy",
+            "festiwal",
+            "tort"
+          ],
+          "right_column": [
+            "internetowa",
+            "firmowy",
+            "sos",
+            "urodzinowy",
+            "pensja",
+            "akcji",
+            "z pracy"
+          ]
+        },
+        {
+          "group": "D",
+          "left_column": [
+            "wejście",
+            "stresujący",
+            "główne",
+            "prawda",
+            "roku",
+            "dzień",
+            "miłość"
+          ],
+          "right_column": [
+            "miejsce",
+            "główne",
+            "piękna",
+            "roku",
+            "dzień",
+            "miłość"
+          ]
+        }
+      ]
+    },
+    {
+      "part_number": 3,
+      "type": "multiple_choice",
+      "instruction_en": "Choose the correct answer.",
+      "items": [
+        {
+          "id": 1,
+          "sentence_pl": "Pogoda dzisiaj _____, jest minus dziesięć stopni, pada deszcz i jest wietrznie.",
+          "options": {
+            "A": "cudowna",
+            "B": "ogromna",
+            "C": "okropna"
+          }
+        },
+        {
+          "id": 2,
+          "sentence_pl": "Czy możesz _____ muzykę? Muszę się skupić.",
+          "options": {
+            "A": "wyłączyć",
+            "B": "zapomnieć",
+            "C": "włączyć"
+          }
+        },
+        {
+          "id": 3,
+          "sentence_pl": "_____ zdjęcia.",
+          "options": {
+            "A": "znać",
+            "B": "brać",
+            "C": "robić"
+          }
+        },
+        {
+          "id": 4,
+          "sentence_pl": "W muzeum jest ciekawa _____.",
+          "options": {
+            "A": "choroba",
+            "B": "wystawa",
+            "C": "poezja"
+          }
+        },
+        {
+          "id": 5,
+          "sentence_pl": "Lubię patrzeć za _____ ekranu.",
+          "options": {
+            "A": "bliska za",
+            "B": "blisko do",
+            "C": "blisko od"
+          }
+        },
+        {
+          "id": 6,
+          "sentence_pl": "On chce _____ Natalią.",
+          "options": {
+            "A": "ślub",
+            "B": "ożenić się z",
+            "C": "wyjść za"
+          }
+        },
+        {
+          "id": 7,
+          "sentence_pl": "Jutro będziemy _____ nasz wyjazd na wakacje.",
+          "options": {
+            "A": "opowiadać",
+            "B": "powiedzieć",
+            "C": "rozmawiać"
+          }
+        },
+        {
+          "id": 8,
+          "sentence_pl": "Polska to piękny _____.",
+          "options": {
+            "A": "miasto",
+            "B": "kraj",
+            "C": "widok"
+          }
+        },
+        {
+          "id": 9,
+          "sentence_pl": "Marzę o tym, żeby _____ i moje życie jest bardzo _____.",
+          "options": {
+            "A": "przydać się",
+            "B": "dostępna",
+            "C": "zadowolona"
+          }
+        },
+        {
+          "id": 10,
+          "sentence_pl": "_____ za tobą.",
+          "options": {
+            "A": "Tęsknię",
+            "B": "Marzę",
+            "C": "Pozwalam"
+          }
+        },
+        {
+          "id": 11,
+          "sentence_pl": "To mój ulubiony _____.",
+          "options": {
+            "A": "piosenka",
+            "B": "taniec",
+            "C": "zespół"
+          }
+        },
+        {
+          "id": 12,
+          "sentence_pl": "Moja żona _____ i leży w łóżku.",
+          "options": {
+            "A": "jest przeziębiona",
+            "B": "ma przeziębiona",
+            "C": "robi przeziębiona"
+          }
+        }
+      ]
+    },
+    {
+      "part_number": 4,
+      "type": "crossword",
+      "instruction_en": "Complete the crossword.",
+      "across": [
+        { "id": 1, "clue_pl": "Angry." },
+        { "id": 3, "clue_pl": "Ktoś, kto nie ma pracy." },
+        { "id": 6, "clue_pl": "lato, jesień..." },
+        { "id": 9, "clue_pl": "potrzebuje go Alfred Hitchcock, Steven Spielberg, David Fincher, Quentin Tarantino" },
+        { "id": 11, "clue_pl": "nie pamięć" },
+        { "id": 13, "clue_pl": "łóżko, które jest miękkie" },
+        { "id": 14, "clue_pl": "na przykład: Sahara" },
+        { "id": 15, "clue_pl": "Jest na niebie w nocy i jest większy niż gwiazda." },
+        { "id": 16, "clue_pl": "synonim skoncentrować się" },
+        { "id": 17, "clue_pl": "Oglądamy je na niebie w sylwestra." },
+        { "id": 18, "clue_pl": "przykład: w autobusie" }
+      ],
+      "down": [
+        { "id": 2, "clue_pl": "romantyczne spotkanie na przykład w kinie lub w restauracji" },
+        { "id": 4, "clue_pl": "bardzo duży" },
+        { "id": 5, "clue_pl": "synonim słowa gorączka" },
+        { "id": 7, "clue_pl": "synonim słowa błąd" },
+        { "id": 8, "clue_pl": "Dzisiaj jest ciepło i są dwadzieścia cztery _____." },
+        { "id": 9, "clue_pl": "Miejsce w hotelu, gdzie można się wymeldować." },
+        { "id": 10, "clue_pl": "Muszę dzisiaj ___ paczkę." },
+        { "id": 12, "clue_pl": "Pracuje tam lekarz." }
+      ]
+    },
+    {
+      "part_number": 5,
+      "type": "translate_words_into_english",
+      "instruction_en": "Translate the words below into English.",
+      "items": [
+        "aktywny",
+        "zdrowy",
+        "rozmowa",
+        "kraj",
+        "pogoda",
+        "miejsce",
+        "firma",
+        "drzwi",
+        "drukarka",
+        "urodziny",
+        "naprawiać",
+        "projektantka",
+        "woleć",
+        "znany",
+        "wycieczka",
+        "plaża",
+        "wydarzenie",
+        "główny",
+        "podpisać",
+        "obiecać"
+      ]
+    },
+    {
+      "part_number": 6,
+      "type": "match_words_to_form_common_phrases",
+      "instruction_en": "Match the words to form common phrases.",
+      "groups": [
+        {
+          "group": "A",
+          "left_column": [
+            "pada",
+            "słońce",
+            "plaża",
+            "fotograf",
+            "poezja",
+            "wynajmować",
+            "tańczyć",
+            "grać"
+          ],
+          "right_column": [
+            "powieść",
+            "czas",
+            "aplikację",
+            "śnieg",
+            "w operze",
+            "na gitarze",
+            "zachodzi",
+            "mieszkanie"
+          ]
+        },
+        {
+          "group": "B",
+          "left_column": [
+            "być",
+            "łamać",
+            "szukać",
+            "marzyć",
+            "rozumieć",
+            "drukować",
+            "przeziębić",
+            "iść"
+          ],
+          "right_column": [
+            "pracy",
+            "główną rolę",
+            "dokładnie",
+            "w ciąży",
+            "na koncert",
+            "nogę",
+            "z głodu",
+            "na konto"
+          ]
+        },
+        {
+          "group": "C",
+          "left_column": [
+            "świętować",
+            "świecić",
+            "zalogować się",
+            "pracować",
+            "czuć się",
+            "zwiedzać",
+            "mieć",
+            "słuchać"
+          ],
+          "right_column": [
+            "słońce",
+            "na konto",
+            "marzec",
+            "muzyki",
+            "muzeum",
+            "źle",
+            "na wakacjach",
+            "urodziny"
+          ]
+        }
+      ]
+    },
+    {
+      "part_number": 7,
+      "type": "complete_translations_by_adding_letters",
+      "instruction_en": "Complete the translations by adding letters.",
+      "items": [
+        { "id": 1, "target_en": "soft" },
+        { "id": 2, "target_en": "awful" },
+        { "id": 3, "target_en": "to sing" },
+        { "id": 4, "target_en": "message" },
+        { "id": 5, "target_en": "to catch a cold" },
+        { "id": 6, "target_en": "brilliant" },
+        { "id": 7, "target_en": "spring" },
+        { "id": 8, "target_en": "song" },
+        { "id": 9, "target_en": "wind" },
+        { "id": 10, "target_en": "to invite" },
+        { "id": 11, "target_en": "date" },
+        { "id": 12, "target_en": "boss" },
+        { "id": 13, "target_en": "to earn" },
+        { "id": 14, "target_en": "huge" },
+        { "id": 15, "target_en": "photographer" },
+        { "id": 16, "target_en": "cinema" },
+        { "id": 17, "target_en": "airport" },
+        { "id": 18, "target_en": "quiet" },
+        { "id": 19, "target_en": "New Year's Eve" },
+        { "id": 20, "target_en": "guests" }
+      ]
+    },
+    {
+      "part_number": 8,
+      "type": "give_opposites",
+      "instruction_en": "Give opposites of the words below.",
+      "items": [
+        "ciepło",
+        "wschód",
+        "gorąco",
+        "sucho",
+        "zalogować się",
+        "włączyć"
+      ]
+    },
+    {
+      "part_number": 9,
+      "type": "choose_correct_translations",
+      "instruction_en": "Choose the correct translations of the sentences below.",
+      "items": [
+        {
+          "id": 1,
+          "prompt_en": "Today, it's raining.",
+          "options": {
+            "A": "Dzisiaj jest pada deszcz.",
+            "B": "Dzisiaj pada deszcz."
+          }
+        },
+        {
+          "id": 2,
+          "prompt_en": "When's your birthday?",
+          "options": {
+            "A": "Kiedy są twoje urodziny?",
+            "B": "Kiedy jest twój urodziny?"
+          }
+        },
+        {
+          "id": 3,
+          "prompt_en": "The sunset was beautiful.",
+          "options": {
+            "A": "Zachód słońca był piękny.",
+            "B": "Wschód słońca był piękny."
+          }
+        },
+        {
+          "id": 4,
+          "prompt_en": "I like the view.",
+          "options": {
+            "A": "Lubię ciszę nad jeziorem.",
+            "B": "Lubię ciszę nad rzeką."
+          }
+        },
+        {
+          "id": 5,
+          "prompt_en": "I'm worried.",
+          "options": {
+            "A": "Śmieję się.",
+            "B": "Martwię się."
+          }
+        },
+        {
+          "id": 6,
+          "prompt_en": "She has a terrible cough.",
+          "options": {
+            "A": "Ona ma okropny kaszel.",
+            "B": "Ona ma okropną alergię."
+          }
+        },
+        {
+          "id": 7,
+          "prompt_en": "My son plays the piano.",
+          "options": {
+            "A": "Mój mąż gra w pianinie.",
+            "B": "Mój mąż gra na pianinie."
+          }
+        },
+        {
+          "id": 8,
+          "prompt_en": "I have an invitation for you.",
+          "options": {
+            "A": "Mam dla ciebie zaproszenie.",
+            "B": "Mam dla ciebie ładowarkę."
+          }
+        },
+        {
+          "id": 9,
+          "prompt_en": "Can you stop the car?",
+          "options": {
+            "A": "Czy możesz przesłać samochód?",
+            "B": "Czy możesz zatrzymać samochód?"
+          }
+        }
+      ]
+    },
+    {
+      "part_number": 10,
+      "type": "speaking_prompts",
+      "instruction_en": "Say a few words on the given topics. Answer the questions.",
+      "items": [
+        "What is the weather like today? What was it like yesterday, and what's the forecast for tomorrow?",
+        "How many seasons are there in your country? What's the weather like in each of these seasons?",
+        "What's your favourite weather?",
+        "What do you usually do on your computer/laptop?",
+        "Talk to your friend about your job, or the job of your husband/colleague/sister etc.",
+        "What would your office look like? Your dream job to be like? Use as many words from the work-related chapter as possible.",
+        "What do you watch most often on TV or online in autumn and winter?",
+        "When was the last time you were ill, and what symptoms did you have?",
+        "What is your favourite holiday and how do you spend it?",
+        "Do you like celebrating your birthday? How do you spend your birthday?",
+        "Have you ever been to a Polish wedding?",
+        "What's your favourite type of music and band? What instruments would you like to play?",
+        "Do you like reading? What do you usually read?",
+        "How often do you go to the cinema, theatre or museum? Have you ever been to a festival or an exhibition?",
+        "What's your favourite film, painting, or photo? Describe at least one of them briefly.",
+        "What kind of films do you watch most often?"
+      ]
+    }
+  ]
+}

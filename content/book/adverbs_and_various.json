@@ -1,0 +1,646 @@
+{
+  "section_number": 30,
+  "topic_en": "Adverbs, Particles & Various Phrases",
+  "topic_pl": "Przysłówki, partykuły i różne frazy",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "absolutnie", "en": ["absolutely"], "category": "adverb" },
+    { "pl": "(być) może", "en": ["maybe"], "category": "phrase" },
+    { "pl": "całkiem", "en": ["quite", "rather"], "category": "adverb" },
+    { "pl": "całkowicie", "en": ["completely"], "category": "adverb" },
+    { "pl": "ciężko", "en": ["hard"], "category": "adverb" },
+    { "pl": "czasami", "en": ["sometimes"], "category": "adverb" },
+    { "pl": "dobrze", "en": ["well"], "category": "adverb" },
+    { "pl": "dokładnie", "en": ["exactly", "precisely"], "category": "adverb" },
+    { "pl": "głośno", "en": ["loud"], "category": "adverb" },
+    { "pl": "jeszcze", "en": ["yet", "still", "some more"], "category": "adverb" },
+    { "pl": "już", "en": ["already", "yet", "now"], "category": "adverb" },
+    { "pl": "nadal", "en": ["still"], "category": "adverb" },
+    { "pl": "nawet", "en": ["even"], "category": "adverb" },
+    { "pl": "niestety", "en": ["unfortunately"], "category": "adverb" },
+    { "pl": "od razu", "en": ["immediately", "right away"], "category": "phrase" },
+    { "pl": "potem", "en": ["then", "afterwards"], "category": "adverb" },
+    { "pl": "prawdopodobnie", "en": ["probably"], "category": "adverb" },
+    { "pl": "prawie", "en": ["almost", "nearly"], "category": "adverb" },
+    { "pl": "razem", "en": ["together"], "category": "adverb" },
+    { "pl": "rzadko", "en": ["rarely", "seldom"], "category": "adverb" },
+    { "pl": "szczególnie", "en": ["especially"], "category": "adverb" },
+    { "pl": "też", "en": ["also", "too"], "category": "particle" },
+    { "pl": "tylko", "en": ["just", "only"], "category": "particle" },
+    { "pl": "w dół", "en": ["down"], "category": "phrase" },
+    { "pl": "w górę", "en": ["up"], "category": "phrase" },
+    { "pl": "w końcu", "en": ["finally"], "category": "phrase" },
+    { "pl": "właściwie", "en": ["actually", "in fact"], "category": "adverb" },
+    { "pl": "w porządku", "en": ["all right", "OK"], "category": "phrase" },
+    { "pl": "wszędzie", "en": ["everywhere"], "category": "adverb" },
+    { "pl": "wystarczająco", "en": ["enough"], "category": "adverb" },
+    { "pl": "zawsze", "en": ["always"], "category": "adverb" },
+    { "pl": "znów", "en": ["again"], "category": "adverb" },
+    { "pl": "znowu", "en": ["again"], "category": "adverb" },
+    { "pl": "z pewnością", "en": ["certainly"], "category": "phrase" },
+    { "pl": "z powrotem", "en": ["back"], "category": "phrase" },
+    { "pl": "źle", "en": ["wrong", "badly"], "category": "adverb" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "aktualnie_false_friend",
+      "content": "'Aktualnie' and English 'actually' are false friends. The note focuses on three common Polish translations of actually:",
+      "examples": [
+        "właściwie",
+        "rzeczywiście",
+        "faktycznie"
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "wlasciwie_meaning",
+      "content": "'Właściwie' is used to clarify something or present it the way someone sees it.",
+      "examples": [
+        "Właściwie (to) nie lubię kawy.",
+        "Właściwie, to myślę, że on jest bardzo miły."
+      ],
+      "content_note": "In this sense, it can also be translated as 'in fact' or 'in actual fact'."
+    },
+    {
+      "id": 3,
+      "topic": "rzeczywiscie_faktycznie",
+      "content": "'Rzeczywiście' and 'faktycznie' are near-synonyms and are often interchangeable. They confirm certain facts or emphasise truth.",
+      "examples": [
+        "To rzeczywiście / faktycznie był dobry pomysł.",
+        "Rzeczywiście / faktycznie, pogoda jest dziś piękna."
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "miec_racje",
+      "content": "In the expression 'mieć rację' (to be right), Polish uses 'mieć', not 'być'."
+    },
+    {
+      "id": 5,
+      "topic": "byc_moze_vs_moze_byc",
+      "content": "Learners often mix up 'być może' and 'może być'. Generally, 'być może' is like 'maybe / perhaps', while 'może być' often means 'OK / that’s fine / not too bad' depending on context.",
+      "examples": [
+        "Czy możemy się spotkać w czwartek o 10:00? – Może być.",
+        "Myślę, że to może być fajny prezent.",
+        "Jak ci minął dzień? – Może być."
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "next_time_expression",
+      "content": "Use 'następnym razem' for 'next time', not 'następny czas'."
+    },
+    {
+      "id": 9,
+      "topic": "ciezko_vs_trudno",
+      "content": "'Ciężko' as an adverb often translates as 'hard'. In many situations it overlaps with 'trudno' (difficult), though 'ciężko' is often more informal.",
+      "examples": [
+        "Ciężko/Trudno to zrozumieć."
+      ]
+    },
+    {
+      "id": 10,
+      "topic": "pomoc_genitive_after_potrzebowac",
+      "content": "'Pomoc' is a feminine noun and after the verb 'potrzebować' (to need) it appears in the genitive case."
+    },
+    {
+      "id": 11,
+      "topic": "juz_meanings",
+      "content": "The word 'już' has several common uses depending on context:",
+      "examples": [
+        "already: Jadłem już śniadanie.",
+        "yet in questions / negatives: Czy on już przyjechał?",
+        "done / completed: Już! (Zrobiłem to!)",
+        "any more with negation: Nie mogę już czekać.",
+        "now / right now: Już idę."
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "takze_i_rowniez_vs_tez",
+      "content": "'Także' and 'również' are near-synonyms of 'też', but are more common in formal situations."
+    },
+    {
+      "id": 13,
+      "topic": "ze_mna_z_toba",
+      "content": "Quick reminder:",
+      "examples": [
+        "ze mną = with me",
+        "z tobą = with you"
+      ]
+    },
+    {
+      "id": 15,
+      "topic": "jeszcze_affirmative_more",
+      "content": "'Jeszcze' can also mean any/some more or one more in affirmative contexts.",
+      "examples": [
+        "Czy chcesz jeszcze herbaty?",
+        "Poproszę/Proszę jeszcze jeden sok."
+      ],
+      "content_note": "It also appears in restaurant-style phrases like 'Coś jeszcze?' and can still mean 'still' in some contexts."
+    },
+    {
+      "id": 18,
+      "topic": "zwlaszcza_synonym",
+      "content": "'Zwłaszcza' is a synonym of 'szczególnie' (especially)."
+    },
+    {
+      "id": 19,
+      "topic": "dokladnie_perfectly_well",
+      "content": "'Dokładnie' can also mean 'perfectly well' in some contexts.",
+      "examples": [
+        "Dokładnie pamiętam nasze pierwsze spotkanie."
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "pracowac_nad_instrumental",
+      "content": "'Pracować nad' (to work on) is followed by the instrumental case.",
+      "examples": [
+        "pracować nad nowym albumem"
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "zle_meaning",
+      "content": "'Źle' can also mean badly in English in other contexts."
+    },
+    {
+      "id": 24,
+      "topic": "w_koncu_synonyms",
+      "content": "Synonyms of 'w końcu' (finally) include:",
+      "examples": [
+        "wreszcie",
+        "nareszcie"
+      ]
+    },
+    {
+      "id": 26,
+      "topic": "szkoda_meanings",
+      "content": "'Szkoda' can mean pity or 'it’s a pity'.",
+      "examples": [
+        "Jaka szkoda!",
+        "Ale szkoda!"
+      ]
+    },
+    {
+      "id": 26,
+      "topic": "isc_vs_jechac_transport",
+      "content": "Use 'jechać' with a means of transport. 'Iść' applies only to going somewhere on foot."
+    },
+    {
+      "id": 27,
+      "topic": "twarza_w_twarz",
+      "content": "Face-to-face translates as 'twarzą w twarz'."
+    },
+    {
+      "id": 28,
+      "topic": "spac_present_tense",
+      "content": "Present tense of 'spać' (to sleep):",
+      "examples": [
+        "ja śpię",
+        "ty śpisz",
+        "on/ona/ono śpi",
+        "my śpimy",
+        "wy śpicie",
+        "oni/one śpią"
+      ],
+      "content_note": "The verb 'spać' conjugates regularly in the past tense."
+    },
+    {
+      "id": 30,
+      "topic": "jestes_ok_mistake",
+      "content": "Do not translate 'Are you OK?' as 'Jesteś OK?'. More natural questions include:",
+      "examples": [
+        "Czy dobrze się czujesz?",
+        "Czy wszystko dobrze / w porządku?"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "po_pracy",
+      "content": "'Po pracy' means after work."
+    },
+    {
+      "id": 32,
+      "topic": "potem_vs_nastepnie",
+      "content": "'Potem' can often be replaced by 'następnie'. The version with 'a potem' is common as 'and then'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Actually, it doesn’t matter.",
+      "pl": "Właściwie to nie ma znaczenia.",
+      "literal_en": null,
+      "english_variants": ["Actually, it doesn’t really matter."],
+      "polish_alternatives": ["Właściwie, to nie ma znaczenia."],
+      "focus_words": ["właściwie", "to nie ma znaczenia"],
+      "grammar_tags": ["adverbs", "fixed_expression", "negation"]
+    },
+    {
+      "id": 2,
+      "en": "That’s absolutely not true (lit. the truth)!",
+      "pl": "To absolutnie nie jest prawda!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["to absolutnie nie jest prawda"],
+      "grammar_tags": ["adverbs", "negation", "exclamation"]
+    },
+    {
+      "id": 3,
+      "en": "It’s raining again, and it’s wet everywhere.",
+      "pl": "Znów/Znowu pada (deszcz) i wszędzie jest mokro.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Znowu pada deszcz i wszędzie jest mokro."],
+      "focus_words": ["znów pada", "wszędzie", "jest mokro"],
+      "grammar_tags": ["adverbs", "weather"]
+    },
+    {
+      "id": 4,
+      "en": "You’re always right.",
+      "pl": "Zawsze masz rację.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zawsze", "masz rację"],
+      "grammar_tags": ["adverbs", "fixed_expression"]
+    },
+    {
+      "id": 5,
+      "en": "Today the weather is quite (rather) nice (lit. pretty).",
+      "pl": "Dziś/Dzisiaj pogoda jest całkiem ładna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dzisiaj pogoda jest całkiem ładna."],
+      "focus_words": ["dziś", "pogoda", "jest całkiem ładna"],
+      "grammar_tags": ["adverbs", "weather", "description"]
+    },
+    {
+      "id": 6,
+      "en": "Maybe we will have more luck next time.",
+      "pl": "Być może / Może będziemy mieć więcej szczęścia następnym razem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Być może będziemy mieć więcej szczęścia następnym razem."],
+      "focus_words": ["być może", "będziemy mieć", "więcej szczęścia", "następnym razem"],
+      "grammar_tags": ["adverbs", "future_tense"]
+    },
+    {
+      "id": 7,
+      "en": "I completely agree with you.",
+      "pl": "Całkowicie się z tobą zgadzam.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["całkowicie", "się z tobą zgadzam"],
+      "grammar_tags": ["adverbs", "reflexive_verb"]
+    },
+    {
+      "id": 8,
+      "en": "Is the lift going up or down?",
+      "pl": "(Czy) winda jedzie w górę, czy w dół?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Winda jedzie w górę czy w dół?"],
+      "focus_words": ["winda jedzie", "w górę", "czy w dół"],
+      "grammar_tags": ["adverbs", "question", "movement"]
+    },
+    {
+      "id": 9,
+      "en": "It’s hard to wake up at five thirty every morning.",
+      "pl": "Ciężko jest budzić się codziennie o piątej trzydzieści rano.",
+      "literal_en": null,
+      "english_variants": ["It’s hard waking up at 5:30 every morning."],
+      "polish_alternatives": ["Ciężko budzić się codziennie o piątej trzydzieści rano."],
+      "focus_words": ["ciężko jest", "budzić się", "codziennie", "o piątej trzydzieści rano"],
+      "grammar_tags": ["adverbs", "reflexive_verb", "two_verbs_rule", "time_expression"]
+    },
+    {
+      "id": 10,
+      "en": "We will certainly need help.",
+      "pl": "Z pewnością będziemy potrzebować pomocy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["z pewnością", "będziemy potrzebować", "pomocy"],
+      "grammar_tags": ["adverbs", "future_tense", "genitive_after_potrzebowac"]
+    },
+    {
+      "id": 11,
+      "en": "Are you still at work, or already (at) home?",
+      "pl": "(Czy) nadal/jeszcze jesteś w pracy, czy już w domu?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nadal jesteś w pracy, czy już w domu?"],
+      "focus_words": ["nadal", "jeszcze", "jesteś w pracy", "czy już w domu"],
+      "grammar_tags": ["adverbs", "question", "locative"]
+    },
+    {
+      "id": 12,
+      "en": "What time will you be back?",
+      "pl": "O której (godzinie) będziesz z powrotem?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["O której będziesz z powrotem?"],
+      "focus_words": ["o której", "będziesz z powrotem"],
+      "grammar_tags": ["adverbs", "question", "future_tense", "time_expression"]
+    },
+    {
+      "id": 13,
+      "en": "We want to go with you too!",
+      "pl": "My też chcemy z tobą iść!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["my też", "chcemy", "z tobą iść"],
+      "grammar_tags": ["adverbs", "two_verbs_rule", "exclamation"]
+    },
+    {
+      "id": 14,
+      "en": "Am I speaking/talking loud enough?",
+      "pl": "(Czy) mówię wystarczająco głośno?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mówię wystarczająco głośno?"],
+      "focus_words": ["mówię", "wystarczająco głośno"],
+      "grammar_tags": ["adverbs", "question"]
+    },
+    {
+      "id": 15,
+      "en": "She hasn’t arrived yet.",
+      "pl": "(Ona) jeszcze nie przyjechała.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jeszcze nie", "przyjechała"],
+      "grammar_tags": ["adverbs", "negation", "past_tense"]
+    },
+    {
+      "id": 16,
+      "en": "That’s exactly what (lit. exactly that what) I wanted to say.",
+      "pl": "To jest dokładnie to, co chciałem powiedzieć.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To dokładnie to, co chciałem powiedzieć."],
+      "focus_words": ["to jest dokładnie to", "co chciałem powiedzieć"],
+      "grammar_tags": ["adverbs", "relative_clause", "past_tense"]
+    },
+    {
+      "id": 17,
+      "en": "Sometimes he goes running in the morning before work.",
+      "pl": "Czasami (on) biega rano przed pracą.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["czasami", "biega rano", "przed pracą"],
+      "grammar_tags": ["adverbs", "daily_routine"]
+    },
+    {
+      "id": 18,
+      "en": "These beaches are very crowded, especially in the summer.",
+      "pl": "Te plaże są bardzo zatłoczone, szczególnie latem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Te plaże są bardzo zatłoczone, zwłaszcza latem."],
+      "focus_words": ["te plaże", "są bardzo zatłoczone", "szczególnie latem"],
+      "grammar_tags": ["adverbs", "plural_noun", "description"]
+    },
+    {
+      "id": 19,
+      "en": "She was sitting exactly where (lit. exactly there, where) that man is sitting now.",
+      "pl": "Siedziała dokładnie tam, gdzie siedzi teraz tamten mężczyzna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["siedziała dokładnie tam", "gdzie siedzi teraz", "tamten mężczyzna"],
+      "grammar_tags": ["adverbs", "past_tense", "subordinate_clause"]
+    },
+    {
+      "id": 20,
+      "en": "Are you (pl.) still working on this project?",
+      "pl": "(Czy) nadal/jeszcze pracujecie nad tym projektem?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nadal pracujecie nad tym projektem?"],
+      "focus_words": ["nadal", "jeszcze", "pracujecie nad tym projektem"],
+      "grammar_tags": ["adverbs", "question", "instrumental_basic"]
+    },
+    {
+      "id": 21,
+      "en": "I think we’re doing it wrong.",
+      "pl": "Myślę, że źle to robimy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["myślę, że", "źle to robimy"],
+      "grammar_tags": ["adverbs", "subordinate_clause"]
+    },
+    {
+      "id": 22,
+      "en": "I will probably need more time.",
+      "pl": "Prawdopodobnie będę potrzebować więcej czasu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["prawdopodobnie", "będę potrzebować", "więcej czasu"],
+      "grammar_tags": ["adverbs", "future_tense", "genitive_after_potrzebowac"]
+    },
+    {
+      "id": 23,
+      "en": "\"When are we going to Warsaw?\" \"Whenever (lit. When) you want. We can even go tomorrow.\"",
+      "pl": "– Kiedy jedziemy do Warszawy? – Kiedy chcesz. Możemy pojechać nawet jutro.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kiedy jedziemy do Warszawy", "kiedy chcesz", "możemy pojechać", "nawet jutro"],
+      "grammar_tags": ["adverbs", "dialogue", "question", "travel"]
+    },
+    {
+      "id": 24,
+      "en": "I finally have some free/spare time.",
+      "pl": "W końcu mam trochę wolnego czasu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w końcu", "mam trochę", "wolnego czasu"],
+      "grammar_tags": ["adverbs", "genitive_basic"]
+    },
+    {
+      "id": 25,
+      "en": "The eggs are almost ready.",
+      "pl": "Jajka są prawie gotowe.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jajka", "są prawie gotowe"],
+      "grammar_tags": ["adverbs", "plural_noun"]
+    },
+    {
+      "id": 26,
+      "en": "It’s a pity that we can’t go there together.",
+      "pl": "Szkoda, że nie możemy tam iść/jechać razem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Szkoda, że nie możemy tam razem iść."],
+      "focus_words": ["szkoda, że", "nie możemy", "tam", "razem"],
+      "grammar_tags": ["adverbs", "subordinate_clause", "negation", "two_verbs_rule"]
+    },
+    {
+      "id": 27,
+      "en": "We only know each other from Facebook. We haven’t met face-to-face yet.",
+      "pl": "Znamy się tylko z Facebooka. Jeszcze się nie spotkaliśmy twarzą w twarz.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["znamy się tylko z Facebooka", "jeszcze się nie spotkaliśmy", "twarzą w twarz"],
+      "grammar_tags": ["adverbs", "reflexive_verb", "negation", "past_tense"]
+    },
+    {
+      "id": 28,
+      "en": "\"Did you sleep well?\" \"Unfortunately not. I rarely sleep well.\"",
+      "pl": "– Dobrze spałeś? – Niestety nie. Rzadko śpię dobrze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dobrze spałaś? Niestety nie. Rzadko śpię dobrze."],
+      "focus_words": ["dobrze spałeś", "niestety nie", "rzadko śpię dobrze"],
+      "grammar_tags": ["adverbs", "dialogue", "past_tense", "present_tense"]
+    },
+    {
+      "id": 29,
+      "en": "You’re finally here!",
+      "pl": "W końcu tutaj/tu jesteś!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["W końcu tu jesteś!"],
+      "focus_words": ["w końcu", "tu jesteś"],
+      "grammar_tags": ["adverbs", "exclamation"]
+    },
+    {
+      "id": 30,
+      "en": "Is everything all right? Are you OK? Are you ill?",
+      "pl": "(Czy) wszystko w porządku? (Czy) dobrze się czujesz? (Czy) jesteś chory?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wszystko w porządku? Dobrze się czujesz? Jesteś chory?"],
+      "focus_words": ["wszystko w porządku", "dobrze się czujesz", "jesteś chory"],
+      "grammar_tags": ["adverbs", "question", "health"]
+    },
+    {
+      "id": 31,
+      "en": "We have to go there right after work.",
+      "pl": "Musimy tam iść/jechać od razu po pracy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Musimy tam od razu po pracy iść."],
+      "focus_words": ["musimy tam", "iść/jechać", "od razu po pracy"],
+      "grammar_tags": ["adverbs", "two_verbs_rule", "fixed_expression"]
+    },
+    {
+      "id": 32,
+      "en": "We’re resting now, and then we will work.",
+      "pl": "Teraz odpoczywamy, a potem będziemy pracować.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Teraz odpoczywamy, a następnie będziemy pracować."],
+      "focus_words": ["teraz odpoczywamy", "a potem", "będziemy pracować"],
+      "grammar_tags": ["adverbs", "future_tense", "contrast"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "absolutnie",
+      "być może",
+      "całkiem",
+      "całkowicie",
+      "ciężko",
+      "czasami",
+      "dobrze",
+      "dokładnie",
+      "głośno",
+      "jeszcze",
+      "już",
+      "nadal",
+      "nawet",
+      "niestety",
+      "od razu",
+      "potem",
+      "prawdopodobnie",
+      "prawie",
+      "razem",
+      "rzadko",
+      "szczególnie",
+      "też",
+      "tylko",
+      "w dół",
+      "w górę",
+      "w końcu",
+      "właściwie",
+      "w porządku",
+      "wszędzie",
+      "wystarczająco",
+      "zawsze",
+      "znów",
+      "znowu",
+      "z pewnością",
+      "z powrotem",
+      "źle"
+    ],
+    "sentence_cards_priority": [1, 4, 6, 7, 8, 9, 10, 11, 13, 15, 16, 18, 20, 21, 22, 24, 26, 27, 28, 30, 31, 32]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'You’re always right.'",
+      "correct_answer": "Zawsze masz rację.",
+      "distractors": [
+        "Zawsze jesteś rację.",
+        "Masz zawsze dobrze.",
+        "Ty zawsze prawda."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'We’re resting now, and then we will work.'",
+      "answer_pl": "Teraz odpoczywamy, a potem będziemy pracować.",
+      "word_bank": ["Teraz", "odpoczywamy", "a", "potem", "będziemy", "pracować"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'It’s a pity that we can’t go there together.'",
+      "accepted_answers": [
+        "Szkoda, że nie możemy tam iść razem.",
+        "Szkoda, że nie możemy tam jechać razem."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

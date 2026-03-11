@@ -1,0 +1,431 @@
+{
+  "test_number": 2,
+  "title": "Test 2",
+  "source_type": "book_test",
+  "pages": [88, 89, 90, 91],
+  "skills_tested": [
+    "vocabulary recall",
+    "translation",
+    "common collocations",
+    "grammar",
+    "sentence completion",
+    "crossword",
+    "short speaking prompts"
+  ],
+  "parts": [
+    {
+      "part_number": 1,
+      "type": "fill_in_the_gaps_with_translations",
+      "instruction_en": "Fill in the gaps with translations of the words in brackets.",
+      "items": [
+        { "id": 1, "prompt_en": "(washing machine)", "sentence_pl": "Nowa _____ jest bardzo dobra." },
+        { "id": 2, "prompt_en": "(shower)", "sentence_pl": "Lubię brać zimny _____, ale tylko kiedy jest gorąco." },
+        { "id": 3, "prompt_en": "(The carpet), (the table), (chairs)", "sentence_pl": "_____ jest szary, a _____ i _____ są białe." },
+        { "id": 4, "prompt_en": "(plate), (bowl)", "sentence_pl": "Ten _____ jest na ciasto, a ta _____ na popcorn." },
+        { "id": 5, "prompt_en": "(busy), (ill)", "sentence_pl": "Nie możesz się spotkać? Jesteś _____ czy _____?" },
+        { "id": 6, "prompt_en": "(The petrol station)", "sentence_pl": "_____ jest otwarta całą dobę." },
+        { "id": 7, "prompt_en": "(tall), (young), (beautiful)", "sentence_pl": "Nie pamiętam, jak ona ma na imię, ale jest _____, _____ i bardzo _____." },
+        { "id": 8, "prompt_en": "(curly hair)", "sentence_pl": "Ten chłopak ma czarne _____." },
+        { "id": 9, "prompt_en": "(spontaneous)", "sentence_pl": "Nie jestem _____. Lubię wszystko planować." },
+        { "id": 10, "prompt_en": "(a lawyer)", "sentence_pl": "Mój mąż jest _____." },
+        { "id": 11, "prompt_en": "(shopping centre)", "sentence_pl": "Gdzie jest najbliższe _____?" },
+        { "id": 12, "prompt_en": "(tram), (turns)", "sentence_pl": "Przepraszam, czy ten _____ _____ w lewo?" },
+        { "id": 13, "prompt_en": "(boarding pass)", "sentence_pl": "Nie wiem, gdzie jest moja _____." },
+        { "id": 14, "prompt_en": "(house), (garden)", "sentence_pl": "Nasz _____ jest mały, ale mamy duży _____." },
+        { "id": 15, "prompt_en": "(a mattress), (a bed), (a desk)", "sentence_pl": "Kupiliśmy już _____, _____ i _____." },
+        { "id": 16, "prompt_en": "(the iron)", "sentence_pl": "Uważaj, _____ jest gorące!" },
+        { "id": 17, "prompt_en": "(towels)", "sentence_pl": "Świeże _____ są w łazience." },
+        { "id": 18, "prompt_en": "(the fork), (the knife)", "sentence_pl": "Czy możesz podać mi _____ i _____?" },
+        { "id": 19, "prompt_en": "(ambitious), (hardworking)", "sentence_pl": "Anna jest _____ i _____." },
+        { "id": 20, "prompt_en": "(teacher), (friendly)", "sentence_pl": "Mój _____ jest naprawdę _____." }
+      ]
+    },
+    {
+      "part_number": 2,
+      "type": "multiple_choice",
+      "instruction_en": "Choose the correct answer.",
+      "items": [
+        {
+          "id": 1,
+          "sentence_pl": "Często się _____. Przepraszam.",
+          "options": {
+            "A": "spóźniam",
+            "B": "późniam",
+            "C": "spóźniam się"
+          }
+        },
+        {
+          "id": 2,
+          "sentence_pl": "Ile masz wzrostu? B: _____ metr sześćdziesiąt pięć.",
+          "options": {
+            "A": "Być",
+            "B": "Mam",
+            "C": "Jestem"
+          }
+        },
+        {
+          "id": 3,
+          "sentence_pl": "Moja siostra jest _____ i szczupła.",
+          "options": {
+            "A": "długa",
+            "B": "niska",
+            "C": "krótka"
+          }
+        },
+        {
+          "id": 4,
+          "sentence_pl": "On jest zdecydowany i szybko _____ decyzje.",
+          "options": {
+            "A": "robi",
+            "B": "chce",
+            "C": "podejmuje"
+          }
+        },
+        {
+          "id": 5,
+          "sentence_pl": "Idę _____, bo jestem śpiący.",
+          "options": {
+            "A": "do spać",
+            "B": "spać",
+            "C": "śpię"
+          }
+        },
+        {
+          "id": 6,
+          "sentence_pl": "Idę do supermarketu _____ chleb.",
+          "options": {
+            "A": "bo",
+            "B": "od",
+            "C": "po"
+          }
+        },
+        {
+          "id": 7,
+          "sentence_pl": "Moje _____ jest blisko parku.",
+          "options": {
+            "A": "dom",
+            "B": "apartament",
+            "C": "mieszkanie"
+          }
+        },
+        {
+          "id": 8,
+          "sentence_pl": "Zwykle _____ prysznic rano.",
+          "options": {
+            "A": "biorę",
+            "B": "mam",
+            "C": "robię"
+          }
+        },
+        {
+          "id": 9,
+          "sentence_pl": "Nie lubię miasta, wolę _____.",
+          "options": {
+            "A": "droga",
+            "B": "wieś",
+            "C": "lotnisko"
+          }
+        },
+        {
+          "id": 10,
+          "sentence_pl": "Idą do _____ na zakupy.",
+          "options": {
+            "A": "centrum handlowego",
+            "B": "banku",
+            "C": "kawiarni"
+          }
+        },
+        {
+          "id": 11,
+          "sentence_pl": "Ona ma zawsze nowe pomysły. Jest bardzo _____.",
+          "options": {
+            "A": "nieśmiała",
+            "B": "towarzyska",
+            "C": "kreatywna"
+          }
+        }
+      ]
+    },
+    {
+      "part_number": 3,
+      "type": "match_words_to_form_common_phrases",
+      "instruction_en": "Match the words to form common phrases.",
+      "groups": [
+        {
+          "group": "A",
+          "left_column": [
+            "szef",
+            "raczej",
+            "szczoteczka",
+            "płatna",
+            "papier",
+            "damskie"
+          ],
+          "right_column": [
+            "toaleta",
+            "do zębów",
+            "wysoka",
+            "perfumy",
+            "kuchni",
+            "toaletowy"
+          ]
+        },
+        {
+          "group": "B",
+          "left_column": [
+            "długie",
+            "duża",
+            "stolik",
+            "centrum",
+            "rozkład",
+            "stacja"
+          ],
+          "right_column": [
+            "jazdy",
+            "kawowy",
+            "miasta",
+            "wanna",
+            "benzynowa",
+            "włosy"
+          ]
+        },
+        {
+          "group": "C",
+          "left_column": [
+            "niebieskie",
+            "przystojny",
+            "miła",
+            "dworzec",
+            "nowoczesny",
+            "centralne"
+          ],
+          "right_column": [
+            "dom",
+            "oczy",
+            "ogrzewanie",
+            "chłopak",
+            "kolejowy",
+            "sprzedawczyni"
+          ]
+        }
+      ]
+    },
+    {
+      "part_number": 4,
+      "type": "translate_words_into_english",
+      "instruction_en": "Translate the words below into English.",
+      "items": [
+        "szczęśliwy",
+        "gotowy",
+        "ciemny",
+        "oczy",
+        "spokojny",
+        "nieśmiały",
+        "dziennikarz",
+        "fryzjer",
+        "samolot",
+        "statek",
+        "wejście",
+        "kuchnia",
+        "piętro",
+        "lodówka",
+        "łyżka",
+        "koc",
+        "fotel",
+        "mydło",
+        "suszarka do włosów",
+        "zaskoczony"
+      ]
+    },
+    {
+      "part_number": 5,
+      "type": "match_words_to_form_common_phrases",
+      "instruction_en": "Match the words to form common phrases.",
+      "groups": [
+        {
+          "group": "A",
+          "left_column": [
+            "remontować",
+            "iść",
+            "pracować",
+            "być"
+          ],
+          "right_column": [
+            "do kina",
+            "średniego wzrostu",
+            "mieszkanie",
+            "jako dentysta"
+          ]
+        },
+        {
+          "group": "B",
+          "left_column": [
+            "brać",
+            "wyłączyć",
+            "sprzątać",
+            "kupić"
+          ],
+          "right_column": [
+            "łazienkę",
+            "bilet",
+            "ogrzewanie",
+            "kąpiel"
+          ]
+        }
+      ]
+    },
+    {
+      "part_number": 6,
+      "type": "complete_translations_by_adding_letters",
+      "instruction_en": "Complete the translations by adding letters.",
+      "items": [
+        { "id": 1, "target_en": "building" },
+        { "id": 2, "target_en": "street" },
+        { "id": 3, "target_en": "sociable" },
+        { "id": 4, "target_en": "lazy" },
+        { "id": 5, "target_en": "hospital" },
+        { "id": 6, "target_en": "post office" },
+        { "id": 7, "target_en": "hairdresser" },
+        { "id": 8, "target_en": "door" },
+        { "id": 9, "target_en": "oven" },
+        { "id": 10, "target_en": "remote control" },
+        { "id": 11, "target_en": "train" },
+        { "id": 12, "target_en": "shampoo" },
+        { "id": 13, "target_en": "kettle" },
+        { "id": 14, "target_en": "café" },
+        { "id": 15, "target_en": "police officer" },
+        { "id": 16, "target_en": "tired" },
+        { "id": 17, "target_en": "hungry" },
+        { "id": 18, "target_en": "black" },
+        { "id": 19, "target_en": "ugly" },
+        { "id": 20, "target_en": "car" }
+      ]
+    },
+    {
+      "part_number": 7,
+      "type": "give_opposites",
+      "instruction_en": "Give opposites of the words below.",
+      "items": [
+        "młody",
+        "jasny",
+        "krótki",
+        "pracowity",
+        "lądować",
+        "męski",
+        "na górze",
+        "wsiadać",
+        "po prawej (stronie)",
+        "wyjście"
+      ]
+    },
+    {
+      "part_number": 8,
+      "type": "choose_correct_translations",
+      "instruction_en": "Choose the correct translations of the sentences below.",
+      "items": [
+        {
+          "id": 1,
+          "prompt_en": "He's got ginger hair.",
+          "options": {
+            "A": "(On) ma siwe włosy.",
+            "B": "(On) ma rude włosy."
+          }
+        },
+        {
+          "id": 2,
+          "prompt_en": "She is ready.",
+          "options": {
+            "A": "(Ona) jest gotowa.",
+            "B": "(Ona) jest zajęta."
+          }
+        },
+        {
+          "id": 3,
+          "prompt_en": "They have dark hair.",
+          "options": {
+            "A": "(Oni) mają ciemne włosy.",
+            "B": "(Oni) mają jasne włosy."
+          }
+        },
+        {
+          "id": 4,
+          "prompt_en": "This photographer takes beautiful pictures.",
+          "options": {
+            "A": "Ten fotograf robi piękne zdjęcia.",
+            "B": "Ten fotograf bierze piękne zdjęcia."
+          }
+        },
+        {
+          "id": 5,
+          "prompt_en": "The lift isn't working.",
+          "options": {
+            "A": "Winda nie pracuje.",
+            "B": "Winda nie działa."
+          }
+        },
+        {
+          "id": 6,
+          "prompt_en": "The bin is full.",
+          "options": {
+            "A": "Kosz jest pełny.",
+            "B": "Kran jest pełny."
+          }
+        },
+        {
+          "id": 7,
+          "prompt_en": "Today I'm going to work by bus.",
+          "options": {
+            "A": "Dzisiaj jadę do pracy autobusem.",
+            "B": "Dzisiaj jadę do pracy z autobusem."
+          }
+        },
+        {
+          "id": 8,
+          "prompt_en": "What do you do?",
+          "options": {
+            "A": "Jaki robisz?",
+            "B": "Czym się zajmujesz?"
+          }
+        }
+      ]
+    },
+    {
+      "part_number": 9,
+      "type": "crossword",
+      "instruction_en": "Complete the crossword.",
+      "across": [
+        { "id": 3, "clue_pl": "Możemy tam pływać. Często jest w hotelu." },
+        { "id": 7, "clue_pl": "Pracuje w recepcji hotelu." },
+        { "id": 9, "clue_pl": "Szybko podejmuje decyzje (adj.)." },
+        { "id": 10, "clue_pl": "Śpisz w tym pokoju." },
+        { "id": 11, "clue_pl": "widelec, nóż i ___" },
+        { "id": 13, "clue_pl": "niewysoki i nieniski" },
+        { "id": 14, "clue_pl": "Startują i lądują tam samoloty." },
+        { "id": 15, "clue_pl": "Pracuje w restauracji." }
+      ],
+      "down": [
+        { "id": 1, "clue_pl": "W łazience mamy zwykle wannę albo ___." },
+        { "id": 2, "clue_pl": "Gotujesz tam." },
+        { "id": 4, "clue_pl": "Są tam twoje ubrania." },
+        { "id": 5, "clue_pl": "Jeśli nie spałeś dużo, jesteś ___." },
+        { "id": 6, "clue_pl": "Katolicy chodzą tam w niedzielę." },
+        { "id": 8, "clue_pl": "Czekamy tam na autobus." },
+        { "id": 12, "clue_pl": "bardzo wygodne duże krzesło" }
+      ]
+    },
+    {
+      "part_number": 10,
+      "type": "speaking_prompts",
+      "instruction_en": "Say a few words on the given topics. Answer the questions.",
+      "items": [
+        "Describe what someone you know looks like.",
+        "Name five character traits that best describe you.",
+        "List at least ten things that can be found in your kitchen.",
+        "What does your flat look like? What rooms are there in your flat? Try to describe them.",
+        "Describe your bedroom.",
+        "What did you want to be when you were a kid? And what about your brother, sister, or friend?",
+        "What places/buildings (e.g. a gym, a post office) are there in your neighbourhood?"
+      ]
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 import { useState, useRef } from 'react';
 import { TypedAnswerData } from '@/types/curriculum';
 import { Lightbulb } from 'lucide-react';
+import { InteractiveAnswerText } from '@/components/exercises/InteractiveAnswerText';
 import { TTSControls } from '@/components/ui/TTSControls';
 import { DiacriticsKeyboard } from '@/components/ui/DiacriticsKeyboard';
 
@@ -12,20 +13,25 @@ interface TypedAnswerExerciseProps {
   showFeedback?: boolean;
   feedbackMessage?: string;
   isCorrect?: boolean;
+  partialCorrect?: boolean;
   explanation?: string;
   hints?: string[];
   autoPlayTTS?: boolean;
+  referenceAnswerText?: string;
+  referenceSectionId?: string;
 }
 
-export function TypedAnswerExercise({ 
-  data, 
-  onSubmit, 
-  showFeedback, 
+export function TypedAnswerExercise({
+  data,
+  onSubmit,
+  showFeedback,
   feedbackMessage,
   isCorrect,
-  explanation,
+  partialCorrect,
   hints,
   autoPlayTTS = false,
+  referenceAnswerText,
+  referenceSectionId,
 }: TypedAnswerExerciseProps) {
   const [answer, setAnswer] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -45,8 +51,7 @@ export function TypedAnswerExercise({
     const end = input.selectionEnd || 0;
     const newValue = answer.slice(0, start) + char + answer.slice(end);
     setAnswer(newValue);
-    
-    // Set cursor position after inserted character
+
     setTimeout(() => {
       input.setSelectionRange(start + 1, start + 1);
       input.focus();
@@ -55,22 +60,13 @@ export function TypedAnswerExercise({
 
   return (
     <div className="space-y-4">
-      {/* Question with TTS */}
       {data.question && (
-        <div className="mb-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-          <p className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-            {data.question}
-          </p>
-          <TTSControls 
-            text={data.question}
-            autoPlay={autoPlayTTS}
-            showSlowToggle={true}
-            showReplayButton={true}
-          />
+        <div className="mb-4 rounded-lg bg-gray-50 p-4 dark:bg-gray-800">
+          <p className="mb-3 text-lg font-medium text-gray-900 dark:text-white">{data.question}</p>
+          <TTSControls text={data.question} autoPlay={autoPlayTTS} showSlowToggle={true} showReplayButton={true} />
         </div>
       )}
 
-      {/* Input field */}
       <div className="space-y-2">
         <input
           ref={inputRef}
@@ -83,48 +79,42 @@ export function TypedAnswerExercise({
               handleSubmit();
             }
           }}
-          className={`w-full p-4 text-lg border-2 rounded-lg ${
+          className={`w-full rounded-lg border-2 bg-white p-4 text-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:bg-gray-700 dark:text-white ${
             submitted && showFeedback
-              ? isCorrect
+              ? partialCorrect
+                ? 'border-amber-500 bg-amber-50 dark:bg-amber-900/20'
+                : isCorrect
                 ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
                 : 'border-red-500 bg-red-50 dark:bg-red-900/20'
               : 'border-gray-300 dark:border-gray-600'
-          } bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500`}
+          }`}
           placeholder="Type your answer in Polish..."
           autoComplete="off"
           autoCorrect="off"
           spellCheck={false}
         />
-        <p className="text-sm text-gray-600 dark:text-gray-400">
-          Press Enter or click Submit when ready
-        </p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">Press Enter or click Submit when ready</p>
       </div>
 
-      {/* Polish diacritics keyboard */}
       {!submitted && (
         <div className="flex justify-center">
-          <DiacriticsKeyboard 
-            onCharacter={insertDiacritic}
-            compact={true}
-            className="diacritics-keyboard"
-          />
+          <DiacriticsKeyboard onCharacter={insertDiacritic} compact={true} className="diacritics-keyboard" />
         </div>
       )}
 
-      {/* Hints */}
       {hints && hints.length > 0 && !submitted && (
         <div className="space-y-2">
           <button
             onClick={() => setShowHints(!showHints)}
-            className="flex items-center gap-2 text-primary-600 dark:text-primary-400 hover:underline"
+            className="flex items-center gap-2 text-primary-600 hover:underline dark:text-primary-400"
           >
-            <Lightbulb className="w-4 h-4" />
+            <Lightbulb className="h-4 w-4" />
             {showHints ? 'Hide hints' : 'Show hints'}
           </button>
-          
+
           {showHints && (
-            <div className="p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
-              <ul className="list-disc list-inside space-y-1 text-sm text-gray-700 dark:text-gray-300">
+            <div className="rounded-lg bg-yellow-50 p-4 dark:bg-yellow-900/20">
+              <ul className="list-inside list-disc space-y-1 text-sm text-gray-700 dark:text-gray-300">
                 {hints.map((hint, idx) => (
                   <li key={idx}>{hint}</li>
                 ))}
@@ -134,30 +124,43 @@ export function TypedAnswerExercise({
         </div>
       )}
 
-      {/* Submit button */}
       {!submitted && (
         <button
           onClick={handleSubmit}
           disabled={!answer.trim()}
-          className="w-full py-3 px-6 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+          className="w-full rounded-lg bg-primary-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-600 disabled:cursor-not-allowed disabled:bg-gray-300"
         >
           Submit Answer
         </button>
       )}
 
-      {/* Feedback */}
       {submitted && showFeedback && (
-        <div className={`p-4 rounded-lg ${
-          isCorrect
-            ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300'
-            : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-300'
-        }`}>
-          <p className="font-semibold mb-2">
-            {isCorrect ? '✓ Correct!' : '✗ Incorrect'}
+        <div
+          className={`rounded-lg p-4 ${
+            partialCorrect
+              ? 'bg-amber-50 text-amber-800 dark:bg-amber-900/20 dark:text-amber-300'
+              : isCorrect
+              ? 'bg-green-50 text-green-800 dark:bg-green-900/20 dark:text-green-300'
+              : 'bg-red-50 text-red-800 dark:bg-red-900/20 dark:text-red-300'
+          }`}
+        >
+          <p className="mb-2 font-semibold">
+            {partialCorrect ? 'Almost correct (accepted)' : isCorrect ? 'Correct!' : 'Incorrect'}
           </p>
           {feedbackMessage && <p className="mb-2">{feedbackMessage}</p>}
-          {explanation && <p>{explanation}</p>}
-          {!isCorrect && (
+          {referenceAnswerText && referenceSectionId ? (
+            <div className="text-sm">
+              <p className="font-semibold">{partialCorrect || !isCorrect ? 'Accepted answer:' : 'Answer:'}</p>
+              <div className="mt-1">
+                <InteractiveAnswerText text={referenceAnswerText} sectionId={referenceSectionId} />
+              </div>
+              {data.acceptedAnswers.length > 1 && (
+                <p className="mt-2 text-xs opacity-80">
+                  Also accepted: {data.acceptedAnswers.slice(1).join(', ')}
+                </p>
+              )}
+            </div>
+          ) : (
             <div className="mt-2 text-sm">
               <p className="font-semibold">Accepted answers:</p>
               <p>{data.acceptedAnswers.join(', ')}</p>
@@ -166,14 +169,9 @@ export function TypedAnswerExercise({
         </div>
       )}
 
-      {/* Play correct answer after submission */}
       {submitted && showFeedback && (
         <div className="flex justify-center">
-          <TTSControls 
-            text={data.acceptedAnswers[0]}
-            showSlowToggle={true}
-            showReplayButton={true}
-          />
+          <TTSControls text={data.acceptedAnswers[0]} showSlowToggle={true} showReplayButton={true} />
         </div>
       )}
     </div>

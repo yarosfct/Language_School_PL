@@ -1,0 +1,120 @@
+{
+  "section": "introductory_material",
+  "source_type": "book_front_matter",
+  "pages": [8, 9, 10, 11],
+  "components": [
+    {
+      "component": "pronunciation_and_abbreviations",
+      "pages": [8, 9, 10, 11],
+      "topics": [
+        "basic pronunciation of Polish letters",
+        "pronunciation of nasal vowels",
+        "pronunciation of consonants with diacritics",
+        "common Polish consonant clusters",
+        "letters/clusters with equivalent pronunciation",
+        "abbreviations used throughout the book"
+      ]
+    },
+    {
+      "component": "audio_download_instructions",
+      "pages": [8],
+      "topics": [
+        "how to download the audio files",
+        "how to log in / create an account",
+        "how to access course audio online"
+      ]
+    }
+  ],
+  "pronunciation_subsections": [
+    {
+      "title": "Letters identical in Polish and English",
+      "page_range": [8, 9],
+      "covers": [
+        "a",
+        "e",
+        "i",
+        "o",
+        "u/ó",
+        "y",
+        "b",
+        "c",
+        "d",
+        "f",
+        "g",
+        "h",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "p",
+        "r",
+        "s",
+        "t",
+        "w",
+        "z"
+      ]
+    },
+    {
+      "title": "Polish letters not found in English",
+      "page_range": [10, 11],
+      "covers": [
+        "ą",
+        "ę",
+        "ć",
+        "ń",
+        "ś",
+        "ź",
+        "ł",
+        "ż"
+      ]
+    },
+    {
+      "title": "Common consonant clusters",
+      "page_range": [10, 11],
+      "covers": [
+        "ch",
+        "ci",
+        "cz",
+        "dz",
+        "dzi",
+        "dź",
+        "dż",
+        "ni",
+        "si",
+        "sz",
+        "rz",
+        "zi"
+      ]
+    },
+    {
+      "title": "Equivalent pronunciation notes",
+      "page_range": [11],
+      "covers": [
+        "ż and rz",
+        "ó and u",
+        "ch and h"
+      ]
+    },
+    {
+      "title": "Book abbreviations",
+      "page_range": [11],
+      "covers": [
+        "sing.",
+        "pl.",
+        "m.",
+        "f.",
+        "neut.",
+        "lit.",
+        "inf.",
+        "form.",
+        "adv.",
+        "adj."
+      ]
+    }
+  ],
+  "notes": [
+    "The intro explains that Polish word order is less strict than English word order.",
+    "It also explains how gender/number abbreviations are used in the book."
+  ]
+}

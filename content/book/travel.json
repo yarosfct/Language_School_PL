@@ -1,0 +1,635 @@
+{
+  "section_number": 27,
+  "topic_en": "Travel",
+  "topic_pl": "Podróżowanie",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "podróżować", "en": ["to travel"], "category": "verb" },
+    { "pl": "biuro podróży", "en": ["travel agency"], "category": "phrase" },
+    { "pl": "wycieczka", "en": ["trip", "tour", "excursion"], "category": "noun" },
+    { "pl": "wakacje", "en": ["holiday", "vacation"], "category": "noun_plural" },
+    { "pl": "za granicę", "en": ["abroad"], "category": "phrase" },
+    { "pl": "walizka", "en": ["suitcase"], "category": "noun" },
+    { "pl": "bagaż", "en": ["luggage", "baggage"], "category": "noun" },
+    { "pl": "góry", "en": ["mountains"], "category": "noun_plural" },
+    { "pl": "bilet", "en": ["ticket"], "category": "noun" },
+    { "pl": "lot", "en": ["flight"], "category": "noun" },
+    { "pl": "paszport", "en": ["passport"], "category": "noun" },
+    { "pl": "wiza", "en": ["visa"], "category": "noun" },
+    { "pl": "przyjazd", "en": ["arrival"], "category": "noun" },
+    { "pl": "odjazd", "en": ["departure"], "category": "noun" },
+    { "pl": "hotel", "en": ["hotel"], "category": "noun" },
+    { "pl": "rezerwacja", "en": ["reservation", "booking"], "category": "noun" },
+    { "pl": "zameldować się", "en": ["to check in"], "category": "verb" },
+    { "pl": "wymeldować się", "en": ["to check out"], "category": "verb" },
+    { "pl": "turystyczny", "en": ["tourist", "touristic"], "category": "adjective" },
+    { "pl": "przewodnik", "en": ["guide"], "category": "noun" },
+    { "pl": "zwiedzać", "en": ["to sightsee", "to visit"], "category": "verb" },
+    { "pl": "widok", "en": ["view"], "category": "noun" },
+    { "pl": "pamiątka", "en": ["souvenir"], "category": "noun" },
+    { "pl": "opalać się", "en": ["to sunbathe"], "category": "verb" },
+    { "pl": "obóz", "en": ["camp"], "category": "noun" },
+    { "pl": "namiot", "en": ["tent"], "category": "noun" },
+    { "pl": "odwołany", "en": ["cancelled"], "category": "adjective" },
+    { "pl": "opóźniony", "en": ["delayed"], "category": "adjective" },
+    { "pl": "parking", "en": ["car park", "parking lot"], "category": "noun" },
+    { "pl": "plaża", "en": ["beach"], "category": "noun" },
+    { "pl": "morze", "en": ["sea"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "hotel_and_bank_no_to_jest_needed",
+      "content": "In many sentences with 'there is/there are' or simple identification, Polish often omits 'to jest'.",
+      "examples": [
+        "To jest hotel. = a to jest hotel.",
+        "To jest bank. = a to jest bank."
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "on_vs_jej",
+      "content": "The note reminds that 'on' and 'jej' can look identical in English translations depending on context, but are different in Polish grammar."
+    },
+    {
+      "id": 3,
+      "topic": "widok_na",
+      "content": "To say 'view of/onto', use 'widok na' + accusative.",
+      "examples": [
+        "widok na morze = sea view",
+        "widok na góry = mountain view",
+        "widok na las = forest view"
+      ],
+      "content_note": "The book notes that 'widok' is a singular noun."
+    },
+    {
+      "id": 4,
+      "topic": "miec_nadzieje",
+      "content": "To hope can be translated as 'mieć nadzieję'. It literally means 'to have hope'."
+    },
+    {
+      "id": 5,
+      "topic": "room_capacity_forms",
+      "content": "Useful room-capacity forms:",
+      "examples": [
+        "jednoosobowy = one-person / single",
+        "dwuosobowy = two-person / double",
+        "trzyosobowy = triple",
+        "czteroosobowy = quadruple"
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "jestesmy_here_you_are_welcome",
+      "content": "In this context, 'Jesteśmy' can correspond to 'you’re welcome' in response after helping someone."
+    },
+    {
+      "id": 7,
+      "topic": "wycieczka_plural",
+      "content": "The plural of 'wycieczka' is 'wycieczki'."
+    },
+    {
+      "id": 8,
+      "topic": "jechac_nad_morze_w_gory",
+      "content": "When talking about going to the sea, lake, ocean, or river, use 'nad' + accusative. When talking about going to the mountains, use 'w' + accusative.",
+      "examples": [
+        "jechać nad morze/ocean/rzekę/jezioro",
+        "jechać w góry/Alpy/Tatry"
+      ]
+    },
+    {
+      "id": 11,
+      "topic": "passport_object_pronoun_before_noun",
+      "content": "In Polish, when a noun belongs to someone, it can sound more natural to place the pronoun before the noun in some contexts, especially with objects.",
+      "examples": [
+        "twój paszport"
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "surnames_ending_in_ski",
+      "content": "Polish surnames ending in -ski can take masculine or feminine endings.",
+      "examples": [
+        "Adam Kowalski",
+        "Anna Kowalska"
+      ],
+      "content_note": "The same applies to other common surname endings, e.g. -ów, -ak, etc., depending on name patterns."
+    },
+    {
+      "id": 13,
+      "topic": "pakowac_vs_rozpakowac",
+      "content": "Useful contrast:",
+      "examples": [
+        "pakować = to pack",
+        "rozpakować = to unpack"
+      ]
+    },
+    {
+      "id": 17,
+      "topic": "pamietac_from_pamietac",
+      "content": "The noun 'pamiątka' (souvenir) originates from the verb 'pamiętać' (to remember)."
+    },
+    {
+      "id": 18,
+      "topic": "pan_forms",
+      "content": "Formal address uses 'pan' (masculine) and 'pani' (feminine).",
+      "examples": [
+        "Czy to jest pani paszport?",
+        "Czy to jest pan paszport?"
+      ],
+      "content_note": "The second example in the printed note is somewhat awkwardly phrased; the formal pattern itself is the important part."
+    },
+    {
+      "id": 19,
+      "topic": "za_granice_vs_za_granica",
+      "content": "'Za granicę' means abroad in the sense of movement to another country. 'Za granicą' refers to being abroad / location.",
+      "examples": [
+        "Jadę za granicę na wakacje.",
+        "Mój kolega mieszka za granicą."
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "zwiedzac_vs_odwiedzac",
+      "content": "The verb 'to visit' can translate as 'zwiedzać' or 'odwiedzać', depending on whether you mean sightseeing places or visiting people/places more generally."
+    },
+    {
+      "id": 21,
+      "topic": "holiday_accommodation_words",
+      "content": "Some place names connected with accommodation on holiday:",
+      "examples": [
+        "kemping = camping site",
+        "ośrodek wczasowy = holiday centre",
+        "gospodarstwo agroturystyczne = agritourism farm"
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "flight_change_words",
+      "content": "Useful flight-related words:",
+      "examples": [
+        "lot z przesiadką = one-stop / connecting flight",
+        "przesiadka = change / transfer"
+      ]
+    },
+    {
+      "id": 23,
+      "topic": "ticket_collocations",
+      "content": "Useful ticket collocations:",
+      "examples": [
+        "bilet w jedną stronę = one-way ticket",
+        "bilet powrotny = return ticket",
+        "bilet ulgowy = reduced-fare ticket",
+        "bilet normalny = regular ticket"
+      ]
+    },
+    {
+      "id": 25,
+      "topic": "przyjazd_vs_odjazd_vs_wyjscie",
+      "content": "Useful travel movement nouns:",
+      "examples": [
+        "przyjazd = arrival",
+        "odjazd = departure",
+        "wyjście = going out / exit on foot in other contexts"
+      ]
+    },
+    {
+      "id": 26,
+      "topic": "z_plus_instrumental",
+      "content": "After the preposition 'z' (with), use the instrumental case.",
+      "examples": [
+        "z przewodnikiem"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "His suitcase is big, and hers is small.",
+      "pl": "Jego walizka jest duża, a jej jest mała.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jego walizka", "jest duża", "a jej", "jest mała"],
+      "grammar_tags": ["travel", "description", "contrast"]
+    },
+    {
+      "id": 2,
+      "en": "We love to travel.",
+      "pl": "Kochamy podróżować.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kochamy", "podróżować"],
+      "grammar_tags": ["travel", "two_verbs_rule"]
+    },
+    {
+      "id": 3,
+      "en": "The beach is the perfect place for relaxation.",
+      "pl": "Plaża jest idealnym miejscem na relaks.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["plaża", "jest idealnym miejscem", "na relaks"],
+      "grammar_tags": ["travel", "instrumental_basic"]
+    },
+    {
+      "id": 4,
+      "en": "What a wonderful view!",
+      "pl": "Jaki/Ale wspaniały widok!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ale wspaniały widok!", "Jaki wspaniały widok!"],
+      "focus_words": ["jaki", "ale", "wspaniały widok"],
+      "grammar_tags": ["travel", "exclamation"]
+    },
+    {
+      "id": 5,
+      "en": "His flight is delayed. I hope it won’t be cancelled.",
+      "pl": "Jego lot jest opóźniony. Mam nadzieję, że nie będzie odwołany.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jego lot", "jest opóźniony", "mam nadzieję, że", "nie będzie odwołany"],
+      "grammar_tags": ["travel", "subordinate_clause", "future_tense", "negation"]
+    },
+    {
+      "id": 6,
+      "en": "We have a reservation for today.",
+      "pl": "Mamy rezerwację na dziś/dzisiaj.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mamy rezerwację na dziś."],
+      "focus_words": ["mamy rezerwację", "na dziś"],
+      "grammar_tags": ["travel", "accusative_basic"]
+    },
+    {
+      "id": 7,
+      "en": "We’re sure your suitcase isn’t too heavy.",
+      "pl": "(Czy) jesteśmy pewni, że twoja walizka nie jest zbyt ciężka?",
+      "literal_en": null,
+      "english_variants": ["We’re sure that your suitcase isn’t too heavy."],
+      "polish_alternatives": ["Jesteśmy pewni, że twoja walizka nie jest zbyt ciężka."],
+      "focus_words": ["jesteśmy pewni", "że", "twoja walizka", "nie jest zbyt ciężka"],
+      "grammar_tags": ["travel", "subordinate_clause", "negation", "question"]
+    },
+    {
+      "id": 8,
+      "en": "\"Thank you for the passport. Now, your boarding pass, please.\" \"Here you are.\"",
+      "pl": "– Dziękuję za paszport. Teraz proszę / Proszę (bardzo) kartę pokładową. – Proszę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dziękuję za paszport", "proszę kartę pokładową", "proszę"],
+      "grammar_tags": ["travel", "dialogue", "accusative_basic"]
+    },
+    {
+      "id": 9,
+      "en": "Does this travel agency organise trips to the mountains?",
+      "pl": "(Czy) to biuro podróży organizuje wycieczki w góry?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To biuro podróży organizuje wycieczki w góry?"],
+      "focus_words": ["to biuro podróży", "organizuje wycieczki", "w góry"],
+      "grammar_tags": ["travel", "question", "accusative_basic"]
+    },
+    {
+      "id": 10,
+      "en": "It’s raining, so the trip to the zoo is cancelled.",
+      "pl": "Pada deszcz, więc wycieczka do zoo jest odwołana.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["pada deszcz", "więc", "wycieczka do zoo", "jest odwołana"],
+      "grammar_tags": ["travel", "subordinate_sequence"]
+    },
+    {
+      "id": 11,
+      "en": "Do you prefer to go to the seaside or to the mountains?",
+      "pl": "Wolisz jechać nad morze, czy w góry?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wolisz jechać", "nad morze", "czy", "w góry"],
+      "grammar_tags": ["travel", "question", "two_verbs_rule"]
+    },
+    {
+      "id": 12,
+      "en": "Have you lost your passport?",
+      "pl": "(Czy) zgubiłeś paszport?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy zgubiłaś paszport?"],
+      "focus_words": ["zgubiłeś", "paszport"],
+      "grammar_tags": ["travel", "question", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 13,
+      "en": "I have a reservation under the name (lit. on surname): Kowalski.",
+      "pl": "Mam rezerwację na nazwisko Kowalski.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam rezerwację", "na nazwisko", "Kowalski"],
+      "grammar_tags": ["travel", "fixed_expression"]
+    },
+    {
+      "id": 14,
+      "en": "She knows all the good beaches in the area.",
+      "pl": "(Ona) zna wszystkie dobre plaże w okolicy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zna", "wszystkie dobre plaże", "w okolicy"],
+      "grammar_tags": ["travel", "accusative_basic", "plural_noun"]
+    },
+    {
+      "id": 15,
+      "en": "Our guide spoke English fluently.",
+      "pl": "Nasz przewodnik mówił płynnie po angielsku.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasz przewodnik", "mówił płynnie", "po angielsku"],
+      "grammar_tags": ["travel", "past_tense"]
+    },
+    {
+      "id": 16,
+      "en": "I (f.) have already unpacked my luggage.",
+      "pl": "Rozpakowałam już bagaż.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Rozpakowałem już bagaż."],
+      "focus_words": ["rozpakowałam", "już", "bagaż"],
+      "grammar_tags": ["travel", "past_tense", "feminine_form"]
+    },
+    {
+      "id": 17,
+      "en": "We found beautiful colourful souvenirs.",
+      "pl": "Znaleźliśmy piękne kolorowe pamiątki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["znaleźliśmy", "piękne kolorowe pamiątki"],
+      "grammar_tags": ["travel", "past_tense", "accusative_basic", "plural_noun"]
+    },
+    {
+      "id": 18,
+      "en": "Your (form., sing.) visa will be valid for thirty days.",
+      "pl": "Pana wiza będzie ważna (przez) trzydzieści dni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pani wiza będzie ważna trzydzieści dni."],
+      "focus_words": ["pana wiza", "będzie ważna", "trzydzieści dni"],
+      "grammar_tags": ["travel", "future_tense", "formal"]
+    },
+    {
+      "id": 19,
+      "en": "This hotel has a beautiful sea view.",
+      "pl": "Ten hotel ma piękny widok na morze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten hotel", "ma piękny widok", "na morze"],
+      "grammar_tags": ["travel", "accusative_basic"]
+    },
+    {
+      "id": 20,
+      "en": "I’d like to check out.",
+      "pl": "Chciałbym się wymeldować.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Chciałabym się wymeldować."],
+      "focus_words": ["chciałbym się wymeldować"],
+      "grammar_tags": ["travel", "reflexive_verb", "two_verbs_rule"]
+    },
+    {
+      "id": 21,
+      "en": "The hotel has a car park for guests.",
+      "pl": "Hotel ma parking dla gości.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["hotel ma", "parking", "dla gości"],
+      "grammar_tags": ["travel", "genitive_after_dla"]
+    },
+    {
+      "id": 22,
+      "en": "Do they already have their holiday planned for this year?",
+      "pl": "(Czy oni) mają już zaplanowany urlop / wakacje na ten rok?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mają już zaplanowane wakacje na ten rok?"],
+      "focus_words": ["mają już zaplanowany", "urlop", "wakacje", "na ten rok"],
+      "grammar_tags": ["travel", "question"]
+    },
+    {
+      "id": 23,
+      "en": "How much does a tourist visa cost?",
+      "pl": "Ile kosztuje wiza turystyczna?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ile kosztuje", "wiza turystyczna"],
+      "grammar_tags": ["travel", "question"]
+    },
+    {
+      "id": 24,
+      "en": "Have you already visited the Wawel (castle) in Krakow?",
+      "pl": "(Czy) zwiedzaliście już Wawel w Krakowie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zwiedzaliście już Wawel w Krakowie?"],
+      "focus_words": ["zwiedzaliście już", "Wawel", "w Krakowie"],
+      "grammar_tags": ["travel", "question", "past_tense", "locative"]
+    },
+    {
+      "id": 25,
+      "en": "Do you like to travel abroad?",
+      "pl": "(Czy) lubisz podróżować za granicę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Lubisz podróżować za granicę?"],
+      "focus_words": ["lubisz podróżować", "za granicę"],
+      "grammar_tags": ["travel", "question", "two_verbs_rule"]
+    },
+    {
+      "id": 26,
+      "en": "We checked in three hours ago.",
+      "pl": "Zameldowaliśmy się trzy godziny temu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zameldowaliśmy się", "trzy godziny temu"],
+      "grammar_tags": ["travel", "past_tense", "reflexive_verb", "time_expression"]
+    },
+    {
+      "id": 27,
+      "en": "Have you (pl.) already booked your flight?",
+      "pl": "(Czy) zarezerwowaliście już lot?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zarezerwowaliście już lot?"],
+      "focus_words": ["zarezerwowaliście", "już", "lot"],
+      "grammar_tags": ["travel", "question", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 28,
+      "en": "Have you still got that big tent?",
+      "pl": "(Czy) masz jeszcze ten duży namiot?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Masz jeszcze ten duży namiot?"],
+      "focus_words": ["masz jeszcze", "ten duży namiot"],
+      "grammar_tags": ["travel", "question", "accusative_basic"]
+    },
+    {
+      "id": 29,
+      "en": "My children are going to summer camp.",
+      "pl": "Moje dzieci jadą na obóz letni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moje dzieci", "jadą na obóz letni"],
+      "grammar_tags": ["travel", "movement"]
+    },
+    {
+      "id": 30,
+      "en": "We sunbathed all day.",
+      "pl": "Opalaliśmy się cały dzień.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["opalaliśmy się", "cały dzień"],
+      "grammar_tags": ["travel", "past_tense", "reflexive_verb"]
+    },
+    {
+      "id": 31,
+      "en": "Can I buy a ticket online?",
+      "pl": "(Czy) mogę kupić bilet online?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mogę kupić bilet online?"],
+      "focus_words": ["mogę kupić", "bilet", "online"],
+      "grammar_tags": ["travel", "question", "accusative_basic"]
+    },
+    {
+      "id": 32,
+      "en": "We’re waiting for his arrival.",
+      "pl": "Czekamy na jego przyjazd.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["czekamy na", "jego przyjazd"],
+      "grammar_tags": ["travel", "accusative_basic"]
+    },
+    {
+      "id": 33,
+      "en": "What’s the departure time? (lit. What time is the departure?) We have to leave to be there (lit. to be) fifteen minutes earlier.",
+      "pl": "O której godzinie jest odjazd? Musimy być piętnaście minut wcześniej.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["O której jest odjazd? Musimy być piętnaście minut wcześniej."],
+      "focus_words": ["o której godzinie", "jest odjazd", "musimy być", "piętnaście minut wcześniej"],
+      "grammar_tags": ["travel", "question", "time_expression"]
+    },
+    {
+      "id": 34,
+      "en": "This travel agency organises guided tours.",
+      "pl": "To biuro podróży organizuje wycieczki z przewodnikiem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["to biuro podróży", "organizuje wycieczki", "z przewodnikiem"],
+      "grammar_tags": ["travel", "instrumental_basic", "accusative_basic"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "podróżować",
+      "biuro podróży",
+      "wycieczka",
+      "wakacje",
+      "za granicę",
+      "walizka",
+      "bagaż",
+      "góry",
+      "bilet",
+      "lot",
+      "paszport",
+      "wiza",
+      "przyjazd",
+      "odjazd",
+      "hotel",
+      "rezerwacja",
+      "zameldować się",
+      "wymeldować się",
+      "turystyczny",
+      "przewodnik",
+      "zwiedzać",
+      "widok",
+      "pamiątka",
+      "opalać się",
+      "obóz",
+      "namiot",
+      "odwołany",
+      "opóźniony",
+      "parking",
+      "plaża",
+      "morze"
+    ],
+    "sentence_cards_priority": [2, 3, 5, 6, 8, 9, 11, 13, 15, 18, 19, 20, 21, 23, 24, 25, 26, 31, 33, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'This hotel has a beautiful sea view.'",
+      "correct_answer": "Ten hotel ma piękny widok na morze.",
+      "distractors": [
+        "Ten hotel ma piękne morze widok.",
+        "Ten hotel jest piękny widok na morze.",
+        "Ten hotel ma widok do morza."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'We checked in three hours ago.'",
+      "answer_pl": "Zameldowaliśmy się trzy godziny temu.",
+      "word_bank": ["Zameldowaliśmy", "się", "trzy", "godziny", "temu"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Do you like to travel abroad?'",
+      "accepted_answers": [
+        "Czy lubisz podróżować za granicę?",
+        "Lubisz podróżować za granicę?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

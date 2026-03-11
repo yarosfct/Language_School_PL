@@ -1,0 +1,25 @@
+{
+  "section": "answer_keys",
+  "source_type": "book_back_matter",
+  "pages": [182, 183, 184, 185],
+  "contains_answer_keys_for": [
+    "Test 1",
+    "Test 2",
+    "Test 3",
+    "Test 4"
+  ],
+  "answer_key_structure": [
+    "fill in the gaps",
+    "matching exercises",
+    "crosswords",
+    "multiple choice",
+    "translation exercises",
+    "opposites",
+    "sentence translation choice"
+  ],
+  "notes": [
+    "Open-ended speaking sections include sample answers rather than one fixed answer.",
+    "Crossword sections are given as completed solutions.",
+    "Matching tasks are represented as item-to-letter mappings."
+  ]
+}

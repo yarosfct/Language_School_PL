@@ -1,0 +1,628 @@
+{
+  "section_number": 12,
+  "topic_en": "Appearance",
+  "topic_pl": "Wygląd",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "wysoki", "en": ["tall"], "category": "adjective" },
+    { "pl": "niski", "en": ["short"], "category": "adjective" },
+    { "pl": "średniego wzrostu", "en": ["of medium height"], "category": "phrase" },
+    { "pl": "stary", "en": ["old"], "category": "adjective" },
+    { "pl": "młody", "en": ["young"], "category": "adjective" },
+    { "pl": "w średnim wieku", "en": ["middle-aged"], "category": "phrase" },
+    { "pl": "szczupły", "en": ["slim"], "category": "adjective" },
+    { "pl": "chudy", "en": ["thin"], "category": "adjective" },
+    { "pl": "gruby", "en": ["fat"], "category": "adjective" },
+    { "pl": "atrakcyjny", "en": ["attractive"], "category": "adjective" },
+    { "pl": "piękny", "en": ["beautiful"], "category": "adjective" },
+    { "pl": "ładny", "en": ["pretty"], "category": "adjective" },
+    { "pl": "przystojny", "en": ["handsome"], "category": "adjective" },
+    { "pl": "brzydki", "en": ["ugly"], "category": "adjective" },
+    { "pl": "włosy", "en": ["hair"], "category": "noun" },
+    { "pl": "długi", "en": ["long"], "category": "adjective" },
+    { "pl": "krótki", "en": ["short"], "category": "adjective" },
+    { "pl": "średniej długości", "en": ["medium-length"], "category": "phrase" },
+    { "pl": "kręcony", "en": ["curly"], "category": "adjective" },
+    { "pl": "blond", "en": ["blond"], "category": "adjective" },
+    { "pl": "rudy", "en": ["ginger", "red"], "category": "adjective" },
+    { "pl": "siwy", "en": ["grey", "grey-haired"], "category": "adjective" },
+    { "pl": "oczy", "en": ["eyes"], "category": "noun" },
+    { "pl": "usta", "en": ["lips", "mouth"], "category": "noun" },
+    { "pl": "wąsy", "en": ["moustache"], "category": "noun" },
+    { "pl": "broda", "en": ["beard"], "category": "noun" },
+    { "pl": "skóra", "en": ["skin"], "category": "noun" },
+    { "pl": "piegi", "en": ["freckles"], "category": "noun" },
+    { "pl": "zmarszczki", "en": ["wrinkles"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "describing_attractive_people",
+      "content": "For an attractive woman, 'piękna' or 'ładna' is natural. For a man, 'przystojny' is more appropriate. 'atrakcyjny' can apply to either gender."
+    },
+    {
+      "id": 3,
+      "topic": "hair_descriptions",
+      "content": "Useful expressions describing hair:",
+      "examples": [
+        "proste = straight",
+        "do ramion = shoulder-length",
+        "falowane = wavy",
+        "ciemne = dark",
+        "jasne = light"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "wlosy_plural_and_lys",
+      "content": "'Włosy' is a plural noun, so adjectives describing hair usually take plural non-masculine-personal forms ending in -e. If somebody doesn't have hair, use 'łysy' (bald)."
+    },
+    {
+      "id": 6,
+      "topic": "word_order_flexibility",
+      "content": "Polish word order is flexible. The book presents the most natural-sounding versions, but other orders can still be correct."
+    },
+    {
+      "id": 6,
+      "topic": "glownie",
+      "content": "'Głównie' means 'mainly'. It is common in place names like Kraków Główny, but as an adverb it means mainly."
+    },
+    {
+      "id": 7,
+      "topic": "siwy_for_hair_only",
+      "content": "For grey hair, use 'siwy'. For other grey things, use 'szary'.",
+      "examples": [
+        "szara koszulka = grey T-shirt",
+        "siwe włosy = grey hair"
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "stary_can_sound_rude",
+      "content": "Using 'stary' about an older person can sound rude. Softer alternatives include 'w starszym wieku' or 'w podeszłym wieku'. It is also very common to say simply 'starszy'."
+    },
+    {
+      "id": 12,
+      "topic": "adverbs_end_in_o_or_e",
+      "content": "Adverbs often answer the question 'how?' and can end in -o or -e.",
+      "examples": [
+        "brzydko",
+        "ładnie",
+        "pięknie"
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "common_compliments",
+      "content": "Common compliments:",
+      "examples": [
+        "Wyglądasz pięknie! = You look beautiful!",
+        "Wyglądasz bardzo ładnie! = You look very pretty!",
+        "Wyglądasz świetnie! = You look great!",
+        "Wyglądasz fantastycznie! = You look fantastic!"
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "dla_osob_ludzi",
+      "content": "'dla osób/ludzi' means 'for people'."
+    },
+    {
+      "id": 15,
+      "topic": "height_with_miec",
+      "content": "To talk about someone's height, Polish often uses 'mieć' rather than 'być'.",
+      "examples": [
+        "Ile masz wzrostu? = How tall are you?",
+        "Mam metr siedemdziesiąt osiem. = I'm one metre and seventy-eight centimetres tall."
+      ]
+    },
+    {
+      "id": 17,
+      "topic": "zgrabna",
+      "content": "For a girl or woman, 'zgrabna' is often translated as shapely. It suggests an attractive figure."
+    },
+    {
+      "id": 21,
+      "topic": "piekny_comparison",
+      "content": "'Piękny' is beautiful, 'piękniejszy' is more beautiful, and 'najpiękniejszy' is the most beautiful."
+    },
+    {
+      "id": 22,
+      "topic": "asking_someones_name",
+      "content": "To ask someone's name, adjust the familiar question 'Jak masz na imię?' according to the pronoun.",
+      "examples": [
+        "Jak ty masz na imię? = What's your name?",
+        "Jak on/ona ma na imię? = What's his/her name?",
+        "Jak oni mają na imię? = What are their names?"
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "hair_products",
+      "content": "Useful everyday hair products:",
+      "examples": [
+        "szampon = shampoo",
+        "odżywka = conditioner",
+        "olejek do włosów = hair oil",
+        "maska do włosów = hair mask",
+        "lakier do włosów = hairspray",
+        "żel do włosów = hair gel",
+        "suszarka = hairdryer",
+        "prostownica = hair straighteners",
+        "lokówka = curling iron",
+        "grzebień = comb",
+        "szczotka do włosów = hairbrush"
+      ]
+    },
+    {
+      "id": 30,
+      "topic": "farbowac_na",
+      "content": "After 'farbować' (to dye), use the preposition 'na' to name the new hair colour.",
+      "examples": [
+        "farbować włosy na blond"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "hair_accessories",
+      "content": "Useful hair accessories:",
+      "examples": [
+        "gumka do włosów = hair tie",
+        "spinka = hair clip",
+        "wsuwka = hairpin",
+        "opaska = Alice band",
+        "klamra do włosów = hair claw"
+      ]
+    },
+    {
+      "id": 32,
+      "topic": "krotki_vs_niski",
+      "content": "There are two ways of saying short in Polish: 'krótki' and 'niski'. Use 'krótki' for things that are not long, and 'niski' for height or level.",
+      "examples": [
+        "krótkie spotkanie = a short meeting",
+        "krótkie włosy = short hair",
+        "niski chłopak = a short boy",
+        "niski budynek = a low building"
+      ]
+    },
+    {
+      "id": 32,
+      "topic": "wysokie_obcasy",
+      "content": "'Wysokie obcasy' means high heels."
+    },
+    {
+      "id": 34,
+      "topic": "skin_adjectives",
+      "content": "Useful adjectives for skin:",
+      "examples": [
+        "ciemna = dark",
+        "jasna = fair",
+        "miękka = soft",
+        "sucha = dry",
+        "szorstka = rough"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Kasia is beautiful.",
+      "pl": "Kasia jest piękna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kasia jest ładna."],
+      "focus_words": ["Kasia", "jest piękna"],
+      "grammar_tags": ["appearance", "description"]
+    },
+    {
+      "id": 2,
+      "en": "She's got long black hair and blue eyes.",
+      "pl": "(Ona) ma długie czarne włosy i niebieskie oczy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ma", "długie czarne włosy", "niebieskie oczy"],
+      "grammar_tags": ["appearance", "body", "plural_noun"]
+    },
+    {
+      "id": 3,
+      "en": "Bartek has medium-length curly hair.",
+      "pl": "Bartek ma kręcone włosy średniej długości.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["Bartek", "ma", "kręcone włosy", "średniej długości"],
+      "grammar_tags": ["appearance", "hair"]
+    },
+    {
+      "id": 4,
+      "en": "She is quite tall.",
+      "pl": "(Ona) jest dość wysoka.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jest", "dość wysoka"],
+      "grammar_tags": ["appearance", "height"]
+    },
+    {
+      "id": 5,
+      "en": "I like this boy. He's handsome.",
+      "pl": "Podoba mi się ten chłopak. Jest przystojny.",
+      "literal_en": null,
+      "english_variants": ["I like the look of this boy. He's handsome."],
+      "polish_alternatives": ["Lubię tego chłopaka. Jest przystojny."],
+      "focus_words": ["podoba mi się", "ten chłopak", "jest przystojny"],
+      "grammar_tags": ["appearance", "preference"]
+    },
+    {
+      "id": 6,
+      "en": "Mainly middle-aged people live here.",
+      "pl": "Mieszkają tu/tutaj głównie ludzie w średnim wieku.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Tutaj mieszkają głównie ludzie w średnim wieku."],
+      "focus_words": ["mieszkają", "tu", "głównie", "ludzie w średnim wieku"],
+      "grammar_tags": ["appearance", "age_group"]
+    },
+    {
+      "id": 7,
+      "en": "She is rather tall and has grey hair.",
+      "pl": "(Ona) jest raczej wysoka i ma siwe włosy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jest raczej wysoka", "ma siwe włosy"],
+      "grammar_tags": ["appearance", "height", "hair"]
+    },
+    {
+      "id": 8,
+      "en": "Her lips are naturally pink.",
+      "pl": "Jej usta są naturalnie różowe.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jej usta", "są", "naturalnie różowe"],
+      "grammar_tags": ["appearance", "body"]
+    },
+    {
+      "id": 9,
+      "en": "What are you saying?! He's not old!",
+      "pl": "Co ty mówisz?! (On) nie jest stary!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["co ty mówisz", "nie jest stary"],
+      "grammar_tags": ["appearance", "age", "exclamation"]
+    },
+    {
+      "id": 10,
+      "en": "I think your cat is fat.",
+      "pl": "Myślę, że twój kot jest gruby.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["myślę, że", "twój kot", "jest gruby"],
+      "grammar_tags": ["appearance", "subordinate_clause"]
+    },
+    {
+      "id": 11,
+      "en": "My nails are ugly. I need to go and have a manicure (lit. go on manicure).",
+      "pl": "Moje paznokcie są brzydkie. Muszę iść na manicure.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moje paznokcie", "są brzydkie", "muszę iść", "na manicure"],
+      "grammar_tags": ["appearance", "body"]
+    },
+    {
+      "id": 12,
+      "en": "You've got nice hair. You look beautiful!",
+      "pl": "Masz ładne włosy. Wyglądasz pięknie!",
+      "literal_en": null,
+      "english_variants": ["You have nice hair. You look beautiful!"],
+      "polish_alternatives": ["Masz ładne włosy. Wyglądasz ślicznie!"],
+      "focus_words": ["masz ładne włosy", "wyglądasz pięknie"],
+      "grammar_tags": ["appearance", "compliment"]
+    },
+    {
+      "id": 13,
+      "en": "This bed is good for people of medium height.",
+      "pl": "To łóżko jest dobre dla ludzi średniego wzrostu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To łóżko jest dobre dla osób średniego wzrostu."],
+      "focus_words": ["to łóżko", "jest dobre", "dla ludzi", "średniego wzrostu"],
+      "grammar_tags": ["appearance", "height"]
+    },
+    {
+      "id": 14,
+      "en": "I think that she is very pretty but slightly too thin.",
+      "pl": "Myślę, że ona jest bardzo ładna, ale trochę za/zbyt chuda.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Myślę, że ona jest bardzo ładna, ale trochę zbyt chuda."],
+      "focus_words": ["myślę, że", "ona jest bardzo ładna", "ale", "trochę", "za", "zbyt", "chuda"],
+      "grammar_tags": ["appearance", "subordinate_clause"]
+    },
+    {
+      "id": 15,
+      "en": "I recall/remember that she's of medium height. She might be one metre and sixty-eight (centimetres) tall (lit. She has maybe one metre and sixty-eight).",
+      "pl": "Pamiętam, że ona jest średniego wzrostu. Ma może metr sześćdziesiąt osiem.",
+      "literal_en": "I remember that she is of medium height. She has maybe one metre and sixty-eight.",
+      "english_variants": ["I remember that she's of medium height. She might be one metre sixty-eight."],
+      "polish_alternatives": [],
+      "focus_words": ["pamiętam, że", "ona jest średniego wzrostu", "ma może metr sześćdziesiąt osiem"],
+      "grammar_tags": ["appearance", "height", "subordinate_clause"]
+    },
+    {
+      "id": 16,
+      "en": "He is very attractive and has a beautiful smile.",
+      "pl": "(On) jest bardzo atrakcyjny i ma piękny uśmiech.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jest bardzo atrakcyjny", "ma piękny uśmiech"],
+      "grammar_tags": ["appearance", "description"]
+    },
+    {
+      "id": 17,
+      "en": "Anna is slim like a model.",
+      "pl": "Anna jest szczupła jak modelka.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["Anna", "jest szczupła", "jak modelka"],
+      "grammar_tags": ["appearance", "body_shape"]
+    },
+    {
+      "id": 18,
+      "en": "You have pretty eyes.",
+      "pl": "Masz ładne oczy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["masz", "ładne oczy"],
+      "grammar_tags": ["appearance", "body"]
+    },
+    {
+      "id": 19,
+      "en": "My sister has blond hair just like me.",
+      "pl": "Moja siostra ma blond włosy tak jak ja.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja siostra", "ma blond włosy", "tak jak ja"],
+      "grammar_tags": ["appearance", "hair"]
+    },
+    {
+      "id": 20,
+      "en": "He has dark hair and brown eyes.",
+      "pl": "(On) ma ciemne włosy i brązowe oczy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ma ciemne włosy", "brązowe oczy"],
+      "grammar_tags": ["appearance", "hair", "body"]
+    },
+    {
+      "id": 21,
+      "en": "My wife is the most beautiful woman (lit. the most beautiful) in the world!",
+      "pl": "Moja żona jest najpiękniejsza na świecie!",
+      "literal_en": "My wife is the most beautiful in the world.",
+      "english_variants": ["My wife is the most beautiful woman in the world!"],
+      "polish_alternatives": [],
+      "focus_words": ["moja żona", "jest najpiękniejsza", "na świecie"],
+      "grammar_tags": ["appearance", "superlative"]
+    },
+    {
+      "id": 22,
+      "en": "I can't remember what his name is, but he has a short beard.",
+      "pl": "Nie pamiętam, jak (on) ma na imię, ale ma krótką brodę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nie pamiętam", "jak ma na imię", "ale", "ma krótką brodę"],
+      "grammar_tags": ["appearance", "name_question_pattern", "body"]
+    },
+    {
+      "id": 23,
+      "en": "His skin is very sensitive.",
+      "pl": "Jego skóra jest bardzo wrażliwa.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jego skóra", "jest bardzo wrażliwa"],
+      "grammar_tags": ["appearance", "body"]
+    },
+    {
+      "id": 24,
+      "en": "Is her red/ginger hair natural or dyed?",
+      "pl": "(Czy) jej rude włosy są naturalne, czy farbowane?",
+      "literal_en": null,
+      "english_variants": ["Is her ginger hair natural or dyed?"],
+      "polish_alternatives": ["Jej rude włosy są naturalne czy farbowane?"],
+      "focus_words": ["jej rude włosy", "są naturalne", "czy", "farbowane"],
+      "grammar_tags": ["question", "appearance", "hair"]
+    },
+    {
+      "id": 25,
+      "en": "Is this mask good for reducing wrinkles (lit. mask good for wrinkles)?",
+      "pl": "(Czy) ta maseczka jest dobra na zmarszczki?",
+      "literal_en": "Is this mask good for wrinkles?",
+      "english_variants": ["Is this mask good for reducing wrinkles?"],
+      "polish_alternatives": [],
+      "focus_words": ["ta maseczka", "jest dobra", "na zmarszczki"],
+      "grammar_tags": ["question", "appearance", "skincare"]
+    },
+    {
+      "id": 26,
+      "en": "This girl has beautiful freckles.",
+      "pl": "Ta dziewczyna ma piękne piegi.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta dziewczyna", "ma piękne piegi"],
+      "grammar_tags": ["appearance", "body"]
+    },
+    {
+      "id": 27,
+      "en": "I have curly hair. Which conditioner will be good for me?",
+      "pl": "Mam kręcone włosy. Jaka odżywka będzie dla mnie dobra?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam kręcone włosy", "jaka odżywka", "będzie dla mnie dobra"],
+      "grammar_tags": ["appearance", "hair", "question"]
+    },
+    {
+      "id": 28,
+      "en": "This young boy is very talented.",
+      "pl": "Ten młody chłopak jest bardzo utalentowany.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten młody chłopak", "jest bardzo utalentowany"],
+      "grammar_tags": ["appearance", "description"]
+    },
+    {
+      "id": 29,
+      "en": "Their moustaches are very stylish.",
+      "pl": "Ich wąsy są bardzo stylowe.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ich wąsy", "są bardzo stylowe"],
+      "grammar_tags": ["appearance", "body"]
+    },
+    {
+      "id": 30,
+      "en": "My sister dyes her hair black (lit. on black colour).",
+      "pl": "Moja siostra farbuje włosy na czarny kolor.",
+      "literal_en": "My sister dyes her hair to a black colour.",
+      "english_variants": ["My sister dyes her hair black."],
+      "polish_alternatives": ["Moja siostra farbuje włosy na czarno."],
+      "focus_words": ["moja siostra", "farbuje włosy", "na czarny kolor"],
+      "grammar_tags": ["appearance", "hair"]
+    },
+    {
+      "id": 31,
+      "en": "She has dark hair, so a white Alice band will contrast nicely.",
+      "pl": "(Ona) ma ciemne włosy, więc biała opaska będzie ładnie kontrastować.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ma ciemne włosy", "więc", "biała opaska", "będzie ładnie kontrastować"],
+      "grammar_tags": ["appearance", "hair", "future_tense"]
+    },
+    {
+      "id": 32,
+      "en": "My friend (f.) is short. She always wears high heels.",
+      "pl": "Moja koleżanka jest niska. Zawsze nosi wysokie obcasy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja koleżanka", "jest niska", "zawsze nosi", "wysokie obcasy"],
+      "grammar_tags": ["appearance", "height"]
+    },
+    {
+      "id": 33,
+      "en": "She has long legs, is very tall, and looks fantastic!",
+      "pl": "(Ona) ma długie nogi, jest bardzo wysoka i wygląda fantastycznie!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ma długie nogi", "jest bardzo wysoka", "wygląda fantastycznie"],
+      "grammar_tags": ["appearance", "height", "compliment"]
+    },
+    {
+      "id": 34,
+      "en": "Your skin is very soft. What (lit. Which) is your secret?",
+      "pl": "Twoja skóra jest bardzo miękka. Jaki jest twój sekret?",
+      "literal_en": "Which is your secret?",
+      "english_variants": ["Your skin is very soft. What's your secret?"],
+      "polish_alternatives": [],
+      "focus_words": ["twoja skóra", "jest bardzo miękka", "jaki", "twój sekret"],
+      "grammar_tags": ["appearance", "question", "body"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "wysoki",
+      "niski",
+      "średniego wzrostu",
+      "młody",
+      "w średnim wieku",
+      "szczupły",
+      "chudy",
+      "gruby",
+      "atrakcyjny",
+      "piękny",
+      "ładny",
+      "przystojny",
+      "włosy",
+      "kręcony",
+      "blond",
+      "rudy",
+      "siwy",
+      "oczy",
+      "usta",
+      "wąsy",
+      "broda",
+      "skóra",
+      "piegi",
+      "zmarszczki"
+    ],
+    "sentence_cards_priority": [2, 3, 5, 7, 12, 14, 15, 16, 18, 20, 21, 22, 24, 27, 30, 32, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'You have pretty eyes.'",
+      "correct_answer": "Masz ładne oczy.",
+      "distractors": [
+        "Masz piękne włosy.",
+        "Masz ładne usta.",
+        "Jesteś ładne oczy."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'My sister has blond hair just like me.'",
+      "answer_pl": "Moja siostra ma blond włosy tak jak ja.",
+      "word_bank": ["Moja", "siostra", "ma", "blond", "włosy", "tak", "jak", "ja"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'My wife is the most beautiful woman in the world.'",
+      "accepted_answers": [
+        "Moja żona jest najpiękniejsza na świecie!"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

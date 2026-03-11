@@ -1,0 +1,627 @@
+{
+  "section_number": 2,
+  "topic_en": "Getting to Know Each Other",
+  "topic_pl": "Poznawanie się",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": [
+      "word",
+      "sentence"
+    ],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "imię", "en": ["(first) name"], "category": "noun" },
+    { "pl": "nazwisko", "en": ["surname", "last name"], "category": "noun" },
+    { "pl": "Nazywam się...", "en": ["My name/surname is..."], "category": "phrase" },
+    { "pl": "nazwisko panieńskie", "en": ["maiden name"], "category": "phrase" },
+    { "pl": "kolega", "en": ["friend", "male friend", "colleague"], "category": "noun" },
+    { "pl": "koleżanka", "en": ["friend", "female friend", "colleague"], "category": "noun" },
+    { "pl": "przyjaciel", "en": ["close friend", "dear friend"], "category": "noun" },
+    { "pl": "przyjaciółka", "en": ["close friend", "dear friend"], "category": "noun" },
+    { "pl": "mieć ... lat", "en": ["to be ... years old"], "category": "phrase" },
+    { "pl": "adres", "en": ["address"], "category": "noun" },
+    { "pl": "numer telefonu", "en": ["phone number"], "category": "phrase" },
+    { "pl": "(adres) e-mail", "en": ["e-mail address"], "category": "phrase" },
+    { "pl": "wolny", "en": ["single"], "category": "adjective" },
+    { "pl": "wolna", "en": ["single"], "category": "adjective" },
+    { "pl": "żonaty", "en": ["married"], "category": "adjective" },
+    { "pl": "zamężna", "en": ["married"], "category": "adjective" },
+    { "pl": "rozwiedziony", "en": ["divorced"], "category": "adjective" },
+    { "pl": "rozwiedziona", "en": ["divorced"], "category": "adjective" },
+    { "pl": "mąż", "en": ["husband"], "category": "noun" },
+    { "pl": "żona", "en": ["wife"], "category": "noun" },
+    { "pl": "narzeczony", "en": ["fiancé"], "category": "noun" },
+    { "pl": "narzeczona", "en": ["fiancée"], "category": "noun" },
+    { "pl": "być w związku", "en": ["to be in a relationship"], "category": "phrase" },
+    { "pl": "urodziny", "en": ["birthday"], "category": "noun" },
+    { "pl": "rodzinne miasto", "en": ["hometown"], "category": "phrase" },
+    { "pl": "znać", "en": ["to know", "to know somebody"], "category": "verb" },
+    { "pl": "Co słychać?", "en": ["What's up?"], "category": "phrase" },
+    { "pl": "Wszystko w porządku.", "en": ["Everything's fine."], "category": "phrase" },
+    { "pl": "chłopak", "en": ["boyfriend"], "category": "noun" },
+    { "pl": "dziewczyna", "en": ["girlfriend"], "category": "noun" },
+    { "pl": "znać się z widzenia", "en": ["to know each other by sight"], "category": "phrase" },
+    { "pl": "Mów mi...", "en": ["You can call me..."], "category": "phrase" },
+    { "pl": "przeliterować", "en": ["to spell"], "category": "verb" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "imie_vs_nazwa",
+      "content": "Use 'imię' for people and pets. For things and places, use 'nazwa'.",
+      "examples": [
+        "Ona ma polskie imię. = She has a Polish name.",
+        "Nazwa tej restauracji jest ciekawa. = The name of this restaurant is interesting."
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "introducing_yourself",
+      "content": "When introducing yourself, use one of these patterns: 'mieć na imię + name', 'nazywać się + surname/name', or 'być + name/surname'.",
+      "examples": [
+        "Mam na imię Adam.",
+        "Nazywam się Kowalski / Adam Kowalski.",
+        "Jestem Adam / Adam Kowalski."
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "name_after_introduction_patterns",
+      "content": "After 'mam na imię', use only your first name. After 'nazywam się', use surname or first name + surname. After 'jestem', you may use your first name or full name."
+    },
+    {
+      "id": 4,
+      "topic": "small_talk_questions",
+      "content": "Other common questions: 'Co (tam) nowego u ciebie?', 'Jak leci?', 'Jak żyjesz?'",
+      "examples": [
+        "Co tam nowego u ciebie? = What's new with you?",
+        "Jak leci? = How is it going?",
+        "Jak żyjesz? = How's life?"
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "small_talk_answers",
+      "content": "Common answers to 'What's up?' or 'How's it going?' include:",
+      "examples": [
+        "świetnie = great",
+        "wszystko OK = everything's OK",
+        "nic nowego / po staremu = same old, same old",
+        "tak sobie = so-so",
+        "nieźle = not bad",
+        "fatalnie = really bad, terrible"
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "formal_question_with_pan_pani",
+      "content": "You can also say 'Jak się pan nazywa?'. With 'pan' or 'pani', Polish uses 3rd-person singular verb forms."
+    },
+    {
+      "id": 10,
+      "topic": "moge_prosic_not_moge_miec",
+      "content": "The verb 'móc' is irregular. Use 'Czy mogę prosić...?' rather than 'Czy mogę mieć...?' when asking for something like a phone number.",
+      "examples": [
+        "Czy mogę prosić twój numer telefonu?",
+        "Czy mogę prosić o twój numer telefonu?"
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "prosze_meanings",
+      "content": "'proszę' can mean both 'please' and 'here you are', depending on context."
+    },
+    {
+      "id": 17,
+      "topic": "softened_names",
+      "content": "Some Polish names have informal softened versions.",
+      "examples": [
+        "Agnieszka -> Aga",
+        "Katarzyna -> Kasia",
+        "Bartosz -> Bartek"
+      ]
+    },
+    {
+      "id": 18,
+      "topic": "social_media_platform_names",
+      "content": "Say 'na Instagramie' and 'na Facebooku'. You may also hear 'Masz Instagrama/Facebooka?'"
+    },
+    {
+      "id": 19,
+      "topic": "nice_to_meet_you_responses",
+      "content": "For 'Miło mi cię poznać!' or 'Miło mi!', possible replies include the same phrase, 'nawzajem', 'wzajemnie', or 'mnie również'. 'Nawzajem' and 'wzajemnie' can also be used to return wishes.",
+      "examples": [
+        "Miłego dnia! — Nawzajem!",
+        "Smacznego! — Wzajemnie!"
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "seeing_again",
+      "content": "Use 'Miło mi cię widzieć' when meeting someone again."
+    },
+    {
+      "id": 22,
+      "topic": "urodziny_plural",
+      "content": "'Urodziny' is plural in Polish, so it takes a plural verb.",
+      "examples": [
+        "Kiedy są twoje urodziny?"
+      ]
+    },
+    {
+      "id": 23,
+      "topic": "age_uses_miec",
+      "content": "When talking about age, Polish uses 'mieć' (to have), not 'być' (to be).",
+      "examples": [
+        "Mam 34 lata. = I'm 34."
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "wolny_multiple_meanings",
+      "content": "The adjective 'wolny' can also mean free, slow, or available, not only single."
+    },
+    {
+      "id": 25,
+      "topic": "my_moja_moje",
+      "content": "Polish nouns have genders. Use 'mój' before masculine nouns, 'moja' before feminine nouns, and 'moje' before neuter nouns.",
+      "examples": [
+        "mój chłopak",
+        "moja żona",
+        "moje imię"
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "twoj_twoja_twoje",
+      "content": "Use 'twój' before masculine nouns, 'twoja' before feminine nouns, and 'twoje' before neuter nouns. 'Chłopak' can mean either boy or boyfriend; 'dziewczyna' can mean girl or girlfriend."
+    },
+    {
+      "id": 32,
+      "topic": "sluzbowo",
+      "content": "'Służbowo' means 'on business'."
+    },
+    {
+      "id": 34,
+      "topic": "languages_lowercase",
+      "content": "In Polish, language names are written in lowercase.",
+      "examples": [
+        "polski",
+        "angielski"
+      ]
+    },
+    {
+      "id": 35,
+      "topic": "name_with_miec_na_imie",
+      "content": "Do not say 'Jego żona jest Anna' when you mean 'His wife's name is Anna'. Use 'mieć na imię'.",
+      "examples": [
+        "Jego żona ma na imię Anna.",
+        "Moja mama ma na imię Maria."
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "My name is Paweł.",
+      "pl": "Mam na imię Paweł.",
+      "literal_en": null,
+      "english_variants": ["I'm Paweł."],
+      "polish_alternatives": ["Jestem Paweł."],
+      "focus_words": ["mieć na imię", "Paweł"],
+      "grammar_tags": ["introduction"]
+    },
+    {
+      "id": 2,
+      "en": "My name is Paweł Kowalski.",
+      "pl": "Nazywam się Paweł Kowalski.",
+      "literal_en": null,
+      "english_variants": ["I'm Paweł Kowalski."],
+      "polish_alternatives": ["Jestem Paweł Kowalski."],
+      "focus_words": ["nazywać się", "Paweł Kowalski"],
+      "grammar_tags": ["introduction"]
+    },
+    {
+      "id": 3,
+      "en": "What's up?",
+      "pl": "Co słychać?",
+      "literal_en": null,
+      "english_variants": ["How's it going?"],
+      "polish_alternatives": ["Jak leci?", "Jak żyjesz?"],
+      "focus_words": ["co słychać"],
+      "grammar_tags": ["small_talk"]
+    },
+    {
+      "id": 4,
+      "en": "Everything's fine. (lit. Everything in order.)",
+      "pl": "Wszystko w porządku.",
+      "literal_en": "Everything in order.",
+      "english_variants": ["Everything's okay."],
+      "polish_alternatives": ["Wszystko OK."],
+      "focus_words": ["wszystko", "w porządku"],
+      "grammar_tags": ["small_talk_answer"]
+    },
+    {
+      "id": 5,
+      "en": "Thanks for asking. (lit. Thanks that you ask.)",
+      "pl": "Dzięki, że pytasz.",
+      "literal_en": "Thanks that you ask.",
+      "english_variants": ["Thanks for asking."],
+      "polish_alternatives": ["Dziękuję, że pytasz."],
+      "focus_words": ["dzięki", "że", "pytać"],
+      "grammar_tags": ["small_talk", "subordinate_clause"]
+    },
+    {
+      "id": 6,
+      "en": "What is your surname, sir?",
+      "pl": "Jak pan ma na nazwisko?",
+      "literal_en": null,
+      "english_variants": ["What's your last name, sir?"],
+      "polish_alternatives": ["Jak się pan nazywa?"],
+      "focus_words": ["jak", "pan", "nazwisko"],
+      "grammar_tags": ["formal", "question"]
+    },
+    {
+      "id": 7,
+      "en": "What's your first name? (lit. How you have on name?)",
+      "pl": "Jak masz na imię?",
+      "literal_en": "How do you have for a name?",
+      "english_variants": ["What's your name?"],
+      "polish_alternatives": [],
+      "focus_words": ["jak", "mieć na imię"],
+      "grammar_tags": ["question", "introduction"]
+    },
+    {
+      "id": 8,
+      "en": "We know each other only by sight.",
+      "pl": "Znamy się tylko z widzenia.",
+      "literal_en": null,
+      "english_variants": ["We only know each other by sight."],
+      "polish_alternatives": [],
+      "focus_words": ["znać się", "tylko", "z widzenia"],
+      "grammar_tags": ["relationship"]
+    },
+    {
+      "id": 9,
+      "en": "It is a very nice name.",
+      "pl": "To bardzo ładne imię.",
+      "literal_en": null,
+      "english_variants": ["That's a very nice name."],
+      "polish_alternatives": ["To jest bardzo ładne imię."],
+      "focus_words": ["to", "bardzo", "ładne", "imię"],
+      "grammar_tags": ["description"]
+    },
+    {
+      "id": 10,
+      "en": "Can I have (lit. ask for) your e-mail address, please?",
+      "pl": "(Czy) mogę prosić twój (adres) e-mail?",
+      "literal_en": "Can I ask for your e-mail address?",
+      "english_variants": ["Can I have your email address, please?"],
+      "polish_alternatives": ["Czy mogę prosić o twój adres e-mail?"],
+      "focus_words": ["móc", "prosić", "adres e-mail"],
+      "grammar_tags": ["question", "request"]
+    },
+    {
+      "id": 11,
+      "en": "Can you spell it?",
+      "pl": "(Czy) możesz to przeliterować?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Możesz to przeliterować?"],
+      "focus_words": ["móc", "przeliterować", "to"],
+      "grammar_tags": ["question", "request"]
+    },
+    {
+      "id": 12,
+      "en": "This is my dear/close friend, Adam.",
+      "pl": "To (jest) mój przyjaciel, Adam.",
+      "literal_en": null,
+      "english_variants": ["This is my close friend Adam."],
+      "polish_alternatives": [],
+      "focus_words": ["to", "mój", "przyjaciel"],
+      "grammar_tags": ["introduction", "gender_agreement"]
+    },
+    {
+      "id": 13,
+      "en": "My friend also works there.",
+      "pl": "Mój kolega też tam pracuje.",
+      "literal_en": null,
+      "english_variants": ["My friend works there too."],
+      "polish_alternatives": ["Moja koleżanka też tam pracuje."],
+      "focus_words": ["mój", "kolega", "też", "tam", "pracować"],
+      "grammar_tags": ["present_tense", "gender_agreement"]
+    },
+    {
+      "id": 14,
+      "en": "I live in the city centre. Here (lit. Please), this is my address.",
+      "pl": "Mieszkam w centrum. Proszę, to mój adres.",
+      "literal_en": "I live in the centre. Please, this is my address.",
+      "english_variants": ["I live downtown. Here is my address."],
+      "polish_alternatives": ["Mieszkam w centrum miasta. Proszę, to mój adres."],
+      "focus_words": ["mieszkać", "w centrum", "proszę", "adres"],
+      "grammar_tags": ["location", "fixed_expression"]
+    },
+    {
+      "id": 15,
+      "en": "Where does your husband work?",
+      "pl": "Gdzie pracuje twój mąż?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie", "pracować", "twój", "mąż"],
+      "grammar_tags": ["question", "gender_agreement"]
+    },
+    {
+      "id": 16,
+      "en": "Do I know you? (lit. We know each other?)",
+      "pl": "Znamy się?",
+      "literal_en": "Do we know each other?",
+      "english_variants": ["Do we know each other?"],
+      "polish_alternatives": [],
+      "focus_words": ["znać się"],
+      "grammar_tags": ["question"]
+    },
+    {
+      "id": 17,
+      "en": "You can call me (lit. Speak me) Aga.",
+      "pl": "Mów mi Aga.",
+      "literal_en": "Speak to me Aga.",
+      "english_variants": ["Call me Aga."],
+      "polish_alternatives": [],
+      "focus_words": ["mówić", "mi", "Aga"],
+      "grammar_tags": ["fixed_expression"]
+    },
+    {
+      "id": 18,
+      "en": "Are you on Instagram?",
+      "pl": "(Czy) jesteś na Instagramie?",
+      "literal_en": null,
+      "english_variants": ["Do you use Instagram?"],
+      "polish_alternatives": ["Masz Instagrama?"],
+      "focus_words": ["być", "na Instagramie"],
+      "grammar_tags": ["question", "social_media"]
+    },
+    {
+      "id": 19,
+      "en": "Nice to meet you!",
+      "pl": "Miło (mi) cię poznać!",
+      "literal_en": null,
+      "english_variants": ["Pleasure to meet you!"],
+      "polish_alternatives": ["Miło mi!"],
+      "focus_words": ["miło", "poznać"],
+      "grammar_tags": ["greeting", "fixed_expression"]
+    },
+    {
+      "id": 20,
+      "en": "Nice to see you.",
+      "pl": "Miło (mi) cię widzieć.",
+      "literal_en": null,
+      "english_variants": ["Good to see you."],
+      "polish_alternatives": ["Miło mi cię widzieć."],
+      "focus_words": ["miło", "widzieć"],
+      "grammar_tags": ["greeting", "fixed_expression"]
+    },
+    {
+      "id": 21,
+      "en": "Can I have your phone number?",
+      "pl": "(Czy) mogę prosić o twój numer (telefonu)?",
+      "literal_en": "Can I ask for your phone number?",
+      "english_variants": ["May I have your phone number?"],
+      "polish_alternatives": ["Czy mogę prosić twój numer telefonu?"],
+      "focus_words": ["móc", "prosić", "o", "twój", "numer telefonu"],
+      "grammar_tags": ["question", "request"]
+    },
+    {
+      "id": 22,
+      "en": "When is your birthday? (lit. are your birthday?)",
+      "pl": "Kiedy są twoje urodziny?",
+      "literal_en": "When are your birthdays?",
+      "english_variants": ["When's your birthday?"],
+      "polish_alternatives": [],
+      "focus_words": ["kiedy", "twoje", "urodziny"],
+      "grammar_tags": ["question", "plural_noun"]
+    },
+    {
+      "id": 23,
+      "en": "I'm 34. (lit. I have 34 years.)",
+      "pl": "Mam 34 lata.",
+      "literal_en": "I have 34 years.",
+      "english_variants": ["I'm thirty-four."],
+      "polish_alternatives": [],
+      "focus_words": ["mieć", "lata"],
+      "grammar_tags": ["age", "irregular_verb"]
+    },
+    {
+      "id": 24,
+      "en": "I'm single.",
+      "pl": "Jestem wolny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem wolna."],
+      "focus_words": ["być", "wolny", "wolna"],
+      "grammar_tags": ["relationship_status", "gender_dependent"]
+    },
+    {
+      "id": 25,
+      "en": "This is my hometown.",
+      "pl": "To (jest) moje rodzinne miasto.",
+      "literal_en": null,
+      "english_variants": ["This is my home town."],
+      "polish_alternatives": [],
+      "focus_words": ["to", "moje", "rodzinne miasto"],
+      "grammar_tags": ["gender_agreement", "neuter_noun"]
+    },
+    {
+      "id": 26,
+      "en": "This is not my wife. This is my fiancée.",
+      "pl": "To nie jest moja żona. To (jest) moja narzeczona.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["to", "nie", "moja", "żona", "narzeczona"],
+      "grammar_tags": ["negation", "relationship_status", "gender_agreement"]
+    },
+    {
+      "id": 27,
+      "en": "Is this your boyfriend? How long have you been (lit. are you) together?",
+      "pl": "(Czy) to (jest) twój chłopak? Jak długo jesteście razem?",
+      "literal_en": "How long are you together?",
+      "english_variants": ["Is this your boyfriend? How long have you been together?"],
+      "polish_alternatives": ["To twój chłopak? Jak długo jesteście razem?"],
+      "focus_words": ["twój", "chłopak", "jak długo", "razem"],
+      "grammar_tags": ["question", "relationship_status"]
+    },
+    {
+      "id": 28,
+      "en": "Excuse me for a moment.",
+      "pl": "Przepraszam na moment.",
+      "literal_en": null,
+      "english_variants": ["Excuse me for a second."],
+      "polish_alternatives": ["Przepraszam na chwilę."],
+      "focus_words": ["przepraszam", "na moment"],
+      "grammar_tags": ["fixed_expression"]
+    },
+    {
+      "id": 29,
+      "en": "Is that your maiden name?",
+      "pl": "(Czy) to (jest) twoje nazwisko panieńskie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To twoje nazwisko panieńskie?"],
+      "focus_words": ["twoje", "nazwisko panieńskie"],
+      "grammar_tags": ["question", "neuter_noun"]
+    },
+    {
+      "id": 30,
+      "en": "Do you come here often?",
+      "pl": "(Czy) często tu/tutaj przychodzisz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Często tutaj przychodzisz?"],
+      "focus_words": ["często", "tu", "tutaj", "przychodzić"],
+      "grammar_tags": ["question", "frequency"]
+    },
+    {
+      "id": 31,
+      "en": "I'm not in a relationship. I'm divorced.",
+      "pl": "Nie jestem w związku. Jestem rozwiedziony.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie jestem w związku. Jestem rozwiedziona."],
+      "focus_words": ["nie", "być w związku", "rozwiedziony", "rozwiedziona"],
+      "grammar_tags": ["negation", "relationship_status", "gender_dependent"]
+    },
+    {
+      "id": 32,
+      "en": "My husband and I are here on business.",
+      "pl": "Mój mąż i ja jesteśmy tutaj/tu służbowo.",
+      "literal_en": null,
+      "english_variants": ["My husband and I are here for work."],
+      "polish_alternatives": ["Ja i mój mąż jesteśmy tu służbowo."],
+      "focus_words": ["mój", "mąż", "ja", "jesteśmy", "służbowo"],
+      "grammar_tags": ["present_tense", "work_context"]
+    },
+    {
+      "id": 33,
+      "en": "Where are you from? Where is your girlfriend from?",
+      "pl": "Skąd jesteś? Skąd jest twoja dziewczyna?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["skąd", "być", "twoja", "dziewczyna"],
+      "grammar_tags": ["question", "origin", "gender_agreement"]
+    },
+    {
+      "id": 34,
+      "en": "My Polish isn't good. Do you know English?",
+      "pl": "Mój polski nie jest dobry. (Czy) znasz angielski?",
+      "literal_en": null,
+      "english_variants": ["My Polish isn't very good. Do you know English?"],
+      "polish_alternatives": ["Mój polski nie jest dobry. Znasz angielski?"],
+      "focus_words": ["mój", "polski", "nie", "dobry", "znać", "angielski"],
+      "grammar_tags": ["negation", "language_names_lowercase", "question"]
+    },
+    {
+      "id": 35,
+      "en": "He's married. His wife is Anna.",
+      "pl": "(On) jest żonaty. Jego żona ma na imię Anna.",
+      "literal_en": null,
+      "english_variants": ["He's married. His wife's name is Anna."],
+      "polish_alternatives": ["Jest żonaty. Jego żona ma na imię Anna."],
+      "focus_words": ["żonaty", "jego", "żona", "mieć na imię", "Anna"],
+      "grammar_tags": ["relationship_status", "name_expression"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "imię",
+      "nazwisko",
+      "nazwisko panieńskie",
+      "adres",
+      "numer telefonu",
+      "e-mail",
+      "urodziny",
+      "rodzinne miasto",
+      "znać",
+      "przeliterować",
+      "chłopak",
+      "dziewczyna",
+      "narzeczony",
+      "narzeczona",
+      "mąż",
+      "żona",
+      "rozwiedziony",
+      "wolny",
+      "być w związku"
+    ],
+    "sentence_cards_priority": [1, 2, 3, 6, 7, 10, 11, 18, 19, 21, 22, 23, 27, 31, 33, 34, 35]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Can I have your phone number?'",
+      "correct_answer": "Czy mogę prosić o twój numer telefonu?",
+      "distractors": [
+        "Czy mogę mieć twój numer telefonu?",
+        "Jak masz na numer telefonu?",
+        "Znasz mój numer telefonu?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Nice to meet you!'",
+      "answer_pl": "Miło mi cię poznać!",
+      "word_bank": ["Miło", "mi", "cię", "poznać"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Where are you from?'",
+      "accepted_answers": [
+        "Skąd jesteś?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

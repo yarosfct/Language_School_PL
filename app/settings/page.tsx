@@ -1,10 +1,19 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
 import { useStore } from '@/lib/store/useStore';
-import { Settings as SettingsIcon, Volume2, Mic, AlertTriangle, Server, Database, Trash2 } from 'lucide-react';
+import { Settings as SettingsIcon, Volume2, Mic, AlertTriangle, Server, Database, Trash2, Download, Upload, Save, Plus } from 'lucide-react';
 import { speak, getAvailableVoices, setVoice, setRate, setPiperVoice, applyTTSPreferences } from '@/lib/tts';
-import { clearAllData } from '@/lib/db';
+import {
+  clearAllData,
+  deleteUserWordOverride,
+  getAllUserWordOverrides,
+  getUserPreferences,
+  initializeDatabase,
+  saveUserPreferences,
+  saveUserWordOverride,
+} from '@/lib/db';
+import type { UserWordOverride } from '@/types/translations';
 
 interface PiperVoice {
   name: string;
@@ -21,6 +30,8 @@ export default function SettingsPage() {
   const [testText, setTestText] = useState<string>('Dzień dobry! Jak się masz?');
   const [showResetConfirm, setShowResetConfirm] = useState<boolean>(false);
   const [isResetting, setIsResetting] = useState<boolean>(false);
+  const [devModeEnabled, setDevModeEnabled] = useState<boolean>(false);
+  const [isSavingDevMode, setIsSavingDevMode] = useState<boolean>(false);
   
   // TTS Backend state
   const [backendStatus, setBackendStatus] = useState<'checking' | 'piper' | 'webspeech'>('checking');
@@ -28,8 +39,16 @@ export default function SettingsPage() {
   const [isLoadingCache, setIsLoadingCache] = useState(false);
   const [isTestingTTS, setIsTestingTTS] = useState(false);
   const testTextInputRef = useRef<HTMLInputElement>(null);
+  const importOverridesInputRef = useRef<HTMLInputElement>(null);
+  const [userWordOverrides, setUserWordOverrides] = useState<UserWordOverride[]>([]);
+  const [overrideSearch, setOverrideSearch] = useState('');
+  const [isLoadingOverrides, setIsLoadingOverrides] = useState(true);
+  const [savingOverrideId, setSavingOverrideId] = useState<string | null>(null);
+  const [deletingOverrideId, setDeletingOverrideId] = useState<string | null>(null);
+  const [isImportingOverrides, setIsImportingOverrides] = useState(false);
+  const [overridesNotice, setOverridesNotice] = useState<string | null>(null);
 
-  // Load saved preferences on mount
+  // Load saved preferences
   useEffect(() => {
     // Load saved rate
     if (ttsPreferences.rate !== undefined) {
@@ -43,7 +62,22 @@ export default function SettingsPage() {
       piperVoice: ttsPreferences.piperVoice,
       rate: ttsPreferences.rate,
     });
-  }, []); // Only run once on mount
+  }, [ttsPreferences.piperVoice, ttsPreferences.rate, ttsPreferences.voiceURI]);
+
+  useEffect(() => {
+    const loadPreferences = async () => {
+      await initializeDatabase();
+      const [preferences, overrides] = await Promise.all([
+        getUserPreferences(),
+        getAllUserWordOverrides(),
+      ]);
+      setDevModeEnabled(preferences.devModeEnabled ?? false);
+      setUserWordOverrides(sortOverrides(overrides));
+      setIsLoadingOverrides(false);
+    };
+
+    void loadPreferences();
+  }, []);
 
   // Check backend status and load Piper voices
   useEffect(() => {
@@ -170,6 +204,22 @@ export default function SettingsPage() {
     updateTTSPreferences({ rate });
   };
 
+  const handleDevModeToggle = async () => {
+    const nextValue = !devModeEnabled;
+    setDevModeEnabled(nextValue);
+    setIsSavingDevMode(true);
+
+    try {
+      await saveUserPreferences({ devModeEnabled: nextValue });
+    } catch (error) {
+      console.error('Failed to update dev mode:', error);
+      setDevModeEnabled(!nextValue);
+      alert('Failed to update dev mode setting.');
+    } finally {
+      setIsSavingDevMode(false);
+    }
+  };
+
   const handleTestTTS = async () => {
     // Get current text from input ref (handles default value issue)
     const currentText = testTextInputRef.current?.value || testText;
@@ -276,6 +326,209 @@ export default function SettingsPage() {
       alert('Failed to clear cache. Please try again.');
     } finally {
       setIsLoadingCache(false);
+    }
+  };
+
+  const filteredOverrides = useMemo(() => {
+    const query = overrideSearch.trim().toLowerCase();
+    if (!query) {
+      return userWordOverrides;
+    }
+
+    return userWordOverrides.filter((override) => {
+      const englishText = override.english.join(', ').toLowerCase();
+      return (
+        override.polish.toLowerCase().includes(query) ||
+        englishText.includes(query) ||
+        override.normalizedToken.includes(query)
+      );
+    });
+  }, [overrideSearch, userWordOverrides]);
+
+  const refreshOverrides = async () => {
+    const overrides = await getAllUserWordOverrides();
+    setUserWordOverrides(sortOverrides(overrides));
+  };
+
+  const updateOverrideDraft = (
+    id: string,
+    field: 'polish' | 'partOfSpeech' | 'sectionId' | 'english',
+    value: string
+  ) => {
+    setUserWordOverrides((current) =>
+      current.map((override) =>
+        override.id === id
+          ? {
+              ...override,
+              [field]: field === 'english' ? value.split(',').map((item) => item.trim()).filter(Boolean) : value,
+            }
+          : override
+      )
+    );
+  };
+
+  const handleSaveOverride = async (override: UserWordOverride) => {
+    setSavingOverrideId(override.id);
+    setOverridesNotice(null);
+
+    try {
+      await saveUserWordOverride({
+        id: override.id,
+        normalizedToken: normalizeToken(override.polish),
+        polish: override.polish.trim(),
+        english: override.english.map((item) => item.trim()).filter(Boolean),
+        partOfSpeech: override.partOfSpeech.trim() || 'word',
+        sectionId: override.sectionId?.trim() || null,
+        source: override.source,
+        provider: override.provider,
+      });
+      await refreshOverrides();
+      setOverridesNotice(`Saved "${override.polish}".`);
+    } catch (error) {
+      console.error('Failed to save override:', error);
+      setOverridesNotice('Failed to save local word override.');
+    } finally {
+      setSavingOverrideId(null);
+    }
+  };
+
+  const handleDeleteOverride = async (id: string) => {
+    setDeletingOverrideId(id);
+    setOverridesNotice(null);
+
+    try {
+      await deleteUserWordOverride(id);
+      await refreshOverrides();
+      setOverridesNotice('Local word override deleted.');
+    } catch (error) {
+      console.error('Failed to delete override:', error);
+      setOverridesNotice('Failed to delete local word override.');
+    } finally {
+      setDeletingOverrideId(null);
+    }
+  };
+
+  const handleAddOverride = () => {
+    const now = Date.now();
+    const draft: UserWordOverride = {
+      id: `draft:${now}`,
+      normalizedToken: '',
+      polish: '',
+      english: [],
+      partOfSpeech: 'word',
+      sectionId: null,
+      source: 'manual',
+      createdAt: now,
+      updatedAt: now,
+    };
+
+    setUserWordOverrides((current) => [draft, ...current]);
+    setOverridesNotice('New draft added. Fill it in and save.');
+  };
+
+  const handleExportOverrides = () => {
+    const payload = {
+      meta: {
+        exportedAt: new Date().toISOString(),
+        count: userWordOverrides.length,
+      },
+      overrides: userWordOverrides,
+    };
+
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `local-word-overrides-${new Date().toISOString().slice(0, 10)}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+    setOverridesNotice('Local word list exported.');
+  };
+
+  const handleExportProjectFormat = () => {
+    const projectFormat = {
+      meta: {
+        schema_version: 1,
+        generated_at: new Date().toISOString(),
+        note: 'Generated from local IndexedDB word overrides. Merge into content/book/word_overrides.json if desired.',
+      },
+      global: {} as Record<string, { polish: string; english: string[]; partOfSpeech: string }>,
+      bySection: {} as Record<string, Record<string, { polish: string; english: string[]; partOfSpeech: string }>>,
+    };
+
+    for (const override of userWordOverrides) {
+      const normalizedToken = normalizeToken(override.polish);
+      const entry = {
+        polish: override.polish,
+        english: override.english,
+        partOfSpeech: override.partOfSpeech || 'word',
+      };
+
+      if (override.sectionId) {
+        if (!projectFormat.bySection[override.sectionId]) {
+          projectFormat.bySection[override.sectionId] = {};
+        }
+        projectFormat.bySection[override.sectionId][normalizedToken] = entry;
+      } else {
+        projectFormat.global[normalizedToken] = entry;
+      }
+    }
+
+    const blob = new Blob([JSON.stringify(projectFormat, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `word-overrides-project-format-${new Date().toISOString().slice(0, 10)}.json`;
+    link.click();
+    URL.revokeObjectURL(url);
+    setOverridesNotice('Project-format word overrides exported.');
+  };
+
+  const handleImportOverridesClick = () => {
+    importOverridesInputRef.current?.click();
+  };
+
+  const handleImportOverrides = async (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) {
+      return;
+    }
+
+    setIsImportingOverrides(true);
+    setOverridesNotice(null);
+
+    try {
+      const raw = await file.text();
+      const parsed = JSON.parse(raw) as { overrides?: unknown } | UserWordOverride[];
+      const incoming = Array.isArray(parsed) ? parsed : Array.isArray(parsed.overrides) ? parsed.overrides : [];
+
+      let importedCount = 0;
+      for (const item of incoming) {
+        if (!isUserWordOverrideLike(item)) {
+          continue;
+        }
+
+        await saveUserWordOverride({
+          id: typeof item.id === 'string' ? item.id : undefined,
+          normalizedToken: normalizeToken(item.polish),
+          polish: item.polish.trim(),
+          english: item.english.map((entry) => entry.trim()).filter(Boolean),
+          partOfSpeech: item.partOfSpeech?.trim() || 'word',
+          sectionId: item.sectionId?.trim() || null,
+          source: item.source ?? 'manual',
+          provider: item.provider,
+        });
+        importedCount += 1;
+      }
+
+      await refreshOverrides();
+      setOverridesNotice(`Imported ${importedCount} local word override${importedCount === 1 ? '' : 's'}.`);
+    } catch (error) {
+      console.error('Failed to import overrides:', error);
+      setOverridesNotice('Failed to import local word list. Check that the JSON format is valid.');
+    } finally {
+      event.target.value = '';
+      setIsImportingOverrides(false);
     }
   };
 
@@ -615,6 +868,30 @@ export default function SettingsPage() {
           </h2>
           
           <div className="space-y-4">
+            <div className="flex items-center justify-between rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/20">
+              <div>
+                <h3 className="font-medium text-gray-900 dark:text-white">
+                  Developer Mode (Temporary)
+                </h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Bypass section/difficulty progression locks on Learn page for testing.
+                </p>
+              </div>
+              <button
+                onClick={handleDevModeToggle}
+                disabled={isSavingDevMode}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors disabled:opacity-60 ${
+                  devModeEnabled ? 'bg-amber-500' : 'bg-gray-300 dark:bg-gray-600'
+                }`}
+              >
+                <span
+                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                    devModeEnabled ? 'translate-x-6' : 'translate-x-1'
+                  }`}
+                />
+              </button>
+            </div>
+
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Daily Goal
@@ -645,6 +922,149 @@ export default function SettingsPage() {
               </select>
             </div>
           </div>
+        </div>
+
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+                Local Word List
+              </h2>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Review, edit, delete, import, and export the translations you save from exercise tooltips.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={handleAddOverride}
+                className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+              >
+                <Plus className="h-4 w-4" />
+                Add Word
+              </button>
+              <button
+                onClick={handleExportOverrides}
+                disabled={userWordOverrides.length === 0}
+                className="inline-flex items-center gap-2 rounded-lg bg-primary-500 px-3 py-2 text-sm font-semibold text-white hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                <Download className="h-4 w-4" />
+                Export
+              </button>
+              <button
+                onClick={handleExportProjectFormat}
+                disabled={userWordOverrides.length === 0}
+                className="inline-flex items-center gap-2 rounded-lg border border-violet-300 px-3 py-2 text-sm font-semibold text-violet-700 hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-violet-700 dark:text-violet-300 dark:hover:bg-violet-950/30"
+              >
+                <Download className="h-4 w-4" />
+                Export Project Format
+              </button>
+              <button
+                onClick={handleImportOverridesClick}
+                disabled={isImportingOverrides}
+                className="inline-flex items-center gap-2 rounded-lg border border-gray-300 px-3 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-60 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+              >
+                <Upload className="h-4 w-4" />
+                {isImportingOverrides ? 'Importing...' : 'Import'}
+              </button>
+              <input
+                ref={importOverridesInputRef}
+                type="file"
+                accept="application/json"
+                className="hidden"
+                onChange={handleImportOverrides}
+              />
+            </div>
+          </div>
+
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+            <input
+              type="text"
+              value={overrideSearch}
+              onChange={(event) => setOverrideSearch(event.target.value)}
+              placeholder="Search by Polish or English..."
+              className="w-full max-w-md rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+            />
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              {filteredOverrides.length} / {userWordOverrides.length} entries
+            </p>
+          </div>
+
+          {overridesNotice && (
+            <div className="mb-4 rounded-lg border border-cyan-200 bg-cyan-50 px-4 py-3 text-sm text-cyan-800 dark:border-cyan-800 dark:bg-cyan-950/30 dark:text-cyan-200">
+              {overridesNotice}
+            </div>
+          )}
+
+          {isLoadingOverrides ? (
+            <p className="text-sm text-gray-500 dark:text-gray-400">Loading local word list...</p>
+          ) : filteredOverrides.length === 0 ? (
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              No local word overrides yet. Save missing translations from an exercise tooltip or add one manually here.
+            </p>
+          ) : (
+            <div className="space-y-3">
+              {filteredOverrides.map((override) => (
+                <div
+                  key={override.id}
+                  className="rounded-xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900/40"
+                >
+                  <div className="grid gap-3 md:grid-cols-[1.2fr_1.6fr_0.8fr_0.9fr_auto]">
+                    <input
+                      type="text"
+                      value={override.polish}
+                      onChange={(event) => updateOverrideDraft(override.id, 'polish', event.target.value)}
+                      placeholder="Polish word"
+                      className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+                    />
+                    <input
+                      type="text"
+                      value={override.english.join(', ')}
+                      onChange={(event) => updateOverrideDraft(override.id, 'english', event.target.value)}
+                      placeholder="English translation(s), comma separated"
+                      className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+                    />
+                    <input
+                      type="text"
+                      value={override.partOfSpeech}
+                      onChange={(event) => updateOverrideDraft(override.id, 'partOfSpeech', event.target.value)}
+                      placeholder="Part of speech"
+                      className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+                    />
+                    <input
+                      type="text"
+                      value={override.sectionId ?? ''}
+                      onChange={(event) => updateOverrideDraft(override.id, 'sectionId', event.target.value)}
+                      placeholder="Section (optional)"
+                      className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-white"
+                    />
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => void handleSaveOverride(override)}
+                        disabled={savingOverrideId === override.id || !override.polish.trim() || override.english.length === 0}
+                        className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-600 disabled:cursor-not-allowed disabled:opacity-50"
+                      >
+                        <Save className="h-4 w-4" />
+                        {savingOverrideId === override.id ? 'Saving...' : 'Save'}
+                      </button>
+                      <button
+                        onClick={() => void handleDeleteOverride(override.id)}
+                        disabled={deletingOverrideId === override.id}
+                        className="inline-flex items-center gap-2 rounded-lg border border-red-300 px-3 py-2 text-sm font-semibold text-red-600 hover:bg-red-50 disabled:cursor-not-allowed disabled:opacity-50 dark:border-red-800 dark:text-red-300 dark:hover:bg-red-950/30"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex flex-wrap gap-3 text-xs text-gray-500 dark:text-gray-400">
+                    <span>Source: {override.source}</span>
+                    <span>Scope: {override.sectionId ? `section ${override.sectionId}` : 'global'}</span>
+                    {override.provider && <span>Provider: {override.provider}</span>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Data Management */}
@@ -754,5 +1174,32 @@ export default function SettingsPage() {
         </div>
       )}
     </div>
+  );
+}
+
+function sortOverrides(overrides: UserWordOverride[]): UserWordOverride[] {
+  return [...overrides].sort((first, second) => second.updatedAt - first.updatedAt);
+}
+
+function normalizeToken(value: string): string {
+  return value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^\p{L}\p{N}\s]/gu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function isUserWordOverrideLike(value: unknown): value is UserWordOverride {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) {
+    return false;
+  }
+
+  const candidate = value as Partial<UserWordOverride>;
+  return (
+    typeof candidate.polish === 'string' &&
+    Array.isArray(candidate.english) &&
+    candidate.english.every((entry) => typeof entry === 'string')
   );
 }

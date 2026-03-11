@@ -1,0 +1,612 @@
+{
+  "section_number": 6,
+  "topic_en": "At the Restaurant",
+  "topic_pl": "W restauracji",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "menu", "en": ["menu"], "category": "noun" },
+    { "pl": "na wynos", "en": ["to go", "take away"], "category": "phrase" },
+    { "pl": "na miejscu", "en": ["to eat in", "for here"], "category": "phrase" },
+    { "pl": "zostawić napiwek", "en": ["to leave a tip"], "category": "phrase" },
+    { "pl": "zajęty", "en": ["occupied", "taken"], "category": "adjective" },
+    { "pl": "wolny", "en": ["vacant", "free", "empty"], "category": "adjective" },
+    { "pl": "rachunek", "en": ["bill"], "category": "noun" },
+    { "pl": "jeść na mieście", "en": ["to eat out"], "category": "phrase" },
+    { "pl": "polecać", "en": ["to recommend"], "category": "verb" },
+    { "pl": "kelner", "en": ["waiter"], "category": "noun" },
+    { "pl": "kelnerka", "en": ["waitress"], "category": "noun" },
+    { "pl": "stolik", "en": ["table", "restaurant table"], "category": "noun" },
+    { "pl": "zarezerwować", "en": ["to book", "to reserve"], "category": "verb" },
+    { "pl": "płacić razem", "en": ["to pay together"], "category": "phrase" },
+    { "pl": "płacić osobno", "en": ["to pay separately"], "category": "phrase" },
+    { "pl": "dla mnie", "en": ["for me"], "category": "phrase" },
+    { "pl": "dosiąść się", "en": ["to join somebody", "to sit with somebody", "to sit at the table"], "category": "verb" },
+    { "pl": "najedzony", "en": ["full up", "not hungry"], "category": "adjective" },
+    { "pl": "Smacznego!", "en": ["Enjoy your meal!"], "category": "phrase" },
+    { "pl": "Ja stawiam.", "en": ["My treat."], "category": "phrase" },
+    { "pl": "zamówić", "en": ["to order"], "category": "verb" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "meat_names",
+      "content": "Useful names of meat:",
+      "examples": [
+        "wołowina = beef",
+        "wieprzowina = pork",
+        "jagnięcina = lamb",
+        "kurczak = chicken",
+        "cielęcina = veal",
+        "kaczka = duck",
+        "indyk = turkey"
+      ]
+    },
+    {
+      "id": 1,
+      "topic": "polecac_accusative",
+      "content": "Use the accusative after the verb 'polecać' (to recommend)."
+    },
+    {
+      "id": 3,
+      "topic": "prosze_or_poprosze_in_restaurant",
+      "content": "In a restaurant or store, you can often use either 'proszę' or 'poproszę'. 'poproszę' sounds slightly more polite or more natural in many ordering contexts."
+    },
+    {
+      "id": 5,
+      "topic": "menu_sections",
+      "content": "Useful names of menu sections:",
+      "examples": [
+        "przystawki = appetisers, starters",
+        "dania główne = main courses",
+        "dodatki = side dishes",
+        "desery = desserts",
+        "napoje = beverages"
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "stolik_vs_stol",
+      "content": "'stolik' can refer to a restaurant table, coffee table, or bedside table. A regular dining-room table is 'stół'."
+    },
+    {
+      "id": 8,
+      "topic": "dla_dwoch_osob_pattern",
+      "content": "Useful memorised phrases after 'dla':",
+      "examples": [
+        "dla dwóch osób = for two",
+        "dla trzech osób = for three",
+        "dla czterech osób = for four",
+        "dla pięciu osób = for five",
+        "dla sześciu osób = for six"
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "popular_polish_dishes",
+      "content": "Examples of popular Polish dishes:",
+      "examples": [
+        "pierogi = dumplings",
+        "bigos = hunter's stew",
+        "kopytka = potato dumplings",
+        "gołąbki = stuffed cabbage rolls",
+        "placki ziemniaczane = potato pancakes"
+      ]
+    },
+    {
+      "id": 11,
+      "topic": "panstwo_formal_plural",
+      "content": "'Państwo' means formal plural 'you'. It is used to politely address more than one person."
+    },
+    {
+      "id": 13,
+      "topic": "responses_to_free_taken",
+      "content": "Possible replies:",
+      "examples": [
+        "Nie, wolne. = No, it's vacant/free.",
+        "Tak, zajęte. = Yes, it's taken."
+      ]
+    },
+    {
+      "id": 15,
+      "topic": "czy_moge_short_form",
+      "content": "You can shorten some requests to '(Czy) mogę?' meaning 'May I?'. A natural answer is 'Tak, proszę/poproszę.' in the book's usage."
+    },
+    {
+      "id": 22,
+      "topic": "czy_jest_vs_czy_sa",
+      "content": "Useful pattern: '(Czy) jest...?' means 'Is there...?' and '(Czy) są...?' means 'Are there...?'",
+      "examples": [
+        "Czy jest sok pomarańczowy? = Is there any orange juice? / Have you got any orange juice?",
+        "Czy są dania wegetariańskie? = Are there any vegetarian dishes? / Have you got any vegetarian dishes?"
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "kazdy_vs_wszyscy",
+      "content": "You can say either '(Czy) każdy płaci osobno?' or '(Czy) wszyscy płacą osobno?'. After 'każdy', use a singular verb; after 'wszyscy', use a plural verb."
+    },
+    {
+      "id": 26,
+      "topic": "chcialbym_gender",
+      "content": "'I would like to' can be translated as 'chciałbym' for masculine speakers and 'chciałabym' for feminine speakers."
+    },
+    {
+      "id": 27,
+      "topic": "podac_in_restaurant",
+      "content": "The verb 'podać' is common in restaurants and can mean to bring, give, pass, or serve. Use the accusative with it.",
+      "examples": [
+        "Co podać? = What can I get you?",
+        "Co dla pani? = And for you, madam?",
+        "Co dla pana? = And for you, sir?"
+      ]
+    },
+    {
+      "id": 29,
+      "topic": "juz_podaje",
+      "content": "If a waiter says 'już podaję', they mean they are just about to bring or serve something."
+    },
+    {
+      "id": 33,
+      "topic": "jesc_present_tense",
+      "content": "Quick reminder of the present tense of 'jeść' (to eat).",
+      "tables": {
+        "present_tense": {
+          "ja": "jem",
+          "ty": "jesz",
+          "on_ona_ono": "je",
+          "my": "jemy",
+          "wy": "jecie",
+          "oni_one": "jedzą"
+        }
+      }
+    },
+    {
+      "id": 34,
+      "topic": "knajpa",
+      "content": "'knajpa' is a colloquial word for a restaurant, bar, or pub."
+    },
+    {
+      "id": 35,
+      "topic": "kolacja_phrase",
+      "content": "For now, memorise the phrase 'na kolację' meaning 'for dinner/supper'."
+    },
+    {
+      "id": 36,
+      "topic": "najedzony_vs_pelny",
+      "content": "If you want to say you have eaten enough, use 'jestem najedzony'. 'pełny' can also mean full in other contexts, such as 'Autobus był pełny'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "The waiter recommends the duck.",
+      "pl": "Kelner poleca kaczkę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kelner", "poleca", "kaczkę"],
+      "grammar_tags": ["restaurant", "accusative_basic"]
+    },
+    {
+      "id": 2,
+      "en": "What do you recommend, madam?",
+      "pl": "Co pani poleca?",
+      "literal_en": null,
+      "english_variants": ["What would you recommend, madam?"],
+      "polish_alternatives": [],
+      "focus_words": ["co", "pani", "poleca"],
+      "grammar_tags": ["restaurant", "formal", "question"]
+    },
+    {
+      "id": 3,
+      "en": "Can I have the bill, please?",
+      "pl": "(Czy) mogę prosić rachunek?",
+      "literal_en": null,
+      "english_variants": ["May I have the bill, please?"],
+      "polish_alternatives": ["Poproszę rachunek."],
+      "focus_words": ["mogę", "prosić", "rachunek"],
+      "grammar_tags": ["restaurant", "request", "question"]
+    },
+    {
+      "id": 4,
+      "en": "Can I have it to go, please?",
+      "pl": "(Czy) mogę to poprosić/prosić na wynos?",
+      "literal_en": null,
+      "english_variants": ["Can I get this to go, please?"],
+      "polish_alternatives": ["Poproszę to na wynos."],
+      "focus_words": ["mogę", "to", "na wynos"],
+      "grammar_tags": ["restaurant", "request", "question"]
+    },
+    {
+      "id": 5,
+      "en": "Can I have the menu, please?",
+      "pl": "(Czy) mogę prosić menu?",
+      "literal_en": null,
+      "english_variants": ["May I have the menu, please?"],
+      "polish_alternatives": ["Poproszę menu."],
+      "focus_words": ["mogę", "prosić", "menu"],
+      "grammar_tags": ["restaurant", "request", "question"]
+    },
+    {
+      "id": 6,
+      "en": "The same for me (lit. Please the same).",
+      "pl": "Poproszę/Proszę to samo.",
+      "literal_en": "Please the same.",
+      "english_variants": ["The same for me."],
+      "polish_alternatives": [],
+      "focus_words": ["poproszę", "to samo"],
+      "grammar_tags": ["restaurant", "ordering"]
+    },
+    {
+      "id": 7,
+      "en": "Can I have the pasta, please? To eat in.",
+      "pl": "(Czy) mogę prosić makaron? Na miejscu.",
+      "literal_en": null,
+      "english_variants": ["Can I have the pasta, please? For here."],
+      "polish_alternatives": ["Poproszę makaron. Na miejscu."],
+      "focus_words": ["mogę", "prosić", "makaron", "na miejscu"],
+      "grammar_tags": ["restaurant", "ordering"]
+    },
+    {
+      "id": 8,
+      "en": "A table for two (lit. for two persons), right (lit. yes)?",
+      "pl": "Stolik dla dwóch osób, tak?",
+      "literal_en": "Table for two persons, yes?",
+      "english_variants": ["A table for two, right?"],
+      "polish_alternatives": [],
+      "focus_words": ["stolik", "dla dwóch osób", "tak"],
+      "grammar_tags": ["restaurant", "table_booking"]
+    },
+    {
+      "id": 9,
+      "en": "We recommend the dumplings and stuffed cabbage rolls.",
+      "pl": "Polecamy pierogi i gołąbki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["polecamy", "pierogi", "gołąbki"],
+      "grammar_tags": ["restaurant", "recommendation"]
+    },
+    {
+      "id": 10,
+      "en": "Enjoy your meal!",
+      "pl": "Smacznego!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["smacznego"],
+      "grammar_tags": ["fixed_expression", "restaurant"]
+    },
+    {
+      "id": 11,
+      "en": "\"Are you paying together or separately?\" \"(We're paying) separately.\"",
+      "pl": "– Płacą państwo razem czy osobno? – (Płacimy) osobno.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["– Państwo płacą razem czy osobno? – Osobno."],
+      "focus_words": ["płacą państwo", "razem", "czy", "osobno"],
+      "grammar_tags": ["dialogue", "formal", "restaurant"]
+    },
+    {
+      "id": 12,
+      "en": "My treat. Can I have the bill, please?",
+      "pl": "Ja stawiam. (Czy) mogę prosić (o) rachunek?",
+      "literal_en": null,
+      "english_variants": ["It's on me. Can I have the bill, please?"],
+      "polish_alternatives": ["Ja stawiam. Poproszę rachunek."],
+      "focus_words": ["ja stawiam", "mogę", "prosić", "rachunek"],
+      "grammar_tags": ["restaurant", "fixed_expression"]
+    },
+    {
+      "id": 13,
+      "en": "Is this seat taken?",
+      "pl": "(Czy) to miejsce jest zajęte?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To miejsce jest zajęte?"],
+      "focus_words": ["to miejsce", "zajęte"],
+      "grammar_tags": ["question", "restaurant"]
+    },
+    {
+      "id": 14,
+      "en": "This waitress is very nice.",
+      "pl": "Ta kelnerka jest bardzo miła.",
+      "literal_en": null,
+      "english_variants": ["This waitress is very kind."],
+      "polish_alternatives": [],
+      "focus_words": ["ta", "kelnerka", "bardzo miła"],
+      "grammar_tags": ["description", "restaurant"]
+    },
+    {
+      "id": 15,
+      "en": "May I join you?",
+      "pl": "(Czy) mogę się dosiąść?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mogę", "się dosiąść"],
+      "grammar_tags": ["question", "restaurant", "request"]
+    },
+    {
+      "id": 16,
+      "en": "Excuse me, is this table free?",
+      "pl": "Przepraszam, (czy) ten stolik jest wolny?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Przepraszam, ten stolik jest wolny?"],
+      "focus_words": ["przepraszam", "ten stolik", "wolny"],
+      "grammar_tags": ["question", "restaurant"]
+    },
+    {
+      "id": 17,
+      "en": "For here or to go? / Eat in or take away?",
+      "pl": "Na miejscu czy na wynos?",
+      "literal_en": null,
+      "english_variants": ["For here or to go?"],
+      "polish_alternatives": [],
+      "focus_words": ["na miejscu", "czy", "na wynos"],
+      "grammar_tags": ["restaurant", "service_phrase"]
+    },
+    {
+      "id": 18,
+      "en": "Is the toilet occupied?",
+      "pl": "(Czy) toaleta jest zajęta?",
+      "literal_en": null,
+      "english_variants": ["Is the bathroom occupied?"],
+      "polish_alternatives": [],
+      "focus_words": ["toaleta", "zajęta"],
+      "grammar_tags": ["question", "feminine_adjective"]
+    },
+    {
+      "id": 19,
+      "en": "We've ordered to go.",
+      "pl": "Zamówiliśmy na wynos.",
+      "literal_en": null,
+      "english_variants": ["We ordered takeaway."],
+      "polish_alternatives": [],
+      "focus_words": ["zamówiliśmy", "na wynos"],
+      "grammar_tags": ["past_tense", "restaurant"]
+    },
+    {
+      "id": 20,
+      "en": "A table for three, please.",
+      "pl": "Poproszę/Proszę stolik dla trzech osób.",
+      "literal_en": null,
+      "english_variants": ["A table for three, please."],
+      "polish_alternatives": [],
+      "focus_words": ["poproszę", "stolik", "dla trzech osób"],
+      "grammar_tags": ["restaurant", "table_booking"]
+    },
+    {
+      "id": 21,
+      "en": "We're waiting for a table.",
+      "pl": "Czekamy na stolik.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["czekamy", "na stolik"],
+      "grammar_tags": ["restaurant", "present_tense"]
+    },
+    {
+      "id": 22,
+      "en": "Is there a free table?",
+      "pl": "(Czy) jest wolny stolik?",
+      "literal_en": null,
+      "english_variants": ["Is there a vacant table?"],
+      "polish_alternatives": [],
+      "focus_words": ["czy jest", "wolny stolik"],
+      "grammar_tags": ["question", "restaurant", "existential"]
+    },
+    {
+      "id": 23,
+      "en": "Do you recommend anything from the menu, sir?",
+      "pl": "(Czy) poleca pan coś z menu?",
+      "literal_en": null,
+      "english_variants": ["Would you recommend anything from the menu, sir?"],
+      "polish_alternatives": [],
+      "focus_words": ["poleca pan", "coś", "z menu"],
+      "grammar_tags": ["formal", "question", "restaurant"]
+    },
+    {
+      "id": 24,
+      "en": "Shall we split the bill? (lit. Is everyone paying separately?)",
+      "pl": "(Czy) każdy płaci osobno?",
+      "literal_en": "Is everyone paying separately?",
+      "english_variants": ["Shall we split the bill?"],
+      "polish_alternatives": ["Czy wszyscy płacą osobno?"],
+      "focus_words": ["każdy", "płaci", "osobno"],
+      "grammar_tags": ["question", "restaurant"]
+    },
+    {
+      "id": 25,
+      "en": "The waiter was helpful.",
+      "pl": "Kelner był pomocny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kelner", "był", "pomocny"],
+      "grammar_tags": ["past_tense", "description"]
+    },
+    {
+      "id": 26,
+      "en": "I'd like to book a table for two.",
+      "pl": "Chciałbym zarezerwować stolik dla dwóch osób.",
+      "literal_en": null,
+      "english_variants": ["I would like to reserve a table for two."],
+      "polish_alternatives": ["Chciałabym zarezerwować stolik dla dwóch osób."],
+      "focus_words": ["chciałbym", "zarezerwować", "stolik", "dla dwóch osób"],
+      "grammar_tags": ["conditional_polite", "restaurant", "booking"]
+    },
+    {
+      "id": 27,
+      "en": "Hello! Would you like to see the menu? (lit. Pass the menu?)",
+      "pl": "Dzień dobry! (Czy) podać menu?",
+      "literal_en": "Good day! Serve/bring the menu?",
+      "english_variants": ["Hello! Would you like the menu?"],
+      "polish_alternatives": [],
+      "focus_words": ["dzień dobry", "podać", "menu"],
+      "grammar_tags": ["restaurant", "service_phrase"]
+    },
+    {
+      "id": 28,
+      "en": "We're paying together.",
+      "pl": "Płacimy razem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["płacimy", "razem"],
+      "grammar_tags": ["restaurant", "present_tense"]
+    },
+    {
+      "id": 29,
+      "en": "\"Is there an English menu?\" \"Coming right up (lit. I'm passing it now).\"",
+      "pl": "– (Czy) jest menu po angielsku? – Już podaję.",
+      "literal_en": "I'm serving/bringing it now.",
+      "english_variants": ["Is there an English menu? Coming right up."],
+      "polish_alternatives": [],
+      "focus_words": ["czy jest", "menu po angielsku", "już podaję"],
+      "grammar_tags": ["dialogue", "restaurant", "existential"]
+    },
+    {
+      "id": 30,
+      "en": "For me, the pizza and a salad.",
+      "pl": "Dla mnie pizza i sałatka.",
+      "literal_en": null,
+      "english_variants": ["For me, pizza and a salad."],
+      "polish_alternatives": [],
+      "focus_words": ["dla mnie", "pizza", "sałatka"],
+      "grammar_tags": ["restaurant", "ordering"]
+    },
+    {
+      "id": 31,
+      "en": "I want to leave a tip.",
+      "pl": "Chcę zostawić napiwek.",
+      "literal_en": null,
+      "english_variants": ["I want to leave a tip."],
+      "polish_alternatives": [],
+      "focus_words": ["chcę", "zostawić", "napiwek"],
+      "grammar_tags": ["restaurant", "present_tense"]
+    },
+    {
+      "id": 32,
+      "en": "Can I have the bill, please?",
+      "pl": "(Czy) mogę prosić rachunek?",
+      "literal_en": null,
+      "english_variants": ["May I have the bill, please?"],
+      "polish_alternatives": ["Poproszę rachunek."],
+      "focus_words": ["mogę", "prosić", "rachunek"],
+      "grammar_tags": ["restaurant", "request", "question"]
+    },
+    {
+      "id": 33,
+      "en": "Students often eat out.",
+      "pl": "Studenci często jedzą na mieście.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["studenci", "często", "jedzą", "na mieście"],
+      "grammar_tags": ["present_tense", "restaurant"]
+    },
+    {
+      "id": 34,
+      "en": "Are we eating out today? The new restaurant is great.",
+      "pl": "(Czy) jemy dziś/dzisiaj na mieście? Ta nowa restauracja jest świetna.",
+      "literal_en": null,
+      "english_variants": ["Are we going out to eat today? The new restaurant is great."],
+      "polish_alternatives": [],
+      "focus_words": ["jemy", "dziś", "na mieście", "ta nowa restauracja", "świetna"],
+      "grammar_tags": ["question", "present_tense", "restaurant"]
+    },
+    {
+      "id": 35,
+      "en": "This morning (lit. Today morning), I booked a table for dinner (supper).",
+      "pl": "Dzisiaj/Dziś rano zarezerwowałem stolik na kolację.",
+      "literal_en": "Today morning I reserved a table for supper.",
+      "english_variants": ["This morning I booked a table for dinner."],
+      "polish_alternatives": ["Dziś rano zarezerwowałam stolik na kolację."],
+      "focus_words": ["dziś rano", "zarezerwowałem", "stolik", "na kolację"],
+      "grammar_tags": ["past_tense", "restaurant", "time_expression"]
+    },
+    {
+      "id": 36,
+      "en": "I'm full (up).",
+      "pl": "Jestem najedzony.",
+      "literal_en": null,
+      "english_variants": ["I'm full."],
+      "polish_alternatives": ["Jestem najedzona."],
+      "focus_words": ["jestem", "najedzony"],
+      "grammar_tags": ["state", "masculine_form"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "na wynos",
+      "na miejscu",
+      "rachunek",
+      "stolik",
+      "kelner",
+      "kelnerka",
+      "polecać",
+      "zarezerwować",
+      "płacić razem",
+      "płacić osobno",
+      "zostawić napiwek",
+      "Smacznego!",
+      "Ja stawiam.",
+      "najedzony"
+    ],
+    "sentence_cards_priority": [2, 3, 4, 5, 8, 11, 16, 20, 22, 23, 24, 26, 27, 29, 35, 36]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'A table for three, please.'",
+      "correct_answer": "Poproszę stolik dla trzech osób.",
+      "distractors": [
+        "Poproszę stolik na trzy osoby.",
+        "Proszę trzy stoliki.",
+        "Mogę stolik trzy osoby?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'We're paying together.'",
+      "answer_pl": "Płacimy razem.",
+      "word_bank": ["Płacimy", "razem"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Is there a free table?'",
+      "accepted_answers": [
+        "Czy jest wolny stolik?",
+        "Jest wolny stolik?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

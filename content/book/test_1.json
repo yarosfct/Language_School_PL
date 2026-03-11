@@ -1,0 +1,368 @@
+{
+  "test_number": 1,
+  "title": "Test 1",
+  "source_type": "book_test",
+  "pages": [46, 47, 48, 49],
+  "skills_tested": [
+    "vocabulary recall",
+    "translation",
+    "common collocations",
+    "grammar",
+    "sentence completion",
+    "crossword",
+    "short speaking prompts"
+  ],
+  "parts": [
+    {
+      "part_number": 1,
+      "type": "fill_in_the_gaps_with_translations",
+      "instruction_en": "Fill in the gaps with translations of the words in brackets.",
+      "items": [
+        { "id": 1, "prompt_en": "(I speak)", "sentence_pl": "_____ trochę po polsku." },
+        { "id": 2, "prompt_en": "(name)", "sentence_pl": "Masz bardzo piękne _____." },
+        { "id": 3, "prompt_en": "(children)", "sentence_pl": "Nie mamy _____." },
+        { "id": 4, "prompt_en": "(pasta)", "sentence_pl": "Moja mama robi bardzo dobry _____." },
+        { "id": 5, "prompt_en": "(breakfast)", "sentence_pl": "Co zwykle jesz na _____?" },
+        { "id": 6, "prompt_en": "(hungry), (supper)", "sentence_pl": "Jeśli jesteś _____, _____ jest w kuchni." },
+        { "id": 7, "prompt_en": "(driving licence)", "sentence_pl": "Jego _____ jest gotowe." },
+        { "id": 8, "prompt_en": "(wife), (female friend)", "sentence_pl": "To jest moja _____, Magda, a to jest moja _____, Marta." },
+        { "id": 9, "prompt_en": "(to sell)", "sentence_pl": "Czy możesz to _____?" },
+        { "id": 10, "prompt_en": "(impossible)", "sentence_pl": "Niestety, ale to _____." },
+        { "id": 11, "prompt_en": "(tall), (husband)", "sentence_pl": "Czy widzisz ten _____ budynek? Mój _____ tam pracuje." },
+        { "id": 12, "prompt_en": "(long)", "sentence_pl": "Spotkanie było bardzo _____." },
+        { "id": 13, "prompt_en": "(red), (black)", "sentence_pl": "Myślę, że _____ buty będą lepsze niż _____." },
+        { "id": 14, "prompt_en": "(wallet), (keys)", "sentence_pl": "Idziemy? Masz _____ i _____ przy sobie?" },
+        { "id": 15, "prompt_en": "(fruit, pl.), (vegetables)", "sentence_pl": "Sprzedają tu bardzo dobre _____ i _____." },
+        { "id": 16, "prompt_en": "(siblings)", "sentence_pl": "Czy masz _____?" },
+        { "id": 17, "prompt_en": "(aunt), (uncle)", "sentence_pl": "Jej _____ i _____ mieszkają w Warszawie." },
+        { "id": 18, "prompt_en": "(hungry), (supper)", "sentence_pl": "Jesteś _____? Chcesz iść na _____?" },
+        { "id": 19, "prompt_en": "(juice), (milk), (yoghurt)", "sentence_pl": "Czy możesz kupić _____, _____ i _____ w drodze do domu?" },
+        { "id": 20, "prompt_en": "(sauce)", "sentence_pl": "Poproszę _____ czosnkowy." }
+      ]
+    },
+    {
+      "part_number": 2,
+      "type": "match_words_to_form_common_phrases",
+      "instruction_en": "Match the words to form common phrases.",
+      "left_column": [
+        "prawo",
+        "aparat",
+        "dowód",
+        "domowe",
+        "owoce",
+        "gorąca",
+        "napój",
+        "woda",
+        "pora",
+        "zupa"
+      ],
+      "right_column": [
+        "czekolada",
+        "niegazowana",
+        "pomidorowa",
+        "fotograficzny",
+        "jedzenie",
+        "obiadowa",
+        "osobisty",
+        "gazowany",
+        "jazdy",
+        "morza"
+      ]
+    },
+    {
+      "part_number": 3,
+      "type": "multiple_choice_sentence_completion",
+      "instruction_en": "Choose the correct option to complete the sentences.",
+      "items": [
+        {
+          "id": 1,
+          "sentence_pl": "Kelnerka poleca _____.",
+          "options": {
+            "A": "rachunek",
+            "B": "stek",
+            "C": "smacznego"
+          }
+        },
+        {
+          "id": 2,
+          "sentence_pl": "Przepraszam, ale to miejsce jest _____.",
+          "options": {
+            "A": "wolne",
+            "B": "na wynos",
+            "C": "zajęte"
+          }
+        },
+        {
+          "id": 3,
+          "sentence_pl": "Proszę dużą kawę _____.",
+          "options": {
+            "A": "na wynos",
+            "B": "razem",
+            "C": "osobno"
+          }
+        },
+        {
+          "id": 4,
+          "sentence_pl": "Oni często _____ na mieście.",
+          "options": {
+            "A": "ją",
+            "B": "jeją",
+            "C": "jedzą"
+          }
+        },
+        {
+          "id": 5,
+          "sentence_pl": "_____ nowa restauracja jest bardzo droga.",
+          "options": {
+            "A": "Ten",
+            "B": "To",
+            "C": "Ta"
+          }
+        },
+        {
+          "id": 6,
+          "sentence_pl": "Twój dom jest _____.",
+          "options": {
+            "A": "miły",
+            "B": "fajny",
+            "C": "niemożliwy"
+          }
+        },
+        {
+          "id": 7,
+          "sentence_pl": "Przepraszam, ale ta łyżka jest _____.",
+          "options": {
+            "A": "brudna",
+            "B": "tania",
+            "C": "świetna"
+          }
+        },
+        {
+          "id": 8,
+          "sentence_pl": "Ta kawa jest za _____.",
+          "options": {
+            "A": "silna",
+            "B": "czysta",
+            "C": "mocna"
+          }
+        }
+      ]
+    },
+    {
+      "part_number": 4,
+      "type": "crossword",
+      "instruction_en": "Complete the crossword.",
+      "across": [
+        { "id": 2, "clue_pl": "antonim otwarty" },
+        { "id": 4, "clue_pl": "na przykład: grecka, Cezar, owocowa" },
+        { "id": 7, "clue_pl": "pracuje w restauracji" },
+        { "id": 9, "clue_pl": "babcia i dziadek" },
+        { "id": 12, "clue_pl": "na przykład: sernik lub szarlotka" },
+        { "id": 13, "clue_pl": "Musisz mieć ten dokument, kiedy podróżujesz" },
+        { "id": 14, "clue_pl": "___ muzyki, radia, podcastu" },
+        { "id": 15, "clue_pl": "Banan jest żółty, a truskawka jest ___." },
+        { "id": 16, "clue_pl": "bliska koleżanka" },
+        { "id": 17, "clue_pl": "nieładny" }
+      ],
+      "down": [
+        { "id": 1, "clue_pl": "na przykład: sól, pieprz, kardamon, cynamon, oregano" },
+        { "id": 2, "clue_pl": "___ stolik w restauracji na piątek" },
+        { "id": 3, "clue_pl": "antonim suchy" },
+        { "id": 5, "clue_pl": "nie być punktualnie – ___" },
+        { "id": 6, "clue_pl": "synonim relaksować się" },
+        { "id": 8, "clue_pl": "mama i tata" },
+        { "id": 10, "clue_pl": "W polskiej fladze są dwa kolory: czerwony i ___" },
+        { "id": 11, "clue_pl": "Mężczyzna, który ma żonę jest ___." }
+      ]
+    },
+    {
+      "part_number": 5,
+      "type": "translate_words_into_english",
+      "instruction_en": "Translate the words below into English.",
+      "items": [
+        "napiwek",
+        "kelner",
+        "krzesło",
+        "ciężki",
+        "ważny",
+        "bogaty",
+        "chusteczki",
+        "pieniądze",
+        "reklamówka",
+        "kiełbasa",
+        "lody",
+        "cukier",
+        "zielony",
+        "żółty",
+        "rodzeństwo",
+        "córka",
+        "danie",
+        "majonez",
+        "ryba",
+        "nazwisko"
+      ]
+    },
+    {
+      "part_number": 6,
+      "type": "match_words_to_form_common_phrases",
+      "instruction_en": "Match the words to form common phrases.",
+      "left_column": [
+        "oglądać",
+        "zamówić",
+        "płacić",
+        "znać się",
+        "przeliterować",
+        "mieszkać",
+        "zamykać"
+      ],
+      "right_column": [
+        "nazwisko",
+        "z widzenia",
+        "sklep",
+        "kawę",
+        "film",
+        "rachunek",
+        "w centrum"
+      ]
+    },
+    {
+      "part_number": 7,
+      "type": "complete_translations_by_adding_letters",
+      "instruction_en": "Complete the translations by adding letters.",
+      "items": [
+        { "id": 1, "target_en": "strawberry" },
+        { "id": 2, "target_en": "wife" },
+        { "id": 3, "target_en": "brother" },
+        { "id": 4, "target_en": "driving licence" },
+        { "id": 5, "target_en": "blue" },
+        { "id": 6, "target_en": "expensive" },
+        { "id": 7, "target_en": "snack" },
+        { "id": 8, "target_en": "brown" },
+        { "id": 9, "target_en": "book" },
+        { "id": 10, "target_en": "sugar" },
+        { "id": 11, "target_en": "ice" },
+        { "id": 12, "target_en": "interesting" },
+        { "id": 13, "target_en": "bill" },
+        { "id": 14, "target_en": "garlic" },
+        { "id": 15, "target_en": "gold (adj.)" },
+        { "id": 16, "target_en": "closed" },
+        { "id": 17, "target_en": "keys" },
+        { "id": 18, "target_en": "Enjoy your meal!" },
+        { "id": 19, "target_en": "grandmother" },
+        { "id": 20, "target_en": "surname" }
+      ]
+    },
+    {
+      "part_number": 8,
+      "type": "give_opposites",
+      "instruction_en": "Give opposites of the words below.",
+      "items": [
+        "mokry",
+        "długi",
+        "razem",
+        "duży",
+        "zajęte",
+        "na miejscu",
+        "łatwy",
+        "szybki",
+        "pełny",
+        "bogaty"
+      ]
+    },
+    {
+      "part_number": 9,
+      "type": "choose_correct_translations",
+      "instruction_en": "Choose the correct translations of the expressions and sentences below.",
+      "items": [
+        {
+          "id": 1,
+          "prompt_en": "in my opinion",
+          "options": {
+            "A": "w moja opinia",
+            "B": "moim zdaniem"
+          }
+        },
+        {
+          "id": 2,
+          "prompt_en": "You're bored.",
+          "options": {
+            "A": "Jesteś nudny.",
+            "B": "Jesteś znudzony."
+          }
+        },
+        {
+          "id": 3,
+          "prompt_en": "I have a child.",
+          "options": {
+            "A": "Mam dziecko.",
+            "B": "Mam dzieci."
+          }
+        },
+        {
+          "id": 4,
+          "prompt_en": "siblings",
+          "options": {
+            "A": "rodzeństwo",
+            "B": "rodzice"
+          }
+        },
+        {
+          "id": 5,
+          "prompt_en": "Thank you for your present.",
+          "options": {
+            "A": "Dziękuję za prezent.",
+            "B": "Dziękuję dla prezent"
+          }
+        },
+        {
+          "id": 6,
+          "prompt_en": "I'm sorry that your flight has been cancelled.",
+          "options": {
+            "A": "Przepraszam, że twój lot jest odwołana.",
+            "B": "Przykro mi, że twój lot jest odwołany."
+          }
+        },
+        {
+          "id": 7,
+          "prompt_en": "I don't think that she lives here.",
+          "options": {
+            "A": "Myślę, że ona tutaj nie mieszka.",
+            "B": "Myślę ona tutaj nie mieszka."
+          }
+        },
+        {
+          "id": 8,
+          "prompt_en": "Can you hear that?",
+          "options": {
+            "A": "Czy możesz słyszeć to?",
+            "B": "Słyszysz to?"
+          }
+        },
+        {
+          "id": 9,
+          "prompt_en": "His wife is Anna.",
+          "options": {
+            "A": "Jego żona jest Anna.",
+            "B": "Jego żona ma na imię Anna."
+          }
+        }
+      ]
+    },
+    {
+      "part_number": 10,
+      "type": "speaking_prompts",
+      "instruction_en": "Say a few words on the given topics. Answer the questions.",
+      "items": [
+        "Say a few words about yourself.",
+        "What do you usually have for breakfast, lunch/dinner, and supper?",
+        "What did you eat today and yesterday?",
+        "What fruit and vegetables do you like the most?",
+        "What types of drinks do you have most often?",
+        "What do you usually have on you when you leave your house, e.g. in your bag or pocket?",
+        "Name seven words or expressions that come to your mind when you think of a restaurant.",
+        "Say a few words about your family.",
+        "What colours of crayons are usually included in a set?"
+      ]
+    }
+  ]
+}

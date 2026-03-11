@@ -1,0 +1,643 @@
+{
+  "section_number": 28,
+  "topic_en": "Time",
+  "topic_pl": "Czas",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "rano", "en": ["in the morning"], "category": "adverb" },
+    { "pl": "popołudnie", "en": ["afternoon"], "category": "noun" },
+    { "pl": "wieczór", "en": ["evening"], "category": "noun" },
+    { "pl": "noc", "en": ["night"], "category": "noun" },
+    { "pl": "północ", "en": ["midnight"], "category": "noun" },
+    { "pl": "dzisiaj", "en": ["today"], "category": "adverb" },
+    { "pl": "dziś", "en": ["today"], "category": "adverb" },
+    { "pl": "jutro", "en": ["tomorrow"], "category": "adverb" },
+    { "pl": "wczoraj", "en": ["yesterday"], "category": "adverb" },
+    { "pl": "pojutrze", "en": ["the day after tomorrow"], "category": "adverb" },
+    { "pl": "przedwczoraj", "en": ["the day before yesterday"], "category": "adverb" },
+    { "pl": "dzień", "en": ["day"], "category": "noun" },
+    { "pl": "dzień roboczy", "en": ["weekday", "working day"], "category": "phrase" },
+    { "pl": "weekend", "en": ["weekend"], "category": "noun" },
+    { "pl": "tydzień", "en": ["week"], "category": "noun" },
+    { "pl": "miesiąc", "en": ["month"], "category": "noun" },
+    { "pl": "rok", "en": ["year"], "category": "noun" },
+    { "pl": "kalendarz", "en": ["calendar"], "category": "noun" },
+    { "pl": "data", "en": ["date"], "category": "noun" },
+    { "pl": "ostatni", "en": ["last"], "category": "adjective" },
+    { "pl": "następny", "en": ["next"], "category": "adjective" },
+    { "pl": "teraz", "en": ["now"], "category": "adverb" },
+    { "pl": "wtedy", "en": ["then"], "category": "adverb" },
+    { "pl": "zegarek", "en": ["watch"], "category": "noun" },
+    { "pl": "minuta", "en": ["minute"], "category": "noun" },
+    { "pl": "godzina", "en": ["hour"], "category": "noun" },
+    { "pl": "czas", "en": ["time"], "category": "noun" },
+    { "pl": "około", "en": ["about", "around"], "category": "preposition" },
+    { "pl": "kwadrans", "en": ["quarter (of an hour)"], "category": "noun" },
+    { "pl": "podczas gdy", "en": ["while"], "category": "conjunction" },
+    { "pl": "moment", "en": ["moment"], "category": "noun" },
+    { "pl": "chwila", "en": ["moment", "short while"], "category": "noun" },
+    { "pl": "właśnie", "en": ["right now", "just now"], "category": "adverb" },
+    { "pl": "przyszłość", "en": ["future"], "category": "noun" },
+    { "pl": "przeszłość", "en": ["past"], "category": "noun" },
+    { "pl": "teraźniejszość", "en": ["present"], "category": "noun" },
+    { "pl": "cały", "en": ["all", "whole"], "category": "adjective" },
+    { "pl": "zaraz", "en": ["right away", "in a minute"], "category": "adverb" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "days_of_week",
+      "content": "Memorise the days of the week:",
+      "examples": [
+        "poniedziałek = Monday",
+        "wtorek = Tuesday",
+        "środa = Wednesday",
+        "czwartek = Thursday",
+        "piątek = Friday",
+        "sobota = Saturday",
+        "niedziela = Sunday"
+      ],
+      "content_note": "Unlike in English, in Polish the names of the days are not capitalised."
+    },
+    {
+      "id": 2,
+      "topic": "znaczyc_examples",
+      "content": "'Znaczyć' means 'to matter' or 'to mean', depending on context.",
+      "examples": [
+        "To nic nie znaczy. = It doesn’t matter.",
+        "Ta firma wiele dla mnie znaczy. = This company means a lot to me."
+      ],
+      "content_note": "After 'mieć znaczenie', use the accusative."
+    },
+    {
+      "id": 3,
+      "topic": "rano_not_w_rano",
+      "content": "Say 'rano' for 'in the morning', not 'w rano'.",
+      "examples": [
+        "po południu = in the afternoon",
+        "wieczorem = in the evening",
+        "w nocy = at night"
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "w_plus_days_except_wtorek",
+      "content": "On + day name is formed with 'w' before all days except 'wtorek', which is usually preceded by 'we'.",
+      "examples": [
+        "we wtorek"
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "wczoraj_vs_w_przeszlym_tygodniu_miesiacu",
+      "content": "The book distinguishes adverbial time references like 'wczoraj' from full prepositional phrases like 'w zeszłym tygodniu' or 'w zeszłym miesiącu'.",
+      "examples": [
+        "W zeszłym/ostatnim tygodniu spotkałem się z kolegami.",
+        "W zeszłym/ostatnim tygodniu byłem na wakacjach."
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "codziennie_rano",
+      "content": "The correct expression is 'codziennie rano', not forms based on literal English patterns."
+    },
+    {
+      "id": 7,
+      "topic": "months_of_year",
+      "content": "Memorise the months:",
+      "examples": [
+        "styczeń",
+        "luty",
+        "marzec",
+        "kwiecień",
+        "maj",
+        "czerwiec",
+        "lipiec",
+        "sierpień",
+        "wrzesień",
+        "październik",
+        "listopad",
+        "grudzień"
+      ],
+      "content_note": "They are not capitalised in Polish."
+    },
+    {
+      "id": 8,
+      "topic": "nastepny_miesiac_not_bardzo_zajety",
+      "content": "Do not say 'Następny miesiąc będzie bardzo zajęty'. Use adjective forms like 'pracowity', 'intensywny', or 'bardzo pracowity/intensywny' with periods of time.",
+      "examples": [
+        "Weekend był bardzo pracowity.",
+        "Mój brat jest pracowity."
+      ]
+    },
+    {
+      "id": 15,
+      "topic": "day_off_expression",
+      "content": "You can also say 'dzień wolny' to express a day off."
+    },
+    {
+      "id": 16,
+      "topic": "patrzec_na",
+      "content": "After the verb 'patrzeć' (to look), use the preposition 'na'."
+    },
+    {
+      "id": 17,
+      "topic": "chwila_synonym_moment",
+      "content": "'Chwila' is commonly used as a near-synonym of 'moment'."
+    },
+    {
+      "id": 18,
+      "topic": "zastanawiac_sie_examples",
+      "content": "The verb 'to wonder' is 'zastanawiać się'.",
+      "examples": [
+        "Zastanawiam się, gdzie on teraz jest.",
+        "Ciekawe, ile to kosztuje!"
+      ]
+    },
+    {
+      "id": 20,
+      "topic": "godzina_forms",
+      "content": "The noun 'godzina' (hour) changes depending on the number.",
+      "examples": [
+        "1 godzina",
+        "2/3/4 godziny",
+        "5/6/7/8/9/10 godzin",
+        "12 godzin",
+        "13 godzin"
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "minuta_forms",
+      "content": "The noun 'minuta' (minute) also changes depending on the number.",
+      "examples": [
+        "1 minuta",
+        "2/3/4 minuty",
+        "5/6/7/8/9/10 minut",
+        "12 minut",
+        "13 minut"
+      ]
+    },
+    {
+      "id": 29,
+      "topic": "w_dni_robocze",
+      "content": "Useful contrast:",
+      "examples": [
+        "dzień roboczy = weekday / working day",
+        "w dni robocze = on weekdays"
+      ],
+      "content_note": "The book notes that 'dzień roboczy' can be associated with work or office contexts."
+    },
+    {
+      "id": 32,
+      "topic": "polnoc",
+      "content": "'Północ' can mean not only midnight but also north, depending on context."
+    },
+    {
+      "id": 33,
+      "topic": "podczas_vs_gdy",
+      "content": "'Podczas' means during, while 'podczas gdy' means while."
+    },
+    {
+      "id": 34,
+      "topic": "urodziny_plural",
+      "content": "'Urodziny' (birthday) is a plural noun in Polish."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Today is a perfect day for a walk.",
+      "pl": "Dzisiaj/Dziś jest idealny dzień na spacer.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dziś jest idealny dzień na spacer."],
+      "focus_words": ["dziś", "jest idealny dzień", "na spacer"],
+      "grammar_tags": ["time", "description"]
+    },
+    {
+      "id": 2,
+      "en": "\"Was Tuesday yesterday?\" \"Wednesday.\"",
+      "pl": "– Jaki wczoraj był dzień? – Środa.",
+      "literal_en": null,
+      "english_variants": ["What day was yesterday? Wednesday."],
+      "polish_alternatives": [],
+      "focus_words": ["jaki", "wczoraj był dzień", "środa"],
+      "grammar_tags": ["time", "dialogue", "question", "past_tense"]
+    },
+    {
+      "id": 3,
+      "en": "\"What day is it today?\" \"Friday.\"",
+      "pl": "– Jaki dzień jest dzisiaj/dziś? – Piątek.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jaki dzień jest dziś? Piątek."],
+      "focus_words": ["jaki dzień", "jest dziś", "piątek"],
+      "grammar_tags": ["time", "dialogue", "question"]
+    },
+    {
+      "id": 4,
+      "en": "Do you have any plans for tonight / the evening?",
+      "pl": "(Czy) masz jakieś plany na wieczór?",
+      "literal_en": null,
+      "english_variants": ["Do you have any plans for this evening?"],
+      "polish_alternatives": [],
+      "focus_words": ["masz jakieś plany", "na wieczór"],
+      "grammar_tags": ["time", "question", "accusative_basic"]
+    },
+    {
+      "id": 5,
+      "en": "It doesn’t matter if it’s tomorrow or the day after tomorrow.",
+      "pl": "To nie ma znaczenia, czy jutro, czy pojutrze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["to nie ma znaczenia", "czy jutro", "czy pojutrze"],
+      "grammar_tags": ["time", "subordinate_clause", "negation"]
+    },
+    {
+      "id": 6,
+      "en": "Are you busy now? What are you doing?",
+      "pl": "(Czy) jesteś teraz zajęty? Co robisz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jesteś teraz zajęty? Co robisz?"],
+      "focus_words": ["jesteś teraz zajęty", "co robisz"],
+      "grammar_tags": ["time", "question"]
+    },
+    {
+      "id": 7,
+      "en": "It’s very quiet here in the morning.",
+      "pl": "Rano jest tu/tutaj bardzo cicho.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Rano jest tutaj bardzo cicho."],
+      "focus_words": ["rano", "jest tu bardzo cicho"],
+      "grammar_tags": ["time", "description"]
+    },
+    {
+      "id": 8,
+      "en": "This weekend, we’re making a picnic.",
+      "pl": "W ten weekend robimy piknik.",
+      "literal_en": null,
+      "english_variants": ["We’re having a picnic this weekend."],
+      "polish_alternatives": [],
+      "focus_words": ["w ten weekend", "robimy piknik"],
+      "grammar_tags": ["time", "present_tense", "accusative_basic"]
+    },
+    {
+      "id": 9,
+      "en": "On Monday, he cleaned the flat all day.",
+      "pl": "W poniedziałek sprzątał mieszkanie (przez) cały dzień.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["W poniedziałek sprzątał mieszkanie cały dzień."],
+      "focus_words": ["w poniedziałek", "sprzątał mieszkanie", "cały dzień"],
+      "grammar_tags": ["time", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 10,
+      "en": "This month has thirty days.",
+      "pl": "Ten miesiąc ma trzydzieści dni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten miesiąc", "ma trzydzieści dni"],
+      "grammar_tags": ["time", "description"]
+    },
+    {
+      "id": 11,
+      "en": "Every morning (lit. Every day morning), I open the calendar.",
+      "pl": "Codziennie rano otwieram kalendarz.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["codziennie rano", "otwieram kalendarz"],
+      "grammar_tags": ["time", "accusative_basic", "daily_routine"]
+    },
+    {
+      "id": 12,
+      "en": "I’m free in the afternoon. I can meet with you then.",
+      "pl": "Jestem wolny po południu. Mogę się wtedy z tobą spotkać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem wolna po południu. Mogę się wtedy z tobą spotkać."],
+      "focus_words": ["jestem wolny po południu", "mogę się wtedy", "z tobą spotkać"],
+      "grammar_tags": ["time", "reflexive_verb", "two_verbs_rule"]
+    },
+    {
+      "id": 13,
+      "en": "Last week was very busy/intense for me.",
+      "pl": "Zeszły/Ostatni tydzień był dla mnie bardzo pracowity/intensywny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ostatni tydzień był dla mnie bardzo intensywny."],
+      "focus_words": ["zeszły tydzień", "był dla mnie", "bardzo pracowity", "intensywny"],
+      "grammar_tags": ["time", "past_tense", "description"]
+    },
+    {
+      "id": 14,
+      "en": "Next month will be very busy.",
+      "pl": "Następny/Przyszły miesiąc będzie bardzo pracowity/intensywny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Przyszły miesiąc będzie bardzo intensywny."],
+      "focus_words": ["następny miesiąc", "będzie bardzo pracowity"],
+      "grammar_tags": ["time", "future_tense", "description"]
+    },
+    {
+      "id": 15,
+      "en": "Where did you (pl.) live then?",
+      "pl": "Gdzie wtedy mieszkaliście?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie", "wtedy", "mieszkaliście"],
+      "grammar_tags": ["time", "question", "past_tense"]
+    },
+    {
+      "id": 16,
+      "en": "We visited this city last year.",
+      "pl": "Zwiedzaliśmy to miasto rok temu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zwiedzaliśmy", "to miasto", "rok temu"],
+      "grammar_tags": ["time", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 17,
+      "en": "\"Do you know where Adam is?\" \"Yes, we’re having dinner/lunch right now.\"",
+      "pl": "– (Czy) wiesz, gdzie jest Adam? – Tak. Jemy właśnie obiad.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy wiesz, gdzie jest Adam? Tak, jemy właśnie obiad."],
+      "focus_words": ["wiesz, gdzie jest Adam", "tak", "jemy właśnie obiad"],
+      "grammar_tags": ["time", "dialogue", "question", "subordinate_clause"]
+    },
+    {
+      "id": 18,
+      "en": "They will be working remotely all next week.",
+      "pl": "Przez następny/przyszły tydzień będą pracować zdalnie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Przez przyszły tydzień będą pracować zdalnie."],
+      "focus_words": ["przez następny tydzień", "będą pracować zdalnie"],
+      "grammar_tags": ["time", "future_tense"]
+    },
+    {
+      "id": 19,
+      "en": "The present and the future are more important than the past.",
+      "pl": "Teraźniejszość i przyszłość są ważniejsze niż przeszłość.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["teraźniejszość", "przyszłość", "są ważniejsze niż", "przeszłość"],
+      "grammar_tags": ["time", "comparison"]
+    },
+    {
+      "id": 20,
+      "en": "\"The watch is broken. What time is it? Do you have a/your watch?\"",
+      "pl": "Zegarek jest zepsuty. Która (jest) godzina? / (Czy) masz zegarek?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zegarek jest zepsuty. Która godzina? Masz zegarek?"],
+      "focus_words": ["zegarek jest zepsuty", "która godzina", "masz zegarek"],
+      "grammar_tags": ["time", "dialogue", "question"]
+    },
+    {
+      "id": 21,
+      "en": "I have a day off the day after tomorrow.",
+      "pl": "Pojutrze mam wolne.",
+      "literal_en": null,
+      "english_variants": ["The day after tomorrow I’m off."],
+      "polish_alternatives": ["Pojutrze mam dzień wolny."],
+      "focus_words": ["pojutrze", "mam wolne"],
+      "grammar_tags": ["time", "fixed_expression"]
+    },
+    {
+      "id": 22,
+      "en": "I love looking at the stars at night.",
+      "pl": "Kocham patrzeć na gwiazdy w nocy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kocham patrzeć", "na gwiazdy", "w nocy"],
+      "grammar_tags": ["time", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 23,
+      "en": "One moment, please. I’ll be back in a minute.",
+      "pl": "Moment, zaraz wracam.",
+      "literal_en": null,
+      "english_variants": ["Just a moment, I’ll be right back."],
+      "polish_alternatives": ["Chwila, zaraz wracam."],
+      "focus_words": ["moment", "zaraz wracam"],
+      "grammar_tags": ["time", "fixed_expression"]
+    },
+    {
+      "id": 24,
+      "en": "I was wondering what you’re doing tonight.",
+      "pl": "Zastanawiam się, co robisz (dziś/ dzisiaj) wieczorem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zastanawiam się, co robisz dziś wieczorem."],
+      "focus_words": ["zastanawiam się", "co robisz", "dziś wieczorem"],
+      "grammar_tags": ["time", "subordinate_clause", "reflexive_verb"]
+    },
+    {
+      "id": 25,
+      "en": "I have a meeting in a quarter (of an hour), so I’m in a hurry.",
+      "pl": "Mam spotkanie za kwadrans, więc się spieszę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam spotkanie", "za kwadrans", "więc się spieszę"],
+      "grammar_tags": ["time", "subordinate_sequence", "reflexive_verb"]
+    },
+    {
+      "id": 26,
+      "en": "We can meet with you in about three hours.",
+      "pl": "Możemy się z tobą spotkać za około trzy godziny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Możemy się z tobą spotkać za trzy godziny."],
+      "focus_words": ["możemy się z tobą spotkać", "za około trzy godziny"],
+      "grammar_tags": ["time", "reflexive_verb", "time_expression"]
+    },
+    {
+      "id": 27,
+      "en": "One episode lasts only twenty-five minutes.",
+      "pl": "Jeden odcinek trwa tylko dwadzieścia pięć minut.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jeden odcinek", "trwa tylko", "dwadzieścia pięć minut"],
+      "grammar_tags": ["time", "duration"]
+    },
+    {
+      "id": 28,
+      "en": "Sometimes it’s hard to find time for sport.",
+      "pl": "Czasami trudno (jest) znaleźć czas na sport.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czasami trudno znaleźć czas na sport."],
+      "focus_words": ["czasami", "trudno znaleźć czas", "na sport"],
+      "grammar_tags": ["time", "two_verbs_rule"]
+    },
+    {
+      "id": 29,
+      "en": "I don’t like parking in the city centre on weekdays.",
+      "pl": "Nie lubię parkować w centrum miasta w dni robocze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nie lubię parkować", "w centrum miasta", "w dni robocze"],
+      "grammar_tags": ["time", "negation", "two_verbs_rule", "locative"]
+    },
+    {
+      "id": 30,
+      "en": "The day before yesterday I waited for the bus for four hours.",
+      "pl": "Przedwczoraj czekałem na autobus przez cztery godziny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Przedwczoraj czekałam na autobus przez cztery godziny."],
+      "focus_words": ["przedwczoraj", "czekałem na autobus", "przez cztery godziny"],
+      "grammar_tags": ["time", "past_tense", "duration"]
+    },
+    {
+      "id": 31,
+      "en": "While she was cooking, I was cleaning.",
+      "pl": "Podczas gdy ona gotowała, ja sprzątałem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["podczas gdy", "ona gotowała", "ja sprzątałem"],
+      "grammar_tags": ["time", "past_tense", "subordinate_clause"]
+    },
+    {
+      "id": 32,
+      "en": "It’s almost midnight. Time to go to bed.",
+      "pl": "Już prawie północ. Czas iść spać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["już prawie północ", "czas iść spać"],
+      "grammar_tags": ["time", "fixed_expression", "two_verbs_rule"]
+    },
+    {
+      "id": 33,
+      "en": "It was so strange! Last week you (f.) didn’t say anything about your birthday!",
+      "pl": "W zeszłym/ostatnim tygodniu były twoje urodziny i nic nie mówiłaś.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["W zeszłym tygodniu były twoje urodziny i nic nie mówiłaś."],
+      "focus_words": ["w zeszłym tygodniu", "były twoje urodziny", "i nic nie mówiłaś"],
+      "grammar_tags": ["time", "past_tense", "feminine_form", "negation"]
+    },
+    {
+      "id": 34,
+      "en": "This date is very important to (lit. for) me.",
+      "pl": "Ta data jest dla mnie bardzo ważna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta data", "jest dla mnie", "bardzo ważna"],
+      "grammar_tags": ["time", "description"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "rano",
+      "popołudnie",
+      "wieczór",
+      "noc",
+      "północ",
+      "dzisiaj",
+      "dziś",
+      "jutro",
+      "wczoraj",
+      "pojutrze",
+      "przedwczoraj",
+      "dzień",
+      "dzień roboczy",
+      "weekend",
+      "tydzień",
+      "miesiąc",
+      "rok",
+      "kalendarz",
+      "data",
+      "ostatni",
+      "następny",
+      "teraz",
+      "wtedy",
+      "zegarek",
+      "minuta",
+      "godzina",
+      "czas",
+      "około",
+      "kwadrans",
+      "podczas gdy",
+      "moment",
+      "chwila",
+      "właśnie",
+      "przyszłość",
+      "przeszłość",
+      "teraźniejszość",
+      "cały",
+      "zaraz"
+    ],
+    "sentence_cards_priority": [1, 3, 4, 5, 6, 9, 11, 12, 13, 14, 17, 18, 20, 21, 22, 24, 25, 26, 30, 32, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'I have a day off the day after tomorrow.'",
+      "correct_answer": "Pojutrze mam wolne.",
+      "distractors": [
+        "Pojutrze jestem wolny dzień.",
+        "Jutro mam wolne.",
+        "Przedwczoraj mam wolne."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'One episode lasts only twenty-five minutes.'",
+      "answer_pl": "Jeden odcinek trwa tylko dwadzieścia pięć minut.",
+      "word_bank": ["Jeden", "odcinek", "trwa", "tylko", "dwadzieścia", "pięć", "minut"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'I love looking at the stars at night.'",
+      "accepted_answers": [
+        "Kocham patrzeć na gwiazdy w nocy."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

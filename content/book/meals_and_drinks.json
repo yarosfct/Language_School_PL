@@ -1,0 +1,561 @@
+{
+  "section_number": 7,
+  "topic_en": "Meals & Drinks",
+  "topic_pl": "Posiłki i napoje",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "napój", "en": ["drink", "beverage"], "category": "noun" },
+    { "pl": "kawa", "en": ["coffee"], "category": "noun" },
+    { "pl": "herbata", "en": ["tea"], "category": "noun" },
+    { "pl": "mrożona herbata", "en": ["iced tea"], "category": "phrase" },
+    { "pl": "woda", "en": ["water"], "category": "noun" },
+    { "pl": "mleko", "en": ["milk"], "category": "noun" },
+    { "pl": "sok", "en": ["juice"], "category": "noun" },
+    { "pl": "gorąca czekolada", "en": ["hot chocolate"], "category": "phrase" },
+    { "pl": "lemoniada", "en": ["lemonade"], "category": "noun" },
+    { "pl": "jogurt", "en": ["yoghurt", "yogurt"], "category": "noun" },
+    { "pl": "piwo", "en": ["beer"], "category": "noun" },
+    { "pl": "wino", "en": ["wine"], "category": "noun" },
+    { "pl": "alkohol", "en": ["alcohol"], "category": "noun" },
+    { "pl": "napój bezalkoholowy", "en": ["soft drink", "non-alcoholic drink"], "category": "phrase" },
+    { "pl": "napój gazowany", "en": ["soda", "fizzy drink"], "category": "phrase" },
+    { "pl": "lód", "en": ["ice"], "category": "noun" },
+    { "pl": "śniadanie", "en": ["breakfast"], "category": "noun" },
+    { "pl": "świeżo wyciskany", "en": ["freshly squeezed"], "category": "adjective_phrase" },
+    { "pl": "pora obiadowa", "en": ["dinnertime", "lunchtime"], "category": "phrase" },
+    { "pl": "obiad", "en": ["dinner", "lunch"], "category": "noun" },
+    { "pl": "kolacja", "en": ["supper", "late dinner"], "category": "noun" },
+    { "pl": "przekąska", "en": ["snack"], "category": "noun" },
+    { "pl": "przystawka", "en": ["starter"], "category": "noun" },
+    { "pl": "danie", "en": ["dish"], "category": "noun" },
+    { "pl": "potrawa", "en": ["dish"], "category": "noun" },
+    { "pl": "piknik", "en": ["picnic"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "places_to_order_food_or_drink",
+      "content": "Typical places where you can order food or drinks:",
+      "examples": [
+        "bar = bar",
+        "stołówka = canteen",
+        "kawiarnia = café",
+        "restauracja = restaurant",
+        "pub = pub",
+        "bar mleczny = cheap bar / milk bar"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "types_of_wine",
+      "content": "Names of wine types:",
+      "examples": [
+        "wino wytrawne = dry wine",
+        "wino półwytrawne = medium dry wine",
+        "wino półsłodkie = medium sweet wine",
+        "wino słodkie = sweet wine",
+        "wino białe = white wine",
+        "wino czerwone = red wine",
+        "wino musujące = sparkling wine"
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "zamowic_accusative",
+      "content": "After the verb 'zamówić' (to order), use the accusative."
+    },
+    {
+      "id": 6,
+      "topic": "bez_glutenu_bez_laktozy",
+      "content": "Useful expressions:",
+      "examples": [
+        "bez glutenu = without gluten",
+        "bezglutenowy = gluten-free",
+        "bez laktozy = without lactose",
+        "bezlaktozowy = lactose-free"
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "chcialbys_forms_and_cos_do_picia",
+      "content": "Use 'chciałbyś' for masculine and 'chciałabyś' for feminine. Memorise the phrase 'coś do picia' (something to drink)."
+    },
+    {
+      "id": 9,
+      "topic": "kupic_pic_chciec_accusative",
+      "content": "After 'kupić', 'pić', and 'chcieć', use the accusative."
+    },
+    {
+      "id": 11,
+      "topic": "napoj_gazowany_literal",
+      "content": "'napój gazowany' can be understood literally as 'sparkling/gassed drink'."
+    },
+    {
+      "id": 13,
+      "topic": "drink_loanword_and_plaza",
+      "content": "In Polish there is also the noun 'drink', but in spoken Polish it refers only to an alcoholic mixed drink. 'Plaża' means beach, and 'na plaży' means on the beach."
+    },
+    {
+      "id": 20,
+      "topic": "kuchnia_meaning",
+      "content": "'kuchnia' means kitchen. In 'w kuchni' it means in the kitchen. It can also mean cuisine."
+    },
+    {
+      "id": 21,
+      "topic": "z_plus_instrumental",
+      "content": "After the conjunction/preposition 'z' (with), use the instrumental case."
+    },
+    {
+      "id": 23,
+      "topic": "still_vs_sparkling_water",
+      "content": "Useful contrast:",
+      "examples": [
+        "woda gazowana = sparkling water",
+        "woda niegazowana = still water"
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "drink_customization_phrases",
+      "content": "Useful expressions:",
+      "examples": [
+        "z lodem = with ice",
+        "bez lodu = without ice",
+        "z cytryną = with lemon",
+        "bez cytryny = without lemon",
+        "z cukrem = with sugar",
+        "bez cukru = sugar-free / without sugar",
+        "z mlekiem = with milk",
+        "bez mleka = without milk"
+      ]
+    },
+    {
+      "id": 25,
+      "topic": "coffee_with_milk",
+      "content": "Coffee with milk can be called 'kawa z mlekiem' or 'biała kawa'."
+    },
+    {
+      "id": 26,
+      "topic": "mrozona_herbata_and_dostac",
+      "content": "'mrożona herbata' literally means frozen tea. After the verb 'dostać' (to get), use the accusative."
+    },
+    {
+      "id": 27,
+      "topic": "kefir",
+      "content": "You can also find kefir in shops and supermarkets across Poland. It is a fermented milk drink."
+    },
+    {
+      "id": 29,
+      "topic": "obiad_more_common_than_lunch",
+      "content": "'obiad' is much more common in Poland than the English concept 'lunch'. It often refers to the main meal you eat during working hours."
+    },
+    {
+      "id": 30,
+      "topic": "double_negation_and_nie_ma",
+      "content": "Polish uses double negation. 'There isn't' and 'there aren't' are often translated as 'nie ma'. Also remember 'nie ma nic lepszego' means 'there's nothing better'."
+    },
+    {
+      "id": 31,
+      "topic": "dwa_vs_dwie",
+      "content": "To translate 'two' into Polish, use 'dwa' with masculine and neuter nouns, and 'dwie' with feminine nouns.",
+      "examples": [
+        "dwie kawy",
+        "dwa soki",
+        "dwa piwa"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "piwo_plural",
+      "content": "'piwo' means beer. 'piwa' is the plural form."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "What do you usually have (lit. eat) for breakfast?",
+      "pl": "Co zwykle jesz na śniadanie?",
+      "literal_en": "What do you usually eat for breakfast?",
+      "english_variants": ["What do you usually have for breakfast?"],
+      "polish_alternatives": [],
+      "focus_words": ["co", "zwykle", "jesz", "na śniadanie"],
+      "grammar_tags": ["question", "food", "present_tense"]
+    },
+    {
+      "id": 2,
+      "en": "Is it already dinnertime?",
+      "pl": "(Czy) to już (jest) pora obiadowa?",
+      "literal_en": null,
+      "english_variants": ["Is it lunchtime already?"],
+      "polish_alternatives": ["To już pora obiadowa?"],
+      "focus_words": ["to", "już", "pora obiadowa"],
+      "grammar_tags": ["question", "time_expression"]
+    },
+    {
+      "id": 3,
+      "en": "Do you prefer sweet or dry wine?",
+      "pl": "(Czy) wolisz słodkie, czy wytrawne wino?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wolisz", "słodkie", "czy", "wytrawne", "wino"],
+      "grammar_tags": ["question", "food"]
+    },
+    {
+      "id": 4,
+      "en": "What do you want for dessert?",
+      "pl": "Co chcesz na deser?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["co", "chcesz", "na deser"],
+      "grammar_tags": ["question", "food"]
+    },
+    {
+      "id": 5,
+      "en": "Can I have (lit. order) a coffee to go?",
+      "pl": "(Czy) mogę zamówić kawę na wynos?",
+      "literal_en": "Can I order coffee to go?",
+      "english_variants": ["Can I have a coffee to go?"],
+      "polish_alternatives": [],
+      "focus_words": ["mogę", "zamówić", "kawę", "na wynos"],
+      "grammar_tags": ["question", "request", "food"]
+    },
+    {
+      "id": 6,
+      "en": "Is this starter gluten-free?",
+      "pl": "(Czy) ta przystawka jest bez glutenu?",
+      "literal_en": null,
+      "english_variants": ["Is this starter gluten free?"],
+      "polish_alternatives": ["Czy ta przystawka jest bezglutenowa?"],
+      "focus_words": ["ta przystawka", "bez glutenu"],
+      "grammar_tags": ["question", "dietary"]
+    },
+    {
+      "id": 7,
+      "en": "Do you drink (lit. You drink alcohol) or should I order a non-alcoholic drink?",
+      "pl": "(Czy) pijesz alkohol, czy zamówić napój bezalkoholowy?",
+      "literal_en": null,
+      "english_variants": ["Do you drink alcohol, or should I order a soft drink?"],
+      "polish_alternatives": [],
+      "focus_words": ["pijesz", "alkohol", "czy", "zamówić", "napój bezalkoholowy"],
+      "grammar_tags": ["question", "food"]
+    },
+    {
+      "id": 8,
+      "en": "Would you like something to drink? Maybe some juice?",
+      "pl": "(Czy) chciałbyś coś do picia? Może sok?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy chciałabyś coś do picia? Może sok?"],
+      "focus_words": ["chciałbyś", "coś do picia", "może", "sok"],
+      "grammar_tags": ["question", "polite_conditional", "food"]
+    },
+    {
+      "id": 9,
+      "en": "Can you buy some juice or water on your way home (lit. in the way to home), please?",
+      "pl": "(Czy) możesz kupić sok albo wodę w drodze do domu?",
+      "literal_en": null,
+      "english_variants": ["Can you buy some juice or water on the way home, please?"],
+      "polish_alternatives": [],
+      "focus_words": ["możesz", "kupić", "sok", "albo", "wodę", "w drodze do domu"],
+      "grammar_tags": ["question", "request", "food"]
+    },
+    {
+      "id": 10,
+      "en": "My grandma likes drinking hot chocolate when she reads.",
+      "pl": "Moja babcia lubi pić gorącą czekoladę, kiedy czyta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja babcia", "lubi pić", "gorącą czekoladę", "kiedy czyta"],
+      "grammar_tags": ["present_tense", "food", "subordinate_clause"]
+    },
+    {
+      "id": 11,
+      "en": "Here is the fridge if you (pl.) want some beer or soda.",
+      "pl": "Tutaj/Tu jest lodówka, jeśli chcecie piwo albo napój gazowany.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Tu jest lodówka, jeśli chcecie piwo albo napój gazowany."],
+      "focus_words": ["tu", "jest", "lodówka", "jeśli", "chcecie", "piwo", "napój gazowany"],
+      "grammar_tags": ["food", "present_tense"]
+    },
+    {
+      "id": 12,
+      "en": "The tea is good for a cold.",
+      "pl": "Ta herbata jest dobra na przeziębienie.",
+      "literal_en": null,
+      "english_variants": ["This tea is good for a cold."],
+      "polish_alternatives": [],
+      "focus_words": ["ta herbata", "dobra", "na przeziębienie"],
+      "grammar_tags": ["food", "health"]
+    },
+    {
+      "id": 13,
+      "en": "We bought cold drinks at the beach.",
+      "pl": "Kupiliśmy zimne napoje na plaży.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kupiliśmy", "zimne napoje", "na plaży"],
+      "grammar_tags": ["past_tense", "food", "location"]
+    },
+    {
+      "id": 14,
+      "en": "Is this freshly squeezed juice?",
+      "pl": "(Czy) to (jest) świeżo wyciskany sok?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To świeżo wyciskany sok?"],
+      "focus_words": ["to", "świeżo wyciskany", "sok"],
+      "grammar_tags": ["question", "food"]
+    },
+    {
+      "id": 15,
+      "en": "Can you buy some snacks for the picnic?",
+      "pl": "(Czy) możesz kupić przekąski na piknik?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["możesz", "kupić", "przekąski", "na piknik"],
+      "grammar_tags": ["question", "request", "food"]
+    },
+    {
+      "id": 16,
+      "en": "Can I have a large juice, please?",
+      "pl": "(Czy) mogę prosić duży sok?",
+      "literal_en": null,
+      "english_variants": ["Can I have a large juice, please?"],
+      "polish_alternatives": ["Poproszę duży sok."],
+      "focus_words": ["mogę", "prosić", "duży sok"],
+      "grammar_tags": ["question", "request", "food"]
+    },
+    {
+      "id": 17,
+      "en": "This lemonade is perfect.",
+      "pl": "Ta lemoniada jest idealna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta lemoniada", "idealna"],
+      "grammar_tags": ["description", "food"]
+    },
+    {
+      "id": 18,
+      "en": "Excuse me, do you have (lit. is there) hot chocolate?",
+      "pl": "Przepraszam, (czy) jest gorąca czekolada?",
+      "literal_en": "Excuse me, is there hot chocolate?",
+      "english_variants": ["Excuse me, do you have hot chocolate?"],
+      "polish_alternatives": [],
+      "focus_words": ["przepraszam", "czy jest", "gorąca czekolada"],
+      "grammar_tags": ["question", "existential", "food"]
+    },
+    {
+      "id": 19,
+      "en": "I would like / I'll have a cold drink, please.",
+      "pl": "Chciałbym/Poproszę zimny napój.",
+      "literal_en": null,
+      "english_variants": ["I'd like a cold drink, please."],
+      "polish_alternatives": ["Chciałabym zimny napój.", "Poproszę zimny napój."],
+      "focus_words": ["chciałbym", "poproszę", "zimny napój"],
+      "grammar_tags": ["polite_order", "food"]
+    },
+    {
+      "id": 20,
+      "en": "If you're hungry, supper/dinner is in the kitchen.",
+      "pl": "Jeśli jesteś głodny, kolacja jest w kuchni.",
+      "literal_en": null,
+      "english_variants": ["If you're hungry, dinner is in the kitchen."],
+      "polish_alternatives": ["Jeśli jesteś głodna, kolacja jest w kuchni."],
+      "focus_words": ["jeśli", "jesteś głodny", "kolacja", "w kuchni"],
+      "grammar_tags": ["subordinate_clause", "food"]
+    },
+    {
+      "id": 21,
+      "en": "Is this dish with pasta?",
+      "pl": "(Czy) to danie jest z makaronem?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To danie jest z makaronem?"],
+      "focus_words": ["to danie", "z makaronem"],
+      "grammar_tags": ["question", "food", "instrumental_basic"]
+    },
+    {
+      "id": 22,
+      "en": "This is a Polish dish.",
+      "pl": "To (jest) polskie danie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To polskie danie."],
+      "focus_words": ["to", "polskie danie"],
+      "grammar_tags": ["food", "description"]
+    },
+    {
+      "id": 23,
+      "en": "Would you like still or sparkling water?",
+      "pl": "(Czy) chciałbyś wodę niegazowaną, czy gazowaną?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy chciałabyś wodę niegazowaną czy gazowaną?"],
+      "focus_words": ["chciałbyś", "wodę niegazowaną", "czy", "gazowaną"],
+      "grammar_tags": ["question", "polite_conditional", "food"]
+    },
+    {
+      "id": 24,
+      "en": "Would you (f.) like water with ice and lemon?",
+      "pl": "(Czy) chciałabyś wodę z lodem i cytryną?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["chciałabyś", "wodę", "z lodem", "i cytryną"],
+      "grammar_tags": ["question", "polite_conditional", "food", "instrumental_basic"]
+    },
+    {
+      "id": 25,
+      "en": "For me, (a) coffee with milk.",
+      "pl": "Dla mnie kawa z mlekiem.",
+      "literal_en": null,
+      "english_variants": ["For me, coffee with milk."],
+      "polish_alternatives": ["Dla mnie biała kawa."],
+      "focus_words": ["dla mnie", "kawa z mlekiem"],
+      "grammar_tags": ["ordering", "food"]
+    },
+    {
+      "id": 26,
+      "en": "Where can I get iced tea?",
+      "pl": "Gdzie mogę dostać mrożoną herbatę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie", "mogę", "dostać", "mrożoną herbatę"],
+      "grammar_tags": ["question", "food"]
+    },
+    {
+      "id": 27,
+      "en": "I usually have (lit. eat) yoghurt for dessert.",
+      "pl": "Na deser jem zwykle jogurt.",
+      "literal_en": "For dessert I usually eat yoghurt.",
+      "english_variants": ["I usually have yoghurt for dessert."],
+      "polish_alternatives": ["Zwykle jem jogurt na deser."],
+      "focus_words": ["na deser", "jem", "zwykle", "jogurt"],
+      "grammar_tags": ["present_tense", "food"]
+    },
+    {
+      "id": 28,
+      "en": "I always have (lit. drink) coffee for breakfast.",
+      "pl": "Na śniadanie zawsze piję kawę.",
+      "literal_en": "For breakfast I always drink coffee.",
+      "english_variants": ["I always have coffee for breakfast."],
+      "polish_alternatives": ["Zawsze piję kawę na śniadanie."],
+      "focus_words": ["na śniadanie", "zawsze", "piję", "kawę"],
+      "grammar_tags": ["present_tense", "food"]
+    },
+    {
+      "id": 29,
+      "en": "We always eat dinner/lunch together.",
+      "pl": "Zawsze jemy razem obiad.",
+      "literal_en": null,
+      "english_variants": ["We always eat lunch together."],
+      "polish_alternatives": ["Jemy zawsze razem obiad."],
+      "focus_words": ["zawsze", "jemy", "razem", "obiad"],
+      "grammar_tags": ["present_tense", "food"]
+    },
+    {
+      "id": 30,
+      "en": "There's nothing (lit. There isn't nothing) better than hot chocolate.",
+      "pl": "Nie ma nic lepszego niż gorąca czekolada.",
+      "literal_en": "There isn't anything better than hot chocolate.",
+      "english_variants": ["There's nothing better than hot chocolate."],
+      "polish_alternatives": [],
+      "focus_words": ["nie ma", "nic lepszego", "niż", "gorąca czekolada"],
+      "grammar_tags": ["double_negative", "food"]
+    },
+    {
+      "id": 31,
+      "en": "Two beers, please.",
+      "pl": "Poproszę/Proszę dwa piwa.",
+      "literal_en": null,
+      "english_variants": ["Two beers, please."],
+      "polish_alternatives": [],
+      "focus_words": ["poproszę", "dwa piwa"],
+      "grammar_tags": ["ordering", "food", "quantity"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "kawa",
+      "herbata",
+      "mrożona herbata",
+      "woda",
+      "sok",
+      "gorąca czekolada",
+      "lemoniada",
+      "jogurt",
+      "piwo",
+      "wino",
+      "napój bezalkoholowy",
+      "napój gazowany",
+      "śniadanie",
+      "obiad",
+      "kolacja",
+      "przekąska",
+      "przystawka",
+      "danie",
+      "piknik",
+      "świeżo wyciskany"
+    ],
+    "sentence_cards_priority": [1, 3, 5, 6, 8, 9, 14, 16, 18, 19, 21, 23, 24, 26, 30, 31]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Would you like still or sparkling water?'",
+      "correct_answer": "Czy chciałbyś wodę niegazowaną, czy gazowaną?",
+      "distractors": [
+        "Czy chciałbyś wodę zimną, czy gorącą?",
+        "Czy pijesz wodę niegazowaną czy gazowaną?",
+        "Czy masz wodę niegazowaną, czy gazowaną?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'For me, coffee with milk.'",
+      "answer_pl": "Dla mnie kawa z mlekiem.",
+      "word_bank": ["Dla", "mnie", "kawa", "z", "mlekiem"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'There's nothing better than hot chocolate.'",
+      "accepted_answers": [
+        "Nie ma nic lepszego niż gorąca czekolada."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

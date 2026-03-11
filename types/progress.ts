@@ -12,6 +12,16 @@ export interface UserProgress {
   // Topic-based progress
   topicsStarted: string[]; // topic IDs that user has started
   topicsCompleted: string[]; // topic IDs where checkpoint was passed
+  // Book-first sequential learning path
+  bookPath: BookPathProgress;
+}
+
+export type BookDifficultyLevel = 'level_1' | 'level_2' | 'level_3';
+
+export interface BookPathProgress {
+  currentSectionId: string | null;
+  currentDifficulty: BookDifficultyLevel;
+  updatedAt: number;
 }
 
 export interface AttemptRecord {
@@ -72,6 +82,7 @@ export interface UserPreferences {
   dailyGoal: number; // exercises per day
   reviewNotifications: boolean;
   soundEnabled: boolean;
+  devModeEnabled: boolean; // Temporary: bypass learning progression gates
   // TTS preferences
   ttsVoiceURI?: string; // Selected voice URI
   ttsRate: number; // 0.5 - 2.0, default 1.0

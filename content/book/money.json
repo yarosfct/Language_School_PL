@@ -1,0 +1,612 @@
+{
+  "section_number": 29,
+  "topic_en": "Money",
+  "topic_pl": "Pieniądze",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "pieniądze", "en": ["money"], "category": "noun_plural" },
+    { "pl": "moneta", "en": ["coin"], "category": "noun" },
+    { "pl": "banknot", "en": ["banknote"], "category": "noun" },
+    { "pl": "reszta", "en": ["change"], "category": "noun" },
+    { "pl": "drobne", "en": ["small change", "coins"], "category": "noun_plural" },
+    { "pl": "złoty", "en": ["zloty", "Polish zloty"], "category": "noun" },
+    { "pl": "grosz", "en": ["grosz"], "category": "noun" },
+    { "pl": "ile", "en": ["how much", "how many"], "category": "question_word" },
+    { "pl": "cena", "en": ["price"], "category": "noun" },
+    { "pl": "kosztować", "en": ["to cost"], "category": "verb" },
+    { "pl": "wysoki", "en": ["high"], "category": "adjective" },
+    { "pl": "tani", "en": ["cheap"], "category": "adjective" },
+    { "pl": "drogi", "en": ["expensive"], "category": "adjective" },
+    { "pl": "zniżka", "en": ["discount"], "category": "noun" },
+    { "pl": "zarabiać", "en": ["to earn", "to make money"], "category": "verb" },
+    { "pl": "oszczędzać", "en": ["to save", "to save up"], "category": "verb" },
+    { "pl": "wydawać", "en": ["to spend"], "category": "verb" },
+    { "pl": "płacić", "en": ["to pay"], "category": "verb" },
+    { "pl": "płacić gotówką", "en": ["to pay in cash"], "category": "phrase" },
+    { "pl": "wymienić", "en": ["to exchange"], "category": "verb" },
+    { "pl": "wypłacić", "en": ["to withdraw"], "category": "verb" },
+    { "pl": "pożyczyć", "en": ["to borrow", "to lend"], "category": "verb" },
+    { "pl": "konto", "en": ["account"], "category": "noun" },
+    { "pl": "karta", "en": ["card"], "category": "noun" },
+    { "pl": "bankomat", "en": ["ATM", "cash machine"], "category": "noun" },
+    { "pl": "przelew", "en": ["transfer", "bank transfer"], "category": "noun" },
+    { "pl": "paragon", "en": ["receipt"], "category": "noun" },
+    { "pl": "pensja", "en": ["salary"], "category": "noun" },
+    { "pl": "napiwek", "en": ["tip"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "polish_currency",
+      "content": "The Polish currency is the złoty. Banknotes exist in denominations such as 10, 20, 50, 100, 200, and 500 złotych; coins include grosze and złote values.",
+      "examples": [
+        "10 złotych",
+        "20 złotych",
+        "50 złotych",
+        "100 złotych",
+        "200 złotych",
+        "500 złotych",
+        "1 grosz",
+        "2 grosze",
+        "5 groszy",
+        "10 groszy",
+        "20 groszy",
+        "50 groszy",
+        "1 złoty",
+        "2 złote",
+        "5 złotych"
+      ]
+    },
+    {
+      "id": 2,
+      "topic": "konto_bankowe",
+      "content": "'Konto bankowe' means bank account."
+    },
+    {
+      "id": 3,
+      "topic": "card_types",
+      "content": "Common card types:",
+      "examples": [
+        "karta kredytowa = credit card",
+        "karta debetowa = debit card"
+      ],
+      "content_note": "The book notes that 'płacić kartą' translates as 'to pay by card'."
+    },
+    {
+      "id": 4,
+      "topic": "grosz_and_zloty_number_forms",
+      "content": "The noun forms change with numbers. The book highlights the patterns for złoty and grosz.",
+      "examples": [
+        "1 złoty",
+        "2/3/4 złote",
+        "5/6/7/8/9/10/11... złotych",
+        "1 grosz",
+        "2/3/4 grosze",
+        "5/6/7/8/9/10/11... groszy"
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "po_plus_accusative_with_coin",
+      "content": "In a shop, if you ask for one 1-złoty coin, use 'po' rather than just the accusative of 'złoty'.",
+      "examples": [
+        "Czy ma pan złotówkę?",
+        "Czy ma pani złotówkę?"
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "wymienic_na",
+      "content": "After the verb 'wymienić' (to exchange), use the preposition 'na'.",
+      "examples": [
+        "Chciałbym wymienić złotówki na euro.",
+        "Lubię wymieniać funty na złotówki."
+      ]
+    },
+    {
+      "id": 7,
+      "topic": "cash_machine_names",
+      "content": "Informally, especially among younger people, a cash machine can also be called:",
+      "examples": [
+        "kasa",
+        "forśe",
+        "cash"
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "cost_question_forms",
+      "content": "If you want to ask or tell somebody about the price of an item, use 'kosztować'. The book also points out another common price question pattern.",
+      "examples": [
+        "Herbata kosztuje 10 złotych.",
+        "Ile jest wody?"
+      ],
+      "content_note": "The book notes that asking a total price can also be done with structures introduced earlier."
+    },
+    {
+      "id": 18,
+      "topic": "wydawac_na",
+      "content": "To spend can translate as 'spędzać' or 'wydawać' in different contexts. Here 'wydawać' is used with the preposition 'na', so 'wydawać na' means 'to spend on'."
+    },
+    {
+      "id": 25,
+      "topic": "dostawac_accusative",
+      "content": "After 'dostawać' (to get), use the accusative case."
+    },
+    {
+      "id": 27,
+      "topic": "comparative_superlative_money_reference",
+      "content": "The note points learners to the comparative and superlative of adjectives for more on forms like 'wyższa pensja'."
+    },
+    {
+      "id": 28,
+      "topic": "napiwek_not_obligatory",
+      "content": "Tipping in Polish restaurants is not mandatory. If service is very good, it is common to leave around 10–15% of the total bill."
+    },
+    {
+      "id": 30,
+      "topic": "near_here_expressions",
+      "content": "You can translate 'near here' as:",
+      "examples": [
+        "w okolicy",
+        "w pobliżu",
+        "niedaleko"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "pozyczac_meanings",
+      "content": "The verb 'pożyczać' can mean to borrow, to loan, or to lend depending on context."
+    },
+    {
+      "id": 32,
+      "topic": "pozyczac_od_genitive",
+      "content": "Remember to use the genitive case after 'od' (from)."
+    },
+    {
+      "id": 34,
+      "topic": "w_plus_locative",
+      "content": "After the preposition 'w', usually the locative case is used.",
+      "examples": [
+        "w torbie"
+      ]
+    },
+    {
+      "id": 34,
+      "topic": "discount_synonyms",
+      "content": "In shops, you may see these nouns for discount; they are treated as near-synonyms here:",
+      "examples": [
+        "zniżka",
+        "rabat",
+        "obniżka"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "15.99 zlotys, please.",
+      "pl": "Poproszę/proszę piętnaście złotych i dziewięćdziesiąt dziewięć groszy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Poproszę piętnaście złotych i dziewięćdziesiąt dziewięć groszy."],
+      "focus_words": ["poproszę", "piętnaście złotych", "dziewięćdziesiąt dziewięć groszy"],
+      "grammar_tags": ["money", "numbers", "fixed_expression"]
+    },
+    {
+      "id": 2,
+      "en": "We found a beautiful hotel for our holiday, but unfortunately it’s too expensive.",
+      "pl": "Znaleźliśmy piękny hotel na wakacje, ale niestety jest za/zbyt drogi.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Znaleźliśmy piękny hotel na wakacje, ale niestety jest zbyt drogi."],
+      "focus_words": ["znaleźliśmy piękny hotel", "na wakacje", "ale niestety", "jest za drogi"],
+      "grammar_tags": ["money", "past_tense", "contrast"]
+    },
+    {
+      "id": 3,
+      "en": "We are now making a transfer to your account.",
+      "pl": "Robimy teraz przelew na twoje konto.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["robimy teraz", "przelew", "na twoje konto"],
+      "grammar_tags": ["money", "present_tense", "accusative_basic"]
+    },
+    {
+      "id": 4,
+      "en": "Usually, he pays by card and she always pays in cash.",
+      "pl": "Zwykle płaci kartą, a ona zawsze płaci gotówką.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zwykle płaci kartą", "a ona", "zawsze płaci gotówką"],
+      "grammar_tags": ["money", "instrumental_basic", "contrast"]
+    },
+    {
+      "id": 5,
+      "en": "\"Do you have a one zloty coin?\" \"Unfortunately I don’t. I only have banknotes.\"",
+      "pl": "– (Czy) ma pan złotówkę? – Niestety nie. Mam tylko banknoty.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy ma pani złotówkę? Niestety nie. Mam tylko banknoty."],
+      "focus_words": ["czy ma pan złotówkę", "niestety nie", "mam tylko banknoty"],
+      "grammar_tags": ["money", "dialogue", "question", "formal", "negation"]
+    },
+    {
+      "id": 6,
+      "en": "I’d like to exchange euros for zlotys.",
+      "pl": "Chciałbym wymienić euro na złotówki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Chciałabym wymienić euro na złotówki."],
+      "focus_words": ["chciałbym wymienić", "euro", "na złotówki"],
+      "grammar_tags": ["money", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 7,
+      "en": "Do you have any (small) change, madam?",
+      "pl": "(Czy) ma pani drobne?",
+      "literal_en": null,
+      "english_variants": ["Do you have any coins/change, madam?"],
+      "polish_alternatives": ["Ma pani drobne?"],
+      "focus_words": ["czy ma pani", "drobne"],
+      "grammar_tags": ["money", "question", "formal"]
+    },
+    {
+      "id": 8,
+      "en": "Here’s your receipt and change.",
+      "pl": "Proszę, to jest pana paragon i reszta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Proszę, to pana paragon i reszta."],
+      "focus_words": ["proszę", "to jest pana paragon", "i reszta"],
+      "grammar_tags": ["money", "formal"]
+    },
+    {
+      "id": 9,
+      "en": "I only have notes.",
+      "pl": "Mam tylko banknoty.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam tylko banknoty"],
+      "grammar_tags": ["money", "description"]
+    },
+    {
+      "id": 10,
+      "en": "Money is important.",
+      "pl": "Pieniądze są ważne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["pieniądze", "są ważne"],
+      "grammar_tags": ["money", "plural_noun"]
+    },
+    {
+      "id": 11,
+      "en": "I lost the receipt.",
+      "pl": "Zgubiłem paragon.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zgubiłam paragon."],
+      "focus_words": ["zgubiłem", "paragon"],
+      "grammar_tags": ["money", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 12,
+      "en": "22.15 zlotys, please.",
+      "pl": "Poproszę/proszę dwadzieścia dwa złote i piętnaście groszy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Proszę, dwadzieścia dwa złote i piętnaście groszy."],
+      "focus_words": ["dwadzieścia dwa złote", "piętnaście groszy"],
+      "grammar_tags": ["money", "numbers", "fixed_expression"]
+    },
+    {
+      "id": 13,
+      "en": "Can you lend her five zlotys?",
+      "pl": "(Czy) możesz jej pożyczyć pięć złotych?",
+      "literal_en": null,
+      "english_variants": ["Can you lend her 5 zlotys?"],
+      "polish_alternatives": ["Możesz jej pożyczyć pięć złotych?"],
+      "focus_words": ["możesz jej pożyczyć", "pięć złotych"],
+      "grammar_tags": ["money", "question", "accusative_basic"]
+    },
+    {
+      "id": 14,
+      "en": "Today, there’s a discount on all shoes.",
+      "pl": "Dzisiaj/Dziś jest zniżka na wszystkie buty.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dziś jest zniżka na wszystkie buty."],
+      "focus_words": ["dziś", "jest zniżka", "na wszystkie buty"],
+      "grammar_tags": ["money", "shopping", "accusative_basic"]
+    },
+    {
+      "id": 15,
+      "en": "Have you checked (lit. if) the price hasn’t changed?",
+      "pl": "(Czy) sprawdzałeś, czy cena się nie zmieniła?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Sprawdzałeś, czy cena się nie zmieniła?"],
+      "focus_words": ["sprawdzałeś", "czy cena", "się nie zmieniła"],
+      "grammar_tags": ["money", "question", "subordinate_clause", "negation", "past_tense"]
+    },
+    {
+      "id": 16,
+      "en": "I would like (f.) to open an account.",
+      "pl": "Chciałabym otworzyć konto.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Chciałbym otworzyć konto."],
+      "focus_words": ["chciałabym otworzyć", "konto"],
+      "grammar_tags": ["money", "two_verbs_rule", "feminine_form", "accusative_basic"]
+    },
+    {
+      "id": 17,
+      "en": "We’re saving up for a new car.",
+      "pl": "Oszczędzamy na nowy samochód.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["oszczędzamy", "na nowy samochód"],
+      "grammar_tags": ["money", "accusative_basic"]
+    },
+    {
+      "id": 18,
+      "en": "How much does a large coffee cost / is a large coffee?",
+      "pl": "Ile kosztuje duża kawa?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ile kosztuje", "duża kawa"],
+      "grammar_tags": ["money", "question"]
+    },
+    {
+      "id": 19,
+      "en": "Natalia will be earning more from now on.",
+      "pl": "Natalia będzie od teraz zarabiać więcej.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["Natalia", "będzie od teraz", "zarabiać więcej"],
+      "grammar_tags": ["money", "future_tense", "two_verbs_rule"]
+    },
+    {
+      "id": 20,
+      "en": "That will be 113.56 zlotys.",
+      "pl": "To będzie sto trzynaście złotych i pięćdziesiąt sześć groszy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["to będzie", "sto trzynaście złotych", "pięćdziesiąt sześć groszy"],
+      "grammar_tags": ["money", "future_tense", "numbers"]
+    },
+    {
+      "id": 21,
+      "en": "Finally, we found a cheap ticket to Poland.",
+      "pl": "W końcu znaleźliśmy tani bilet do Polski.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w końcu", "znaleźliśmy", "tani bilet", "do Polski"],
+      "grammar_tags": ["money", "travel", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 22,
+      "en": "They often borrowed money for holidays.",
+      "pl": "Często pożyczali pieniądze na wakacje.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["często pożyczali", "pieniądze", "na wakacje"],
+      "grammar_tags": ["money", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 23,
+      "en": "I plan to spend less on clothes.",
+      "pl": "Planuję wydawać mniej na ubrania.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["planuję wydawać", "mniej", "na ubrania"],
+      "grammar_tags": ["money", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 24,
+      "en": "This doughnut costs six zlotys.",
+      "pl": "Ten pączek kosztuje sześć złotych.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten pączek", "kosztuje sześć złotych"],
+      "grammar_tags": ["money", "numbers"]
+    },
+    {
+      "id": 25,
+      "en": "When will you get (lit. from when will you be getting) a higher salary?",
+      "pl": "Od kiedy będziesz dostawać wyższą pensję?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["od kiedy", "będziesz dostawać", "wyższą pensję"],
+      "grammar_tags": ["money", "question", "future_tense", "accusative_basic"]
+    },
+    {
+      "id": 26,
+      "en": "How much does this bread cost?",
+      "pl": "Ile kosztuje ten chleb?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ile kosztuje", "ten chleb"],
+      "grammar_tags": ["money", "question"]
+    },
+    {
+      "id": 27,
+      "en": "We won tickets to a concert!",
+      "pl": "Wygraliśmy bilety na koncert!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wygraliśmy", "bilety", "na koncert"],
+      "grammar_tags": ["money", "past_tense", "accusative_basic", "exclamation"]
+    },
+    {
+      "id": 28,
+      "en": "I need to withdraw some money, but the cash machine / ATM isn’t working.",
+      "pl": "Muszę wypłacić pieniądze, ale bankomat nie działa.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["muszę wypłacić pieniądze", "ale", "bankomat nie działa"],
+      "grammar_tags": ["money", "two_verbs_rule", "negation", "accusative_basic"]
+    },
+    {
+      "id": 29,
+      "en": "She earns a lot.",
+      "pl": "(Ona) dużo zarabia.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dużo zarabia"],
+      "grammar_tags": ["money", "description"]
+    },
+    {
+      "id": 30,
+      "en": "Is there a cash machine near here?",
+      "pl": "(Czy) w okolicy jest jakiś bankomat?",
+      "literal_en": null,
+      "english_variants": ["Is there an ATM nearby?"],
+      "polish_alternatives": ["Czy w pobliżu jest jakiś bankomat?", "Czy niedaleko jest jakiś bankomat?"],
+      "focus_words": ["w okolicy", "jest jakiś bankomat"],
+      "grammar_tags": ["money", "question", "existential"]
+    },
+    {
+      "id": 31,
+      "en": "A tip is not mandatory in Poland.",
+      "pl": "Napiwek nie jest obowiązkowy w Polsce.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["napiwek", "nie jest obowiązkowy", "w Polsce"],
+      "grammar_tags": ["money", "negation", "locative"]
+    },
+    {
+      "id": 32,
+      "en": "I borrowed a car from my brother for a weekend trip.",
+      "pl": "Pożyczyłem od brata samochód na wyjazd weekendowy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pożyczyłam od brata samochód na wyjazd weekendowy."],
+      "focus_words": ["pożyczyłem od brata", "samochód", "na wyjazd weekendowy"],
+      "grammar_tags": ["money", "past_tense", "genitive_after_od", "accusative_basic"]
+    },
+    {
+      "id": 33,
+      "en": "Have you got any (small) change? Any coins?",
+      "pl": "(Czy) masz jakieś drobne? Jakieś monety?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Masz jakieś drobne? Jakieś monety?"],
+      "focus_words": ["masz jakieś drobne", "jakieś monety"],
+      "grammar_tags": ["money", "question"]
+    },
+    {
+      "id": 34,
+      "en": "The receipt is in the bag.",
+      "pl": "Paragon jest w torbie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["paragon", "jest w torbie"],
+      "grammar_tags": ["money", "locative"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "pieniądze",
+      "moneta",
+      "banknot",
+      "reszta",
+      "drobne",
+      "złoty",
+      "grosz",
+      "ile",
+      "cena",
+      "kosztować",
+      "wysoki",
+      "tani",
+      "drogi",
+      "zniżka",
+      "zarabiać",
+      "oszczędzać",
+      "wydawać",
+      "płacić",
+      "płacić gotówką",
+      "wymienić",
+      "wypłacić",
+      "pożyczyć",
+      "konto",
+      "karta",
+      "bankomat",
+      "przelew",
+      "paragon",
+      "pensja",
+      "napiwek"
+    ],
+    "sentence_cards_priority": [1, 3, 4, 5, 6, 8, 13, 14, 15, 16, 17, 18, 20, 23, 25, 27, 28, 30, 32, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'We’re saving up for a new car.'",
+      "correct_answer": "Oszczędzamy na nowy samochód.",
+      "distractors": [
+        "Oszczędzamy do nowego samochodu.",
+        "Wydajemy na nowy samochód.",
+        "Pożyczamy nowy samochód."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'The receipt is in the bag.'",
+      "answer_pl": "Paragon jest w torbie.",
+      "word_bank": ["Paragon", "jest", "w", "torbie"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'How much does this bread cost?'",
+      "accepted_answers": [
+        "Ile kosztuje ten chleb?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

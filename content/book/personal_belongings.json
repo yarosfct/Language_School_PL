@@ -1,0 +1,357 @@
+{
+  "section_number": 4,
+  "topic_en": "Personal Belongings",
+  "topic_pl": "Rzeczy osobiste",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "aparat (fotograficzny)", "en": ["camera"], "category": "noun" },
+    { "pl": "chusteczki", "en": ["tissues"], "category": "noun" },
+    { "pl": "długopis", "en": ["pen"], "category": "noun" },
+    { "pl": "dowód (osobisty)", "en": ["identity card", "ID card"], "category": "noun" },
+    { "pl": "klucze", "en": ["keys"], "category": "noun" },
+    { "pl": "książka", "en": ["book"], "category": "noun" },
+    { "pl": "laptop", "en": ["laptop"], "category": "noun" },
+    { "pl": "okulary", "en": ["glasses"], "category": "noun" },
+    { "pl": "papierosy", "en": ["cigarettes"], "category": "noun" },
+    { "pl": "parasol", "en": ["umbrella"], "category": "noun" },
+    { "pl": "paszport", "en": ["passport"], "category": "noun" },
+    { "pl": "pieniądze", "en": ["money"], "category": "noun" },
+    { "pl": "portfel", "en": ["wallet"], "category": "noun" },
+    { "pl": "prawo jazdy", "en": ["driving licence"], "category": "phrase" },
+    { "pl": "samochód", "en": ["car"], "category": "noun" },
+    { "pl": "torebka", "en": ["handbag"], "category": "noun" },
+    { "pl": "walizka", "en": ["suitcase"], "category": "noun" },
+    { "pl": "zapalniczka", "en": ["lighter"], "category": "noun" },
+    { "pl": "zegarek", "en": ["watch"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "aparat_vs_kamera",
+      "content": "There is a Polish word 'kamera', but it translates as 'camera' only when referring to a video camera. For a regular camera, use 'aparat (fotograficzny)'."
+    },
+    {
+      "id": 2,
+      "topic": "palic_papierosy",
+      "content": "'Palić (papierosy)' means 'to smoke (cigarettes)'."
+    },
+    {
+      "id": 2,
+      "topic": "oni_vs_one_and_plural_adjectives",
+      "content": "Polish has two plural third-person pronouns meaning 'they': 'oni' and 'one'. 'oni' is used for masculine-personal groups; 'one' for non-masculine-personal groups. The tip also reminds that some adjectives change accordingly.",
+      "examples": [
+        "papierosy nie są zdrowe",
+        "duże banany",
+        "małe domy",
+        "zdrowe warzywa"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "chciec_present_tense",
+      "content": "Present tense of 'chcieć' (to want).",
+      "tables": {
+        "present_tense": {
+          "ja": "chcę",
+          "ty": "chcesz",
+          "on_ona_ono": "chce",
+          "my": "chcemy",
+          "wy": "chcecie",
+          "oni_one": "chcą"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "topic": "zegarek_vs_zegar",
+      "content": "Do not confuse 'zegarek' (watch) with 'zegar' (clock)."
+    },
+    {
+      "id": 9,
+      "topic": "pozyczyc_meaning",
+      "content": "'Pożyczyć' can mean either 'to borrow' or 'to lend' depending on context."
+    },
+    {
+      "id": 10,
+      "topic": "sunglasses_translation",
+      "content": "'Sunglasses' is translated as 'okulary przeciwsłoneczne' or informally 'okulary słoneczne'."
+    },
+    {
+      "id": 11,
+      "topic": "gotowy_do_odbioru",
+      "content": "'gotowy/gotowa/gotowe do odbioru' can be translated as 'ready for pickup'."
+    },
+    {
+      "id": 13,
+      "topic": "future_tense_byc",
+      "content": "Future tense of 'być' (to be).",
+      "tables": {
+        "future_tense": {
+          "ja": "będę",
+          "ty": "będziesz",
+          "on_ona_ono": "będzie",
+          "my": "będziemy",
+          "wy": "będziecie",
+          "oni_one": "będą"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "topic": "trzymam_kciuki",
+      "content": "'Trzymam kciuki!' means 'Fingers crossed!'. Literally it means 'I hold my thumbs.'"
+    },
+    {
+      "id": 14,
+      "topic": "przy_sobie",
+      "content": "'przy sobie' means 'on me / with me / with him/her', depending on context.",
+      "examples": [
+        "Nie mam przy sobie pieniędzy. = I don't have any money on me."
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "How much does a good camera cost?",
+      "pl": "Ile kosztuje dobry aparat (fotograficzny)?",
+      "literal_en": null,
+      "english_variants": ["How much is a good camera?"],
+      "polish_alternatives": [],
+      "focus_words": ["ile", "kosztuje", "dobry", "aparat fotograficzny"],
+      "grammar_tags": ["question", "shopping"]
+    },
+    {
+      "id": 2,
+      "en": "I know that cigarettes aren't healthy, but I don't smoke much.",
+      "pl": "Wiem, że papierosy nie są zdrowe, ale nie palę dużo.",
+      "literal_en": null,
+      "english_variants": ["I know cigarettes aren't healthy, but I don't smoke much."],
+      "polish_alternatives": [],
+      "focus_words": ["wiem", "że", "papierosy", "nie są zdrowe", "nie palę dużo"],
+      "grammar_tags": ["subordinate_clause", "negation", "plural_adjective"]
+    },
+    {
+      "id": 3,
+      "en": "Is there an ATM nearby? I want to withdraw some money.",
+      "pl": "(Czy) jest tu/tutaj w pobliżu bankomat? Chcę wypłacić pieniądze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy w pobliżu jest bankomat? Chcę wypłacić pieniądze."],
+      "focus_words": ["w pobliżu", "bankomat", "chcę", "wypłacić", "pieniądze"],
+      "grammar_tags": ["question", "location", "want"]
+    },
+    {
+      "id": 4,
+      "en": "Do you have a watch? What time (lit. hour) is it?",
+      "pl": "(Czy) masz zegarek? Która (jest) godzina?",
+      "literal_en": "Which hour is it?",
+      "english_variants": ["Do you have a watch? What time is it?"],
+      "polish_alternatives": [],
+      "focus_words": ["masz", "zegarek", "która godzina"],
+      "grammar_tags": ["question", "time_expression"]
+    },
+    {
+      "id": 5,
+      "en": "Is this your lighter? May I?",
+      "pl": "(Czy) to twoja zapalniczka? (Czy) mogę?",
+      "literal_en": null,
+      "english_variants": ["Is this your lighter? Can I?"],
+      "polish_alternatives": [],
+      "focus_words": ["to", "twoja", "zapalniczka", "mogę"],
+      "grammar_tags": ["question", "feminine_noun"]
+    },
+    {
+      "id": 6,
+      "en": "Honey, is that a new handbag? Have you been shopping again? (lit. Again something you (f.) bought?)",
+      "pl": "Kochanie, (czy) to (jest) nowa torebka? (Czy) znowu coś kupiłaś?",
+      "literal_en": "Again something you bought?",
+      "english_variants": ["Honey, is that a new handbag? Did you go shopping again?"],
+      "polish_alternatives": [],
+      "focus_words": ["kochanie", "nowa", "torebka", "znowu", "coś", "kupiłaś"],
+      "grammar_tags": ["question", "feminine_past_tense"]
+    },
+    {
+      "id": 7,
+      "en": "This suitcase is big.",
+      "pl": "Ta walizka jest duża.",
+      "literal_en": null,
+      "english_variants": ["This suitcase is large."],
+      "polish_alternatives": [],
+      "focus_words": ["ta", "walizka", "duża"],
+      "grammar_tags": ["feminine_noun", "adjective_agreement"]
+    },
+    {
+      "id": 8,
+      "en": "Do you (pl.) have tissues?",
+      "pl": "(Czy) macie chusteczki?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Macie chusteczki?"],
+      "focus_words": ["macie", "chusteczki"],
+      "grammar_tags": ["question", "plural_you"]
+    },
+    {
+      "id": 9,
+      "en": "Excuse me, can I borrow a pen, please?",
+      "pl": "Przepraszam, czy mogę pożyczyć długopis?",
+      "literal_en": null,
+      "english_variants": ["Excuse me, may I borrow a pen?"],
+      "polish_alternatives": [],
+      "focus_words": ["przepraszam", "mogę", "pożyczyć", "długopis"],
+      "grammar_tags": ["request", "question"]
+    },
+    {
+      "id": 10,
+      "en": "Are these his glasses?",
+      "pl": "(Czy) to są jego okulary?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To jego okulary?"],
+      "focus_words": ["to są", "jego", "okulary"],
+      "grammar_tags": ["question", "plural_noun"]
+    },
+    {
+      "id": 11,
+      "en": "Her driving licence is ready for pickup.",
+      "pl": "Jej prawo jazdy jest gotowe do odbioru.",
+      "literal_en": null,
+      "english_variants": ["Her driving licence is ready for collection."],
+      "polish_alternatives": [],
+      "focus_words": ["jej", "prawo jazdy", "gotowe do odbioru"],
+      "grammar_tags": ["neuter_phrase"]
+    },
+    {
+      "id": 12,
+      "en": "Take an umbrella! It's raining.",
+      "pl": "Weź parasol! Pada (deszcz).",
+      "literal_en": "Take an umbrella! It rains.",
+      "english_variants": ["Take an umbrella! It's raining."],
+      "polish_alternatives": ["Weź parasol, pada deszcz."],
+      "focus_words": ["weź", "parasol", "pada deszcz"],
+      "grammar_tags": ["imperative", "weather"]
+    },
+    {
+      "id": 13,
+      "en": "I hope (lit. I have hope that) your new passport will be ready soon. Fingers crossed!",
+      "pl": "Mam nadzieję, że twój nowy paszport będzie wkrótce gotowy. Trzymam kciuki!",
+      "literal_en": "I have hope that your new passport will soon be ready.",
+      "english_variants": ["I hope your new passport will be ready soon. Fingers crossed!"],
+      "polish_alternatives": [],
+      "focus_words": ["mam nadzieję", "że", "twój", "nowy", "paszport", "będzie", "wkrótce", "gotowy", "trzymam kciuki"],
+      "grammar_tags": ["future_tense", "subordinate_clause", "fixed_expression"]
+    },
+    {
+      "id": 14,
+      "en": "Shall we go (lit. We go)? Do you have your wallet and keys on you?",
+      "pl": "Idziemy? (Czy) masz przy sobie portfel i klucze?",
+      "literal_en": "We go? Do you have with you wallet and keys?",
+      "english_variants": ["Shall we go? Do you have your wallet and keys with you?"],
+      "polish_alternatives": [],
+      "focus_words": ["idziemy", "masz przy sobie", "portfel", "klucze"],
+      "grammar_tags": ["question", "fixed_expression"]
+    },
+    {
+      "id": 15,
+      "en": "Is this your car?",
+      "pl": "(Czy) to (jest) twój samochód?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To twój samochód?"],
+      "focus_words": ["to", "twój", "samochód"],
+      "grammar_tags": ["question", "masculine_noun"]
+    },
+    {
+      "id": 16,
+      "en": "Does she have her ID card on her?",
+      "pl": "(Czy) ona ma dowód (osobisty) przy sobie?",
+      "literal_en": null,
+      "english_variants": ["Does she have her ID on her?"],
+      "polish_alternatives": ["Czy ma przy sobie dowód osobisty?"],
+      "focus_words": ["ona", "ma", "dowód osobisty", "przy sobie"],
+      "grammar_tags": ["question", "fixed_expression"]
+    },
+    {
+      "id": 17,
+      "en": "I've got a new laptop.",
+      "pl": "Mam nowy laptop.",
+      "literal_en": null,
+      "english_variants": ["I have a new laptop."],
+      "polish_alternatives": [],
+      "focus_words": ["mam", "nowy", "laptop"],
+      "grammar_tags": ["masculine_noun"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "aparat fotograficzny",
+      "długopis",
+      "dowód osobisty",
+      "klucze",
+      "okulary",
+      "parasol",
+      "paszport",
+      "portfel",
+      "prawo jazdy",
+      "samochód",
+      "torebka",
+      "walizka",
+      "zapalniczka",
+      "zegarek",
+      "chusteczki"
+    ],
+    "sentence_cards_priority": [1, 3, 4, 6, 9, 11, 12, 13, 14, 16]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Take an umbrella! It's raining.'",
+      "correct_answer": "Weź parasol! Pada deszcz.",
+      "distractors": [
+        "Masz parasol! Pada deszcz.",
+        "Weź portfel! Pada deszcz.",
+        "Weź zegarek! Jest zimno."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Her driving licence is ready for pickup.'",
+      "answer_pl": "Jej prawo jazdy jest gotowe do odbioru.",
+      "word_bank": ["Jej", "prawo", "jazdy", "jest", "gotowe", "do", "odbioru"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Do you have your wallet and keys with you?'",
+      "accepted_answers": [
+        "Czy masz przy sobie portfel i klucze?",
+        "Masz przy sobie portfel i klucze?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

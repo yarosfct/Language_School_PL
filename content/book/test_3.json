@@ -1,0 +1,406 @@
+{
+  "test_number": 3,
+  "title": "Test 3",
+  "source_type": "book_test",
+  "pages": [134, 135, 136, 137],
+  "skills_tested": [
+    "vocabulary recall",
+    "translation",
+    "common collocations",
+    "grammar",
+    "sentence completion",
+    "crossword",
+    "short speaking prompts"
+  ],
+  "parts": [
+    {
+      "part_number": 1,
+      "type": "fill_in_the_gaps_with_translations",
+      "instruction_en": "Fill in the gaps with translations of the words in brackets.",
+      "items": [
+        { "id": 1, "prompt_en": "(difficult)", "sentence_pl": "Egzamin był naprawdę _____." },
+        { "id": 2, "prompt_en": "(fantastic)", "sentence_pl": "Oglądaliśmy _____ film w weekend." },
+        { "id": 3, "prompt_en": "(bookshop), (discount)", "sentence_pl": "Ta _____ ma teraz świetny _____ na książki." },
+        { "id": 4, "prompt_en": "(shopping centre), (florist's)", "sentence_pl": "Czy w tym _____ jest _____?" },
+        { "id": 5, "prompt_en": "(to rest), (to hike in the mountains), (to meditate)", "sentence_pl": "Niedziela to jedyny dzień, kiedy mam czas, żeby _____, _____ i _____." },
+        { "id": 6, "prompt_en": "(The flight), (suitcase)", "sentence_pl": "_____ jest dzisiaj po południu, a jej _____ nie jest jeszcze spakowana." },
+        { "id": 7, "prompt_en": "(to earn)", "sentence_pl": "On nie _____ dużo." },
+        { "id": 8, "prompt_en": "(still)", "sentence_pl": "Czy _____ jesteś w pracy?" },
+        { "id": 9, "prompt_en": "(together)", "sentence_pl": "Niestety, ale nie możemy tam iść _____." },
+        { "id": 10, "prompt_en": "(shoes), (suit), (tie)", "sentence_pl": "Muszę kupić _____, _____ i _____." },
+        { "id": 11, "prompt_en": "(Now), (in the afternoon)", "sentence_pl": "_____ jestem zajęty, ale możemy spotkać się _____." },
+        { "id": 12, "prompt_en": "(money), (the cash machine)", "sentence_pl": "Chcemy wypłacić _____, ale _____ nie działa." },
+        { "id": 13, "prompt_en": "(especially)", "sentence_pl": "To miasto jest bardzo zatłoczone, _____ latem." },
+        { "id": 14, "prompt_en": "(Visa), (passport), (tickets), (guide)", "sentence_pl": "_____, _____, _____ i _____. Myślę, że mam wszystko." },
+        { "id": 15, "prompt_en": "(I swim), (to practise yoga)", "sentence_pl": "Często _____ i czasami też _____." },
+        { "id": 16, "prompt_en": "(receipt)", "sentence_pl": "Nie wiem, gdzie jest ten _____." },
+        { "id": 17, "prompt_en": "(The fitting room), (occupied), (free)", "sentence_pl": "_____ jest _____ czy _____?" },
+        { "id": 18, "prompt_en": "(coat), (elegant), (comfortable)", "sentence_pl": "Ten _____ jest bardzo _____, ale niestety nie jest _____." },
+        { "id": 19, "prompt_en": "(wonderful)", "sentence_pl": "Dziękuję za _____ spotkanie." },
+        { "id": 20, "prompt_en": "(I get up)", "sentence_pl": "W weekendy zwykle _____ późno." }
+      ]
+    },
+    {
+      "part_number": 2,
+      "type": "match_words_to_form_common_phrases",
+      "instruction_en": "Match the words to form common phrases.",
+      "left_column": [
+        "płaszcz",
+        "lista",
+        "centrum",
+        "sklep",
+        "czas",
+        "gra",
+        "buty",
+        "biuro"
+      ],
+      "right_column": [
+        "z meblami",
+        "na obcasie",
+        "planszowa",
+        "wolny",
+        "przeciwdeszczowy",
+        "handlowe",
+        "zakupów",
+        "podróży"
+      ]
+    },
+    {
+      "part_number": 3,
+      "type": "crossword",
+      "instruction_en": "Complete the crossword.",
+      "across": [
+        { "id": 2, "clue_pl": "60 sekund" },
+        { "id": 3, "clue_pl": "na przykład pianino lub gitara" },
+        { "id": 6, "clue_pl": "Musisz to robić, kiedy masz bałagan w domu." },
+        { "id": 7, "clue_pl": "na przykład maj, lipiec lub grudzień" },
+        { "id": 8, "clue_pl": "rano, popołudnie i ___" },
+        { "id": 9, "clue_pl": "Dzisiaj jest wtorek, wczoraj był poniedziałek, a _____ była niedziela." },
+        { "id": 13, "clue_pl": "Możesz kupić tam kwiaty." },
+        { "id": 15, "clue_pl": "Oglądasz tam filmy i jesz popcorn." },
+        { "id": 16, "clue_pl": "synonim słowa zniżka" },
+        { "id": 17, "clue_pl": "Duży sklep. Robisz tam zakupy." }
+      ],
+      "down": [
+        { "id": 1, "clue_pl": "wynagrodzenie" },
+        { "id": 2, "clue_pl": "woda blisko plaży; na przykład ___ Bałtyckie" },
+        { "id": 4, "clue_pl": "Możesz tam ćwiczyć." },
+        { "id": 5, "clue_pl": "ubranie dla kobiety" },
+        { "id": 8, "clue_pl": "Pakujesz tam ubrania na wakacje." },
+        { "id": 9, "clue_pl": "Ubranie, które nosisz w nocy." },
+        { "id": 10, "clue_pl": "Myjesz je rano i wieczorem." },
+        { "id": 11, "clue_pl": "Buty, które ludzie noszą na plaży." },
+        { "id": 12, "clue_pl": "na przykład euro, dolar albo złoty" },
+        { "id": 14, "clue_pl": "koszt, na przykład 17 złotych" }
+      ]
+    },
+    {
+      "part_number": 4,
+      "type": "multiple_choice",
+      "instruction_en": "Choose the correct answer.",
+      "items": [
+        {
+          "id": 1,
+          "sentence_pl": "Zwykle rano _____ zimny prysznic.",
+          "options": {
+            "A": "mam",
+            "B": "biorę",
+            "C": "wstaję"
+          }
+        },
+        {
+          "id": 2,
+          "sentence_pl": "Oglądamy _____ tylko w weekendy.",
+          "options": {
+            "A": "tele",
+            "B": "telewizor",
+            "C": "telewizję"
+          }
+        },
+        {
+          "id": 3,
+          "sentence_pl": "_____ jest bałagan.",
+          "options": {
+            "A": "Wszystkie",
+            "B": "Kiedykolwiek",
+            "C": "Wszędzie"
+          }
+        },
+        {
+          "id": 4,
+          "sentence_pl": "Ten pokój ma piękny _____ na morze.",
+          "options": {
+            "A": "widok",
+            "B": "namiot",
+            "C": "wycieczka"
+          }
+        },
+        {
+          "id": 5,
+          "sentence_pl": "To moja ulubiona restauracja. Jedzenie jest tu naprawdę _____.",
+          "options": {
+            "A": "podobne",
+            "B": "poprawne",
+            "C": "pyszne"
+          }
+        },
+        {
+          "id": 6,
+          "sentence_pl": "W supermarkecie była długa _____.",
+          "options": {
+            "A": "koszyki",
+            "B": "kolejka",
+            "C": "kasjer"
+          }
+        },
+        {
+          "id": 7,
+          "sentence_pl": "Czy mogę _____ o pomoc?",
+          "options": {
+            "A": "mieć",
+            "B": "prosić",
+            "C": "pytać"
+          }
+        },
+        {
+          "id": 8,
+          "sentence_pl": "Ile _____ ten chleb?",
+          "options": {
+            "A": "jest",
+            "B": "kończy",
+            "C": "kosztuje"
+          }
+        },
+        {
+          "id": 9,
+          "sentence_pl": "Komputer jest znowu _____.",
+          "options": {
+            "A": "zepsuty",
+            "B": "dziwny",
+            "C": "łatwy"
+          }
+        },
+        {
+          "id": 10,
+          "sentence_pl": "Kupiliśmy te warzywa _____.",
+          "options": {
+            "A": "w księgarni",
+            "B": "na targu",
+            "C": "w kwiaciarni"
+          }
+        }
+      ]
+    },
+    {
+      "part_number": 5,
+      "type": "translate_words_into_english",
+      "instruction_en": "Translate the words below into English.",
+      "items": [
+        "kurtka",
+        "portfel",
+        "rozmiar",
+        "cukiernia",
+        "koszyk",
+        "wyprzedaż",
+        "jutro",
+        "płacić",
+        "wycieczka",
+        "plaża",
+        "pensja",
+        "napiwek",
+        "tydzień",
+        "godzina",
+        "dokładnie",
+        "niestety",
+        "podróżować",
+        "szalik"
+      ]
+    },
+    {
+      "part_number": 6,
+      "type": "match_words_to_form_common_phrases",
+      "instruction_en": "Match the words to form common phrases.",
+      "groups": [
+        {
+          "group": "A",
+          "left_column": [
+            "spać",
+            "czesać",
+            "wychodzić",
+            "ścielić",
+            "spędzać",
+            "ćwiczyć",
+            "prać"
+          ],
+          "right_column": [
+            "łóżko",
+            "z domu",
+            "jak dziecko",
+            "ubrania",
+            "czas z rodziną",
+            "jogę",
+            "włosy"
+          ]
+        },
+        {
+          "group": "B",
+          "left_column": [
+            "słuchać",
+            "gotować",
+            "wypłacić",
+            "iść",
+            "rozpakować",
+            "oglądać",
+            "przymierzać"
+          ],
+          "right_column": [
+            "pieniądze",
+            "radia",
+            "bagaż",
+            "telewizję",
+            "ubrania",
+            "obiad",
+            "na zakupy"
+          ]
+        }
+      ]
+    },
+    {
+      "part_number": 7,
+      "type": "complete_translations_by_adding_letters",
+      "instruction_en": "Complete the translations by adding letters.",
+      "items": [
+        { "id": 1, "target_en": "to get up" },
+        { "id": 2, "target_en": "to sleep" },
+        { "id": 3, "target_en": "to look for" },
+        { "id": 4, "target_en": "discount" },
+        { "id": 5, "target_en": "loud" },
+        { "id": 6, "target_en": "favourite" },
+        { "id": 7, "target_en": "price" },
+        { "id": 8, "target_en": "shoes" },
+        { "id": 9, "target_en": "shirt" },
+        { "id": 10, "target_en": "size" },
+        { "id": 11, "target_en": "to order" },
+        { "id": 12, "target_en": "delivery" },
+        { "id": 13, "target_en": "party" },
+        { "id": 14, "target_en": "to dance" },
+        { "id": 15, "target_en": "cancelled" },
+        { "id": 16, "target_en": "mountains" },
+        { "id": 17, "target_en": "now" },
+        { "id": 18, "target_en": "ago" },
+        { "id": 19, "target_en": "cash" },
+        { "id": 20, "target_en": "(money) transfer" }
+      ]
+    },
+    {
+      "part_number": 8,
+      "type": "give_opposites",
+      "instruction_en": "Give opposites of the words below.",
+      "items": [
+        "łatwy",
+        "zameldować się",
+        "następny/przyszły (tydzień)",
+        "kochać",
+        "przyjazd",
+        "rzadko",
+        "tani"
+      ]
+    },
+    {
+      "part_number": 9,
+      "type": "choose_correct_translations",
+      "instruction_en": "Choose the correct translations of the sentences below.",
+      "items": [
+        {
+          "id": 1,
+          "prompt_en": "It's very quiet here in the morning.",
+          "options": {
+            "A": "Rano jest tu bardzo cicho.",
+            "B": "W rano jest tu bardzo cicho."
+          }
+        },
+        {
+          "id": 2,
+          "prompt_en": "Money isn't important.",
+          "options": {
+            "A": "Pieniądze nie są ważne.",
+            "B": "Pieniądze nie jest ważne."
+          }
+        },
+        {
+          "id": 3,
+          "prompt_en": "Yesterday, there was a discount on all shoes.",
+          "options": {
+            "A": "Wczoraj była zniżka na wszystkie buty.",
+            "B": "Wczoraj była wyprzedaż na wszystkie buty."
+          }
+        },
+        {
+          "id": 4,
+          "prompt_en": "I plan to spend less on clothes.",
+          "options": {
+            "A": "Planuję wydawać mniej na ubrania.",
+            "B": "Planuję spędzać mniej na ubrania."
+          }
+        },
+        {
+          "id": 5,
+          "prompt_en": "Our shopping list is quite short.",
+          "options": {
+            "A": "Nasza zakupy lista jest dość krótka.",
+            "B": "Nasza lista zakupów jest dość krótka."
+          }
+        },
+        {
+          "id": 6,
+          "prompt_en": "I don't speak Polish well.",
+          "options": {
+            "A": "Nie mówię dobrze polskiego.",
+            "B": "Nie mówię dobrze po polsku."
+          }
+        },
+        {
+          "id": 7,
+          "prompt_en": "I bought new trousers.",
+          "options": {
+            "A": "Kupiłem nowe spodnie.",
+            "B": "Kupiłem nową spódnicę."
+          }
+        },
+        {
+          "id": 8,
+          "prompt_en": "Excuse me, is the bread fresh?",
+          "options": {
+            "A": "Przepraszam, czy ten chleb jest świeży?",
+            "B": "Przepraszam, czy ten chleb jest słodki?"
+          }
+        },
+        {
+          "id": 9,
+          "prompt_en": "See you next Monday!",
+          "options": {
+            "A": "Do zobaczenia następny poniedziałek!",
+            "B": "Do zobaczenia w następny poniedziałek!"
+          }
+        }
+      ]
+    },
+    {
+      "part_number": 10,
+      "type": "speaking_prompts",
+      "instruction_en": "Say a few words on the given topics. Answer the questions.",
+      "items": [
+        "What are you wearing?",
+        "What clothes and shoes do you usually wear in winter? And in summer?",
+        "What's in your wardrobe?",
+        "What do you usually do in the morning?",
+        "What do you often do in the evening?",
+        "What places are near your house/apartment (e.g. a supermarket, a chemist's, a bakery)?",
+        "Which shops do you visit most often?",
+        "Do you have any hobbies? What do you like to do in your free time?",
+        "Do you like travelling? What do you usually pack in your suitcase?",
+        "List at least five words or expressions that can be associated with travelling."
+      ]
+    }
+  ]
+}

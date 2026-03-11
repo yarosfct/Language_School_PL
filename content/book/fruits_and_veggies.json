@@ -1,0 +1,384 @@
+{
+  "section_number": 8,
+  "topic_en": "Fruit & Vegetables",
+  "topic_pl": "Owoce i warzywa",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "owoc", "en": ["fruit", "piece of fruit"], "category": "noun" },
+    { "pl": "banan", "en": ["banana"], "category": "noun" },
+    { "pl": "jabłko", "en": ["apple"], "category": "noun" },
+    { "pl": "pomarańcza", "en": ["orange"], "category": "noun" },
+    { "pl": "truskawka", "en": ["strawberry"], "category": "noun" },
+    { "pl": "ananas", "en": ["pineapple"], "category": "noun" },
+    { "pl": "brzoskwinia", "en": ["peach"], "category": "noun" },
+    { "pl": "gruszka", "en": ["pear"], "category": "noun" },
+    { "pl": "winogrona", "en": ["grapes"], "category": "noun" },
+    { "pl": "grejpfrut", "en": ["grapefruit"], "category": "noun" },
+    { "pl": "mango", "en": ["mango"], "category": "noun" },
+    { "pl": "melon", "en": ["melon"], "category": "noun" },
+    { "pl": "arbuz", "en": ["watermelon"], "category": "noun" },
+    { "pl": "cytryna", "en": ["lemon"], "category": "noun" },
+    { "pl": "śliwka", "en": ["plum"], "category": "noun" },
+    { "pl": "pomidor", "en": ["tomato"], "category": "noun" },
+    { "pl": "cebula", "en": ["onion"], "category": "noun" },
+    { "pl": "ogórek", "en": ["cucumber"], "category": "noun" },
+    { "pl": "marchewka", "en": ["carrot"], "category": "noun" },
+    { "pl": "czerwona papryka", "en": ["red pepper"], "category": "phrase" },
+    { "pl": "czosnek", "en": ["garlic"], "category": "noun" },
+    { "pl": "grzyb", "en": ["mushroom"], "category": "noun" },
+    { "pl": "ziemniak", "en": ["potato"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "owoc_countable",
+      "content": "'Owoc' is a countable noun in Polish. You can use it in the singular for one piece of fruit and in the plural for some fruit.",
+      "examples": [
+        "owoc = a piece of fruit",
+        "owoce = some fruit"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "sprzedawac_present_tense",
+      "content": "The verb 'sprzedawać' (to sell) is irregular in the present tense.",
+      "tables": {
+        "present_tense": {
+          "ja": "sprzedaję",
+          "ty": "sprzedajesz",
+          "on_ona_ono": "sprzedaje",
+          "my": "sprzedajemy",
+          "wy": "sprzedajecie",
+          "oni_one": "sprzedają"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "topic": "zdrowy_vs_niezdrowy",
+      "content": "The opposite of 'zdrowy' (healthy) is 'niezdrowy' (unhealthy)."
+    },
+    {
+      "id": 5,
+      "topic": "asking_price_patterns",
+      "content": "To ask the price of an item or items, you can use either 'W jakiej cenie jest/są...?' or 'Po ile jest/są...?'",
+      "examples": [
+        "W jakiej cenie jest ten ananas? = What's the price of this pineapple?",
+        "W jakiej cenie są banany? = What's the price of the bananas?",
+        "Po ile jest chleb? = How much is the bread?",
+        "Po ile są truskawki? = How much are the strawberries?"
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "forming_plural_nouns_and_adjectives",
+      "content": "The book gives a quick reminder that plural nouns and adjectives often depend on the last letter of the singular form. All plural adjectives end in -e.",
+      "examples": [
+        "jabłko -> jabłka",
+        "gruszka -> gruszki",
+        "owoc -> owoce",
+        "arbuz -> arbuzy",
+        "duże, małe"
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "te_here",
+      "content": "In this context, 'these' translates as 'te'."
+    },
+    {
+      "id": 10,
+      "topic": "green_vs_black_grapes",
+      "content": "In Poland, you can buy 'jasne winogrona' (green grapes, literally light grapes) or 'ciemne winogrona' (black grapes, literally dark grapes)."
+    },
+    {
+      "id": 11,
+      "topic": "taste_adjectives",
+      "content": "Useful adjectives to describe taste:",
+      "examples": [
+        "słodki = sweet",
+        "kwaśny = sour",
+        "słony = salty",
+        "gorzki = bitter",
+        "ostry/pikantny = spicy",
+        "łagodny = mild"
+      ]
+    },
+    {
+      "id": 13,
+      "topic": "czy_jestes_pewny",
+      "content": "To a man, say '(Czy) jesteś pewny?' or '(Czy) jesteś pewien?'. To a woman, ask '(Czy) jesteś pewna?'."
+    },
+    {
+      "id": 15,
+      "topic": "lista_zakupow",
+      "content": "'lista zakupów' means 'shopping list'. The English word 'list' and Polish 'list' are false friends: Polish 'list' means 'letter'."
+    },
+    {
+      "id": 16,
+      "topic": "infinitive_for_should_or_shall",
+      "content": "You can use the infinitive alone in this context to express English 'should' or 'shall'. Another option is 'mieć + infinitive + object'.",
+      "examples": [
+        "Kupić chleb? = Should/Shall I buy some bread?",
+        "Mam kupić chleb? = Should I buy bread?"
+      ]
+    },
+    {
+      "id": 17,
+      "topic": "poczestuj_sie",
+      "content": "'Poczęstuj się!' or 'Częstuj się!' means 'Help yourself!'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "What do you call this fruit (lit. How is called this fruit) in Polish?",
+      "pl": "Jak nazywa się ten owoc po polsku?",
+      "literal_en": "How is this fruit called in Polish?",
+      "english_variants": ["What do you call this fruit in Polish?"],
+      "polish_alternatives": [],
+      "focus_words": ["jak nazywa się", "ten owoc", "po polsku"],
+      "grammar_tags": ["question", "vocabulary"]
+    },
+    {
+      "id": 2,
+      "en": "I want to buy oranges and grapefruit.",
+      "pl": "Chcę kupić pomarańcze i grejpfruty.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["chcę", "kupić", "pomarańcze", "grejpfruty"],
+      "grammar_tags": ["present_tense", "shopping", "plural_nouns"]
+    },
+    {
+      "id": 3,
+      "en": "They sell good fruit here.",
+      "pl": "Sprzedają tu/tutaj dobre owoce.",
+      "literal_en": null,
+      "english_variants": ["They sell good fruit here."],
+      "polish_alternatives": ["Tutaj sprzedają dobre owoce."],
+      "focus_words": ["sprzedają", "tu", "tutaj", "dobre owoce"],
+      "grammar_tags": ["present_tense", "plural_adjective"]
+    },
+    {
+      "id": 4,
+      "en": "I like fruit. It is (lit. They are) healthy and delicious.",
+      "pl": "Lubię owoce. Są zdrowe i pyszne.",
+      "literal_en": "I like fruits. They are healthy and delicious.",
+      "english_variants": ["I like fruit. It's healthy and delicious."],
+      "polish_alternatives": [],
+      "focus_words": ["lubię owoce", "są", "zdrowe", "pyszne"],
+      "grammar_tags": ["present_tense", "plural_adjectives"]
+    },
+    {
+      "id": 5,
+      "en": "How much does a pineapple cost?",
+      "pl": "Ile kosztuje ananas?",
+      "literal_en": null,
+      "english_variants": ["How much is a pineapple?"],
+      "polish_alternatives": ["Po ile jest ananas?"],
+      "focus_words": ["ile kosztuje", "ananas"],
+      "grammar_tags": ["question", "shopping"]
+    },
+    {
+      "id": 6,
+      "en": "Garlic, four cucumbers, and a mango, please.",
+      "pl": "Poproszę/Proszę czosnek, cztery ogórki i mango.",
+      "literal_en": null,
+      "english_variants": ["Garlic, four cucumbers, and a mango, please."],
+      "polish_alternatives": [],
+      "focus_words": ["poproszę", "czosnek", "cztery ogórki", "mango"],
+      "grammar_tags": ["shopping", "quantity"]
+    },
+    {
+      "id": 7,
+      "en": "It's the strawberry season (lit. season for strawberries) now.",
+      "pl": "Teraz jest sezon na truskawki.",
+      "literal_en": "Now it is season for strawberries.",
+      "english_variants": ["It's strawberry season now."],
+      "polish_alternatives": [],
+      "focus_words": ["teraz", "jest", "sezon na", "truskawki"],
+      "grammar_tags": ["time_expression", "shopping"]
+    },
+    {
+      "id": 8,
+      "en": "Three ripe bananas, please.",
+      "pl": "Poproszę/Proszę trzy dojrzałe banany.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["poproszę", "trzy", "dojrzałe", "banany"],
+      "grammar_tags": ["shopping", "quantity", "plural_adjective"]
+    },
+    {
+      "id": 9,
+      "en": "Are these plums soft?",
+      "pl": "(Czy) te śliwki są miękkie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Te śliwki są miękkie?"],
+      "focus_words": ["te", "śliwki", "są", "miękkie"],
+      "grammar_tags": ["question", "plural_adjectives"]
+    },
+    {
+      "id": 10,
+      "en": "You know how much I like grapes, don't you?",
+      "pl": "Wiesz, jak bardzo lubię winogrona, prawda?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wiesz", "jak bardzo", "lubię", "winogrona", "prawda"],
+      "grammar_tags": ["tag_question", "present_tense"]
+    },
+    {
+      "id": 11,
+      "en": "Are these apples sweet?",
+      "pl": "(Czy) te jabłka są słodkie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Te jabłka są słodkie?"],
+      "focus_words": ["te", "jabłka", "są", "słodkie"],
+      "grammar_tags": ["question", "plural_adjectives"]
+    },
+    {
+      "id": 12,
+      "en": "We have cheese, a carrot, an onion, and a red pepper. Anything else?",
+      "pl": "Mamy ser, marchewkę, cebulę i czerwoną paprykę. Coś jeszcze?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mamy", "ser", "marchewkę", "cebulę", "czerwoną paprykę", "coś jeszcze"],
+      "grammar_tags": ["shopping", "accusative_basic"]
+    },
+    {
+      "id": 13,
+      "en": "Are you sure that this mushroom is edible?",
+      "pl": "(Czy) jesteś pewien, że ten grzyb jest jadalny?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy jesteś pewny, że ten grzyb jest jadalny?", "Jesteś pewien, że ten grzyb jest jadalny?"],
+      "focus_words": ["jesteś pewien", "że", "ten grzyb", "jadalny"],
+      "grammar_tags": ["question", "subordinate_clause"]
+    },
+    {
+      "id": 14,
+      "en": "Three red peppers, please.",
+      "pl": "Poproszę/Proszę trzy czerwone papryki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["poproszę", "trzy", "czerwone papryki"],
+      "grammar_tags": ["shopping", "quantity", "plural_adjective"]
+    },
+    {
+      "id": 15,
+      "en": "I'm making a shopping list. Right, potatoes, two lemons and three apples, a watermelon, a melon...",
+      "pl": "Robię listę zakupów. Dobrze, ziemniaki, dwie cytryny i trzy jabłka, arbuz, melon...",
+      "literal_en": null,
+      "english_variants": ["I'm making a shopping list. Right, potatoes, two lemons and three apples, a watermelon, a melon..."],
+      "polish_alternatives": [],
+      "focus_words": ["robię listę zakupów", "ziemniaki", "dwie cytryny", "trzy jabłka", "arbuz", "melon"],
+      "grammar_tags": ["shopping", "quantity"]
+    },
+    {
+      "id": 16,
+      "en": "Should/Shall I buy dried or fresh tomatoes?",
+      "pl": "(Czy) kupić suszone, czy świeże pomidory?",
+      "literal_en": null,
+      "english_variants": ["Should I buy dried or fresh tomatoes?", "Shall I buy dried or fresh tomatoes?"],
+      "polish_alternatives": ["Mam kupić suszone czy świeże pomidory?"],
+      "focus_words": ["kupić", "suszone", "czy", "świeże", "pomidory"],
+      "grammar_tags": ["shopping", "infinitive_question"]
+    },
+    {
+      "id": 17,
+      "en": "These peaches are sweet and soft. Help yourself!",
+      "pl": "Te brzoskwinie są słodkie i miękkie. Poczęstuj się! / Częstuj się!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Te brzoskwinie są słodkie i miękkie. Częstuj się!"],
+      "focus_words": ["te brzoskwinie", "są", "słodkie", "miękkie", "poczęstuj się"],
+      "grammar_tags": ["plural_adjectives", "fixed_expression"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "owoc",
+      "banan",
+      "jabłko",
+      "pomarańcza",
+      "truskawka",
+      "ananas",
+      "brzoskwinia",
+      "gruszka",
+      "winogrona",
+      "grejpfrut",
+      "mango",
+      "melon",
+      "arbuz",
+      "cytryna",
+      "śliwka",
+      "pomidor",
+      "cebula",
+      "ogórek",
+      "marchewka",
+      "czerwona papryka",
+      "czosnek",
+      "grzyb",
+      "ziemniak"
+    ],
+    "sentence_cards_priority": [1, 2, 5, 6, 7, 9, 11, 13, 15, 16, 17]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'How much does a pineapple cost?'",
+      "correct_answer": "Ile kosztuje ananas?",
+      "distractors": [
+        "Po ile są ananasy?",
+        "Jak kosztuje ananas?",
+        "Ile ananas kosztują?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'It's strawberry season now.'",
+      "answer_pl": "Teraz jest sezon na truskawki.",
+      "word_bank": ["Teraz", "jest", "sezon", "na", "truskawki"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Three ripe bananas, please.'",
+      "accepted_answers": [
+        "Poproszę trzy dojrzałe banany.",
+        "Proszę trzy dojrzałe banany."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

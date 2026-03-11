@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react';
 import { OrderingData } from '@/types/curriculum';
 import { shuffle } from '@/lib/utils/string';
-import { ArrowUp, ArrowDown, GripVertical } from 'lucide-react';
+import { RefreshCcw, X } from 'lucide-react';
+import { InteractiveAnswerText } from '@/components/exercises/InteractiveAnswerText';
 import { TTSButton } from '@/components/ui/TTSButton';
 import { TTSControls } from '@/components/ui/TTSControls';
 
@@ -14,201 +15,173 @@ interface OrderingExerciseProps {
   isCorrect?: boolean;
   explanation?: string;
   autoPlayTTS?: boolean;
+  referenceAnswerText?: string;
+  referenceSectionId?: string;
 }
 
-export function OrderingExercise({ 
-  data, 
-  onSubmit, 
-  showFeedback, 
+export function OrderingExercise({
+  data,
+  onSubmit,
+  showFeedback,
   isCorrect,
-  explanation,
-  autoPlayTTS = false,
+  referenceAnswerText,
+  referenceSectionId,
 }: OrderingExerciseProps) {
-  const [items, setItems] = useState<string[]>([]);
+  const [wordBank, setWordBank] = useState<string[]>([]);
+  const [answerTokens, setAnswerTokens] = useState<string[]>([]);
   const [submitted, setSubmitted] = useState(false);
-  const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
-  const [dragOverIndex, setDragOverIndex] = useState<number | null>(null);
-  const [playingIndex, setPlayingIndex] = useState<number | null>(null);
 
   useEffect(() => {
-    // Initialize with scrambled items
-    setItems(data.scrambled || shuffle(data.items));
+    setWordBank(data.scrambled ? [...data.scrambled] : shuffle(data.items));
+    setAnswerTokens([]);
+    setSubmitted(false);
   }, [data]);
 
-  const moveItem = (index: number, direction: 'up' | 'down') => {
-    if (submitted) return;
-    
-    const newItems = [...items];
-    const targetIndex = direction === 'up' ? index - 1 : index + 1;
-    
-    if (targetIndex < 0 || targetIndex >= newItems.length) return;
-    
-    [newItems[index], newItems[targetIndex]] = [newItems[targetIndex], newItems[index]];
-    setItems(newItems);
-  };
-
-  const handleDragStart = (index: number) => {
-    if (submitted) return;
-    setDraggedIndex(index);
-  };
-
-  const handleDragOver = (e: React.DragEvent, index: number) => {
-    e.preventDefault();
-    if (submitted || draggedIndex === null) return;
-    setDragOverIndex(index);
-  };
-
-  const handleDragEnd = () => {
-    if (submitted || draggedIndex === null || dragOverIndex === null) {
-      setDraggedIndex(null);
-      setDragOverIndex(null);
+  const selectToken = (index: number) => {
+    if (submitted) {
       return;
     }
 
-    const newItems = [...items];
-    const [draggedItem] = newItems.splice(draggedIndex, 1);
-    newItems.splice(dragOverIndex, 0, draggedItem);
-    
-    setItems(newItems);
-    setDraggedIndex(null);
-    setDragOverIndex(null);
+    const token = wordBank[index];
+    if (!token) {
+      return;
+    }
+
+    const nextWordBank = [...wordBank];
+    nextWordBank.splice(index, 1);
+
+    setWordBank(nextWordBank);
+    setAnswerTokens((previous) => [...previous, token]);
   };
 
-  const handleDragLeave = () => {
-    setDragOverIndex(null);
+  const removeToken = (index: number) => {
+    if (submitted) {
+      return;
+    }
+
+    const token = answerTokens[index];
+    if (!token) {
+      return;
+    }
+
+    const nextAnswerTokens = [...answerTokens];
+    nextAnswerTokens.splice(index, 1);
+
+    setAnswerTokens(nextAnswerTokens);
+    setWordBank((previous) => [...previous, token]);
+  };
+
+  const resetAnswer = () => {
+    if (submitted) {
+      return;
+    }
+
+    setWordBank(data.scrambled ? [...data.scrambled] : shuffle(data.items));
+    setAnswerTokens([]);
   };
 
   const handleSubmit = () => {
     setSubmitted(true);
-    onSubmit(items);
+    onSubmit(answerTokens);
   };
 
   return (
     <div className="space-y-4">
-      {/* Instructions with Play All */}
       <div className="flex items-center justify-between">
-        <p className="text-sm text-gray-600 dark:text-gray-400 italic">
-          💡 Drag items to reorder them, or use the arrow buttons
+        <p className="text-sm italic text-gray-600 dark:text-gray-400">
+          Tap words to build the sentence. Extra words are included.
         </p>
-        {submitted && showFeedback && isCorrect && (
-          <TTSControls 
-            text={data.items.join('. ')}
-            showSlowToggle={true}
-            showReplayButton={false}
-          />
+        {!submitted && (
+          <button
+            onClick={resetAnswer}
+            className="inline-flex items-center gap-1 rounded-lg border border-gray-300 px-3 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
+          >
+            <RefreshCcw className="h-3.5 w-3.5" />
+            Reset
+          </button>
         )}
       </div>
 
-      {/* Ordering list */}
-      <div className="space-y-2">
-        {items.map((item, index) => {
-          const isDragging = draggedIndex === index;
-          const isDragOver = dragOverIndex === index;
-          const isPlaying = playingIndex === index;
-          
-          return (
-            <div 
-              key={index} 
-              className="flex items-center gap-2"
-              draggable={!submitted}
-              onDragStart={() => handleDragStart(index)}
-              onDragOver={(e) => handleDragOver(e, index)}
-              onDragEnd={handleDragEnd}
-              onDragLeave={handleDragLeave}
-            >
-              {/* Drag handle */}
-              <div className={`p-2 rounded cursor-grab active:cursor-grabbing ${
-                submitted ? 'opacity-30 cursor-not-allowed' : 'hover:bg-gray-200 dark:hover:bg-gray-700'
-              }`}>
-                <GripVertical className="w-5 h-5 text-gray-400" />
-              </div>
-
-              {/* Arrow buttons */}
-              <div className="flex flex-col gap-1">
-                <button
-                  onClick={() => moveItem(index, 'up')}
-                  disabled={submitted || index === 0}
-                  className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded disabled:opacity-30 disabled:cursor-not-allowed"
-                  title="Move up"
-                >
-                  <ArrowUp className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => moveItem(index, 'down')}
-                  disabled={submitted || index === items.length - 1}
-                  className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded disabled:opacity-30 disabled:cursor-not-allowed"
-                  title="Move down"
-                >
-                  <ArrowDown className="w-4 h-4" />
-                </button>
-              </div>
-              
-              {/* Item content */}
-              <div className={`flex-1 p-4 rounded-lg border-2 transition-all ${
-                isDragging
-                  ? 'opacity-50 scale-95'
-                  : isDragOver && !submitted
-                  ? 'border-primary-500 bg-primary-50 dark:bg-primary-900/20 scale-105'
-                  : submitted && showFeedback
-                  ? isCorrect
-                    ? 'border-green-500 bg-green-50 dark:bg-green-900/20'
-                    : 'border-red-500 bg-red-50 dark:bg-red-900/20'
-                  : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800'
-              } ${!submitted && 'hover:border-gray-400 dark:hover:border-gray-500'} ${
-                isPlaying ? 'ring-2 ring-primary-500' : ''
-              }`}>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-gray-600 dark:text-gray-400 mr-2">{index + 1}.</span>
-                    <span className="text-gray-900 dark:text-white">{item}</span>
-                  </div>
-                  <TTSButton 
-                    text={item}
-                    size="sm"
-                    variant="minimal"
-                    onStart={() => setPlayingIndex(index)}
-                    onEnd={() => setPlayingIndex(null)}
-                  />
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      <div className="rounded-xl border border-gray-200 bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-900/40">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Your sentence</p>
+        {answerTokens.length === 0 ? (
+          <p className="text-sm text-gray-500 dark:text-gray-400">Select words from the bank below.</p>
+        ) : (
+          <div className="flex flex-wrap gap-2">
+            {answerTokens.map((token, index) => (
+              <button
+                key={`answer-${index}-${token}`}
+                onClick={() => removeToken(index)}
+                disabled={submitted}
+                className="inline-flex items-center gap-1 rounded-lg border border-cyan-300 bg-cyan-100 px-3 py-2 text-sm font-medium text-cyan-900 hover:bg-cyan-200 disabled:cursor-not-allowed dark:border-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-100"
+              >
+                {token}
+                {!submitted && <X className="h-3.5 w-3.5" />}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
-      {/* Submit button */}
+      <div className="rounded-xl border border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-900/40">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">Word bank</p>
+        <div className="flex flex-wrap gap-2">
+          {wordBank.map((token, index) => (
+            <button
+              key={`bank-${index}-${token}`}
+              onClick={() => selectToken(index)}
+              disabled={submitted}
+              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-800 hover:border-primary-400 hover:bg-primary-50 disabled:cursor-not-allowed disabled:opacity-60 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-primary-900/20"
+            >
+              {token}
+            </button>
+          ))}
+        </div>
+      </div>
+
       {!submitted && (
         <button
           onClick={handleSubmit}
-          className="w-full py-3 px-6 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors"
+          disabled={answerTokens.length !== data.items.length}
+          className="w-full rounded-lg bg-primary-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-600 disabled:cursor-not-allowed disabled:bg-gray-300"
         >
           Submit Answer
         </button>
       )}
 
-      {/* Feedback */}
       {submitted && showFeedback && (
-        <div className={`p-4 rounded-lg ${
-          isCorrect
-            ? 'bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-300'
-            : 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-300'
-        }`}>
-          <p className="font-semibold mb-2">
-            {isCorrect ? '✓ Correct!' : '✗ Incorrect'}
-          </p>
-          {explanation && <p>{explanation}</p>}
-          {!isCorrect && (
+        <div
+          className={`rounded-lg p-4 ${
+            isCorrect
+              ? 'bg-green-50 text-green-800 dark:bg-green-900/20 dark:text-green-300'
+              : 'bg-red-50 text-red-800 dark:bg-red-900/20 dark:text-red-300'
+          }`}
+        >
+          <p className="mb-2 font-semibold">{isCorrect ? 'Correct!' : 'Incorrect'}</p>
+          {referenceAnswerText && referenceSectionId ? (
+            <div className="text-sm">
+              <p className="font-semibold">{isCorrect ? 'Completed sentence:' : 'Correct sentence:'}</p>
+              <div className="mt-1">
+                <InteractiveAnswerText text={referenceAnswerText} sectionId={referenceSectionId} />
+              </div>
+            </div>
+          ) : (
             <div className="mt-2 text-sm">
-              <p className="font-semibold">Correct order:</p>
-              <ol className="list-decimal list-inside">
-                {data.items.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ol>
+              <p className="font-semibold">Correct sentence:</p>
+              <p>{data.items.join(' ')}</p>
+            </div>
+          )}
+          {isCorrect && (
+            <div className="mt-3">
+              <TTSControls text={data.items.join(' ')} showSlowToggle={true} showReplayButton={false} />
             </div>
           )}
         </div>
       )}
+
+      <div className="flex justify-center">
+        <TTSButton text={data.items.join(' ')} size="sm" variant="minimal" />
+      </div>
     </div>
   );
 }

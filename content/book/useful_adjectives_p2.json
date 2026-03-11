@@ -1,0 +1,599 @@
+{
+  "section_number": 23,
+  "topic_en": "Useful Adjectives. Part 2",
+  "topic_pl": "Przydatne przymiotniki. Część 2",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "ciemny", "en": ["dark"], "category": "adjective" },
+    { "pl": "dziwny", "en": ["strange"], "category": "adjective" },
+    { "pl": "fantastyczny", "en": ["fantastic"], "category": "adjective" },
+    { "pl": "firmowy", "en": ["work", "office", "company-related"], "category": "adjective" },
+    { "pl": "głośny", "en": ["loud"], "category": "adjective" },
+    { "pl": "głupi", "en": ["stupid", "dumb", "silly"], "category": "adjective" },
+    { "pl": "idealny", "en": ["perfect"], "category": "adjective" },
+    { "pl": "jasny", "en": ["clear", "light", "bright"], "category": "adjective" },
+    { "pl": "jedyny", "en": ["the only"], "category": "adjective" },
+    { "pl": "następny", "en": ["next"], "category": "adjective" },
+    { "pl": "naturalny", "en": ["natural"], "category": "adjective" },
+    { "pl": "ostatni", "en": ["last", "latest"], "category": "adjective" },
+    { "pl": "pewny", "en": ["sure"], "category": "adjective" },
+    { "pl": "podobny", "en": ["similar"], "category": "adjective" },
+    { "pl": "poprawny", "en": ["correct"], "category": "adjective" },
+    { "pl": "popularny", "en": ["popular"], "category": "adjective" },
+    { "pl": "prawdziwy", "en": ["true", "real"], "category": "adjective" },
+    { "pl": "pyszny", "en": ["delicious"], "category": "adjective" },
+    { "pl": "sławny", "en": ["famous", "well-known"], "category": "adjective" },
+    { "pl": "słodki", "en": ["sweet"], "category": "adjective" },
+    { "pl": "szybki", "en": ["quick", "fast"], "category": "adjective" },
+    { "pl": "świeży", "en": ["fresh"], "category": "adjective" },
+    { "pl": "ulubiony", "en": ["favourite"], "category": "adjective" },
+    { "pl": "wczesny", "en": ["early"], "category": "adjective" },
+    { "pl": "wolny", "en": ["slow"], "category": "adjective" },
+    { "pl": "wspaniały", "en": ["wonderful"], "category": "adjective" },
+    { "pl": "wygodny", "en": ["comfortable", "comfy"], "category": "adjective" },
+    { "pl": "wyjątkowy", "en": ["special"], "category": "adjective" },
+    { "pl": "zdrowy", "en": ["healthy"], "category": "adjective" }
+  ],
+  "tips": [
+    {
+      "id": 5,
+      "topic": "trudny_vs_twardy",
+      "content": "Both 'trudny' and 'twardy' can map to English hard, but use 'trudny' for difficult and 'twardy' as the opposite of soft."
+    },
+    {
+      "id": 6,
+      "topic": "past_of_miec",
+      "content": "The past tense of 'mieć' (to have) is 'miałem' for masculine and 'miałam' for feminine.",
+      "examples": [
+        "miałem",
+        "miałam"
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "broken_translations",
+      "content": "English 'broken' may be translated in several ways depending on context.",
+      "examples": [
+        "zepsuty = broken, not working (e.g. a car, laptop, phone, TV set)",
+        "złamany = broken bone / damaged body part or object like an arm, leg, or pencil",
+        "rozbity = broken / smashed objects made of glass, ceramic, porcelain, etc."
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "zepsuty_examples",
+      "content": "Use 'zepsuty' if something doesn't work.",
+      "examples": [
+        "Nasz samochód jest zepsuty. = Our car is broken.",
+        "Mój laptop, bo mój jest zepsuty. = I need to buy a new laptop because mine is broken."
+      ]
+    },
+    {
+      "id": 9,
+      "topic": "slyszec_accusative",
+      "content": "After the verb 'słyszeć' (to hear), use the accusative case."
+    },
+    {
+      "id": 11,
+      "topic": "ostatni_last_latest",
+      "content": "Both latest and last can be translated as 'ostatni'.",
+      "content_note": "When talking about something great, you can often use other adjectives such as 'niesamowity', 'świetny', 'rewelacyjny', or 'fantastyczny'."
+    },
+    {
+      "id": 15,
+      "topic": "skad_questions",
+      "content": "'Skąd' means where from. It is also used in questions about the story behind something or how someone knows something.",
+      "examples": [
+        "Skąd wracasz? = Where are you coming back from?",
+        "Skąd odjeżdża ten pociąg? = Where does this train depart from?",
+        "Skąd tak dobrze znasz angielski? = How come you know English so well?",
+        "Skąd o tym wiesz? = How come you know about it?",
+        "Skąd wiesz, że on jest bogaty? = How come you know he’s rich?"
+      ]
+    },
+    {
+      "id": 15,
+      "topic": "probowac_genitive",
+      "content": "Remember to use the genitive after the verb 'próbować' (to try). 'Tego' is the genitive form of 'to'."
+    },
+    {
+      "id": 16,
+      "topic": "jechac_instrumental",
+      "content": "Use the instrumental case after the verb 'jechać'."
+    },
+    {
+      "id": 17,
+      "topic": "jasny_meanings",
+      "content": "'Jasny' means clear, but also light (not dark) or bright (e.g. of colour)."
+    },
+    {
+      "id": 18,
+      "topic": "nastepny_vs_przyszly",
+      "content": "Both 'następny' and 'przyszły' can mean next, but they are not always interchangeable.",
+      "examples": [
+        "następny typically refers to the next item in a sequence or series, e.g. następny odcinek, następny przystanek",
+        "przyszły refers specifically to the future, e.g. przyszły tydzień, przyszły rok"
+      ],
+      "content_note": "In this context, 'przyszły' can often be replaced by 'następny'."
+    },
+    {
+      "id": 18,
+      "topic": "w_with_time_phrases",
+      "content": "For expressions like next Monday, next week, next month, last Tuesday, last year, etc., Polish uses the preposition 'w'.",
+      "examples": [
+        "w następny poniedziałek = next Monday"
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "dlugi_drugi_drogi",
+      "content": "Learners often confuse these similar-looking adjectives:",
+      "examples": [
+        "długi = long",
+        "drugi = second",
+        "drogi = expensive"
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "dziekowac_za_accusative",
+      "content": "After 'dziękować' (to thank), use the preposition 'za' followed by the accusative case.",
+      "examples": [
+        "Dziękuję za twoją pomoc."
+      ]
+    },
+    {
+      "id": 28,
+      "topic": "tak_vs_nie_tak",
+      "content": "'Tak' means yes and 'nie' means no, but 'nie tak' means not like that / wrong.",
+      "examples": [
+        "Czekaj, coś jest nie tak! = Wait, something is wrong!",
+        "Coś jest nie tak z moim laptopem. = Something is wrong with my laptop."
+      ]
+    },
+    {
+      "id": 30,
+      "topic": "tylko_vs_jedyny",
+      "content": "'Tylko' means only in the sense of nothing else besides the thing/person/action mentioned. 'Jedyny' emphasizes uniqueness.",
+      "examples": [
+        "Tylko ja to wiem. = Only I know it.",
+        "Chcę tylko kawę. = I want only coffee.",
+        "To jest mój jedyny problem. = This is my only problem.",
+        "To jest jedyny samochód, który mam. = This is the only car I have."
+      ]
+    },
+    {
+      "id": 34,
+      "topic": "nie_moge_w_to_uwierzyc",
+      "content": "Useful expression: 'Nie mogę w to uwierzyć!' = I can't believe it!"
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Yesterday, we had the last exam. The questions were hard.",
+      "pl": "Wczoraj mieliśmy ostatni egzamin. Pytania były trudne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wczoraj", "mieliśmy ostatni egzamin", "pytania były trudne"],
+      "grammar_tags": ["adjectives", "past_tense"]
+    },
+    {
+      "id": 2,
+      "en": "These apples are very hard, but they are really sweet.",
+      "pl": "Te jabłka są bardzo twarde, ale (są) naprawdę słodkie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Te jabłka są bardzo twarde, ale naprawdę słodkie."],
+      "focus_words": ["te jabłka", "są bardzo twarde", "ale", "naprawdę słodkie"],
+      "grammar_tags": ["adjectives", "contrast", "plural_noun"]
+    },
+    {
+      "id": 3,
+      "en": "I had a strange dream.",
+      "pl": "Miałem dziwny sen.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Miałam dziwny sen."],
+      "focus_words": ["miałem", "dziwny sen"],
+      "grammar_tags": ["adjectives", "past_tense"]
+    },
+    {
+      "id": 4,
+      "en": "I really like this (TV) series. Today, we watched the last episode.",
+      "pl": "Bardzo lubię ten serial. Dzisiaj/Dziś oglądaliśmy ostatni odcinek.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Bardzo lubię ten serial. Dziś oglądaliśmy ostatni odcinek."],
+      "focus_words": ["bardzo lubię ten serial", "dziś oglądaliśmy", "ostatni odcinek"],
+      "grammar_tags": ["adjectives", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 5,
+      "en": "This place is very popular.",
+      "pl": "To miejsce jest bardzo popularne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["to miejsce", "jest bardzo popularne"],
+      "grammar_tags": ["adjectives", "description"]
+    },
+    {
+      "id": 6,
+      "en": "We will watch my favourite film and eat pasta.",
+      "pl": "Będziemy oglądać mój ulubiony film i jeść makaron.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["będziemy oglądać", "mój ulubiony film", "i jeść makaron"],
+      "grammar_tags": ["adjectives", "future_tense", "two_verbs_rule"]
+    },
+    {
+      "id": 7,
+      "en": "Fresh orange juice is very healthy. Natural yoghurt too.",
+      "pl": "Świeży sok pomarańczowy jest bardzo zdrowy. Jogurt naturalny też.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["świeży sok pomarańczowy", "jest bardzo zdrowy", "jogurt naturalny też"],
+      "grammar_tags": ["adjectives", "description"]
+    },
+    {
+      "id": 8,
+      "en": "His office laptop is broken again.",
+      "pl": "Jego laptop firmowy znów/znowu jest zepsuty.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jego laptop firmowy znowu jest zepsuty."],
+      "focus_words": ["jego laptop firmowy", "znów", "jest zepsuty"],
+      "grammar_tags": ["adjectives", "description"]
+    },
+    {
+      "id": 9,
+      "en": "Can you (pl.) hear that fantastic music? It’s my neighbour playing the piano.",
+      "pl": "(Czy) słyszycie tę fantastyczną muzykę? To mój sąsiad gra na pianinie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Słyszycie tę fantastyczną muzykę? To mój sąsiad gra na pianinie."],
+      "focus_words": ["słyszycie", "tę fantastyczną muzykę", "to mój sąsiad", "gra na pianinie"],
+      "grammar_tags": ["question", "adjectives", "accusative_basic"]
+    },
+    {
+      "id": 10,
+      "en": "Are you sure this jumper (lit. that this jumper) isn’t too dark?",
+      "pl": "(Czy) jesteś pewny, że ten sweter nie jest za/zbyt ciemny?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jesteś pewny, że ten sweter nie jest zbyt ciemny?"],
+      "focus_words": ["jesteś pewny", "że", "ten sweter", "nie jest za ciemny"],
+      "grammar_tags": ["question", "adjectives", "subordinate_clause", "negation"]
+    },
+    {
+      "id": 11,
+      "en": "His latest film is fantastic.",
+      "pl": "Jego ostatni film jest fantastyczny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jego ostatni film", "jest fantastyczny"],
+      "grammar_tags": ["adjectives", "description"]
+    },
+    {
+      "id": 12,
+      "en": "What time does the next bus come?",
+      "pl": "O której (godzinie) przyjeżdża następny autobus?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["O której przyjeżdża następny autobus?"],
+      "focus_words": ["o której", "przyjeżdża", "następny autobus"],
+      "grammar_tags": ["question", "adjectives", "time_expression"]
+    },
+    {
+      "id": 13,
+      "en": "Isn’t that strange?",
+      "pl": "(Czy) to nie jest dziwne?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To nie jest dziwne?"],
+      "focus_words": ["to", "nie jest dziwne"],
+      "grammar_tags": ["question", "adjectives", "negation"]
+    },
+    {
+      "id": 14,
+      "en": "I have a similar flat.",
+      "pl": "Mam podobne mieszkanie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam", "podobne mieszkanie"],
+      "grammar_tags": ["adjectives", "accusative_basic"]
+    },
+    {
+      "id": 15,
+      "en": "How (lit. Where from) do you know it’s sweet? Have you already tried it?",
+      "pl": "Skąd wiesz, że to jest słodkie? (Czy) już tego próbowałeś?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Skąd wiesz, że to jest słodkie? Już tego próbowałeś?"],
+      "focus_words": ["skąd wiesz", "że to jest słodkie", "już", "tego próbowałeś"],
+      "grammar_tags": ["question", "adjectives", "subordinate_clause", "genitive_after_probowac"]
+    },
+    {
+      "id": 16,
+      "en": "Yes, that password was correct.",
+      "pl": "Tak, to hasło było poprawne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["tak", "to hasło", "było poprawne"],
+      "grammar_tags": ["adjectives", "past_tense"]
+    },
+    {
+      "id": 17,
+      "en": "Look! Isn’t that that famous actor?",
+      "pl": "Spójrz! (Czy) to nie (jest) ten sławny aktor?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Spójrz! To nie jest ten sławny aktor?"],
+      "focus_words": ["spójrz", "to nie jest", "ten sławny aktor"],
+      "grammar_tags": ["question", "adjectives", "imperative"]
+    },
+    {
+      "id": 18,
+      "en": "I’ll have to take an early train tomorrow because I want to be there on time.",
+      "pl": "Muszę jechać jutro wczesnym pociągiem, bo chcę tam być na czas.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["muszę jechać", "jutro", "wczesnym pociągiem", "bo", "chcę tam być na czas"],
+      "grammar_tags": ["adjectives", "instrumental_basic", "subordinate_clause"]
+    },
+    {
+      "id": 19,
+      "en": "The internet was very slow there.",
+      "pl": "Internet był tam bardzo wolny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["internet", "był tam", "bardzo wolny"],
+      "grammar_tags": ["adjectives", "past_tense"]
+    },
+    {
+      "id": 20,
+      "en": "Is that clear? Do you (pl.) understand it?",
+      "pl": "(Czy) to jest jasne? (Czy) rozumiecie to?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To jest jasne? Rozumiecie to?"],
+      "focus_words": ["to jest jasne", "rozumiecie to"],
+      "grammar_tags": ["question", "adjectives"]
+    },
+    {
+      "id": 21,
+      "en": "It’s not a stupid/silly question.",
+      "pl": "To nie jest głupie pytanie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["to nie jest", "głupie pytanie"],
+      "grammar_tags": ["adjectives", "negation"]
+    },
+    {
+      "id": 22,
+      "en": "That’s my favourite restaurant. The food there is really delicious.",
+      "pl": "To (jest) moja ulubiona restauracja. Jedzenie jest tam naprawdę pyszne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To moja ulubiona restauracja. Jedzenie jest tam naprawdę pyszne."],
+      "focus_words": ["to moja ulubiona restauracja", "jedzenie", "jest tam naprawdę pyszne"],
+      "grammar_tags": ["adjectives", "description"]
+    },
+    {
+      "id": 23,
+      "en": "See you next Friday!",
+      "pl": "Do zobaczenia w następny/przyszły piątek!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Do zobaczenia w przyszły piątek!", "Do zobaczenia w następny piątek!"],
+      "focus_words": ["do zobaczenia", "w następny piątek", "w przyszły piątek"],
+      "grammar_tags": ["adjectives", "time_expression", "fixed_expression"]
+    },
+    {
+      "id": 24,
+      "en": "My bike is broken, and the new one is very expensive.",
+      "pl": "Mój rower jest zepsuty, a ten nowy jest bardzo drogi.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój rower", "jest zepsuty", "a", "ten nowy", "jest bardzo drogi"],
+      "grammar_tags": ["adjectives", "contrast"]
+    },
+    {
+      "id": 25,
+      "en": "We have a special gift for you.",
+      "pl": "Mamy dla ciebie wyjątkowy prezent.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mamy", "dla ciebie", "wyjątkowy prezent"],
+      "grammar_tags": ["adjectives", "accusative_basic"]
+    },
+    {
+      "id": 26,
+      "en": "My best/close friend is really wonderful.",
+      "pl": "Moja przyjaciółka jest naprawdę wspaniała/cudowna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Moja przyjaciółka jest naprawdę cudowna."],
+      "focus_words": ["moja przyjaciółka", "jest naprawdę wspaniała", "cudowna"],
+      "grammar_tags": ["adjectives", "description"]
+    },
+    {
+      "id": 27,
+      "en": "Thank you for the last meeting.",
+      "pl": "Dziękuję za ostatnie spotkanie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dziękuję za", "ostatnie spotkanie"],
+      "grammar_tags": ["adjectives", "accusative_basic"]
+    },
+    {
+      "id": 28,
+      "en": "The music is too loud. It’s quite late.",
+      "pl": "Muzyka jest za/zbyt głośna. Jest dość późno.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Muzyka jest zbyt głośna. Jest dość późno."],
+      "focus_words": ["muzyka", "jest za głośna", "jest dość późno"],
+      "grammar_tags": ["adjectives", "degree"]
+    },
+    {
+      "id": 29,
+      "en": "This is a true story. It seems strange, but it’s true.",
+      "pl": "To (jest) prawdziwa historia. Wydaje się dziwna, ale jest prawdziwa.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To prawdziwa historia. Wydaje się dziwna, ale jest prawdziwa."],
+      "focus_words": ["to prawdziwa historia", "wydaje się dziwna", "ale jest prawdziwa"],
+      "grammar_tags": ["adjectives", "contrast", "reflexive_verb"]
+    },
+    {
+      "id": 30,
+      "en": "Not like that! That’s not the only way.",
+      "pl": "Nie tak! To nie (jest) jedyny sposób.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie tak! To nie jedyny sposób."],
+      "focus_words": ["nie tak", "to nie jedyny sposób"],
+      "grammar_tags": ["adjectives", "negation"]
+    },
+    {
+      "id": 31,
+      "en": "The view was wonderful. It’s a shame that the area was very noisy.",
+      "pl": "Widok był wspaniały/cudowny. Szkoda, że okolica była bardzo głośna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Widok był cudowny. Szkoda, że okolica była bardzo głośna."],
+      "focus_words": ["widok był wspaniały", "szkoda, że", "okolica była bardzo głośna"],
+      "grammar_tags": ["adjectives", "past_tense", "subordinate_clause"]
+    },
+    {
+      "id": 32,
+      "en": "This dress is perfect! I can’t believe it was cheap!",
+      "pl": "Ta sukienka jest idealna! Nie mogę uwierzyć, że była tania!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta sukienka", "jest idealna", "nie mogę uwierzyć", "że była tania"],
+      "grammar_tags": ["adjectives", "subordinate_clause", "past_tense"]
+    },
+    {
+      "id": 33,
+      "en": "These are my favourite shoes. They’re very comfortable.",
+      "pl": "To (są) moje ulubione buty. Są bardzo wygodne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To moje ulubione buty. Są bardzo wygodne."],
+      "focus_words": ["to moje ulubione buty", "są bardzo wygodne"],
+      "grammar_tags": ["adjectives", "plural_noun"]
+    },
+    {
+      "id": 34,
+      "en": "I have a quick question.",
+      "pl": "Mam szybkie pytanie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam", "szybkie pytanie"],
+      "grammar_tags": ["adjectives", "accusative_basic"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "ciemny",
+      "dziwny",
+      "fantastyczny",
+      "firmowy",
+      "głośny",
+      "głupi",
+      "idealny",
+      "jasny",
+      "jedyny",
+      "następny",
+      "naturalny",
+      "ostatni",
+      "pewny",
+      "podobny",
+      "poprawny",
+      "popularny",
+      "prawdziwy",
+      "pyszny",
+      "sławny",
+      "słodki",
+      "szybki",
+      "świeży",
+      "ulubiony",
+      "wczesny",
+      "wolny",
+      "wspaniały",
+      "wygodny",
+      "wyjątkowy",
+      "zdrowy"
+    ],
+    "sentence_cards_priority": [1, 2, 4, 8, 9, 10, 12, 15, 18, 20, 22, 23, 24, 27, 29, 31, 32, 33]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'My bike is broken, and the new one is very expensive.'",
+      "correct_answer": "Mój rower jest zepsuty, a ten nowy jest bardzo drogi.",
+      "distractors": [
+        "Mój rower jest złamany, a ten nowy jest bardzo drogi.",
+        "Mój rower jest rozbity, a ten nowy jest bardzo długi.",
+        "Mój rower jest zepsuty, i ten nowy jest bardzo drugi."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Thank you for the last meeting.'",
+      "answer_pl": "Dziękuję za ostatnie spotkanie.",
+      "word_bank": ["Dziękuję", "za", "ostatnie", "spotkanie"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'What time does the next bus come?'",
+      "accepted_answers": [
+        "O której przyjeżdża następny autobus?",
+        "O której godzinie przyjeżdża następny autobus?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

@@ -1,0 +1,597 @@
+{
+  "section_number": 25,
+  "topic_en": "Shopping",
+  "topic_pl": "Zakupy",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "centrum handlowe", "en": ["shopping centre", "shopping mall"], "category": "phrase" },
+    { "pl": "galeria handlowa", "en": ["shopping centre", "shopping mall"], "category": "phrase" },
+    { "pl": "targ", "en": ["market"], "category": "noun" },
+    { "pl": "supermarket", "en": ["supermarket"], "category": "noun" },
+    { "pl": "księgarnia", "en": ["bookshop", "bookstore"], "category": "noun" },
+    { "pl": "piekarnia", "en": ["bakery"], "category": "noun" },
+    { "pl": "cukiernia", "en": ["confectionery shop", "cake shop"], "category": "noun" },
+    { "pl": "warzywniak", "en": ["greengrocer's", "greengrocers"], "category": "noun" },
+    { "pl": "apteka", "en": ["pharmacy"], "category": "noun" },
+    { "pl": "drogeria", "en": ["chemist's", "drugstore"], "category": "noun" },
+    { "pl": "kwiaciarnia", "en": ["florist's"], "category": "noun" },
+    { "pl": "sklep mięsny", "en": ["butcher's"], "category": "phrase" },
+    { "pl": "jubiler", "en": ["jeweller"], "category": "noun" },
+    { "pl": "sklep jubilerski", "en": ["jeweller's", "jewellery shop"], "category": "phrase" },
+    { "pl": "sklep z meblami", "en": ["furniture shop", "furniture store"], "category": "phrase" },
+    { "pl": "kasjer", "en": ["cashier", "male cashier"], "category": "noun" },
+    { "pl": "sprzedawca", "en": ["shop assistant", "sales assistant", "male shop assistant"], "category": "noun" },
+    { "pl": "kasa", "en": ["checkout", "cash register"], "category": "noun" },
+    { "pl": "klient", "en": ["customer", "client"], "category": "noun" },
+    { "pl": "koszyk", "en": ["basket"], "category": "noun" },
+    { "pl": "wózek", "en": ["trolley", "shopping cart"], "category": "noun" },
+    { "pl": "paragon", "en": ["receipt"], "category": "noun" },
+    { "pl": "przymierzalnia", "en": ["fitting room"], "category": "noun" },
+    { "pl": "kolejka", "en": ["queue"], "category": "noun" },
+    { "pl": "wyprzedaż", "en": ["sale", "sales"], "category": "noun" },
+    { "pl": "okazja", "en": ["bargain", "deal"], "category": "noun" },
+    { "pl": "rabat", "en": ["discount"], "category": "noun" },
+    { "pl": "robić zakupy", "en": ["to do shopping", "to shop"], "category": "phrase" },
+    { "pl": "iść na zakupy", "en": ["to go shopping"], "category": "phrase" },
+    { "pl": "zwracać", "en": ["to return", "to take back"], "category": "verb" },
+    { "pl": "wymieniać", "en": ["to exchange"], "category": "verb" },
+    { "pl": "zamawiać", "en": ["to order"], "category": "verb" },
+    { "pl": "dostawa", "en": ["delivery"], "category": "noun" },
+    { "pl": "bezpłatny", "en": ["free"], "category": "adjective" },
+    { "pl": "kurier", "en": ["courier"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "plastic_bag_request_could",
+      "content": "The book notes that 'Mógłbym/Mogłabym prosić o reklamówkę?' can be used for 'Could I have a plastic bag, please?'"
+    },
+    {
+      "id": 2,
+      "topic": "brac_present_tense_reference",
+      "content": "If you want to revise the conjugation of 'brać' (to take) in the present tense, the book points back to Chapter 20, Note on Sentence 9."
+    },
+    {
+      "id": 3,
+      "topic": "idziemy_irregular_go",
+      "content": "'Idziemy' is the irregular present form of the verb 'iść' (to go) for 'we'."
+    },
+    {
+      "id": 4,
+      "topic": "w_galerii_handlowej_locative",
+      "content": "In this context, after 'w' use the locative case. 'W centrum handlowym / w tej galerii handlowej' uses the locative."
+    },
+    {
+      "id": 7,
+      "topic": "na_gorze_na_dole",
+      "content": "Useful location pair:",
+      "examples": [
+        "na górze = upstairs",
+        "na dole = downstairs"
+      ]
+    },
+    {
+      "id": 8,
+      "topic": "ksiegarnia_plural_book_points_elsewhere",
+      "content": "'Księgarnie' is the plural of 'księgarnia' (bookshop / bookstore). The book notes that more on plural noun forms appears elsewhere."
+    },
+    {
+      "id": 9,
+      "topic": "znizka_synonym_rabat",
+      "content": "'Zniżka' can also mean discount; it is treated here as a synonym of 'rabat'.",
+      "examples": [
+        "kupiłem nowy telewizor ze zniżką 15% = I bought a new TV set with a 15% discount"
+      ]
+    },
+    {
+      "id": 11,
+      "topic": "na_targu",
+      "content": "'Na targu' means 'at the market'."
+    },
+    {
+      "id": 13,
+      "topic": "zamowienie",
+      "content": "'Zamówienie' is an order, derived from 'zamawiać / zamówić'."
+    },
+    {
+      "id": 14,
+      "topic": "organizowac_accusative",
+      "content": "After the verb 'organizować' (to organise), use the accusative case."
+    },
+    {
+      "id": 15,
+      "topic": "mozna",
+      "content": "'Można' means 'one can' or 'it is possible'."
+    },
+    {
+      "id": 16,
+      "topic": "card_payment_confirmation",
+      "content": "When paying by card in Poland, you may be asked to confirm the amount. After the transaction is processed, 'potwierdzenie' here means confirmation. Usually you can simply reply 'Nie, dziękuję' if you do not need that confirmation slip."
+    },
+    {
+      "id": 18,
+      "topic": "stac_w_kolejce",
+      "content": "Remember the phrase:",
+      "examples": [
+        "stać w kolejce do kasy = to stand in a queue at the checkout"
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "kasjerka_and_sprzedawca_gender",
+      "content": "'Kasjerka' is the feminine form of cashier. 'Sprzedawca' refers to a male shop assistant, and 'sprzedawczyni' to a female shop assistant."
+    },
+    {
+      "id": 23,
+      "topic": "drogeria",
+      "content": "'Drogeria' is not the same as a pharmacy in English usage. It usually refers to a shop selling cosmetics, toiletries, cleaning products, and similar items."
+    },
+    {
+      "id": 24,
+      "topic": "po_plus_accusative_or_genitive_examples",
+      "content": "In sentence 24, 'po' shows purpose ('going to the confectionery shop to buy some cake'). The note also gives parallel examples:",
+      "examples": [
+        "Idę do apteki po syrop. = I'm going to the pharmacy to buy some syrup.",
+        "Cukierni is the genitive after the preposition 'do'."
+      ]
+    },
+    {
+      "id": 28,
+      "topic": "locative_after_w",
+      "content": "Usually, the locative case is used after the preposition 'w'."
+    },
+    {
+      "id": 29,
+      "topic": "dlaczego_vs_dlatego",
+      "content": "The words 'dlaczego' and 'dlatego' are often confused by learners. 'Dlaczego' means why, and 'dlatego' means that's why / therefore.",
+      "examples": [
+        "Dlaczego tak mówisz? = Why are you saying that?",
+        "Pada deszcz. Dlatego nie poszliśmy do parku. = It was raining. That's why we didn't go to the park."
+      ]
+    },
+    {
+      "id": 33,
+      "topic": "supermarkecie_locative",
+      "content": "'Supermarkecie' is the locative of the noun 'supermarket'."
+    },
+    {
+      "id": 33,
+      "topic": "oferowac_accusative",
+      "content": "After the verb 'oferować' (to offer), use the accusative case."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "Could I have a plastic bag, please?",
+      "pl": "(Czy) mogłabym prosić o reklamówkę?",
+      "literal_en": null,
+      "english_variants": ["Could I ask for a plastic bag, please?"],
+      "polish_alternatives": ["Czy mógłbym prosić o reklamówkę?", "Mogłabym prosić o reklamówkę?"],
+      "focus_words": ["mogłabym", "prosić o", "reklamówkę"],
+      "grammar_tags": ["shopping", "question", "accusative_basic", "feminine_form"]
+    },
+    {
+      "id": 2,
+      "en": "Shall we take a big or a small basket?",
+      "pl": "Bierzemy duży czy mały koszyk?",
+      "literal_en": null,
+      "english_variants": ["Are we taking a big or a small basket?"],
+      "polish_alternatives": [],
+      "focus_words": ["bierzemy", "duży", "mały", "koszyk"],
+      "grammar_tags": ["shopping", "question", "accusative_basic"]
+    },
+    {
+      "id": 3,
+      "en": "Our shopping list is quite short.",
+      "pl": "Nasza lista zakupów jest dość krótka.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasza lista zakupów", "jest dość krótka"],
+      "grammar_tags": ["shopping", "description"]
+    },
+    {
+      "id": 4,
+      "en": "We’re going shopping. Do you want something?",
+      "pl": "Idziemy na zakupy. Chcesz coś?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["idziemy na zakupy", "chcesz coś"],
+      "grammar_tags": ["shopping", "movement"]
+    },
+    {
+      "id": 5,
+      "en": "I don’t know if there’s a car park in this shopping centre.",
+      "pl": "Nie wiem, czy jest parking w tym centrum handlowym / w tej galerii handlowej.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Nie wiem, czy jest parking w tym centrum handlowym."],
+      "focus_words": ["nie wiem", "czy jest parking", "w tym centrum handlowym"],
+      "grammar_tags": ["shopping", "subordinate_clause", "negation", "locative"]
+    },
+    {
+      "id": 6,
+      "en": "Excuse me, is there a fitting room upstairs as well?",
+      "pl": "Przepraszam, czy na górze też jest przymierzalnia?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["przepraszam", "na górze", "też jest", "przymierzalnia"],
+      "grammar_tags": ["shopping", "question", "existential"]
+    },
+    {
+      "id": 7,
+      "en": "I like small, local bookshops.",
+      "pl": "Lubię małe, lokalne księgarnie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię", "małe lokalne księgarnie"],
+      "grammar_tags": ["shopping", "accusative_basic", "plural_noun"]
+    },
+    {
+      "id": 8,
+      "en": "Will this bakery be open early in the morning?",
+      "pl": "(Czy) ta piekarnia będzie otwarta wcześnie rano?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta piekarnia będzie otwarta wcześnie rano?"],
+      "focus_words": ["ta piekarnia", "będzie otwarta", "wcześnie rano"],
+      "grammar_tags": ["shopping", "question", "future_tense"]
+    },
+    {
+      "id": 9,
+      "en": "I got a discount on the new TV set.",
+      "pl": "Dostałem rabat na nowy telewizor.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dostałam rabat na nowy telewizor."],
+      "focus_words": ["dostałem", "rabat", "na nowy telewizor"],
+      "grammar_tags": ["shopping", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 10,
+      "en": "I bought a new TV set with a 15% discount. It was a great bargain/deal.",
+      "pl": "Kupiłem nowy telewizor z rabatem 15% (piętnaście procent). To była świetna okazja.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kupiłam nowy telewizor z rabatem 15%. To była świetna okazja."],
+      "focus_words": ["kupiłem nowy telewizor", "z rabatem 15%", "to była świetna okazja"],
+      "grammar_tags": ["shopping", "past_tense", "instrumental_basic"]
+    },
+    {
+      "id": 11,
+      "en": "At weekends, I like to do the shopping at the market.",
+      "pl": "W weekendy lubię robić zakupy na targu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w weekendy", "lubię robić zakupy", "na targu"],
+      "grammar_tags": ["shopping", "two_verbs_rule", "locative"]
+    },
+    {
+      "id": 12,
+      "en": "I’m ordering new books online right now.",
+      "pl": "Właśnie zamawiam nowe książki online.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["właśnie zamawiam", "nowe książki", "online"],
+      "grammar_tags": ["shopping", "present_tense", "accusative_basic"]
+    },
+    {
+      "id": 13,
+      "en": "This pharmacy is also open at night.",
+      "pl": "Ta apteka jest też otwarta/czynna w nocy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta apteka jest też czynna w nocy."],
+      "focus_words": ["ta apteka", "jest też otwarta", "czynna", "w nocy"],
+      "grammar_tags": ["shopping", "description", "locative"]
+    },
+    {
+      "id": 14,
+      "en": "Next month, this furniture shop will organise a big sale.",
+      "pl": "W następnym/przyszłym miesiącu ten sklep z meblami będzie organizować dużą wyprzedaż.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["W następnym miesiącu ten sklep z meblami będzie organizować dużą wyprzedaż."],
+      "focus_words": ["w następnym miesiącu", "ten sklep z meblami", "będzie organizować", "dużą wyprzedaż"],
+      "grammar_tags": ["shopping", "future_tense", "accusative_basic"]
+    },
+    {
+      "id": 15,
+      "en": "Is it possible to return or exchange products?",
+      "pl": "Czy można zwracać albo wymieniać produkty?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Można zwracać albo wymieniać produkty?"],
+      "focus_words": ["czy można", "zwracać", "wymieniać", "produkty"],
+      "grammar_tags": ["shopping", "question", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 16,
+      "en": "You threw away the receipt? Are you joking?",
+      "pl": "Wyrzuciłeś paragon? Żartujesz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wyrzuciłaś paragon? Żartujesz?"],
+      "focus_words": ["wyrzuciłeś paragon", "żartujesz"],
+      "grammar_tags": ["shopping", "question", "past_tense"]
+    },
+    {
+      "id": 17,
+      "en": "The customer is waiting for his receipt.",
+      "pl": "Klient czeka na paragon.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["klient", "czeka na paragon"],
+      "grammar_tags": ["shopping", "accusative_basic"]
+    },
+    {
+      "id": 18,
+      "en": "All fitting rooms are occupied now.",
+      "pl": "Wszystkie przymierzalnie są teraz zajęte.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wszystkie przymierzalnie", "są teraz zajęte"],
+      "grammar_tags": ["shopping", "plural_noun"]
+    },
+    {
+      "id": 19,
+      "en": "Where is the nearest butcher's? I want to buy some beef.",
+      "pl": "Gdzie jest najbliższy sklep mięsny? Chcę kupić wołowinę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie jest najbliższy sklep mięsny", "chcę kupić", "wołowinę"],
+      "grammar_tags": ["shopping", "question", "accusative_basic"]
+    },
+    {
+      "id": 20,
+      "en": "We stood in the queue at the checkout (lit. to the checkout) for twenty minutes.",
+      "pl": "Staliśmy w kolejce do kasy (przez) dwadzieścia minut.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Staliśmy w kolejce do kasy dwadzieścia minut."],
+      "focus_words": ["staliśmy w kolejce do kasy", "dwadzieścia minut"],
+      "grammar_tags": ["shopping", "past_tense", "fixed_expression", "time_expression"]
+    },
+    {
+      "id": 21,
+      "en": "You work as a cashier, right?",
+      "pl": "Pracujesz jako kasjer, prawda?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pracujesz jako kasjer, prawda?"],
+      "focus_words": ["pracujesz jako kasjer", "prawda"],
+      "grammar_tags": ["shopping", "tag_question"]
+    },
+    {
+      "id": 22,
+      "en": "You bought a phone recommended by the shop assistant.",
+      "pl": "Kupiłem telefon, który polecił sprzedawca.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kupiłam telefon, który polecił sprzedawca."],
+      "focus_words": ["kupiłem telefon", "który polecił", "sprzedawca"],
+      "grammar_tags": ["shopping", "past_tense", "relative_clause", "accusative_basic"]
+    },
+    {
+      "id": 23,
+      "en": "Is the chemist’s/drugstore open today?",
+      "pl": "(Czy) ta drogeria jest dziś/dzisiaj otwarta/czynna?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta drogeria jest dziś czynna?"],
+      "focus_words": ["ta drogeria", "jest dziś", "otwarta", "czynna"],
+      "grammar_tags": ["shopping", "question", "description"]
+    },
+    {
+      "id": 24,
+      "en": "I’m going to the confectionery shop to buy some cake.",
+      "pl": "Idę do cukierni po ciasto.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["idę do cukierni", "po ciasto"],
+      "grammar_tags": ["shopping", "movement", "genitive_after_do"]
+    },
+    {
+      "id": 25,
+      "en": "Is there a florist’s in this shopping centre?",
+      "pl": "(Czy) jest kwiaciarnia w tym centrum handlowym?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jest kwiaciarnia w tym centrum handlowym?"],
+      "focus_words": ["jest kwiaciarnia", "w tym centrum handlowym"],
+      "grammar_tags": ["shopping", "question", "existential", "locative"]
+    },
+    {
+      "id": 26,
+      "en": "There are delicious tomatoes in this greengrocer’s.",
+      "pl": "W tym warzywniaku są pyszne pomidory.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w tym warzywniaku", "są pyszne pomidory"],
+      "grammar_tags": ["shopping", "locative", "plural_noun"]
+    },
+    {
+      "id": 27,
+      "en": "The sales end on Monday.",
+      "pl": "Wyprzedaż kończy się w poniedziałek.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wyprzedaż", "kończy się", "w poniedziałek"],
+      "grammar_tags": ["shopping", "reflexive_verb", "time_expression"]
+    },
+    {
+      "id": 28,
+      "en": "Shall we take a basket or (a) trolley?",
+      "pl": "Bierzemy koszyk czy wózek?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["bierzemy", "koszyk", "czy", "wózek"],
+      "grammar_tags": ["shopping", "question", "accusative_basic"]
+    },
+    {
+      "id": 29,
+      "en": "The courier called. That’s why I opened the door.",
+      "pl": "Kurier dzwonił. Dlatego otworzyłem drzwi.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kurier dzwonił. Dlatego otworzyłam drzwi."],
+      "focus_words": ["kurier dzwonił", "dlatego", "otworzyłem drzwi"],
+      "grammar_tags": ["shopping", "past_tense"]
+    },
+    {
+      "id": 30,
+      "en": "At the weekend, this shopping centre is usually crowded.",
+      "pl": "W weekend to centrum handlowe jest zwykle zatłoczone.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w weekend", "to centrum handlowe", "jest zwykle zatłoczone"],
+      "grammar_tags": ["shopping", "description"]
+    },
+    {
+      "id": 31,
+      "en": "\"Is it possible to return clothes?\" \"Yes, you have 14 days to do so, sir.\"",
+      "pl": "– (Czy) można zwracać ubrania? – Tak, ma pan na to czternaście dni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Można zwracać ubrania? Tak, ma pan na to czternaście dni."],
+      "focus_words": ["czy można zwracać ubrania", "tak", "ma pan na to czternaście dni"],
+      "grammar_tags": ["shopping", "dialogue", "formal"]
+    },
+    {
+      "id": 32,
+      "en": "Was there a long queue at the supermarket?",
+      "pl": "(Czy) była długa kolejka w supermarkecie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Była długa kolejka w supermarkecie?"],
+      "focus_words": ["była długa kolejka", "w supermarkecie"],
+      "grammar_tags": ["shopping", "question", "past_tense", "locative"]
+    },
+    {
+      "id": 33,
+      "en": "Does the store offer free delivery?",
+      "pl": "(Czy) sklep oferuje bezpłatną dostawę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Sklep oferuje bezpłatną dostawę?"],
+      "focus_words": ["sklep oferuje", "bezpłatną dostawę"],
+      "grammar_tags": ["shopping", "question", "accusative_basic"]
+    },
+    {
+      "id": 34,
+      "en": "Do you know where the nearest jeweller’s is?",
+      "pl": "(Czy) wiesz, gdzie jest najbliższy jubiler / sklep jubilerski?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wiesz, gdzie jest najbliższy jubiler?" ],
+      "focus_words": ["wiesz", "gdzie jest", "najbliższy jubiler", "sklep jubilerski"],
+      "grammar_tags": ["shopping", "question", "subordinate_clause"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "centrum handlowe",
+      "galeria handlowa",
+      "targ",
+      "supermarket",
+      "księgarnia",
+      "piekarnia",
+      "cukiernia",
+      "warzywniak",
+      "apteka",
+      "drogeria",
+      "kwiaciarnia",
+      "sklep mięsny",
+      "jubiler",
+      "sklep jubilerski",
+      "sklep z meblami",
+      "kasjer",
+      "sprzedawca",
+      "kasa",
+      "klient",
+      "koszyk",
+      "wózek",
+      "paragon",
+      "przymierzalnia",
+      "kolejka",
+      "wyprzedaż",
+      "okazja",
+      "rabat",
+      "robić zakupy",
+      "iść na zakupy",
+      "zwracać",
+      "wymieniać",
+      "zamawiać",
+      "dostawa",
+      "bezpłatny",
+      "kurier"
+    ],
+    "sentence_cards_priority": [1, 4, 5, 6, 8, 10, 11, 14, 15, 16, 18, 19, 20, 23, 24, 27, 29, 31, 33, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'The customer is waiting for his receipt.'",
+      "correct_answer": "Klient czeka na paragon.",
+      "distractors": [
+        "Klient czeka paragon.",
+        "Klient stoi na paragon.",
+        "Paragon czeka na klienta."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'The sales end on Monday.'",
+      "answer_pl": "Wyprzedaż kończy się w poniedziałek.",
+      "word_bank": ["Wyprzedaż", "kończy", "się", "w", "poniedziałek"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Does the store offer free delivery?'",
+      "accepted_answers": [
+        "Czy sklep oferuje bezpłatną dostawę?",
+        "Sklep oferuje bezpłatną dostawę?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

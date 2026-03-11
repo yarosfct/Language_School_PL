@@ -1,0 +1,607 @@
+{
+  "section_number": 17,
+  "topic_en": "House & Home",
+  "topic_pl": "Dom",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "dom", "en": ["house", "home"], "category": "noun" },
+    { "pl": "mieszkanie", "en": ["flat", "apartment"], "category": "noun" },
+    { "pl": "pokój", "en": ["room"], "category": "noun" },
+    { "pl": "kuchnia", "en": ["kitchen"], "category": "noun" },
+    { "pl": "łazienka", "en": ["bathroom"], "category": "noun" },
+    { "pl": "toaleta", "en": ["toilet"], "category": "noun" },
+    { "pl": "sypialnia", "en": ["bedroom"], "category": "noun" },
+    { "pl": "salon", "en": ["living room"], "category": "noun" },
+    { "pl": "jadalnia", "en": ["dining room"], "category": "noun" },
+    { "pl": "gabinet", "en": ["study"], "category": "noun" },
+    { "pl": "balkon", "en": ["balcony"], "category": "noun" },
+    { "pl": "ogród", "en": ["garden"], "category": "noun" },
+    { "pl": "schody", "en": ["stairs"], "category": "noun" },
+    { "pl": "piętro", "en": ["floor", "storey"], "category": "noun" },
+    { "pl": "podłoga", "en": ["floor", "surface you walk on"], "category": "noun" },
+    { "pl": "parter", "en": ["ground floor"], "category": "noun" },
+    { "pl": "sufit", "en": ["ceiling"], "category": "noun" },
+    { "pl": "dach", "en": ["roof"], "category": "noun" },
+    { "pl": "ściana", "en": ["wall"], "category": "noun" },
+    { "pl": "drzwi", "en": ["door"], "category": "noun_plural" },
+    { "pl": "dzwonek do drzwi", "en": ["doorbell"], "category": "phrase" },
+    { "pl": "okno", "en": ["window"], "category": "noun" },
+    { "pl": "meble", "en": ["furniture"], "category": "noun_plural" },
+    { "pl": "światło", "en": ["light"], "category": "noun" },
+    { "pl": "goście", "en": ["guests"], "category": "noun_plural" },
+    { "pl": "ogrzewanie", "en": ["heating"], "category": "noun" },
+    { "pl": "klimatyzacja", "en": ["air conditioning"], "category": "noun" },
+    { "pl": "sąsiad", "en": ["neighbour", "male neighbour"], "category": "noun" },
+    { "pl": "własny", "en": ["own"], "category": "adjective" },
+    { "pl": "wynajmować", "en": ["to rent"], "category": "verb" },
+    { "pl": "wypożyczać", "en": ["to borrow", "to rent out"], "category": "verb" },
+    { "pl": "remontować", "en": ["to renovate"], "category": "verb" },
+    { "pl": "na górze", "en": ["upstairs"], "category": "phrase" },
+    { "pl": "na dole", "en": ["downstairs"], "category": "phrase" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "apartament_meaning",
+      "content": "The Polish noun 'apartament' means suite, penthouse, or a high-standard flat/apartment, not an ordinary apartment."
+    },
+    {
+      "id": 3,
+      "topic": "okna_plural",
+      "content": "'Okna' (windows) is the plural form of 'okno' (window)."
+    },
+    {
+      "id": 4,
+      "topic": "adjectives_for_flats_and_houses",
+      "content": "Useful adjectives describing a flat or a house:",
+      "examples": [
+        "duży = big",
+        "mały = small",
+        "przytulny = cosy",
+        "przestronny = spacious",
+        "nowoczesny = modern",
+        "wygodny = comfortable",
+        "jasny = bright, light"
+      ]
+    },
+    {
+      "id": 6,
+      "topic": "slyszec_vs_sluchac",
+      "content": "Do not confuse 'słyszeć' (to hear) with 'słuchać' (to listen)."
+    },
+    {
+      "id": 8,
+      "topic": "mebel_vs_meble",
+      "content": "'Mebel' means a single piece of furniture. 'Meble' means furniture in general and is treated as plural in Polish.",
+      "examples": [
+        "Te meble są piękne. = This furniture is beautiful."
+      ]
+    },
+    {
+      "id": 11,
+      "topic": "duzy_pokoj_as_alternative",
+      "content": "Instead of 'salon', you can also hear 'duży pokój' for living room."
+    },
+    {
+      "id": 13,
+      "topic": "skorzystac_z",
+      "content": "'Skorzystać' is often close in meaning to 'używać', but in contexts like using the toilet or a room you use 'skorzystać z'. After 'skorzystać', use the preposition 'z' and the genitive."
+    },
+    {
+      "id": 14,
+      "topic": "nie_chce_mi_sie",
+      "content": "'Nie chce mi się...' can be translated as 'I don't feel like...', especially when you are too lazy or unwilling to do something."
+    },
+    {
+      "id": 14,
+      "topic": "pietro_vs_podloga",
+      "content": "English 'floor' can translate as either 'piętro' or 'podłoga'. 'Piętro' refers to a level/storey of a building, while 'podłoga' is the surface you walk on."
+    },
+    {
+      "id": 16,
+      "topic": "locative_after_w",
+      "content": "After the preposition 'w', Polish usually uses the locative case.",
+      "tables": {
+        "locative_examples": [
+          ["mieszkanie", "w mieszkaniu"],
+          ["kuchnia", "w kuchni"],
+          ["łazienka", "w łazience"],
+          ["sypialnia", "w sypialni"],
+          ["salon", "w salonie"],
+          ["gabinet", "w gabinecie"],
+          ["ogród", "w ogrodzie"],
+          ["pokój", "w pokoju"]
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "topic": "miejsce_space_vs_room",
+      "content": "Here 'miejsce' means space, not room. It can mean seat, place, spot, or space depending on context."
+    },
+    {
+      "id": 25,
+      "topic": "a_for_contrast",
+      "content": "The conjunction 'a' is often used like English 'and' when emphasizing a contrast between two parts of a sentence.",
+      "examples": [
+        "Jego dom jest duży, a mój jest mały. = His house is big, and mine is small."
+      ]
+    },
+    {
+      "id": 26,
+      "topic": "neighbor_gender_forms",
+      "content": "Useful neighbour forms:",
+      "examples": [
+        "sąsiad = male neighbour",
+        "sąsiadka = female neighbour",
+        "sąsiedzi = male neighbours / mixed group of neighbours"
+      ]
+    },
+    {
+      "id": 26,
+      "topic": "co_as_every",
+      "content": "'Co' can also mean 'every' in frequency expressions.",
+      "examples": [
+        "Robię zakupy co tydzień. = I do the shopping every week.",
+        "Co wtorek chodzę na siłownię. = I go to the gym every Tuesday."
+      ]
+    },
+    {
+      "id": 27,
+      "topic": "parter",
+      "content": "'Parter' means ground floor. In Poland, lift/elevator buttons often use the letter 'P' for 'parter'."
+    },
+    {
+      "id": 31,
+      "topic": "bardziej_vs_wiecej",
+      "content": "'Bardziej' is mainly used with adjectives to talk about a higher intensity. 'Więcej' is used with nouns in the genitive and refers to a larger amount or number.",
+      "examples": [
+        "On jest bardziej zmęczony niż ja. = He is more tired than me.",
+        "W tym mieszkaniu jest więcej pokoi. = There are more rooms in this flat.",
+        "Ostatnio więcej gotuję. = Recently I've been cooking more."
+      ]
+    },
+    {
+      "id": 33,
+      "topic": "zamkniete_na_klucz_and_drzwi_plural",
+      "content": "'Zamknięte na klucz' means locked. 'Drzwi' (door) is always a plural noun in Polish.",
+      "examples": [
+        "drzwi wejściowe = front door",
+        "tylne drzwi = back door"
+      ]
+    },
+    {
+      "id": 34,
+      "topic": "wlaczyc_vs_wylaczyc",
+      "content": "'Włączyć' means to turn on and 'wyłączyć' means to turn off. After both verbs, use the accusative."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "I would like to find a flat / an apartment near the park.",
+      "pl": "Chciałbym znaleźć mieszkanie blisko parku.",
+      "literal_en": null,
+      "english_variants": ["I would like to find a flat near the park."],
+      "polish_alternatives": ["Chciałabym znaleźć mieszkanie blisko parku."],
+      "focus_words": ["chciałbym", "znaleźć mieszkanie", "blisko parku"],
+      "grammar_tags": ["home", "housing", "genitive_after_blisko"]
+    },
+    {
+      "id": 2,
+      "en": "They have a small house with a garden.",
+      "pl": "(Oni) mają mały dom z ogrodem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mają", "mały dom", "z ogrodem"],
+      "grammar_tags": ["home", "instrumental_basic"]
+    },
+    {
+      "id": 3,
+      "en": "The windows are very big.",
+      "pl": "Okna są bardzo duże.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["okna", "są bardzo duże"],
+      "grammar_tags": ["home", "plural_noun", "plural_adjectives"]
+    },
+    {
+      "id": 4,
+      "en": "Our flat is small but very cosy.",
+      "pl": "Nasze mieszkanie jest małe, ale bardzo przytulne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasze mieszkanie", "jest małe", "ale", "bardzo przytulne"],
+      "grammar_tags": ["home", "contrast"]
+    },
+    {
+      "id": 5,
+      "en": "His house is modern.",
+      "pl": "Jego dom jest nowoczesny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jego dom", "jest nowoczesny"],
+      "grammar_tags": ["home", "description"]
+    },
+    {
+      "id": 6,
+      "en": "Can you hear (lit. You hear) the doorbell?",
+      "pl": "(Czy) słyszysz dzwonek do drzwi?",
+      "literal_en": null,
+      "english_variants": ["Do you hear the doorbell?"],
+      "polish_alternatives": ["Słyszysz dzwonek do drzwi?"],
+      "focus_words": ["słyszysz", "dzwonek do drzwi"],
+      "grammar_tags": ["question", "home", "accusative_basic"]
+    },
+    {
+      "id": 7,
+      "en": "My living room isn't big. It's connected to (lit. with) the kitchen.",
+      "pl": "Mój salon nie jest duży. Jest połączony z kuchnią.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mój duży pokój nie jest duży. Jest połączony z kuchnią."],
+      "focus_words": ["mój salon", "nie jest duży", "jest połączony z kuchnią"],
+      "grammar_tags": ["home", "negation", "instrumental_basic"]
+    },
+    {
+      "id": 8,
+      "en": "We like classic furniture.",
+      "pl": "Lubimy klasyczne meble.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubimy", "klasyczne meble"],
+      "grammar_tags": ["home", "accusative_basic", "plural_noun"]
+    },
+    {
+      "id": 9,
+      "en": "The ceiling is low here.",
+      "pl": "Sufit jest tutaj/tu niski.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Sufit jest tu niski."],
+      "focus_words": ["sufit", "jest tu", "niski"],
+      "grammar_tags": ["home", "description"]
+    },
+    {
+      "id": 10,
+      "en": "This room is very bright.",
+      "pl": "Ten pokój jest bardzo jasny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten pokój", "jest bardzo jasny"],
+      "grammar_tags": ["home", "description"]
+    },
+    {
+      "id": 11,
+      "en": "Yesterday, we cleaned the living room because today we have guests over.",
+      "pl": "Wczoraj sprzątaliśmy salon, bo dzisiaj/dziś mamy gości.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wczoraj sprzątaliśmy salon", "bo", "dziś mamy gości"],
+      "grammar_tags": ["home", "past_tense"]
+    },
+    {
+      "id": 12,
+      "en": "You (pl.) have central heating here, right / don't you?",
+      "pl": "Macie tutaj/tu centralne ogrzewanie, prawda?",
+      "literal_en": null,
+      "english_variants": ["You have central heating here, right?"],
+      "polish_alternatives": ["Macie tu centralne ogrzewanie, prawda?"],
+      "focus_words": ["macie", "tu", "centralne ogrzewanie", "prawda"],
+      "grammar_tags": ["home", "tag_question"]
+    },
+    {
+      "id": 13,
+      "en": "Excuse me, can/may I use the toilet?",
+      "pl": "Przepraszam, (czy) mogę skorzystać z toalety?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Przepraszam, mogę skorzystać z toalety?"],
+      "focus_words": ["przepraszam", "mogę skorzystać", "z toalety"],
+      "grammar_tags": ["question", "home", "genitive_after_z"]
+    },
+    {
+      "id": 14,
+      "en": "Is the lift working? I don't feel like taking the stairs to the sixth floor (lit. going to the sixth floor on foot).",
+      "pl": "(Czy) winda działa? Nie chce mi się iść na szóste piętro (pieszo).",
+      "literal_en": null,
+      "english_variants": ["Is the lift working? I don't feel like going up the stairs to the sixth floor."],
+      "polish_alternatives": ["Winda działa? Nie chce mi się iść na szóste piętro."],
+      "focus_words": ["winda działa", "nie chce mi się", "iść na szóste piętro"],
+      "grammar_tags": ["question", "home", "fixed_expression"]
+    },
+    {
+      "id": 15,
+      "en": "Downstairs, there's a kitchen, a living room, a dining room, and a toilet.",
+      "pl": "Na dole jest kuchnia, salon, jadalnia i toaleta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Na dole jest kuchnia, duży pokój, jadalnia i toaleta."],
+      "focus_words": ["na dole", "jest kuchnia", "salon", "jadalnia", "toaleta"],
+      "grammar_tags": ["home", "existential"]
+    },
+    {
+      "id": 16,
+      "en": "Our bedroom, bathroom, and study are upstairs.",
+      "pl": "Nasza sypialnia, łazienka i gabinet są na górze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasza sypialnia", "łazienka", "gabinet", "są na górze"],
+      "grammar_tags": ["home", "plural_subject"]
+    },
+    {
+      "id": 17,
+      "en": "Someone's knocking on (lit. to) the door.",
+      "pl": "Ktoś puka do drzwi.",
+      "literal_en": null,
+      "english_variants": ["Someone is knocking at the door."],
+      "polish_alternatives": [],
+      "focus_words": ["ktoś", "puka do drzwi"],
+      "grammar_tags": ["home", "present_tense"]
+    },
+    {
+      "id": 18,
+      "en": "In the flat, we have two bathrooms.",
+      "pl": "W mieszkaniu mamy dwie łazienki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w mieszkaniu", "mamy", "dwie łazienki"],
+      "grammar_tags": ["home", "locative", "quantity"]
+    },
+    {
+      "id": 19,
+      "en": "We watched a film in the bedroom.",
+      "pl": "Oglądaliśmy film w sypialni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["oglądaliśmy film", "w sypialni"],
+      "grammar_tags": ["home", "past_tense", "locative"]
+    },
+    {
+      "id": 20,
+      "en": "It's very hot in the flat. The air conditioning is broken.",
+      "pl": "W mieszkaniu jest bardzo gorąco. Klimatyzacja jest zepsuta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["w mieszkaniu", "jest bardzo gorąco", "klimatyzacja", "jest zepsuta"],
+      "grammar_tags": ["home", "locative", "description"]
+    },
+    {
+      "id": 21,
+      "en": "The stairs are next to the door.",
+      "pl": "Schody są obok drzwi.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["schody", "są obok drzwi"],
+      "grammar_tags": ["home", "location"]
+    },
+    {
+      "id": 22,
+      "en": "I think your glasses are upstairs, in the bedroom.",
+      "pl": "Myślę, że twoje okulary są na górze, w sypialni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["myślę, że", "twoje okulary", "są na górze", "w sypialni"],
+      "grammar_tags": ["home", "subordinate_clause", "locative"]
+    },
+    {
+      "id": 23,
+      "en": "You have a beautiful garden!",
+      "pl": "Masz piękny ogród!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["masz", "piękny ogród"],
+      "grammar_tags": ["home", "exclamation", "accusative_basic"]
+    },
+    {
+      "id": 24,
+      "en": "Is there any room for chairs on the balcony?",
+      "pl": "(Czy) na balkonie jest miejsce na krzesła?",
+      "literal_en": null,
+      "english_variants": ["Is there space for chairs on the balcony?"],
+      "polish_alternatives": ["Na balkonie jest miejsce na krzesła?"],
+      "focus_words": ["na balkonie", "jest miejsce", "na krzesła"],
+      "grammar_tags": ["question", "home", "existential"]
+    },
+    {
+      "id": 25,
+      "en": "This wall will be green, and those three will be white.",
+      "pl": "Ta ściana będzie zielona, a tamte trzy będą białe.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta ściana", "będzie zielona", "a", "tamte trzy", "będą białe"],
+      "grammar_tags": ["home", "future_tense", "contrast"]
+    },
+    {
+      "id": 26,
+      "en": "My neighbour organises a party every month.",
+      "pl": "Mój sąsiad co miesiąc organizuje imprezę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Moja sąsiadka co miesiąc organizuje imprezę."],
+      "focus_words": ["mój sąsiad", "co miesiąc", "organizuje imprezę"],
+      "grammar_tags": ["home", "frequency_expression"]
+    },
+    {
+      "id": 27,
+      "en": "Are you also going to the ground floor, sir?",
+      "pl": "(Czy) pan też jedzie na parter?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pan też jedzie na parter?"],
+      "focus_words": ["pan", "też jedzie", "na parter"],
+      "grammar_tags": ["question", "home", "formal"]
+    },
+    {
+      "id": 28,
+      "en": "The guests will be here in ten minutes.",
+      "pl": "Goście będą tu za dziesięć minut.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Goście będą tutaj za dziesięć minut."],
+      "focus_words": ["goście", "będą tu", "za dziesięć minut"],
+      "grammar_tags": ["home", "future_tense", "time_expression"]
+    },
+    {
+      "id": 29,
+      "en": "Do you have your own flat or do you rent?",
+      "pl": "(Czy) masz własne mieszkanie, czy wynajmujesz?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Masz własne mieszkanie czy wynajmujesz?"],
+      "focus_words": ["masz własne mieszkanie", "czy", "wynajmujesz"],
+      "grammar_tags": ["question", "home", "housing"]
+    },
+    {
+      "id": 30,
+      "en": "There's a problem with the air conditioning.",
+      "pl": "Jest jakiś problem z klimatyzacją.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jest jakiś problem", "z klimatyzacją"],
+      "grammar_tags": ["home", "existential", "instrumental_basic"]
+    },
+    {
+      "id": 31,
+      "en": "We are renovating our old roof.",
+      "pl": "Remontujemy nasz stary dach.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["remontujemy", "nasz stary dach"],
+      "grammar_tags": ["home", "accusative_basic"]
+    },
+    {
+      "id": 32,
+      "en": "Downstairs, there's more light than upstairs, right?",
+      "pl": "Na dole jest więcej światła niż na górze, prawda?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["na dole", "jest więcej światła", "niż na górze", "prawda"],
+      "grammar_tags": ["home", "comparison", "tag_question"]
+    },
+    {
+      "id": 33,
+      "en": "The front door is locked.",
+      "pl": "Drzwi wejściowe są zamknięte na klucz.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["drzwi wejściowe", "są zamknięte na klucz"],
+      "grammar_tags": ["home", "plural_noun", "description"]
+    },
+    {
+      "id": 34,
+      "en": "He turned off the heating.",
+      "pl": "(On) wyłączył ogrzewanie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wyłączył", "ogrzewanie"],
+      "grammar_tags": ["home", "past_tense", "accusative_basic"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "dom",
+      "mieszkanie",
+      "kuchnia",
+      "łazienka",
+      "sypialnia",
+      "salon",
+      "jadalnia",
+      "gabinet",
+      "balkon",
+      "ogród",
+      "schody",
+      "piętro",
+      "parter",
+      "sufit",
+      "dach",
+      "ściana",
+      "drzwi",
+      "dzwonek do drzwi",
+      "okno",
+      "meble",
+      "światło",
+      "goście",
+      "ogrzewanie",
+      "klimatyzacja",
+      "sąsiad",
+      "własny",
+      "wynajmować",
+      "remontować",
+      "na górze",
+      "na dole"
+    ],
+    "sentence_cards_priority": [1, 4, 6, 7, 11, 13, 14, 16, 18, 20, 22, 24, 25, 28, 29, 32, 33, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Excuse me, can I use the toilet?'",
+      "correct_answer": "Przepraszam, czy mogę skorzystać z toalety?",
+      "distractors": [
+        "Przepraszam, czy mogę używać toaletę?",
+        "Przepraszam, mogę toaleta?",
+        "Przepraszam, czy mogę skorzystać toalety?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'The front door is locked.'",
+      "answer_pl": "Drzwi wejściowe są zamknięte na klucz.",
+      "word_bank": ["Drzwi", "wejściowe", "są", "zamknięte", "na", "klucz"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'We are renovating our old roof.'",
+      "accepted_answers": [
+        "Remontujemy nasz stary dach."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

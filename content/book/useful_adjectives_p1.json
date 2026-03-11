@@ -1,0 +1,613 @@
+{
+  "section_number": 3,
+  "topic_en": "Useful Adjectives. Part 1",
+  "topic_pl": "Przydatne przymiotniki. Część 1",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "bezpieczny", "en": ["safe"], "category": "adjective" },
+    { "pl": "biedny", "en": ["poor"], "category": "adjective" },
+    { "pl": "bogaty", "en": ["rich"], "category": "adjective" },
+    { "pl": "brzydki", "en": ["ugly"], "category": "adjective" },
+    { "pl": "ciekawy", "en": ["interesting"], "category": "adjective" },
+    { "pl": "ciężki", "en": ["heavy"], "category": "adjective" },
+    { "pl": "długi", "en": ["long"], "category": "adjective" },
+    { "pl": "dobry", "en": ["good"], "category": "adjective" },
+    { "pl": "drogi", "en": ["expensive"], "category": "adjective" },
+    { "pl": "duży", "en": ["big", "large"], "category": "adjective" },
+    { "pl": "fajny", "en": ["cool", "nice"], "category": "adjective" },
+    { "pl": "gorący", "en": ["hot"], "category": "adjective" },
+    { "pl": "krótki", "en": ["short", "not long"], "category": "adjective" },
+    { "pl": "lekki", "en": ["light"], "category": "adjective" },
+    { "pl": "ładny", "en": ["pretty", "nice"], "category": "adjective" },
+    { "pl": "łatwy", "en": ["easy"], "category": "adjective" },
+    { "pl": "mały", "en": ["small"], "category": "adjective" },
+    { "pl": "młody", "en": ["young"], "category": "adjective" },
+    { "pl": "mocny", "en": ["strong"], "category": "adjective" },
+    { "pl": "mokry", "en": ["wet"], "category": "adjective" },
+    { "pl": "możliwy", "en": ["possible"], "category": "adjective" },
+    { "pl": "niebezpieczny", "en": ["dangerous"], "category": "adjective" },
+    { "pl": "niemożliwy", "en": ["impossible"], "category": "adjective" },
+    { "pl": "niski", "en": ["short", "not tall/high", "low"], "category": "adjective" },
+    { "pl": "nowy", "en": ["new"], "category": "adjective" },
+    { "pl": "okropny", "en": ["terrible"], "category": "adjective" },
+    { "pl": "otwarty", "en": ["open"], "category": "adjective" },
+    { "pl": "pełny", "en": ["full"], "category": "adjective" },
+    { "pl": "podobny", "en": ["similar"], "category": "adjective" },
+    { "pl": "pusty", "en": ["empty"], "category": "adjective" },
+    { "pl": "sam", "en": ["alone"], "category": "adjective" },
+    { "pl": "słaby", "en": ["weak"], "category": "adjective" },
+    { "pl": "stary", "en": ["old"], "category": "adjective" },
+    { "pl": "suchy", "en": ["dry"], "category": "adjective" },
+    { "pl": "świetny", "en": ["great"], "category": "adjective" },
+    { "pl": "tani", "en": ["cheap"], "category": "adjective" },
+    { "pl": "trudny", "en": ["difficult"], "category": "adjective" },
+    { "pl": "ważny", "en": ["important", "valid"], "category": "adjective" },
+    { "pl": "wysoki", "en": ["tall", "high"], "category": "adjective" },
+    { "pl": "zamknięty", "en": ["closed"], "category": "adjective" },
+    { "pl": "zepsuty", "en": ["broken"], "category": "adjective" },
+    { "pl": "zimny", "en": ["cold"], "category": "adjective" },
+    { "pl": "zły", "en": ["bad"], "category": "adjective" },
+    { "pl": "znudzony", "en": ["bored"], "category": "adjective" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "adjective_gender_endings",
+      "content": "Every adjective can take masculine, feminine, or neuter forms. A simplified rule shown here: masculine often ends in -y or -i, feminine in -a, neuter in -e (or -ie after k or g).",
+      "examples": [
+        "duży / duża / duże",
+        "bogaty / bogata / bogate",
+        "wysoki / wysoka / wysokie"
+      ]
+    },
+    {
+      "id": 1,
+      "topic": "madam_translation",
+      "content": "In Polish, 'sir' translates as 'pan', and 'madam' as 'pani'."
+    },
+    {
+      "id": 5,
+      "topic": "ciekawy_vs_interesujacy",
+      "content": "'ciekawy' and 'interesujący' are synonyms. 'interesujący' may be easier to remember because of its similarity to English 'interesting', but 'ciekawy' is slightly more common in spoken Polish."
+    },
+    {
+      "id": 8,
+      "topic": "this_that_demonstratives",
+      "content": "To say 'this' in Polish, use 'ten' before masculine nouns, 'ta' before feminine nouns, and 'to' before neuter nouns."
+    },
+    {
+      "id": 10,
+      "topic": "zadzwon_do_mnie",
+      "content": "'Zadzwoń do mnie' means 'call me'."
+    },
+    {
+      "id": 13,
+      "topic": "moim_zdaniem",
+      "content": "'In my opinion' translates as 'moim zdaniem', not 'w moja opinia'."
+    },
+    {
+      "id": 14,
+      "topic": "nice_translation",
+      "content": "'Nice' can translate as 'miły' when talking about people, and 'fajny' or 'ładny' when describing a thing, place, or person. 'ładny' is especially close to 'pretty'."
+    },
+    {
+      "id": 20,
+      "topic": "wysoki_meaning",
+      "content": "The adjective 'wysoki' can mean either 'tall' or 'high' depending on context.",
+      "examples": [
+        "wysoki budynek = tall building",
+        "wysokie ciśnienie krwi = high blood pressure"
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "past_tense_byc_quick_reminder",
+      "content": "Quick reminder of past tense forms of 'być' (to be).",
+      "tables": {
+        "singular": {
+          "ja_masculine": "byłem",
+          "ja_feminine": "byłam",
+          "ty_masculine": "byłeś",
+          "ty_feminine": "byłaś",
+          "on": "był",
+          "ona": "była",
+          "ono": "było"
+        },
+        "plural": {
+          "my_masculine_personal": "byliśmy",
+          "my_non_masculine_personal": "byłyśmy",
+          "wy_masculine_personal": "byliście",
+          "wy_non_masculine_personal": "byłyście",
+          "oni": "byli",
+          "one": "były"
+        }
+      }
+    },
+    {
+      "id": 27,
+      "topic": "dobrze_cie_widziec",
+      "content": "'dobrze cię widzieć' means 'it's good to see you'."
+    },
+    {
+      "id": 28,
+      "topic": "jego_and_jej",
+      "content": "'jego' can mean both 'his' and 'its'; 'jej' means 'her' or 'hers'. Unlike 'mój' and 'twój', these forms do not change before masculine, feminine, or neuter nouns."
+    },
+    {
+      "id": 29,
+      "topic": "seasons_no_w",
+      "content": "Use 'zimą', 'wiosną', 'latem', and 'jesienią' for 'in winter/spring/summer/autumn'. Do not use the preposition 'w' before them."
+    },
+    {
+      "id": 31,
+      "topic": "otwarty_and_czynny",
+      "content": "Both 'czynny' and 'otwarty' can mean 'open'. For shops, institutions, exhibitions, etc., both may work. For things without opening hours, use only 'otwarty'.",
+      "examples": [
+        "Poczta jest dziś otwarta/czynna. = The post office is open today.",
+        "Dlaczego okno jest otwarte? = Why is the window open?"
+      ]
+    },
+    {
+      "id": 33,
+      "topic": "podobny_do",
+      "content": "The adjective 'podobny' is used with the preposition 'do'."
+    },
+    {
+      "id": 35,
+      "topic": "nudny_vs_znudzony",
+      "content": "Do not confuse 'nudny' (boring) with 'znudzony' (bored)."
+    },
+    {
+      "id": 36,
+      "topic": "za_vs_zbyt",
+      "content": "'za' and 'zbyt' have roughly the same meaning. Before verbal adjectives (derived from verbs), usually only 'zbyt' is used. For most adjectives in this section, either may work, but using 'zbyt' is safer for now. With adjectives like 'zmęczony', 'zadowolony', or 'zmartwiony', only 'zbyt' is used because they describe how we feel."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "A small or a large coffee for you, madam (lit. for madam)?",
+      "pl": "Mała czy duża kawa dla pani?",
+      "literal_en": "Small or large coffee for madam?",
+      "english_variants": ["A small or large coffee for you, ma'am?"],
+      "polish_alternatives": [],
+      "focus_words": ["mała", "duża", "kawa", "dla pani"],
+      "grammar_tags": ["adjective_agreement", "service_phrase"]
+    },
+    {
+      "id": 2,
+      "en": "Why is the window open?",
+      "pl": "Dlaczego okno jest otwarte?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dlaczego", "okno", "otwarte"],
+      "grammar_tags": ["question", "adjective_agreement"]
+    },
+    {
+      "id": 3,
+      "en": "Is this safe?",
+      "pl": "(Czy) to (jest) bezpieczne?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To jest bezpieczne?", "To bezpieczne?"],
+      "focus_words": ["to", "bezpieczne"],
+      "grammar_tags": ["question", "neuter_adjective"]
+    },
+    {
+      "id": 4,
+      "en": "We live in the (city) centre. At weekends, the noise is terrible.",
+      "pl": "Mieszkamy w centrum (miasta). W weekendy hałas jest okropny.",
+      "literal_en": null,
+      "english_variants": ["We live in the city centre. At weekends the noise is terrible."],
+      "polish_alternatives": [],
+      "focus_words": ["mieszkamy", "w centrum", "w weekendy", "hałas", "okropny"],
+      "grammar_tags": ["location", "adjective_agreement"]
+    },
+    {
+      "id": 5,
+      "en": "That's interesting.",
+      "pl": "To ciekawe.",
+      "literal_en": null,
+      "english_variants": ["That's interesting."],
+      "polish_alternatives": ["To interesujące."],
+      "focus_words": ["to", "ciekawe"],
+      "grammar_tags": ["neuter_adjective"]
+    },
+    {
+      "id": 6,
+      "en": "You are still very young (f.).",
+      "pl": "Jesteś nadal bardzo młoda.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wciąż jesteś bardzo młoda."],
+      "focus_words": ["nadal", "bardzo", "młoda"],
+      "grammar_tags": ["feminine_adjective"]
+    },
+    {
+      "id": 7,
+      "en": "Is my towel dry?",
+      "pl": "(Czy) mój ręcznik jest suchy?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój", "ręcznik", "suchy"],
+      "grammar_tags": ["question", "masculine_adjective"]
+    },
+    {
+      "id": 8,
+      "en": "This new café is good but expensive.",
+      "pl": "Ta nowa kawiarnia jest dobra, ale droga.",
+      "literal_en": null,
+      "english_variants": ["This new café is nice but expensive."],
+      "polish_alternatives": ["Ta nowa kawiarnia jest fajna, ale droga."],
+      "focus_words": ["ta", "nowa", "kawiarnia", "dobra", "droga"],
+      "grammar_tags": ["feminine_adjective", "demonstrative"]
+    },
+    {
+      "id": 9,
+      "en": "Is your old car broken?",
+      "pl": "(Czy) twój stary samochód jest zepsuty?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Twój stary samochód jest zepsuty?"],
+      "focus_words": ["twój", "stary", "samochód", "zepsuty"],
+      "grammar_tags": ["question", "masculine_adjective"]
+    },
+    {
+      "id": 10,
+      "en": "Please, call me. It's important.",
+      "pl": "Zadzwoń do mnie, proszę. To ważne.",
+      "literal_en": null,
+      "english_variants": ["Please call me. It's important."],
+      "polish_alternatives": [],
+      "focus_words": ["zadzwoń", "do mnie", "proszę", "ważne"],
+      "grammar_tags": ["imperative", "fixed_expression"]
+    },
+    {
+      "id": 11,
+      "en": "I'm sorry, but that's impossible.",
+      "pl": "Przepraszam, ale to (jest) niemożliwe.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Przepraszam, ale to niemożliwe."],
+      "focus_words": ["przepraszam", "ale", "to", "niemożliwe"],
+      "grammar_tags": ["neuter_adjective"]
+    },
+    {
+      "id": 12,
+      "en": "Be careful! The floor is wet!",
+      "pl": "Uważaj! Podłoga jest mokra!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ostrożnie! Podłoga jest mokra!"],
+      "focus_words": ["uważaj", "podłoga", "mokra"],
+      "grammar_tags": ["imperative", "feminine_adjective", "exclamation"]
+    },
+    {
+      "id": 13,
+      "en": "In my opinion, this sport is dangerous.",
+      "pl": "Moim zdaniem, ten sport jest niebezpieczny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Moim zdaniem ten sport jest niebezpieczny."],
+      "focus_words": ["moim zdaniem", "ten", "sport", "niebezpieczny"],
+      "grammar_tags": ["opinion_phrase", "masculine_adjective"]
+    },
+    {
+      "id": 14,
+      "en": "My room is small, but very nice.",
+      "pl": "Mój pokój jest mały, ale bardzo fajny/ładny.",
+      "literal_en": null,
+      "english_variants": ["My room is small but very nice."],
+      "polish_alternatives": ["Mój pokój jest mały, ale bardzo ładny."],
+      "focus_words": ["mój", "pokój", "mały", "bardzo", "fajny", "ładny"],
+      "grammar_tags": ["masculine_adjective"]
+    },
+    {
+      "id": 15,
+      "en": "When does your passport expire? (lit. until when is your passport valid?)",
+      "pl": "Do kiedy jest ważny twój paszport?",
+      "literal_en": "Until when is your passport valid?",
+      "english_variants": ["Until when is your passport valid?"],
+      "polish_alternatives": [],
+      "focus_words": ["do kiedy", "ważny", "twój", "paszport"],
+      "grammar_tags": ["question", "masculine_adjective"]
+    },
+    {
+      "id": 16,
+      "en": "Your holiday was long, right?",
+      "pl": "Twój urlop był długi, prawda?",
+      "literal_en": null,
+      "english_variants": ["Your vacation was long, right?"],
+      "polish_alternatives": [],
+      "focus_words": ["twój", "urlop", "był", "długi", "prawda"],
+      "grammar_tags": ["past_tense", "masculine_adjective"]
+    },
+    {
+      "id": 17,
+      "en": "His father is really tall, but he's short.",
+      "pl": "Jego ojciec jest naprawdę wysoki, ale on jest niski.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jego", "ojciec", "naprawdę", "wysoki", "ale", "niski"],
+      "grammar_tags": ["adjective_contrast", "masculine_adjective"]
+    },
+    {
+      "id": 18,
+      "en": "This coffee is very weak, but it isn't bad.",
+      "pl": "Ta kawa jest bardzo słaba, ale nie jest zła.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta", "kawa", "bardzo", "słaba", "nie", "zła"],
+      "grammar_tags": ["feminine_adjective", "negation"]
+    },
+    {
+      "id": 19,
+      "en": "Fortunately, it's not a big mistake.",
+      "pl": "Na szczęście to nie jest duży błąd.",
+      "literal_en": null,
+      "english_variants": ["Fortunately, it's not a serious mistake."],
+      "polish_alternatives": ["Na szczęście to nie jest wielki błąd."],
+      "focus_words": ["na szczęście", "nie", "duży", "błąd"],
+      "grammar_tags": ["negation", "masculine_adjective"]
+    },
+    {
+      "id": 20,
+      "en": "Can you see that tall building?",
+      "pl": "(Czy) widzisz ten wysoki budynek?",
+      "literal_en": null,
+      "english_variants": ["Do you see that tall building?"],
+      "polish_alternatives": [],
+      "focus_words": ["widzisz", "ten", "wysoki", "budynek"],
+      "grammar_tags": ["question", "masculine_adjective", "accusative_basic"]
+    },
+    {
+      "id": 21,
+      "en": "My car was cheap, but it's great!",
+      "pl": "Mój samochód był tani, ale jest świetny!",
+      "literal_en": null,
+      "english_variants": ["My car was cheap, but it's great!"],
+      "polish_alternatives": [],
+      "focus_words": ["mój", "samochód", "był", "tani", "ale", "świetny"],
+      "grammar_tags": ["past_and_present", "masculine_adjective"]
+    },
+    {
+      "id": 22,
+      "en": "Is the water already hot?",
+      "pl": "(Czy) woda jest już gorąca?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["woda", "już", "gorąca"],
+      "grammar_tags": ["question", "feminine_adjective"]
+    },
+    {
+      "id": 23,
+      "en": "Excuse me, this spoon is dirty.",
+      "pl": "Przepraszam, ta łyżka jest brudna.",
+      "literal_en": null,
+      "english_variants": ["Excuse me, this spoon is dirty."],
+      "polish_alternatives": [],
+      "focus_words": ["przepraszam", "ta", "łyżka", "brudna"],
+      "grammar_tags": ["feminine_adjective", "demonstrative"]
+    },
+    {
+      "id": 24,
+      "en": "My coffee is already cold.",
+      "pl": "Moja kawa jest już zimna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja", "kawa", "już", "zimna"],
+      "grammar_tags": ["feminine_adjective"]
+    },
+    {
+      "id": 25,
+      "en": "English is easy for me, but maths is very difficult.",
+      "pl": "Angielski jest dla mnie łatwy, ale matematyka jest bardzo trudna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["angielski", "dla mnie", "łatwy", "ale", "matematyka", "trudna"],
+      "grammar_tags": ["masculine_and_feminine_adjectives"]
+    },
+    {
+      "id": 26,
+      "en": "Thanks, my glass is full, but hers is empty!",
+      "pl": "Dzięki, moja szklanka jest pełna, ale jej jest pusta!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja", "szklanka", "pełna", "ale", "jej", "pusta"],
+      "grammar_tags": ["possessives", "feminine_adjective"]
+    },
+    {
+      "id": 27,
+      "en": "It's good to see you. I'm sad when I'm alone.",
+      "pl": "Dobrze cię widzieć. Jestem smutny, kiedy jestem sam.",
+      "literal_en": null,
+      "english_variants": ["It's good to see you. I'm sad when I'm alone."],
+      "polish_alternatives": ["Miło cię widzieć. Jestem smutny, kiedy jestem sam."],
+      "focus_words": ["dobrze cię widzieć", "smutny", "kiedy", "sam"],
+      "grammar_tags": ["fixed_expression", "masculine_adjective"]
+    },
+    {
+      "id": 28,
+      "en": "His new film is great, but the old one is terrible.",
+      "pl": "Jego nowy film jest świetny, ale ten stary jest okropny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jego", "nowy", "film", "świetny", "ten", "stary", "okropny"],
+      "grammar_tags": ["demonstrative", "adjective_contrast"]
+    },
+    {
+      "id": 29,
+      "en": "Is the temperature high or low here in winter?",
+      "pl": "(Czy) zimą temperatura jest tu/tutaj wysoka, czy niska?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zimą temperatura jest tutaj wysoka czy niska?"],
+      "focus_words": ["zimą", "temperatura", "wysoka", "czy", "niska"],
+      "grammar_tags": ["question", "season_expression", "feminine_adjective"]
+    },
+    {
+      "id": 30,
+      "en": "Is your suitcase light or heavy?",
+      "pl": "(Czy) twoja walizka jest lekka, czy ciężka?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["twoja", "walizka", "lekka", "czy", "ciężka"],
+      "grammar_tags": ["question", "feminine_adjective"]
+    },
+    {
+      "id": 31,
+      "en": "\"Is the shop open today?\" \"No, it's closed on Sundays.\"",
+      "pl": "– (Czy) sklep jest dziś/dzisiaj otwarty? – Nie, jest zamknięty w niedziele.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["– Sklep jest dzisiaj otwarty? – Nie, jest zamknięty w niedziele."],
+      "focus_words": ["sklep", "dziś", "otwarty", "nie", "zamknięty", "w niedziele"],
+      "grammar_tags": ["dialogue", "masculine_adjective"]
+    },
+    {
+      "id": 32,
+      "en": "The dress is pretty, but this jacket is ugly.",
+      "pl": "Sukienka jest ładna, ale ta kurtka jest brzydka.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["sukienka", "ładna", "ale", "ta", "kurtka", "brzydka"],
+      "grammar_tags": ["feminine_adjective", "demonstrative"]
+    },
+    {
+      "id": 33,
+      "en": "My sister is similar to Adam.",
+      "pl": "Moja siostra jest podobna do Adama.",
+      "literal_en": null,
+      "english_variants": ["My sister resembles Adam."],
+      "polish_alternatives": [],
+      "focus_words": ["moja", "siostra", "podobna", "do Adama"],
+      "grammar_tags": ["feminine_adjective", "preposition_do"]
+    },
+    {
+      "id": 34,
+      "en": "It was a short, but important meeting.",
+      "pl": "To było krótkie, ale ważne spotkanie.",
+      "literal_en": null,
+      "english_variants": ["It was a short but important meeting."],
+      "polish_alternatives": [],
+      "focus_words": ["to", "było", "krótkie", "ważne", "spotkanie"],
+      "grammar_tags": ["past_tense", "neuter_adjective"]
+    },
+    {
+      "id": 35,
+      "en": "I can see (lit. see) that you are very bored.",
+      "pl": "Widzę, że jesteś bardzo znudzony.",
+      "literal_en": "I see that you are very bored.",
+      "english_variants": ["I can see that you're very bored."],
+      "polish_alternatives": [],
+      "focus_words": ["widzę", "że", "bardzo", "znudzony"],
+      "grammar_tags": ["subordinate_clause", "emotion_adjective"]
+    },
+    {
+      "id": 36,
+      "en": "This tea is too strong.",
+      "pl": "Ta herbata jest za/zbyt mocna.",
+      "literal_en": null,
+      "english_variants": ["This tea is too strong."],
+      "polish_alternatives": ["Ta herbata jest zbyt mocna."],
+      "focus_words": ["ta", "herbata", "za", "zbyt", "mocna"],
+      "grammar_tags": ["degree", "feminine_adjective"]
+    },
+    {
+      "id": 37,
+      "en": "He might be rich or poor. Anything is possible.",
+      "pl": "(On) może być bogaty lub biedny. Wszystko jest możliwe.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["może być", "bogaty", "lub", "biedny", "wszystko", "możliwe"],
+      "grammar_tags": ["possibility", "masculine_and_neuter_adjectives"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "bezpieczny",
+      "bogaty",
+      "biedny",
+      "brzydki",
+      "ciekawy",
+      "duży",
+      "mały",
+      "łatwy",
+      "trudny",
+      "wysoki",
+      "niski",
+      "pełny",
+      "pusty",
+      "otwarty",
+      "zamknięty",
+      "zepsuty",
+      "znudzony",
+      "podobny",
+      "ważny"
+    ],
+    "sentence_cards_priority": [2, 5, 8, 9, 10, 13, 15, 20, 25, 27, 29, 31, 33, 35, 36]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'My sister is similar to Adam.'",
+      "correct_answer": "Moja siostra jest podobna do Adama.",
+      "distractors": [
+        "Moja siostra jest podobna Adam.",
+        "Moja siostra jest ładna do Adama.",
+        "Moja siostra jest znudzona Adamem."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'Why is the window open?'",
+      "answer_pl": "Dlaczego okno jest otwarte?",
+      "word_bank": ["Dlaczego", "okno", "jest", "otwarte"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'English is easy for me, but maths is very difficult.'",
+      "accepted_answers": [
+        "Angielski jest dla mnie łatwy, ale matematyka jest bardzo trudna."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

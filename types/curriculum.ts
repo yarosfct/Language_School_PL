@@ -64,6 +64,7 @@ export interface Exercise {
 // ============================================
 
 export interface MCQData {
+  question?: string;
   options: { id: string; text: string }[];
   correctOptionId: string;
 }
@@ -83,10 +84,11 @@ export interface FillBlankData {
 }
 
 export interface TypedAnswerData {
+  question?: string;
   acceptedAnswers: string[]; // Multiple valid forms
   evaluationRules: {
     allowDiacriticErrors: boolean;
-    allowTypos: boolean; // Levenshtein distance ≤ 1
+    allowTypos: boolean; // Levenshtein distance <= 1
     caseSensitive: boolean;
   };
   feedbackHints?: {

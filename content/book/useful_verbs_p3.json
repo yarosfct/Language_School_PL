@@ -1,0 +1,503 @@
+{
+  "section_number": 36,
+  "topic_en": "Useful Verbs. Part 3",
+  "topic_pl": "Przydatne czasowniki. Część 3",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "ciągnąć", "en": ["to pull"], "category": "verb" },
+    { "pl": "drukować", "en": ["to print"], "category": "verb" },
+    { "pl": "działać", "en": ["to work", "to operate"], "category": "verb" },
+    { "pl": "dzwonić", "en": ["to call", "to ring"], "category": "verb" },
+    { "pl": "kłamać", "en": ["to tell lies", "to lie"], "category": "verb" },
+    { "pl": "liczyć", "en": ["to count"], "category": "verb" },
+    { "pl": "malować", "en": ["to paint"], "category": "verb" },
+    { "pl": "martwić się", "en": ["to worry", "to be worried"], "category": "verb" },
+    { "pl": "marzyć", "en": ["to dream"], "category": "verb" },
+    { "pl": "należeć", "en": ["to belong"], "category": "verb" },
+    { "pl": "naprawiać", "en": ["to fix", "to repair"], "category": "verb" },
+    { "pl": "obiecać", "en": ["to promise"], "category": "verb" },
+    { "pl": "odebrać", "en": ["to pick up", "to collect"], "category": "verb" },
+    { "pl": "pchać", "en": ["to push"], "category": "verb" },
+    { "pl": "pożyczyć", "en": ["to borrow"], "category": "verb" },
+    { "pl": "przeprowadzać się", "en": ["to move house"], "category": "verb" },
+    { "pl": "przyjechać", "en": ["to arrive", "to come by means of transport"], "category": "verb" },
+    { "pl": "rozmawiać", "en": ["to talk"], "category": "verb" },
+    { "pl": "skopiować", "en": ["to copy"], "category": "verb" },
+    { "pl": "skupić się", "en": ["to concentrate", "to focus"], "category": "verb" },
+    { "pl": "śmiać się", "en": ["to laugh"], "category": "verb" },
+    { "pl": "tęsknić", "en": ["to miss"], "category": "verb" },
+    { "pl": "umierać", "en": ["to die"], "category": "verb" },
+    { "pl": "uśmiechać się", "en": ["to smile"], "category": "verb" },
+    { "pl": "woleć", "en": ["to prefer"], "category": "verb" },
+    { "pl": "wybrać", "en": ["to pick", "to choose"], "category": "verb" },
+    { "pl": "wyjść za / ożenić się z", "en": ["to marry"], "category": "phrase" },
+    { "pl": "wynajmować", "en": ["to rent"], "category": "verb" },
+    { "pl": "zatrzymać (się)", "en": ["to stop", "to forget", "to keep"], "category": "verb" },
+    { "pl": "zdecydować", "en": ["to decide"], "category": "verb" },
+    { "pl": "okolica", "en": ["area", "neighbourhood"], "category": "noun" },
+    { "pl": "drukarka", "en": ["printer"], "category": "noun" },
+    { "pl": "portret", "en": ["portrait"], "category": "noun" },
+    { "pl": "głód", "en": ["hunger"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "verb_aspect",
+      "content": "Almost all Polish verbs have two forms: imperfective and perfective. In this book, the imperfective forms are used for repeated habits or ongoing actions, and the perfective forms for single completed actions."
+    },
+    {
+      "id": 2,
+      "topic": "skupic_sie_na",
+      "content": "After the verb 'skupić się' (to focus, concentrate), use the preposition 'na'.",
+      "examples": [
+        "Skoncentruj się na pracy. = Focus on work.",
+        "Skup się na czymś. = Focus on something."
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "copy_verbs",
+      "content": "In Polish there are two main equivalents of 'to copy': 'skserować' and 'skopiować'. 'Skserować' is usually for copying text on paper; 'skopiować' can be used for files, data, and other copying actions."
+    },
+    {
+      "id": 5,
+      "topic": "odebrac_accusative",
+      "content": "After the verb 'odebrać' (to pick up), use the accusative case."
+    },
+    {
+      "id": 6,
+      "topic": "liczyc_na",
+      "content": "After 'liczyć na' (to count on), use the accusative case."
+    },
+    {
+      "id": 8,
+      "topic": "co_myslisz",
+      "content": "You can say either 'Co myślisz?' or 'Jak myślisz?' in the relevant sentence."
+    },
+    {
+      "id": 9,
+      "topic": "after_odebrac",
+      "content": "After the verb 'odebrać' in the sentence about the package, use the accusative."
+    },
+    {
+      "id": 12,
+      "topic": "zapomniec_genitive",
+      "content": "After the verb 'zapomnieć' (to forget), use the genitive case.",
+      "examples": [
+        "robić zdjęcia smartfonem = to take pictures with one's smartphone"
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "marzyc_o_plus_locative",
+      "content": "Use the locative case after 'marzyć o' (to dream about).",
+      "examples": [
+        "marzyć o podróżach = to dream about travelling",
+        "marzyć o psie = to dream about a dog"
+      ]
+    },
+    {
+      "id": 17,
+      "topic": "zatrzymac_sie_meanings",
+      "content": "'Zatrzymać się' can mean to stop or to stay/stop somewhere temporarily."
+    },
+    {
+      "id": 18,
+      "topic": "przestac_block",
+      "content": "'Przestać' means to stop doing something.",
+      "examples": [
+        "Przestała płakać. = She stopped crying.",
+        "Samochód zatrzymał się na czerwonym świetle. = The car stopped at the red light."
+      ]
+    },
+    {
+      "id": 21,
+      "topic": "marry_in_polish",
+      "content": "Polish has two phrases for 'to marry': 'wyjść za mąż' for a woman and 'ożenić się z' for a man.",
+      "examples": [
+        "Magda wyszła za mąż za Adama. = Magda married Adam.",
+        "Piotrek ożenił się z Magdą dwa lata temu. = Piotrek married Magda two years ago."
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "smiac_sie_conjugation",
+      "content": "Conjugation of 'śmiać się' in the present tense:",
+      "examples": [
+        "ja śmieję się",
+        "ty śmiejesz się",
+        "on/ona/ono śmieje się",
+        "my śmiejemy się",
+        "wy śmiejecie się",
+        "oni/one śmieją się"
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "w_plus_locative_okolica",
+      "content": "You can learn more about the use of the preposition 'w' with 'okolica'. Keep in mind that 'okolica' can mean area or neighbourhood."
+    },
+    {
+      "id": 27,
+      "topic": "rozmawiac_vs_mowic",
+      "content": "Often, instead of using 'rozmawiać', learners use 'mówić'. But they differ:",
+      "examples": [
+        "Mówię po polsku. = I speak Polish.",
+        "On mówi, że jest zmęczony. = He says he's tired.",
+        "Nikt mi nie będzie mówić, jak żyć. = Nobody is going to tell me how to live.",
+        "Oni rozmawiają o projekcie. = They are talking about a project."
+      ]
+    },
+    {
+      "id": 29,
+      "topic": "na_w_porządku",
+      "content": "If you want to say who or what you miss, use the preposition 'za' and the instrumental case.",
+      "examples": [
+        "Tęsknię za tobą. = I miss you."
+      ]
+    },
+    {
+      "id": 30,
+      "topic": "pull_push_signs",
+      "content": "In Poland, you probably often see signs on shop doors saying 'pchać' (push) and 'ciągnąć' (pull)."
+    },
+    {
+      "id": 32,
+      "topic": "dla_plus_accusative",
+      "content": "When giving something 'for' someone in the sense of intended recipient, use 'dla' + genitive, but the object itself stays in the accusative.",
+      "examples": [
+        "To dla pani. = This is for you, madam."
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "We borrowed some money for a new house.",
+      "pl": "Pożyczyliśmy pieniądze na nowy dom.",
+      "focus_words": ["pożyczyliśmy", "pieniądze", "na nowy dom"],
+      "grammar_tags": ["past_tense", "accusative_basic"]
+    },
+    {
+      "id": 2,
+      "en": "Can you focus on what I'm saying, please?",
+      "pl": "(Czy) możesz skupić się na tym, co mówię?",
+      "focus_words": ["możesz skupić się", "na tym", "co mówię"],
+      "grammar_tags": ["question", "na_plus_locative", "subordinate_clause"]
+    },
+    {
+      "id": 3,
+      "en": "I've decided to study Polish every day.",
+      "pl": "Mówię? / Zdecydowałem, że będę codziennie uczyć się polskiego.",
+      "focus_words": ["zdecydowałem", "że będę", "codziennie uczyć się polskiego"],
+      "grammar_tags": ["past_tense", "future_tense", "subordinate_clause"],
+      "note": "The image quality around this line is imperfect; the intended meaning is clearly about deciding to study Polish every day."
+    },
+    {
+      "id": 4,
+      "en": "How many times am I supposed to copy this?",
+      "pl": "Ile razy mam to skopiować?",
+      "focus_words": ["ile razy", "mam", "to skopiować"],
+      "grammar_tags": ["question", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 5,
+      "en": "My parents have just arrived in Poland.",
+      "pl": "Moi rodzice właśnie przyjechali do Polski.",
+      "focus_words": ["moi rodzice", "właśnie przyjechali", "do Polski"],
+      "grammar_tags": ["past_tense", "motion"]
+    },
+    {
+      "id": 6,
+      "en": "You (pl.) can always count on my help.",
+      "pl": "Zawsze możecie liczyć na moją pomoc.",
+      "focus_words": ["zawsze możecie liczyć", "na moją pomoc"],
+      "grammar_tags": ["na_plus_accusative"]
+    },
+    {
+      "id": 7,
+      "en": "Does this book belong to Mr Nowak?",
+      "pl": "(Czy) ta książka należy do pana Nowaka?",
+      "focus_words": ["ta książka", "należy do pana Nowaka"],
+      "grammar_tags": ["question", "do_plus_genitive"]
+    },
+    {
+      "id": 8,
+      "en": "Is this old TV (set) worth fixing? What do you think?",
+      "pl": "Czy opłaca się naprawiać ten stary telewizor? Jak myślisz?",
+      "focus_words": ["czy opłaca się", "naprawiać", "ten stary telewizor", "jak myślisz"],
+      "grammar_tags": ["question", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 9,
+      "en": "I need to pick up a package.",
+      "pl": "Muszę odebrać paczkę.",
+      "focus_words": ["muszę odebrać", "paczkę"],
+      "grammar_tags": ["two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 10,
+      "en": "Can you be quiet, please? I need to concentrate.",
+      "pl": "(Czy) możesz być cicho? Muszę się skupić.",
+      "focus_words": ["możesz być cicho", "muszę się skupić"],
+      "grammar_tags": ["question", "two_verbs_rule"]
+    },
+    {
+      "id": 11,
+      "en": "He promised that he would call every day (lit. daily).",
+      "pl": "Obiecał, że będzie codziennie dzwonić.",
+      "focus_words": ["obiecał", "że będzie codziennie dzwonić"],
+      "grammar_tags": ["past_tense", "future_tense", "subordinate_clause"]
+    },
+    {
+      "id": 12,
+      "en": "We forgot the camera, so (if need be) we can eventually take pictures with our phones.",
+      "pl": "Zapomnieliśmy aparatu (fotograficznego), więc będziemy ewentualnie robić zdjęcia telefonami.",
+      "focus_words": ["zapomnieliśmy aparatu", "więc", "będziemy robić zdjęcia telefonami"],
+      "grammar_tags": ["past_tense", "future_tense", "instrumental_basic", "genitive_after_zapomniec"]
+    },
+    {
+      "id": 13,
+      "en": "When did you arrive?",
+      "pl": "Kiedy przyjechałeś?",
+      "focus_words": ["kiedy", "przyjechałeś"],
+      "grammar_tags": ["question", "past_tense"]
+    },
+    {
+      "id": 14,
+      "en": "My daughter dreams of having (lit. dreams about) a dog.",
+      "pl": "Moja córka marzy o psie.",
+      "focus_words": ["moja córka", "marzy o psie"],
+      "grammar_tags": ["o_plus_locative"]
+    },
+    {
+      "id": 15,
+      "en": "I can see (lit. I see) that you're worried.",
+      "pl": "Widzę, że się martwisz.",
+      "focus_words": ["widzę", "że się martwisz"],
+      "grammar_tags": ["subordinate_clause"]
+    },
+    {
+      "id": 16,
+      "en": "I'm worried because I can't decide which university to choose.",
+      "pl": "Martwię się, bo nie mogę zdecydować, który uniwersytet wybrać.",
+      "focus_words": ["martwię się", "bo nie mogę zdecydować", "który uniwersytet wybrać"],
+      "grammar_tags": ["subordinate_clause", "question_clause", "two_verbs_rule"]
+    },
+    {
+      "id": 17,
+      "en": "He never tells lies (lit. lies).",
+      "pl": "(On) nigdy nie kłamie.",
+      "focus_words": ["nigdy nie kłamie"],
+      "grammar_tags": ["negation"]
+    },
+    {
+      "id": 18,
+      "en": "Do you (pl.) want to stop for supper or shall we continue (further)?",
+      "pl": "(Czy) chcecie się zatrzymać na kolację, czy iść dalej?",
+      "focus_words": ["chcecie się zatrzymać", "na kolację", "czy iść dalej"],
+      "grammar_tags": ["question", "two_verbs_rule"]
+    },
+    {
+      "id": 19,
+      "en": "I always smile when I look at these old photos.",
+      "pl": "Zawsze się uśmiecham, kiedy patrzę na/oglądam te stare zdjęcia.",
+      "focus_words": ["zawsze się uśmiecham", "kiedy patrzę na", "te stare zdjęcia"],
+      "grammar_tags": ["subordinate_clause", "accusative_basic"]
+    },
+    {
+      "id": 20,
+      "en": "I would prefer (lit. I prefer) to work remotely on Thursday.",
+      "pl": "W czwartek wolę pracować zdalnie.",
+      "focus_words": ["w czwartek", "wolę pracować", "zdalnie"],
+      "grammar_tags": ["two_verbs_rule", "time_expression"]
+    },
+    {
+      "id": 21,
+      "en": "How old were you when you married Natalia?",
+      "pl": "Ile miałeś lat, kiedy się ożeniłeś z Natalią?",
+      "focus_words": ["ile miałeś lat", "kiedy się ożeniłeś", "z Natalią"],
+      "grammar_tags": ["question", "past_tense", "subordinate_clause"]
+    },
+    {
+      "id": 22,
+      "en": "I've been painting this portrait all day.",
+      "pl": "Maluję ten portret (przez) cały dzień.",
+      "focus_words": ["maluję", "ten portret", "cały dzień"],
+      "grammar_tags": ["accusative_basic", "time_expression"]
+    },
+    {
+      "id": 23,
+      "en": "We always laugh a lot together.",
+      "pl": "Zawsze się dużo razem śmiejemy.",
+      "focus_words": ["zawsze", "dużo", "razem", "śmiejemy się"],
+      "grammar_tags": ["adverbs"]
+    },
+    {
+      "id": 24,
+      "en": "We've already moved twice this year.",
+      "pl": "Przeprowadzaliśmy się już dwa razy (w tym roku).",
+      "focus_words": ["przeprowadzaliśmy się", "już dwa razy", "w tym roku"],
+      "grammar_tags": ["past_tense", "frequency", "time_expression"]
+    },
+    {
+      "id": 25,
+      "en": "She always smiles when she sees children.",
+      "pl": "(Ona) zawsze się uśmiecha, kiedy widzi dzieci.",
+      "focus_words": ["zawsze się uśmiecha", "kiedy widzi dzieci"],
+      "grammar_tags": ["subordinate_clause", "accusative_basic"]
+    },
+    {
+      "id": 26,
+      "en": "They rented a small flat in Łódź in a peaceful neighbourhood.",
+      "pl": "Wynajmowali małe mieszkanie w spokojnej okolicy w Łodzi.",
+      "focus_words": ["wynajmowali", "małe mieszkanie", "w spokojnej okolicy", "w Łodzi"],
+      "grammar_tags": ["past_tense", "locative", "accusative_basic"]
+    },
+    {
+      "id": 27,
+      "en": "Tomorrow, we will talk about our plans for the weekend.",
+      "pl": "Jutro będziemy rozmawiać o naszych planach na weekend.",
+      "focus_words": ["jutro", "będziemy rozmawiać", "o naszych planach", "na weekend"],
+      "grammar_tags": ["future_tense", "locative"]
+    },
+    {
+      "id": 28,
+      "en": "You can push, and I will pull.",
+      "pl": "Ty możesz pchać, a ja będę ciągnąć.",
+      "focus_words": ["ty możesz pchać", "a ja będę ciągnąć"],
+      "grammar_tags": ["future_tense", "two_verbs_rule"]
+    },
+    {
+      "id": 29,
+      "en": "I'm starving.",
+      "pl": "Umieram z głodu.",
+      "focus_words": ["umieram z głodu"],
+      "grammar_tags": ["fixed_expression"]
+    },
+    {
+      "id": 30,
+      "en": "\"When we're print these documents.\" \"I don't know. The printer isn't working.\"",
+      "pl": "\"Kiedy będą drukowane te dokumenty?\" „Nie wiem. Drukarka nie działa.”",
+      "focus_words": ["kiedy będą drukowane te dokumenty", "drukarka nie działa"],
+      "grammar_tags": ["question", "passive_like_meaning"],
+      "note": "The English line in the photo is ungrammatical. Intended meaning: 'When are we going to print these documents?' or 'When will these documents be printed?'"
+    },
+    {
+      "id": 31,
+      "en": "I can't promise that everything will be all right.",
+      "pl": "Nie mogę obiecać, że wszystko będzie w porządku.",
+      "focus_words": ["nie mogę obiecać", "że wszystko będzie w porządku"],
+      "grammar_tags": ["negation", "subordinate_clause", "future_tense"]
+    },
+    {
+      "id": 32,
+      "en": "I miss you.",
+      "pl": "Tęsknię za tobą.",
+      "focus_words": ["tęsknię za tobą"],
+      "grammar_tags": ["za_plus_instrumental"]
+    },
+    {
+      "id": 33,
+      "en": "Eventually, we picked a different film.",
+      "pl": "W końcu wybraliśmy inny film.",
+      "focus_words": ["w końcu", "wybraliśmy", "inny film"],
+      "grammar_tags": ["past_tense", "accusative_basic"]
+    },
+    {
+      "id": 34,
+      "en": "I'm printing that form for you now, madam.",
+      "pl": "Drukuję teraz dla pani ten formularz.",
+      "focus_words": ["drukuję teraz", "dla pani", "ten formularz"],
+      "grammar_tags": ["formal_address", "accusative_basic"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "ciągnąć",
+      "drukować",
+      "działać",
+      "dzwonić",
+      "kłamać",
+      "liczyć",
+      "malować",
+      "martwić się",
+      "marzyć",
+      "należeć",
+      "naprawiać",
+      "obiecać",
+      "odebrać",
+      "pchać",
+      "pożyczyć",
+      "przeprowadzać się",
+      "przyjechać",
+      "rozmawiać",
+      "skopiować",
+      "skupić się",
+      "śmiać się",
+      "tęsknić",
+      "umierać",
+      "uśmiechać się",
+      "woleć",
+      "wybrać",
+      "wyjść za mąż",
+      "ożenić się z",
+      "wynajmować",
+      "zatrzymać się",
+      "zdecydować"
+    ],
+    "sentence_cards_priority": [1, 2, 4, 5, 6, 8, 9, 11, 12, 15, 16, 18, 19, 21, 22, 25, 27, 29, 31, 32, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'I miss you.'",
+      "correct_answer": "Tęsknię za tobą.",
+      "distractors": [
+        "Tęsknię cię.",
+        "Brakuje mi za tobą.",
+        "Myślę za tobą."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'She always smiles when she sees children.'",
+      "answer_pl": "Ona zawsze się uśmiecha, kiedy widzi dzieci.",
+      "word_bank": ["Ona", "zawsze", "się", "uśmiecha", "kiedy", "widzi", "dzieci"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Can you focus on what I'm saying, please?'",
+      "accepted_answers": [
+        "Czy możesz skupić się na tym, co mówię?",
+        "Możesz skupić się na tym, co mówię?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

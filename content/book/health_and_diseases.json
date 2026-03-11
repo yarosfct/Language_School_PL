@@ -1,0 +1,622 @@
+{
+  "section_number": 33,
+  "topic_en": "Health & Diseases",
+  "topic_pl": "Zdrowie i choroby",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "chory", "en": ["ill", "sick"], "category": "adjective" },
+    { "pl": "choroba", "en": ["disease", "illness"], "category": "noun" },
+    { "pl": "zdrowy", "en": ["healthy"], "category": "adjective" },
+    { "pl": "alergia", "en": ["allergy"], "category": "noun" },
+    { "pl": "czuć się", "en": ["to feel"], "category": "reflexive_verb" },
+    { "pl": "mieć alergię na", "en": ["to be allergic to"], "category": "phrase" },
+    { "pl": "astma", "en": ["asthma"], "category": "noun" },
+    { "pl": "być przeziębionym", "en": ["to have a cold"], "category": "phrase" },
+    { "pl": "przeziębić się", "en": ["to catch a cold"], "category": "reflexive_verb" },
+    { "pl": "przeziębienie", "en": ["cold"], "category": "noun" },
+    { "pl": "grypa", "en": ["flu"], "category": "noun" },
+    { "pl": "zawał serca", "en": ["heart attack"], "category": "phrase" },
+    { "pl": "rak", "en": ["cancer"], "category": "noun" },
+    { "pl": "boleć", "en": ["to hurt"], "category": "verb" },
+    { "pl": "kaszel", "en": ["cough"], "category": "noun" },
+    { "pl": "gorączka", "en": ["fever"], "category": "noun" },
+    { "pl": "złamana noga", "en": ["broken leg"], "category": "phrase" },
+    { "pl": "lek", "en": ["medicine", "medication"], "category": "noun" },
+    { "pl": "aspiryna", "en": ["aspirin"], "category": "noun" },
+    { "pl": "recepta", "en": ["prescription"], "category": "noun" },
+    { "pl": "objawy", "en": ["symptoms"], "category": "noun_plural" },
+    { "pl": "syrop", "en": ["syrup"], "category": "noun" },
+    { "pl": "karetka", "en": ["ambulance"], "category": "noun" },
+    { "pl": "lekarz", "en": ["doctor"], "category": "noun" },
+    { "pl": "dentysta", "en": ["dentist"], "category": "noun" },
+    { "pl": "pacjent", "en": ["patient"], "category": "noun" },
+    { "pl": "wizyta", "en": ["appointment", "visit"], "category": "noun" },
+    { "pl": "badanie kontrolne", "en": ["check-up"], "category": "phrase" },
+    { "pl": "dieta", "en": ["diet"], "category": "noun" },
+    { "pl": "witamina", "en": ["vitamin"], "category": "noun" },
+    { "pl": "suplement", "en": ["supplement"], "category": "noun" },
+    { "pl": "ból brzucha", "en": ["stomach ache"], "category": "phrase" },
+    { "pl": "ból zęba", "en": ["toothache"], "category": "phrase" },
+    { "pl": "ból głowy", "en": ["headache"], "category": "phrase" },
+    { "pl": "termometr", "en": ["thermometer"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "czuc_sie_present_tense",
+      "content": "Present tense of 'czuć się' (to feel):",
+      "examples": [
+        "ja czuję się",
+        "ty czujesz się",
+        "on/ona/ono czuje się",
+        "my czujemy się",
+        "wy czujecie się",
+        "oni/one czują się"
+      ]
+    },
+    {
+      "id": 4,
+      "topic": "feeling_response_options",
+      "content": "When someone asks how you’re feeling, you can answer with adjectives like:",
+      "examples": [
+        "dobrze",
+        "świetnie",
+        "wspaniale",
+        "tak sobie"
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "alergia_na_and_examples",
+      "content": "The note contrasts two events joined by 'a' and gives examples of common allergies.",
+      "examples": [
+        "pyłki = pollen",
+        "sierść zwierząt = animal fur",
+        "kurz = dust",
+        "orzechy = nuts",
+        "mleko = milk",
+        "mięso = meat",
+        "jaja = eggs"
+      ],
+      "content_note": "The phrase taught here is 'mieć alergię na...'"
+    },
+    {
+      "id": 7,
+      "topic": "asthma_and_question_particle",
+      "content": "The note points back to earlier grammar for the question particle and related respiratory vocabulary."
+    },
+    {
+      "id": 13,
+      "topic": "patient_feminine_form",
+      "content": "'Pacjentka' translates as female patient."
+    },
+    {
+      "id": 14,
+      "topic": "cold_with_byc_not_miec",
+      "content": "To say someone has a cold, Polish uses 'być przeziębionym', not a direct 'to have' structure."
+    },
+    {
+      "id": 15,
+      "topic": "zaczynac_accusative",
+      "content": "Use the accusative case after the verb 'zaczynać' (to start)."
+    },
+    {
+      "id": 16,
+      "topic": "describing_temperature_goraczka",
+      "content": "To describe someone’s temperature, use the noun 'gorączka' rather than the adverb 'gorąco'.",
+      "examples": [
+        "Weronika ma wysoką gorączkę."
+      ]
+    },
+    {
+      "id": 17,
+      "topic": "uprawiac_sport",
+      "content": "A common mistake is *robić sport*. The correct expression is 'uprawiać sport'."
+    },
+    {
+      "id": 18,
+      "topic": "boli_mnie_structure",
+      "content": "The sentence 'boli mnie brzuch' breaks down as: 'boli' = 3rd person singular of 'boleć'; 'mnie' = accusative form of 'ja'; 'brzuch' = stomach. Literally it is like 'my stomach hurts me'.",
+      "examples": [
+        "Boli mnie brzuch.",
+        "Boli mnie ząb."
+      ]
+    },
+    {
+      "id": 18,
+      "topic": "body_parts_list",
+      "content": "Useful body-part nouns from the note:",
+      "examples": [
+        "brzuch = stomach",
+        "ząb = tooth",
+        "oko = eye",
+        "ucho = ear",
+        "szyja = neck",
+        "ręka = hand/arm",
+        "noga = leg"
+      ]
+    },
+    {
+      "id": 23,
+      "topic": "czekac_na_accusative",
+      "content": "After 'czekać na' (to wait for), use the accusative case."
+    },
+    {
+      "id": 25,
+      "topic": "dentysta_vs_stomatolog",
+      "content": "'Dentysta' is the more normal synonym of 'stomatolog'."
+    },
+    {
+      "id": 27,
+      "topic": "calling_prepositions",
+      "content": "Different prepositions are used with forms of 'dzwonić' depending on context.",
+      "examples": [
+        "Dzwonię do mojej mamy. = I'm calling my mum.",
+        "Dzwonię do mojej mamy, żeby umówić wizytę. = I'm calling my doctor to make an appointment.",
+        "Dzwonię po taksówkę. = I'm calling a taxi.",
+        "Dzwonię po karetkę. = I'm calling an ambulance."
+      ]
+    },
+    {
+      "id": 28,
+      "topic": "in_poland_emergency_number",
+      "content": "In Poland, if you wish to call for help use 'karetka', 'ambulans', 'policja', or 'straż pożarna'. The note adds that 112 is always the emergency number."
+    },
+    {
+      "id": 31,
+      "topic": "recepta_false_friend",
+      "content": "'Recepta' and English 'receipt' are false friends.",
+      "examples": [
+        "recepta = prescription",
+        "receipt = paragon"
+      ]
+    },
+    {
+      "id": 31,
+      "topic": "bez_plus_genitive",
+      "content": "After the preposition 'bez' (without), use the genitive case."
+    },
+    {
+      "id": 32,
+      "topic": "powazna_choroba_variant",
+      "content": "You can also say 'to poważna choroba'."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "How are you feeling today? Better than yesterday?",
+      "pl": "Jak się dzisiaj/dziś czujesz? Lepiej niż wczoraj?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jak się dziś czujesz? Lepiej niż wczoraj?"],
+      "focus_words": ["jak się czujesz", "dziś", "lepiej niż wczoraj"],
+      "grammar_tags": ["health", "question", "reflexive_verb"]
+    },
+    {
+      "id": 2,
+      "en": "Do you think this is the flu?",
+      "pl": "(Czy) myślisz, że to (jest) grypa?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Myślisz, że to grypa?"],
+      "focus_words": ["myślisz, że", "to jest grypa"],
+      "grammar_tags": ["health", "question", "subordinate_clause"]
+    },
+    {
+      "id": 3,
+      "en": "I'm ill. I'm not going to work.",
+      "pl": "Jestem chory. Nie idę do pracy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem chora. Nie idę do pracy."],
+      "focus_words": ["jestem chory", "nie idę do pracy"],
+      "grammar_tags": ["health", "negation"]
+    },
+    {
+      "id": 4,
+      "en": "Fortunately, it’s just a cold.",
+      "pl": "Na szczęście to (jest) tylko przeziębienie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Na szczęście to tylko przeziębienie."],
+      "focus_words": ["na szczęście", "to tylko przeziębienie"],
+      "grammar_tags": ["health", "fixed_expression"]
+    },
+    {
+      "id": 5,
+      "en": "He broke his leg yesterday and the wedding is next week.",
+      "pl": "Wczoraj złamał nogę, a za tydzień jest ślub.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wczoraj złamał nogę", "a za tydzień", "jest ślub"],
+      "grammar_tags": ["health", "past_tense", "time_expression", "contrast"]
+    },
+    {
+      "id": 6,
+      "en": "My sister and I have an allergy to pollen.",
+      "pl": "Moja siostra i ja mamy alergię na pyłki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja siostra i ja", "mamy alergię", "na pyłki"],
+      "grammar_tags": ["health", "accusative_basic"]
+    },
+    {
+      "id": 7,
+      "en": "I’m going to take vitamin D supplements. / I intend to take vitamin D supplements.",
+      "pl": "Mam zamiar / Zamierzam suplementować brać witaminę D.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [
+        "Mam zamiar brać witaminę D.",
+        "Zamierzam brać witaminę D."
+      ],
+      "focus_words": ["mam zamiar", "zamierzam", "brać witaminę D"],
+      "grammar_tags": ["health", "two_verbs_rule", "accusative_basic"],
+      "note": "The printed line appears visually awkward in the photo; the intended teaching point is clearly 'mam zamiar / zamierzam ... witaminę D'."
+    },
+    {
+      "id": 8,
+      "en": "I have a doctor's appointment (lit. a visit at the doctor's) tomorrow morning.",
+      "pl": "Mam wizytę u lekarza jutro rano.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam wizytę", "u lekarza", "jutro rano"],
+      "grammar_tags": ["health", "accusative_basic", "time_expression"]
+    },
+    {
+      "id": 9,
+      "en": "My grandmother takes various supplements.",
+      "pl": "Moja babcia bierze różne suplementy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja babcia", "bierze", "różne suplementy"],
+      "grammar_tags": ["health", "accusative_basic"]
+    },
+    {
+      "id": 10,
+      "en": "Asthma is a chronic disease, isn't it? What are its (lit. then) symptoms?",
+      "pl": "Astma to jest choroba przewlekła, prawda? Jakie są jej objawy?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Astma to choroba przewlekła, prawda? Jakie są jej objawy?"],
+      "focus_words": ["astma", "choroba przewlekła", "jakie są jej objawy"],
+      "grammar_tags": ["health", "question"]
+    },
+    {
+      "id": 11,
+      "en": "Do we have some aspirin?",
+      "pl": "(Czy) mamy aspirynę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mamy aspirynę?"],
+      "focus_words": ["mamy aspirynę"],
+      "grammar_tags": ["health", "question", "accusative_basic"]
+    },
+    {
+      "id": 12,
+      "en": "How often should I take this medicine?",
+      "pl": "Jak często powinienem brać ten lek?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jak często powinnam brać ten lek?"],
+      "focus_words": ["jak często", "powinienem brać", "ten lek"],
+      "grammar_tags": ["health", "question", "accusative_basic"]
+    },
+    {
+      "id": 13,
+      "en": "The patient must rest now.",
+      "pl": "Pacjent musi teraz odpoczywać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Pacjentka musi teraz odpoczywać."],
+      "focus_words": ["pacjent", "musi teraz odpoczywać"],
+      "grammar_tags": ["health", "present_tense"]
+    },
+    {
+      "id": 14,
+      "en": "Mum has a cold and she's (lying) in bed.",
+      "pl": "Mama jest przeziębiona i leży w łóżku.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mama jest przeziębiona", "i leży w łóżku"],
+      "grammar_tags": ["health", "locative"]
+    },
+    {
+      "id": 15,
+      "en": "Tomorrow I'm starting a new diet.",
+      "pl": "Jutro zaczynam nową dietę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jutro", "zaczynam", "nową dietę"],
+      "grammar_tags": ["health", "future_reference", "accusative_basic"]
+    },
+    {
+      "id": 16,
+      "en": "Weronika has a high fever.",
+      "pl": "Weronika ma wysoką gorączkę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["Weronika", "ma wysoką gorączkę"],
+      "grammar_tags": ["health", "accusative_basic"]
+    },
+    {
+      "id": 17,
+      "en": "I want to be healthy, so I do sports.",
+      "pl": "Chcę być zdrowy, więc uprawiam sport.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Chcę być zdrowa, więc uprawiam sport."],
+      "focus_words": ["chcę być zdrowy", "więc", "uprawiam sport"],
+      "grammar_tags": ["health", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 18,
+      "en": "My stomach hurts. / I have a stomach ache.",
+      "pl": "Boli mnie brzuch.",
+      "literal_en": null,
+      "english_variants": ["I have a stomach ache."],
+      "polish_alternatives": [],
+      "focus_words": ["boli mnie", "brzuch"],
+      "grammar_tags": ["health", "fixed_expression"]
+    },
+    {
+      "id": 19,
+      "en": "I guess Alicja has a fever. Where is the thermometer?",
+      "pl": "Alicja ma chyba gorączkę. Gdzie jest termometr?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["Alicja ma chyba gorączkę", "gdzie jest termometr"],
+      "grammar_tags": ["health", "question"]
+    },
+    {
+      "id": 20,
+      "en": "I have a terrible headache.",
+      "pl": "Okropnie boli mnie głowa.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Boli mnie głowa."],
+      "focus_words": ["okropnie", "boli mnie", "głowa"],
+      "grammar_tags": ["health", "fixed_expression"]
+    },
+    {
+      "id": 21,
+      "en": "I’m going for a check-up. I was ill for two weeks, but I’m feeling fine now.",
+      "pl": "Idę na badanie kontrolne. Byłem chory przez dwa tygodnie, ale teraz czuję się dobrze.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Byłam chora przez dwa tygodnie, ale teraz czuję się dobrze."],
+      "focus_words": ["idę na badanie kontrolne", "byłem chory przez dwa tygodnie", "ale teraz czuję się dobrze"],
+      "grammar_tags": ["health", "past_tense", "reflexive_verb", "contrast"]
+    },
+    {
+      "id": 22,
+      "en": "My child has a dry cough.",
+      "pl": "Moje dziecko ma suchy kaszel.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moje dziecko", "ma suchy kaszel"],
+      "grammar_tags": ["health", "accusative_basic"]
+    },
+    {
+      "id": 23,
+      "en": "How long did you wait for the surgery?",
+      "pl": "Jak długo czekałeś na operację?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jak długo czekałaś na operację?"],
+      "focus_words": ["jak długo", "czekałeś", "na operację"],
+      "grammar_tags": ["health", "question", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 24,
+      "en": "I've broken my leg, so I can't run.",
+      "pl": "Złamałem nogę, więc nie mogę biegać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Złamałam nogę, więc nie mogę biegać."],
+      "focus_words": ["złamałem nogę", "więc", "nie mogę biegać"],
+      "grammar_tags": ["health", "past_tense", "negation", "two_verbs_rule"]
+    },
+    {
+      "id": 25,
+      "en": "My dad works as a dentist. Do you want his (phone) number?",
+      "pl": "Mój tata pracuje jako dentysta. (Czy) chcesz jego numer (telefonu)?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mój tata pracuje jako dentysta. Chcesz jego numer telefonu?"],
+      "focus_words": ["mój tata", "pracuje jako dentysta", "chcesz jego numer telefonu"],
+      "grammar_tags": ["health", "question", "genitive_basic"]
+    },
+    {
+      "id": 26,
+      "en": "I caught a cold yesterday.",
+      "pl": "Przeziębiłem się wczoraj.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Przeziębiłam się wczoraj."],
+      "focus_words": ["przeziębiłem się", "wczoraj"],
+      "grammar_tags": ["health", "past_tense", "reflexive_verb"]
+    },
+    {
+      "id": 27,
+      "en": "I’m calling an ambulance.",
+      "pl": "Dzwonię po karetkę / ambulans.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dzwonię po karetkę."],
+      "focus_words": ["dzwonię po", "karetkę", "ambulans"],
+      "grammar_tags": ["health", "accusative_basic"]
+    },
+    {
+      "id": 28,
+      "en": "Do you (pl.) have any tissues? I don’t know if I have an allergy or a cold.",
+      "pl": "(Czy) macie chusteczki? Nie wiem, czy to (jest) alergia, czy przeziębienie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Macie chusteczki? Nie wiem, czy to alergia, czy przeziębienie."],
+      "focus_words": ["macie chusteczki", "nie wiem", "czy to alergia", "czy przeziębienie"],
+      "grammar_tags": ["health", "question", "negation", "subordinate_clause"]
+    },
+    {
+      "id": 29,
+      "en": "Cancer is a serious disease.",
+      "pl": "Rak jest poważną chorobą.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To poważna choroba."],
+      "focus_words": ["rak", "jest poważną chorobą"],
+      "grammar_tags": ["health", "instrumental_basic"]
+    },
+    {
+      "id": 30,
+      "en": "It’s good to drink a lot of water when you’re ill.",
+      "pl": "Dobrze jest pić dużo wody, kiedy jesteś chory.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dobrze jest pić dużo wody, kiedy jesteś chora."],
+      "focus_words": ["dobrze jest pić", "dużo wody", "kiedy jesteś chory"],
+      "grammar_tags": ["health", "two_verbs_rule", "subordinate_clause", "genitive_basic"]
+    },
+    {
+      "id": 31,
+      "en": "What cough medicine (lit. medicine for cough) is available without a prescription? / the counter (lit. without a prescription)?",
+      "pl": "Jaki lek na kaszel jest dostępny bez recepty?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jaki lek", "na kaszel", "jest dostępny", "bez recepty"],
+      "grammar_tags": ["health", "question", "genitive_after_bez"]
+    },
+    {
+      "id": 32,
+      "en": "I’ve got an appointment (for) today.",
+      "pl": "Mam dziś/dzisiaj wizytę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mam dzisiaj wizytę."],
+      "focus_words": ["mam dziś wizytę"],
+      "grammar_tags": ["health", "accusative_basic", "time_expression"]
+    },
+    {
+      "id": 33,
+      "en": "His grandfather had a heart attack.",
+      "pl": "Jego dziadek miał zawał (serca).",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jego dziadek miał zawał serca."],
+      "focus_words": ["jego dziadek", "miał zawał serca"],
+      "grammar_tags": ["health", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 34,
+      "en": "Unfortunately, she caught a cold and needs to stay home.",
+      "pl": "Niestety, przeziębiła się i musi zostać w domu.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["niestety", "przeziębiła się", "i musi zostać w domu"],
+      "grammar_tags": ["health", "past_tense", "reflexive_verb", "locative"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "chory",
+      "choroba",
+      "zdrowy",
+      "alergia",
+      "czuć się",
+      "mieć alergię na",
+      "astma",
+      "być przeziębionym",
+      "przeziębić się",
+      "przeziębienie",
+      "grypa",
+      "zawał serca",
+      "rak",
+      "boleć",
+      "kaszel",
+      "gorączka",
+      "złamana noga",
+      "lek",
+      "aspiryna",
+      "recepta",
+      "objawy",
+      "syrop",
+      "karetka",
+      "lekarz",
+      "dentysta",
+      "pacjent",
+      "wizyta",
+      "badanie kontrolne",
+      "dieta",
+      "witamina",
+      "suplement",
+      "ból brzucha",
+      "ból zęba",
+      "ból głowy",
+      "termometr"
+    ],
+    "sentence_cards_priority": [1, 2, 3, 4, 6, 8, 10, 12, 14, 15, 16, 17, 18, 19, 21, 23, 24, 27, 28, 29, 31, 34]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'I have a terrible headache.'",
+      "correct_answer": "Okropnie boli mnie głowa.",
+      "distractors": [
+        "Mam okropny głowa.",
+        "Boli mi okropna głowa.",
+        "Jestem głowa okropnie."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'My child has a dry cough.'",
+      "answer_pl": "Moje dziecko ma suchy kaszel.",
+      "word_bank": ["Moje", "dziecko", "ma", "suchy", "kaszel"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'What cough medicine is available without a prescription?'",
+      "accepted_answers": [
+        "Jaki lek na kaszel jest dostępny bez recepty?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

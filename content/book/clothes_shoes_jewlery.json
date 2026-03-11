@@ -1,0 +1,628 @@
+{
+  "section_number": 24,
+  "topic_en": "Clothes, Shoes & Jewellery",
+  "topic_pl": "Ubrania, buty i biżuteria",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "ubrania", "en": ["clothes"], "category": "noun_plural" },
+    { "pl": "koszula", "en": ["shirt"], "category": "noun" },
+    { "pl": "koszulka", "en": ["T-shirt"], "category": "noun" },
+    { "pl": "bluza", "en": ["sweatshirt"], "category": "noun" },
+    { "pl": "sweter", "en": ["jumper", "sweater"], "category": "noun" },
+    { "pl": "kurtka", "en": ["jacket"], "category": "noun" },
+    { "pl": "adidasy", "en": ["sports shoes", "trainers"], "category": "noun_plural" },
+    { "pl": "spodnie", "en": ["trousers"], "category": "noun_plural" },
+    { "pl": "dżinsy", "en": ["jeans"], "category": "noun_plural" },
+    { "pl": "spodenki", "en": ["shorts"], "category": "noun_plural" },
+    { "pl": "płaszcz", "en": ["coat"], "category": "noun" },
+    { "pl": "płaszcz przeciwdeszczowy", "en": ["raincoat"], "category": "phrase" },
+    { "pl": "sukienka", "en": ["dress"], "category": "noun" },
+    { "pl": "spódnica", "en": ["skirt"], "category": "noun" },
+    { "pl": "garnitur", "en": ["suit"], "category": "noun" },
+    { "pl": "krawat", "en": ["tie"], "category": "noun" },
+    { "pl": "piżama", "en": ["pyjamas"], "category": "noun" },
+    { "pl": "skarpetka", "en": ["sock"], "category": "noun" },
+    { "pl": "czapka", "en": ["cap", "hat"], "category": "noun" },
+    { "pl": "szalik", "en": ["scarf"], "category": "noun" },
+    { "pl": "rękawiczki", "en": ["gloves"], "category": "noun_plural" },
+    { "pl": "torba", "en": ["bag"], "category": "noun" },
+    { "pl": "torebka", "en": ["handbag"], "category": "noun" },
+    { "pl": "pasek", "en": ["belt"], "category": "noun" },
+    { "pl": "guzik", "en": ["button"], "category": "noun" },
+    { "pl": "okulary", "en": ["glasses"], "category": "noun_plural" },
+    { "pl": "portfel", "en": ["wallet"], "category": "noun" },
+    { "pl": "dres", "en": ["tracksuit", "sweats"], "category": "noun" },
+    { "pl": "plecak", "en": ["rucksack", "backpack"], "category": "noun" },
+    { "pl": "parasol", "en": ["umbrella"], "category": "noun" },
+    { "pl": "pierścionek", "en": ["ring"], "category": "noun" },
+    { "pl": "kolczyk", "en": ["earring"], "category": "noun" },
+    { "pl": "bransoletka", "en": ["bracelet"], "category": "noun" },
+    { "pl": "naszyjnik", "en": ["necklace"], "category": "noun" },
+    { "pl": "złoto", "en": ["gold"], "category": "noun" },
+    { "pl": "srebro", "en": ["silver"], "category": "noun" },
+    { "pl": "buty", "en": ["shoes"], "category": "noun_plural" },
+    { "pl": "sandały", "en": ["sandals"], "category": "noun_plural" },
+    { "pl": "buty na obcasie", "en": ["high-heeled shoes", "heels"], "category": "phrase" },
+    { "pl": "japonki", "en": ["flip-flops"], "category": "noun_plural" },
+    { "pl": "tenisówki", "en": ["trainers"], "category": "noun_plural" },
+    { "pl": "rozmiar", "en": ["size"], "category": "noun" },
+    { "pl": "materiał", "en": ["fabric", "material"], "category": "noun" },
+    { "pl": "zrobiony z", "en": ["made of"], "category": "phrase" },
+    { "pl": "zdejmować", "en": ["to take off"], "category": "verb" },
+    { "pl": "nosić", "en": ["to wear"], "category": "verb" },
+    { "pl": "mieć na sobie", "en": ["to wear", "to have on"], "category": "phrase" },
+    { "pl": "przymierzać", "en": ["to try on"], "category": "verb" },
+    { "pl": "przebierać się", "en": ["to change", "to get changed"], "category": "verb" },
+    { "pl": "luźny (o stylu)", "en": ["casual"], "category": "adjective" },
+    { "pl": "elegancki", "en": ["elegant"], "category": "adjective" },
+    { "pl": "modny", "en": ["fashionable", "in fashion"], "category": "adjective" },
+    { "pl": "etui", "en": ["case"], "category": "noun" },
+    { "pl": "wzór", "en": ["pattern"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "jacket_words",
+      "content": "English 'jacket' can correspond to several Polish words depending on context.",
+      "examples": [
+        "kurtka = short casual jacket",
+        "marynarka = suit jacket, typically worn by men",
+        "żakiet = women's suit jacket or blazer"
+      ],
+      "content_note": "'Kurtka' can also refer to longer or thicker outerwear such as a winter jacket."
+    },
+    {
+      "id": 3,
+      "topic": "czapka_vs_kapelusz",
+      "content": "'Czapka' is a hat/cap like a beanie or head-covering for warmth or protection. 'Kapelusz' is a hat with a brim, often more formal or for sunny weather. A cap with a peak is 'czapka z daszkiem'."
+    },
+    {
+      "id": 5,
+      "topic": "adidasy_generic",
+      "content": "In Polish, 'adidasy' is often used generically for sports shoes, not only for the Adidas brand."
+    },
+    {
+      "id": 6,
+      "topic": "nosic_vs_miec_na_sobie",
+      "content": "Both 'nosić' and 'mieć na sobie' can mean to wear, but they are used differently. 'Mieć na sobie' is for a one-time or unique current situation, while 'nosić' is used for wearing something as a habit or general preference.",
+      "examples": [
+        "Ona ma dziś/dzisiaj na sobie piękną sukienkę. = She is wearing a beautiful dress today.",
+        "Lubię nosić dżinsy. = I like to wear jeans."
+      ],
+      "tables": {
+        "present_tense": {
+          "miec_na_sobie": {
+            "ja": "mam na sobie",
+            "ty": "masz na sobie",
+            "on_ona_ono": "ma na sobie",
+            "my": "mamy na sobie",
+            "wy": "macie na sobie",
+            "oni_one": "mają na sobie"
+          },
+          "nosic": {
+            "ja": "noszę",
+            "ty": "nosisz",
+            "on_ona_ono": "nosi",
+            "my": "nosimy",
+            "wy": "nosicie",
+            "oni_one": "noszą"
+          }
+        }
+      }
+    },
+    {
+      "id": 9,
+      "topic": "przebierac_sie",
+      "content": "'Przebierać się' is often followed by the preposition 'w' and the accusative case."
+    },
+    {
+      "id": 9,
+      "topic": "pizama_countable_in_polish",
+      "content": "'Piżama' is countable in Polish. Singular: 'piżama'. Plural: 'piżamy'."
+    },
+    {
+      "id": 11,
+      "topic": "bluza_z_kapturem",
+      "content": "'Bluza z kapturem' means a hoodie."
+    },
+    {
+      "id": 15,
+      "topic": "samochodzie_locative",
+      "content": "'Samochodzie' is the locative form of 'samochód'."
+    },
+    {
+      "id": 16,
+      "topic": "pamietac_vs_przypomniec_sobie",
+      "content": "Both 'pamiętać' and 'przypomnieć sobie' can mean to remember. Use 'pamiętać' when you already remember something without anyone prompting you. Use 'przypomnieć sobie' when you remember after being reminded or after trying hard to recall it."
+    },
+    {
+      "id": 20,
+      "topic": "srebro_noun_vs_srebrny_adj",
+      "content": "'Srebro' is the noun silver / silver jewellery. Do not confuse it with 'srebrny', the adjective meaning silver in colour or made of silver.",
+      "examples": [
+        "Lubię srebro. = I like silver (jewellery).",
+        "Ona ma srebrny naszyjnik. = She has a silver necklace."
+      ]
+    },
+    {
+      "id": 22,
+      "topic": "buty_na_obcasie",
+      "content": "'Buty na obcasie' can be translated as high-heeled shoes or heels. They include 'szpilki' (stilettos)."
+    },
+    {
+      "id": 29,
+      "topic": "fabric_adjectives",
+      "content": "Useful adjectives for common fabrics:",
+      "examples": [
+        "skórzany = made of leather",
+        "bawełniany = made of cotton",
+        "wełniany = woollen",
+        "lniany = linen"
+      ]
+    },
+    {
+      "id": 30,
+      "topic": "ogladac_vs_wygladac",
+      "content": "Learners often mix up 'oglądać' (to watch) and 'wyglądać' (to look / seem). 'Wyglądać' is used to describe appearance or looks.",
+      "examples": [
+        "wyglądać + adverb: Ten mężczyzna wygląda bardzo młodo.",
+        "wyglądać na + adjective/noun/numeral in the accusative: Karolina wygląda na zmęczoną. / On wygląda na 40 lat.",
+        "wyglądać + jak + noun/pronoun: On wygląda jak model.",
+        "wyglądać + jakby + 3rd-person verb in the past tense: Karolina wygląda jakby była zmęczona."
+      ]
+    },
+    {
+      "id": 30,
+      "topic": "zloto",
+      "content": "'Złoto' means gold. The adjective is 'złoty' for the colour gold. Also, the złoty is the currency of Poland."
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "This jacket is too tight. I need to buy a larger size.",
+      "pl": "Ta kurtka jest za/zbyt ciasna. Muszę kupić większy rozmiar.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta kurtka jest zbyt ciasna. Muszę kupić większy rozmiar."],
+      "focus_words": ["ta kurtka", "jest za ciasna", "muszę kupić", "większy rozmiar"],
+      "grammar_tags": ["clothes", "degree", "accusative_basic"]
+    },
+    {
+      "id": 2,
+      "en": "This coat is warm, but it’s too long.",
+      "pl": "Ten płaszcz jest ciepły, ale (jest) za/zbyt długi.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ten płaszcz jest ciepły, ale za długi."],
+      "focus_words": ["ten płaszcz", "jest ciepły", "ale", "za długi"],
+      "grammar_tags": ["clothes", "contrast", "degree"]
+    },
+    {
+      "id": 3,
+      "en": "This hat costs only thirty zlotys.",
+      "pl": "Ta czapka kosztuje tylko trzydzieści złotych.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta czapka", "kosztuje tylko trzydzieści złotych"],
+      "grammar_tags": ["clothes", "money_expression"]
+    },
+    {
+      "id": 4,
+      "en": "This bag is perfect for shopping.",
+      "pl": "Ta torba jest idealna na zakupy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta torba", "jest idealna", "na zakupy"],
+      "grammar_tags": ["clothes", "description"]
+    },
+    {
+      "id": 5,
+      "en": "Do you know where I can buy new sports shoes and shorts?",
+      "pl": "(Czy) wiesz, gdzie mogę kupić nowe adidasy i spodenki?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wiesz, gdzie mogę kupić nowe adidasy i spodenki?"],
+      "focus_words": ["wiesz", "gdzie mogę kupić", "nowe adidasy", "spodenki"],
+      "grammar_tags": ["question", "clothes", "subordinate_clause", "accusative_basic"]
+    },
+    {
+      "id": 6,
+      "en": "What a beautiful shirt!",
+      "pl": "Ale piękna koszula! / Jaka piękna koszula!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jaka piękna koszula!", "Ale piękna koszula!"],
+      "focus_words": ["ale", "jaka", "piękna koszula"],
+      "grammar_tags": ["clothes", "exclamation"]
+    },
+    {
+      "id": 7,
+      "en": "Children usually wear colourful clothes.",
+      "pl": "Dzieci zwykle noszą kolorowe ubrania.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dzieci", "zwykle noszą", "kolorowe ubrania"],
+      "grammar_tags": ["clothes", "present_tense", "accusative_basic"]
+    },
+    {
+      "id": 8,
+      "en": "Do you have a white belt?",
+      "pl": "(Czy) masz biały pasek?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Masz biały pasek?"],
+      "focus_words": ["masz", "biały pasek"],
+      "grammar_tags": ["question", "clothes", "accusative_basic"]
+    },
+    {
+      "id": 9,
+      "en": "We have an umbrella just in case.",
+      "pl": "Mamy parasol na wszelki wypadek.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mamy", "parasol", "na wszelki wypadek"],
+      "grammar_tags": ["clothes", "fixed_expression"]
+    },
+    {
+      "id": 10,
+      "en": "I always change into my pyjamas at nine p.m.",
+      "pl": "Zawsze przebieram się w piżamę o dziewiątej wieczorem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zawsze przebieram się", "w piżamę", "o dziewiątej wieczorem"],
+      "grammar_tags": ["clothes", "reflexive_verb", "time_expression"]
+    },
+    {
+      "id": 11,
+      "en": "This is my favourite sweatshirt.",
+      "pl": "To (jest) moja ulubiona bluza.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["To moja ulubiona bluza."],
+      "focus_words": ["to", "moja ulubiona bluza"],
+      "grammar_tags": ["clothes", "description"]
+    },
+    {
+      "id": 12,
+      "en": "I saw a nice tie in the store yesterday.",
+      "pl": "Wczoraj w sklepie widziałem ładny krawat.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Wczoraj w sklepie widziałam ładny krawat."],
+      "focus_words": ["wczoraj w sklepie", "widziałem", "ładny krawat"],
+      "grammar_tags": ["clothes", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 13,
+      "en": "This blue dress will be great for the beach.",
+      "pl": "Ta niebieska sukienka będzie świetna na plażę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta niebieska sukienka", "będzie świetna", "na plażę"],
+      "grammar_tags": ["clothes", "future_tense"]
+    },
+    {
+      "id": 14,
+      "en": "I like to wear jeans. They are very comfy.",
+      "pl": "Lubię nosić dżinsy. Są bardzo wygodne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię nosić", "dżinsy", "są bardzo wygodne"],
+      "grammar_tags": ["clothes", "two_verbs_rule", "plural_noun"]
+    },
+    {
+      "id": 15,
+      "en": "I got a beautiful sweater/jumper from my grandma for my birthday.",
+      "pl": "Dostałem piękny sweter od babci na urodziny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dostałam piękny sweter od babci na urodziny."],
+      "focus_words": ["dostałem", "piękny sweter", "od babci", "na urodziny"],
+      "grammar_tags": ["clothes", "past_tense", "genitive_after_od"]
+    },
+    {
+      "id": 16,
+      "en": "These shoes are in fashion now.",
+      "pl": "Te buty są teraz modne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["te buty", "są teraz modne"],
+      "grammar_tags": ["clothes", "plural_noun"]
+    },
+    {
+      "id": 17,
+      "en": "Red trousers are very fashionable now.",
+      "pl": "Czerwone spodnie są teraz bardzo modne.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["czerwone spodnie", "są teraz bardzo modne"],
+      "grammar_tags": ["clothes", "plural_noun"]
+    },
+    {
+      "id": 18,
+      "en": "Do you really iron your socks?",
+      "pl": "Naprawdę prasujesz skarpetki?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["naprawdę", "prasujesz", "skarpetki"],
+      "grammar_tags": ["question", "clothes", "accusative_basic"]
+    },
+    {
+      "id": 19,
+      "en": "He remembered that he’d left his gloves in the car.",
+      "pl": "Przypomniał sobie, że zostawił rękawiczki w samochodzie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["przypomniał sobie", "że", "zostawił rękawiczki", "w samochodzie"],
+      "grammar_tags": ["clothes", "past_tense", "subordinate_clause", "reflexive_verb", "locative"]
+    },
+    {
+      "id": 20,
+      "en": "My aunt likes gold.",
+      "pl": "Moja ciocia lubi złoto.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja ciocia", "lubi", "złoto"],
+      "grammar_tags": ["clothes", "accusative_basic"]
+    },
+    {
+      "id": 21,
+      "en": "If I remember correctly (lit. well), she usually wears silver (silver jewellery).",
+      "pl": "Jeśli dobrze pamiętam, (ona) zwykle nosi srebro.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jeśli dobrze pamiętam", "zwykle nosi", "srebro"],
+      "grammar_tags": ["clothes", "conditional_clause"]
+    },
+    {
+      "id": 22,
+      "en": "This raincoat has a nice pattern.",
+      "pl": "Ten płaszcz przeciwdeszczowy ma fajny/ładny wzór.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ten płaszcz przeciwdeszczowy ma ładny wzór."],
+      "focus_words": ["ten płaszcz przeciwdeszczowy", "ma", "ładny wzór"],
+      "grammar_tags": ["clothes", "accusative_basic"]
+    },
+    {
+      "id": 23,
+      "en": "This T-shirt is perfect for hot days.",
+      "pl": "Ta koszulka jest idealna na gorące dni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta koszulka", "jest idealna", "na gorące dni"],
+      "grammar_tags": ["clothes", "description"]
+    },
+    {
+      "id": 24,
+      "en": "Have you lost these colourful flip-flops?",
+      "pl": "(Czy) zgubiłeś te kolorowe japonki?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Zgubiłaś te kolorowe japonki?"],
+      "focus_words": ["zgubiłeś", "te kolorowe japonki"],
+      "grammar_tags": ["question", "clothes", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 25,
+      "en": "Today I’m wearing a warm scarf because it’s cold.",
+      "pl": "Dziś/Dzisiaj mam na sobie ciepły szalik, bo jest zimno.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Dzisiaj mam na sobie ciepły szalik, bo jest zimno."],
+      "focus_words": ["dziś mam na sobie", "ciepły szalik", "bo jest zimno"],
+      "grammar_tags": ["clothes", "subordinate_clause"]
+    },
+    {
+      "id": 26,
+      "en": "These colourful pyjamas will be perfect for the children.",
+      "pl": "Te kolorowe piżamy będą idealne dla dzieci.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["te kolorowe piżamy", "będą idealne", "dla dzieci"],
+      "grammar_tags": ["clothes", "future_tense", "plural_noun", "genitive_after_dla"]
+    },
+    {
+      "id": 27,
+      "en": "I like wearing elegant high-heeled shoes to work.",
+      "pl": "Lubię nosić eleganckie buty na obcasie do pracy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["lubię nosić", "eleganckie buty na obcasie", "do pracy"],
+      "grammar_tags": ["clothes", "two_verbs_rule", "accusative_basic"]
+    },
+    {
+      "id": 28,
+      "en": "This rucksack is big.",
+      "pl": "Ten plecak jest duży.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten plecak", "jest duży"],
+      "grammar_tags": ["clothes", "description"]
+    },
+    {
+      "id": 29,
+      "en": "What fabric is this?",
+      "pl": "Jaki to jest materiał?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jaki to materiał?"],
+      "focus_words": ["jaki", "to jest materiał"],
+      "grammar_tags": ["question", "clothes"]
+    },
+    {
+      "id": 30,
+      "en": "She looks rich. She always wears gold (gold jewellery).",
+      "pl": "(Ona) wygląda na bogatą. Zawsze nosi złoto.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wygląda na bogatą", "zawsze nosi", "złoto"],
+      "grammar_tags": ["clothes", "appearance", "accusative_basic"]
+    },
+    {
+      "id": 31,
+      "en": "All the children at school wear trainers.",
+      "pl": "Wszystkie dzieci w szkole noszą tenisówki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["wszystkie dzieci", "w szkole", "noszą tenisówki"],
+      "grammar_tags": ["clothes", "plural_noun", "accusative_basic"]
+    },
+    {
+      "id": 32,
+      "en": "I always choose casual comfortable clothes.",
+      "pl": "Zawsze wybieram luźne wygodne ubrania.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["zawsze wybieram", "luźne wygodne ubrania"],
+      "grammar_tags": ["clothes", "accusative_basic"]
+    },
+    {
+      "id": 33,
+      "en": "Have you (pl.) seen my glasses?",
+      "pl": "(Czy) widzieliście moje okulary?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Widzieliście moje okulary?"],
+      "focus_words": ["widzieliście", "moje okulary"],
+      "grammar_tags": ["question", "clothes", "past_tense", "accusative_basic"]
+    },
+    {
+      "id": 34,
+      "en": "Her rucksack is very light.",
+      "pl": "Jej plecak jest bardzo lekki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jej plecak", "jest bardzo lekki"],
+      "grammar_tags": ["clothes", "description"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "ubrania",
+      "koszula",
+      "koszulka",
+      "bluza",
+      "sweter",
+      "kurtka",
+      "adidasy",
+      "spodnie",
+      "dżinsy",
+      "spodenki",
+      "płaszcz",
+      "płaszcz przeciwdeszczowy",
+      "sukienka",
+      "spódnica",
+      "garnitur",
+      "krawat",
+      "piżama",
+      "szalik",
+      "rękawiczki",
+      "torba",
+      "torebka",
+      "pasek",
+      "okulary",
+      "portfel",
+      "dres",
+      "plecak",
+      "parasol",
+      "pierścionek",
+      "kolczyk",
+      "bransoletka",
+      "naszyjnik",
+      "złoto",
+      "srebro",
+      "buty",
+      "sandały",
+      "buty na obcasie",
+      "japonki",
+      "tenisówki",
+      "rozmiar",
+      "materiał",
+      "zdejmować",
+      "nosić",
+      "mieć na sobie",
+      "przymierzać",
+      "przebierać się",
+      "luźny",
+      "elegancki",
+      "modny",
+      "wzór"
+    ],
+    "sentence_cards_priority": [1, 5, 6, 7, 10, 12, 13, 14, 15, 19, 21, 23, 24, 25, 27, 30, 31, 33]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Today I’m wearing a warm scarf because it’s cold.'",
+      "correct_answer": "Dziś mam na sobie ciepły szalik, bo jest zimno.",
+      "distractors": [
+        "Dziś noszę na sobie ciepły szalik, bo jest zimna.",
+        "Dziś mam ciepły szalik na sobie, bo jest zimny.",
+        "Dziś mam na sobie ciepły szalik, bo jest chłodny."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'These shoes are in fashion now.'",
+      "answer_pl": "Te buty są teraz modne.",
+      "word_bank": ["Te", "buty", "są", "teraz", "modne"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'Do you know where I can buy new sports shoes and shorts?'",
+      "accepted_answers": [
+        "Czy wiesz, gdzie mogę kupić nowe adidasy i spodenki?",
+        "Wiesz, gdzie mogę kupić nowe adidasy i spodenki?"
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

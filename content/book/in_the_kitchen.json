@@ -1,0 +1,567 @@
+{
+  "section_number": 18,
+  "topic_en": "In the Kitchen",
+  "topic_pl": "W kuchni",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "lodówka", "en": ["fridge"], "category": "noun" },
+    { "pl": "zamrażarka", "en": ["freezer"], "category": "noun" },
+    { "pl": "zamrażalnik", "en": ["freezer compartment", "freezer"], "category": "noun" },
+    { "pl": "zmywarka", "en": ["dishwasher"], "category": "noun" },
+    { "pl": "piekarnik", "en": ["oven"], "category": "noun" },
+    { "pl": "mikrofalówka", "en": ["microwave"], "category": "noun" },
+    { "pl": "mikrofala", "en": ["microwave"], "category": "noun" },
+    { "pl": "czajnik", "en": ["kettle"], "category": "noun" },
+    { "pl": "ekspres do kawy", "en": ["coffee machine"], "category": "phrase" },
+    { "pl": "szafka", "en": ["cupboard", "cabinet"], "category": "noun" },
+    { "pl": "płyn do mycia naczyń", "en": ["washing-up liquid", "dish soap"], "category": "phrase" },
+    { "pl": "śmieci", "en": ["rubbish", "trash"], "category": "noun_plural" },
+    { "pl": "kosz", "en": ["bin"], "category": "noun" },
+    { "pl": "nóż", "en": ["knife"], "category": "noun" },
+    { "pl": "widelec", "en": ["fork"], "category": "noun" },
+    { "pl": "łyżka", "en": ["spoon"], "category": "noun" },
+    { "pl": "łyżeczka", "en": ["teaspoon"], "category": "noun" },
+    { "pl": "naczynia", "en": ["dishes"], "category": "noun_plural" },
+    { "pl": "zmywać naczynia", "en": ["to wash the dishes"], "category": "phrase" },
+    { "pl": "szklanka", "en": ["glass"], "category": "noun" },
+    { "pl": "miska", "en": ["bowl"], "category": "noun" },
+    { "pl": "talerz", "en": ["plate"], "category": "noun" },
+    { "pl": "kubek", "en": ["mug"], "category": "noun" },
+    { "pl": "patelnia", "en": ["frying pan"], "category": "noun" },
+    { "pl": "garnek", "en": ["pot"], "category": "noun" },
+    { "pl": "serwetka", "en": ["napkin"], "category": "noun" },
+    { "pl": "filiżanka", "en": ["cup"], "category": "noun" },
+    { "pl": "ręcznik papierowy", "en": ["kitchen roll", "paper towel"], "category": "phrase" },
+    { "pl": "ściereczka (kuchenna)", "en": ["tea towel", "kitchen cloth"], "category": "phrase" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "szklanka_vs_kieliszek",
+      "content": "Both 'szklanka' and 'kieliszek' can translate as glass in English. 'Szklanka' is a larger drinking glass for water, juice, or beer; 'kieliszek' is a small glass usually for alcoholic drinks."
+    },
+    {
+      "id": 4,
+      "topic": "ostatni_vs_ostatnio_and_garnki",
+      "content": "Do not confuse the adjective 'ostatni' (last) with the adverb 'ostatnio' (lately, recently). Also remember that 'garnki' is the plural of 'garnek'."
+    },
+    {
+      "id": 7,
+      "topic": "wymienic_accusative",
+      "content": "After the verb 'wymienić' (to replace), use the accusative."
+    },
+    {
+      "id": 9,
+      "topic": "prosze_often_omitted",
+      "content": "In Polish, 'proszę' is not used as often as English 'please'. A sentence like '(Czy) możesz przynieść talerz?' sounds natural without 'proszę', though adding it makes it more polite or formal."
+    },
+    {
+      "id": 11,
+      "topic": "myslec_ze_with_comma",
+      "content": "After 'myśleć' (to think), use 'że' and place a comma before it.",
+      "examples": [
+        "Myślę, że to jest piękne."
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "other_coffee_devices",
+      "content": "Other coffee-brewing devices:",
+      "examples": [
+        "kawiarka = moka pot",
+        "zaparzacz do kawy = cafetière / French press",
+        "ekspres przelewowy = drip coffee maker"
+      ]
+    },
+    {
+      "id": 14,
+      "topic": "noz_plural",
+      "content": "The plural of 'nóż' (knife) is 'noże'."
+    },
+    {
+      "id": 16,
+      "topic": "widziec_accusative",
+      "content": "Use the accusative after the verb 'widzieć' (to see)."
+    },
+    {
+      "id": 18,
+      "topic": "used_to_in_polish",
+      "content": "There is no direct equivalent of English 'used to' in Polish. In this type of sentence, use either the past tense or 'kiedyś' (once / back then). Usually the locative is used after 'w'."
+    },
+    {
+      "id": 19,
+      "topic": "prosic_o_accusative",
+      "content": "After 'prosić o' (to ask for), use the accusative."
+    },
+    {
+      "id": 20,
+      "topic": "potrzebowac_genitive",
+      "content": "After the verb 'potrzebować' (to need), use the genitive."
+    },
+    {
+      "id": 21,
+      "topic": "wcale_vs_w_ogole",
+      "content": "'At all' can be translated as either 'wcale' or 'w ogóle'."
+    },
+    {
+      "id": 22,
+      "topic": "wlozyc_do_genitive",
+      "content": "The verb 'włożyć' is often followed by the preposition 'do' and the genitive when putting something somewhere."
+    },
+    {
+      "id": 24,
+      "topic": "w_promocji",
+      "content": "'Być w promocji' means 'to be on special offer'.",
+      "examples": [
+        "Ta miska jest w promocji. = This bowl is on special offer."
+      ]
+    },
+    {
+      "id": 25,
+      "topic": "can_you_pass_me_pattern",
+      "content": "Memorise this useful pattern:",
+      "examples": [
+        "(Czy) możesz mi podać...? = Can you pass me...?"
+      ]
+    },
+    {
+      "id": 29,
+      "topic": "jeszcze_jeden_jedna_jedno",
+      "content": "'Jeszcze jeden/jedna/jedno' means 'one more' or 'another'. The form changes with gender, and only the feminine form changes its ending in the accusative.",
+      "examples": [
+        "Poproszę jeszcze jeden sok. = One more juice, please.",
+        "Poproszę jeszcze jedną kawę. = One more coffee, please.",
+        "Poproszę jeszcze jedno mleko. = One more carton/portion of milk, please."
+      ]
+    },
+    {
+      "id": 30,
+      "topic": "wyrzucic_smieci",
+      "content": "'Wyrzucić śmieci' means 'to throw away / take out the rubbish'."
+    },
+    {
+      "id": 32,
+      "topic": "degrees_temperature",
+      "content": "With temperatures, numbers ending in 2, 3, or 4 usually take 'stopnie', and other numbers take 'stopni'. One degree is 'jeden stopień'.",
+      "examples": [
+        "24 stopnie",
+        "21 stopni",
+        "180 stopni"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "The glass and the mug are wet.",
+      "pl": "Szklanka i kubek są mokre.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["szklanka", "kubek", "są mokre"],
+      "grammar_tags": ["kitchen", "plural_subject"]
+    },
+    {
+      "id": 2,
+      "en": "Why is the fridge open?",
+      "pl": "Dlaczego lodówka jest otwarta?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dlaczego", "lodówka", "jest otwarta"],
+      "grammar_tags": ["question", "kitchen"]
+    },
+    {
+      "id": 3,
+      "en": "Who's washing the dishes today?",
+      "pl": "Kto zmywa dzisiaj/dziś naczynia?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Kto dziś zmywa naczynia?"],
+      "focus_words": ["kto", "zmywa", "dziś", "naczynia"],
+      "grammar_tags": ["question", "kitchen", "accusative_basic"]
+    },
+    {
+      "id": 4,
+      "en": "Recently, I've been cooking more. I (f.) even bought new pots.",
+      "pl": "Ostatnio więcej gotuję. Kupiłam nawet nowe garnki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ostatnio", "więcej gotuję", "kupiłam", "nawet", "nowe garnki"],
+      "grammar_tags": ["kitchen", "past_tense", "feminine_form"]
+    },
+    {
+      "id": 5,
+      "en": "This plate is for cake.",
+      "pl": "Ten talerz jest na ciasto.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten talerz", "jest na ciasto"],
+      "grammar_tags": ["kitchen", "description"]
+    },
+    {
+      "id": 6,
+      "en": "The microwave isn't working.",
+      "pl": "Mikrofalówka/Mikrofala nie działa.",
+      "literal_en": null,
+      "english_variants": ["The microwave doesn't work."],
+      "polish_alternatives": ["Mikrofala nie działa."],
+      "focus_words": ["mikrofalówka", "mikrofala", "nie działa"],
+      "grammar_tags": ["kitchen", "negation", "machine_function"]
+    },
+    {
+      "id": 7,
+      "en": "We're planning to replace our old dishwasher.",
+      "pl": "Planujemy wymienić naszą starą zmywarkę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["planujemy wymienić", "naszą starą zmywarkę"],
+      "grammar_tags": ["kitchen", "accusative_basic"]
+    },
+    {
+      "id": 8,
+      "en": "I wonder if this kettle is working.",
+      "pl": "Ciekawe / Zastanawiam się, czy ten czajnik działa.",
+      "literal_en": null,
+      "english_variants": ["I wonder whether this kettle works."],
+      "polish_alternatives": ["Zastanawiam się, czy ten czajnik działa."],
+      "focus_words": ["ciekawe", "zastanawiam się", "czy", "ten czajnik", "działa"],
+      "grammar_tags": ["kitchen", "subordinate_clause"]
+    },
+    {
+      "id": 9,
+      "en": "Can you bring three spoons from the kitchen, please?",
+      "pl": "(Czy) możesz przynieść trzy łyżki z kuchni?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Możesz przynieść trzy łyżki z kuchni?"],
+      "focus_words": ["możesz przynieść", "trzy łyżki", "z kuchni"],
+      "grammar_tags": ["question", "kitchen", "genitive_after_z"]
+    },
+    {
+      "id": 10,
+      "en": "The bin is full.",
+      "pl": "Kosz jest pełny.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["kosz", "jest pełny"],
+      "grammar_tags": ["kitchen", "description"]
+    },
+    {
+      "id": 11,
+      "en": "Do you (pl.) think that this bowl will be good for fruit?",
+      "pl": "(Czy) myślicie, że ta miska będzie dobra na owoce?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Myślicie, że ta miska będzie dobra na owoce?"],
+      "focus_words": ["myślicie, że", "ta miska", "będzie dobra", "na owoce"],
+      "grammar_tags": ["question", "kitchen", "subordinate_clause"]
+    },
+    {
+      "id": 12,
+      "en": "This coffee machine makes delicious latte.",
+      "pl": "Ten ekspres do kawy robi pyszne latte.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ten ekspres do kawy", "robi", "pyszne latte"],
+      "grammar_tags": ["kitchen", "description"]
+    },
+    {
+      "id": 13,
+      "en": "This frying pan is very heavy.",
+      "pl": "Ta patelnia jest bardzo ciężka.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["ta patelnia", "jest bardzo ciężka"],
+      "grammar_tags": ["kitchen", "description"]
+    },
+    {
+      "id": 14,
+      "en": "We keep knives over there.",
+      "pl": "Tam trzymamy noże.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["tam", "trzymamy", "noże"],
+      "grammar_tags": ["kitchen", "present_tense"]
+    },
+    {
+      "id": 15,
+      "en": "Can you turn on the dishwasher?",
+      "pl": "(Czy) możesz włączyć zmywarkę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Możesz włączyć zmywarkę?"],
+      "focus_words": ["możesz włączyć", "zmywarkę"],
+      "grammar_tags": ["question", "kitchen", "accusative_basic"]
+    },
+    {
+      "id": 16,
+      "en": "Have you (pl.) seen the white tea towel?",
+      "pl": "(Czy) widzieliście białą ściereczkę (kuchenną)?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Widzieliście białą ściereczkę kuchenną?"],
+      "focus_words": ["widzieliście", "białą ściereczkę kuchenną"],
+      "grammar_tags": ["question", "kitchen", "accusative_basic", "past_tense"]
+    },
+    {
+      "id": 17,
+      "en": "This frying pan is too small.",
+      "pl": "Ta patelnia jest za/zbyt mała.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ta patelnia jest zbyt mała."],
+      "focus_words": ["ta patelnia", "jest za mała"],
+      "grammar_tags": ["kitchen", "degree"]
+    },
+    {
+      "id": 18,
+      "en": "Our grandmother used to make delicious cakes in this oven.",
+      "pl": "Nasza babcia robiła pyszne ciasta w tym piekarniku.",
+      "literal_en": null,
+      "english_variants": ["Our grandmother made delicious cakes in this oven."],
+      "polish_alternatives": ["Nasza babcia kiedyś robiła pyszne ciasta w tym piekarniku."],
+      "focus_words": ["nasza babcia", "robiła", "pyszne ciasta", "w tym piekarniku"],
+      "grammar_tags": ["kitchen", "past_tense", "locative"]
+    },
+    {
+      "id": 19,
+      "en": "Can I have a glass, please?",
+      "pl": "(Czy) mogę prosić o szklankę?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mogę prosić o szklankę?"],
+      "focus_words": ["mogę prosić o", "szklankę"],
+      "grammar_tags": ["question", "kitchen", "accusative_basic"]
+    },
+    {
+      "id": 20,
+      "en": "I need a napkin.",
+      "pl": "Potrzebuję serwetki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["potrzebuję", "serwetki"],
+      "grammar_tags": ["kitchen", "genitive_after_potrzebowac"]
+    },
+    {
+      "id": 21,
+      "en": "This knife isn't sharp at all.",
+      "pl": "Ten nóż wcale / w ogóle nie jest ostry.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Ten nóż w ogóle nie jest ostry."],
+      "focus_words": ["ten nóż", "wcale", "w ogóle", "nie jest ostry"],
+      "grammar_tags": ["kitchen", "negation"]
+    },
+    {
+      "id": 22,
+      "en": "I put some food for tomorrow in the freezer.",
+      "pl": "Włożyłam do zamrażarki/zamrażalnika jedzenie na jutro.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Włożyłam jedzenie na jutro do zamrażarki."],
+      "focus_words": ["włożyłam", "do zamrażarki", "zamrażalnika", "jedzenie na jutro"],
+      "grammar_tags": ["kitchen", "past_tense", "genitive_after_do", "feminine_form"]
+    },
+    {
+      "id": 23,
+      "en": "Be careful, the kettle is hot!",
+      "pl": "Uważaj, czajnik jest gorący!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["uważaj", "czajnik", "jest gorący"],
+      "grammar_tags": ["kitchen", "imperative", "warning"]
+    },
+    {
+      "id": 24,
+      "en": "My favourite washing-up liquid was on special offer today.",
+      "pl": "Mój ulubiony płyn do mycia naczyń był dziś/dzisiaj w promocji.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mój ulubiony płyn do mycia naczyń był dzisiaj w promocji."],
+      "focus_words": ["mój ulubiony płyn do mycia naczyń", "był dziś", "w promocji"],
+      "grammar_tags": ["kitchen", "past_tense"]
+    },
+    {
+      "id": 25,
+      "en": "Can you pass me the fork, please?",
+      "pl": "(Czy) możesz mi podać widelec?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Możesz mi podać widelec?"],
+      "focus_words": ["możesz mi podać", "widelec"],
+      "grammar_tags": ["question", "kitchen", "accusative_basic"]
+    },
+    {
+      "id": 26,
+      "en": "These cups are really beautiful!",
+      "pl": "Te filiżanki są naprawdę piękne!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["te filiżanki", "są naprawdę piękne"],
+      "grammar_tags": ["kitchen", "exclamation", "plural_noun"]
+    },
+    {
+      "id": 27,
+      "en": "We need to recycle our rubbish (lit. recycle rubbish).",
+      "pl": "Musimy segregować śmieci.",
+      "literal_en": "We must sort rubbish.",
+      "english_variants": ["We need to recycle our rubbish."],
+      "polish_alternatives": [],
+      "focus_words": ["musimy", "segregować", "śmieci"],
+      "grammar_tags": ["kitchen", "present_tense"]
+    },
+    {
+      "id": 28,
+      "en": "Is this the popcorn bowl? (lit. Is this bowl for popcorn?)",
+      "pl": "(Czy) ta miska jest na popcorn?",
+      "literal_en": null,
+      "english_variants": ["Is this the bowl for popcorn?"],
+      "polish_alternatives": ["Ta miska jest na popcorn?"],
+      "focus_words": ["ta miska", "jest na popcorn"],
+      "grammar_tags": ["question", "kitchen"]
+    },
+    {
+      "id": 29,
+      "en": "Do you have another teaspoon?",
+      "pl": "(Czy) masz jeszcze jedną łyżeczkę?",
+      "literal_en": null,
+      "english_variants": ["Do you have one more teaspoon?"],
+      "polish_alternatives": ["Masz jeszcze jedną łyżeczkę?"],
+      "focus_words": ["masz", "jeszcze jedną", "łyżeczkę"],
+      "grammar_tags": ["question", "kitchen", "accusative_basic"]
+    },
+    {
+      "id": 30,
+      "en": "Did you throw away the rubbish?",
+      "pl": "(Czy) wyrzuciłeś śmieci?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Czy wyrzuciłaś śmieci?"],
+      "focus_words": ["wyrzuciłeś", "śmieci"],
+      "grammar_tags": ["question", "kitchen", "past_tense"]
+    },
+    {
+      "id": 31,
+      "en": "Why did you (pl.) put the wet dishes in the cupboard?",
+      "pl": "Dlaczego włożyliście mokre naczynia do szafki?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["dlaczego", "włożyliście", "mokre naczynia", "do szafki"],
+      "grammar_tags": ["question", "kitchen", "past_tense", "genitive_after_do"]
+    },
+    {
+      "id": 32,
+      "en": "Please turn on the oven to 180 degrees.",
+      "pl": "Proszę włączyć piekarnik na 180 stopni.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Włącz piekarnik na 180 stopni."],
+      "focus_words": ["proszę włączyć", "piekarnik", "na 180 stopni"],
+      "grammar_tags": ["kitchen", "imperative", "accusative_basic"]
+    },
+    {
+      "id": 33,
+      "en": "Do you know where they keep the kitchen roll?",
+      "pl": "(Czy) wiesz, gdzie oni trzymają ręcznik papierowy?",
+      "literal_en": null,
+      "english_variants": ["Do you know where they keep the paper towel?"],
+      "polish_alternatives": ["Wiesz, gdzie oni trzymają ręcznik papierowy?"],
+      "focus_words": ["wiesz", "gdzie oni trzymają", "ręcznik papierowy"],
+      "grammar_tags": ["question", "kitchen", "subordinate_clause"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "lodówka",
+      "zamrażarka",
+      "zmywarka",
+      "piekarnik",
+      "mikrofalówka",
+      "czajnik",
+      "ekspres do kawy",
+      "szafka",
+      "płyn do mycia naczyń",
+      "śmieci",
+      "kosz",
+      "nóż",
+      "widelec",
+      "łyżka",
+      "łyżeczka",
+      "naczynia",
+      "szklanka",
+      "miska",
+      "talerz",
+      "kubek",
+      "patelnia",
+      "garnek",
+      "serwetka",
+      "filiżanka",
+      "ręcznik papierowy",
+      "ściereczka kuchenna"
+    ],
+    "sentence_cards_priority": [2, 3, 6, 7, 8, 9, 11, 15, 16, 18, 19, 20, 21, 22, 24, 25, 29, 32, 33]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'Can you pass me the fork?'",
+      "correct_answer": "Czy możesz mi podać widelec?",
+      "distractors": [
+        "Czy możesz mi dać widelecem?",
+        "Czy możesz podać mi widelca?",
+        "Czy możesz przynieść widelec do mnie?"
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'The microwave isn't working.'",
+      "answer_pl": "Mikrofalówka nie działa.",
+      "word_bank": ["Mikrofalówka", "nie", "działa"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'We need to recycle our rubbish.'",
+      "accepted_answers": [
+        "Musimy segregować śmieci."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}

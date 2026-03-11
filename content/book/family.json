@@ -1,0 +1,627 @@
+{
+  "section_number": 9,
+  "topic_en": "Family",
+  "topic_pl": "Rodzina",
+  "source_type": "book_section",
+  "flashcard_system": {
+    "card_types": ["word", "sentence"],
+    "difficulty_levels": [
+      {
+        "level": 1,
+        "name": "multiple_choice",
+        "description": "Choose the correct translation or best matching sentence."
+      },
+      {
+        "level": 2,
+        "name": "word_bank",
+        "description": "Build the sentence from pre-given words."
+      },
+      {
+        "level": 3,
+        "name": "typed_input",
+        "description": "Write the translation yourself."
+      }
+    ]
+  },
+  "vocabulary": [
+    { "pl": "matka", "en": ["mother"], "category": "noun" },
+    { "pl": "ojciec", "en": ["father"], "category": "noun" },
+    { "pl": "mama", "en": ["mum"], "category": "noun" },
+    { "pl": "tata", "en": ["dad"], "category": "noun" },
+    { "pl": "brat", "en": ["brother"], "category": "noun" },
+    { "pl": "siostra", "en": ["sister"], "category": "noun" },
+    { "pl": "dziecko", "en": ["child"], "category": "noun" },
+    { "pl": "dzieci", "en": ["children"], "category": "noun" },
+    { "pl": "syn", "en": ["son"], "category": "noun" },
+    { "pl": "córka", "en": ["daughter"], "category": "noun" },
+    { "pl": "żona", "en": ["wife"], "category": "noun" },
+    { "pl": "mąż", "en": ["husband"], "category": "noun" },
+    { "pl": "babcia", "en": ["grandmother"], "category": "noun" },
+    { "pl": "dziadek", "en": ["grandfather"], "category": "noun" },
+    { "pl": "wnuk", "en": ["grandson"], "category": "noun" },
+    { "pl": "wnuczka", "en": ["granddaughter"], "category": "noun" },
+    { "pl": "wnuki", "en": ["grandchildren"], "category": "noun" },
+    { "pl": "rodzeństwo", "en": ["siblings"], "category": "noun" },
+    { "pl": "wujek", "en": ["uncle"], "category": "noun" },
+    { "pl": "ciocia", "en": ["aunt"], "category": "noun" },
+    { "pl": "bratanek", "en": ["nephew", "brother's son"], "category": "noun" },
+    { "pl": "siostrzeniec", "en": ["nephew", "sister's son"], "category": "noun" },
+    { "pl": "bratanica", "en": ["niece", "brother's daughter"], "category": "noun" },
+    { "pl": "siostrzenica", "en": ["niece", "sister's daughter"], "category": "noun" },
+    { "pl": "kuzyn", "en": ["cousin", "male cousin"], "category": "noun" },
+    { "pl": "kuzynka", "en": ["cousin", "female cousin"], "category": "noun" },
+    { "pl": "teściowa", "en": ["mother-in-law"], "category": "noun" },
+    { "pl": "teść", "en": ["father-in-law"], "category": "noun" },
+    { "pl": "zięć", "en": ["son-in-law"], "category": "noun" },
+    { "pl": "synowa", "en": ["daughter-in-law"], "category": "noun" },
+    { "pl": "szwagier", "en": ["brother-in-law"], "category": "noun" },
+    { "pl": "szwagierka", "en": ["sister-in-law"], "category": "noun" },
+    { "pl": "bratowa", "en": ["sister-in-law", "brother's wife"], "category": "noun" },
+    { "pl": "jedynak", "en": ["only child", "male"], "category": "noun" },
+    { "pl": "jedynaczka", "en": ["only child", "female"], "category": "noun" },
+    { "pl": "korzenie", "en": ["roots"], "category": "noun" },
+    { "pl": "bliźniaki", "en": ["twins", "masculine personal"], "category": "noun" },
+    { "pl": "bliźnięta", "en": ["twins"], "category": "noun" }
+  ],
+  "tips": [
+    {
+      "id": 1,
+      "topic": "tatus_i_mamusia",
+      "content": "More affectionately, parents can also be called 'tatuś' (daddy) and 'mamusia' (mummy)."
+    },
+    {
+      "id": 1,
+      "topic": "city_names_with_w",
+      "content": "When saying 'in' certain Polish cities, the city name changes form.",
+      "examples": [
+        "Kraków -> w Krakowie",
+        "Wrocław -> we Wrocławiu",
+        "Warszawa -> w Warszawie",
+        "Łódź -> w Łodzi",
+        "Gdańsk -> w Gdańsku"
+      ]
+    },
+    {
+      "id": 3,
+      "topic": "age_with_miec",
+      "content": "When talking about age, Polish most often uses 'mieć' (to have), e.g. 'Ona ma 10 lat'. You add 'lat' or 'lata' after the number.",
+      "examples": [
+        "Ona ma 10 lat. = She is 10 years old.",
+        "po trzydziestce = in one's thirties"
+      ]
+    },
+    {
+      "id": 5,
+      "topic": "na_emeryturze",
+      "content": "'na emeryturze' means 'retired' (literally on a pension)."
+    },
+    {
+      "id": 8,
+      "topic": "collective_numerals_with_children",
+      "content": "In Polish, collective numerals are used for groups of children. Instead of ordinary numerals, use forms like 'dwoje', 'troje', 'czworo', 'pięcioro', 'sześcioro'.",
+      "examples": [
+        "Oni mają troje dzieci. = They have three children.",
+        "dzieci is the irregular plural of dziecko"
+      ]
+    },
+    {
+      "id": 12,
+      "topic": "nasz_nasza_nasze",
+      "content": "In the singular, 'our' can be expressed as 'nasz' (masculine), 'nasza' (feminine), or 'nasze' (neuter)."
+    },
+    {
+      "id": 13,
+      "topic": "instrumental_after_byc",
+      "content": "After the verb 'być' (to be), Polish often uses the instrumental case in sentences like 'Mój kuzyn jest lekarzem' or 'Jestem jedynakiem'."
+    },
+    {
+      "id": 14,
+      "topic": "woman_only_child",
+      "content": "A woman would say 'jestem jedynaczką'."
+    },
+    {
+      "id": 17,
+      "topic": "rodzenstwo_uncountable",
+      "content": "'rodzeństwo' is uncountable in Polish and is always used in the singular form."
+    },
+    {
+      "id": 17,
+      "topic": "tez_meaning",
+      "content": "Here, 'też' means 'such' in the sentence 'mam tak wspaniałe rodzeństwo' on the English side as rendered by the book context note."
+    },
+    {
+      "id": 18,
+      "topic": "w_ciazy",
+      "content": "'w ciąży' means 'pregnant'."
+    },
+    {
+      "id": 20,
+      "topic": "ze_strony_mamy_taty",
+      "content": "Useful family-side phrases:",
+      "examples": [
+        "ze strony (mojej) mamy = on my mum's side",
+        "ze strony (mojego) taty = on my dad's side",
+        "dziadkowie = grandparents"
+      ]
+    },
+    {
+      "id": 24,
+      "topic": "szwagier_vs_bratowa",
+      "content": "'Brother-in-law' translates as 'szwagier'. There are two words meaning 'sister-in-law'. 'bratowa' refers to one's brother's wife, while 'szwagierka' is the sister of one's husband."
+    },
+    {
+      "id": 27,
+      "topic": "having_brothers_and_sisters",
+      "content": "Useful memorised family-count phrases:",
+      "examples": [
+        "Mam siostrę. = I have a sister.",
+        "Mam dwie/trzy/cztery siostry. = I have two/three/four sisters.",
+        "Mam brata. = I have a brother.",
+        "Mam dwóch/trzech/czterech braci. = I have two/three/four brothers."
+      ]
+    },
+    {
+      "id": 30,
+      "topic": "piec_present_tense",
+      "content": "The verb 'piec' (to bake) is irregular in the present tense.",
+      "tables": {
+        "present_tense": {
+          "ja": "piekę",
+          "ty": "pieczesz",
+          "on_ona_ono": "piecze",
+          "my": "pieczemy",
+          "wy": "pieczecie",
+          "oni_one": "pieką"
+        }
+      }
+    },
+    {
+      "id": 33,
+      "topic": "bratanek_vs_siostrzeniec_and_bratanica_vs_siostrzenica",
+      "content": "Both 'bratanek' and 'siostrzeniec' mean 'nephew', but the first is brother's son and the second is sister's son. Similarly, 'bratanica' is brother's daughter and 'siostrzenica' is sister's daughter.",
+      "examples": [
+        "siostrzeniec = son of your sister",
+        "bratanek = son of your brother",
+        "siostrzenica = daughter of your sister",
+        "bratanica = daughter of your brother"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "id": 1,
+      "en": "My dad lives in Krakow.",
+      "pl": "Mój tata mieszka w Krakowie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mój tata mieszka w Krakowie."],
+      "focus_words": ["mój tata", "mieszka", "w Krakowie"],
+      "grammar_tags": ["family", "location"]
+    },
+    {
+      "id": 2,
+      "en": "Does your husband also work there?",
+      "pl": "(Czy) twój mąż też tam pracuje?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Twój mąż też tam pracuje?"],
+      "focus_words": ["twój mąż", "też", "tam", "pracuje"],
+      "grammar_tags": ["question", "family", "present_tense"]
+    },
+    {
+      "id": 3,
+      "en": "My brother is in his 30s.",
+      "pl": "Mój brat jest po trzydziestce.",
+      "literal_en": null,
+      "english_variants": ["My brother is in his thirties."],
+      "polish_alternatives": [],
+      "focus_words": ["mój brat", "jest", "po trzydziestce"],
+      "grammar_tags": ["family", "age_expression"]
+    },
+    {
+      "id": 4,
+      "en": "My daughter and (my) son love to read books.",
+      "pl": "Moja córka i (mój) syn kochają czytać książki.",
+      "literal_en": null,
+      "english_variants": ["My daughter and son love reading books."],
+      "polish_alternatives": [],
+      "focus_words": ["moja córka", "mój syn", "kochają", "czytać książki"],
+      "grammar_tags": ["family", "two_verbs_rule"]
+    },
+    {
+      "id": 5,
+      "en": "Does your mum still work or is she retired?",
+      "pl": "(Czy) twoja mama jeszcze pracuje, czy jest na emeryturze?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Twoja mama jeszcze pracuje czy jest na emeryturze?"],
+      "focus_words": ["twoja mama", "jeszcze pracuje", "czy", "na emeryturze"],
+      "grammar_tags": ["question", "family"]
+    },
+    {
+      "id": 6,
+      "en": "Her mother has Polish roots.",
+      "pl": "Jej matka ma polskie korzenie.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jej matka", "ma", "polskie korzenie"],
+      "grammar_tags": ["family", "present_tense"]
+    },
+    {
+      "id": 7,
+      "en": "My mother-in-law cooks delicious dinners/lunches.",
+      "pl": "Moja teściowa gotuje pyszne obiady.",
+      "literal_en": null,
+      "english_variants": ["My mother-in-law cooks delicious dinners."],
+      "polish_alternatives": [],
+      "focus_words": ["moja teściowa", "gotuje", "pyszne obiady"],
+      "grammar_tags": ["family", "food", "present_tense"]
+    },
+    {
+      "id": 8,
+      "en": "We have two children.",
+      "pl": "Mamy dwoje dzieci.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mamy", "dwoje dzieci"],
+      "grammar_tags": ["family", "collective_numerals"]
+    },
+    {
+      "id": 9,
+      "en": "My father-in-law likes cooking traditional dishes.",
+      "pl": "Mój teść lubi gotować tradycyjne potrawy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój teść", "lubi gotować", "tradycyjne potrawy"],
+      "grammar_tags": ["family", "food", "two_verbs_rule"]
+    },
+    {
+      "id": 10,
+      "en": "Where is your sister now?",
+      "pl": "Gdzie jest teraz twoja siostra?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["gdzie", "jest", "teraz", "twoja siostra"],
+      "grammar_tags": ["question", "family"]
+    },
+    {
+      "id": 11,
+      "en": "Do you really have Polish roots?",
+      "pl": "(Czy) naprawdę masz polskie korzenie?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Naprawdę masz polskie korzenie?"],
+      "focus_words": ["naprawdę", "masz", "polskie korzenie"],
+      "grammar_tags": ["question", "family"]
+    },
+    {
+      "id": 12,
+      "en": "Our father is very hardworking.",
+      "pl": "Nasz ojciec jest bardzo pracowity.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasz ojciec", "bardzo pracowity"],
+      "grammar_tags": ["family", "description"]
+    },
+    {
+      "id": 13,
+      "en": "My cousin is a doctor.",
+      "pl": "Mój kuzyn jest lekarzem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Moja kuzynka jest lekarką."],
+      "focus_words": ["mój kuzyn", "jest lekarzem"],
+      "grammar_tags": ["family", "instrumental_after_byc"]
+    },
+    {
+      "id": 14,
+      "en": "I'm an only child.",
+      "pl": "Jestem jedynakiem.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Jestem jedynaczką."],
+      "focus_words": ["jestem", "jedynakiem"],
+      "grammar_tags": ["family", "instrumental_after_byc"]
+    },
+    {
+      "id": 15,
+      "en": "Her uncle and aunt have a baby (lit. little child). His name is Patryk.",
+      "pl": "Jej wujek i ciocia mają małe dziecko. Ma na imię Patryk.",
+      "literal_en": "Her uncle and aunt have a little child. His name is Patryk.",
+      "english_variants": ["Her uncle and aunt have a baby. His name is Patryk."],
+      "polish_alternatives": [],
+      "focus_words": ["jej wujek", "ciocia", "mają", "małe dziecko", "ma na imię Patryk"],
+      "grammar_tags": ["family", "present_tense"]
+    },
+    {
+      "id": 16,
+      "en": "Her grandchildren learn quickly.",
+      "pl": "Jej wnuki szybko się uczą.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jej wnuki", "szybko", "się uczą"],
+      "grammar_tags": ["family", "present_tense"]
+    },
+    {
+      "id": 17,
+      "en": "I'm happy that I have such wonderful siblings.",
+      "pl": "Jestem szczęśliwy, że mam tak wspaniałe rodzeństwo.",
+      "literal_en": null,
+      "english_variants": ["I'm happy that I have such wonderful siblings."],
+      "polish_alternatives": ["Jestem szczęśliwa, że mam tak wspaniałe rodzeństwo."],
+      "focus_words": ["jestem szczęśliwy", "że", "mam", "tak wspaniałe", "rodzeństwo"],
+      "grammar_tags": ["family", "subordinate_clause"]
+    },
+    {
+      "id": 18,
+      "en": "His wife is pregnant.",
+      "pl": "Jego żona jest w ciąży.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jego żona", "jest w ciąży"],
+      "grammar_tags": ["family", "state"]
+    },
+    {
+      "id": 19,
+      "en": "We're going to have twins.",
+      "pl": "Będziemy mieć bliźniaki/bliźnięta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["będziemy mieć", "bliźniaki", "bliźnięta"],
+      "grammar_tags": ["family", "future_tense"]
+    },
+    {
+      "id": 20,
+      "en": "My grandfather on (lit. from) my mum's side is already 89.",
+      "pl": "Mój dziadek ze strony mamy ma już 89 lat.",
+      "literal_en": "My grandfather from my mum's side already has 89 years.",
+      "english_variants": ["My grandfather on my mum's side is already 89."],
+      "polish_alternatives": [],
+      "focus_words": ["mój dziadek", "ze strony mamy", "ma już 89 lat"],
+      "grammar_tags": ["family", "age_expression"]
+    },
+    {
+      "id": 21,
+      "en": "Is your grandmother retired?",
+      "pl": "(Czy) twoja babcia jest na emeryturze?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Twoja babcia jest na emeryturze?"],
+      "focus_words": ["twoja babcia", "jest na emeryturze"],
+      "grammar_tags": ["question", "family"]
+    },
+    {
+      "id": 22,
+      "en": "My brother and I look like our mum.",
+      "pl": "Mój brat i ja wyglądamy jak nasza mama.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój brat i ja", "wyglądamy", "jak", "nasza mama"],
+      "grammar_tags": ["family", "present_tense"]
+    },
+    {
+      "id": 23,
+      "en": "My child likes strawberries.",
+      "pl": "Moje dziecko lubi truskawki.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moje dziecko", "lubi", "truskawki"],
+      "grammar_tags": ["family", "food"]
+    },
+    {
+      "id": 24,
+      "en": "What's your sister-in-law's name?",
+      "pl": "Jak ma na imię twoja szwagierka/bratowa?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jak ma na imię", "twoja", "szwagierka", "bratowa"],
+      "grammar_tags": ["question", "family"]
+    },
+    {
+      "id": 25,
+      "en": "My son and my daughter-in-law are coming to dinner tonight. I must prepare something special.",
+      "pl": "(Mój) syn i (moja) synowa przychodzą dziś/dzisiaj wieczorem na kolację. Muszę przygotować coś wyjątkowego.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": ["Mój syn i moja synowa przychodzą dziś wieczorem na kolację. Muszę przygotować coś wyjątkowego."],
+      "focus_words": ["syn", "synowa", "przychodzą", "dziś wieczorem", "na kolację", "muszę przygotować", "coś wyjątkowego"],
+      "grammar_tags": ["family", "future_context"]
+    },
+    {
+      "id": 26,
+      "en": "My grandson is five years old and he's adorable.",
+      "pl": "Mój wnuk ma pięć lat i jest uroczy.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mój wnuk", "ma pięć lat", "jest uroczy"],
+      "grammar_tags": ["family", "age_expression"]
+    },
+    {
+      "id": 27,
+      "en": "I have a sister.",
+      "pl": "Mam siostrę.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["mam", "siostrę"],
+      "grammar_tags": ["family", "basic_phrase"]
+    },
+    {
+      "id": 28,
+      "en": "Our grandmother likes flowers and has a beautiful garden.",
+      "pl": "Nasza babcia lubi kwiaty i ma piękny ogród.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasza babcia", "lubi", "kwiaty", "ma", "piękny ogród"],
+      "grammar_tags": ["family", "present_tense"]
+    },
+    {
+      "id": 29,
+      "en": "Your cousin (f.) lives abroad, right?",
+      "pl": "Twoja kuzynka mieszka za granicą, prawda?",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["twoja kuzynka", "mieszka za granicą", "prawda"],
+      "grammar_tags": ["family", "tag_question"]
+    },
+    {
+      "id": 30,
+      "en": "My mother-in-law makes very good cakes.",
+      "pl": "Moja teściowa robi bardzo dobre ciasta.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja teściowa", "robi", "bardzo dobre ciasta"],
+      "grammar_tags": ["family", "food"]
+    },
+    {
+      "id": 31,
+      "en": "Your daughter looks like a model!",
+      "pl": "Twoja córka wygląda jak modelka!",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["twoja córka", "wygląda jak", "modelka"],
+      "grammar_tags": ["family", "exclamation"]
+    },
+    {
+      "id": 32,
+      "en": "Our granddaughter is learning to read and write.",
+      "pl": "Nasza wnuczka uczy się czytać i pisać.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["nasza wnuczka", "uczy się", "czytać", "pisać"],
+      "grammar_tags": ["family", "two_verbs_rule"]
+    },
+    {
+      "id": 33,
+      "en": "Our nephew (our sister's son) loves watching cartoons.",
+      "pl": "Nasz siostrzeniec kocha oglądać bajki/kreskówki.",
+      "literal_en": null,
+      "english_variants": ["Our nephew loves watching cartoons."],
+      "polish_alternatives": [],
+      "focus_words": ["nasz siostrzeniec", "kocha", "oglądać", "bajki", "kreskówki"],
+      "grammar_tags": ["family", "two_verbs_rule"]
+    },
+    {
+      "id": 34,
+      "en": "His niece (his brother's daughter) is very ambitious.",
+      "pl": "Jego bratanica jest bardzo ambitna.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["jego bratanica", "bardzo ambitna"],
+      "grammar_tags": ["family", "description"]
+    },
+    {
+      "id": 35,
+      "en": "My daughter and my son-in-law have three children.",
+      "pl": "Moja córka i mój zięć mają troje dzieci.",
+      "literal_en": null,
+      "english_variants": [],
+      "polish_alternatives": [],
+      "focus_words": ["moja córka", "mój zięć", "mają", "troje dzieci"],
+      "grammar_tags": ["family", "collective_numerals"]
+    },
+    {
+      "id": 36,
+      "en": "Your nephew (your sister's son) has his birthday soon (lit. has soon birthday), right?",
+      "pl": "Twój siostrzeniec ma wkrótce/niedługo urodziny, prawda?",
+      "literal_en": "Your sister's son has birthday soon, right?",
+      "english_variants": ["Your nephew has his birthday soon, right?"],
+      "polish_alternatives": ["Twój siostrzeniec ma niedługo urodziny, prawda?"],
+      "focus_words": ["twój siostrzeniec", "ma", "wkrótce", "niedługo", "urodziny", "prawda"],
+      "grammar_tags": ["family", "tag_question", "birthday_expression"]
+    }
+  ],
+  "flashcard_candidates": {
+    "word_cards": [
+      "matka",
+      "ojciec",
+      "mama",
+      "tata",
+      "brat",
+      "siostra",
+      "dziecko",
+      "dzieci",
+      "syn",
+      "córka",
+      "żona",
+      "mąż",
+      "babcia",
+      "dziadek",
+      "wnuk",
+      "wnuczka",
+      "wnuki",
+      "rodzeństwo",
+      "wujek",
+      "ciocia",
+      "kuzyn",
+      "kuzynka",
+      "teściowa",
+      "teść",
+      "zięć",
+      "synowa",
+      "szwagier",
+      "szwagierka",
+      "bratowa",
+      "jedynak",
+      "jedynaczka",
+      "korzenie",
+      "bliźniaki",
+      "bliźnięta",
+      "bratanek",
+      "siostrzeniec",
+      "bratanica",
+      "siostrzenica"
+    ],
+    "sentence_cards_priority": [1, 3, 5, 8, 13, 14, 18, 20, 21, 24, 25, 26, 27, 32, 35, 36]
+  },
+  "generated_practice": [
+    {
+      "type": "multiple_choice",
+      "prompt_en": "Choose the best Polish translation of: 'We have two children.'",
+      "correct_answer": "Mamy dwoje dzieci.",
+      "distractors": [
+        "Mamy dwa dzieci.",
+        "Mamy dwie dzieci.",
+        "Mamy dwóch dzieci."
+      ]
+    },
+    {
+      "type": "word_bank",
+      "prompt_en": "Build: 'His wife is pregnant.'",
+      "answer_pl": "Jego żona jest w ciąży.",
+      "word_bank": ["Jego", "żona", "jest", "w", "ciąży"]
+    },
+    {
+      "type": "typed_input",
+      "prompt_en": "Translate into Polish: 'My cousin is a doctor.'",
+      "accepted_answers": [
+        "Mój kuzyn jest lekarzem.",
+        "Moja kuzynka jest lekarką."
+      ]
+    }
+  ],
+  "notes_for_parser": {
+    "contains_printed_tips": true,
+    "contains_core_vocab_list": true,
+    "contains_sentence_pairs": true,
+    "handwritten_annotations_ignored": true
+  }
+}
