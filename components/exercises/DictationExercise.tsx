@@ -5,6 +5,7 @@ import { DictationData } from '@/types/curriculum';
 import { speakPolish, isTTSSupported, isSpeaking, stopSpeaking, setRate } from '@/lib/tts';
 import { Volume2, VolumeX, RefreshCw, Lightbulb, Check, X } from 'lucide-react';
 import { DiacriticsKeyboard } from '@/components/ui/DiacriticsKeyboard';
+import { convertAsteriskPolish } from '@/lib/utils/string';
 
 interface DictationExerciseProps {
   data: DictationData;
@@ -112,7 +113,7 @@ export function DictationExercise({
     if (inputRef.current) {
       const start = inputRef.current.selectionStart || 0;
       const end = inputRef.current.selectionEnd || 0;
-      const newValue = userAnswer.slice(0, start) + char + userAnswer.slice(end);
+      const newValue = convertAsteriskPolish(userAnswer.slice(0, start) + char + userAnswer.slice(end));
       setUserAnswer(newValue);
       
       // Set cursor position after inserted character
@@ -178,7 +179,7 @@ export function DictationExercise({
           ref={inputRef}
           type="text"
           value={userAnswer}
-          onChange={(e) => setUserAnswer(e.target.value)}
+          onChange={(e) => setUserAnswer(convertAsteriskPolish(e.target.value))}
           onKeyDown={handleKeyDown}
           disabled={submitted}
           placeholder="Type what you heard..."

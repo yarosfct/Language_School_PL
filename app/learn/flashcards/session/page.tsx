@@ -23,7 +23,7 @@ import {
   type FlashcardSessionConfig,
   type FlashcardAnswerResult,
 } from '@/lib/flashcards/practice';
-import { generateId, shuffle } from '@/lib/utils/string';
+import { convertAsteriskPolish, generateId, shuffle } from '@/lib/utils/string';
 import type { FlashcardPracticeCard } from '@/types/flashcards';
 
 type SessionStage = 'initial' | 'retry' | 'random';
@@ -48,6 +48,8 @@ export default function FlashcardsSessionPage() {
   const inputRef = useRef<HTMLInputElement>(null);
   const failedFirstPassRef = useRef<Set<string>>(new Set());
   const allCardsByIdRef = useRef<Map<string, FlashcardPracticeCard>>(new Map());
+  const previousCardRef = useRef<FlashcardPracticeCard | null>(null);
+  const flipTimeoutRef = useRef<number | null>(null);
 
   const [loading, setLoading] = useState(true);
   const [config, setConfig] = useState<FlashcardSessionConfig | null>(null);
@@ -62,6 +64,9 @@ export default function FlashcardsSessionPage() {
   const [timeLeftMs, setTimeLeftMs] = useState(0);
   const [sessionFinished, setSessionFinished] = useState(false);
   const [sessionStartedAt, setSessionStartedAt] = useState(Date.now());
+  const [displayCard, setDisplayCard] = useState<FlashcardPracticeCard | null>(null);
+
+  const FLIP_DURATION_MS = 700;
 
   const currentCard = queue[0] ?? null;
 
@@ -129,14 +134,53 @@ export default function FlashcardsSessionPage() {
   }, [config, sessionFinished, loading, sessionStartedAt]);
 
   useEffect(() => {
+    if (flipTimeoutRef.current !== null) {
+      window.clearTimeout(flipTimeoutRef.current);
+      flipTimeoutRef.current = null;
+    }
+
+    if (!currentCard) {
+      setDisplayCard(null);
+      setAnswer('');
+      setSubmitted(false);
+      setResult(null);
+      setIsFlipped(false);
+      return;
+    }
+
+    const previous = previousCardRef.current;
+    const isTransition = previous && previous.id !== currentCard.id;
+
     setAnswer('');
     setSubmitted(false);
     setResult(null);
     setIsFlipped(false);
-    if (inputRef.current) {
-      inputRef.current.focus();
+
+    if (isTransition) {
+      const timeoutId = window.setTimeout(() => {
+        setDisplayCard(currentCard);
+        previousCardRef.current = null;
+        flipTimeoutRef.current = null;
+        if (inputRef.current) {
+          inputRef.current.focus();
+        }
+      }, FLIP_DURATION_MS);
+      flipTimeoutRef.current = timeoutId;
+    } else {
+      setDisplayCard(currentCard);
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
     }
-  }, [currentCard?.id]);
+  }, [currentCard?.id, currentCard]);
+
+  useEffect(() => {
+    return () => {
+      if (flipTimeoutRef.current !== null) {
+        window.clearTimeout(flipTimeoutRef.current);
+      }
+    };
+  }, []);
 
   async function handleSubmit() {
     if (!currentCard || submitted || !answer.trim()) {
@@ -194,6 +238,8 @@ export default function FlashcardsSessionPage() {
       return;
     }
 
+    previousCardRef.current = currentCard;
+
     if (stage === 'initial' && !result.correct) {
       failedFirstPassRef.current.add(currentCard.id);
     }
@@ -248,7 +294,7 @@ export default function FlashcardsSessionPage() {
 
     const start = input.selectionStart ?? 0;
     const end = input.selectionEnd ?? 0;
-    const nextValue = answer.slice(0, start) + char + answer.slice(end);
+    const nextValue = convertAsteriskPolish(answer.slice(0, start) + char + answer.slice(end));
     setAnswer(nextValue);
 
     window.setTimeout(() => {
@@ -343,6 +389,20 @@ export default function FlashcardsSessionPage() {
     );
   }
 
+  const cardToDisplay = displayCard ?? currentCard;
+  const isFemaleCard = cardToDisplay?.gender === 'feminine';
+  const isMaleCard = cardToDisplay?.gender === 'masculine';
+  const frontCardClass = isFemaleCard
+    ? 'absolute inset-0 rounded-2xl border border-pink-300 bg-gradient-to-br from-pink-100 via-white to-rose-100 p-6 dark:border-pink-700 dark:from-pink-900/40 dark:via-gray-900 dark:to-rose-900/40'
+    : isMaleCard
+    ? 'absolute inset-0 rounded-2xl border border-blue-300 bg-gradient-to-br from-blue-100 via-white to-cyan-100 p-6 dark:border-blue-700 dark:from-blue-900/40 dark:via-gray-900 dark:to-cyan-900/40'
+    : 'absolute inset-0 rounded-2xl border border-cyan-300 bg-gradient-to-br from-cyan-100 via-white to-sky-100 p-6 dark:border-cyan-700 dark:from-cyan-900/40 dark:via-gray-900 dark:to-sky-900/40';
+  const frontLabelClass = isFemaleCard
+    ? 'text-pink-700 dark:text-pink-300'
+    : isMaleCard
+    ? 'text-blue-700 dark:text-blue-300'
+    : 'text-cyan-700 dark:text-cyan-300';
+
   return (
     <div className="mx-auto max-w-5xl space-y-5">
       <section className="rounded-3xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800">
@@ -408,11 +468,24 @@ export default function FlashcardsSessionPage() {
             }}
           >
             <div
-              className="absolute inset-0 rounded-2xl border border-cyan-300 bg-gradient-to-br from-cyan-100 via-white to-sky-100 p-6 dark:border-cyan-700 dark:from-cyan-900/40 dark:via-gray-900 dark:to-sky-900/40"
+              className={frontCardClass}
               style={{ backfaceVisibility: 'hidden' }}
             >
-              <p className="text-xs uppercase tracking-wide text-cyan-700 dark:text-cyan-300">Front</p>
-              <p className="mt-4 text-3xl font-bold text-gray-900 dark:text-white">{currentCard.prompt}</p>
+              <div className="flex items-center justify-between">
+                <p className={`text-xs uppercase tracking-wide ${frontLabelClass}`}>Front</p>
+                {cardToDisplay?.gender && (
+                  <span
+                    className={`rounded-full px-2 py-1 text-xs font-semibold ${
+                      cardToDisplay.gender === 'feminine'
+                        ? 'bg-pink-200 text-pink-800 dark:bg-pink-900/40 dark:text-pink-200'
+                        : 'bg-blue-200 text-blue-800 dark:bg-blue-900/40 dark:text-blue-200'
+                    }`}
+                  >
+                    {cardToDisplay.gender === 'feminine' ? 'female' : 'male'}
+                  </span>
+                )}
+              </div>
+              <p className="mt-4 text-3xl font-bold text-gray-900 dark:text-white">{cardToDisplay?.prompt}</p>
               <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">Write the Polish translation below.</p>
             </div>
 
@@ -424,7 +497,7 @@ export default function FlashcardsSessionPage() {
               }}
             >
               <p className="text-xs uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Back</p>
-              <p className="mt-4 text-3xl font-bold text-gray-900 dark:text-white">{currentCard.answer}</p>
+              <p className="mt-4 text-3xl font-bold text-gray-900 dark:text-white">{cardToDisplay?.answer}</p>
               {result && (
                 <p
                   className={`mt-3 text-sm font-medium ${
@@ -450,11 +523,15 @@ export default function FlashcardsSessionPage() {
           <input
             ref={inputRef}
             value={answer}
-            onChange={(event) => setAnswer(event.target.value)}
-            disabled={submitted}
+            onChange={(event) => setAnswer(convertAsteriskPolish(event.target.value))}
             onKeyDown={(event) => {
-              if (event.key === 'Enter' && !submitted && answer.trim()) {
-                void handleSubmit();
+              if (event.key === 'Enter') {
+                event.preventDefault();
+                if (!submitted && answer.trim()) {
+                  void handleSubmit();
+                } else if (submitted && result) {
+                  moveNext();
+                }
               }
             }}
             placeholder="Type in Polish..."

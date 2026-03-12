@@ -14659,42 +14659,48 @@
             "en": [
               "single"
             ],
-            "category": "adjective"
+            "category": "adjective",
+            "gender": "masculine"
           },
           {
             "pl": "wolna",
             "en": [
               "single"
             ],
-            "category": "adjective"
+            "category": "adjective",
+            "gender": "feminine"
           },
           {
             "pl": "żonaty",
             "en": [
               "married"
             ],
-            "category": "adjective"
+            "category": "adjective",
+            "gender": "masculine"
           },
           {
             "pl": "zamężna",
             "en": [
               "married"
             ],
-            "category": "adjective"
+            "category": "adjective",
+            "gender": "feminine"
           },
           {
             "pl": "rozwiedziony",
             "en": [
               "divorced"
             ],
-            "category": "adjective"
+            "category": "adjective",
+            "gender": "masculine"
           },
           {
             "pl": "rozwiedziona",
             "en": [
               "divorced"
             ],
-            "category": "adjective"
+            "category": "adjective",
+            "gender": "feminine"
           },
           {
             "pl": "mąż",

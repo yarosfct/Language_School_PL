@@ -122,9 +122,29 @@ export default function LearnPage() {
     !!nextSectionId && (devModeEnabled || sectionMastery.mastered === sectionMastery.total);
   const canMoveToNextDifficulty =
     !!nextDifficulty &&
-    (devModeEnabled ||
-      (overallMastery.totalSections > 0 &&
-        overallMastery.masteredSections === overallMastery.totalSections));
+    (devModeEnabled || (sectionMastery.total > 0 && sectionMastery.mastered === sectionMastery.total));
+
+  async function changeDifficulty(nextDifficulty: BookDifficulty) {
+    if (nextDifficulty === currentDifficulty) {
+      return;
+    }
+
+    const currentIndex = DIFFICULTY_SEQUENCE.indexOf(currentDifficulty);
+    const nextIndex = DIFFICULTY_SEQUENCE.indexOf(nextDifficulty);
+
+    if (nextIndex === -1) {
+      return;
+    }
+
+    const isLower = nextIndex < currentIndex;
+
+    if (!isLower && !canMoveToNextDifficulty && !devModeEnabled) {
+      return;
+    }
+
+    await updateBookPathProgress({ currentDifficulty: nextDifficulty });
+    setCurrentDifficulty(nextDifficulty);
+  }
 
   async function moveToNextSection() {
     if (!canMoveToNextSection || !nextSectionId) {
@@ -247,6 +267,23 @@ export default function LearnPage() {
           </div>
 
           <div className="flex flex-wrap gap-2">
+            <div className="flex items-center gap-2 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 text-xs text-gray-700 dark:border-gray-600 dark:bg-gray-900/40 dark:text-gray-200">
+              <span className="font-semibold">Section difficulty:</span>
+              <select
+                value={currentDifficulty}
+                onChange={(event) => {
+                  void changeDifficulty(event.target.value as BookDifficulty);
+                }}
+                className="rounded-lg border border-gray-300 bg-white px-2 py-1 text-xs text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
+              >
+                {DIFFICULTY_SEQUENCE.map((difficultyOption) => (
+                  <option key={difficultyOption} value={difficultyOption}>
+                    {DIFFICULTY_LABELS[difficultyOption]}
+                  </option>
+                ))}
+              </select>
+            </div>
+
             <button
               onClick={resumeLearning}
               className="inline-flex items-center gap-2 rounded-xl bg-cyan-600 px-4 py-2 font-semibold text-white hover:bg-cyan-700"
@@ -283,7 +320,8 @@ export default function LearnPage() {
 
         {!canMoveToNextDifficulty && (
           <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            You can move to the next difficulty after mastering all sections in {DIFFICULTY_LABELS[currentDifficulty]}.
+            You can move to the next difficulty for this section after mastering all its exercises at{' '}
+            {DIFFICULTY_LABELS[currentDifficulty]}.
           </p>
         )}
 

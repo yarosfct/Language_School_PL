@@ -6,6 +6,7 @@ import { Lightbulb } from 'lucide-react';
 import { InteractiveAnswerText } from '@/components/exercises/InteractiveAnswerText';
 import { TTSControls } from '@/components/ui/TTSControls';
 import { DiacriticsKeyboard } from '@/components/ui/DiacriticsKeyboard';
+import { convertAsteriskPolish } from '@/lib/utils/string';
 
 interface TypedAnswerExerciseProps {
   data: TypedAnswerData;
@@ -49,7 +50,7 @@ export function TypedAnswerExercise({
 
     const start = input.selectionStart || 0;
     const end = input.selectionEnd || 0;
-    const newValue = answer.slice(0, start) + char + answer.slice(end);
+    const newValue = convertAsteriskPolish(answer.slice(0, start) + char + answer.slice(end));
     setAnswer(newValue);
 
     setTimeout(() => {
@@ -72,7 +73,7 @@ export function TypedAnswerExercise({
           ref={inputRef}
           type="text"
           value={answer}
-          onChange={(e) => setAnswer(e.target.value)}
+          onChange={(e) => setAnswer(convertAsteriskPolish(e.target.value))}
           disabled={submitted}
           onKeyDown={(e) => {
             if (e.key === 'Enter' && answer.trim() && !submitted) {

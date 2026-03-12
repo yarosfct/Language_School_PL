@@ -22,6 +22,8 @@ export interface FlashcardPracticeCard {
   source: 'book' | 'custom';
   prompt: string;
   answer: string;
+  acceptedAnswers?: string[];
+  gender?: 'masculine' | 'feminine';
   topicId: string;
   topicLabel: string;
 }

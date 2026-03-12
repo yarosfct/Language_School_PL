@@ -32,6 +32,18 @@ export function levenshteinDistance(str1: string, str2: string): number {
   return matrix[len1][len2];
 }
 
+/**
+ * Converts asterisk-wrapped plain chars to Polish letters: *a*→ą, *e*→ę, *l*→ł, *z*→ż.
+ * Used in Polish text inputs for quick entry of these characters.
+ */
+export function convertAsteriskPolish(text: string): string {
+  return text
+    .replace(/\*a\*/g, 'ą')
+    .replace(/\*e\*/g, 'ę')
+    .replace(/\*l\*/g, 'ł')
+    .replace(/\*z\*/g, 'ż');
+}
+
 export function removeDiacritics(str: string): string {
   // Polish diacritics mapping
   const diacriticsMap: Record<string, string> = {

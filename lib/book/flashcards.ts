@@ -29,6 +29,7 @@ export interface BookWordCard extends BookCardBase {
   polish: string;
   english: string[];
   partOfSpeech: string;
+  gender?: 'masculine' | 'feminine';
   contextSentence?: {
     en: string;
     pl: string;
@@ -100,6 +101,7 @@ interface ExtractedWord {
   polish: string;
   english: string[];
   partOfSpeech: string;
+  gender?: 'masculine' | 'feminine';
 }
 
 const DEFAULT_SECTION_NUMBER = 999;
@@ -267,6 +269,7 @@ function getCatalog(): Catalog {
         polish: item.polish,
         english: item.english,
         partOfSpeech: item.partOfSpeech,
+        gender: item.gender,
         contextSentence: contextSentence
           ? {
               en: contextSentence.promptEn,
@@ -431,10 +434,22 @@ function extractWords(value: unknown): ExtractedWord[] {
       polish,
       english,
       partOfSpeech: cleanText(toString(item.category) ?? 'word'),
+      gender: toGender(item.gender),
     });
   }
 
   return output;
+}
+
+function toGender(value: unknown): 'masculine' | 'feminine' | undefined {
+  const normalized = cleanText(toString(value) ?? '').toLowerCase();
+  if (normalized === 'masculine' || normalized === 'm') {
+    return 'masculine';
+  }
+  if (normalized === 'feminine' || normalized === 'f') {
+    return 'feminine';
+  }
+  return undefined;
 }
 
 function buildWordExercise(card: BookWordCard, difficulty: BookDifficulty, wordPool: BookWordCard[]): Exercise {

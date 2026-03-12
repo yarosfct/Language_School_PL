@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import { FillBlankData } from '@/types/curriculum';
 import { TTSControls } from '@/components/ui/TTSControls';
 import { DiacriticsKeyboard } from '@/components/ui/DiacriticsKeyboard';
+import { convertAsteriskPolish } from '@/lib/utils/string';
 
 interface FillBlankExerciseProps {
   data: FillBlankData;
@@ -31,7 +32,7 @@ export function FillBlankExercise({
 
   const handleAnswerChange = (index: number, value: string) => {
     const newAnswers = [...answers];
-    newAnswers[index] = value;
+    newAnswers[index] = convertAsteriskPolish(value);
     setAnswers(newAnswers);
   };
 
@@ -50,7 +51,7 @@ export function FillBlankExercise({
     const end = input.selectionEnd || 0;
     const currentValue = answers[activeInputIndex];
     const newValue = currentValue.slice(0, start) + char + currentValue.slice(end);
-    
+
     handleAnswerChange(activeInputIndex, newValue);
     
     // Set cursor position after inserted character

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { BookOpenText, Clock3, ListChecks, Plus, Sparkles, Trash2 } from 'lucide-react';
+import { BookOpenText, Clock3, ListChecks, Pencil, Plus, Sparkles, Trash2 } from 'lucide-react';
 import {
   deleteCustomFlashcardSet,
   getAllCustomFlashcardSets,
@@ -31,6 +31,7 @@ export default function LearnFlashcardsPage() {
   const [customSetId, setCustomSetId] = useState<string>('');
   const [customSets, setCustomSets] = useState<CustomFlashcardSet[]>([]);
   const [isSavingSet, setIsSavingSet] = useState(false);
+  const [editingSetId, setEditingSetId] = useState<string | null>(null);
 
   const [newSetName, setNewSetName] = useState('');
   const [newSetDescription, setNewSetDescription] = useState('');
@@ -80,6 +81,31 @@ export default function LearnFlashcardsPage() {
     setDraftCards((previous) => previous.filter((card) => card.id !== id));
   }
 
+  function resetForm() {
+    setNewSetName('');
+    setNewSetDescription('');
+    setDraftCards([
+      { id: generateId(), prompt: '', answer: '' },
+      { id: generateId(), prompt: '', answer: '' },
+    ]);
+    setEditingSetId(null);
+  }
+
+  function startEditingSet(set: CustomFlashcardSet) {
+    setEditingSetId(set.id);
+    setNewSetName(set.name);
+    setNewSetDescription(set.description ?? '');
+    setDraftCards(
+      set.cards.length > 0
+        ? set.cards.map((c) => ({ id: c.id, prompt: c.prompt, answer: c.answer }))
+        : [{ id: generateId(), prompt: '', answer: '' }, { id: generateId(), prompt: '', answer: '' }]
+    );
+  }
+
+  function cancelEdit() {
+    resetForm();
+  }
+
   async function saveNewCustomSet() {
     const name = newSetName.trim();
     if (!name) {
@@ -87,14 +113,20 @@ export default function LearnFlashcardsPage() {
       return;
     }
 
+    const isUpdate = editingSetId !== null;
+    const existing = isUpdate ? customSets.find((s) => s.id === editingSetId) : null;
+
     const cards = draftCards
-      .map((card) => ({
-        id: generateId(),
-        prompt: card.prompt.trim(),
-        answer: card.answer.trim(),
-        createdAt: Date.now(),
-      }))
-      .filter((card) => card.prompt && card.answer);
+      .filter((card) => card.prompt.trim() && card.answer.trim())
+      .map((draft) => {
+        const existingCard = existing?.cards.find((c) => c.id === draft.id);
+        return {
+          id: draft.id,
+          prompt: draft.prompt.trim(),
+          answer: draft.answer.trim(),
+          createdAt: existingCard?.createdAt ?? Date.now(),
+        };
+      });
 
     if (cards.length === 0) {
       alert('Add at least one flashcard with prompt and answer.');
@@ -103,22 +135,28 @@ export default function LearnFlashcardsPage() {
 
     setIsSavingSet(true);
     try {
-      const now = Date.now();
-      await saveCustomFlashcardSet({
-        id: generateId(),
-        name,
-        description: newSetDescription.trim() || undefined,
-        cards,
-        createdAt: now,
-        updatedAt: now,
-      });
+      if (isUpdate && existing) {
+        await saveCustomFlashcardSet({
+          id: existing.id,
+          name,
+          description: newSetDescription.trim() || undefined,
+          cards,
+          createdAt: existing.createdAt,
+          updatedAt: existing.updatedAt,
+        });
+      } else {
+        const now = Date.now();
+        await saveCustomFlashcardSet({
+          id: generateId(),
+          name,
+          description: newSetDescription.trim() || undefined,
+          cards,
+          createdAt: now,
+          updatedAt: now,
+        });
+      }
 
-      setNewSetName('');
-      setNewSetDescription('');
-      setDraftCards([
-        { id: generateId(), prompt: '', answer: '' },
-        { id: generateId(), prompt: '', answer: '' },
-      ]);
+      resetForm();
       await refreshCustomSets();
     } finally {
       setIsSavingSet(false);
@@ -335,6 +373,11 @@ export default function LearnFlashcardsPage() {
 
         <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="space-y-3">
+            {editingSetId !== null && (
+              <p className="text-sm font-medium text-cyan-700 dark:text-cyan-300">
+                Edit set: {customSets.find((s) => s.id === editingSetId)?.name ?? 'Unknown'}
+              </p>
+            )}
             <input
               value={newSetName}
               onChange={(event) => setNewSetName(event.target.value)}
@@ -382,13 +425,27 @@ export default function LearnFlashcardsPage() {
               </button>
             </div>
 
-            <button
-              onClick={saveNewCustomSet}
-              disabled={isSavingSet}
-              className="rounded-xl bg-cyan-600 px-4 py-2 font-semibold text-white hover:bg-cyan-700 disabled:cursor-not-allowed disabled:opacity-60"
-            >
-              {isSavingSet ? 'Saving...' : 'Save Custom Set'}
-            </button>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={saveNewCustomSet}
+                disabled={isSavingSet}
+                className="rounded-xl bg-cyan-600 px-4 py-2 font-semibold text-white hover:bg-cyan-700 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {isSavingSet
+                  ? 'Saving...'
+                  : editingSetId !== null
+                    ? 'Update set'
+                    : 'Save Custom Set'}
+              </button>
+              {editingSetId !== null && (
+                <button
+                  onClick={cancelEdit}
+                  className="rounded-xl border border-gray-300 px-4 py-2 font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+                >
+                  Cancel
+                </button>
+              )}
+            </div>
           </div>
 
           <div className="space-y-3">
@@ -405,13 +462,22 @@ export default function LearnFlashcardsPage() {
                         <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{set.description}</p>
                       )}
                     </div>
-                    <button
-                      onClick={() => removeSet(set.id)}
-                      className="rounded-lg border border-gray-300 p-2 text-gray-600 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
-                      aria-label="Delete set"
-                    >
-                      <Trash2 className="h-4 w-4" />
-                    </button>
+                    <div className="flex items-center gap-1">
+                      <button
+                        onClick={() => startEditingSet(set)}
+                        className="rounded-lg border border-gray-300 p-2 text-gray-600 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+                        aria-label="Edit set"
+                      >
+                        <Pencil className="h-4 w-4" />
+                      </button>
+                      <button
+                        onClick={() => removeSet(set.id)}
+                        className="rounded-lg border border-gray-300 p-2 text-gray-600 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+                        aria-label="Delete set"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))
