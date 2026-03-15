@@ -1,141 +1,99 @@
 'use client';
 
 import { FileText } from 'lucide-react';
+import { getBookPracticeCards, type BookSentenceCard } from '@/lib/book/flashcards';
 import { Badge, Card, PageHeader, SectionTitle } from '@/components/ui/primitives';
 
-const grammarTopics = [
+function getGrammarFromBook() {
+  const sentenceCards = getBookPracticeCards({ cardType: 'sentence', includeGenerated: true }).filter(
+    (card): card is BookSentenceCard => card.type === 'sentence'
+  );
+  const counts = new Map<string, number>();
+
+  for (const card of sentenceCards) {
+    for (const tag of card.grammarTags) {
+      counts.set(tag, (counts.get(tag) ?? 0) + 1);
+    }
+  }
+
+  return [...counts.entries()]
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 18)
+    .map(([tag, count]) => ({
+      id: tag.toLowerCase().replace(/\s+/g, '-'),
+      title: tag,
+      description: `Appears in ${count} sentence${count === 1 ? '' : 's'} from the imported book JSON.`,
+      level: count > 10 ? 'A1-A2' : 'A1',
+    }));
+}
+
+const handbookTopics = [
   {
-    id: 'alphabet',
-    title: 'Polish Alphabet & Pronunciation',
-    description: 'Learn the Polish alphabet and how to pronounce special characters',
+    id: 'present-tense-verbs',
+    title: 'Present tense verb patterns',
+    description: 'Conjugation by person (ja/ty/on-ona/...) and dropping explicit pronouns in natural speech.',
     level: 'A1',
   },
   {
-    id: 'noun-gender',
-    title: 'Noun Gender',
-    description: 'Understanding masculine, feminine, and neuter nouns',
+    id: 'mam-lat-pattern',
+    title: 'Age expression: "mam ... lat"',
+    description: 'Polish uses "to have" for age, but accepted answers can vary by context and pronoun use.',
     level: 'A1',
   },
   {
-    id: 'verb-byc',
-    title: 'The Verb "być" (to be)',
-    description: 'Conjugation and usage of the most important Polish verb',
-    level: 'A1',
-  },
-  {
-    id: 'cases-intro',
-    title: 'Introduction to Cases',
-    description: 'Overview of the 7 Polish cases and their functions',
-    level: 'A1',
-  },
-  {
-    id: 'nominative',
-    title: 'Nominative Case',
-    description: 'The basic form of nouns - subject of the sentence',
-    level: 'A1',
-  },
-  {
-    id: 'accusative',
-    title: 'Accusative Case',
-    description: 'Direct objects and certain prepositions',
+    id: 'motion-and-aspect',
+    title: 'Motion verbs and aspect basics',
+    description: 'Pairs like iść/chodzić and perfective vs imperfective choices in real usage.',
     level: 'A2',
-  },
-  {
-    id: 'numbers',
-    title: 'Numbers 1-100',
-    description: 'Counting in Polish and number agreement',
-    level: 'A1',
-  },
-  {
-    id: 'pronouns',
-    title: 'Personal Pronouns',
-    description: 'I, you, he, she, it, we, they in Polish',
-    level: 'A1',
   },
 ];
 
 export default function GrammarPage() {
+  const bookTopics = getGrammarFromBook();
+
   return (
     <div>
-      <PageHeader
-        title="Grammar Reference"
-        description="Comprehensive guides to Polish grammar."
-      />
+      <PageHeader title="Grammar Reference" description="Grammar topics generated from your JSON book data + practical notes." />
 
-      {/* Notice */}
       <Card className="mb-8 bg-info-50 dark:bg-blue-900/20" accent="info">
         <p className="text-blue-800 dark:text-blue-300">
-          <strong>Coming Soon:</strong> Full grammar explanations with examples and exercises.
-          For now, these topics are referenced in lessons.
+          This page now reflects grammar tags from the imported book dataset, then adds practical Polish usage notes for high-value patterns.
         </p>
       </Card>
 
-      {/* Topics Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {grammarTopics.map((topic) => (
-          <Card
-            key={topic.id}
-            className="p-6 hover:shadow-card transition-shadow duration-default ease-subtle"
-          >
+      <SectionTitle title="From your JSON book data" className="mb-4" />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {bookTopics.map((topic) => (
+          <Card key={topic.id} className="p-6 transition-shadow duration-default ease-subtle hover:shadow-card">
             <div className="flex items-start gap-4">
-              <div className="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
-                <FileText className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+              <div className="rounded-lg bg-primary-100 p-3 dark:bg-primary-900/30">
+                <FileText className="h-6 w-6 text-primary-600 dark:text-primary-400" />
               </div>
-              
+
               <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    {topic.title}
-                  </h3>
-                  <Badge tone="primary">
-                    {topic.level}
-                  </Badge>
+                <div className="mb-2 flex items-center gap-2">
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{topic.title}</h3>
+                  <Badge tone="primary">{topic.level}</Badge>
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {topic.description}
-                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{topic.description}</p>
               </div>
             </div>
           </Card>
         ))}
       </div>
 
-      {/* Quick Reference */}
-      <Card className="mt-12">
-        <SectionTitle title="Quick Reference" />
-        
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-              Polish Special Characters
-            </h3>
-            <div className="grid grid-cols-3 md:grid-cols-9 gap-2">
-              {['ą', 'ć', 'ę', 'ł', 'ń', 'ó', 'ś', 'ź', 'ż'].map(char => (
-                <div key={char} className="p-3 bg-gray-100 dark:bg-gray-700 rounded text-center">
-                  <span className="text-2xl font-bold text-gray-900 dark:text-white">
-                    {char}
-                  </span>
-                </div>
-              ))}
+      <SectionTitle title="Practical usage notes" className="mb-4 mt-12" />
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        {handbookTopics.map((topic) => (
+          <Card key={topic.id} className="p-6 transition-shadow duration-default ease-subtle hover:shadow-card">
+            <div className="mb-2 flex items-center gap-2">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{topic.title}</h3>
+              <Badge tone="success">{topic.level}</Badge>
             </div>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-              The 7 Polish Cases
-            </h3>
-            <ol className="list-decimal list-inside space-y-1 text-gray-700 dark:text-gray-300">
-              <li>Nominative (Mianownik) - subject</li>
-              <li>Genitive (Dopełniacz) - possession, negation</li>
-              <li>Dative (Celownik) - indirect object</li>
-              <li>Accusative (Biernik) - direct object</li>
-              <li>Instrumental (Narzędnik) - means, accompaniment</li>
-              <li>Locative (Miejscownik) - location</li>
-              <li>Vocative (Wołacz) - direct address</li>
-            </ol>
-          </div>
-        </div>
-      </Card>
+            <p className="text-sm text-gray-600 dark:text-gray-400">{topic.description}</p>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }

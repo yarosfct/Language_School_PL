@@ -409,7 +409,7 @@ export default function FlashcardsSessionPage() {
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
-              Flashcards • {currentCard.topicLabel}
+              Flashcards • {currentCard.topicLabel} • {config.practiceType}
             </p>
             <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
               Stage: {stage === 'initial' ? 'First Pass' : stage === 'retry' ? 'Second Chance' : 'Free Practice'}
@@ -581,6 +581,7 @@ export default function FlashcardsSessionPage() {
 
 function parseConfig(searchParams: ReturnType<typeof useSearchParams>): FlashcardSessionConfig | null {
   const modeParam = searchParams.get('mode');
+  const practiceTypeParam = searchParams.get('practiceType');
   if (modeParam !== 'topic' && modeParam !== 'random' && modeParam !== 'difficulty' && modeParam !== 'custom') {
     return null;
   }
@@ -592,6 +593,8 @@ function parseConfig(searchParams: ReturnType<typeof useSearchParams>): Flashcar
 
   return {
     mode: modeParam,
+    practiceType:
+      practiceTypeParam === 'verbs' || practiceTypeParam === 'conjugation' ? practiceTypeParam : 'mixed',
     topicId: searchParams.get('topicId') ?? undefined,
     customSetId: searchParams.get('customSetId') ?? undefined,
     limitType,
@@ -605,11 +608,11 @@ async function resolveCardsForConfig(config: FlashcardSessionConfig): Promise<Fl
     if (!config.topicId) {
       return [];
     }
-    return getTopicFlashcards(config.topicId);
+    return getTopicFlashcards(config.topicId, config.practiceType);
   }
 
   if (config.mode === 'random' || config.mode === 'difficulty') {
-    return getAllBookFlashcards();
+    return getAllBookFlashcards(config.practiceType);
   }
 
   if (config.mode === 'custom') {

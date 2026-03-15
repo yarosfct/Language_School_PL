@@ -1,5 +1,6 @@
 export type FlashcardSessionMode = 'topic' | 'random' | 'difficulty' | 'custom';
 export type FlashcardLimitType = 'count' | 'time';
+export type FlashcardPracticeType = 'mixed' | 'verbs' | 'conjugation';
 
 export interface CustomFlashcardCard {
   id: string;
@@ -27,4 +28,3 @@ export interface FlashcardPracticeCard {
   topicId: string;
   topicLabel: string;
 }
-
