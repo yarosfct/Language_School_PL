@@ -14,6 +14,7 @@ import {
   saveUserWordOverride,
 } from '@/lib/db';
 import type { UserWordOverride } from '@/types/translations';
+import { Card, Input, PageHeader, Select } from '@/components/ui/primitives';
 
 interface PiperVoice {
   name: string;
@@ -533,21 +534,16 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          Settings
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          Customize your learning experience
-        </p>
-      </div>
+    <div>
+      <PageHeader
+        title="Settings"
+        description="Customize your learning experience."
+      />
 
       {/* Settings sections */}
       <div className="space-y-6">
         {/* Audio Settings */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Volume2 className="w-5 h-5" />
             Audio Settings
@@ -577,10 +573,10 @@ export default function SettingsPage() {
               </button>
             </div>
           </div>
-        </div>
+        </Card>
 
         {/* Text-to-Speech Settings */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Mic className="w-5 h-5" />
             Text-to-Speech (TTS)
@@ -614,9 +610,7 @@ export default function SettingsPage() {
                   </select>
                 ) : (
                   <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-                    <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-1">
-                      ⚠️ No Piper voices found
-                    </p>
+                    <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-1">No Piper voices found</p>
                     <p className="text-xs text-yellow-700 dark:text-yellow-300">
                       Download voice models to public/voices/ directory.
                     </p>
@@ -642,9 +636,7 @@ export default function SettingsPage() {
                   </select>
                 ) : (
                   <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-                    <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-1">
-                      ⚠️ No Polish voices found
-                    </p>
+                    <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-1">No Polish voices found</p>
                     <p className="text-xs text-yellow-700 dark:text-yellow-300">
                       Install Polish TTS voices on your system for better pronunciation.
                     </p>
@@ -699,10 +691,10 @@ export default function SettingsPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Card>
 
         {/* TTS Backend Status */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Server className="w-5 h-5" />
             TTS Backend
@@ -728,9 +720,9 @@ export default function SettingsPage() {
                   ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
                   : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
               }`}>
-                {backendStatus === 'checking' && '⏳ Checking'}
-                {backendStatus === 'piper' && '✅ Piper'}
-                {backendStatus === 'webspeech' && '⚠️ Web Speech'}
+                {backendStatus === 'checking' && 'Checking'}
+                {backendStatus === 'piper' && 'Piper'}
+                {backendStatus === 'webspeech' && 'Web Speech'}
               </div>
             </div>
 
@@ -766,9 +758,7 @@ export default function SettingsPage() {
             {backendStatus === 'webspeech' && (
               <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-                  <h3 className="font-medium text-blue-900 dark:text-blue-200 mb-2">
-                    💡 Want better voice quality?
-                  </h3>
+                  <h3 className="font-medium text-blue-900 dark:text-blue-200 mb-2">Want better voice quality?</h3>
                   <p className="text-sm text-blue-800 dark:text-blue-300 mb-3">
                     Install Piper TTS for natural-sounding Polish voices. Run these commands:
                   </p>
@@ -785,10 +775,10 @@ export default function SettingsPage() {
               </div>
             )}
           </div>
-        </div>
+        </Card>
 
         {/* TTS Preferences */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <Mic className="w-5 h-5" />
             Text-to-Speech Preferences
@@ -824,14 +814,14 @@ export default function SettingsPage() {
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Default Speed
               </label>
-              <select 
+              <Select 
                 value={ttsPreferences.defaultSpeed}
                 onChange={(e) => updateTTSPreferences({ defaultSpeed: e.target.value as 'normal' | 'slow' })}
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                className="w-full px-4 py-2"
               >
                 <option value="normal">Normal Speed</option>
                 <option value="slow">Slow Speed (for learning)</option>
-              </select>
+              </Select>
             </div>
 
             {/* Visual Feedback */}
@@ -858,10 +848,10 @@ export default function SettingsPage() {
               </button>
             </div>
           </div>
-        </div>
+        </Card>
 
         {/* Learning Preferences */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
             <SettingsIcon className="w-5 h-5" />
             Learning Preferences
@@ -896,35 +886,35 @@ export default function SettingsPage() {
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Daily Goal
               </label>
-              <select 
+              <Select 
                 defaultValue="15"
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                className="w-full px-4 py-2"
               >
                 <option value="5">5 exercises per day</option>
                 <option value="10">10 exercises per day</option>
                 <option value="15">15 exercises per day</option>
                 <option value="20">20 exercises per day</option>
                 <option value="30">30 exercises per day</option>
-              </select>
+              </Select>
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Review Frequency
               </label>
-              <select 
+              <Select 
                 defaultValue="relaxed"
-                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                className="w-full px-4 py-2"
               >
                 <option value="strict">Strict (follow SM-2 exactly)</option>
                 <option value="relaxed">Relaxed (allow early reviews)</option>
                 <option value="aggressive">Aggressive (more frequent reviews)</option>
-              </select>
+              </Select>
             </div>
           </div>
-        </div>
+        </Card>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
             <div>
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
@@ -977,12 +967,12 @@ export default function SettingsPage() {
           </div>
 
           <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-            <input
+            <Input
               type="text"
               value={overrideSearch}
               onChange={(event) => setOverrideSearch(event.target.value)}
               placeholder="Search by Polish or English..."
-              className="w-full max-w-md rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
+              className="w-full max-w-md px-4 py-2"
             />
             <p className="text-sm text-gray-500 dark:text-gray-400">
               {filteredOverrides.length} / {userWordOverrides.length} entries
@@ -1065,10 +1055,10 @@ export default function SettingsPage() {
               ))}
             </div>
           )}
-        </div>
+        </Card>
 
         {/* Data Management */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
             Data Management
           </h2>
@@ -1106,10 +1096,10 @@ export default function SettingsPage() {
               </button>
             </div>
           </div>
-        </div>
+        </Card>
 
         {/* About */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
             About
           </h2>
@@ -1122,7 +1112,7 @@ export default function SettingsPage() {
               PolskiOdZera is an open-source Polish learning app built with Next.js, TypeScript, and modern web technologies.
             </p>
           </div>
-        </div>
+        </Card>
       </div>
 
       {/* Reset Confirmation Modal */}

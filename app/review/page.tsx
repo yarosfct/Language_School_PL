@@ -11,6 +11,7 @@ import { ReviewCard } from '@/types/progress';
 import { Exercise } from '@/types/curriculum';
 import { RotateCcw, Filter, X } from 'lucide-react';
 import { getAllTopics } from '@/lib/curriculum/topicLoader';
+import { Badge, Button, Card, PageHeader } from '@/components/ui/primitives';
 
 interface TopicMeta {
   id: string;
@@ -121,7 +122,7 @@ export default function ReviewPage() {
   if (dueCards.length === 0) {
     return (
       <div className="max-w-4xl mx-auto text-center">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-12">
+        <Card className="p-12">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full mb-4">
             <RotateCcw className="w-8 h-8 text-green-600 dark:text-green-400" />
           </div>
@@ -130,16 +131,17 @@ export default function ReviewPage() {
             All Caught Up!
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-            No reviews due right now. Great job! 🎉
+            No reviews due right now. Great job.
           </p>
           
-          <button
+          <Button
             onClick={() => router.push('/learn')}
-            className="px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors"
+            size="lg"
+            variant="primary"
           >
             Continue Learning
-          </button>
-        </div>
+          </Button>
+        </Card>
       </div>
     );
   }
@@ -160,25 +162,15 @@ export default function ReviewPage() {
     <div className="max-w-4xl mx-auto">
       {/* Header */}
       <div className="mb-6">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
-              <RotateCcw className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-                Review Session
-              </h1>
-              <p className="text-gray-600 dark:text-gray-400">
-                Reinforce what you&apos;ve learned
-              </p>
-            </div>
-          </div>
-        </div>
+        <PageHeader
+          title="Review Session"
+          description="Reinforce what you've learned."
+          actions={<Badge tone="warning">{dueCards.length} due</Badge>}
+        />
 
         {/* Topic Filter */}
         {availableTopics.length > 0 && (
-          <div className="mb-4 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm">
+          <Card className="mb-4 p-4">
             <div className="flex items-center gap-2 mb-2">
               <Filter className="w-4 h-4 text-gray-500" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Filter by Topic</span>
@@ -215,7 +207,7 @@ export default function ReviewPage() {
                 );
               })}
             </div>
-          </div>
+          </Card>
         )}
 
         {/* Progress bar */}
@@ -234,9 +226,9 @@ export default function ReviewPage() {
       </div>
 
       {/* Exercise */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+      <Card className="p-8 shadow-card">
         <div className="mb-6">
-          <div className="inline-block px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-sm font-semibold mb-4">
+          <div className="inline-block px-3 py-1 bg-warning-100 dark:bg-amber-900/30 text-warning-600 dark:text-amber-300 rounded-full text-sm font-semibold mb-4">
             REVIEW
           </div>
           
@@ -254,7 +246,7 @@ export default function ReviewPage() {
           isCorrect={evaluationResult?.correct}
           partialCorrect={evaluationResult?.partialCorrect}
         />
-      </div>
+      </Card>
     </div>
   );
 }

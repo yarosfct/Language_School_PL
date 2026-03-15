@@ -1,6 +1,7 @@
 'use client';
 
 import { FileText } from 'lucide-react';
+import { Badge, Card, PageHeader, SectionTitle } from '@/components/ui/primitives';
 
 const grammarTopics = [
   {
@@ -55,31 +56,26 @@ const grammarTopics = [
 
 export default function GrammarPage() {
   return (
-    <div className="max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          Grammar Reference
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          Comprehensive guides to Polish grammar
-        </p>
-      </div>
+    <div>
+      <PageHeader
+        title="Grammar Reference"
+        description="Comprehensive guides to Polish grammar."
+      />
 
       {/* Notice */}
-      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-8">
+      <Card className="mb-8 bg-info-50 dark:bg-blue-900/20" accent="info">
         <p className="text-blue-800 dark:text-blue-300">
-          📚 <strong>Coming Soon:</strong> Full grammar explanations with examples and exercises.
+          <strong>Coming Soon:</strong> Full grammar explanations with examples and exercises.
           For now, these topics are referenced in lessons.
         </p>
-      </div>
+      </Card>
 
       {/* Topics Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {grammarTopics.map((topic) => (
-          <div
+          <Card
             key={topic.id}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+            className="p-6 hover:shadow-card transition-shadow duration-default ease-subtle"
           >
             <div className="flex items-start gap-4">
               <div className="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
@@ -91,24 +87,22 @@ export default function GrammarPage() {
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                     {topic.title}
                   </h3>
-                  <span className="px-2 py-1 text-xs font-semibold bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded">
+                  <Badge tone="primary">
                     {topic.level}
-                  </span>
+                  </Badge>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   {topic.description}
                 </p>
               </div>
             </div>
-          </div>
+          </Card>
         ))}
       </div>
 
       {/* Quick Reference */}
-      <div className="mt-12 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          Quick Reference
-        </h2>
+      <Card className="mt-12">
+        <SectionTitle title="Quick Reference" />
         
         <div className="space-y-6">
           <div>
@@ -141,7 +135,7 @@ export default function GrammarPage() {
             </ol>
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { VocabItem } from '@/types/curriculum';
 import { BookMarked } from 'lucide-react';
 import { TTSIconButton } from '@/components/ui/TTSButton';
 import { TTSControls } from '@/components/ui/TTSControls';
+import { Badge, Card, PageHeader, Select } from '@/components/ui/primitives';
 
 export default function VocabularyPage() {
   const [vocabItems, setVocabItems] = useState<VocabItem[]>([]);
@@ -31,19 +32,15 @@ export default function VocabularyPage() {
   const partOfSpeechOptions = ['all', ...new Set(vocabItems.map(v => v.partOfSpeech))];
 
   return (
-    <div className="max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          Vocabulary
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          All words and phrases you&apos;ve encountered
-        </p>
-      </div>
+    <div>
+      <PageHeader
+        title="Vocabulary"
+        description="All words and phrases you've encountered."
+        actions={<Badge tone="success">{vocabItems.length} learned</Badge>}
+      />
 
       {/* Stats */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <Card className="mb-8">
         <div className="flex items-center gap-4">
           <div className="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
             <BookMarked className="w-8 h-8 text-primary-600 dark:text-primary-400" />
@@ -57,7 +54,7 @@ export default function VocabularyPage() {
             </p>
           </div>
         </div>
-      </div>
+      </Card>
 
       {/* Filter and Play All */}
       <div className="mb-6 flex items-center justify-between">
@@ -65,17 +62,17 @@ export default function VocabularyPage() {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Filter by part of speech:
           </label>
-          <select
+          <Select
             value={filter}
             onChange={(e) => setFilter(e.target.value)}
-            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+            className="px-4 py-2 min-w-44"
           >
             {partOfSpeechOptions.map(option => (
               <option key={option} value={option}>
                 {option === 'all' ? 'All' : option}
               </option>
             ))}
-          </select>
+          </Select>
         </div>
         
         {filteredVocab.length > 0 && (
@@ -91,7 +88,7 @@ export default function VocabularyPage() {
       </div>
 
       {/* Vocabulary list */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+      <Card className="overflow-hidden p-0">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-900/50">
             <tr>
@@ -152,7 +149,7 @@ export default function VocabularyPage() {
             })}
           </tbody>
         </table>
-      </div>
+      </Card>
     </div>
   );
 }

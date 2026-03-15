@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AlertCircle, BookMarked, BookOpen, FileText, Home, RotateCcw, Settings } from 'lucide-react';
 
-const navigation = [
+export const navigation = [
   { name: 'Dashboard', href: '/', icon: Home },
   { name: 'Learn', href: '/learn', icon: BookOpen },
   { name: 'Flashcards', href: '/learn/flashcards', icon: BookOpen },
@@ -22,7 +22,10 @@ export function Sidebar() {
     <aside className="hidden w-64 border-r border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800 md:block">
       <div className="flex h-full flex-col">
         <div className="border-b border-gray-200 p-6 dark:border-gray-700">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link
+            href="/"
+            className="flex items-center space-x-2 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900"
+          >
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-500 text-xl font-bold text-white">
               P
             </div>
@@ -39,7 +42,7 @@ export function Sidebar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`flex items-center space-x-3 rounded-lg px-4 py-3 transition-colors ${
+                className={`flex cursor-pointer items-center space-x-3 rounded-lg px-4 py-3 transition-colors duration-default ease-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 ${
                   isActive
                     ? 'bg-primary-100 text-primary-700 dark:bg-primary-900 dark:text-primary-300'
                     : 'text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700'

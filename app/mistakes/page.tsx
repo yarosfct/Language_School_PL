@@ -2,10 +2,11 @@
 
 import { useEffect, useState, useMemo } from 'react';
 import { calculateMistakeAnalytics } from '@/lib/mistakes/analytics';
-import { MistakeAnalytics, Mistake } from '@/types/progress';
+import { MistakeAnalytics } from '@/types/progress';
 import { AlertCircle, TrendingDown, Target, Filter, X, RotateCcw } from 'lucide-react';
 import Link from 'next/link';
 import { getAllTopics } from '@/lib/curriculum/topicLoader';
+import { ButtonLink, Card, PageHeader, SectionTitle } from '@/components/ui/primitives';
 
 interface TopicMeta {
   id: string;
@@ -18,7 +19,6 @@ export default function MistakesPage() {
   const [availableTopics, setAvailableTopics] = useState<TopicMeta[]>([]);
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [selectedErrorType, setSelectedErrorType] = useState<string | null>(null);
-  const [retryMode, setRetryMode] = useState(false);
 
   // Extract unique error types from mistakes
   const errorTypes = useMemo(() => {
@@ -93,20 +93,15 @@ export default function MistakesPage() {
   }
 
   return (
-    <div className="max-w-6xl mx-auto">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          Mistakes Notebook
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          Learn from your errors and target weak areas
-        </p>
-      </div>
+    <div>
+      <PageHeader
+        title="Mistakes Notebook"
+        description="Learn from your errors and target weak areas."
+      />
 
       {/* Stats Overview */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <div className="inline-flex p-3 bg-red-100 dark:bg-red-900/30 rounded-lg mb-4">
             <AlertCircle className="w-6 h-6 text-red-600 dark:text-red-400" />
           </div>
@@ -116,9 +111,9 @@ export default function MistakesPage() {
           <p className="text-3xl font-bold text-gray-900 dark:text-white">
             {analytics.recentMistakes.length}
           </p>
-        </div>
+        </Card>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <div className="inline-flex p-3 bg-orange-100 dark:bg-orange-900/30 rounded-lg mb-4">
             <TrendingDown className="w-6 h-6 text-orange-600 dark:text-orange-400" />
           </div>
@@ -128,9 +123,9 @@ export default function MistakesPage() {
           <p className="text-3xl font-bold text-gray-900 dark:text-white">
             {analytics.weakSkills.length}
           </p>
-        </div>
+        </Card>
 
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <Card>
           <div className="inline-flex p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg mb-4">
             <Target className="w-6 h-6 text-primary-600 dark:text-primary-400" />
           </div>
@@ -140,11 +135,11 @@ export default function MistakesPage() {
           <p className="text-3xl font-bold text-gray-900 dark:text-white">
             {Object.keys(analytics.tagErrorRates).length}
           </p>
-        </div>
+        </Card>
       </div>
 
       {/* Filters */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
+      <Card className="mb-8">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
             <Filter className="w-5 h-5 text-gray-500" />
@@ -246,14 +241,12 @@ export default function MistakesPage() {
             </Link>
           </div>
         </div>
-      </div>
+      </Card>
 
       {/* Weak Skills Section */}
       {analytics.weakSkills.length > 0 && (
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-            🎯 Weak Skills (Need Practice)
-          </h2>
+        <Card className="mb-8" accent="warning">
+          <SectionTitle title="Weak Skills (Need Practice)" icon={<Target className="w-5 h-5 text-warning-600 dark:text-amber-300" />} />
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             These topics have an error rate above 40%. Focus your practice here!
           </p>
@@ -293,21 +286,20 @@ export default function MistakesPage() {
           </div>
 
           <div className="mt-6">
-            <Link
+            <ButtonLink
               href="/review"
-              className="inline-block px-6 py-3 bg-primary-500 text-white rounded-lg font-semibold hover:bg-primary-600 transition-colors"
+              size="lg"
+              variant="primary"
             >
               Practice Weak Skills
-            </Link>
+            </ButtonLink>
           </div>
-        </div>
+        </Card>
       )}
 
       {/* Tag Error Rates */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-          Error Rates by Tag
-        </h2>
+      <Card className="mb-8">
+        <SectionTitle title="Error Rates by Tag" />
         
         <div className="space-y-3">
           {Object.entries(analytics.tagErrorRates)
@@ -356,10 +348,10 @@ export default function MistakesPage() {
               );
             })}
         </div>
-      </div>
+      </Card>
 
       {/* Recent Mistakes */}
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+      <Card>
         <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
           {selectedTopic || selectedErrorType ? 'Filtered Mistakes' : 'Recent Mistakes'}
           {(selectedTopic || selectedErrorType) && (
@@ -412,7 +404,7 @@ export default function MistakesPage() {
             ))}
           </div>
         )}
-      </div>
+      </Card>
     </div>
   );
 }

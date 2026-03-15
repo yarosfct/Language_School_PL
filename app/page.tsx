@@ -5,6 +5,7 @@ import { BookOpen, Target, TrendingUp, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import { getUserProgress, getDueReviewCards, initializeDatabase } from '@/lib/db';
 import { UserProgress } from '@/types/progress';
+import { Badge, ButtonLink, Card, PageHeader, SectionTitle } from '@/components/ui/primitives';
 
 export default function HomePage() {
   const [progress, setProgress] = useState<UserProgress | null>(null);
@@ -39,11 +40,11 @@ export default function HomePage() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl">
-      <div className="mb-8">
-        <h1 className="mb-2 text-4xl font-bold text-gray-900 dark:text-white">PolskiOdZera</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">Learn Polish from Zero</p>
-      </div>
+    <div>
+      <PageHeader
+        title="PolskiOdZera"
+        description="Learn Polish from Zero with focused daily practice."
+      />
 
       <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         <StatCard
@@ -72,8 +73,8 @@ export default function HomePage() {
         />
       </div>
 
-      <div className="mb-8 rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
-        <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-white">Quick Actions</h2>
+      <Card className="mb-8">
+        <SectionTitle title="Quick Actions" description="Jump into your next high-impact study step." />
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
           <ActionButton
             href="/learn"
@@ -102,20 +103,25 @@ export default function HomePage() {
             color="red"
           />
         </div>
-      </div>
+      </Card>
 
-      <div className="rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 p-8 text-white shadow-md">
-        <h2 className="mb-4 text-3xl font-bold">Welcome to PolskiOdZera!</h2>
-        <p className="mb-6 text-lg">
-          Master Polish through structured lessons, adaptive review, and targeted practice. Your journey starts here!
+      <Card className="bg-gradient-to-r from-primary-600 to-primary-700 text-white border-primary-500 shadow-card">
+        <Badge tone="success" className="mb-3 bg-white/15 text-white">
+          Daily Progress
+        </Badge>
+        <h2 className="mb-4 text-3xl font-bold">Welcome back, let&apos;s keep momentum.</h2>
+        <p className="mb-6 text-base sm:text-lg text-white/90">
+          Master Polish through structured lessons, adaptive review, and targeted practice.
         </p>
-        <Link
+        <ButtonLink
           href="/learn"
-          className="inline-block rounded-lg bg-white px-6 py-3 font-semibold text-primary-600 transition-colors hover:bg-gray-100"
+          variant="secondary"
+          size="lg"
+          className="border-white/70 bg-white text-primary-700 hover:bg-white/90"
         >
           Start Learning
-        </Link>
-      </div>
+        </ButtonLink>
+      </Card>
     </div>
   );
 }
@@ -132,18 +138,18 @@ function StatCard({
   color: string;
 }) {
   const colorClasses = {
-    blue: 'bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300',
-    green: 'bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300',
-    purple: 'bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-300',
-    orange: 'bg-orange-100 text-orange-600 dark:bg-orange-900 dark:text-orange-300',
+    blue: 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-200',
+    green: 'bg-accent-100 text-accent-600 dark:bg-emerald-900/40 dark:text-emerald-300',
+    purple: 'bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300',
+    orange: 'bg-warning-100 text-warning-600 dark:bg-amber-900/40 dark:text-amber-300',
   };
 
   return (
-    <div className="rounded-lg bg-white p-6 shadow-md dark:bg-gray-800">
+    <Card>
       <div className={`mb-4 inline-flex rounded-lg p-3 ${colorClasses[color as keyof typeof colorClasses]}`}>{icon}</div>
       <h3 className="mb-1 text-sm font-medium text-gray-600 dark:text-gray-400">{title}</h3>
       <p className="text-2xl font-bold text-gray-900 dark:text-white">{value}</p>
-    </div>
+    </Card>
   );
 }
 
@@ -160,15 +166,15 @@ function ActionButton({
 }) {
   const colorClasses = {
     primary: 'border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20',
-    orange: 'border-orange-500 hover:bg-orange-50 dark:hover:bg-orange-900/20',
-    red: 'border-red-500 hover:bg-red-50 dark:hover:bg-red-900/20',
-    teal: 'border-teal-500 hover:bg-teal-50 dark:hover:bg-teal-900/20',
+    orange: 'border-warning-500 hover:bg-warning-50 dark:hover:bg-amber-900/20',
+    red: 'border-destructive-500 hover:bg-destructive-50 dark:hover:bg-red-900/20',
+    teal: 'border-accent-500 hover:bg-accent-50 dark:hover:bg-emerald-900/20',
   };
 
   return (
     <Link
       href={href}
-      className={`block rounded-lg border-2 p-4 transition-colors ${colorClasses[color as keyof typeof colorClasses]}`}
+      className={`block rounded-card border-2 p-4 transition-colors duration-default ease-subtle cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-900 ${colorClasses[color as keyof typeof colorClasses]}`}
     >
       <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">{title}</h3>
       <p className="text-sm text-gray-600 dark:text-gray-400">{description}</p>

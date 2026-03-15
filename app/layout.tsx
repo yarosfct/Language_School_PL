@@ -21,12 +21,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <TTSInitializer />
-        <div className="flex h-screen bg-gray-50 dark:bg-gray-900">
+        <div className="flex h-screen bg-surface-50 dark:bg-gray-900">
           <Sidebar />
           <div className="flex flex-col flex-1 overflow-hidden">
             <Header />
-            <main className="flex-1 overflow-y-auto p-6">
-              {children}
+            <main className="flex-1 overflow-y-auto px-4 py-6 sm:px-6 lg:px-8">
+              <div className="mx-auto w-full max-w-6xl">
+                {children}
+              </div>
             </main>
           </div>
         </div>
