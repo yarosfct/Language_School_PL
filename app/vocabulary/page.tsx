@@ -1,84 +1,100 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { getAllLessons } from '@/lib/curriculum/loader';
-import { VocabItem } from '@/types/curriculum';
+import { useMemo, useState } from 'react';
 import { BookMarked } from 'lucide-react';
+import { getBookPracticeCards, getBookSections, type BookWordCard } from '@/lib/book/flashcards';
 import { TTSIconButton } from '@/components/ui/TTSButton';
 import { TTSControls } from '@/components/ui/TTSControls';
 import { Badge, Card, PageHeader, Select } from '@/components/ui/primitives';
 
 export default function VocabularyPage() {
-  const [vocabItems, setVocabItems] = useState<VocabItem[]>([]);
-  const [filter, setFilter] = useState<string>('all');
+  const [partOfSpeechFilter, setPartOfSpeechFilter] = useState<string>('all');
+  const [sectionFilter, setSectionFilter] = useState<string>('all');
   const [playingIndex, setPlayingIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    const lessons = getAllLessons();
-    const allVocab = lessons.flatMap(lesson => lesson.vocabularyIntroduced);
-    
-    // Remove duplicates by polish word
-    const uniqueVocab = allVocab.filter((item, index, self) =>
-      index === self.findIndex(v => v.polish === item.polish)
+  const sections = useMemo(() => getBookSections(), []);
+  const vocabItems = useMemo(() => {
+    const words = getBookPracticeCards({ cardType: 'word', includeGenerated: true }).filter(
+      (card): card is BookWordCard => card.type === 'word'
     );
-    
-    setVocabItems(uniqueVocab);
+
+    const byPolish = new Map<string, BookWordCard>();
+    for (const item of words) {
+      if (!byPolish.has(item.polish.toLowerCase())) {
+        byPolish.set(item.polish.toLowerCase(), item);
+      }
+    }
+
+    return [...byPolish.values()];
   }, []);
 
-  const filteredVocab = filter === 'all'
-    ? vocabItems
-    : vocabItems.filter(item => item.partOfSpeech === filter);
+  const partOfSpeechOptions = useMemo(
+    () => ['all', ...new Set(vocabItems.map((item) => item.partOfSpeech))],
+    [vocabItems]
+  );
 
-  const partOfSpeechOptions = ['all', ...new Set(vocabItems.map(v => v.partOfSpeech))];
+  const filteredVocab = useMemo(
+    () =>
+      vocabItems.filter((item) => {
+        const partOk = partOfSpeechFilter === 'all' || item.partOfSpeech === partOfSpeechFilter;
+        const sectionOk = sectionFilter === 'all' || item.sectionId === sectionFilter;
+        return partOk && sectionOk;
+      }),
+    [partOfSpeechFilter, sectionFilter, vocabItems]
+  );
 
   return (
     <div>
       <PageHeader
         title="Vocabulary"
-        description="All words and phrases you've encountered."
-        actions={<Badge tone="success">{vocabItems.length} learned</Badge>}
+        description="Book-driven vocabulary with section and part-of-speech filtering."
+        actions={<Badge tone="success">{vocabItems.length} unique terms</Badge>}
       />
 
-      {/* Stats */}
       <Card className="mb-8">
         <div className="flex items-center gap-4">
-          <div className="p-3 bg-primary-100 dark:bg-primary-900/30 rounded-lg">
-            <BookMarked className="w-8 h-8 text-primary-600 dark:text-primary-400" />
+          <div className="rounded-lg bg-primary-100 p-3 dark:bg-primary-900/30">
+            <BookMarked className="h-8 w-8 text-primary-600 dark:text-primary-400" />
           </div>
           <div>
-            <p className="text-4xl font-bold text-gray-900 dark:text-white">
-              {vocabItems.length}
-            </p>
-            <p className="text-gray-600 dark:text-gray-400">
-              words learned
-            </p>
+            <p className="text-4xl font-bold text-gray-900 dark:text-white">{filteredVocab.length}</p>
+            <p className="text-gray-600 dark:text-gray-400">matching words and expressions</p>
           </div>
         </div>
       </Card>
 
-      {/* Filter and Play All */}
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
         <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Filter by part of speech:
-          </label>
+          <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">Filter by part of speech:</label>
           <Select
-            value={filter}
-            onChange={(e) => setFilter(e.target.value)}
-            className="px-4 py-2 min-w-44"
+            value={partOfSpeechFilter}
+            onChange={(e) => setPartOfSpeechFilter(e.target.value)}
+            className="min-w-44 px-4 py-2"
           >
-            {partOfSpeechOptions.map(option => (
+            {partOfSpeechOptions.map((option) => (
               <option key={option} value={option}>
-                {option === 'all' ? 'All' : option}
+                {option === 'all' ? 'All types' : option}
               </option>
             ))}
           </Select>
         </div>
-        
+
+        <div>
+          <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">Filter by section:</label>
+          <Select value={sectionFilter} onChange={(e) => setSectionFilter(e.target.value)} className="min-w-44 px-4 py-2">
+            <option value="all">All sections</option>
+            {sections.map((section) => (
+              <option key={section.id} value={section.id}>
+                {section.label}
+              </option>
+            ))}
+          </Select>
+        </div>
+
         {filteredVocab.length > 0 && (
-          <div>
-            <TTSControls 
-              text={filteredVocab.map(v => v.polish).join('. ')}
+          <div className="flex items-end">
+            <TTSControls
+              text={filteredVocab.map((v) => v.polish).join('. ')}
               showSlowToggle={true}
               showReplayButton={false}
               showLoopToggle={true}
@@ -87,58 +103,41 @@ export default function VocabularyPage() {
         )}
       </div>
 
-      {/* Vocabulary list */}
       <Card className="overflow-hidden p-0">
         <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-900/50">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Polish
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                English
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Type
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Gender
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Audio
-              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">Polish</th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">English</th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">Type</th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">Section</th>
+              <th className="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500 dark:text-gray-400">Audio</th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+          <tbody className="divide-y divide-gray-200 bg-white dark:divide-gray-700 dark:bg-gray-800">
             {filteredVocab.map((item, idx) => {
               const isPlaying = playingIndex === idx;
               return (
-                <tr 
-                  key={idx} 
-                  className={`hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors ${
+                <tr
+                  key={item.id}
+                  className={`transition-colors hover:bg-gray-50 dark:hover:bg-gray-700/50 ${
                     isPlaying ? 'bg-primary-50 dark:bg-primary-900/20' : ''
                   }`}
                 >
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm font-semibold text-gray-900 dark:text-white">
-                      {item.polish}
-                    </div>
+                  <td className="whitespace-nowrap px-6 py-4">
+                    <div className="text-sm font-semibold text-gray-900 dark:text-white">{item.polish}</div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
-                      {item.english}
-                    </div>
+                  <td className="px-6 py-4">
+                    <div className="text-sm text-gray-600 dark:text-gray-400">{item.english.join(', ')}</div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <span className="px-2 py-1 text-xs font-medium bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded">
+                  <td className="whitespace-nowrap px-6 py-4">
+                    <span className="rounded bg-primary-100 px-2 py-1 text-xs font-medium text-primary-700 dark:bg-primary-900/30 dark:text-primary-300">
                       {item.partOfSpeech}
                     </span>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-400">
-                    {item.gender || '-'}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <TTSIconButton 
+                  <td className="px-6 py-4 text-sm text-gray-600 dark:text-gray-400">{item.topicEn}</td>
+                  <td className="whitespace-nowrap px-6 py-4">
+                    <TTSIconButton
                       text={item.polish}
                       onStart={() => setPlayingIndex(idx)}
                       onEnd={() => setPlayingIndex(null)}

@@ -1,4 +1,4 @@
-import type { BookSectionOption, BookWordCard } from '@/lib/book/flashcards';
+import type { BookSectionOption, BookSentenceCard, BookWordCard } from '@/lib/book/flashcards';
 import { getBookPracticeCards, getBookSections } from '@/lib/book/flashcards';
 import { evaluateTypedAnswer } from '@/lib/exercises/evaluators';
 import { shuffle } from '@/lib/utils/string';
@@ -7,12 +7,14 @@ import type {
   CustomFlashcardSet,
   FlashcardLimitType,
   FlashcardPracticeCard,
+  FlashcardPracticeType,
   FlashcardSessionMode,
 } from '@/types/flashcards';
 import type { TypedAnswerData } from '@/types/curriculum';
 
 export interface FlashcardSessionConfig {
   mode: FlashcardSessionMode;
+  practiceType: FlashcardPracticeType;
   topicId?: string;
   customSetId?: string;
   limitType: FlashcardLimitType;
@@ -31,6 +33,17 @@ interface WordCardWithSection extends BookWordCard {
   type: 'word';
 }
 
+const SUBJECT_PRONOUNS = ['ja', 'ty', 'on', 'ona', 'ono', 'my', 'wy', 'oni', 'one'] as const;
+const ENGLISH_SUBJECT_TO_PRONOUN: Record<string, string[]> = {
+  i: ['ja'],
+  you: ['ty'],
+  he: ['on'],
+  she: ['ona'],
+  it: ['ono'],
+  we: ['my'],
+  they: ['oni', 'one'],
+};
+
 const allBookSections = getBookSections();
 const allBookWordCards = getBookPracticeCards({ cardType: 'word', includeGenerated: false }).filter(
   isWordCard
@@ -40,12 +53,19 @@ export function getFlashcardTopics(): BookSectionOption[] {
   return allBookSections;
 }
 
-export function getAllBookFlashcards(): FlashcardPracticeCard[] {
+export function getAllBookFlashcards(practiceType: FlashcardPracticeType = 'mixed'): FlashcardPracticeCard[] {
+  if (practiceType === 'conjugation') {
+    return getConjugationFlashcards();
+  }
+
   const sectionById = new Map(allBookSections.map((section) => [section.id, section]));
   const genderByCardId = buildGenderByCardId(allBookWordCards);
   const promptGroups = buildPromptGroups(allBookWordCards);
+  const verbOnly = practiceType === 'verbs';
 
-  return allBookWordCards.map((card) => {
+  return allBookWordCards
+    .filter((card) => (verbOnly ? isVerbCard(card) : true))
+    .map((card) => {
     const section = sectionById.get(card.sectionId);
     const basePrompt = card.english[0] ?? card.polish;
     const groupKey = `${card.sectionId}|${normalizePromptKey(basePrompt)}`;
@@ -64,11 +84,11 @@ export function getAllBookFlashcards(): FlashcardPracticeCard[] {
       topicId: card.sectionId,
       topicLabel: section?.label ?? card.topicEn,
     };
-  });
+    });
 }
 
-export function getTopicFlashcards(topicId: string): FlashcardPracticeCard[] {
-  return getAllBookFlashcards().filter((card) => card.topicId === topicId);
+export function getTopicFlashcards(topicId: string, practiceType: FlashcardPracticeType = 'mixed'): FlashcardPracticeCard[] {
+  return getAllBookFlashcards(practiceType).filter((card) => card.topicId === topicId);
 }
 
 export function mapCustomSetToPracticeCards(set: CustomFlashcardSet): FlashcardPracticeCard[] {
@@ -234,4 +254,70 @@ function inferGender(card: WordCardWithSection): 'masculine' | 'feminine' | unde
   }
 
   return 'masculine';
+}
+
+function getConjugationFlashcards(): FlashcardPracticeCard[] {
+  const sentenceCards = getBookPracticeCards({ cardType: 'sentence', includeGenerated: false }).filter(
+    (card): card is BookSentenceCard => card.type === 'sentence'
+  );
+  const sectionById = new Map(allBookSections.map((section) => [section.id, section]));
+
+  return sentenceCards
+    .filter((card) => isLikelyConjugationCard(card.promptEn, card.answerPl))
+    .map((card) => {
+      const section = sectionById.get(card.sectionId);
+      return {
+        id: `book-conjugation-${card.id}`,
+        source: 'book',
+        prompt: card.promptEn,
+        answer: card.answerPl,
+        acceptedAnswers: buildConjugationAcceptedAnswers(card.promptEn, card.answerPl, card.acceptedAnswers),
+        topicId: card.sectionId,
+        topicLabel: section?.label ?? card.topicEn,
+      };
+    });
+}
+
+function isVerbCard(card: WordCardWithSection): boolean {
+  return card.partOfSpeech.toLowerCase().includes('verb');
+}
+
+function buildConjugationAcceptedAnswers(promptEn: string, answerPl: string, acceptedAnswers: string[]): string[] {
+  const variants = new Set<string>();
+
+  for (const candidate of [answerPl, ...acceptedAnswers]) {
+    for (const variant of buildAcceptedAnswers(candidate)) {
+      variants.add(variant);
+    }
+
+    const words = normalizeSpacing(candidate).split(' ');
+    if (words.length > 1 && isSubjectPronoun(words[0])) {
+      variants.add(normalizeSpacing(words.slice(1).join(' ')));
+    }
+  }
+
+  const englishStart = normalizeSpacing(promptEn).toLowerCase().split(' ')[0];
+  const mappedPronouns = ENGLISH_SUBJECT_TO_PRONOUN[englishStart] ?? [];
+  if (mappedPronouns.length > 0) {
+    for (const pronoun of mappedPronouns) {
+      variants.add(normalizeSpacing(`${pronoun} ${answerPl}`));
+    }
+  }
+
+  return [...variants];
+}
+
+function isLikelyConjugationCard(promptEn: string, answerPl: string): boolean {
+  const english = promptEn.toLowerCase();
+  const polish = answerPl.toLowerCase();
+
+  const progressiveOrCopula = /\b(am|is|are|was|were)\b\s+\w+/.test(english) || /\bto\b\s+\w+/.test(english);
+  const startsWithPronoun = SUBJECT_PRONOUNS.some((pronoun) => polish.startsWith(`${pronoun} `));
+  const singleVerbLikeWord = /^[a-ząćęłńóśźż]+$/i.test(polish);
+
+  return progressiveOrCopula || startsWithPronoun || singleVerbLikeWord;
+}
+
+function isSubjectPronoun(value: string): boolean {
+  return SUBJECT_PRONOUNS.includes(value.toLowerCase() as (typeof SUBJECT_PRONOUNS)[number]);
 }

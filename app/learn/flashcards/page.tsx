@@ -11,7 +11,12 @@ import {
 } from '@/lib/db';
 import { getFlashcardTopics } from '@/lib/flashcards/practice';
 import { generateId } from '@/lib/utils/string';
-import type { CustomFlashcardSet, FlashcardLimitType, FlashcardSessionMode } from '@/types/flashcards';
+import type {
+  CustomFlashcardSet,
+  FlashcardLimitType,
+  FlashcardPracticeType,
+  FlashcardSessionMode,
+} from '@/types/flashcards';
 
 interface DraftCustomCard {
   id: string;
@@ -28,6 +33,7 @@ export default function LearnFlashcardsPage() {
   const [targetCount, setTargetCount] = useState(20);
   const [timeLimitMinutes, setTimeLimitMinutes] = useState(10);
   const [topicId, setTopicId] = useState<string>('');
+  const [practiceType, setPracticeType] = useState<FlashcardPracticeType>('mixed');
   const [customSetId, setCustomSetId] = useState<string>('');
   const [customSets, setCustomSets] = useState<CustomFlashcardSet[]>([]);
   const [isSavingSet, setIsSavingSet] = useState(false);
@@ -182,6 +188,7 @@ export default function LearnFlashcardsPage() {
     const params = new URLSearchParams();
     params.set('mode', mode);
     params.set('limitType', limitType);
+    params.set('practiceType', practiceType);
 
     if (limitType === 'count') {
       params.set('count', String(Math.max(1, targetCount)));
@@ -264,6 +271,24 @@ export default function LearnFlashcardsPage() {
                 </option>
               ))}
             </select>
+          </div>
+        )}
+
+        {TOPIC_MODES.includes(mode) && (
+          <div className="mt-4">
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Practice focus</label>
+            <select
+              value={practiceType}
+              onChange={(event) => setPracticeType(event.target.value as FlashcardPracticeType)}
+              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
+            >
+              <option value="mixed">Mixed vocabulary (default)</option>
+              <option value="verbs">Verbs only (infinitives + verb cards)</option>
+              <option value="conjugation">Conjugation style (sentence cards)</option>
+            </select>
+            <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+              Conjugation mode accepts answers with or without subject pronouns when natural (for example: &quot;pracuję&quot; and &quot;ja pracuję&quot;).
+            </p>
           </div>
         )}
 
