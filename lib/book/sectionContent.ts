@@ -37,7 +37,8 @@ export interface SectionWordInsight {
     | 'static-global-override'
     | 'local-section-override'
     | 'local-global-override'
-    | 'fallback';
+    | 'fallback'
+    | 'context-heuristic';
 }
 
 interface RawBookData {

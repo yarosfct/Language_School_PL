@@ -69,7 +69,7 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
   const tokens = useMemo<AnswerToken[]>(() => {
     return tokenizeAnswerText(text).map((token) => ({
       ...token,
-      insight: token.isWord ? resolveInsight(sectionId, token.value, overrideLookup) : null,
+      insight: token.isWord ? resolveInsight(sectionId, text, token.value, overrideLookup) : null,
     }));
   }, [overrideLookup, sectionId, text]);
 
@@ -482,7 +482,7 @@ function getProviderLabel(provider: LookupState['provider']): string {
   }
 
   if (provider === 'context-heuristic') {
-    return 'context rule';
+    return 'context-aware rule';
   }
 
   return 'translation provider';
@@ -490,6 +490,7 @@ function getProviderLabel(provider: LookupState['provider']): string {
 
 function resolveInsight(
   sectionId: string,
+  sentenceText: string,
   tokenValue: string,
   overrideLookup: {
     sectionMap: Map<string, UserWordOverride>;
@@ -507,7 +508,40 @@ function resolveInsight(
     return toInsightFromOverride(tokenValue, globalOverride);
   }
 
-  return getWordInsightForToken(sectionId, tokenValue);
+  const baseInsight = getWordInsightForToken(sectionId, tokenValue);
+  if (!baseInsight) {
+    return null;
+  }
+
+  return applyContextualInsightOverride(baseInsight, sentenceText, tokenValue);
+}
+
+
+function applyContextualInsightOverride(
+  insight: SectionWordInsight,
+  sentenceText: string,
+  tokenValue: string
+): SectionWordInsight {
+  const normalizedToken = normalizeToken(tokenValue);
+  const normalizedSentence = normalizeToken(sentenceText);
+
+  if (!normalizedSentence) {
+    return insight;
+  }
+
+  const isAgeExpression = /\b(?:mam|masz|ma|mamy|macie|maja)\s+\d+\s+lat(?:a)?\b/u.test(normalizedSentence);
+  if (isAgeExpression && (normalizedToken == 'lat' || normalizedToken == 'lata')) {
+    return {
+      ...insight,
+      polish: tokenValue,
+      english: ['years'],
+      partOfSpeech: 'noun',
+      isFallback: false,
+      source: 'context-heuristic',
+    };
+  }
+
+  return insight;
 }
 
 function toInsightFromOverride(tokenValue: string, override: UserWordOverride): SectionWordInsight {
@@ -578,6 +612,8 @@ function getSourceLabel(source: SectionWordInsight['source']): string {
       return 'local';
     case 'fallback':
       return 'fallback';
+    case 'context-heuristic':
+      return 'context';
     default:
       return 'unknown';
   }
@@ -596,6 +632,8 @@ function getSourceBadgeClasses(source: SectionWordInsight['source']): string {
       return 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300';
     case 'fallback':
       return 'bg-amber-500/15 text-amber-700 dark:text-amber-300';
+    case 'context-heuristic':
+      return 'bg-cyan-500/15 text-cyan-700 dark:text-cyan-300';
     default:
       return 'bg-gray-500/15 text-gray-700 dark:text-gray-300';
   }
