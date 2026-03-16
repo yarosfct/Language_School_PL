@@ -13,5 +13,5 @@ export interface UserWordOverride {
 
 export interface TranslationLookupResponse {
   translation: string;
-  provider: 'mymemory' | 'libretranslate';
+  provider: 'mymemory' | 'libretranslate' | 'context-heuristic';
 }

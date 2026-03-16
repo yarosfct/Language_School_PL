@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from 'react';
 import { getWordInsightForToken, type SectionWordInsight } from '@/lib/book/sectionContent';
 import { getAllCustomFlashcardSets, getAllUserWordOverrides, saveCustomFlashcardSet, saveUserWordOverride } from '@/lib/db';
 import { generateId } from '@/lib/utils/string';
@@ -25,6 +25,11 @@ interface LookupState {
   error?: string;
 }
 
+interface TokenRange {
+  start: number;
+  end: number;
+}
+
 export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerTextProps) {
   const [customSets, setCustomSets] = useState<CustomFlashcardSet[]>([]);
   const [userWordOverrides, setUserWordOverrides] = useState<UserWordOverride[]>([]);
@@ -34,6 +39,10 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
   const [savedTokenId, setSavedTokenId] = useState<string | null>(null);
   const [lookupStates, setLookupStates] = useState<Record<string, LookupState>>({});
   const [translationDrafts, setTranslationDrafts] = useState<Record<string, string>>({});
+  const [phraseAnchorIndex, setPhraseAnchorIndex] = useState<number | null>(null);
+  const [phraseRange, setPhraseRange] = useState<TokenRange | null>(null);
+  const [isSavingPhrase, setIsSavingPhrase] = useState(false);
+  const [savedPhraseKey, setSavedPhraseKey] = useState<string | null>(null);
   const rootRef = useRef<HTMLSpanElement>(null);
 
   const overrideLookup = useMemo(() => {
@@ -64,6 +73,40 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
     }));
   }, [overrideLookup, sectionId, text]);
 
+  const phraseSelection = useMemo(() => {
+    if (!phraseRange) {
+      return null;
+    }
+
+    const orderedRange: TokenRange = {
+      start: Math.min(phraseRange.start, phraseRange.end),
+      end: Math.max(phraseRange.start, phraseRange.end),
+    };
+
+    const selectedTokenEntries = tokens
+      .map((token, index) => ({ token, index }))
+      .filter((entry) => entry.index >= orderedRange.start && entry.index <= orderedRange.end);
+
+    const selectedWords = selectedTokenEntries.filter((entry) => entry.token.isWord && entry.token.insight);
+    if (selectedWords.length < 2) {
+      return null;
+    }
+
+    const polish = selectedTokenEntries.map((entry) => entry.token.value).join('').replace(/\s+/g, ' ').trim();
+    if (!polish) {
+      return null;
+    }
+
+    const english = buildPhrasePrompt(selectedWords.map((entry) => entry.token.insight as SectionWordInsight), polish);
+
+    return {
+      ...orderedRange,
+      polish,
+      english,
+      key: `${orderedRange.start}-${orderedRange.end}`,
+    };
+  }, [phraseRange, tokens]);
+
   useEffect(() => {
     async function loadLocalData() {
       const [sets, overrides] = await Promise.all([getAllCustomFlashcardSets(), getAllUserWordOverrides()]);
@@ -80,6 +123,9 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
     setSavedTokenId(null);
     setLookupStates({});
     setTranslationDrafts({});
+    setPhraseAnchorIndex(null);
+    setPhraseRange(null);
+    setSavedPhraseKey(null);
   }, [text, sectionId]);
 
   useEffect(() => {
@@ -137,6 +183,65 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
     }
   }
 
+  async function addPhraseToFlashcardSet() {
+    if (!phraseSelection || !selectedSetId) {
+      return;
+    }
+
+    const targetSet = customSets.find((set) => set.id === selectedSetId);
+    if (!targetSet) {
+      return;
+    }
+
+    const normalizedPhrase = normalizeToken(phraseSelection.polish);
+    const alreadyExists = targetSet.cards.some((card) => normalizeToken(card.answer) === normalizedPhrase);
+    if (alreadyExists) {
+      setSavedPhraseKey(phraseSelection.key);
+      return;
+    }
+
+    setIsSavingPhrase(true);
+
+    try {
+      const updatedSet: CustomFlashcardSet = {
+        ...targetSet,
+        cards: [
+          ...targetSet.cards,
+          {
+            id: generateId(),
+            prompt: phraseSelection.english,
+            answer: phraseSelection.polish,
+            createdAt: Date.now(),
+          },
+        ],
+        updatedAt: Date.now(),
+      };
+
+      await saveCustomFlashcardSet(updatedSet);
+      const refreshedSets = await getAllCustomFlashcardSets();
+      setCustomSets(refreshedSets);
+      setSavedPhraseKey(phraseSelection.key);
+    } finally {
+      setIsSavingPhrase(false);
+    }
+  }
+
+  function handleTokenClick(event: MouseEvent<HTMLButtonElement>, tokenId: string, tokenIndex: number) {
+    if (event.shiftKey && phraseAnchorIndex !== null) {
+      setPhraseRange({
+        start: Math.min(phraseAnchorIndex, tokenIndex),
+        end: Math.max(phraseAnchorIndex, tokenIndex),
+      });
+      setActiveTokenId(tokenId);
+      return;
+    }
+
+    setPhraseAnchorIndex(tokenIndex);
+    setPhraseRange(null);
+    setSavedPhraseKey(null);
+    setActiveTokenId((current) => (current === tokenId ? null : tokenId));
+  }
+
   async function fetchTranslation(tokenId: string, tokenValue: string) {
     setLookupStates((current) => ({
       ...current,
@@ -155,6 +260,7 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
           text: tokenValue,
           sourceLang: 'pl',
           targetLang: 'en',
+          contextText: text,
         }),
       });
 
@@ -228,31 +334,33 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
           return <span key={`${token.value}-${index}`}>{token.value}</span>;
         }
 
+        const insight = token.insight;
         const tokenId = `${token.value}-${index}`;
         const isOpen = activeTokenId === tokenId;
         const lookupState = lookupStates[tokenId];
         const draftTranslation = translationDrafts[tokenId] ?? '';
-        const missingTranslation = isInsightMissing(token.insight);
+        const missingTranslation = isInsightMissing(insight);
+        const isInPhraseSelection = isTokenInsideRange(index, phraseSelection);
 
         return (
           <span key={tokenId} className="relative inline-block">
             <button
               type="button"
-              onClick={() => setActiveTokenId((current) => (current === tokenId ? null : tokenId))}
-              className="inline-block rounded-sm px-0.5 text-current transition duration-150 hover:-translate-y-0.5 hover:opacity-80 focus:outline-none focus-visible:opacity-80"
+              onClick={(event) => handleTokenClick(event, tokenId, index)}
+              className={`inline-block rounded-sm px-0.5 text-current transition duration-150 hover:-translate-y-0.5 hover:opacity-80 focus:outline-none focus-visible:opacity-80 ${
+                isInPhraseSelection ? 'bg-cyan-500/20' : ''
+              }`}
             >
               {token.value}
             </button>
             {isOpen && (
               <span className="absolute left-1/2 top-full z-30 mt-2 inline-block w-72 -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-3 text-left align-top shadow-xl dark:border-gray-700 dark:bg-gray-900">
-                <span className="block text-sm font-semibold text-gray-900 dark:text-white">{token.insight.polish}</span>
-                <span className="mt-1 block text-sm text-gray-600 dark:text-gray-300">
-                  {token.insight.english.join(', ')}
-                </span>
+                <span className="block text-sm font-semibold text-gray-900 dark:text-white">{insight.polish}</span>
+                <span className="mt-1 block text-sm text-gray-600 dark:text-gray-300">{insight.english.join(', ')}</span>
                 <span className="mt-1 flex flex-wrap items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                  <span>{token.insight.partOfSpeech}</span>
-                  <span className={`rounded-full px-2 py-0.5 font-medium ${getSourceBadgeClasses(token.insight.source)}`}>
-                    {getSourceLabel(token.insight.source)}
+                  <span>{insight.partOfSpeech}</span>
+                  <span className={`rounded-full px-2 py-0.5 font-medium ${getSourceBadgeClasses(insight.source)}`}>
+                    {getSourceLabel(insight.source)}
                   </span>
                 </span>
 
@@ -281,7 +389,7 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
                         </button>
                         {lookupState.provider && (
                           <span className="block text-[11px] text-gray-500 dark:text-gray-400">
-                            Suggested by {lookupState.provider === 'mymemory' ? 'MyMemory' : 'LibreTranslate'}
+                            Suggested by {getProviderLabel(lookupState.provider)}
                           </span>
                         )}
                       </>
@@ -315,17 +423,39 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
                         </option>
                       ))}
                     </select>
+
+                    {phraseSelection ? (
+                      <span className="block rounded-lg border border-cyan-400/40 bg-cyan-500/10 p-2 text-xs text-cyan-800 dark:text-cyan-200">
+                        Phrase selected: <strong>{phraseSelection.polish}</strong>
+                      </span>
+                    ) : (
+                      <span className="block text-xs text-gray-500 dark:text-gray-400">
+                        Tip: Shift+click another nearby word to select a phrase.
+                      </span>
+                    )}
+
+                    {phraseSelection && (
+                      <button
+                        type="button"
+                        onClick={() => void addPhraseToFlashcardSet()}
+                        disabled={isSavingPhrase}
+                        className="w-full rounded-lg border border-cyan-400 bg-cyan-500/10 px-3 py-2 text-sm font-semibold text-cyan-700 hover:bg-cyan-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:text-cyan-300"
+                      >
+                        {isSavingPhrase
+                          ? 'Adding phrase...'
+                          : savedPhraseKey === phraseSelection.key
+                          ? 'Phrase Added'
+                          : 'Add Selected Phrase'}
+                      </button>
+                    )}
+
                     <button
                       type="button"
-                      onClick={() => void addInsightToFlashcardSet(token.insight)}
-                      disabled={savingTokenId === token.insight.token}
+                      onClick={() => void addInsightToFlashcardSet(insight)}
+                      disabled={savingTokenId === insight.token}
                       className="w-full rounded-lg bg-cyan-600 px-3 py-2 text-sm font-semibold text-white hover:bg-cyan-700 disabled:cursor-not-allowed disabled:opacity-60"
                     >
-                      {savingTokenId === token.insight.token
-                        ? 'Adding...'
-                        : savedTokenId === token.insight.token
-                        ? 'Added'
-                        : 'Add to Flashcard Set'}
+                      {savingTokenId === insight.token ? 'Adding...' : savedTokenId === insight.token ? 'Added' : 'Add Word'}
                     </button>
                   </span>
                 ) : (
@@ -340,6 +470,22 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
       })}
     </span>
   );
+}
+
+function getProviderLabel(provider: LookupState['provider']): string {
+  if (provider === 'mymemory') {
+    return 'MyMemory';
+  }
+
+  if (provider === 'libretranslate') {
+    return 'LibreTranslate';
+  }
+
+  if (provider === 'context-heuristic') {
+    return 'context rule';
+  }
+
+  return 'translation provider';
 }
 
 function resolveInsight(
@@ -396,6 +542,26 @@ function normalizeToken(value: string): string {
     .replace(/[^\p{L}\p{N}\s]/gu, '')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function buildPhrasePrompt(insights: SectionWordInsight[], phrasePolish: string): string {
+  const englishWords = insights
+    .map((insight) => insight.english[0]?.trim())
+    .filter((word): word is string => Boolean(word) && word !== 'Translation not found yet');
+
+  if (englishWords.length > 0) {
+    return englishWords.join(' ');
+  }
+
+  return `Translate: ${phrasePolish}`;
+}
+
+function isTokenInsideRange(index: number, range: TokenRange | null): boolean {
+  if (!range) {
+    return false;
+  }
+
+  return index >= range.start && index <= range.end;
 }
 
 function getSourceLabel(source: SectionWordInsight['source']): string {
