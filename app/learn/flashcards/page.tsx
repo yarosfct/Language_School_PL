@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { BookOpenText, Clock3, ListChecks, Pencil, Plus, Sparkles, Trash2 } from 'lucide-react';
+import { BookOpenText, ChevronDown, ChevronLeft, ChevronRight, Clock3, ListChecks, Pencil, Plus, Sparkles, Trash2 } from 'lucide-react';
 import {
   deleteCustomFlashcardSet,
   getAllCustomFlashcardSets,
@@ -25,6 +25,10 @@ interface DraftCustomCard {
 }
 
 const TOPIC_MODES: FlashcardSessionMode[] = ['topic', 'random', 'custom'];
+const PRACTICE_TYPE_LABELS: Record<FlashcardPracticeType, string> = {
+  vocabulary: 'Vocabulary',
+  sentences: 'Sentences',
+};
 
 export default function LearnFlashcardsPage() {
   const router = useRouter();
@@ -33,7 +37,7 @@ export default function LearnFlashcardsPage() {
   const [targetCount, setTargetCount] = useState(20);
   const [timeLimitMinutes, setTimeLimitMinutes] = useState(10);
   const [topicId, setTopicId] = useState<string>('');
-  const [practiceType, setPracticeType] = useState<FlashcardPracticeType>('mixed');
+  const [practiceType, setPracticeType] = useState<FlashcardPracticeType>('vocabulary');
   const [customSetId, setCustomSetId] = useState<string>('');
   const [customSets, setCustomSets] = useState<CustomFlashcardSet[]>([]);
   const [isSavingSet, setIsSavingSet] = useState(false);
@@ -47,6 +51,18 @@ export default function LearnFlashcardsPage() {
   ]);
 
   const topics = useMemo(() => getFlashcardTopics(), []);
+  const currentTopicIndex = useMemo(
+    () => topics.findIndex((topic) => topic.id === topicId),
+    [topicId, topics]
+  );
+  const topicOptions = useMemo(
+    () =>
+      topics.map((topic) => ({
+        value: topic.id,
+        label: topic.label,
+      })),
+    [topics]
+  );
 
   useEffect(() => {
     async function load() {
@@ -179,6 +195,19 @@ export default function LearnFlashcardsPage() {
     await refreshCustomSets();
   }
 
+  function moveTopic(direction: 'previous' | 'next') {
+    if (topics.length === 0) {
+      return;
+    }
+
+    const safeIndex = currentTopicIndex >= 0 ? currentTopicIndex : 0;
+    const nextIndex = direction === 'previous' ? safeIndex - 1 : safeIndex + 1;
+    if (nextIndex < 0 || nextIndex >= topics.length) {
+      return;
+    }
+    setTopicId(topics[nextIndex].id);
+  }
+
   function startSession() {
     if (mode === 'difficulty') {
       alert('Difficulty mode is a placeholder for now.');
@@ -257,37 +286,55 @@ export default function LearnFlashcardsPage() {
           />
         </div>
 
-        {mode === 'topic' && (
-          <div className="mt-4">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Topic</label>
-            <select
-              value={topicId}
-              onChange={(event) => setTopicId(event.target.value)}
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
-            >
-              {topics.map((topic) => (
-                <option key={topic.id} value={topic.id}>
-                  {topic.label}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-
         {TOPIC_MODES.includes(mode) && (
-          <div className="mt-4">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Practice focus</label>
-            <select
-              value={practiceType}
-              onChange={(event) => setPracticeType(event.target.value as FlashcardPracticeType)}
-              className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
-            >
-              <option value="mixed">Mixed vocabulary (default)</option>
-              <option value="verbs">Verbs only (infinitives + verb cards)</option>
-              <option value="conjugation">Conjugation style (sentence cards)</option>
-            </select>
+          <div className="mt-4 rounded-2xl border border-gray-200 bg-gray-50/80 p-3 dark:border-gray-700 dark:bg-gray-900/40">
+            <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2">
+              {mode === 'topic' && (
+                <CompactNavigator
+                  label="Section"
+                  value={topics[currentTopicIndex]?.label ?? topics[0]?.label ?? 'Choose section'}
+                  onPrevious={() => moveTopic('previous')}
+                  onNext={() => moveTopic('next')}
+                  canGoPrevious={currentTopicIndex > 0}
+                  canGoNext={currentTopicIndex >= 0 && currentTopicIndex < topics.length - 1}
+                  options={topicOptions}
+                  selectedValue={topicId}
+                  onSelectValue={setTopicId}
+                />
+              )}
+              <div className="rounded-xl border border-gray-200/90 bg-white p-2 dark:border-gray-700 dark:bg-gray-800/90">
+                <p className="px-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">
+                  Practice
+                </p>
+                <div className="mt-1 grid grid-cols-2 rounded-lg border border-gray-200 bg-white p-1 dark:border-gray-700 dark:bg-gray-800/90">
+                  <button
+                    type="button"
+                    onClick={() => setPracticeType('vocabulary')}
+                    className={`rounded-md px-3 py-1.5 text-sm font-semibold transition-colors duration-200 motion-reduce:transition-none ${
+                      practiceType === 'vocabulary'
+                        ? 'bg-cyan-600 text-white'
+                        : 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700'
+                    }`}
+                  >
+                    {PRACTICE_TYPE_LABELS.vocabulary}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setPracticeType('sentences')}
+                    className={`rounded-md px-3 py-1.5 text-sm font-semibold transition-colors duration-200 motion-reduce:transition-none ${
+                      practiceType === 'sentences'
+                        ? 'bg-cyan-600 text-white'
+                        : 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700'
+                    }`}
+                  >
+                    {PRACTICE_TYPE_LABELS.sentences}
+                  </button>
+                </div>
+              </div>
+            </div>
             <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-              Conjugation mode accepts answers with or without subject pronouns when natural (for example: &quot;pracuję&quot; and &quot;ja pracuję&quot;).
+              Vocabulary mode uses entries from each section&apos;s <code>vocabulary</code>. Sentences mode uses each
+              section&apos;s sentence pairs.
             </p>
           </div>
         )}
@@ -542,6 +589,130 @@ function ModeButton({
       </div>
       <p className="text-sm text-gray-600 dark:text-gray-300">{description}</p>
     </button>
+  );
+}
+
+function CompactNavigator({
+  label,
+  value,
+  onPrevious,
+  onNext,
+  canGoPrevious,
+  canGoNext,
+  options,
+  selectedValue,
+  onSelectValue,
+}: {
+  label: string;
+  value: string;
+  onPrevious: () => void;
+  onNext: () => void;
+  canGoPrevious: boolean;
+  canGoNext: boolean;
+  options?: Array<{ value: string; label: string; disabled?: boolean }>;
+  selectedValue?: string;
+  onSelectValue?: (value: string) => void;
+}) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!menuOpen) {
+      return;
+    }
+
+    function handleOutsideClick(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleOutsideClick);
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [menuOpen]);
+
+  const isSelectable = !!options && !!onSelectValue;
+
+  return (
+    <div className="rounded-xl border border-gray-200/90 bg-white p-2 dark:border-gray-700 dark:bg-gray-800/90">
+      <p className="px-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">{label}</p>
+      <div className="mt-1 grid grid-cols-[auto,1fr,auto] items-center gap-1 rounded-lg border border-gray-200 bg-white px-1 py-1 dark:border-gray-700 dark:bg-gray-800/90">
+        <button
+          type="button"
+          onClick={onPrevious}
+          disabled={!canGoPrevious}
+          className="inline-flex h-7 w-7 items-center justify-center rounded-md text-gray-600 transition-colors duration-200 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:text-gray-300 dark:hover:bg-gray-700 motion-reduce:transition-none"
+          aria-label={`Previous ${label.toLowerCase()}`}
+        >
+          <ChevronLeft className="h-3.5 w-3.5" />
+        </button>
+
+        {isSelectable ? (
+          <div className="relative" ref={menuRef}>
+            <button
+              type="button"
+              onClick={() => setMenuOpen((current) => !current)}
+              className="inline-flex w-full items-center justify-center gap-1 truncate rounded-md px-1 py-1 text-center text-sm font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-white dark:hover:bg-gray-700 motion-reduce:transition-none"
+              aria-expanded={menuOpen}
+              aria-label={`Select ${label.toLowerCase()}`}
+            >
+              <span className="truncate">{value}</span>
+              <ChevronDown className="h-3.5 w-3.5 shrink-0 text-gray-500 dark:text-gray-300" />
+            </button>
+            {menuOpen && (
+              <div className="absolute left-0 right-0 top-[calc(100%+0.25rem)] z-40 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                <ul className="max-h-56 overflow-auto py-1">
+                  {options.map((option) => (
+                    <li key={option.value}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (option.disabled) {
+                            return;
+                          }
+                          onSelectValue(option.value);
+                          setMenuOpen(false);
+                        }}
+                        disabled={option.disabled}
+                        className={`w-full px-3 py-2 text-left text-sm transition-colors duration-200 motion-reduce:transition-none ${
+                          option.value === selectedValue
+                            ? 'bg-cyan-50 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-200'
+                            : 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700'
+                        } disabled:cursor-not-allowed disabled:opacity-45`}
+                      >
+                        {option.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ) : (
+          <span className="truncate px-1 text-center text-sm font-semibold text-gray-900 dark:text-white">{value}</span>
+        )}
+
+        <button
+          type="button"
+          onClick={onNext}
+          disabled={!canGoNext}
+          className="inline-flex h-7 w-7 items-center justify-center rounded-md text-gray-600 transition-colors duration-200 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:text-gray-300 dark:hover:bg-gray-700 motion-reduce:transition-none"
+          aria-label={`Next ${label.toLowerCase()}`}
+        >
+          <ChevronRight className="h-3.5 w-3.5" />
+        </button>
+      </div>
+    </div>
   );
 }
 

@@ -43,52 +43,35 @@ const ENGLISH_SUBJECT_TO_PRONOUN: Record<string, string[]> = {
   we: ['my'],
   they: ['oni', 'one'],
 };
-
 const allBookSections = getBookSections();
 const allBookWordCards = getBookPracticeCards({ cardType: 'word', includeGenerated: false }).filter(
   isWordCard
 );
+const sectionById = new Map(allBookSections.map((section) => [section.id, section]));
+const genderByCardId = buildGenderByCardId(allBookWordCards);
+const promptGroups = buildPromptGroups(allBookWordCards);
 
 export function getFlashcardTopics(): BookSectionOption[] {
   return allBookSections;
 }
 
-export function getAllBookFlashcards(practiceType: FlashcardPracticeType = 'mixed'): FlashcardPracticeCard[] {
-  if (practiceType === 'conjugation') {
-    return getConjugationFlashcards();
+export function getAllBookFlashcards(practiceType: FlashcardPracticeType = 'vocabulary'): FlashcardPracticeCard[] {
+  if (practiceType === 'sentences') {
+    return getSentenceFlashcards();
   }
 
-  const sectionById = new Map(allBookSections.map((section) => [section.id, section]));
-  const genderByCardId = buildGenderByCardId(allBookWordCards);
-  const promptGroups = buildPromptGroups(allBookWordCards);
-  const verbOnly = practiceType === 'verbs';
-
-  return allBookWordCards
-    .filter((card) => (verbOnly ? isVerbCard(card) : true))
-    .map((card) => {
-    const section = sectionById.get(card.sectionId);
-    const basePrompt = card.english[0] ?? card.polish;
-    const groupKey = `${card.sectionId}|${normalizePromptKey(basePrompt)}`;
-    const cardsWithSamePrompt = promptGroups.get(groupKey) ?? [];
-    const distinctAnswers = new Set(cardsWithSamePrompt.map((item) => normalizeSpacing(item.polish.toLowerCase())));
-    const shouldDisambiguate = distinctAnswers.size > 1;
-    const gender = genderByCardId.get(card.id);
-
-    return {
-      id: `book-word-${card.id}`,
-      source: 'book',
-      prompt: shouldDisambiguate ? formatPrompt(basePrompt, gender) : basePrompt,
-      answer: card.polish,
-      acceptedAnswers: buildAcceptedAnswers(card.polish),
-      gender,
-      topicId: card.sectionId,
-      topicLabel: section?.label ?? card.topicEn,
-    };
-    });
+  return mapWordCardsToPractice(allBookWordCards);
 }
 
-export function getTopicFlashcards(topicId: string, practiceType: FlashcardPracticeType = 'mixed'): FlashcardPracticeCard[] {
-  return getAllBookFlashcards(practiceType).filter((card) => card.topicId === topicId);
+export function getTopicFlashcards(
+  topicId: string,
+  practiceType: FlashcardPracticeType = 'vocabulary'
+): FlashcardPracticeCard[] {
+  if (practiceType === 'sentences') {
+    return getSentenceFlashcards().filter((card) => card.topicId === topicId);
+  }
+
+  return mapWordCardsToPractice(allBookWordCards.filter((card) => card.sectionId === topicId));
 }
 
 export function mapCustomSetToPracticeCards(set: CustomFlashcardSet): FlashcardPracticeCard[] {
@@ -166,6 +149,29 @@ function formatPrompt(prompt: string, gender?: 'masculine' | 'feminine'): string
   }
 
   return `${prompt} (${gender === 'feminine' ? 'female' : 'male'})`;
+}
+
+function mapWordCardsToPractice(cards: WordCardWithSection[]): FlashcardPracticeCard[] {
+  return cards.map((card) => {
+    const section = sectionById.get(card.sectionId);
+    const basePrompt = card.english[0] ?? card.polish;
+    const groupKey = `${card.sectionId}|${normalizePromptKey(basePrompt)}`;
+    const cardsWithSamePrompt = promptGroups.get(groupKey) ?? [];
+    const distinctAnswers = new Set(cardsWithSamePrompt.map((item) => normalizeSpacing(item.polish.toLowerCase())));
+    const shouldDisambiguate = distinctAnswers.size > 1;
+    const gender = genderByCardId.get(card.id);
+
+    return {
+      id: `book-word-${card.id}`,
+      source: 'book',
+      prompt: shouldDisambiguate ? formatPrompt(basePrompt, gender) : basePrompt,
+      answer: card.polish,
+      acceptedAnswers: buildAcceptedAnswers(card.polish),
+      gender,
+      topicId: card.sectionId,
+      topicLabel: section?.label ?? card.topicEn,
+    };
+  });
 }
 
 function buildAcceptedAnswers(primaryAnswer: string): string[] {
@@ -256,18 +262,17 @@ function inferGender(card: WordCardWithSection): 'masculine' | 'feminine' | unde
   return 'masculine';
 }
 
-function getConjugationFlashcards(): FlashcardPracticeCard[] {
+function getSentenceFlashcards(): FlashcardPracticeCard[] {
   const sentenceCards = getBookPracticeCards({ cardType: 'sentence', includeGenerated: false }).filter(
     (card): card is BookSentenceCard => card.type === 'sentence'
   );
   const sectionById = new Map(allBookSections.map((section) => [section.id, section]));
 
   return sentenceCards
-    .filter((card) => isLikelyConjugationCard(card.promptEn, card.answerPl))
     .map((card) => {
       const section = sectionById.get(card.sectionId);
       return {
-        id: `book-conjugation-${card.id}`,
+        id: `book-sentence-${card.id}`,
         source: 'book',
         prompt: card.promptEn,
         answer: card.answerPl,
@@ -276,10 +281,6 @@ function getConjugationFlashcards(): FlashcardPracticeCard[] {
         topicLabel: section?.label ?? card.topicEn,
       };
     });
-}
-
-function isVerbCard(card: WordCardWithSection): boolean {
-  return card.partOfSpeech.toLowerCase().includes('verb');
 }
 
 function buildConjugationAcceptedAnswers(promptEn: string, answerPl: string, acceptedAnswers: string[]): string[] {
@@ -305,17 +306,6 @@ function buildConjugationAcceptedAnswers(promptEn: string, answerPl: string, acc
   }
 
   return [...variants];
-}
-
-function isLikelyConjugationCard(promptEn: string, answerPl: string): boolean {
-  const english = promptEn.toLowerCase();
-  const polish = answerPl.toLowerCase();
-
-  const progressiveOrCopula = /\b(am|is|are|was|were)\b\s+\w+/.test(english) || /\bto\b\s+\w+/.test(english);
-  const startsWithPronoun = SUBJECT_PRONOUNS.some((pronoun) => polish.startsWith(`${pronoun} `));
-  const singleVerbLikeWord = /^[a-ząćęłńóśźż]+$/i.test(polish);
-
-  return progressiveOrCopula || startsWithPronoun || singleVerbLikeWord;
 }
 
 function isSubjectPronoun(value: string): boolean {

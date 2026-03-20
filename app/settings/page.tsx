@@ -361,7 +361,7 @@ export default function SettingsPage() {
         override.id === id
           ? {
               ...override,
-              [field]: field === 'english' ? value.split(',').map((item) => item.trim()).filter(Boolean) : value,
+              [field]: field === 'english' ? parseOverrideEnglishInput(value) : value,
             }
           : override
       )
@@ -377,7 +377,7 @@ export default function SettingsPage() {
         id: override.id,
         normalizedToken: normalizeToken(override.polish),
         polish: override.polish.trim(),
-        english: override.english.map((item) => item.trim()).filter(Boolean),
+        english: sanitizeOverrideEnglishEntries(override.english),
         partOfSpeech: override.partOfSpeech.trim() || 'word',
         sectionId: override.sectionId?.trim() || null,
         source: override.source,
@@ -513,7 +513,7 @@ export default function SettingsPage() {
           id: typeof item.id === 'string' ? item.id : undefined,
           normalizedToken: normalizeToken(item.polish),
           polish: item.polish.trim(),
-          english: item.english.map((entry) => entry.trim()).filter(Boolean),
+          english: sanitizeOverrideEnglishEntries(item.english),
           partOfSpeech: item.partOfSpeech?.trim() || 'word',
           sectionId: item.sectionId?.trim() || null,
           source: item.source ?? 'manual',
@@ -1030,7 +1030,11 @@ export default function SettingsPage() {
                     <div className="flex gap-2">
                       <button
                         onClick={() => void handleSaveOverride(override)}
-                        disabled={savingOverrideId === override.id || !override.polish.trim() || override.english.length === 0}
+                        disabled={
+                          savingOverrideId === override.id ||
+                          !override.polish.trim() ||
+                          sanitizeOverrideEnglishEntries(override.english).length === 0
+                        }
                         className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-3 py-2 text-sm font-semibold text-white hover:bg-emerald-600 disabled:cursor-not-allowed disabled:opacity-50"
                       >
                         <Save className="h-4 w-4" />
@@ -1192,4 +1196,27 @@ function isUserWordOverrideLike(value: unknown): value is UserWordOverride {
     Array.isArray(candidate.english) &&
     candidate.english.every((entry) => typeof entry === 'string')
   );
+}
+
+function parseOverrideEnglishInput(value: string): string[] {
+  return sanitizeOverrideEnglishEntries(
+    value
+      .split(',')
+      .map((item) => item.trim())
+      .filter(Boolean)
+  );
+}
+
+function sanitizeOverrideEnglishEntries(entries: string[]): string[] {
+  return entries
+    .map((entry) => entry.trim())
+    .filter((entry) => isValidTranslationEntry(entry));
+}
+
+function isValidTranslationEntry(value: string): boolean {
+  if (!value) {
+    return false;
+  }
+
+  return /[\p{L}\p{N}]/u.test(value);
 }

@@ -527,6 +527,9 @@ export async function saveUserWordOverride(
   override: Omit<UserWordOverride, 'id' | 'createdAt' | 'updatedAt'> & { id?: string }
 ): Promise<string> {
   const normalizedToken = override.normalizedToken.trim();
+  const english = override.english
+    .map((entry) => entry.trim())
+    .filter((entry) => /[\p{L}\p{N}]/u.test(entry));
   const sectionPrefix = override.sectionId ? override.sectionId : 'global';
   const id = override.id ?? `${sectionPrefix}:${normalizedToken}`;
   const existing = await db.userWordOverrides.get(id);
@@ -537,6 +540,7 @@ export async function saveUserWordOverride(
     ...override,
     id,
     normalizedToken,
+    english,
     createdAt: existing?.createdAt ?? now,
     updatedAt: now,
   });

@@ -39,6 +39,7 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
   const [savedTokenId, setSavedTokenId] = useState<string | null>(null);
   const [lookupStates, setLookupStates] = useState<Record<string, LookupState>>({});
   const [translationDrafts, setTranslationDrafts] = useState<Record<string, string>>({});
+  const [phraseLookupStates, setPhraseLookupStates] = useState<Record<string, LookupState>>({});
   const [phraseAnchorIndex, setPhraseAnchorIndex] = useState<number | null>(null);
   const [phraseRange, setPhraseRange] = useState<TokenRange | null>(null);
   const [isSavingPhrase, setIsSavingPhrase] = useState(false);
@@ -107,6 +108,9 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
     };
   }, [phraseRange, tokens]);
 
+  const activePhraseLookupState = phraseSelection ? phraseLookupStates[phraseSelection.key] : undefined;
+  const activePhraseTranslation = phraseSelection ? getPhrasePrompt(phraseSelection, activePhraseLookupState) : null;
+
   useEffect(() => {
     async function loadLocalData() {
       const [sets, overrides] = await Promise.all([getAllCustomFlashcardSets(), getAllUserWordOverrides()]);
@@ -123,10 +127,28 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
     setSavedTokenId(null);
     setLookupStates({});
     setTranslationDrafts({});
+    setPhraseLookupStates({});
     setPhraseAnchorIndex(null);
     setPhraseRange(null);
     setSavedPhraseKey(null);
   }, [text, sectionId]);
+
+  useEffect(() => {
+    if (!phraseSelection) {
+      return;
+    }
+
+    const phraseLookupState = phraseLookupStates[phraseSelection.key];
+    if (
+      phraseLookupState?.status === 'loading' ||
+      phraseLookupState?.status === 'success' ||
+      phraseLookupState?.status === 'saved'
+    ) {
+      return;
+    }
+
+    void fetchPhraseTranslation(phraseSelection.key, phraseSelection.polish);
+  }, [phraseLookupStates, phraseSelection, text]);
 
   useEffect(() => {
     function handlePointerDown(event: MouseEvent) {
@@ -203,13 +225,14 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
     setIsSavingPhrase(true);
 
     try {
+      const phrasePrompt = getPhrasePrompt(phraseSelection, phraseLookupStates[phraseSelection.key]);
       const updatedSet: CustomFlashcardSet = {
         ...targetSet,
         cards: [
           ...targetSet.cards,
           {
             id: generateId(),
-            prompt: phraseSelection.english,
+            prompt: phrasePrompt,
             answer: phraseSelection.polish,
             createdAt: Date.now(),
           },
@@ -268,6 +291,9 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
       if (!response.ok || !('translation' in payload)) {
         throw new Error(('error' in payload && payload.error) || 'Unable to fetch translation.');
       }
+      if (!isValidTranslationText(payload.translation)) {
+        throw new Error('Translation provider returned an invalid translation.');
+      }
 
       setTranslationDrafts((current) => ({
         ...current,
@@ -292,9 +318,70 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
     }
   }
 
+  async function fetchPhraseTranslation(phraseKey: string, phraseValue: string) {
+    setPhraseLookupStates((current) => ({
+      ...current,
+      [phraseKey]: {
+        status: 'loading',
+      },
+    }));
+
+    try {
+      const response = await fetch('/api/translate/word', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          text: phraseValue,
+          sourceLang: 'pl',
+          targetLang: 'en',
+          contextText: text,
+        }),
+      });
+
+      const payload = (await response.json()) as TranslationLookupResponse | { error?: string };
+      if (!response.ok || !('translation' in payload)) {
+        throw new Error(('error' in payload && payload.error) || 'Unable to fetch phrase translation.');
+      }
+      if (!isValidTranslationText(payload.translation)) {
+        throw new Error('Translation provider returned an invalid translation.');
+      }
+
+      setPhraseLookupStates((current) => ({
+        ...current,
+        [phraseKey]: {
+          status: 'success',
+          translation: payload.translation,
+          provider: payload.provider,
+        },
+      }));
+    } catch (error) {
+      setPhraseLookupStates((current) => ({
+        ...current,
+        [phraseKey]: {
+          status: 'error',
+          error: error instanceof Error ? error.message : 'Unable to fetch phrase translation.',
+        },
+      }));
+    }
+  }
+
   async function saveTranslationToLocalList(tokenId: string, tokenValue: string) {
     const draft = translationDrafts[tokenId]?.trim();
     if (!draft) {
+      return;
+    }
+    const sanitizedDraftEntries = parseTranslationInput(draft);
+    if (sanitizedDraftEntries.length === 0) {
+      setLookupStates((current) => ({
+        ...current,
+        [tokenId]: {
+          ...(current[tokenId] ?? { status: 'idle' as const }),
+          status: 'error',
+          error: 'Enter a valid translation before saving.',
+        },
+      }));
       return;
     }
 
@@ -304,10 +391,7 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
     await saveUserWordOverride({
       normalizedToken,
       polish: tokenValue,
-      english: draft
-        .split(',')
-        .map((item) => item.trim())
-        .filter(Boolean),
+      english: sanitizedDraftEntries,
       partOfSpeech: 'word',
       source: lookupState?.status === 'success' ? 'online' : 'manual',
       provider: lookupState?.provider,
@@ -339,6 +423,7 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
         const isOpen = activeTokenId === tokenId;
         const lookupState = lookupStates[tokenId];
         const draftTranslation = translationDrafts[tokenId] ?? '';
+        const displayTranslations = getValidTranslations(insight.english);
         const missingTranslation = isInsightMissing(insight);
         const isInPhraseSelection = isTokenInsideRange(index, phraseSelection);
 
@@ -356,7 +441,9 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
             {isOpen && (
               <span className="absolute left-1/2 top-full z-30 mt-2 inline-block w-72 -translate-x-1/2 rounded-xl border border-gray-200 bg-white p-3 text-left align-top shadow-xl dark:border-gray-700 dark:bg-gray-900">
                 <span className="block text-sm font-semibold text-gray-900 dark:text-white">{insight.polish}</span>
-                <span className="mt-1 block text-sm text-gray-600 dark:text-gray-300">{insight.english.join(', ')}</span>
+                <span className="mt-1 block text-sm text-gray-600 dark:text-gray-300">
+                  {displayTranslations.length > 0 ? displayTranslations.join(', ') : 'Translation not found yet'}
+                </span>
                 <span className="mt-1 flex flex-wrap items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                   <span>{insight.partOfSpeech}</span>
                   <span className={`rounded-full px-2 py-0.5 font-medium ${getSourceBadgeClasses(insight.source)}`}>
@@ -427,6 +514,16 @@ export function InteractiveAnswerText({ text, sectionId }: InteractiveAnswerText
                     {phraseSelection ? (
                       <span className="block rounded-lg border border-cyan-400/40 bg-cyan-500/10 p-2 text-xs text-cyan-800 dark:text-cyan-200">
                         Phrase selected: <strong>{phraseSelection.polish}</strong>
+                        <span className="mt-1 block">
+                          {activePhraseLookupState?.status === 'loading'
+                            ? 'Translating phrase...'
+                            : `Translation: ${activePhraseTranslation ?? phraseSelection.english}`}
+                        </span>
+                        {activePhraseLookupState?.status === 'error' && (
+                          <span className="mt-1 block text-[11px] text-red-700/90 dark:text-red-300">
+                            {activePhraseLookupState.error} Showing fallback phrase gloss.
+                          </span>
+                        )}
                       </span>
                     ) : (
                       <span className="block text-xs text-gray-500 dark:text-gray-400">
@@ -545,18 +642,25 @@ function applyContextualInsightOverride(
 }
 
 function toInsightFromOverride(tokenValue: string, override: UserWordOverride): SectionWordInsight {
+  const english = getValidTranslations(override.english);
   return {
     token: tokenValue,
     normalizedToken: override.normalizedToken,
     polish: override.polish,
-    english: override.english,
+    english: english.length > 0 ? english : ['Translation not found yet'],
     partOfSpeech: override.partOfSpeech,
+    isFallback: english.length === 0,
     source: override.sectionId ? 'local-section-override' : 'local-global-override',
   };
 }
 
 function isInsightMissing(insight: SectionWordInsight): boolean {
-  return insight.isFallback === true && insight.english.length === 1 && insight.english[0] === 'Translation not found yet';
+  const translations = getValidTranslations(insight.english);
+  if (translations.length === 0) {
+    return true;
+  }
+
+  return translations.every((entry) => isMissingTranslationSentinel(entry));
 }
 
 function tokenizeAnswerText(sentence: string): Array<{ value: string; isWord: boolean }> {
@@ -580,14 +684,56 @@ function normalizeToken(value: string): string {
 
 function buildPhrasePrompt(insights: SectionWordInsight[], phrasePolish: string): string {
   const englishWords = insights
-    .map((insight) => insight.english[0]?.trim())
-    .filter((word): word is string => Boolean(word) && word !== 'Translation not found yet');
+    .flatMap((insight) => getValidTranslations(insight.english).slice(0, 1))
+    .filter((word) => word !== 'Translation not found yet');
 
   if (englishWords.length > 0) {
     return englishWords.join(' ');
   }
 
   return `Translate: ${phrasePolish}`;
+}
+
+function getPhrasePrompt(
+  phraseSelection: {
+    english: string;
+  },
+  lookupState: LookupState | undefined
+): string {
+  if (lookupState?.translation && isValidTranslationText(lookupState.translation)) {
+    return lookupState.translation.trim();
+  }
+
+  return phraseSelection.english;
+}
+
+function parseTranslationInput(value: string): string[] {
+  return getValidTranslations(
+    value
+      .split(',')
+      .map((item) => item.trim())
+      .filter(Boolean)
+  );
+}
+
+function getValidTranslations(values: string[]): string[] {
+  return values
+    .map((entry) => entry.trim())
+    .filter((entry) => isValidTranslationText(entry))
+    .filter((entry) => !isMissingTranslationSentinel(entry));
+}
+
+function isValidTranslationText(value: string): boolean {
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return false;
+  }
+
+  return /[\p{L}\p{N}]/u.test(trimmed);
+}
+
+function isMissingTranslationSentinel(value: string): boolean {
+  return value.trim().toLowerCase() === 'translation not found yet';
 }
 
 function isTokenInsideRange(index: number, range: TokenRange | null): boolean {

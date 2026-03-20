@@ -65,8 +65,8 @@ export async function POST(request: NextRequest) {
 
       const data = (await response.json()) as { translatedText?: string };
       const translation = data.translatedText?.trim();
-      if (!translation) {
-        throw new Error('LibreTranslate returned an empty translation.');
+      if (!isUsableTranslation(translation)) {
+        throw new Error('LibreTranslate returned an invalid translation.');
       }
 
       return NextResponse.json({
@@ -95,8 +95,8 @@ export async function POST(request: NextRequest) {
     };
     const translation = data.responseData?.translatedText?.trim();
 
-    if (!translation) {
-      throw new Error('Translation provider returned an empty translation.');
+    if (!isUsableTranslation(translation)) {
+      throw new Error('Translation provider returned an invalid translation.');
     }
 
     return NextResponse.json({
@@ -116,6 +116,19 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
+}
+
+function isUsableTranslation(value: string | undefined): value is string {
+  if (!value) {
+    return false;
+  }
+
+  const trimmed = value.trim();
+  if (!trimmed) {
+    return false;
+  }
+
+  return /[\p{L}\p{N}]/u.test(trimmed);
 }
 
 async function safeReadText(response: Response): Promise<string> {

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   AlertTriangle,
@@ -8,10 +8,12 @@ import {
   BookOpenText,
   ChartNoAxesColumn,
   CheckCircle2,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Clock3,
   Flag,
   Gauge,
-  Lock,
   Play,
   TrendingDown,
 } from 'lucide-react';
@@ -31,8 +33,6 @@ import {
   getHardestExercises,
   getHardestSections,
   getLatestMistakes,
-  getNextDifficulty,
-  getNextSectionId,
   getOverallMastery,
   getSectionMastery,
   getSequentialSections,
@@ -119,64 +119,156 @@ export default function LearnPage() {
   const hardestSections = useMemo(() => getHardestSections(mistakes, 5), [mistakes]);
   const hardestExercises = useMemo(() => getHardestExercises(mistakes, 5), [mistakes]);
 
-  const nextSectionId = useMemo(() => getNextSectionId(currentSection?.id ?? null), [currentSection]);
-  const nextDifficulty = useMemo(() => getNextDifficulty(currentDifficulty), [currentDifficulty]);
+  const currentSectionIndex = useMemo(
+    () => sections.findIndex((section) => section.id === currentSection?.id),
+    [currentSection, sections]
+  );
+  const previousSection = currentSectionIndex > 0 ? sections[currentSectionIndex - 1] : null;
+  const nextSection = currentSectionIndex >= 0 ? sections[currentSectionIndex + 1] ?? null : null;
+
+  const sectionDifficultyUnlocks = useMemo(() => {
+    const unlockMap = new Map<string, BookDifficulty[]>();
+
+    for (const section of sections) {
+      unlockMap.set(section.id, getUnlockedDifficultiesForSection(section.id, attempts, devModeEnabled));
+    }
+
+    return unlockMap;
+  }, [attempts, devModeEnabled, sections]);
+
+  const unlockedCurrentDifficulties = useMemo(
+    () => sectionDifficultyUnlocks.get(currentSection?.id ?? '') ?? ['level_1'],
+    [currentSection, sectionDifficultyUnlocks]
+  );
+  const unlockedSectionIds = useMemo(
+    () => getUnlockedSectionIds(sections, attempts, currentDifficulty, devModeEnabled, currentSection?.id ?? null),
+    [attempts, currentDifficulty, currentSection, devModeEnabled, sections]
+  );
+  const sectionSelectionOptions = useMemo(
+    () =>
+      sections.map((section) => {
+        const isUnlocked = devModeEnabled || unlockedSectionIds.has(section.id);
+        return {
+          value: section.id,
+          label: isUnlocked ? section.label : `${section.label} (locked)`,
+          disabled: !isUnlocked,
+        };
+      }),
+    [devModeEnabled, sections, unlockedSectionIds]
+  );
 
   const sectionProgressPercent = sectionMastery.total === 0 ? 0 : Math.round((sectionMastery.mastered / sectionMastery.total) * 100);
   const overallProgressPercent =
     overallMastery.total === 0 ? 0 : Math.round((overallMastery.mastered / overallMastery.total) * 100);
+  const difficultyProgressPercent =
+    overallMastery.totalSections === 0
+      ? 0
+      : Math.round((overallMastery.masteredSections / overallMastery.totalSections) * 100);
 
-  const canMoveToNextSection =
-    !!nextSectionId && (devModeEnabled || sectionMastery.mastered === sectionMastery.total);
-  const canMoveToNextDifficulty =
-    !!nextDifficulty &&
-    (devModeEnabled || (sectionMastery.total > 0 && sectionMastery.mastered === sectionMastery.total));
+  const canMoveToPreviousSection = !!previousSection;
+  const canMoveToNextSection = !!nextSection && (devModeEnabled || sectionMastery.mastered === sectionMastery.total);
   const currentDifficultyIndex = DIFFICULTY_SEQUENCE.indexOf(currentDifficulty);
+  const previousDifficulty = currentDifficultyIndex > 0 ? DIFFICULTY_SEQUENCE[currentDifficultyIndex - 1] : null;
+  const nextDifficulty = currentDifficultyIndex < DIFFICULTY_SEQUENCE.length - 1 ? DIFFICULTY_SEQUENCE[currentDifficultyIndex + 1] : null;
+  const canMoveToPreviousDifficulty = !!previousDifficulty;
+  const canMoveToNextDifficulty = !!nextDifficulty && unlockedCurrentDifficulties.includes(nextDifficulty);
 
-  async function changeDifficulty(nextDifficulty: BookDifficulty) {
-    if (nextDifficulty === currentDifficulty) {
-      return;
+  function pickBestDifficultyForSection(sectionId: string, preferredDifficulty: BookDifficulty): BookDifficulty {
+    const unlocked = sectionDifficultyUnlocks.get(sectionId) ?? ['level_1'];
+
+    if (devModeEnabled || unlocked.includes(preferredDifficulty)) {
+      return preferredDifficulty;
     }
 
-    const currentIndex = DIFFICULTY_SEQUENCE.indexOf(currentDifficulty);
-    const nextIndex = DIFFICULTY_SEQUENCE.indexOf(nextDifficulty);
-
-    if (nextIndex === -1) {
-      return;
+    const preferredIndex = DIFFICULTY_SEQUENCE.indexOf(preferredDifficulty);
+    for (let index = preferredIndex; index >= 0; index -= 1) {
+      const candidate = DIFFICULTY_SEQUENCE[index];
+      if (unlocked.includes(candidate)) {
+        return candidate;
+      }
     }
 
-    const isLower = nextIndex < currentIndex;
-
-    if (!isLower && !canMoveToNextDifficulty && !devModeEnabled) {
-      return;
-    }
-
-    await updateBookPathProgress({ currentDifficulty: nextDifficulty });
-    setCurrentDifficulty(nextDifficulty);
+    return unlocked[0] ?? 'level_1';
   }
 
-  async function moveToNextSection() {
-    if (!canMoveToNextSection || !nextSectionId) {
+  async function changeDifficulty(nextDifficultyValue: BookDifficulty) {
+    if (nextDifficultyValue === currentDifficulty) {
       return;
     }
 
-    await updateBookPathProgress({ currentSectionId: nextSectionId });
-    setCurrentSectionId(nextSectionId);
+    const targetIndex = DIFFICULTY_SEQUENCE.indexOf(nextDifficultyValue);
+    if (targetIndex === -1) {
+      return;
+    }
+
+    if (!devModeEnabled) {
+      const unlocked = sectionDifficultyUnlocks.get(currentSection?.id ?? '') ?? ['level_1'];
+      if (!unlocked.includes(nextDifficultyValue)) {
+        return;
+      }
+    }
+
+    await updateBookPathProgress({ currentDifficulty: nextDifficultyValue });
+    setCurrentDifficulty(nextDifficultyValue);
   }
 
-  async function moveToNextDifficulty() {
-    if (!canMoveToNextDifficulty || !nextDifficulty) {
+  async function moveToSection(direction: 'previous' | 'next') {
+    if (!currentSection) {
       return;
     }
 
-    const firstSectionId = sections[0]?.id ?? null;
+    const targetSection = direction === 'previous' ? previousSection : nextSection;
+    if (!targetSection) {
+      return;
+    }
+
+    if (direction === 'next' && !canMoveToNextSection) {
+      return;
+    }
+
+    const targetDifficulty = pickBestDifficultyForSection(targetSection.id, currentDifficulty);
+
     await updateBookPathProgress({
-      currentDifficulty: nextDifficulty,
-      currentSectionId: firstSectionId,
+      currentSectionId: targetSection.id,
+      currentDifficulty: targetDifficulty,
     });
+    setCurrentSectionId(targetSection.id);
+    setCurrentDifficulty(targetDifficulty);
+  }
 
-    setCurrentDifficulty(nextDifficulty);
-    setCurrentSectionId(firstSectionId);
+  async function moveToSectionById(sectionId: string) {
+    if (!currentSection || sectionId === currentSection.id) {
+      return;
+    }
+
+    if (!devModeEnabled && !unlockedSectionIds.has(sectionId)) {
+      return;
+    }
+
+    const targetDifficulty = pickBestDifficultyForSection(sectionId, currentDifficulty);
+    await updateBookPathProgress({
+      currentSectionId: sectionId,
+      currentDifficulty: targetDifficulty,
+    });
+    setCurrentSectionId(sectionId);
+    setCurrentDifficulty(targetDifficulty);
+  }
+
+  async function moveDifficulty(direction: 'previous' | 'next') {
+    if (direction === 'previous') {
+      if (!previousDifficulty) {
+        return;
+      }
+
+      await changeDifficulty(previousDifficulty);
+      return;
+    }
+
+    if (!nextDifficulty || (!canMoveToNextDifficulty && !devModeEnabled)) {
+      return;
+    }
+
+    await changeDifficulty(nextDifficulty);
   }
 
   function resumeLearning() {
@@ -191,19 +283,6 @@ export default function LearnPage() {
   async function jumpToDifficulty(nextDifficulty: BookDifficulty) {
     await updateBookPathProgress({ currentDifficulty: nextDifficulty });
     setCurrentDifficulty(nextDifficulty);
-  }
-
-  function canSelectDifficulty(targetDifficulty: BookDifficulty) {
-    const targetIndex = DIFFICULTY_SEQUENCE.indexOf(targetDifficulty);
-    if (targetIndex === -1) {
-      return false;
-    }
-
-    if (devModeEnabled || targetIndex <= currentDifficultyIndex) {
-      return true;
-    }
-
-    return targetIndex === currentDifficultyIndex + 1 && canMoveToNextDifficulty;
   }
 
   if (loading) {
@@ -273,108 +352,87 @@ export default function LearnPage() {
         </div>
       </Card>
 
-      <Card>
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-[1fr,auto] lg:items-center">
-          <div className="space-y-2">
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Section completion: {sectionMastery.mastered} / {sectionMastery.total} exercises mastered
-            </p>
-            <div className="h-2 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
-              <div className="h-full bg-primary-500" style={{ width: `${sectionProgressPercent}%` }} />
-            </div>
-            <p className="text-sm text-gray-600 dark:text-gray-400">
-              Difficulty completion: {overallMastery.masteredSections} / {overallMastery.totalSections} sections mastered at{' '}
-              {DIFFICULTY_LABELS[currentDifficulty]}
-            </p>
-            <div className="h-2 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
-              <div
-                className="h-full bg-emerald-500"
-                style={{
-                  width:
-                    overallMastery.totalSections === 0
-                      ? '0%'
-                      : `${Math.round((overallMastery.masteredSections / overallMastery.totalSections) * 100)}%`,
-                }}
-              />
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            <div className="rounded-xl border border-gray-200 bg-gray-50 px-3 py-2 dark:border-gray-700 dark:bg-gray-900/30">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                Difficulty
-              </p>
-              <div className="mt-2 inline-flex rounded-lg border border-gray-200 bg-white p-1 dark:border-gray-700 dark:bg-gray-800">
-                {DIFFICULTY_SEQUENCE.map((difficultyOption) => {
-                  const isActive = currentDifficulty === difficultyOption;
-                  const isSelectable = canSelectDifficulty(difficultyOption);
-
-                  return (
-                    <button
-                      key={difficultyOption}
-                      type="button"
-                      onClick={() => void changeDifficulty(difficultyOption)}
-                      disabled={!isSelectable}
-                      className={`inline-flex items-center gap-1 rounded-md px-3 py-1.5 text-xs font-semibold transition-colors duration-default ease-subtle ${
-                        isActive
-                          ? 'bg-primary-500 text-white'
-                          : 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700'
-                      } disabled:cursor-not-allowed disabled:opacity-45`}
-                    >
-                      {!isSelectable && <Lock className="h-3 w-3" />}
-                      {DIFFICULTY_SHORT_LABELS[difficultyOption]}
-                    </button>
-                  );
-                })}
+      <Card className="border-gray-200/90 bg-white/95 p-4 dark:border-gray-700 dark:bg-gray-800/95">
+        <div className="space-y-3.5">
+          <div className="space-y-3">
+            <div className="space-y-2">
+              <div className="flex items-baseline justify-between gap-3">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-200">Section completion</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {sectionMastery.mastered} / {sectionMastery.total} mastered
+                </p>
+              </div>
+              <div className="h-2 overflow-hidden rounded-full bg-gray-200/80 dark:bg-gray-700/80">
+                <div
+                  className="h-full rounded-full bg-primary-500 transition-[width] duration-300 motion-reduce:transition-none"
+                  style={{ width: `${sectionProgressPercent}%` }}
+                />
               </div>
             </div>
 
-            <Button
-              onClick={resumeLearning}
-              variant="primary"
-            >
+            <div className="space-y-2">
+              <div className="flex items-baseline justify-between gap-3">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Difficulty completion at {DIFFICULTY_SHORT_LABELS[currentDifficulty]}
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  {overallMastery.masteredSections} / {overallMastery.totalSections} sections
+                </p>
+              </div>
+              <div className="h-2 overflow-hidden rounded-full bg-gray-200/80 dark:bg-gray-700/80">
+                <div
+                  className="h-full rounded-full bg-emerald-500 transition-[width] duration-300 motion-reduce:transition-none"
+                  style={{ width: `${difficultyProgressPercent}%` }}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-2.5 lg:grid-cols-[minmax(0,1fr),minmax(0,1fr),170px]">
+            <ArrowNavigator
+              label="Section"
+              value={currentSection.label}
+              selectedValue={currentSection.id}
+              selectorOptions={sectionSelectionOptions}
+              onSelectValue={(sectionId) => {
+                void moveToSectionById(sectionId);
+              }}
+              onPrevious={() => void moveToSection('previous')}
+              onNext={() => void moveToSection('next')}
+              canGoPrevious={canMoveToPreviousSection}
+              canGoNext={canMoveToNextSection}
+            />
+            <ArrowNavigator
+              label="Difficulty"
+              value={DIFFICULTY_SHORT_LABELS[currentDifficulty]}
+              onPrevious={() => void moveDifficulty('previous')}
+              onNext={() => void moveDifficulty('next')}
+              canGoPrevious={canMoveToPreviousDifficulty}
+              canGoNext={canMoveToNextDifficulty || devModeEnabled}
+            />
+            <Button onClick={resumeLearning} variant="primary" className="h-full min-h-[48px] w-full justify-center lg:self-end">
               <Play className="h-4 w-4" />
               Resume
             </Button>
+          </div>
 
-            <Button
-              onClick={moveToNextSection}
-              disabled={!canMoveToNextSection}
-              variant="secondary"
-            >
-              Next Section
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-
-            <Button
-              onClick={moveToNextDifficulty}
-              disabled={!canMoveToNextDifficulty}
-              variant="secondary"
-            >
-              Next Difficulty
-              <ArrowRight className="h-4 w-4" />
-            </Button>
+          <div className="space-y-1 text-xs text-gray-500 dark:text-gray-400">
+            {!canMoveToNextSection && (
+              <p>You can move to the next section after mastering all exercises in the current section.</p>
+            )}
+            {!canMoveToNextDifficulty && (
+              <p>
+                You can move to the next difficulty after mastering this section at{' '}
+                {DIFFICULTY_LABELS[currentDifficulty]}.
+              </p>
+            )}
+            {devModeEnabled && (
+              <p className="font-medium text-amber-600 dark:text-amber-300">
+                Dev mode is ON: progression gates are bypassed for testing.
+              </p>
+            )}
           </div>
         </div>
-
-        {!canMoveToNextSection && (
-          <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-            You can move to the next section after mastering all exercises in the current section.
-          </p>
-        )}
-
-        {!canMoveToNextDifficulty && (
-          <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
-            You can move to the next difficulty for this section after mastering all its exercises at{' '}
-            {DIFFICULTY_LABELS[currentDifficulty]}.
-          </p>
-        )}
-
-        {devModeEnabled && (
-          <p className="mt-1 text-xs font-medium text-amber-600 dark:text-amber-300">
-            Dev mode is ON: progression gates are bypassed for testing.
-          </p>
-        )}
       </Card>
 
       {devModeEnabled && (
@@ -486,6 +544,128 @@ export default function LearnPage() {
   );
 }
 
+function ArrowNavigator({
+  label,
+  value,
+  selectedValue,
+  selectorOptions,
+  onSelectValue,
+  onPrevious,
+  onNext,
+  canGoPrevious,
+  canGoNext,
+}: {
+  label: string;
+  value: string;
+  selectedValue?: string;
+  selectorOptions?: Array<{ value: string; label: string; disabled?: boolean }>;
+  onSelectValue?: (value: string) => void;
+  onPrevious: () => void;
+  onNext: () => void;
+  canGoPrevious: boolean;
+  canGoNext: boolean;
+}) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!menuOpen) {
+      return;
+    }
+
+    function handleClickOutside(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    }
+
+    function handleEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscape);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [menuOpen, menuRef]);
+
+  const hasSelector = !!selectorOptions && !!onSelectValue;
+
+  return (
+    <div className="rounded-xl border border-gray-200/90 bg-gray-50/80 p-2 dark:border-gray-700 dark:bg-gray-900/40">
+      <p className="px-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">{label}</p>
+      <div className="mt-1 grid grid-cols-[auto,1fr,auto] items-center gap-1 rounded-lg border border-gray-200 bg-white px-1 py-1 dark:border-gray-700 dark:bg-gray-800/90">
+        <button
+          type="button"
+          onClick={onPrevious}
+          disabled={!canGoPrevious}
+          className="inline-flex h-7 w-7 items-center justify-center rounded-md text-gray-600 transition-colors duration-200 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:text-gray-300 dark:hover:bg-gray-700 motion-reduce:transition-none"
+          aria-label={`Previous ${label.toLowerCase()}`}
+        >
+          <ChevronLeft className="h-3.5 w-3.5" />
+        </button>
+        {hasSelector ? (
+          <div className="relative" ref={(node) => { menuRef.current = node; }}>
+            <button
+              type="button"
+              onClick={() => setMenuOpen((current) => !current)}
+              className="inline-flex w-full items-center justify-center gap-1 truncate rounded-md px-1 py-1 text-center text-sm font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 dark:text-white dark:hover:bg-gray-700 motion-reduce:transition-none"
+              aria-label={`Select ${label.toLowerCase()}`}
+              aria-expanded={menuOpen}
+            >
+              <span className="truncate">{value}</span>
+              <ChevronDown className="h-3.5 w-3.5 shrink-0 text-gray-500 dark:text-gray-300" />
+            </button>
+            {menuOpen && (
+              <div className="absolute left-0 right-0 top-[calc(100%+0.25rem)] z-40 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
+                <ul className="max-h-56 overflow-auto py-1">
+                  {selectorOptions.map((option) => (
+                    <li key={option.value}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (option.disabled) {
+                            return;
+                          }
+                          onSelectValue(option.value);
+                          setMenuOpen(false);
+                        }}
+                        disabled={option.disabled}
+                        className={`w-full px-3 py-2 text-left text-sm transition-colors duration-200 motion-reduce:transition-none ${
+                          option.value === selectedValue
+                            ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-200'
+                            : 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700'
+                        } disabled:cursor-not-allowed disabled:opacity-45`}
+                      >
+                        {option.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ) : (
+          <span className="truncate px-1 text-center text-sm font-semibold text-gray-900 dark:text-white">{value}</span>
+        )}
+        <button
+          type="button"
+          onClick={onNext}
+          disabled={!canGoNext}
+          className="inline-flex h-7 w-7 items-center justify-center rounded-md text-gray-600 transition-colors duration-200 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:text-gray-300 dark:hover:bg-gray-700 motion-reduce:transition-none"
+          aria-label={`Next ${label.toLowerCase()}`}
+        >
+          <ChevronRight className="h-3.5 w-3.5" />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function StatCard({
   label,
   value,
@@ -521,5 +701,64 @@ function InfoPanel({
       {children}
     </Card>
   );
+}
+
+function getUnlockedDifficultiesForSection(
+  sectionId: string,
+  attempts: AttemptWithId[],
+  devModeEnabled: boolean
+): BookDifficulty[] {
+  if (devModeEnabled) {
+    return [...DIFFICULTY_SEQUENCE];
+  }
+
+  const sectionAttempts = attempts.filter((attempt) => attempt.topicId === sectionId);
+  const unlocked: BookDifficulty[] = ['level_1'];
+
+  const level1Mastery = getSectionMastery(sectionId, 'level_1', sectionAttempts);
+  if (level1Mastery.total === 0 || level1Mastery.mastered === level1Mastery.total) {
+    unlocked.push('level_2');
+  }
+
+  const level2Mastery = getSectionMastery(sectionId, 'level_2', sectionAttempts);
+  if (level2Mastery.total === 0 || level2Mastery.mastered === level2Mastery.total) {
+    unlocked.push('level_3');
+  }
+
+  return unlocked;
+}
+
+function getUnlockedSectionIds(
+  sections: Array<{ id: string }>,
+  attempts: AttemptWithId[],
+  currentDifficulty: BookDifficulty,
+  devModeEnabled: boolean,
+  currentSectionId: string | null
+): Set<string> {
+  if (devModeEnabled) {
+    return new Set(sections.map((section) => section.id));
+  }
+
+  const unlocked = new Set<string>();
+  let previousSectionMastered = true;
+
+  for (const section of sections) {
+    if (previousSectionMastered) {
+      unlocked.add(section.id);
+    }
+
+    if (!previousSectionMastered) {
+      continue;
+    }
+
+    const mastery = getSectionMastery(section.id, currentDifficulty, attempts);
+    previousSectionMastered = mastery.total === 0 || mastery.mastered === mastery.total;
+  }
+
+  if (currentSectionId) {
+    unlocked.add(currentSectionId);
+  }
+
+  return unlocked;
 }
 

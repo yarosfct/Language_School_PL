@@ -69,6 +69,13 @@ export default function FlashcardsSessionPage() {
   const FLIP_DURATION_MS = 700;
 
   const currentCard = queue[0] ?? null;
+  const effectiveTargetCount = useMemo(() => {
+    if (!config || config.limitType !== 'count') {
+      return null;
+    }
+    const requestedTarget = Math.max(1, config.targetCount ?? 20);
+    return Math.min(requestedTarget, Math.max(1, poolCards.length));
+  }, [config, poolCards.length]);
 
   useEffect(() => {
     async function load() {
@@ -264,7 +271,11 @@ export default function FlashcardsSessionPage() {
     }
 
     if (stage === 'initial' || stage === 'retry') {
-      const willEndNow = shouldEndSession(config, stats.shown, timeLeftMs);
+      const willEndNow = shouldEndSession(
+        effectiveTargetCount !== null ? { ...config, targetCount: effectiveTargetCount } : config,
+        stats.shown,
+        timeLeftMs
+      );
       if (willEndNow) {
         setSessionFinished(true);
         setQueue([]);
@@ -276,7 +287,11 @@ export default function FlashcardsSessionPage() {
       return;
     }
 
-    const shouldEnd = shouldEndSession(config, stats.shown, timeLeftMs);
+    const shouldEnd = shouldEndSession(
+      effectiveTargetCount !== null ? { ...config, targetCount: effectiveTargetCount } : config,
+      stats.shown,
+      timeLeftMs
+    );
     if (shouldEnd) {
       setSessionFinished(true);
       setQueue([]);
@@ -321,12 +336,11 @@ export default function FlashcardsSessionPage() {
   }
 
   const progressValue = useMemo(() => {
-    if (!config || config.limitType !== 'count') {
+    if (!config || config.limitType !== 'count' || effectiveTargetCount === null) {
       return null;
     }
-    const target = Math.max(1, config.targetCount ?? 20);
-    return Math.min(100, Math.round((stats.shown / target) * 100));
-  }, [config, stats.shown]);
+    return Math.min(100, Math.round((stats.shown / effectiveTargetCount) * 100));
+  }, [config, effectiveTargetCount, stats.shown]);
 
   if (loading) {
     return (
@@ -430,7 +444,7 @@ export default function FlashcardsSessionPage() {
         {progressValue !== null && (
           <div className="mt-4">
             <div className="mb-1 text-xs text-gray-500 dark:text-gray-400">
-              Target progress: {stats.shown} / {Math.max(1, config.targetCount ?? 20)}
+              Target progress: {stats.shown} / {effectiveTargetCount ?? Math.max(1, config.targetCount ?? 20)}
             </div>
             <div className="h-2 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
               <div className="h-full rounded-full bg-cyan-500 transition-all" style={{ width: `${progressValue}%` }} />
@@ -594,7 +608,9 @@ function parseConfig(searchParams: ReturnType<typeof useSearchParams>): Flashcar
   return {
     mode: modeParam,
     practiceType:
-      practiceTypeParam === 'verbs' || practiceTypeParam === 'conjugation' ? practiceTypeParam : 'mixed',
+      practiceTypeParam === 'sentences' || practiceTypeParam === 'mixed' || practiceTypeParam === 'conjugation'
+        ? 'sentences'
+        : 'vocabulary',
     topicId: searchParams.get('topicId') ?? undefined,
     customSetId: searchParams.get('customSetId') ?? undefined,
     limitType,
