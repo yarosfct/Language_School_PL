@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import {
   generateAudioHash,
-  executePiper,
+  executeAzureTTS,
   ensureCacheDir,
   getCachedAudioPath,
   isCached,
-} from '@/lib/tts/piper';
+} from '@/lib/tts/azure';
 import { promises as fs } from 'fs';
 
 export interface TTSRequest {
@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
       console.log(`🎤 Generating TTS for: "${text.substring(0, 50)}..." (hash: ${hash})`);
       
       try {
-        await executePiper(text, audioPath, { rate, voice });
+        await executeAzureTTS(text, audioPath, { rate, voice });
         
         // Verify the file was created and has content
         try {
@@ -59,7 +59,7 @@ export async function POST(request: NextRequest) {
           throw new Error(`Audio file verification failed: ${statError instanceof Error ? statError.message : 'Unknown error'}`);
         }
       } catch (error) {
-        console.error('Piper TTS error:', error);
+        console.error('Azure Speech TTS error:', error);
         return NextResponse.json(
           { 
             error: 'Failed to generate audio',
@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
     }
     
     // Return audio file as response
-    return new NextResponse(audioBuffer, {
+    return new NextResponse(new Uint8Array(audioBuffer), {
       status: 200,
       headers: {
         'Content-Type': 'audio/wav',

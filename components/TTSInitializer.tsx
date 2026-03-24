@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { useStore } from '@/lib/store/useStore';
-import { applyTTSPreferences } from '@/lib/tts';
+import { applyTTSPreferences, initializeTTS } from '@/lib/tts';
 
 /**
  * Client component that initializes TTS preferences from the store
@@ -15,10 +15,14 @@ export function TTSInitializer() {
     // Apply saved TTS preferences on app load
     applyTTSPreferences({
       voiceURI: ttsPreferences.voiceURI,
-      piperVoice: ttsPreferences.piperVoice,
+      azureVoice: ttsPreferences.azureVoice,
       rate: ttsPreferences.rate,
     });
-  }, []); // Only run once on mount
+
+    // Warm up backend health check and browser voices early so the first click
+    // doesn't have to pay that setup cost.
+    void initializeTTS();
+  }, [ttsPreferences.azureVoice, ttsPreferences.rate, ttsPreferences.voiceURI]);
 
   return null; // This component doesn't render anything
 }

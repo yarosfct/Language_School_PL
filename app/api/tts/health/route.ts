@@ -1,31 +1,43 @@
 import { NextResponse } from 'next/server';
-import { isPiperAvailable, getAvailablePiperVoices } from '@/lib/tts/piper';
+import {
+  getAvailableAzureVoices,
+  isAzureAvailable,
+  isAzureConfigured,
+} from '@/lib/tts/azure';
 
 /**
- * Health check endpoint for Piper TTS backend
+ * Health check endpoint for Azure Speech TTS backend
  * GET /api/tts/health
  */
 export async function GET() {
   try {
-    const isAvailable = await isPiperAvailable();
-    const voices = await getAvailablePiperVoices();
+    const configured = isAzureConfigured();
+    const voices = configured ? await getAvailableAzureVoices() : [];
+    const isAvailable = configured ? await isAzureAvailable() : false;
     
     return NextResponse.json({
       status: isAvailable ? 'ok' : 'unavailable',
-      backend: 'piper',
+      backend: 'azure',
+      configured,
       available: isAvailable,
       voices: voices.map(v => ({
         name: v.name,
         lang: v.lang,
+        displayName: v.displayName,
+        localName: v.localName,
+        gender: v.gender,
+        voiceType: v.voiceType,
       })),
       voiceCount: voices.length,
+      setupRequired: !configured,
     });
   } catch (error) {
-    console.error('Health check error:', error);
+    console.error('Azure health check error:', error);
     
     return NextResponse.json({
       status: 'error',
-      backend: 'piper',
+      backend: 'azure',
+      configured: isAzureConfigured(),
       available: false,
       error: error instanceof Error ? error.message : 'Unknown error',
       voices: [],

@@ -14,6 +14,7 @@ export interface TTSOptions {
 
 export interface TTSState {
   isPlaying: boolean;
+  isLoading: boolean;
   isSlow: boolean;
   currentLoop: number;
   error: string | null;
@@ -30,6 +31,7 @@ export interface TTSControls {
 
 export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [isSlow, setIsSlow] = useState(options.slowMode ?? false);
   const [currentLoop, setCurrentLoop] = useState(0);
   const [error, setError] = useState<string | null>(null);
@@ -38,6 +40,7 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
   const loopCountRef = useRef(options.loopCount ?? 1);
   const loopRef = useRef(options.loop ?? false);
   const utteranceRef = useRef<SpeechSynthesisUtterance | HTMLAudioElement | null>(null);
+  const playbackRequestRef = useRef(0);
 
   // Update refs when options change
   useEffect(() => {
@@ -53,20 +56,35 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
   }, [options.loop]);
 
   const playInternal = useCallback(async (text: string, slow: boolean, loopNum: number) => {
+    const playbackRequestId = playbackRequestRef.current + 1;
+    playbackRequestRef.current = playbackRequestId;
+
     if (!isTTSSupported()) {
       setError('Text-to-speech is not supported in your browser');
       return;
     }
 
     try {
-      setIsPlaying(true);
+      setIsLoading(true);
+      setIsPlaying(false);
       setError(null);
-      
-      options.onStart?.();
 
       const speakFn = slow ? speakSlow : speak;
       const utterance = await speakFn(text, {
+        onStart: () => {
+          if (playbackRequestRef.current !== playbackRequestId) {
+            return;
+          }
+
+          setIsLoading(false);
+          setIsPlaying(true);
+          options.onStart?.();
+        },
         onEnd: () => {
+          if (playbackRequestRef.current !== playbackRequestId) {
+            return;
+          }
+
           // Check if we should loop
           const shouldLoop = loopRef.current && (loopCountRef.current === 0 || loopNum < loopCountRef.current);
           
@@ -75,11 +93,12 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
             setCurrentLoop(nextLoop);
             // Small delay between loops
             setTimeout(() => {
-              if (utteranceRef.current) {
+              if (utteranceRef.current && playbackRequestRef.current === playbackRequestId) {
                 playInternal(text, slow, nextLoop);
               }
             }, 500);
           } else {
+            setIsLoading(false);
             setIsPlaying(false);
             setCurrentLoop(0);
             utteranceRef.current = null;
@@ -87,17 +106,36 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
           }
         },
         onError: (err) => {
+          if (playbackRequestRef.current !== playbackRequestId) {
+            return;
+          }
+
           const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
           setError(errorMessage);
+          setIsLoading(false);
           setIsPlaying(false);
           options.onError?.(err);
         },
       });
 
+      if (playbackRequestRef.current !== playbackRequestId) {
+        return;
+      }
+
       utteranceRef.current = utterance;
+
+      if (!utterance) {
+        setIsLoading(false);
+        setIsPlaying(false);
+      }
     } catch (err) {
+      if (playbackRequestRef.current !== playbackRequestId) {
+        return;
+      }
+
       const errorMessage = err instanceof Error ? err.message : 'Unknown error occurred';
       setError(errorMessage);
+      setIsLoading(false);
       setIsPlaying(false);
       options.onError?.(err);
     }
@@ -112,19 +150,21 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
   }, [isSlow, playInternal]);
 
   const stop = useCallback(() => {
+    playbackRequestRef.current += 1;
     stopSpeaking();
+    setIsLoading(false);
     setIsPlaying(false);
     setCurrentLoop(0);
     utteranceRef.current = null;
   }, []);
 
   const toggle = useCallback(() => {
-    if (isPlaying) {
+    if (isPlaying || isLoading) {
       stop();
     } else {
       play();
     }
-  }, [isPlaying, play, stop]);
+  }, [isLoading, isPlaying, play, stop]);
 
   const toggleSpeed = useCallback(() => {
     const newSlow = !isSlow;
@@ -162,6 +202,7 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
 
   const state: TTSState = {
     isPlaying,
+    isLoading,
     isSlow,
     currentLoop,
     error,

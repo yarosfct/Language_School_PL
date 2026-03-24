@@ -51,12 +51,18 @@ export function TTSButton({
   const variantClasses = {
     default: state.isPlaying
       ? 'bg-primary-500 text-white'
+      : state.isLoading
+      ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
       : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600',
     primary: state.isPlaying
       ? 'bg-primary-600 text-white'
+      : state.isLoading
+      ? 'bg-primary-400 text-white'
       : 'bg-primary-500 text-white hover:bg-primary-600',
     ghost: state.isPlaying
       ? 'bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300'
+      : state.isLoading
+      ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300'
       : 'bg-transparent text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800',
     minimal: 'bg-transparent text-gray-500 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400',
   };
@@ -75,21 +81,23 @@ export function TTSButton({
         ${variantClasses[variant]} 
         ${disabled ? disabledClasses : ''}
         rounded-full transition-all duration-200
-        ${state.isPlaying ? 'animate-pulse' : ''}
+        ${state.isPlaying || state.isLoading ? 'animate-pulse' : ''}
         ${className}
       `}
-      title={state.isPlaying ? 'Stop' : 'Listen'}
-      aria-label={state.isPlaying ? 'Stop audio' : 'Play audio'}
+      title={state.isLoading ? 'Loading audio' : state.isPlaying ? 'Stop' : 'Listen'}
+      aria-label={state.isLoading ? 'Loading audio' : state.isPlaying ? 'Stop audio' : 'Play audio'}
     >
       <div className="flex items-center gap-2">
-        {state.isPlaying ? (
+        {state.isLoading ? (
+          <Loader2 className={`${iconSizes[size]} animate-spin`} />
+        ) : state.isPlaying ? (
           <VolumeX className={iconSizes[size]} />
         ) : (
           <Volume2 className={iconSizes[size]} />
         )}
         {showLabel && (
           <span className="text-sm font-medium">
-            {state.isPlaying ? 'Stop' : 'Listen'}
+            {state.isLoading ? 'Loading...' : state.isPlaying ? 'Stop' : 'Listen'}
           </span>
         )}
       </div>

@@ -339,7 +339,7 @@ export default function LearnPage() {
               Flashcards
             </h2>
             <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-              Practice book vocabulary by topic, random, difficulty placeholder, or your own custom decks.
+              Practice book vocabulary by topic, learned-card practice loops, difficulty buckets, or your own custom decks.
             </p>
           </div>
           <Button
@@ -761,4 +761,3 @@ function getUnlockedSectionIds(
 
   return unlocked;
 }
-

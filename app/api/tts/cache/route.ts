@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getCacheStats, clearCache } from '@/lib/tts/piper';
+import { getCacheStats, clearCache } from '@/lib/tts/azure';
 
 /**
  * Get cache statistics

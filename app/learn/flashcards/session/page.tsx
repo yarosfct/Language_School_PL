@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ArrowLeft, ArrowRight, Clock3, RefreshCw, RotateCcw } from 'lucide-react';
 import { DiacriticsKeyboard } from '@/components/ui/DiacriticsKeyboard';
+import { TTSCompactControls } from '@/components/ui/TTSControls';
 import {
   getCustomFlashcardSet,
   incrementTodayExercise,
@@ -15,18 +16,19 @@ import {
 } from '@/lib/db';
 import {
   evaluateFlashcardWriting,
-  getAllBookFlashcards,
   getInitialDeck,
+  getLearnedFlashcards,
   getTopicFlashcards,
   mapCustomSetToPracticeCards,
+  recordFlashcardAttempt,
   shouldEndSession,
-  type FlashcardSessionConfig,
   type FlashcardAnswerResult,
+  type FlashcardSessionConfig,
 } from '@/lib/flashcards/practice';
 import { convertAsteriskPolish, generateId, shuffle } from '@/lib/utils/string';
-import type { FlashcardPracticeCard } from '@/types/flashcards';
+import type { FlashcardDifficultyBucket, FlashcardPracticeCard, FlashcardSessionMode } from '@/types/flashcards';
 
-type SessionStage = 'initial' | 'retry' | 'random';
+type SessionStage = 'initial' | 'retry' | 'practice';
 
 interface SessionStats {
   shown: number;
@@ -67,10 +69,11 @@ export default function FlashcardsSessionPage() {
   const [displayCard, setDisplayCard] = useState<FlashcardPracticeCard | null>(null);
 
   const FLIP_DURATION_MS = 700;
-
   const currentCard = queue[0] ?? null;
+  const hasTimedLimit = !!config && isTimedSession(config);
+
   const effectiveTargetCount = useMemo(() => {
-    if (!config || config.limitType !== 'count') {
+    if (!config || config.mode === 'practice' || config.limitType !== 'count') {
       return null;
     }
     const requestedTarget = Math.max(1, config.targetCount ?? 20);
@@ -98,7 +101,7 @@ export default function FlashcardsSessionPage() {
       setConfig(parsedConfig);
       setPoolCards(cards);
       setQueue(initialDeck);
-      setStage('initial');
+      setStage(getInitialStage(parsedConfig));
       setAnswer('');
       setSubmitted(false);
       setResult(null);
@@ -106,21 +109,15 @@ export default function FlashcardsSessionPage() {
       setIsFlipped(false);
       setSessionStartedAt(Date.now());
       setSessionFinished(false);
-
-      if (parsedConfig.limitType === 'time') {
-        setTimeLeftMs(Math.max(60_000, (parsedConfig.timeLimitMinutes ?? 10) * 60_000));
-      } else {
-        setTimeLeftMs(0);
-      }
-
+      setTimeLeftMs(hasTimeLimit(parsedConfig) ? Math.max(60_000, (parsedConfig.timeLimitMinutes ?? 10) * 60_000) : 0);
       setLoading(false);
     }
 
-    load();
+    void load();
   }, [searchParams]);
 
   useEffect(() => {
-    if (!config || config.limitType !== 'time' || sessionFinished || loading) {
+    if (!config || !hasTimedLimit || sessionFinished || loading) {
       return;
     }
 
@@ -138,7 +135,7 @@ export default function FlashcardsSessionPage() {
     }, 500);
 
     return () => window.clearInterval(timer);
-  }, [config, sessionFinished, loading, sessionStartedAt]);
+  }, [config, hasTimedLimit, loading, sessionFinished, sessionStartedAt]);
 
   useEffect(() => {
     if (flipTimeoutRef.current !== null) {
@@ -168,18 +165,15 @@ export default function FlashcardsSessionPage() {
         setDisplayCard(currentCard);
         previousCardRef.current = null;
         flipTimeoutRef.current = null;
-        if (inputRef.current) {
-          inputRef.current.focus();
-        }
+        inputRef.current?.focus();
       }, FLIP_DURATION_MS);
       flipTimeoutRef.current = timeoutId;
-    } else {
-      setDisplayCard(currentCard);
-      if (inputRef.current) {
-        inputRef.current.focus();
-      }
+      return;
     }
-  }, [currentCard?.id, currentCard]);
+
+    setDisplayCard(currentCard);
+    inputRef.current?.focus();
+  }, [currentCard]);
 
   useEffect(() => {
     return () => {
@@ -189,16 +183,28 @@ export default function FlashcardsSessionPage() {
     };
   }, []);
 
-  async function handleSubmit() {
-    if (!currentCard || submitted || !answer.trim()) {
+  useEffect(() => {
+    function handleNotebookClosed() {
+      window.requestAnimationFrame(() => {
+        inputRef.current?.focus();
+      });
+    }
+
+    window.addEventListener('notebook-closed', handleNotebookClosed);
+    return () => window.removeEventListener('notebook-closed', handleNotebookClosed);
+  }, []);
+
+  const handleSubmit = useCallback(async () => {
+    if (!config || !currentCard || submitted || !answer.trim()) {
       return;
     }
 
+    const timestamp = Date.now();
     const evaluation = evaluateFlashcardWriting(answer, currentCard);
+
     setSubmitted(true);
     setResult(evaluation);
     setIsFlipped(true);
-
     setStats((previous) => ({
       shown: previous.shown + 1,
       correct: previous.correct + (evaluation.correct ? 1 : 0),
@@ -209,7 +215,7 @@ export default function FlashcardsSessionPage() {
     await saveAttempt(
       `flashcard-${currentCard.id}`,
       {
-        timestamp: Date.now(),
+        timestamp,
         correct: evaluation.correct,
         answer,
         timeSpent: 0,
@@ -219,6 +225,7 @@ export default function FlashcardsSessionPage() {
       currentCard.topicId
     );
 
+    await recordFlashcardAttempt(currentCard, config.practiceType, answer, evaluation, timestamp);
     await incrementTodayExercise(evaluation.correct, currentCard.topicId);
     await updateStreak();
 
@@ -227,7 +234,7 @@ export default function FlashcardsSessionPage() {
         id: generateId(),
         exerciseId: `flashcard-${currentCard.id}`,
         topicId: currentCard.topicId,
-        timestamp: Date.now(),
+        timestamp,
         userAnswer: answer,
         correctAnswer: currentCard.answer,
         tags: [
@@ -238,21 +245,26 @@ export default function FlashcardsSessionPage() {
         reviewed: false,
       });
     }
-  }
+  }, [answer, config, currentCard, submitted]);
 
-  function moveNext() {
+  const moveNext = useCallback(() => {
     if (!config || !currentCard || !result) {
       return;
     }
 
     previousCardRef.current = currentCard;
 
+    if (config.mode === 'practice') {
+      const remaining = queue.slice(1);
+      setQueue(remaining.length > 0 ? remaining : shuffle(poolCards));
+      return;
+    }
+
     if (stage === 'initial' && !result.correct) {
       failedFirstPassRef.current.add(currentCard.id);
     }
 
     const remaining = queue.slice(1);
-
     if (remaining.length > 0) {
       setQueue(remaining);
       return;
@@ -282,24 +294,65 @@ export default function FlashcardsSessionPage() {
         return;
       }
 
-      setStage('random');
+      setStage('practice');
       setQueue(shuffle(poolCards));
       return;
     }
 
-    const shouldEnd = shouldEndSession(
+    const nextShouldEnd = shouldEndSession(
       effectiveTargetCount !== null ? { ...config, targetCount: effectiveTargetCount } : config,
       stats.shown,
       timeLeftMs
     );
-    if (shouldEnd) {
+    if (nextShouldEnd) {
       setSessionFinished(true);
       setQueue([]);
       return;
     }
 
     setQueue(shuffle(poolCards));
-  }
+  }, [config, currentCard, effectiveTargetCount, poolCards, queue, result, stage, stats.shown, timeLeftMs]);
+
+  useEffect(() => {
+    function handleGlobalEnter(event: KeyboardEvent) {
+      if (event.key !== 'Enter' || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) {
+        return;
+      }
+
+      const notebookPanel = document.querySelector<HTMLElement>('aside[data-notebook-panel="true"]');
+      const isNotebookOpen = notebookPanel?.getAttribute('aria-hidden') === 'false';
+      if (isNotebookOpen) {
+        return;
+      }
+
+      if (event.target === inputRef.current) {
+        return;
+      }
+
+      if (!currentCard || sessionFinished) {
+        return;
+      }
+
+      event.preventDefault();
+
+      if (!submitted) {
+        if (!answer.trim()) {
+          inputRef.current?.focus();
+          return;
+        }
+
+        void handleSubmit();
+        return;
+      }
+
+      if (result) {
+        moveNext();
+      }
+    }
+
+    window.addEventListener('keydown', handleGlobalEnter, true);
+    return () => window.removeEventListener('keydown', handleGlobalEnter, true);
+  }, [answer, currentCard, handleSubmit, moveNext, result, sessionFinished, submitted]);
 
   function insertDiacritic(char: string) {
     const input = inputRef.current;
@@ -322,10 +375,10 @@ export default function FlashcardsSessionPage() {
     if (!config) {
       return;
     }
-    const initialDeck = getInitialDeck(config, poolCards);
+
     failedFirstPassRef.current = new Set();
-    setQueue(initialDeck);
-    setStage('initial');
+    setQueue(getInitialDeck(config, poolCards));
+    setStage(getInitialStage(config));
     setAnswer('');
     setSubmitted(false);
     setResult(null);
@@ -333,10 +386,11 @@ export default function FlashcardsSessionPage() {
     setIsFlipped(false);
     setSessionFinished(false);
     setSessionStartedAt(Date.now());
+    setTimeLeftMs(hasTimeLimit(config) ? Math.max(60_000, (config.timeLimitMinutes ?? 10) * 60_000) : 0);
   }
 
   const progressValue = useMemo(() => {
-    if (!config || config.limitType !== 'count' || effectiveTargetCount === null) {
+    if (!config || config.mode === 'practice' || config.limitType !== 'count' || effectiveTargetCount === null) {
       return null;
     }
     return Math.min(100, Math.round((stats.shown / effectiveTargetCount) * 100));
@@ -354,9 +408,7 @@ export default function FlashcardsSessionPage() {
     return (
       <div className="mx-auto max-w-4xl space-y-4 py-12 text-center">
         <h1 className="text-2xl font-bold text-gray-900 dark:text-white">No flashcards available</h1>
-        <p className="text-gray-600 dark:text-gray-400">
-          This mode does not have available cards yet. Try another mode or create a custom set.
-        </p>
+        <p className="text-gray-600 dark:text-gray-400">{getEmptyStateMessage(config)}</p>
         <button
           onClick={() => router.push('/learn/flashcards')}
           className="rounded-xl bg-cyan-600 px-4 py-2 font-semibold text-white hover:bg-cyan-700"
@@ -424,15 +476,16 @@ export default function FlashcardsSessionPage() {
           <div>
             <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400">
               Flashcards • {currentCard.topicLabel} • {config.practiceType}
+              {config.mode === 'difficulty' && config.difficultyBucket ? ` • ${config.difficultyBucket}` : ''}
             </p>
             <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
-              Stage: {stage === 'initial' ? 'First Pass' : stage === 'retry' ? 'Second Chance' : 'Free Practice'}
+              Stage: {getStageLabel(stage, config.mode)}
             </h1>
           </div>
           <div className="flex flex-wrap items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
             <span className="rounded-lg bg-gray-100 px-3 py-1 dark:bg-gray-700">Shown: {stats.shown}</span>
             <span className="rounded-lg bg-gray-100 px-3 py-1 dark:bg-gray-700">Correct: {stats.correct}</span>
-            {config.limitType === 'time' && (
+            {hasTimedLimit && (
               <span className="inline-flex items-center gap-1 rounded-lg bg-gray-100 px-3 py-1 dark:bg-gray-700">
                 <Clock3 className="h-4 w-4" />
                 {formatClock(timeLeftMs)}
@@ -440,6 +493,12 @@ export default function FlashcardsSessionPage() {
             )}
           </div>
         </div>
+
+        {config.mode === 'practice' && (
+          <p className="mt-3 text-sm text-gray-600 dark:text-gray-300">
+            Endless learned-card practice. Keep going until you decide to stop.
+          </p>
+        )}
 
         {progressValue !== null && (
           <div className="mt-4">
@@ -481,10 +540,7 @@ export default function FlashcardsSessionPage() {
               transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
             }}
           >
-            <div
-              className={frontCardClass}
-              style={{ backfaceVisibility: 'hidden' }}
-            >
+            <div className={frontCardClass} style={{ backfaceVisibility: 'hidden' }}>
               <div className="flex items-center justify-between">
                 <p className={`text-xs uppercase tracking-wide ${frontLabelClass}`}>Front</p>
                 {cardToDisplay?.gender && (
@@ -512,6 +568,12 @@ export default function FlashcardsSessionPage() {
             >
               <p className="text-xs uppercase tracking-wide text-emerald-700 dark:text-emerald-300">Back</p>
               <p className="mt-4 text-3xl font-bold text-gray-900 dark:text-white">{cardToDisplay?.answer}</p>
+              {isFlipped && cardToDisplay?.answer && (
+                <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                  <span>Listen in Polish</span>
+                  <TTSCompactControls text={cardToDisplay.answer} />
+                </div>
+              )}
               {result && (
                 <p
                   className={`mt-3 text-sm font-medium ${
@@ -539,7 +601,7 @@ export default function FlashcardsSessionPage() {
             value={answer}
             onChange={(event) => setAnswer(convertAsteriskPolish(event.target.value))}
             onKeyDown={(event) => {
-              if (event.key === 'Enter') {
+              if (event.key === 'Enter' && !event.ctrlKey && !event.metaKey) {
                 event.preventDefault();
                 if (!submitted && answer.trim()) {
                   void handleSubmit();
@@ -594,25 +656,39 @@ export default function FlashcardsSessionPage() {
 }
 
 function parseConfig(searchParams: ReturnType<typeof useSearchParams>): FlashcardSessionConfig | null {
-  const modeParam = searchParams.get('mode');
-  const practiceTypeParam = searchParams.get('practiceType');
-  if (modeParam !== 'topic' && modeParam !== 'random' && modeParam !== 'difficulty' && modeParam !== 'custom') {
+  const rawMode = searchParams.get('mode');
+  const modeParam: FlashcardSessionMode | 'random' | null =
+    rawMode === 'random'
+      ? 'random'
+      : rawMode === 'topic' || rawMode === 'practice' || rawMode === 'difficulty' || rawMode === 'custom'
+      ? rawMode
+      : null;
+  if (!modeParam) {
     return null;
   }
 
+  const practiceTypeParam = searchParams.get('practiceType');
+  const difficultyBucket = parseDifficultyBucket(searchParams.get('difficultyBucket'));
   const limitTypeParam = searchParams.get('limitType');
-  const limitType = limitTypeParam === 'time' ? 'time' : 'count';
+  const topicId = searchParams.get('topicId') ?? undefined;
+  const limitType =
+    limitTypeParam === 'time'
+      ? 'time'
+      : limitTypeParam === 'full-topic' && topicId
+      ? 'full-topic'
+      : 'count';
   const targetCount = Number(searchParams.get('count') ?? 20);
   const timeLimitMinutes = Number(searchParams.get('minutes') ?? 10);
 
   return {
-    mode: modeParam,
+    mode: modeParam === 'random' ? 'practice' : modeParam,
     practiceType:
       practiceTypeParam === 'sentences' || practiceTypeParam === 'mixed' || practiceTypeParam === 'conjugation'
         ? 'sentences'
         : 'vocabulary',
-    topicId: searchParams.get('topicId') ?? undefined,
+      topicId,
     customSetId: searchParams.get('customSetId') ?? undefined,
+    difficultyBucket,
     limitType,
     targetCount: Number.isFinite(targetCount) ? targetCount : 20,
     timeLimitMinutes: Number.isFinite(timeLimitMinutes) ? timeLimitMinutes : 10,
@@ -627,8 +703,15 @@ async function resolveCardsForConfig(config: FlashcardSessionConfig): Promise<Fl
     return getTopicFlashcards(config.topicId, config.practiceType);
   }
 
-  if (config.mode === 'random' || config.mode === 'difficulty') {
-    return getAllBookFlashcards(config.practiceType);
+  if (config.mode === 'practice') {
+    return getLearnedFlashcards(config.practiceType);
+  }
+
+  if (config.mode === 'difficulty') {
+    if (!config.difficultyBucket) {
+      return [];
+    }
+    return getLearnedFlashcards(config.practiceType, config.difficultyBucket);
   }
 
   if (config.mode === 'custom') {
@@ -643,6 +726,59 @@ async function resolveCardsForConfig(config: FlashcardSessionConfig): Promise<Fl
   }
 
   return [];
+}
+
+function parseDifficultyBucket(value: string | null): FlashcardDifficultyBucket | undefined {
+  if (value === 'easy' || value === 'medium' || value === 'hard') {
+    return value;
+  }
+
+  return undefined;
+}
+
+function getInitialStage(config: FlashcardSessionConfig): SessionStage {
+  return config.mode === 'practice' ? 'practice' : 'initial';
+}
+
+function hasTimeLimit(config: FlashcardSessionConfig): boolean {
+  return config.mode !== 'practice' && config.limitType === 'time';
+}
+
+function isTimedSession(config: FlashcardSessionConfig): boolean {
+  return hasTimeLimit(config);
+}
+
+function getStageLabel(stage: SessionStage, mode: FlashcardSessionMode): string {
+  if (mode === 'practice') {
+    return 'Practice Loop';
+  }
+
+  if (stage === 'initial') {
+    return 'First Pass';
+  }
+
+  if (stage === 'retry') {
+    return 'Second Chance';
+  }
+
+  return 'Free Practice';
+}
+
+function getEmptyStateMessage(config: FlashcardSessionConfig | null): string {
+  if (!config) {
+    return 'This mode does not have available cards yet. Try another mode or create a custom set.';
+  }
+
+  if (config.mode === 'practice') {
+    return 'Practice Mode unlocks after you answer some flashcards. Finish a topic or custom session first.';
+  }
+
+  if (config.mode === 'difficulty') {
+    const bucketLabel = config.difficultyBucket ? `${config.difficultyBucket} ` : '';
+    return `No learned ${bucketLabel}flashcards are available for this practice type yet.`;
+  }
+
+  return 'This mode does not have available cards yet. Try another mode or create a custom set.';
 }
 
 function formatClock(ms: number): string {

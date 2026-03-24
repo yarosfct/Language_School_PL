@@ -3,7 +3,7 @@
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
 import { useStore } from '@/lib/store/useStore';
 import { Settings as SettingsIcon, Volume2, Mic, AlertTriangle, Server, Database, Trash2, Download, Upload, Save, Plus } from 'lucide-react';
-import { speak, getAvailableVoices, setVoice, setRate, setPiperVoice, applyTTSPreferences } from '@/lib/tts';
+import { speak, getAvailableVoices, setVoice, setRate, setAzureVoice, applyTTSPreferences } from '@/lib/tts';
 import {
   clearAllData,
   deleteUserWordOverride,
@@ -16,17 +16,21 @@ import {
 import type { UserWordOverride } from '@/types/translations';
 import { Card, Input, PageHeader, Select } from '@/components/ui/primitives';
 
-interface PiperVoice {
+interface AzureVoice {
   name: string;
+  displayName: string;
+  localName: string;
   lang: string;
+  gender: string;
+  voiceType: string;
 }
 
 export default function SettingsPage() {
   const { soundEnabled, toggleSound, resetStore, ttsPreferences, updateTTSPreferences } = useStore();
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
-  const [piperVoices, setPiperVoices] = useState<PiperVoice[]>([]);
+  const [azureVoices, setAzureVoices] = useState<AzureVoice[]>([]);
   const [selectedVoice, setSelectedVoice] = useState<string>('');
-  const [selectedPiperVoice, setSelectedPiperVoice] = useState<string>('');
+  const [selectedAzureVoice, setSelectedAzureVoice] = useState<string>('');
   const [speechRate, setSpeechRate] = useState<number>(ttsPreferences.rate ?? 1.0);
   const [testText, setTestText] = useState<string>('Dzień dobry! Jak się masz?');
   const [showResetConfirm, setShowResetConfirm] = useState<boolean>(false);
@@ -35,7 +39,7 @@ export default function SettingsPage() {
   const [isSavingDevMode, setIsSavingDevMode] = useState<boolean>(false);
   
   // TTS Backend state
-  const [backendStatus, setBackendStatus] = useState<'checking' | 'piper' | 'webspeech'>('checking');
+  const [backendStatus, setBackendStatus] = useState<'checking' | 'azure' | 'webspeech'>('checking');
   const [cacheStats, setCacheStats] = useState<{ count: number; sizeFormatted: string } | null>(null);
   const [isLoadingCache, setIsLoadingCache] = useState(false);
   const [isTestingTTS, setIsTestingTTS] = useState(false);
@@ -60,10 +64,10 @@ export default function SettingsPage() {
     // Apply all saved preferences to TTS module
     applyTTSPreferences({
       voiceURI: ttsPreferences.voiceURI,
-      piperVoice: ttsPreferences.piperVoice,
+      azureVoice: ttsPreferences.azureVoice,
       rate: ttsPreferences.rate,
     });
-  }, [ttsPreferences.piperVoice, ttsPreferences.rate, ttsPreferences.voiceURI]);
+  }, [ttsPreferences.azureVoice, ttsPreferences.rate, ttsPreferences.voiceURI]);
 
   useEffect(() => {
     const loadPreferences = async () => {
@@ -80,35 +84,29 @@ export default function SettingsPage() {
     void loadPreferences();
   }, []);
 
-  // Check backend status and load Piper voices
+  // Check backend status and load Azure voices
   useEffect(() => {
     const checkBackend = async () => {
       try {
         const response = await fetch('/api/tts/health');
         const data = await response.json();
-        const isPiper = data.available && data.voiceCount > 0;
-        setBackendStatus(isPiper ? 'piper' : 'webspeech');
+        const isAzure = data.available && data.voiceCount > 0;
+        setBackendStatus(isAzure ? 'azure' : 'webspeech');
         
-        if (isPiper && data.voices) {
-          // Load Piper voices
-          const voices = data.voices as PiperVoice[];
-          setPiperVoices(voices);
+        if (isAzure && data.voices) {
+          const voices = data.voices as AzureVoice[];
+          setAzureVoices(voices);
           
           // Only set voice if not already set (initial load)
-          if (!selectedPiperVoice) {
-            // Load saved Piper voice from preferences, or set default
-            if (ttsPreferences.piperVoice && voices.find(v => v.name === ttsPreferences.piperVoice)) {
-              setSelectedPiperVoice(ttsPreferences.piperVoice);
-              setPiperVoice(ttsPreferences.piperVoice);
+          if (!selectedAzureVoice) {
+            if (ttsPreferences.azureVoice && voices.find(v => v.name === ttsPreferences.azureVoice)) {
+              setSelectedAzureVoice(ttsPreferences.azureVoice);
+              setAzureVoice(ttsPreferences.azureVoice);
             } else if (voices.length > 0) {
-              // Set default Piper voice (prefer darkman-medium, then first available)
-              const preferredVoice = voices.find(v => v.name.includes('darkman-medium')) 
-                || voices.find(v => v.name.includes('darkman'))
-                || voices[0];
-              setSelectedPiperVoice(preferredVoice.name);
-              setPiperVoice(preferredVoice.name);
-              // Save to preferences
-              updateTTSPreferences({ piperVoice: preferredVoice.name });
+              const preferredVoice = voices[0];
+              setSelectedAzureVoice(preferredVoice.name);
+              setAzureVoice(preferredVoice.name);
+              updateTTSPreferences({ azureVoice: preferredVoice.name });
             }
           }
         }
@@ -137,7 +135,7 @@ export default function SettingsPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Only run once on mount
 
-  // Load Web Speech API voices only when not using Piper
+  // Load Web Speech API voices only when Azure isn't available
   useEffect(() => {
     if (backendStatus === 'webspeech') {
       const loadVoices = () => {
@@ -191,11 +189,10 @@ export default function SettingsPage() {
     updateTTSPreferences({ voiceURI });
   };
 
-  const handlePiperVoiceChange = (voiceName: string) => {
-    setSelectedPiperVoice(voiceName);
-    setPiperVoice(voiceName);
-    // Save to preferences
-    updateTTSPreferences({ piperVoice: voiceName });
+  const handleAzureVoiceChange = (voiceName: string) => {
+    setSelectedAzureVoice(voiceName);
+    setAzureVoice(voiceName);
+    updateTTSPreferences({ azureVoice: voiceName });
   };
 
   const handleRateChange = (rate: number) => {
@@ -234,8 +231,8 @@ export default function SettingsPage() {
     setIsTestingTTS(true);
     
     try {
-      if (backendStatus === 'piper') {
-        // Use Piper TTS API
+      if (backendStatus === 'azure') {
+        // Use Azure Speech API
         const response = await fetch('/api/tts/speak', {
           method: 'POST',
           headers: {
@@ -244,7 +241,7 @@ export default function SettingsPage() {
           body: JSON.stringify({
             text: textToSpeak,
             rate: speechRate,
-            voice: selectedPiperVoice || undefined,
+            voice: selectedAzureVoice || undefined,
           }),
         });
 
@@ -583,36 +580,32 @@ export default function SettingsPage() {
           </h2>
           
           <div className="space-y-4">
-            {/* Voice Selection - Show Piper voices when Piper is active, Web Speech API voices otherwise */}
-            {backendStatus === 'piper' ? (
+            {/* Voice Selection - Show Azure voices when Azure is active, Web Speech API voices otherwise */}
+            {backendStatus === 'azure' ? (
               <div>
                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Piper Voice
+                  Azure Voice
                 </label>
-                {piperVoices.length > 0 ? (
+                {azureVoices.length > 0 ? (
                   <select
-                    value={selectedPiperVoice}
-                    onChange={(e) => handlePiperVoiceChange(e.target.value)}
+                    value={selectedAzureVoice}
+                    onChange={(e) => handleAzureVoiceChange(e.target.value)}
                     className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   >
-                    {piperVoices.map((voice) => {
-                      // Format voice name for display (remove pl_PL- prefix, make readable)
-                      const displayName = voice.name
-                        .replace(/^pl_PL-/, '')
-                        .replace(/-/g, ' ')
-                        .replace(/\b\w/g, l => l.toUpperCase());
+                    {azureVoices.map((voice) => {
+                      const displayName = voice.localName || voice.displayName || voice.name;
                       return (
                         <option key={voice.name} value={voice.name}>
-                          {displayName}
+                          {displayName} ({voice.gender})
                         </option>
                       );
                     })}
                   </select>
                 ) : (
                   <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
-                    <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-1">No Piper voices found</p>
+                    <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-1">No Azure voices found</p>
                     <p className="text-xs text-yellow-700 dark:text-yellow-300">
-                      Download voice models to public/voices/ directory.
+                      Check your Azure Speech region and API key configuration.
                     </p>
                   </div>
                 )}
@@ -638,7 +631,7 @@ export default function SettingsPage() {
                   <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
                     <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium mb-1">No Polish voices found</p>
                     <p className="text-xs text-yellow-700 dark:text-yellow-300">
-                      Install Polish TTS voices on your system for better pronunciation.
+                      Azure Speech is not configured, so the app is falling back to browser voices.
                     </p>
                   </div>
                 )}
@@ -709,25 +702,25 @@ export default function SettingsPage() {
                 </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
                   {backendStatus === 'checking' && 'Checking backend status...'}
-                  {backendStatus === 'piper' && 'Using Piper TTS (High-quality neural voices)'}
+                  {backendStatus === 'azure' && 'Using Azure Speech (cloud neural voices)'}
                   {backendStatus === 'webspeech' && 'Using Web Speech API (Browser voices)'}
                 </p>
               </div>
               <div className={`px-3 py-1 rounded-full text-sm font-medium ${
-                backendStatus === 'piper' 
+                backendStatus === 'azure' 
                   ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'
                   : backendStatus === 'webspeech'
                   ? 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'
                   : 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
               }`}>
                 {backendStatus === 'checking' && 'Checking'}
-                {backendStatus === 'piper' && 'Piper'}
+                {backendStatus === 'azure' && 'Azure'}
                 {backendStatus === 'webspeech' && 'Web Speech'}
               </div>
             </div>
 
-            {/* Cache Stats (only show for Piper backend) */}
-            {backendStatus === 'piper' && cacheStats && (
+            {/* Cache Stats (only show for Azure backend) */}
+            {backendStatus === 'azure' && cacheStats && (
               <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center justify-between mb-2">
                   <div>
@@ -760,16 +753,15 @@ export default function SettingsPage() {
                 <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
                   <h3 className="font-medium text-blue-900 dark:text-blue-200 mb-2">Want better voice quality?</h3>
                   <p className="text-sm text-blue-800 dark:text-blue-300 mb-3">
-                    Install Piper TTS for natural-sounding Polish voices. Run these commands:
+                    Add Azure Speech credentials so the app can use cloud Polish voices:
                   </p>
                   <div className="bg-blue-100 dark:bg-blue-950 rounded p-3 font-mono text-xs text-blue-900 dark:text-blue-100 space-y-1">
-                    <div>yay -S piper-tts-bin</div>
-                    <div>mkdir -p public/voices && cd public/voices</div>
-                    <div className="text-[10px] break-all">wget https://huggingface.co/rhasspy/piper-voices/resolve/main/pl/pl_PL/mls_6892/medium/pl_PL-mls_6892-medium.onnx</div>
-                    <div className="text-[10px] break-all">wget https://huggingface.co/rhasspy/piper-voices/resolve/main/pl/pl_PL/mls_6892/medium/pl_PL-mls_6892-medium.onnx.json</div>
+                    <div>AZURE_SPEECH_KEY=your_azure_speech_key</div>
+                    <div>AZURE_SPEECH_REGION=your_resource_region</div>
+                    <div>AZURE_SPEECH_VOICE=pl-PL-AgnieszkaNeural</div>
                   </div>
                   <p className="text-xs text-blue-700 dark:text-blue-400 mt-2">
-                    After installation, restart the development server.
+                    Restart the development server after updating your environment variables.
                   </p>
                 </div>
               </div>

@@ -1,21 +1,50 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState, type ComponentType, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
-import { BookOpenText, ChevronDown, ChevronLeft, ChevronRight, Clock3, ListChecks, Pencil, Plus, Sparkles, Trash2 } from 'lucide-react';
 import {
-  deleteCustomFlashcardSet,
-  getAllCustomFlashcardSets,
-  initializeDatabase,
-  saveCustomFlashcardSet,
-} from '@/lib/db';
+  Armchair,
+  Bath,
+  BookOpenText,
+  CheckCircle2,
+  Clock3,
+  Hash,
+  HeartPulse,
+  House,
+  ListChecks,
+  Pencil,
+  Plus,
+  Sparkles,
+  Trash2,
+  UtensilsCrossed,
+} from 'lucide-react';
+import { initializeDatabase } from '@/lib/db';
+import {
+  createCustomFlashcardSet,
+  getCustomFlashcardSets,
+  importFlashcardTemplate,
+  removeCustomFlashcardSet,
+  updateCustomFlashcardSet,
+} from '@/lib/flashcards/customSets';
 import { getFlashcardTopics } from '@/lib/flashcards/practice';
+import { getResolvedFlashcardTemplates } from '@/lib/flashcards/templates';
 import { generateId } from '@/lib/utils/string';
+import {
+  Badge,
+  Button,
+  Card,
+  Input,
+  PageHeader,
+  SectionTitle,
+  Select,
+} from '@/components/ui/primitives';
 import type {
   CustomFlashcardSet,
+  FlashcardDifficultyBucket,
   FlashcardLimitType,
   FlashcardPracticeType,
   FlashcardSessionMode,
+  ResolvedFlashcardTemplate,
 } from '@/types/flashcards';
 
 interface DraftCustomCard {
@@ -24,69 +53,96 @@ interface DraftCustomCard {
   answer: string;
 }
 
-const TOPIC_MODES: FlashcardSessionMode[] = ['topic', 'random', 'custom'];
+interface InlineNotice {
+  tone: 'success' | 'error' | 'info';
+  text: string;
+}
+
+const MODES_WITH_PRACTICE_TYPE: FlashcardSessionMode[] = ['topic', 'practice', 'difficulty', 'custom'];
+const MODES_WITH_LIMITS: FlashcardSessionMode[] = ['topic', 'difficulty', 'custom'];
 const PRACTICE_TYPE_LABELS: Record<FlashcardPracticeType, string> = {
   vocabulary: 'Vocabulary',
   sentences: 'Sentences',
+};
+const DIFFICULTY_BUCKET_LABELS: Record<FlashcardDifficultyBucket, string> = {
+  easy: 'Easy',
+  medium: 'Medium',
+  hard: 'Hard',
 };
 
 export default function LearnFlashcardsPage() {
   const router = useRouter();
   const [mode, setMode] = useState<FlashcardSessionMode>('topic');
-  const [limitType, setLimitType] = useState<FlashcardLimitType>('count');
+  const [limitType, setLimitType] = useState<FlashcardLimitType>('full-topic');
   const [targetCount, setTargetCount] = useState(20);
   const [timeLimitMinutes, setTimeLimitMinutes] = useState(10);
-  const [topicId, setTopicId] = useState<string>('');
+  const [topicId, setTopicId] = useState('');
   const [practiceType, setPracticeType] = useState<FlashcardPracticeType>('vocabulary');
-  const [customSetId, setCustomSetId] = useState<string>('');
+  const [difficultyBucket, setDifficultyBucket] = useState<FlashcardDifficultyBucket | null>(null);
+  const [selectedSetId, setSelectedSetId] = useState('');
   const [customSets, setCustomSets] = useState<CustomFlashcardSet[]>([]);
   const [isSavingSet, setIsSavingSet] = useState(false);
   const [editingSetId, setEditingSetId] = useState<string | null>(null);
+  const [pendingDeleteId, setPendingDeleteId] = useState<string | null>(null);
+  const [isImportingTemplateId, setIsImportingTemplateId] = useState<string | null>(null);
+  const [plannerNotice, setPlannerNotice] = useState<InlineNotice | null>(null);
+  const [editorNotice, setEditorNotice] = useState<InlineNotice | null>(null);
 
   const [newSetName, setNewSetName] = useState('');
   const [newSetDescription, setNewSetDescription] = useState('');
-  const [draftCards, setDraftCards] = useState<DraftCustomCard[]>([
-    { id: generateId(), prompt: '', answer: '' },
-    { id: generateId(), prompt: '', answer: '' },
-  ]);
+  const [draftCards, setDraftCards] = useState<DraftCustomCard[]>(buildEmptyDraftCards());
 
   const topics = useMemo(() => getFlashcardTopics(), []);
-  const currentTopicIndex = useMemo(
-    () => topics.findIndex((topic) => topic.id === topicId),
-    [topicId, topics]
-  );
-  const topicOptions = useMemo(
-    () =>
-      topics.map((topic) => ({
-        value: topic.id,
-        label: topic.label,
-      })),
-    [topics]
+  const templates = useMemo(() => getResolvedFlashcardTemplates(), []);
+  const selectedSet = useMemo(
+    () => customSets.find((set) => set.id === selectedSetId) ?? null,
+    [customSets, selectedSetId]
   );
 
   useEffect(() => {
     async function load() {
       await initializeDatabase();
-      const existingSets = await getAllCustomFlashcardSets();
+      const existingSets = await getCustomFlashcardSets();
       setCustomSets(existingSets);
 
       if (topics.length > 0) {
         setTopicId(topics[0].id);
       }
       if (existingSets.length > 0) {
-        setCustomSetId(existingSets[0].id);
+        setSelectedSetId(existingSets[0].id);
       }
     }
 
-    load();
+    void load();
   }, [topics]);
 
-  async function refreshCustomSets() {
-    const sets = await getAllCustomFlashcardSets();
-    setCustomSets(sets);
-    if (sets.length > 0 && !sets.some((set) => set.id === customSetId)) {
-      setCustomSetId(sets[0].id);
+  useEffect(() => {
+    if (mode === 'topic') {
+      setLimitType((previous) => (previous === 'time' || previous === 'count' ? previous : 'full-topic'));
+      return;
     }
+
+    setLimitType((previous) => (previous === 'full-topic' ? 'count' : previous));
+  }, [mode]);
+
+  async function refreshSets(preferredSetId?: string) {
+    const sets = await getCustomFlashcardSets();
+    setCustomSets(sets);
+
+    if (sets.length === 0) {
+      setSelectedSetId('');
+      return sets;
+    }
+
+    const nextSelected =
+      preferredSetId && sets.some((set) => set.id === preferredSetId)
+        ? preferredSetId
+        : sets.some((set) => set.id === selectedSetId)
+        ? selectedSetId
+        : sets[0].id;
+
+    setSelectedSetId(nextSelected);
+    return sets;
   }
 
   function updateDraftCard(id: string, patch: Partial<DraftCustomCard>) {
@@ -100,464 +156,692 @@ export default function LearnFlashcardsPage() {
   }
 
   function removeDraftCard(id: string) {
-    setDraftCards((previous) => previous.filter((card) => card.id !== id));
+    setDraftCards((previous) => {
+      const remaining = previous.filter((card) => card.id !== id);
+      return remaining.length > 0 ? remaining : buildEmptyDraftCards();
+    });
   }
 
-  function resetForm() {
+  function resetEditor() {
     setNewSetName('');
     setNewSetDescription('');
-    setDraftCards([
-      { id: generateId(), prompt: '', answer: '' },
-      { id: generateId(), prompt: '', answer: '' },
-    ]);
+    setDraftCards(buildEmptyDraftCards());
     setEditingSetId(null);
+    setPendingDeleteId(null);
   }
 
-  function startEditingSet(set: CustomFlashcardSet) {
+  function beginCreateSet() {
+    resetEditor();
+    setEditorNotice(null);
+  }
+
+  function populateEditor(set: CustomFlashcardSet) {
     setEditingSetId(set.id);
+    setSelectedSetId(set.id);
     setNewSetName(set.name);
     setNewSetDescription(set.description ?? '');
     setDraftCards(
       set.cards.length > 0
-        ? set.cards.map((c) => ({ id: c.id, prompt: c.prompt, answer: c.answer }))
-        : [{ id: generateId(), prompt: '', answer: '' }, { id: generateId(), prompt: '', answer: '' }]
+        ? set.cards.map((card) => ({
+            id: card.id,
+            prompt: card.prompt,
+            answer: card.answer,
+          }))
+        : buildEmptyDraftCards()
     );
+    setPendingDeleteId(null);
   }
 
-  function cancelEdit() {
-    resetForm();
-  }
-
-  async function saveNewCustomSet() {
-    const name = newSetName.trim();
-    if (!name) {
-      alert('Please provide a set name.');
+  async function handleSaveSet() {
+    const trimmedName = newSetName.trim();
+    if (!trimmedName) {
+      setEditorNotice({ tone: 'error', text: 'Give the set a name before saving.' });
       return;
     }
 
-    const isUpdate = editingSetId !== null;
-    const existing = isUpdate ? customSets.find((s) => s.id === editingSetId) : null;
-
     const cards = draftCards
       .filter((card) => card.prompt.trim() && card.answer.trim())
-      .map((draft) => {
-        const existingCard = existing?.cards.find((c) => c.id === draft.id);
-        return {
-          id: draft.id,
-          prompt: draft.prompt.trim(),
-          answer: draft.answer.trim(),
-          createdAt: existingCard?.createdAt ?? Date.now(),
-        };
-      });
+      .map((card) => ({
+        id: card.id,
+        prompt: card.prompt,
+        answer: card.answer,
+      }));
 
     if (cards.length === 0) {
-      alert('Add at least one flashcard with prompt and answer.');
+      setEditorNotice({ tone: 'error', text: 'Add at least one flashcard row with both sides filled in.' });
       return;
     }
 
     setIsSavingSet(true);
     try {
-      if (isUpdate && existing) {
-        await saveCustomFlashcardSet({
-          id: existing.id,
-          name,
-          description: newSetDescription.trim() || undefined,
-          cards,
-          createdAt: existing.createdAt,
-          updatedAt: existing.updatedAt,
-        });
-      } else {
-        const now = Date.now();
-        await saveCustomFlashcardSet({
-          id: generateId(),
-          name,
-          description: newSetDescription.trim() || undefined,
-          cards,
-          createdAt: now,
-          updatedAt: now,
-        });
-      }
+      const savedSet = editingSetId
+        ? await updateCustomFlashcardSet({
+            id: editingSetId,
+            name: trimmedName,
+            description: newSetDescription,
+            cards,
+          })
+        : await createCustomFlashcardSet({
+            name: trimmedName,
+            description: newSetDescription,
+            cards,
+          });
 
-      resetForm();
-      await refreshCustomSets();
+      await refreshSets(savedSet.id);
+      populateEditor(savedSet);
+      setEditorNotice({
+        tone: 'success',
+        text: editingSetId ? 'Set updated and ready to practice.' : 'New custom set created.',
+      });
     } finally {
       setIsSavingSet(false);
     }
   }
 
-  async function removeSet(id: string) {
-    const confirmed = window.confirm('Delete this custom set?');
-    if (!confirmed) {
-      return;
+  async function handleImportTemplate(template: ResolvedFlashcardTemplate) {
+    setIsImportingTemplateId(template.id);
+    try {
+      const importedSet = await importFlashcardTemplate(template.id);
+      await refreshSets(importedSet.id);
+      populateEditor(importedSet);
+      setEditorNotice({
+        tone: 'success',
+        text: `${importedSet.name} imported. You can edit the cards right away.`,
+      });
+    } catch (error) {
+      setEditorNotice({
+        tone: 'error',
+        text: error instanceof Error ? error.message : 'Unable to import template.',
+      });
+    } finally {
+      setIsImportingTemplateId(null);
     }
-
-    await deleteCustomFlashcardSet(id);
-    await refreshCustomSets();
   }
 
-  function moveTopic(direction: 'previous' | 'next') {
-    if (topics.length === 0) {
+  async function handleDeleteSet(id: string) {
+    if (pendingDeleteId !== id) {
+      setPendingDeleteId(id);
+      setEditorNotice({
+        tone: 'info',
+        text: 'Click delete again to confirm, or choose another action to cancel.',
+      });
       return;
     }
 
-    const safeIndex = currentTopicIndex >= 0 ? currentTopicIndex : 0;
-    const nextIndex = direction === 'previous' ? safeIndex - 1 : safeIndex + 1;
-    if (nextIndex < 0 || nextIndex >= topics.length) {
-      return;
+    await removeCustomFlashcardSet(id);
+    const remainingSets = await refreshSets();
+    if (editingSetId === id) {
+      if (remainingSets.length > 0) {
+        populateEditor(remainingSets[0]);
+      } else {
+        resetEditor();
+      }
     }
-    setTopicId(topics[nextIndex].id);
+    setPendingDeleteId(null);
+    setEditorNotice({ tone: 'success', text: 'Set deleted.' });
   }
 
   function startSession() {
-    if (mode === 'difficulty') {
-      alert('Difficulty mode is a placeholder for now.');
-      return;
-    }
+    setPlannerNotice(null);
 
     const params = new URLSearchParams();
     params.set('mode', mode);
-    params.set('limitType', limitType);
     params.set('practiceType', practiceType);
 
-    if (limitType === 'count') {
-      params.set('count', String(Math.max(1, targetCount)));
-    } else {
-      params.set('minutes', String(Math.max(1, timeLimitMinutes)));
+    if (mode !== 'practice') {
+      const resolvedLimitType = mode === 'topic' ? limitType : limitType === 'full-topic' ? 'count' : limitType;
+
+      params.set('limitType', resolvedLimitType);
+
+      if (resolvedLimitType === 'count') {
+        params.set('count', String(Math.max(1, targetCount)));
+      } else if (resolvedLimitType === 'time') {
+        params.set('minutes', String(Math.max(1, timeLimitMinutes)));
+      }
     }
 
     if (mode === 'topic') {
       if (!topicId) {
-        alert('Choose a topic first.');
+        setPlannerNotice({ tone: 'error', text: 'Choose a topic before starting.' });
         return;
       }
       params.set('topicId', topicId);
     }
 
-    if (mode === 'custom') {
-      if (!customSetId) {
-        alert('Choose a custom set first.');
+    if (mode === 'difficulty') {
+      if (!difficultyBucket) {
+        setPlannerNotice({ tone: 'error', text: 'Choose a difficulty bucket first.' });
         return;
       }
-      params.set('customSetId', customSetId);
+      params.set('difficultyBucket', difficultyBucket);
+    }
+
+    if (mode === 'custom') {
+      if (!selectedSetId) {
+        setPlannerNotice({ tone: 'error', text: 'Create or import a set before running custom flashcards.' });
+        return;
+      }
+      params.set('customSetId', selectedSetId);
     }
 
     router.push(`/learn/flashcards/session?${params.toString()}`);
   }
 
   return (
-    <div className="mx-auto max-w-6xl space-y-6">
-      <section className="rounded-3xl bg-gradient-to-br from-cyan-700 via-sky-700 to-blue-700 p-8 text-white shadow-xl">
-        <h1 className="text-3xl font-bold sm:text-4xl">Flashcards Lab</h1>
-        <p className="mt-2 max-w-3xl text-sm text-white/90 sm:text-base">
-          Practice vocabulary with typing-only flashcards, second-chance loops, and custom decks.
-        </p>
-      </section>
+    <div className="mx-auto max-w-7xl space-y-8">
+      <PageHeader
+        title="Flashcards Lab"
+        description="Build your own practice sets, import starter packs, and spin up focused flashcard sessions from one place."
+        actions={
+          <div className="flex flex-wrap items-center gap-2">
+            <Badge tone="primary">{templates.length} starter templates</Badge>
+            <Badge tone="success">{customSets.length} my sets</Badge>
+          </div>
+        }
+      />
 
-      <section className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Choose Mode</h2>
-        <div className="mt-4 grid grid-cols-1 gap-3 md:grid-cols-4">
-          <ModeButton
-            active={mode === 'topic'}
-            title="By Topic"
-            description="Practice words from one topic."
-            icon={BookOpenText}
-            onClick={() => setMode('topic')}
-          />
-          <ModeButton
-            active={mode === 'random'}
-            title="Random"
-            description="Mix words from all topics."
-            icon={Sparkles}
-            onClick={() => setMode('random')}
-          />
-          <ModeButton
-            active={mode === 'difficulty'}
-            title="By Difficulty"
-            description="Placeholder for future logic."
-            icon={ListChecks}
-            onClick={() => setMode('difficulty')}
-          />
-          <ModeButton
-            active={mode === 'custom'}
-            title="Custom"
-            description="Use your own flashcard sets."
-            icon={Plus}
-            onClick={() => setMode('custom')}
-          />
-        </div>
-
-        {TOPIC_MODES.includes(mode) && (
-          <div className="mt-4 rounded-2xl border border-gray-200 bg-gray-50/80 p-3 dark:border-gray-700 dark:bg-gray-900/40">
-            <div className="grid grid-cols-1 gap-2.5 md:grid-cols-2">
-              {mode === 'topic' && (
-                <CompactNavigator
-                  label="Section"
-                  value={topics[currentTopicIndex]?.label ?? topics[0]?.label ?? 'Choose section'}
-                  onPrevious={() => moveTopic('previous')}
-                  onNext={() => moveTopic('next')}
-                  canGoPrevious={currentTopicIndex > 0}
-                  canGoNext={currentTopicIndex >= 0 && currentTopicIndex < topics.length - 1}
-                  options={topicOptions}
-                  selectedValue={topicId}
-                  onSelectValue={setTopicId}
-                />
-              )}
-              <div className="rounded-xl border border-gray-200/90 bg-white p-2 dark:border-gray-700 dark:bg-gray-800/90">
-                <p className="px-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">
-                  Practice
-                </p>
-                <div className="mt-1 grid grid-cols-2 rounded-lg border border-gray-200 bg-white p-1 dark:border-gray-700 dark:bg-gray-800/90">
-                  <button
-                    type="button"
-                    onClick={() => setPracticeType('vocabulary')}
-                    className={`rounded-md px-3 py-1.5 text-sm font-semibold transition-colors duration-200 motion-reduce:transition-none ${
-                      practiceType === 'vocabulary'
-                        ? 'bg-cyan-600 text-white'
-                        : 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700'
-                    }`}
-                  >
-                    {PRACTICE_TYPE_LABELS.vocabulary}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setPracticeType('sentences')}
-                    className={`rounded-md px-3 py-1.5 text-sm font-semibold transition-colors duration-200 motion-reduce:transition-none ${
-                      practiceType === 'sentences'
-                        ? 'bg-cyan-600 text-white'
-                        : 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700'
-                    }`}
-                  >
-                    {PRACTICE_TYPE_LABELS.sentences}
-                  </button>
-                </div>
-              </div>
-            </div>
-            <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
-              Vocabulary mode uses entries from each section&apos;s <code>vocabulary</code>. Sentences mode uses each
-              section&apos;s sentence pairs.
+      <section className="overflow-hidden rounded-[2rem] bg-gradient-to-br from-sky-700 via-cyan-700 to-teal-600 p-8 text-white shadow-xl">
+        <div className="grid gap-6 lg:grid-cols-[1.2fr,0.8fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/75">Planner + Builder</p>
+            <h2 className="mt-3 max-w-2xl text-3xl font-bold sm:text-4xl">
+              Import a starter pack, tailor it, and jump straight into practice.
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm text-white/85 sm:text-base">
+              Templates become editable personal sets after import, so your flashcards stay flexible instead of locked.
             </p>
           </div>
-        )}
-
-        {mode === 'custom' && (
-          <div className="mt-4">
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">Custom Set</label>
-            {customSets.length > 0 ? (
-              <select
-                value={customSetId}
-                onChange={(event) => setCustomSetId(event.target.value)}
-                className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
-              >
-                {customSets.map((set) => (
-                  <option key={set.id} value={set.id}>
-                    {set.name} ({set.cards.length} cards)
-                  </option>
-                ))}
-              </select>
-            ) : (
-              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                No custom sets yet. Create one below.
-              </p>
-            )}
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-2">
+            <MetricCard label="Template Cards" value={String(templates.reduce((sum, template) => sum + template.cardCount, 0))} />
+            <MetricCard label="Custom Sets" value={String(customSets.length)} />
+            <MetricCard
+              label="Practice Modes"
+              value={String(MODES_WITH_PRACTICE_TYPE.length)}
+            />
+            <MetricCard label="Focused Limits" value="Count / Time" />
           </div>
-        )}
+        </div>
+      </section>
 
-        {TOPIC_MODES.includes(mode) && (
-          <div className="mt-5 grid grid-cols-1 gap-3 md:grid-cols-2">
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900/40">
-              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                Session Limit
-              </p>
-              <div className="mt-3 flex gap-2">
+      <div className="grid gap-8">
+        <Card className="space-y-6">
+          <SectionTitle
+            title="Session Planner"
+            description="Choose how you want to study, then launch a topic, difficulty, or custom session."
+            icon={<Sparkles className="h-5 w-5 text-primary-500" />}
+          />
+
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+            <ModeButton
+              active={mode === 'topic'}
+              title="By Topic"
+              description="Practice a focused topic slice."
+              icon={BookOpenText}
+              onClick={() => setMode('topic')}
+            />
+            <ModeButton
+              active={mode === 'practice'}
+              title="Practice Loop"
+              description="Endless learned-card review."
+              icon={Sparkles}
+              onClick={() => setMode('practice')}
+            />
+            <ModeButton
+              active={mode === 'difficulty'}
+              title="By Difficulty"
+              description="Drill easy, medium, or hard cards."
+              icon={ListChecks}
+              onClick={() => setMode('difficulty')}
+            />
+            <ModeButton
+              active={mode === 'custom'}
+              title="My Set"
+              description="Run one of your own decks."
+              icon={Plus}
+              onClick={() => setMode('custom')}
+            />
+          </div>
+
+          {MODES_WITH_PRACTICE_TYPE.includes(mode) && (
+            <div className="grid gap-4 rounded-3xl border border-gray-200 bg-gray-50/80 p-4 dark:border-gray-700 dark:bg-gray-900/40 md:grid-cols-2">
+              <div>
+                <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-200">
+                  Practice type
+                </label>
+                <div className="grid grid-cols-2 gap-2">
+                  {(Object.keys(PRACTICE_TYPE_LABELS) as FlashcardPracticeType[]).map((type) => (
+                    <button
+                      key={type}
+                      type="button"
+                      onClick={() => setPracticeType(type)}
+                      className={`rounded-2xl border px-4 py-3 text-sm font-semibold transition-colors ${
+                        practiceType === type
+                          ? 'border-primary-500 bg-primary-500 text-white'
+                          : 'border-gray-200 bg-white text-gray-700 hover:border-primary-300 hover:bg-primary-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'
+                      }`}
+                    >
+                      {PRACTICE_TYPE_LABELS[type]}
+                    </button>
+                  ))}
+                </div>
+                <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                  Vocabulary uses section terms. Sentences uses sentence pairs from the book.
+                </p>
+              </div>
+
+              {mode === 'topic' && (
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-200">
+                    Topic
+                  </label>
+                  <Select value={topicId} onChange={(event) => setTopicId(event.target.value)}>
+                    {topics.map((topic) => (
+                      <option key={topic.id} value={topic.id}>
+                        {topic.label}
+                      </option>
+                    ))}
+                  </Select>
+                </div>
+              )}
+
+              {mode === 'custom' && (
+                <div>
+                  <label className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-200">
+                    Custom set
+                  </label>
+                  <Select value={selectedSetId} onChange={(event) => setSelectedSetId(event.target.value)}>
+                    {customSets.length === 0 ? (
+                      <option value="">Create or import a set first</option>
+                    ) : (
+                      customSets.map((set) => (
+                        <option key={set.id} value={set.id}>
+                          {set.name} ({set.cards.length} cards)
+                        </option>
+                      ))
+                    )}
+                  </Select>
+                  {selectedSet && (
+                    <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                      {selectedSet.description ?? 'This set is ready for a custom flashcard run.'}
+                    </p>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+
+          {mode === 'difficulty' && (
+            <div className="grid gap-3 sm:grid-cols-3">
+              {(Object.keys(DIFFICULTY_BUCKET_LABELS) as FlashcardDifficultyBucket[]).map((bucket) => (
                 <button
-                  onClick={() => setLimitType('count')}
-                  className={`rounded-lg px-3 py-2 text-sm font-semibold ${
-                    limitType === 'count'
-                      ? 'bg-cyan-600 text-white'
-                      : 'border border-gray-300 text-gray-700 dark:border-gray-600 dark:text-gray-200'
+                  key={bucket}
+                  type="button"
+                  onClick={() => setDifficultyBucket(bucket)}
+                  className={`rounded-3xl border p-4 text-left transition-colors ${
+                    difficultyBucket === bucket
+                      ? 'border-cyan-500 bg-cyan-500 text-white'
+                      : 'border-gray-200 bg-white text-gray-700 hover:border-cyan-300 hover:bg-cyan-50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'
                   }`}
                 >
-                  Number of Cards
+                  <p className="font-semibold">{DIFFICULTY_BUCKET_LABELS[bucket]}</p>
+                  <p className={`mt-1 text-xs ${difficultyBucket === bucket ? 'text-white/80' : 'text-gray-500 dark:text-gray-400'}`}>
+                    {bucket === 'easy'
+                      ? 'Mostly stable recall.'
+                      : bucket === 'medium'
+                      ? 'Some slips and inconsistencies.'
+                      : 'Cards that need reinforcement.'}
+                  </p>
                 </button>
-                <button
-                  onClick={() => setLimitType('time')}
-                  className={`inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-semibold ${
-                    limitType === 'time'
-                      ? 'bg-cyan-600 text-white'
-                      : 'border border-gray-300 text-gray-700 dark:border-gray-600 dark:text-gray-200'
-                  }`}
-                >
-                  <Clock3 className="h-4 w-4" />
-                  Time Limit
-                </button>
+              ))}
+            </div>
+          )}
+
+          {MODES_WITH_LIMITS.includes(mode) && (
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-3xl border border-gray-200 bg-gray-50/80 p-4 dark:border-gray-700 dark:bg-gray-900/40">
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">Session limit</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {mode === 'topic' && (
+                    <LimitButton
+                      active={limitType === 'full-topic'}
+                      onClick={() => setLimitType('full-topic')}
+                      label="Full topic"
+                    />
+                  )}
+                  <LimitButton
+                    active={limitType === 'count'}
+                    onClick={() => setLimitType('count')}
+                    label="Card count"
+                  />
+                  <LimitButton
+                    active={limitType === 'time'}
+                    onClick={() => setLimitType('time')}
+                    label="Time limit"
+                    icon={<Clock3 className="h-4 w-4" />}
+                  />
+                </div>
+              </div>
+
+              <div className="rounded-3xl border border-gray-200 bg-gray-50/80 p-4 dark:border-gray-700 dark:bg-gray-900/40">
+                {limitType === 'full-topic' ? (
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white">Full run</p>
+                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                      Run the complete pool and finish after retrying misses.
+                    </p>
+                  </div>
+                ) : limitType === 'count' ? (
+                  <label className="block">
+                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Number of cards</span>
+                    <Input
+                      type="number"
+                      min={1}
+                      value={targetCount}
+                      onChange={(event) => setTargetCount(Number(event.target.value))}
+                      className="mt-2"
+                    />
+                  </label>
+                ) : (
+                  <label className="block">
+                    <span className="text-sm font-semibold text-gray-900 dark:text-white">Time limit (minutes)</span>
+                    <Input
+                      type="number"
+                      min={1}
+                      value={timeLimitMinutes}
+                      onChange={(event) => setTimeLimitMinutes(Number(event.target.value))}
+                      className="mt-2"
+                    />
+                  </label>
+                )}
               </div>
             </div>
+          )}
 
-            <div className="rounded-2xl border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-900/40">
-              {limitType === 'count' ? (
-                <label className="block">
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-200">Number of flashcards</span>
-                  <input
-                    type="number"
-                    min={1}
-                    value={targetCount}
-                    onChange={(event) => setTargetCount(Number(event.target.value))}
-                    className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
-                  />
-                </label>
-              ) : (
-                <label className="block">
-                  <span className="text-sm font-medium text-gray-700 dark:text-gray-200">Time limit (minutes)</span>
-                  <input
-                    type="number"
-                    min={1}
-                    value={timeLimitMinutes}
-                    onChange={(event) => setTimeLimitMinutes(Number(event.target.value))}
-                    className="mt-2 w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
-                  />
-                </label>
-              )}
-            </div>
+          {plannerNotice && <NoticeBanner notice={plannerNotice} />}
+
+          <div className="flex flex-wrap gap-3">
+            <Button onClick={startSession} size="lg">
+              Start Flashcards
+            </Button>
+            <Button variant="secondary" size="lg" onClick={() => router.push('/learn')}>
+              Back to Learn
+            </Button>
           </div>
-        )}
+        </Card>
 
-        <div className="mt-5 flex flex-wrap gap-3">
-          <button
-            onClick={startSession}
-            className="rounded-xl bg-cyan-600 px-5 py-3 font-semibold text-white hover:bg-cyan-700"
-          >
-            Start Flashcards
-          </button>
-          <button
-            onClick={() => router.push('/learn')}
-            className="rounded-xl border border-gray-300 px-5 py-3 font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700"
-          >
-            Back to Learn
-          </button>
-        </div>
-      </section>
+        <Card className="space-y-5">
+          <SectionTitle
+            title="Starter Templates"
+            description="Import a ready-made pack, then edit it like any other personal set."
+            icon={<CheckCircle2 className="h-5 w-5 text-accent-600" />}
+          />
 
-      <section className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Custom Flashcard Sets</h2>
-        <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-          Build your own packs (for example: daily words, travel phrases, work vocabulary).
-        </p>
-
-        <div className="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr,0.9fr]">
-          <div className="space-y-3">
-            {editingSetId !== null && (
-              <p className="text-sm font-medium text-cyan-700 dark:text-cyan-300">
-                Edit set: {customSets.find((s) => s.id === editingSetId)?.name ?? 'Unknown'}
-              </p>
-            )}
-            <input
-              value={newSetName}
-              onChange={(event) => setNewSetName(event.target.value)}
-              placeholder="Set name (e.g., Daily Words)"
-              className="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
-            />
-            <input
-              value={newSetDescription}
-              onChange={(event) => setNewSetDescription(event.target.value)}
-              placeholder="Description (optional)"
-              className="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
-            />
-
-            <div className="space-y-2 rounded-2xl border border-gray-200 bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-900/40">
-              {draftCards.map((card) => (
-                <div key={card.id} className="grid grid-cols-1 gap-2 md:grid-cols-[1fr,1fr,auto]">
-                  <input
-                    value={card.prompt}
-                    onChange={(event) => updateDraftCard(card.id, { prompt: event.target.value })}
-                    placeholder="Front / prompt (e.g., Good morning)"
-                    className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
-                  />
-                  <input
-                    value={card.answer}
-                    onChange={(event) => updateDraftCard(card.id, { answer: event.target.value })}
-                    placeholder="Back / answer (e.g., Dzień dobry)"
-                    className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-100"
-                  />
-                  <button
-                    onClick={() => removeDraftCard(card.id)}
-                    className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-3 py-2 text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
-                    aria-label="Remove flashcard"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </button>
-                </div>
-              ))}
-
-              <button
-                onClick={addDraftCard}
-                className="inline-flex items-center gap-2 rounded-lg border border-cyan-300 px-3 py-2 text-sm font-medium text-cyan-700 hover:bg-cyan-50 dark:border-cyan-700 dark:text-cyan-300 dark:hover:bg-cyan-900/20"
-              >
-                <Plus className="h-4 w-4" />
-                Add Card Row
-              </button>
-            </div>
-
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={saveNewCustomSet}
-                disabled={isSavingSet}
-                className="rounded-xl bg-cyan-600 px-4 py-2 font-semibold text-white hover:bg-cyan-700 disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {isSavingSet
-                  ? 'Saving...'
-                  : editingSetId !== null
-                    ? 'Update set'
-                    : 'Save Custom Set'}
-              </button>
-              {editingSetId !== null && (
-                <button
-                  onClick={cancelEdit}
-                  className="rounded-xl border border-gray-300 px-4 py-2 font-semibold text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
+          <div className="grid gap-4">
+            {templates.map((template) => {
+              const Icon = TEMPLATE_ICONS[template.icon] ?? Sparkles;
+              return (
+                <div
+                  key={template.id}
+                  className="rounded-3xl border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800/60"
                 >
-                  Cancel
-                </button>
-              )}
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            {customSets.length === 0 ? (
-              <p className="text-sm text-gray-500 dark:text-gray-400">No custom sets created yet.</p>
-            ) : (
-              customSets.map((set) => (
-                <div key={set.id} className="rounded-xl border border-gray-200 bg-gray-50 p-3 dark:border-gray-700 dark:bg-gray-900/40">
                   <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <p className="font-semibold text-gray-900 dark:text-white">{set.name}</p>
-                      <p className="text-xs text-gray-500 dark:text-gray-400">{set.cards.length} cards</p>
-                      {set.description && (
-                        <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{set.description}</p>
-                      )}
+                    <div className="flex items-start gap-3">
+                      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-200">
+                        <Icon className="h-5 w-5" />
+                      </span>
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <p className="font-semibold text-gray-900 dark:text-white">{template.name}</p>
+                          <Badge tone={template.sourceType === 'book-section' ? 'primary' : 'warning'}>
+                            {template.sourceType === 'book-section' ? 'Book-backed' : 'Curated'}
+                          </Badge>
+                          <Badge tone="success">{template.cardCount} cards</Badge>
+                        </div>
+                        <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{template.description}</p>
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {template.previewCards.map((card) => (
+                            <span
+                              key={card.id}
+                              className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700 dark:bg-gray-700 dark:text-gray-200"
+                            >
+                              {card.answer}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <button
-                        onClick={() => startEditingSet(set)}
-                        className="rounded-lg border border-gray-300 p-2 text-gray-600 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
-                        aria-label="Edit set"
-                      >
-                        <Pencil className="h-4 w-4" />
-                      </button>
-                      <button
-                        onClick={() => removeSet(set.id)}
-                        className="rounded-lg border border-gray-300 p-2 text-gray-600 hover:bg-gray-100 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-800"
-                        aria-label="Delete set"
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </button>
-                    </div>
+                    <Button
+                      onClick={() => void handleImportTemplate(template)}
+                      disabled={template.cardCount === 0 || isImportingTemplateId === template.id}
+                    >
+                      {isImportingTemplateId === template.id ? 'Importing...' : 'Import'}
+                    </Button>
                   </div>
                 </div>
-              ))
+              );
+            })}
+          </div>
+        </Card>
+      </div>
+
+      <div className="grid gap-8 xl:grid-cols-[1fr,0.95fr]">
+        <Card className="space-y-5">
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <SectionTitle
+              title={editingSetId ? 'Edit Set' : 'Create a Set'}
+              description="Build a new deck from scratch or tune an imported template."
+              icon={<Pencil className="h-5 w-5 text-info-600" />}
+              className="mb-0"
+            />
+            <Button variant="secondary" onClick={beginCreateSet}>
+              New blank set
+            </Button>
+          </div>
+
+          {editorNotice && <NoticeBanner notice={editorNotice} />}
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-200">Set name</span>
+              <Input
+                value={newSetName}
+                onChange={(event) => setNewSetName(event.target.value)}
+                placeholder="e.g. Daily essentials"
+              />
+            </label>
+
+            <label className="block">
+              <span className="mb-2 block text-sm font-medium text-gray-700 dark:text-gray-200">Description</span>
+              <Input
+                value={newSetDescription}
+                onChange={(event) => setNewSetDescription(event.target.value)}
+                placeholder="Optional note about what this set covers"
+              />
+            </label>
+          </div>
+
+          <div className="space-y-3 rounded-3xl border border-gray-200 bg-gray-50/90 p-4 dark:border-gray-700 dark:bg-gray-900/40">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-sm font-semibold text-gray-900 dark:text-white">Cards</p>
+              <Button variant="secondary" size="sm" onClick={addDraftCard}>
+                <Plus className="h-4 w-4" />
+                Add row
+              </Button>
+            </div>
+
+            {draftCards.map((card, index) => (
+              <div
+                key={card.id}
+                className="grid gap-2 rounded-2xl border border-gray-200 bg-white p-3 dark:border-gray-700 dark:bg-gray-800 md:grid-cols-[1fr,1fr,auto]"
+              >
+                <Input
+                  value={card.prompt}
+                  onChange={(event) => updateDraftCard(card.id, { prompt: event.target.value })}
+                  placeholder={`Front / prompt ${index + 1}`}
+                />
+                <Input
+                  value={card.answer}
+                  onChange={(event) => updateDraftCard(card.id, { answer: event.target.value })}
+                  placeholder={`Back / answer ${index + 1}`}
+                />
+                <Button variant="ghost" onClick={() => removeDraftCard(card.id)} aria-label="Remove flashcard row">
+                  <Trash2 className="h-4 w-4" />
+                </Button>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-3">
+            <Button onClick={() => void handleSaveSet()} disabled={isSavingSet}>
+              {isSavingSet ? 'Saving...' : editingSetId ? 'Update set' : 'Save set'}
+            </Button>
+            {editingSetId && (
+              <Button variant="secondary" onClick={beginCreateSet}>
+                Cancel editing
+              </Button>
             )}
           </div>
-        </div>
-      </section>
+        </Card>
+
+        <Card className="space-y-5">
+          <SectionTitle
+            title="My Sets"
+            description="Imported starter packs and manual sets all live together here."
+            icon={<BookOpenText className="h-5 w-5 text-primary-500" />}
+          />
+
+          {customSets.length === 0 ? (
+            <div className="rounded-3xl border border-dashed border-gray-300 px-6 py-10 text-center dark:border-gray-700">
+              <p className="text-lg font-semibold text-gray-900 dark:text-white">No sets yet</p>
+              <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                Import a template or create a blank set to start building your custom flashcards.
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {customSets.map((set) => {
+                const isSelected = selectedSetId === set.id;
+                const isEditing = editingSetId === set.id;
+                const iconName = set.icon ?? 'Sparkles';
+                const Icon = TEMPLATE_ICONS[iconName] ?? Sparkles;
+
+                return (
+                  <div
+                    key={set.id}
+                    className={`rounded-3xl border p-4 transition-colors ${
+                      isSelected || isEditing
+                        ? 'border-primary-400 bg-primary-50 dark:border-primary-700 dark:bg-primary-900/20'
+                        : 'border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800/60'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="flex items-start gap-3">
+                        <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-100">
+                          <Icon className="h-5 w-5" />
+                        </span>
+                        <div>
+                          <div className="flex flex-wrap items-center gap-2">
+                            <p className="font-semibold text-gray-900 dark:text-white">{set.name}</p>
+                            <Badge tone="success">{set.cards.length} cards</Badge>
+                            <Badge tone={set.sourceType === 'template-import' ? 'warning' : 'neutral'}>
+                              {set.sourceType === 'template-import' ? 'Imported template' : 'Custom'}
+                            </Badge>
+                          </div>
+                          {set.description && (
+                            <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{set.description}</p>
+                          )}
+                          <p className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                            {set.cards.slice(0, 3).map((card) => card.answer).join(' • ') || 'No cards yet'}
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2">
+                        <Button
+                          variant="secondary"
+                          size="sm"
+                          onClick={() => {
+                            setSelectedSetId(set.id);
+                            setMode('custom');
+                            setPlannerNotice({
+                              tone: 'info',
+                              text: `${set.name} is selected for custom practice.`,
+                            });
+                          }}
+                        >
+                          Practice
+                        </Button>
+                        <Button
+                          variant="secondary"
+                          size="sm"
+                          onClick={() => {
+                            populateEditor(set);
+                            setEditorNotice(null);
+                          }}
+                        >
+                          Edit
+                        </Button>
+                        <Button
+                          variant={pendingDeleteId === set.id ? 'danger' : 'ghost'}
+                          size="sm"
+                          onClick={() => void handleDeleteSet(set.id)}
+                        >
+                          <Trash2 className="h-4 w-4" />
+                          {pendingDeleteId === set.id ? 'Confirm delete' : 'Delete'}
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </Card>
+      </div>
     </div>
+  );
+}
+
+function buildEmptyDraftCards(): DraftCustomCard[] {
+  return [
+    { id: generateId(), prompt: '', answer: '' },
+    { id: generateId(), prompt: '', answer: '' },
+  ];
+}
+
+function MetricCard({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-3xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur">
+      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-white/70">{label}</p>
+      <p className="mt-2 text-2xl font-bold text-white">{value}</p>
+    </div>
+  );
+}
+
+function LimitButton({
+  active,
+  label,
+  icon,
+  onClick,
+}: {
+  active: boolean;
+  label: string;
+  icon?: ReactNode;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+        active
+          ? 'bg-primary-500 text-white'
+          : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700'
+      }`}
+    >
+      {icon}
+      {label}
+    </button>
   );
 }
 
@@ -571,148 +855,45 @@ function ModeButton({
   active: boolean;
   title: string;
   description: string;
-  icon: React.ComponentType<{ className?: string }>;
+  icon: ComponentType<{ className?: string }>;
   onClick: () => void;
 }) {
   return (
     <button
+      type="button"
       onClick={onClick}
-      className={`rounded-2xl border p-4 text-left transition ${
+      className={`rounded-3xl border p-4 text-left transition-colors ${
         active
-          ? 'border-cyan-400 bg-cyan-50 dark:border-cyan-600 dark:bg-cyan-900/25'
-          : 'border-gray-200 bg-white hover:border-cyan-300 dark:border-gray-700 dark:bg-gray-900/30'
+          ? 'border-primary-400 bg-primary-50 dark:border-primary-700 dark:bg-primary-900/20'
+          : 'border-gray-200 bg-white hover:border-primary-300 hover:bg-primary-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700'
       }`}
     >
-      <div className="mb-2 flex items-center gap-2">
-        <Icon className="h-4 w-4 text-cyan-600 dark:text-cyan-300" />
+      <div className="flex items-center gap-2">
+        <Icon className="h-4 w-4 text-primary-500" />
         <p className="font-semibold text-gray-900 dark:text-white">{title}</p>
       </div>
-      <p className="text-sm text-gray-600 dark:text-gray-300">{description}</p>
+      <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">{description}</p>
     </button>
   );
 }
 
-function CompactNavigator({
-  label,
-  value,
-  onPrevious,
-  onNext,
-  canGoPrevious,
-  canGoNext,
-  options,
-  selectedValue,
-  onSelectValue,
-}: {
-  label: string;
-  value: string;
-  onPrevious: () => void;
-  onNext: () => void;
-  canGoPrevious: boolean;
-  canGoNext: boolean;
-  options?: Array<{ value: string; label: string; disabled?: boolean }>;
-  selectedValue?: string;
-  onSelectValue?: (value: string) => void;
-}) {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement | null>(null);
+function NoticeBanner({ notice }: { notice: InlineNotice }) {
+  const classes =
+    notice.tone === 'success'
+      ? 'border-accent-200 bg-accent-50 text-accent-700 dark:border-emerald-800/60 dark:bg-emerald-900/20 dark:text-emerald-200'
+      : notice.tone === 'error'
+      ? 'border-destructive-200 bg-destructive-50 text-destructive-700 dark:border-red-800/60 dark:bg-red-900/20 dark:text-red-200'
+      : 'border-info-200 bg-info-50 text-info-700 dark:border-blue-800/60 dark:bg-blue-900/20 dark:text-blue-200';
 
-  useEffect(() => {
-    if (!menuOpen) {
-      return;
-    }
-
-    function handleOutsideClick(event: MouseEvent) {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setMenuOpen(false);
-      }
-    }
-
-    function handleEscape(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setMenuOpen(false);
-      }
-    }
-
-    document.addEventListener('mousedown', handleOutsideClick);
-    document.addEventListener('keydown', handleEscape);
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
-      document.removeEventListener('keydown', handleEscape);
-    };
-  }, [menuOpen]);
-
-  const isSelectable = !!options && !!onSelectValue;
-
-  return (
-    <div className="rounded-xl border border-gray-200/90 bg-white p-2 dark:border-gray-700 dark:bg-gray-800/90">
-      <p className="px-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400">{label}</p>
-      <div className="mt-1 grid grid-cols-[auto,1fr,auto] items-center gap-1 rounded-lg border border-gray-200 bg-white px-1 py-1 dark:border-gray-700 dark:bg-gray-800/90">
-        <button
-          type="button"
-          onClick={onPrevious}
-          disabled={!canGoPrevious}
-          className="inline-flex h-7 w-7 items-center justify-center rounded-md text-gray-600 transition-colors duration-200 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:text-gray-300 dark:hover:bg-gray-700 motion-reduce:transition-none"
-          aria-label={`Previous ${label.toLowerCase()}`}
-        >
-          <ChevronLeft className="h-3.5 w-3.5" />
-        </button>
-
-        {isSelectable ? (
-          <div className="relative" ref={menuRef}>
-            <button
-              type="button"
-              onClick={() => setMenuOpen((current) => !current)}
-              className="inline-flex w-full items-center justify-center gap-1 truncate rounded-md px-1 py-1 text-center text-sm font-semibold text-gray-900 transition-colors duration-200 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500 dark:text-white dark:hover:bg-gray-700 motion-reduce:transition-none"
-              aria-expanded={menuOpen}
-              aria-label={`Select ${label.toLowerCase()}`}
-            >
-              <span className="truncate">{value}</span>
-              <ChevronDown className="h-3.5 w-3.5 shrink-0 text-gray-500 dark:text-gray-300" />
-            </button>
-            {menuOpen && (
-              <div className="absolute left-0 right-0 top-[calc(100%+0.25rem)] z-40 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg dark:border-gray-700 dark:bg-gray-800">
-                <ul className="max-h-56 overflow-auto py-1">
-                  {options.map((option) => (
-                    <li key={option.value}>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          if (option.disabled) {
-                            return;
-                          }
-                          onSelectValue(option.value);
-                          setMenuOpen(false);
-                        }}
-                        disabled={option.disabled}
-                        className={`w-full px-3 py-2 text-left text-sm transition-colors duration-200 motion-reduce:transition-none ${
-                          option.value === selectedValue
-                            ? 'bg-cyan-50 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-200'
-                            : 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700'
-                        } disabled:cursor-not-allowed disabled:opacity-45`}
-                      >
-                        {option.label}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        ) : (
-          <span className="truncate px-1 text-center text-sm font-semibold text-gray-900 dark:text-white">{value}</span>
-        )}
-
-        <button
-          type="button"
-          onClick={onNext}
-          disabled={!canGoNext}
-          className="inline-flex h-7 w-7 items-center justify-center rounded-md text-gray-600 transition-colors duration-200 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40 dark:text-gray-300 dark:hover:bg-gray-700 motion-reduce:transition-none"
-          aria-label={`Next ${label.toLowerCase()}`}
-        >
-          <ChevronRight className="h-3.5 w-3.5" />
-        </button>
-      </div>
-    </div>
-  );
+  return <div className={`rounded-2xl border px-4 py-3 text-sm font-medium ${classes}`}>{notice.text}</div>;
 }
 
+const TEMPLATE_ICONS: Record<string, ComponentType<{ className?: string }>> = {
+  Armchair,
+  Bath,
+  Hash,
+  HeartPulse,
+  House,
+  Sparkles,
+  UtensilsCrossed,
+};

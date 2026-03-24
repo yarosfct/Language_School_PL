@@ -1,10 +1,19 @@
 import type { BookSectionOption, BookSentenceCard, BookWordCard } from '@/lib/book/flashcards';
 import { getBookPracticeCards, getBookSections } from '@/lib/book/flashcards';
+import {
+  getAllCustomFlashcardSets,
+  getFlashcardLearningRecord,
+  getFlashcardLearningRecordsByPracticeType,
+  saveFlashcardLearningRecord,
+} from '@/lib/db';
 import { evaluateTypedAnswer } from '@/lib/exercises/evaluators';
-import { shuffle } from '@/lib/utils/string';
+import { levenshteinDistance, removeDiacritics, shuffle } from '@/lib/utils/string';
 import type {
   CustomFlashcardCard,
   CustomFlashcardSet,
+  FlashcardAnswerErrorType,
+  FlashcardDifficultyBucket,
+  FlashcardLearningRecord,
   FlashcardLimitType,
   FlashcardPracticeCard,
   FlashcardPracticeType,
@@ -17,6 +26,7 @@ export interface FlashcardSessionConfig {
   practiceType: FlashcardPracticeType;
   topicId?: string;
   customSetId?: string;
+  difficultyBucket?: FlashcardDifficultyBucket;
   limitType: FlashcardLimitType;
   targetCount?: number;
   timeLimitMinutes?: number;
@@ -26,8 +36,15 @@ export interface FlashcardAnswerResult {
   correct: boolean;
   partialCorrect: boolean;
   feedback?: string;
-  errorType?: 'diacritics' | 'word-order' | 'wrong-form' | 'wrong-word' | 'spelling' | 'other';
+  errorType?: FlashcardAnswerErrorType;
 }
+
+type FlashcardLearningOutcome =
+  | 'exact-correct'
+  | 'accepted-diacritics'
+  | 'accepted-spelling'
+  | 'wrong-close'
+  | 'wrong-other';
 
 interface WordCardWithSection extends BookWordCard {
   type: 'word';
@@ -43,6 +60,15 @@ const ENGLISH_SUBJECT_TO_PRONOUN: Record<string, string[]> = {
   we: ['my'],
   they: ['oni', 'one'],
 };
+const LEARNING_SCORE_BY_OUTCOME: Record<FlashcardLearningOutcome, number> = {
+  'exact-correct': 1,
+  'accepted-diacritics': 0.85,
+  'accepted-spelling': 0.75,
+  'wrong-close': 0.35,
+  'wrong-other': 0,
+};
+const MAX_RECENT_SCORES = 8;
+
 const allBookSections = getBookSections();
 const allBookWordCards = getBookPracticeCards({ cardType: 'word', includeGenerated: false }).filter(
   isWordCard
@@ -50,6 +76,13 @@ const allBookWordCards = getBookPracticeCards({ cardType: 'word', includeGenerat
 const sectionById = new Map(allBookSections.map((section) => [section.id, section]));
 const genderByCardId = buildGenderByCardId(allBookWordCards);
 const promptGroups = buildPromptGroups(allBookWordCards);
+
+export function buildFlashcardLearningKey(
+  practiceType: FlashcardPracticeType,
+  cardId: string
+): string {
+  return `${practiceType}:${cardId}`;
+}
 
 export function getFlashcardTopics(): BookSectionOption[] {
   return allBookSections;
@@ -85,6 +118,44 @@ export function mapCustomSetToPracticeCards(set: CustomFlashcardSet): FlashcardP
   }));
 }
 
+export async function getAllAvailableFlashcards(
+  practiceType: FlashcardPracticeType = 'vocabulary'
+): Promise<FlashcardPracticeCard[]> {
+  const customSets = await getAllCustomFlashcardSets();
+
+  return [
+    ...getAllBookFlashcards(practiceType),
+    ...customSets.flatMap((set) => mapCustomSetToPracticeCards(set)),
+  ];
+}
+
+export async function getLearnedFlashcards(
+  practiceType: FlashcardPracticeType,
+  difficultyBucket?: FlashcardDifficultyBucket
+): Promise<FlashcardPracticeCard[]> {
+  const [records, availableCards] = await Promise.all([
+    getFlashcardLearningRecordsByPracticeType(practiceType),
+    getAllAvailableFlashcards(practiceType),
+  ]);
+
+  const availableByCardId = new Map(availableCards.map((card) => [card.id, card]));
+
+  return records
+    .filter((record) => {
+      if (!availableByCardId.has(record.cardId)) {
+        return false;
+      }
+
+      if (!difficultyBucket) {
+        return true;
+      }
+
+      return getFlashcardDifficultyBucket(record) === difficultyBucket;
+    })
+    .map((record) => availableByCardId.get(record.cardId))
+    .filter((card): card is FlashcardPracticeCard => !!card);
+}
+
 export function getInitialDeck(
   config: FlashcardSessionConfig,
   availableCards: FlashcardPracticeCard[]
@@ -94,6 +165,14 @@ export function getInitialDeck(
   }
 
   const randomized = shuffle(availableCards);
+
+  if (config.mode === 'practice') {
+    return randomized;
+  }
+
+  if (config.limitType === 'full-topic') {
+    return randomized;
+  }
 
   if (config.limitType === 'count') {
     const requested = Math.max(1, config.targetCount ?? 20);
@@ -109,8 +188,16 @@ export function shouldEndSession(
   shownCount: number,
   timeLeftMs: number
 ): boolean {
+  if (config.mode === 'practice') {
+    return false;
+  }
+
   if (config.limitType === 'time') {
     return timeLeftMs <= 0;
+  }
+
+  if (config.limitType === 'full-topic') {
+    return true;
   }
 
   const target = Math.max(1, config.targetCount ?? 20);
@@ -139,6 +226,80 @@ export function evaluateFlashcardWriting(
   };
 }
 
+export async function recordFlashcardAttempt(
+  card: FlashcardPracticeCard,
+  practiceType: FlashcardPracticeType,
+  answer: string,
+  result: FlashcardAnswerResult,
+  timestamp: number
+): Promise<FlashcardLearningRecord> {
+  const learningKey = buildFlashcardLearningKey(practiceType, card.id);
+  const existing = await getFlashcardLearningRecord(learningKey);
+  const outcome = classifyLearningOutcome(answer, card, result);
+  const nextRecentScores = [...(existing?.recentScores ?? []), LEARNING_SCORE_BY_OUTCOME[outcome]].slice(
+    -MAX_RECENT_SCORES
+  );
+  const errorTypeCounts = { ...(existing?.errorTypeCounts ?? {}) };
+  const isExactCorrect = outcome === 'exact-correct';
+  const isCorrect = result.correct;
+
+  if (outcome === 'accepted-diacritics') {
+    errorTypeCounts.diacritics = (errorTypeCounts.diacritics ?? 0) + 1;
+  } else if (outcome === 'accepted-spelling' || outcome === 'wrong-close') {
+    errorTypeCounts.spelling = (errorTypeCounts.spelling ?? 0) + 1;
+  } else if (result.errorType) {
+    errorTypeCounts[result.errorType] = (errorTypeCounts[result.errorType] ?? 0) + 1;
+  }
+
+  const nextRecord: FlashcardLearningRecord = {
+    learningKey,
+    cardId: card.id,
+    practiceType,
+    source: card.source,
+    topicId: card.topicId,
+    topicLabel: card.topicLabel,
+    prompt: card.prompt,
+    answer: card.answer,
+    firstSeenAt: existing?.firstSeenAt ?? timestamp,
+    lastSeenAt: timestamp,
+    lastAttemptAt: timestamp,
+    attempts: (existing?.attempts ?? 0) + 1,
+    correctAttempts: (existing?.correctAttempts ?? 0) + (isCorrect ? 1 : 0),
+    exactCorrectAttempts: (existing?.exactCorrectAttempts ?? 0) + (isExactCorrect ? 1 : 0),
+    partialCorrectAttempts: (existing?.partialCorrectAttempts ?? 0) + (result.partialCorrect ? 1 : 0),
+    wrongAttempts: (existing?.wrongAttempts ?? 0) + (isCorrect ? 0 : 1),
+    errorTypeCounts,
+    recentScores: nextRecentScores,
+    currentCorrectStreak: isCorrect ? (existing?.currentCorrectStreak ?? 0) + 1 : 0,
+    currentExactStreak: isExactCorrect ? (existing?.currentExactStreak ?? 0) + 1 : 0,
+  };
+
+  await saveFlashcardLearningRecord(nextRecord);
+  return nextRecord;
+}
+
+export function getFlashcardDifficultyBucket(record: FlashcardLearningRecord): FlashcardDifficultyBucket {
+  const successRate = record.attempts > 0 ? record.correctAttempts / record.attempts : 0;
+  const exactnessRate = record.correctAttempts > 0 ? record.exactCorrectAttempts / record.correctAttempts : 0;
+  const recentAverage = average(record.recentScores);
+
+  if (record.attempts < 3) {
+    return recentAverage < 0.45 ? 'hard' : 'medium';
+  }
+
+  const difficultyScore = recentAverage * 70 + successRate * 20 + exactnessRate * 10;
+
+  if (difficultyScore >= 85) {
+    return 'easy';
+  }
+
+  if (difficultyScore >= 60) {
+    return 'medium';
+  }
+
+  return 'hard';
+}
+
 function isWordCard(card: unknown): card is WordCardWithSection {
   return typeof card === 'object' && card !== null && (card as { type?: string }).type === 'word';
 }
@@ -160,11 +321,14 @@ function mapWordCardsToPractice(cards: WordCardWithSection[]): FlashcardPractice
     const distinctAnswers = new Set(cardsWithSamePrompt.map((item) => normalizeSpacing(item.polish.toLowerCase())));
     const shouldDisambiguate = distinctAnswers.size > 1;
     const gender = genderByCardId.get(card.id);
+    const prompt = shouldDisambiguate
+      ? formatPrompt(buildDisambiguatedPrompt(card, basePrompt), gender)
+      : basePrompt;
 
     return {
       id: `book-word-${card.id}`,
       source: 'book',
-      prompt: shouldDisambiguate ? formatPrompt(basePrompt, gender) : basePrompt,
+      prompt,
       answer: card.polish,
       acceptedAnswers: buildAcceptedAnswers(card.polish),
       gender,
@@ -195,6 +359,35 @@ function buildAcceptedAnswers(primaryAnswer: string): string[] {
   addVariant(withOptionalWords.replace(/[.,!?;:…]+$/g, ''));
 
   return [...variants];
+}
+
+function buildDisambiguatedPrompt(card: WordCardWithSection, basePrompt: string): string {
+  if (normalizePromptKey(basePrompt) === 'short') {
+    const englishHints = card.english.map((value) => normalizePromptKey(value));
+
+    if (englishHints.some((value) => value.includes('not long'))) {
+      return 'short - length';
+    }
+
+    if (englishHints.some((value) => value.includes('not tall/high') || value === 'low')) {
+      return 'short - height';
+    }
+  }
+
+  const secondaryHint = card.english
+    .slice(1)
+    .map((value) => normalizeSpacing(value))
+    .find(Boolean);
+
+  if (secondaryHint) {
+    return `${basePrompt} - ${secondaryHint}`;
+  }
+
+  if (card.contextSentence?.en) {
+    return `${basePrompt} - ${card.contextSentence.en}`;
+  }
+
+  return basePrompt;
 }
 
 function normalizeSpacing(value: string): string {
@@ -266,21 +459,19 @@ function getSentenceFlashcards(): FlashcardPracticeCard[] {
   const sentenceCards = getBookPracticeCards({ cardType: 'sentence', includeGenerated: false }).filter(
     (card): card is BookSentenceCard => card.type === 'sentence'
   );
-  const sectionById = new Map(allBookSections.map((section) => [section.id, section]));
 
-  return sentenceCards
-    .map((card) => {
-      const section = sectionById.get(card.sectionId);
-      return {
-        id: `book-sentence-${card.id}`,
-        source: 'book',
-        prompt: card.promptEn,
-        answer: card.answerPl,
-        acceptedAnswers: buildConjugationAcceptedAnswers(card.promptEn, card.answerPl, card.acceptedAnswers),
-        topicId: card.sectionId,
-        topicLabel: section?.label ?? card.topicEn,
-      };
-    });
+  return sentenceCards.map((card) => {
+    const section = sectionById.get(card.sectionId);
+    return {
+      id: `book-sentence-${card.id}`,
+      source: 'book',
+      prompt: card.promptEn,
+      answer: card.answerPl,
+      acceptedAnswers: buildConjugationAcceptedAnswers(card.promptEn, card.answerPl, card.acceptedAnswers),
+      topicId: card.sectionId,
+      topicLabel: section?.label ?? card.topicEn,
+    };
+  });
 }
 
 function buildConjugationAcceptedAnswers(promptEn: string, answerPl: string, acceptedAnswers: string[]): string[] {
@@ -310,4 +501,70 @@ function buildConjugationAcceptedAnswers(promptEn: string, answerPl: string, acc
 
 function isSubjectPronoun(value: string): boolean {
   return SUBJECT_PRONOUNS.includes(value.toLowerCase() as (typeof SUBJECT_PRONOUNS)[number]);
+}
+
+function classifyLearningOutcome(
+  answer: string,
+  card: FlashcardPracticeCard,
+  result: FlashcardAnswerResult
+): FlashcardLearningOutcome {
+  if (result.correct && !result.partialCorrect) {
+    return 'exact-correct';
+  }
+
+  if (result.correct && result.errorType === 'diacritics') {
+    return 'accepted-diacritics';
+  }
+
+  if (result.correct) {
+    return 'accepted-spelling';
+  }
+
+  return isCloseMiss(answer, card) ? 'wrong-close' : 'wrong-other';
+}
+
+function isCloseMiss(answer: string, card: FlashcardPracticeCard): boolean {
+  const normalizedAnswer = normalizeAnswerForComparison(answer);
+  if (!normalizedAnswer) {
+    return false;
+  }
+
+  const acceptedAnswers = card.acceptedAnswers?.length ? card.acceptedAnswers : [card.answer];
+
+  return acceptedAnswers.some((accepted) => {
+    const normalizedTarget = normalizeAnswerForComparison(accepted);
+    if (!normalizedTarget) {
+      return false;
+    }
+
+    const typoThreshold = getCloseMissThreshold(normalizedTarget);
+    if (levenshteinDistance(normalizedAnswer, normalizedTarget) <= typoThreshold) {
+      return true;
+    }
+
+    const strippedAnswer = removeDiacritics(normalizedAnswer);
+    const strippedTarget = removeDiacritics(normalizedTarget);
+    return levenshteinDistance(strippedAnswer, strippedTarget) <= typoThreshold;
+  });
+}
+
+function normalizeAnswerForComparison(value: string): string {
+  return normalizeSpacing(value).toLowerCase();
+}
+
+function getCloseMissThreshold(target: string): number {
+  const compactTarget = target.replace(/\s+/g, '');
+  if (compactTarget.length <= 10) {
+    return 2;
+  }
+
+  return 3;
+}
+
+function average(values: number[]): number {
+  if (values.length === 0) {
+    return 0;
+  }
+
+  return values.reduce((sum, value) => sum + value, 0) / values.length;
 }

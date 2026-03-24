@@ -140,6 +140,19 @@ npm run build
 npm start
 ```
 
+### Optional AI Translation
+Add these environment variables if you want contextual word and phrase translations to use OpenAI before falling back to the existing providers:
+
+```bash
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_TRANSLATION_MODEL=gpt-4.1-mini
+```
+
+Notes:
+- The OpenAI key is read server-side only by `/api/translate/word`
+- If the key is missing or the API call fails, the app falls back to the existing heuristic and translation providers
+- Restart the development server after updating environment variables
+
 ### Content Validation
 ```bash
 npm run validate-content
@@ -289,7 +302,7 @@ All data stored locally - no backend required for MVP.
 ## 📋 Next Steps (Post-MVP)
 
 ### Week 3-4
-- [ ] Add audio (Web Speech API for Polish TTS)
+- [x] Add audio (Azure Speech for Polish TTS, Web Speech fallback)
 - [ ] Service worker for offline caching
 - [ ] Expand content (Units 2-3, A1 complete)
 - [ ] Grammar reference content

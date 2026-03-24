@@ -35,6 +35,9 @@ A modern, structured Polish language learning web application featuring adaptive
 # Install dependencies
 npm install
 
+# Configure Azure Speech
+cp .env.example .env.local
+
 # Run development server
 npm run dev
 
@@ -115,15 +118,13 @@ The content validator checks:
 ## Roadmap
 
 ### V1 (Weeks 5-8)
-- [ ] A2 content (expand to 6 units, 40 lessons)
 - [ ] Optional authentication (Supabase/Firebase)
 - [ ] Cloud sync
 - [ ] Analytics dashboard
 - [ ] Admin mode for content import
-- [ ] Improved TTS (Azure/ElevenLabs)
+- [x] Improved TTS (Azure Speech)
 
 ### V2 (Weeks 9-12)
-- [ ] B1 content
 - [ ] Pronunciation scoring
 - [ ] Community features
 - [ ] Internationalization (EN/PT/PL UI)

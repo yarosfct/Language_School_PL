@@ -12,7 +12,8 @@ import {
   UserPreferences,
   DailyStats
 } from '@/types/progress';
-import type { CustomFlashcardSet } from '@/types/flashcards';
+import type { CustomFlashcardSet, FlashcardLearningRecord, FlashcardPracticeType } from '@/types/flashcards';
+import type { NotebookEntry } from '@/types/notebook';
 import type { UserWordOverride } from '@/types/translations';
 
 export interface AttemptWithId extends AttemptRecord {
@@ -41,10 +42,41 @@ export class PolskiOdZeraDB extends Dexie {
   preferences!: Table<PreferencesRecord, string>;
   dailyStats!: Table<DailyStats, string>;
   customFlashcardSets!: Table<CustomFlashcardSet, string>;
+  flashcardLearning!: Table<FlashcardLearningRecord, string>;
+  notebookEntries!: Table<NotebookEntry, string>;
   userWordOverrides!: Table<UserWordOverride, string>;
   
   constructor() {
     super('PolskiOdZeraDB');
+
+    this.version(6).stores({
+      attempts: '++id, exerciseId, topicId, timestamp',
+      mistakes: 'id, exerciseId, topicId, timestamp, reviewed, errorType',
+      reviewCards: 'id, exerciseId, topicId, vocabId, cardType, due',
+      progress: 'id',
+      topicProgress: 'id, topicId, lastAccessed',
+      vocabReviewCards: 'id, topicId, due, state',
+      preferences: 'id',
+      dailyStats: 'date',
+      customFlashcardSets: 'id, name, updatedAt',
+      flashcardLearning: 'learningKey, cardId, practiceType, topicId, source, lastAttemptAt',
+      notebookEntries: 'id, name, updatedAt, contextKey, *categories',
+      userWordOverrides: 'id, normalizedToken, sectionId, updatedAt'
+    });
+
+    this.version(5).stores({
+      attempts: '++id, exerciseId, topicId, timestamp',
+      mistakes: 'id, exerciseId, topicId, timestamp, reviewed, errorType',
+      reviewCards: 'id, exerciseId, topicId, vocabId, cardType, due',
+      progress: 'id',
+      topicProgress: 'id, topicId, lastAccessed',
+      vocabReviewCards: 'id, topicId, due, state',
+      preferences: 'id',
+      dailyStats: 'date',
+      customFlashcardSets: 'id, name, updatedAt',
+      notebookEntries: 'id, name, updatedAt, contextKey, *categories',
+      userWordOverrides: 'id, normalizedToken, sectionId, updatedAt'
+    });
 
     // Version 4: Add local word overrides for missing translations
     this.version(4).stores({
@@ -57,6 +89,7 @@ export class PolskiOdZeraDB extends Dexie {
       preferences: 'id',
       dailyStats: 'date',
       customFlashcardSets: 'id, name, updatedAt',
+      notebookEntries: 'id, name, updatedAt, contextKey, *categories',
       userWordOverrides: 'id, normalizedToken, sectionId, updatedAt'
     });
 
@@ -70,7 +103,8 @@ export class PolskiOdZeraDB extends Dexie {
       vocabReviewCards: 'id, topicId, due, state',
       preferences: 'id',
       dailyStats: 'date',
-      customFlashcardSets: 'id, name, updatedAt'
+      customFlashcardSets: 'id, name, updatedAt',
+      notebookEntries: 'id, name, updatedAt, contextKey, *categories'
     });
     
     // Version 2: Add topic-related tables
@@ -83,7 +117,8 @@ export class PolskiOdZeraDB extends Dexie {
       vocabReviewCards: 'id, topicId, due, state',
       preferences: 'id',
       dailyStats: 'date',
-      customFlashcardSets: 'id, name, updatedAt'
+      customFlashcardSets: 'id, name, updatedAt',
+      notebookEntries: 'id, name, updatedAt, contextKey, *categories'
     }).upgrade(tx => {
       // Migration: add default cardType to existing review cards
       return tx.table('reviewCards').toCollection().modify(card => {
@@ -99,7 +134,8 @@ export class PolskiOdZeraDB extends Dexie {
       mistakes: 'id, exerciseId, timestamp, reviewed',
       reviewCards: 'id, exerciseId, due',
       progress: 'id',
-      customFlashcardSets: 'id, name, updatedAt'
+      customFlashcardSets: 'id, name, updatedAt',
+      notebookEntries: 'id, name, updatedAt, contextKey, *categories'
     });
   }
 }
@@ -516,6 +552,52 @@ export async function deleteCustomFlashcardSet(id: string): Promise<void> {
 }
 
 // ============================================
+// FLASHCARD LEARNING HELPERS
+// ============================================
+
+export async function getFlashcardLearningRecord(learningKey: string): Promise<FlashcardLearningRecord | undefined> {
+  return await db.flashcardLearning.get(learningKey);
+}
+
+export async function getAllFlashcardLearningRecords(): Promise<FlashcardLearningRecord[]> {
+  return await db.flashcardLearning.toArray();
+}
+
+export async function getFlashcardLearningRecordsByPracticeType(
+  practiceType: FlashcardPracticeType
+): Promise<FlashcardLearningRecord[]> {
+  return await db.flashcardLearning.where('practiceType').equals(practiceType).toArray();
+}
+
+export async function saveFlashcardLearningRecord(record: FlashcardLearningRecord): Promise<string> {
+  return await db.flashcardLearning.put(record);
+}
+
+// ============================================
+// NOTEBOOK HELPERS
+// ============================================
+
+export async function getNotebookEntry(id: string): Promise<NotebookEntry | undefined> {
+  return await db.notebookEntries.get(id);
+}
+
+export async function getAllNotebookEntries(): Promise<NotebookEntry[]> {
+  return await db.notebookEntries.orderBy('updatedAt').reverse().toArray();
+}
+
+export async function saveNotebookEntry(entry: NotebookEntry): Promise<string> {
+  return await db.notebookEntries.put({
+    ...entry,
+    categories: [...new Set(entry.categories.map((category) => category.trim()).filter(Boolean))],
+    updatedAt: Date.now(),
+  });
+}
+
+export async function deleteNotebookEntry(id: string): Promise<void> {
+  await db.notebookEntries.delete(id);
+}
+
+// ============================================
 // LOCAL WORD OVERRIDE HELPERS
 // ============================================
 
@@ -623,6 +705,8 @@ export async function clearAllData(): Promise<void> {
   await db.preferences.clear();
   await db.dailyStats.clear();
   await db.customFlashcardSets.clear();
+  await db.flashcardLearning.clear();
+  await db.notebookEntries.clear();
   await db.userWordOverrides.clear();
 }
 
@@ -634,6 +718,8 @@ export async function exportData(): Promise<{
   topicProgress: TopicProgress[];
   preferences: UserPreferences;
   customFlashcardSets: CustomFlashcardSet[];
+  flashcardLearning: FlashcardLearningRecord[];
+  notebookEntries: NotebookEntry[];
   userWordOverrides: UserWordOverride[];
 }> {
   return {
@@ -644,6 +730,8 @@ export async function exportData(): Promise<{
     topicProgress: await getAllTopicProgress(),
     preferences: await getUserPreferences(),
     customFlashcardSets: await getAllCustomFlashcardSets(),
+    flashcardLearning: await getAllFlashcardLearningRecords(),
+    notebookEntries: await getAllNotebookEntries(),
     userWordOverrides: await getAllUserWordOverrides(),
   };
 }

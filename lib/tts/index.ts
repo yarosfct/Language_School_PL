@@ -1,8 +1,8 @@
-// Text-to-Speech service with Piper backend support and Web Speech API fallback
+// Text-to-Speech service with Azure Speech backend and Web Speech fallback
 
 // Backend state
-let usePiperBackend = false;
-let piperHealthChecked = false;
+let useAzureBackend = false;
+let azureHealthChecked = false;
 let currentAudioElement: HTMLAudioElement | null = null;
 
 // TTS configuration state (for Web Speech API)
@@ -11,8 +11,8 @@ let currentRate = 1.0;
 let currentPitch = 1.0;
 let currentVolume = 1.0;
 
-// Piper TTS configuration state
-let currentPiperVoice: string | null = null;
+// Azure Speech configuration state
+let currentAzureVoice: string | null = null;
 
 // Client-side audio cache: Map<hash, AudioElement>
 const audioCache = new Map<string, HTMLAudioElement>();
@@ -20,9 +20,20 @@ const MAX_CACHE_SIZE = 50; // Limit cache to 50 audio elements
 
 // Track active audio request to ignore errors from superseded requests
 let activeAudioRequestId: symbol | null = null;
+let activeWebSpeechRequestId: symbol | null = null;
 
 // Polish language code
 const POLISH_LANG = 'pl-PL';
+const AUDIO_SEEK_SETTLE_MS = 40;
+const AUDIO_PLAYBACK_SETTLE_MS = 120;
+const WEB_SPEECH_START_DELAY_MS = 120;
+const WEB_SPEECH_RETRY_DELAY_MS = 250;
+
+function wait(ms: number): Promise<void> {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
 
 /**
  * Get human-readable description of audio error codes
@@ -51,44 +62,44 @@ function getAudioErrorDescription(code: number | null): string {
 }
 
 /**
- * Check Piper backend availability
+ * Check Azure backend availability
  */
-async function checkPiperHealth(): Promise<boolean> {
-  if (piperHealthChecked) return usePiperBackend;
+async function checkAzureHealth(): Promise<boolean> {
+  if (azureHealthChecked) return useAzureBackend;
   
   try {
     const response = await fetch('/api/tts/health');
     const data = await response.json();
-    usePiperBackend = data.available && data.voiceCount > 0;
-    piperHealthChecked = true;
-    console.log('🎙️ Piper TTS backend:', usePiperBackend ? 'Available' : 'Unavailable');
-    return usePiperBackend;
+    useAzureBackend = data.available && data.voiceCount > 0;
+    azureHealthChecked = true;
+    console.log('🎙️ Azure Speech backend:', useAzureBackend ? 'Available' : 'Unavailable');
+    return useAzureBackend;
   } catch {
-    console.log('⚠️ Piper backend not available, using Web Speech API');
-    usePiperBackend = false;
-    piperHealthChecked = true;
+    console.log('⚠️ Azure backend not available, using Web Speech API');
+    useAzureBackend = false;
+    azureHealthChecked = true;
     return false;
   }
 }
 
 /**
- * Set the Piper voice to use
+ * Set the Azure voice to use
  */
-export function setPiperVoice(voiceName: string | null): void {
-  currentPiperVoice = voiceName;
+export function setAzureVoice(voiceName: string | null): void {
+  currentAzureVoice = voiceName;
 }
 
 /**
- * Get the current Piper voice
+ * Get the current Azure voice
  */
-export function getPiperVoice(): string | null {
-  return currentPiperVoice;
+export function getAzureVoice(): string | null {
+  return currentAzureVoice;
 }
 
 /**
- * Speak using Piper backend
+ * Speak using Azure backend
  */
-async function speakWithPiper(
+async function speakWithAzure(
   text: string,
   options?: {
     rate?: number;
@@ -97,7 +108,9 @@ async function speakWithPiper(
     onEnd?: () => void;
     onError?: (error: unknown) => void;
   }
-): Promise<HTMLAudioElement> {
+): Promise<SpeechSynthesisUtterance | HTMLAudioElement | null> {
+  const audioRequestId = Symbol('audioRequest');
+
   // Stop any ongoing audio properly
   if (currentAudioElement) {
     try {
@@ -107,7 +120,7 @@ async function speakWithPiper(
       currentAudioElement.currentTime = 0;
       // Don't clear src immediately - let it finish cleanup naturally
       // Clearing src can trigger error events
-    } catch (e) {
+    } catch {
       // Ignore errors when stopping
       console.log('Note: Error while stopping previous audio (ignored)');
     }
@@ -116,6 +129,9 @@ async function speakWithPiper(
     activeAudioRequestId = null;
     currentAudioElement = null;
   }
+
+  // Mark this request as the latest one before any network work starts.
+  activeAudioRequestId = audioRequestId;
   
   try {
     const response = await fetch('/api/tts/speak', {
@@ -126,7 +142,7 @@ async function speakWithPiper(
       body: JSON.stringify({
         text,
         rate: options?.rate ?? currentRate,
-        voice: options?.voice ?? currentPiperVoice ?? undefined,
+        voice: options?.voice ?? currentAzureVoice ?? undefined,
       }),
     });
     
@@ -134,9 +150,9 @@ async function speakWithPiper(
       const errorData = await response.json().catch(() => ({}));
       if (errorData.fallback) {
         // Backend wants us to fallback to Web Speech API
-        console.log('⚠️ Piper backend error, falling back to Web Speech API');
-        usePiperBackend = false;
-        return speakWithWebSpeech(text, options) as HTMLAudioElement;
+        console.log('⚠️ Azure backend error, falling back to Web Speech API');
+        useAzureBackend = false;
+        return speakWithWebSpeech(text, options);
       }
       throw new Error(`TTS API error: ${response.statusText}`);
     }
@@ -173,15 +189,15 @@ async function speakWithPiper(
     
     // Get cache key from API response header (server-generated hash)
     const cacheKey = response.headers.get('X-Audio-Hash') || 
-      `${text}-${options?.rate ?? currentRate}-${options?.voice ?? currentPiperVoice ?? 'default'}`;
+      `${text}-${options?.rate ?? currentRate}-${options?.voice ?? currentAzureVoice ?? 'default'}`;
     
     // Check if we have a cached audio element for this text
-    let audio = audioCache.get(cacheKey);
-    let audioUrl: string;
-    let isCachedAudio = false;
-    
-    // Create a unique ID for this audio request to track if it's been superseded
-    const audioRequestId = Symbol('audioRequest');
+    let audio: HTMLAudioElement | null = audioCache.get(cacheKey) ?? null;
+    let audioUrl: string | null = null;
+    if (activeAudioRequestId !== audioRequestId) {
+      console.log('⚠️ Azure audio response ignored (superseded by a newer request)');
+      return null;
+    }
     
     // Create a reusable error handler
     const setupErrorHandler = (audioElement: HTMLAudioElement, url: string | null, isCached: boolean) => {
@@ -209,7 +225,7 @@ async function speakWithPiper(
         const errorMessage = errorCode !== null
           ? `Code ${errorCode}: ${getAudioErrorDescription(errorCode)}`
           : 'Unknown audio error';
-        console.error('❌ Piper audio playback error:', {
+        console.error('❌ Azure audio playback error:', {
           error,
           errorMessage,
           errorCode,
@@ -243,7 +259,7 @@ async function speakWithPiper(
         if (errorCode !== 1) {
           // Fallback to Web Speech API on audio playback error
           console.log('⚠️ Audio playback failed, falling back to Web Speech API');
-          usePiperBackend = false;
+          useAzureBackend = false;
           speakWithWebSpeech(text, options);
           
           options?.onError?.(new Error(errorMessage));
@@ -254,8 +270,7 @@ async function speakWithPiper(
     if (audio) {
       // Reuse cached audio element
       console.log('♻️ Reusing cached audio element');
-      isCachedAudio = true;
-      
+
       // Check if cached audio is still valid
       if (audio.error || audio.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
         console.log('⚠️ Cached audio is invalid, creating new one');
@@ -284,12 +299,12 @@ async function speakWithPiper(
       
       // Set up event handlers
       audio.onplay = () => {
-        console.log('▶️ Piper audio started');
+        console.log('▶️ Azure audio started');
         options?.onStart?.();
       };
       
       audio.onended = () => {
-        console.log('⏹️ Piper audio ended');
+        console.log('⏹️ Azure audio ended');
         // Don't revoke URL or remove from cache - keep it for reuse
         if (currentAudioElement === audio && activeAudioRequestId === audioRequestId) {
           currentAudioElement = null;
@@ -302,23 +317,25 @@ async function speakWithPiper(
       // Limit cache size by removing oldest entries
       if (audioCache.size >= MAX_CACHE_SIZE) {
         const firstKey = audioCache.keys().next().value;
-        const oldAudio = audioCache.get(firstKey);
-        if (oldAudio) {
-          oldAudio.pause();
-          oldAudio.src = '';
+        if (firstKey) {
+          const oldAudio = audioCache.get(firstKey);
+          if (oldAudio) {
+            oldAudio.pause();
+            oldAudio.src = '';
+          }
+          audioCache.delete(firstKey);
         }
-        audioCache.delete(firstKey);
       }
       audioCache.set(cacheKey, audio);
     } else {
       // For cached audio, re-setup play/end handlers
       audio.onplay = () => {
-        console.log('▶️ Piper audio started (cached)');
+        console.log('▶️ Azure audio started (cached)');
         options?.onStart?.();
       };
       
       audio.onended = () => {
-        console.log('⏹️ Piper audio ended (cached)');
+        console.log('⏹️ Azure audio ended (cached)');
         if (currentAudioElement === audio && activeAudioRequestId === audioRequestId) {
           currentAudioElement = null;
           activeAudioRequestId = null;
@@ -327,8 +344,6 @@ async function speakWithPiper(
       };
     }
     
-    // Mark this as the active audio request
-    activeAudioRequestId = audioRequestId;
     currentAudioElement = audio;
     
     // Wait for audio to be fully ready before playing to prevent cut-off
@@ -392,10 +407,29 @@ async function speakWithPiper(
       // Wait for audio to be fully ready before playing
       await waitForAudioReady();
       console.log('✅ Audio fully ready, starting playback');
-      
-      // Ensure we're at the start
+
+      if (activeAudioRequestId !== audioRequestId) {
+        console.log('⚠️ Audio playback skipped (superseded before play)');
+        return null;
+      }
+
+      // Give the media element a moment to settle at the real start of the file.
+      audio.pause();
       audio.currentTime = 0;
-      
+      await wait(AUDIO_SEEK_SETTLE_MS);
+
+      if (activeAudioRequestId !== audioRequestId) {
+        console.log('⚠️ Audio playback skipped (superseded during seek reset)');
+        return null;
+      }
+
+      await wait(AUDIO_PLAYBACK_SETTLE_MS);
+
+      if (activeAudioRequestId !== audioRequestId) {
+        console.log('⚠️ Audio playback skipped (superseded during start delay)');
+        return null;
+      }
+
       // Play the audio
       await audio.play();
       return audio;
@@ -411,11 +445,11 @@ async function speakWithPiper(
       
       // Fallback to Web Speech API
       console.log('⚠️ Audio play() failed, falling back to Web Speech API');
-      usePiperBackend = false;
-      return speakWithWebSpeech(text, options) as HTMLAudioElement;
+      useAzureBackend = false;
+      return speakWithWebSpeech(text, options);
     }
   } catch (error) {
-    console.error('❌ Piper TTS error:', error);
+    console.error('❌ Azure TTS error:', error);
     options?.onError?.(error);
     throw error;
   }
@@ -436,10 +470,13 @@ function speakWithWebSpeech(
     onError?: (error: SpeechSynthesisErrorEvent) => void;
   }
 ): SpeechSynthesisUtterance | null {
-  if (!isTTSSupported()) {
+  if (!isWebSpeechSupported()) {
     console.warn('❌ TTS is not supported in this browser');
     return null;
   }
+
+  const webSpeechRequestId = Symbol('webSpeech');
+  activeWebSpeechRequestId = webSpeechRequestId;
   
   // Firefox workaround: Force load voices
   window.speechSynthesis.getVoices();
@@ -476,26 +513,45 @@ function speakWithWebSpeech(
   
   utterance.onend = () => {
     console.log('⏹️ Web Speech ended');
+    if (activeWebSpeechRequestId === webSpeechRequestId) {
+      activeWebSpeechRequestId = null;
+    }
     options?.onEnd?.();
   };
   
   utterance.onerror = (error) => {
     console.error('❌ Web Speech error:', error);
+    if (activeWebSpeechRequestId === webSpeechRequestId) {
+      activeWebSpeechRequestId = null;
+    }
     options?.onError?.(error);
   };
   
   // Firefox fix: Need to call getVoices() to wake up the speech synthesis
   window.speechSynthesis.getVoices();
-  
-  // Speak!
-  window.speechSynthesis.speak(utterance);
-  
-  // Firefox sometimes needs a small delay to start
-  setTimeout(() => {
-    if (!window.speechSynthesis.speaking && !window.speechSynthesis.pending) {
-      window.speechSynthesis.speak(utterance);
+
+  const queueSpeech = () => {
+    if (activeWebSpeechRequestId !== webSpeechRequestId) {
+      return;
     }
-  }, 100);
+
+    window.speechSynthesis.speak(utterance);
+    window.speechSynthesis.resume();
+  };
+
+  // A short delay after cancel() helps avoid clipped first syllables.
+  setTimeout(queueSpeech, WEB_SPEECH_START_DELAY_MS);
+
+  // Firefox sometimes needs one follow-up nudge to start speaking.
+  setTimeout(() => {
+    if (activeWebSpeechRequestId !== webSpeechRequestId) {
+      return;
+    }
+
+    if (!window.speechSynthesis.speaking && !window.speechSynthesis.pending) {
+      queueSpeech();
+    }
+  }, WEB_SPEECH_START_DELAY_MS + WEB_SPEECH_RETRY_DELAY_MS);
   
   return utterance;
 }
@@ -504,21 +560,26 @@ function speakWithWebSpeech(
  * Check if TTS is supported in the current browser
  */
 export function isTTSSupported(): boolean {
+  return typeof window !== 'undefined'
+    && (typeof Audio !== 'undefined' || 'speechSynthesis' in window);
+}
+
+function isWebSpeechSupported(): boolean {
   return typeof window !== 'undefined' && 'speechSynthesis' in window;
 }
 
 /**
- * Check if Piper backend is being used
+ * Check if Azure backend is being used
  */
-export function isPiperBackend(): boolean {
-  return usePiperBackend;
+export function isAzureBackend(): boolean {
+  return useAzureBackend;
 }
 
 /**
  * Get all available voices (Web Speech API)
  */
 export function getAvailableVoices(): SpeechSynthesisVoice[] {
-  if (!isTTSSupported()) return [];
+  if (!isWebSpeechSupported()) return [];
   return window.speechSynthesis.getVoices();
 }
 
@@ -620,19 +681,19 @@ export async function speak(
     onError?: (error: unknown) => void;
   }
 ): Promise<SpeechSynthesisUtterance | HTMLAudioElement | null> {
-  // Check if Piper backend is available (only once)
-  if (!piperHealthChecked) {
-    await checkPiperHealth();
+  // Check if Azure backend is available (only once)
+  if (!azureHealthChecked) {
+    await checkAzureHealth();
   }
   
-  // Use Piper backend if available
-  if (usePiperBackend) {
+  // Use Azure backend if available
+  if (useAzureBackend) {
     try {
-      return await speakWithPiper(text, options);
+      return await speakWithAzure(text, options);
     } catch {
       // Fallback to Web Speech API on error
-      console.log('⚠️ Piper failed, falling back to Web Speech API');
-      usePiperBackend = false;
+      console.log('⚠️ Azure Speech failed, falling back to Web Speech API');
+      useAzureBackend = false;
       return speakWithWebSpeech(text, options);
     }
   }
@@ -646,11 +707,20 @@ export async function speak(
  */
 export async function speakPolish(
   text: string,
-  onEnd?: () => void
+  options?: {
+    onStart?: () => void;
+    onEnd?: () => void;
+    onError?: (error: unknown) => void;
+    rate?: number;
+    pitch?: number;
+    volume?: number;
+  } | (() => void)
 ): Promise<SpeechSynthesisUtterance | HTMLAudioElement | null> {
+  const resolvedOptions = typeof options === 'function' ? { onEnd: options } : options;
+
   return speak(text, {
     lang: POLISH_LANG,
-    onEnd,
+    ...resolvedOptions,
   });
 }
 
@@ -659,12 +729,21 @@ export async function speakPolish(
  */
 export async function speakSlow(
   text: string,
-  onEnd?: () => void
+  options?: {
+    onStart?: () => void;
+    onEnd?: () => void;
+    onError?: (error: unknown) => void;
+    rate?: number;
+    pitch?: number;
+    volume?: number;
+  } | (() => void)
 ): Promise<SpeechSynthesisUtterance | HTMLAudioElement | null> {
+  const resolvedOptions = typeof options === 'function' ? { onEnd: options } : options;
+
   return speak(text, {
+    ...resolvedOptions,
     lang: POLISH_LANG,
-    rate: 0.7,
-    onEnd,
+    rate: resolvedOptions?.rate ?? 0.7,
   });
 }
 
@@ -672,7 +751,10 @@ export async function speakSlow(
  * Stop any ongoing speech
  */
 export function stopSpeaking(): void {
-  // Stop Piper audio
+  activeAudioRequestId = null;
+  activeWebSpeechRequestId = null;
+
+  // Stop Azure audio
   if (currentAudioElement) {
     currentAudioElement.pause();
     currentAudioElement.currentTime = 0;
@@ -680,7 +762,7 @@ export function stopSpeaking(): void {
   }
   
   // Stop Web Speech API
-  if (isTTSSupported()) {
+  if (isWebSpeechSupported()) {
     window.speechSynthesis.cancel();
   }
 }
@@ -689,7 +771,7 @@ export function stopSpeaking(): void {
  * Clear the client-side audio cache
  */
 export function clearAudioCache(): void {
-  for (const [key, audio] of audioCache.entries()) {
+  for (const audio of audioCache.values()) {
     audio.pause();
     audio.src = '';
   }
@@ -701,13 +783,13 @@ export function clearAudioCache(): void {
  * Pause speech
  */
 export function pauseSpeaking(): void {
-  // Pause Piper audio
+  // Pause Azure audio
   if (currentAudioElement) {
     currentAudioElement.pause();
   }
   
   // Pause Web Speech API
-  if (isTTSSupported()) {
+  if (isWebSpeechSupported()) {
     window.speechSynthesis.pause();
   }
 }
@@ -716,13 +798,13 @@ export function pauseSpeaking(): void {
  * Resume speech
  */
 export function resumeSpeaking(): void {
-  // Resume Piper audio
+  // Resume Azure audio
   if (currentAudioElement && currentAudioElement.paused) {
     currentAudioElement.play();
   }
   
   // Resume Web Speech API
-  if (isTTSSupported()) {
+  if (isWebSpeechSupported()) {
     window.speechSynthesis.resume();
   }
 }
@@ -731,13 +813,13 @@ export function resumeSpeaking(): void {
  * Check if currently speaking
  */
 export function isSpeaking(): boolean {
-  // Check Piper audio
+  // Check Azure audio
   if (currentAudioElement && !currentAudioElement.paused) {
     return true;
   }
   
   // Check Web Speech API
-  if (!isTTSSupported()) return false;
+  if (!isWebSpeechSupported()) return false;
   return window.speechSynthesis.speaking;
 }
 
@@ -745,13 +827,13 @@ export function isSpeaking(): boolean {
  * Check if speech is paused
  */
 export function isPaused(): boolean {
-  // Check Piper audio
+  // Check Azure audio
   if (currentAudioElement) {
     return currentAudioElement.paused;
   }
   
   // Check Web Speech API
-  if (!isTTSSupported()) return false;
+  if (!isWebSpeechSupported()) return false;
   return window.speechSynthesis.paused;
 }
 
@@ -762,11 +844,11 @@ export function isPaused(): boolean {
 export async function initializeTTS(): Promise<SpeechSynthesisVoice[]> {
   console.log('🎙️ Initializing TTS...');
   
-  // Check Piper backend availability
-  await checkPiperHealth();
+  // Check Azure backend availability
+  await checkAzureHealth();
   
-  if (!isTTSSupported()) {
-    console.warn('❌ TTS not supported');
+  if (!isWebSpeechSupported()) {
+    console.warn('❌ Web Speech is not supported');
     return [];
   }
   
@@ -807,15 +889,15 @@ export async function initializeTTS(): Promise<SpeechSynthesisVoice[]> {
  */
 export function applyTTSPreferences(prefs: {
   voiceURI?: string;
-  piperVoice?: string;
+  azureVoice?: string;
   rate?: number;
   pitch?: number;
 }): void {
   if (prefs.voiceURI) {
     setVoice(prefs.voiceURI);
   }
-  if (prefs.piperVoice !== undefined) {
-    setPiperVoice(prefs.piperVoice);
+  if (prefs.azureVoice !== undefined) {
+    setAzureVoice(prefs.azureVoice);
   }
   if (prefs.rate !== undefined) {
     setRate(prefs.rate);
@@ -830,19 +912,21 @@ export function applyTTSPreferences(prefs: {
  */
 export function getTTSSettings(): {
   voiceURI: string | null;
+  azureVoice: string | null;
   rate: number;
   pitch: number;
   volume: number;
   hasPolishVoice: boolean;
-  backend: 'piper' | 'webspeech';
+  backend: 'azure' | 'webspeech';
 } {
   return {
     voiceURI: currentVoice?.voiceURI ?? null,
+    azureVoice: currentAzureVoice,
     rate: currentRate,
     pitch: currentPitch,
     volume: currentVolume,
     hasPolishVoice: getPolishVoices().length > 0,
-    backend: usePiperBackend ? 'piper' : 'webspeech',
+    backend: useAzureBackend ? 'azure' : 'webspeech',
   };
 }
 
@@ -857,7 +941,7 @@ export const tts = {
   isSpeaking,
   isPaused,
   isSupported: isTTSSupported,
-  isPiperBackend,
+  isAzureBackend,
   getVoices: getAvailableVoices,
   getPolishVoices,
   setVoice,
@@ -867,8 +951,8 @@ export const tts = {
   getPitch,
   setVolume,
   getVolume,
-  setPiperVoice,
-  getPiperVoice,
+  setAzureVoice,
+  getAzureVoice,
   initialize: initializeTTS,
   applyPreferences: applyTTSPreferences,
   getSettings: getTTSSettings,
