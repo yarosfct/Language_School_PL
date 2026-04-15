@@ -2,16 +2,18 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { AlertCircle, BookMarked, BookOpen, FileText, Home, RotateCcw, Settings, X } from 'lucide-react';
+import { AlertCircle, BookMarked, BookOpen, FileText, Flag, Home, RotateCcw, Settings, Target, X } from 'lucide-react';
 
 export const navigation = [
   { name: 'Dashboard', href: '/', icon: Home },
   { name: 'Learn', href: '/learn', icon: BookOpen },
+  { name: 'Fill Blanks', href: '/fill-blanks', icon: Target },
   { name: 'Flashcards', href: '/learn/flashcards', icon: BookOpen },
   { name: 'Review', href: '/review', icon: RotateCcw },
   { name: 'Mistakes', href: '/mistakes', icon: AlertCircle },
   { name: 'Vocabulary', href: '/vocabulary', icon: BookMarked },
   { name: 'Grammar', href: '/grammar', icon: FileText },
+  { name: 'Curate', href: '/curate', icon: Flag },
   { name: 'Settings', href: '/settings', icon: Settings },
 ];
 

@@ -231,47 +231,18 @@ export default function SettingsPage() {
     setIsTestingTTS(true);
     
     try {
-      if (backendStatus === 'azure') {
-        // Use Azure Speech API
-        const response = await fetch('/api/tts/speak', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            text: textToSpeak,
-            rate: speechRate,
-            voice: selectedAzureVoice || undefined,
-          }),
-        });
-
-        if (!response.ok) {
-          const error = await response.json();
-          throw new Error(error.error || 'Failed to generate audio');
-        }
-
-        // Get audio blob and play it
-        const audioBlob = await response.blob();
-        const audioUrl = URL.createObjectURL(audioBlob);
-        const audio = new Audio(audioUrl);
-        
-        audio.onended = () => {
-          URL.revokeObjectURL(audioUrl);
+      await speak(textToSpeak, {
+        rate: speechRate,
+        voice: backendStatus === 'azure' ? selectedAzureVoice || undefined : undefined,
+        onEnd: () => {
           setIsTestingTTS(false);
-        };
-        
-        audio.onerror = () => {
-          URL.revokeObjectURL(audioUrl);
+        },
+        onError: (error) => {
+          console.error('TTS test error:', error);
+          alert(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`);
           setIsTestingTTS(false);
-          alert('Error playing audio');
-        };
-        
-        await audio.play();
-      } else {
-        // Use Web Speech API
-        await speak(textToSpeak);
-        setIsTestingTTS(false);
-      }
+        },
+      });
     } catch (error) {
       console.error('TTS test error:', error);
       alert(`Error: ${error instanceof Error ? error.message : 'Unknown error'}`);

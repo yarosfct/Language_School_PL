@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
-import { speak, speakSlow, stopSpeaking, isSpeaking, isTTSSupported } from '@/lib/tts';
+import { speak, speakSlow, stopSpeaking, isTTSSupported } from '@/lib/tts';
 
 export interface TTSOptions {
   text: string;
@@ -9,7 +9,7 @@ export interface TTSOptions {
   loopCount?: number; // 0 = infinite
   onStart?: () => void;
   onEnd?: () => void;
-  onError?: (error: any) => void;
+  onError?: (error: unknown) => void;
 }
 
 export interface TTSState {
@@ -39,7 +39,6 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
   const textRef = useRef(options.text);
   const loopCountRef = useRef(options.loopCount ?? 1);
   const loopRef = useRef(options.loop ?? false);
-  const utteranceRef = useRef<SpeechSynthesisUtterance | HTMLAudioElement | null>(null);
   const playbackRequestRef = useRef(0);
 
   // Update refs when options change
@@ -70,7 +69,7 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
       setError(null);
 
       const speakFn = slow ? speakSlow : speak;
-      const utterance = await speakFn(text, {
+      await speakFn(text, {
         onStart: () => {
           if (playbackRequestRef.current !== playbackRequestId) {
             return;
@@ -93,7 +92,7 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
             setCurrentLoop(nextLoop);
             // Small delay between loops
             setTimeout(() => {
-              if (utteranceRef.current && playbackRequestRef.current === playbackRequestId) {
+              if (playbackRequestRef.current === playbackRequestId) {
                 playInternal(text, slow, nextLoop);
               }
             }, 500);
@@ -101,7 +100,6 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
             setIsLoading(false);
             setIsPlaying(false);
             setCurrentLoop(0);
-            utteranceRef.current = null;
             options.onEnd?.();
           }
         },
@@ -120,13 +118,6 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
 
       if (playbackRequestRef.current !== playbackRequestId) {
         return;
-      }
-
-      utteranceRef.current = utterance;
-
-      if (!utterance) {
-        setIsLoading(false);
-        setIsPlaying(false);
       }
     } catch (err) {
       if (playbackRequestRef.current !== playbackRequestId) {
@@ -155,7 +146,6 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
     setIsLoading(false);
     setIsPlaying(false);
     setCurrentLoop(0);
-    utteranceRef.current = null;
   }, []);
 
   const toggle = useCallback(() => {
@@ -198,7 +188,7 @@ export function useTTS(options: TTSOptions): [TTSState, TTSControls] {
     return () => {
       stop();
     };
-  }, []); // Empty deps - only run on mount/unmount
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- mount-only setup/cleanup
 
   const state: TTSState = {
     isPlaying,

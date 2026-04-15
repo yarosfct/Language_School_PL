@@ -3,7 +3,7 @@
 // Backend state
 let useAzureBackend = false;
 let azureHealthChecked = false;
-let currentAudioElement: HTMLAudioElement | null = null;
+let audioContext: AudioContext | null = null;
 
 // TTS configuration state (for Web Speech API)
 let currentVoice: SpeechSynthesisVoice | null = null;
@@ -14,9 +14,39 @@ let currentVolume = 1.0;
 // Azure Speech configuration state
 let currentAzureVoice: string | null = null;
 
-// Client-side audio cache: Map<hash, AudioElement>
-const audioCache = new Map<string, HTMLAudioElement>();
-const MAX_CACHE_SIZE = 50; // Limit cache to 50 audio elements
+interface SpeakOptions {
+  lang?: string;
+  rate?: number;
+  pitch?: number;
+  volume?: number;
+  voice?: string;
+  onStart?: () => void;
+  onEnd?: () => void;
+  onError?: (error: unknown) => void;
+}
+
+interface AzurePlaybackState {
+  requestId: symbol | null;
+  cacheKey: string | null;
+  text: string | null;
+  audioBuffer: AudioBuffer | null;
+  sourceNode: AudioBufferSourceNode | null;
+  gainNode: GainNode | null;
+  startedAtTime: number;
+  pausedOffset: number;
+  isPaused: boolean;
+  callbacks: Pick<SpeakOptions, 'onStart' | 'onEnd' | 'onError'>;
+}
+
+type ExtendedWindow = Window & typeof globalThis & {
+  webkitAudioContext?: typeof AudioContext;
+};
+
+// Client-side audio cache: Map<hash, decoded AudioBuffer>
+const decodedAudioCache = new Map<string, AudioBuffer>();
+const pendingDecodedAudio = new Map<string, Promise<{ cacheKey: string; audioBuffer: AudioBuffer }>>();
+const requestHashCache = new Map<string, string>();
+const MAX_CACHE_SIZE = 50;
 
 // Track active audio request to ignore errors from superseded requests
 let activeAudioRequestId: symbol | null = null;
@@ -24,41 +54,155 @@ let activeWebSpeechRequestId: symbol | null = null;
 
 // Polish language code
 const POLISH_LANG = 'pl-PL';
-const AUDIO_SEEK_SETTLE_MS = 40;
-const AUDIO_PLAYBACK_SETTLE_MS = 120;
 const WEB_SPEECH_START_DELAY_MS = 120;
 const WEB_SPEECH_RETRY_DELAY_MS = 250;
 
-function wait(ms: number): Promise<void> {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
+const currentAzurePlayback: AzurePlaybackState = {
+  requestId: null,
+  cacheKey: null,
+  text: null,
+  audioBuffer: null,
+  sourceNode: null,
+  gainNode: null,
+  startedAtTime: 0,
+  pausedOffset: 0,
+  isPaused: false,
+  callbacks: {},
+};
+
+function isWebAudioSupported(): boolean {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const extendedWindow = window as ExtendedWindow;
+  return typeof window.AudioContext !== 'undefined' || typeof extendedWindow.webkitAudioContext !== 'undefined';
+}
+
+function getAudioContext(): AudioContext {
+  if (typeof window === 'undefined') {
+    throw new Error('Web Audio API is not available on the server');
+  }
+
+  if (audioContext && audioContext.state !== 'closed') {
+    return audioContext;
+  }
+
+  const extendedWindow = window as ExtendedWindow;
+  const AudioContextConstructor = window.AudioContext ?? extendedWindow.webkitAudioContext;
+
+  if (!AudioContextConstructor) {
+    throw new Error('Web Audio API is not supported in this browser');
+  }
+
+  audioContext = new AudioContextConstructor();
+  return audioContext;
+}
+
+function touchDecodedAudioCache(cacheKey: string, audioBuffer: AudioBuffer): void {
+  if (decodedAudioCache.has(cacheKey)) {
+    decodedAudioCache.delete(cacheKey);
+  } else if (decodedAudioCache.size >= MAX_CACHE_SIZE) {
+    const oldestKey = decodedAudioCache.keys().next().value;
+    if (oldestKey) {
+      decodedAudioCache.delete(oldestKey);
+    }
+  }
+
+  decodedAudioCache.set(cacheKey, audioBuffer);
+}
+
+function getAzureRequestSignature(text: string, options?: Pick<SpeakOptions, 'rate' | 'voice'>): string {
+  return JSON.stringify({
+    text: text.trim(),
+    rate: options?.rate ?? currentRate,
+    voice: options?.voice ?? currentAzureVoice ?? 'default',
   });
 }
 
-/**
- * Get human-readable description of audio error codes
- */
-function getAudioErrorDescription(code: number | null): string {
-  if (code === null) return 'Unknown audio error';
-  
-  // MediaError constants
-  const MEDIA_ERR_ABORTED = 1;
-  const MEDIA_ERR_NETWORK = 2;
-  const MEDIA_ERR_DECODE = 3;
-  const MEDIA_ERR_SRC_NOT_SUPPORTED = 4;
-  
-  switch (code) {
-    case MEDIA_ERR_ABORTED:
-      return 'Audio playback was aborted';
-    case MEDIA_ERR_NETWORK:
-      return 'Network error while loading audio';
-    case MEDIA_ERR_DECODE:
-      return 'Audio decoding error (invalid or corrupted file)';
-    case MEDIA_ERR_SRC_NOT_SUPPORTED:
-      return 'Audio format not supported';
-    default:
-      return `Unknown audio error (code: ${code})`;
+function validateWavAudio(audioData: ArrayBuffer): void {
+  if (audioData.byteLength === 0) {
+    throw new Error('Empty audio file received from server');
   }
+
+  if (audioData.byteLength < 4) {
+    throw new Error('Invalid audio file received from server');
+  }
+
+  const headerString = String.fromCharCode(...new Uint8Array(audioData.slice(0, 4)));
+  if (headerString !== 'RIFF') {
+    throw new Error(`Invalid audio file format (expected RIFF, got ${headerString})`);
+  }
+}
+
+function disconnectAzureNodes(
+  sourceNode: AudioBufferSourceNode | null,
+  gainNode: GainNode | null
+): void {
+  if (sourceNode) {
+    try {
+      sourceNode.disconnect();
+    } catch {
+      // Ignore disconnect errors during cleanup.
+    }
+  }
+
+  if (gainNode) {
+    try {
+      gainNode.disconnect();
+    } catch {
+      // Ignore disconnect errors during cleanup.
+    }
+  }
+}
+
+function getCurrentAzurePlaybackOffset(): number {
+  if (!currentAzurePlayback.audioBuffer) {
+    return 0;
+  }
+
+  if (currentAzurePlayback.isPaused || !currentAzurePlayback.sourceNode) {
+    return currentAzurePlayback.pausedOffset;
+  }
+
+  const context = getAudioContext();
+  const elapsed = Math.max(0, context.currentTime - currentAzurePlayback.startedAtTime);
+  return Math.min(
+    currentAzurePlayback.pausedOffset + elapsed,
+    currentAzurePlayback.audioBuffer.duration
+  );
+}
+
+function stopCurrentAzureSource(resetOffset: boolean): void {
+  const { sourceNode, gainNode } = currentAzurePlayback;
+
+  if (sourceNode) {
+    sourceNode.onended = null;
+    try {
+      sourceNode.stop();
+    } catch {
+      // Ignore stop errors if the source has already ended.
+    }
+  }
+
+  disconnectAzureNodes(sourceNode, gainNode);
+  currentAzurePlayback.sourceNode = null;
+  currentAzurePlayback.gainNode = null;
+  currentAzurePlayback.startedAtTime = 0;
+
+  if (resetOffset) {
+    currentAzurePlayback.pausedOffset = 0;
+    currentAzurePlayback.isPaused = false;
+  }
+}
+
+function resetAzurePlaybackState(): void {
+  stopCurrentAzureSource(true);
+  currentAzurePlayback.requestId = null;
+  currentAzurePlayback.cacheKey = null;
+  currentAzurePlayback.text = null;
+  currentAzurePlayback.audioBuffer = null;
+  currentAzurePlayback.callbacks = {};
 }
 
 /**
@@ -96,44 +240,27 @@ export function getAzureVoice(): string | null {
   return currentAzureVoice;
 }
 
-/**
- * Speak using Azure backend
- */
-async function speakWithAzure(
+async function fetchDecodedAzureAudio(
   text: string,
-  options?: {
-    rate?: number;
-    voice?: string;
-    onStart?: () => void;
-    onEnd?: () => void;
-    onError?: (error: unknown) => void;
-  }
-): Promise<SpeechSynthesisUtterance | HTMLAudioElement | null> {
-  const audioRequestId = Symbol('audioRequest');
+  options?: Pick<SpeakOptions, 'rate' | 'voice'>
+): Promise<{ cacheKey: string; audioBuffer: AudioBuffer }> {
+  const requestSignature = getAzureRequestSignature(text, options);
+  const cachedHash = requestHashCache.get(requestSignature);
 
-  // Stop any ongoing audio properly
-  if (currentAudioElement) {
-    try {
-      // Remove error handlers to prevent error events when stopping
-      currentAudioElement.onerror = null;
-      currentAudioElement.pause();
-      currentAudioElement.currentTime = 0;
-      // Don't clear src immediately - let it finish cleanup naturally
-      // Clearing src can trigger error events
-    } catch {
-      // Ignore errors when stopping
-      console.log('Note: Error while stopping previous audio (ignored)');
+  if (cachedHash) {
+    const cachedBuffer = decodedAudioCache.get(cachedHash);
+    if (cachedBuffer) {
+      touchDecodedAudioCache(cachedHash, cachedBuffer);
+      return { cacheKey: cachedHash, audioBuffer: cachedBuffer };
     }
-    // Clear the active request ID BEFORE clearing currentAudioElement
-    // This ensures old error handlers know they're superseded
-    activeAudioRequestId = null;
-    currentAudioElement = null;
   }
 
-  // Mark this request as the latest one before any network work starts.
-  activeAudioRequestId = audioRequestId;
-  
-  try {
+  const pendingRequest = pendingDecodedAudio.get(requestSignature);
+  if (pendingRequest) {
+    return pendingRequest;
+  }
+
+  const requestPromise = (async () => {
     const response = await fetch('/api/tts/speak', {
       method: 'POST',
       headers: {
@@ -145,313 +272,190 @@ async function speakWithAzure(
         voice: options?.voice ?? currentAzureVoice ?? undefined,
       }),
     });
-    
+
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      if (errorData.fallback) {
-        // Backend wants us to fallback to Web Speech API
-        console.log('⚠️ Azure backend error, falling back to Web Speech API');
-        useAzureBackend = false;
-        return speakWithWebSpeech(text, options);
-      }
-      throw new Error(`TTS API error: ${response.statusText}`);
+      throw new Error(errorData.details || errorData.error || `TTS API error: ${response.statusText}`);
     }
-    
-    // Check content type
+
     const contentType = response.headers.get('content-type');
     if (!contentType || !contentType.includes('audio')) {
-      console.error('❌ Invalid content type from TTS API:', contentType);
-      throw new Error('Invalid audio response from server');
+      throw new Error(`Invalid audio response from server (${contentType || 'missing content-type'})`);
     }
-    
-    const audioBlob = await response.blob();
-    
-    // Validate blob
-    if (!audioBlob || audioBlob.size === 0) {
-      console.error('❌ Empty or invalid audio blob received');
-      throw new Error('Empty audio file received from server');
+
+    const cacheKey = response.headers.get('X-Audio-Hash') || requestSignature;
+    requestHashCache.set(requestSignature, cacheKey);
+
+    const cachedBuffer = decodedAudioCache.get(cacheKey);
+    if (cachedBuffer) {
+      void response.body?.cancel();
+      touchDecodedAudioCache(cacheKey, cachedBuffer);
+      return { cacheKey, audioBuffer: cachedBuffer };
     }
-    
-    // Validate WAV file header (first 4 bytes should be "RIFF")
-    if (audioBlob.size >= 4) {
-      const headerSlice = audioBlob.slice(0, 4);
-      const headerArray = await headerSlice.arrayBuffer();
-      const headerView = new Uint8Array(headerArray);
-      const headerString = String.fromCharCode(...headerView);
-      
-      if (headerString !== 'RIFF') {
-        console.error('❌ Invalid WAV file header:', headerString);
-        throw new Error('Invalid audio file format (not a valid WAV file)');
-      }
+
+    const audioData = await response.arrayBuffer();
+    validateWavAudio(audioData);
+
+    const context = getAudioContext();
+    const audioBuffer = await context.decodeAudioData(audioData.slice(0));
+    touchDecodedAudioCache(cacheKey, audioBuffer);
+
+    return { cacheKey, audioBuffer };
+  })();
+
+  pendingDecodedAudio.set(requestSignature, requestPromise);
+
+  try {
+    return await requestPromise;
+  } finally {
+    pendingDecodedAudio.delete(requestSignature);
+  }
+}
+
+async function startAzureBufferPlayback(
+  text: string,
+  cacheKey: string,
+  audioBuffer: AudioBuffer,
+  requestId: symbol,
+  callbacks: Pick<SpeakOptions, 'onStart' | 'onEnd' | 'onError'>,
+  startOffset = 0,
+  notifyStart = true
+): Promise<void> {
+  const context = getAudioContext();
+  await context.resume();
+
+  if (activeAudioRequestId !== requestId) {
+    return;
+  }
+
+  const safeOffset = Math.max(0, Math.min(startOffset, Math.max(audioBuffer.duration - 0.001, 0)));
+
+  if (safeOffset >= audioBuffer.duration) {
+    activeAudioRequestId = null;
+    resetAzurePlaybackState();
+    callbacks.onEnd?.();
+    return;
+  }
+
+  const sourceNode = context.createBufferSource();
+  const gainNode = context.createGain();
+  gainNode.gain.value = currentVolume;
+
+  sourceNode.buffer = audioBuffer;
+  sourceNode.connect(gainNode);
+  gainNode.connect(context.destination);
+
+  currentAzurePlayback.requestId = requestId;
+  currentAzurePlayback.cacheKey = cacheKey;
+  currentAzurePlayback.text = text;
+  currentAzurePlayback.audioBuffer = audioBuffer;
+  currentAzurePlayback.sourceNode = sourceNode;
+  currentAzurePlayback.gainNode = gainNode;
+  currentAzurePlayback.startedAtTime = context.currentTime;
+  currentAzurePlayback.pausedOffset = safeOffset;
+  currentAzurePlayback.isPaused = false;
+  currentAzurePlayback.callbacks = callbacks;
+
+  sourceNode.onended = () => {
+    disconnectAzureNodes(sourceNode, gainNode);
+
+    if (currentAzurePlayback.sourceNode !== sourceNode || currentAzurePlayback.requestId !== requestId) {
+      return;
     }
-    
-    console.log(`🎵 Audio blob received: ${audioBlob.size} bytes, type: ${audioBlob.type}`);
-    
-    // Get cache key from API response header (server-generated hash)
-    const cacheKey = response.headers.get('X-Audio-Hash') || 
-      `${text}-${options?.rate ?? currentRate}-${options?.voice ?? currentAzureVoice ?? 'default'}`;
-    
-    // Check if we have a cached audio element for this text
-    let audio: HTMLAudioElement | null = audioCache.get(cacheKey) ?? null;
-    let audioUrl: string | null = null;
+
+    currentAzurePlayback.sourceNode = null;
+    currentAzurePlayback.gainNode = null;
+    currentAzurePlayback.startedAtTime = 0;
+    currentAzurePlayback.pausedOffset = 0;
+    currentAzurePlayback.isPaused = false;
+    currentAzurePlayback.requestId = null;
+    activeAudioRequestId = null;
+    callbacks.onEnd?.();
+  };
+
+  sourceNode.start(0, safeOffset);
+
+  if (notifyStart) {
+    callbacks.onStart?.();
+  }
+}
+
+async function resumeAzurePlayback(): Promise<void> {
+  const {
+    requestId,
+    cacheKey,
+    text,
+    audioBuffer,
+    callbacks,
+    pausedOffset,
+  } = currentAzurePlayback;
+
+  if (!requestId || !cacheKey || !text || !audioBuffer || !currentAzurePlayback.isPaused) {
+    return;
+  }
+
+  try {
+    await startAzureBufferPlayback(text, cacheKey, audioBuffer, requestId, callbacks, pausedOffset, false);
+  } catch (error) {
+    console.error('❌ Failed to resume Azure audio:', error);
+    activeAudioRequestId = null;
+    resetAzurePlaybackState();
+    callbacks.onError?.(error);
+  }
+}
+
+/**
+ * Speak using Azure backend
+ */
+async function speakWithAzure(text: string, options?: SpeakOptions): Promise<void> {
+  const audioRequestId = Symbol('audioRequest');
+
+  activeAudioRequestId = null;
+  resetAzurePlaybackState();
+
+  if (isWebSpeechSupported()) {
+    activeWebSpeechRequestId = null;
+    window.speechSynthesis.cancel();
+  }
+
+  activeAudioRequestId = audioRequestId;
+
+  try {
+    const { cacheKey, audioBuffer } = await fetchDecodedAzureAudio(text, options);
+
     if (activeAudioRequestId !== audioRequestId) {
       console.log('⚠️ Azure audio response ignored (superseded by a newer request)');
-      return null;
+      return;
     }
-    
-    // Create a reusable error handler
-    const setupErrorHandler = (audioElement: HTMLAudioElement, url: string | null, isCached: boolean) => {
-      audioElement.onerror = (error) => {
-        // Ignore errors if this audio request was superseded by a new one
-        if (activeAudioRequestId !== audioRequestId) {
-          console.log('⚠️ Audio error ignored (audio was superseded by new request)');
-          return;
-        }
-        
-        // Ignore errors if this audio element is no longer the current one
-        if (currentAudioElement !== audioElement) {
-          console.log('⚠️ Audio error ignored (different audio is now active)');
-          return;
-        }
-        
-        const errorCode = audioElement.error?.code ?? null;
-        
-        // Ignore MEDIA_ERR_ABORTED (code 1) - this happens when audio is stopped
-        if (errorCode === 1) {
-          console.log('⚠️ Audio aborted (ignored - normal when stopping)');
-          return;
-        }
-        
-        const errorMessage = errorCode !== null
-          ? `Code ${errorCode}: ${getAudioErrorDescription(errorCode)}`
-          : 'Unknown audio error';
-        console.error('❌ Azure audio playback error:', {
-          error,
-          errorMessage,
-          errorCode,
-          blobSize: audioBlob.size,
-          blobType: audioBlob.type,
-          audioError: audioElement.error,
-          isCached,
-          cacheKey,
-          readyState: audioElement.readyState,
-          networkState: audioElement.networkState,
-        });
-        
-        // Remove from cache on error (only for real errors, not aborted)
-        if (isCached && errorCode !== 1) {
-          console.log('🗑️ Removing corrupted audio from cache');
-          audioCache.delete(cacheKey);
-          audioElement.pause();
-          audioElement.currentTime = 0;
-          // Don't clear src - it can cause additional errors
-        } else {
-          if (url) {
-            URL.revokeObjectURL(url);
-          }
-        }
-        
-        if (currentAudioElement === audioElement) {
-          currentAudioElement = null;
-        }
-        
-        // Only fallback for real errors, not aborted
-        if (errorCode !== 1) {
-          // Fallback to Web Speech API on audio playback error
-          console.log('⚠️ Audio playback failed, falling back to Web Speech API');
-          useAzureBackend = false;
-          speakWithWebSpeech(text, options);
-          
-          options?.onError?.(new Error(errorMessage));
-        }
-      };
-    };
-    
-    if (audio) {
-      // Reuse cached audio element
-      console.log('♻️ Reusing cached audio element');
 
-      // Check if cached audio is still valid
-      if (audio.error || audio.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) {
-        console.log('⚠️ Cached audio is invalid, creating new one');
-        audioCache.delete(cacheKey);
-        audio.pause();
-        audio.src = '';
-        audio = null;
-      } else {
-        // Reset to beginning
-        audio.currentTime = 0;
-        // Re-setup event handlers (they might have been cleared)
-        setupErrorHandler(audio, null, true);
+    await startAzureBufferPlayback(
+      text,
+      cacheKey,
+      audioBuffer,
+      audioRequestId,
+      {
+        onStart: options?.onStart,
+        onEnd: options?.onEnd,
+        onError: options?.onError,
       }
-    }
-    
-    if (!audio) {
-      // Create new audio element
-      audioUrl = URL.createObjectURL(audioBlob);
-      audio = new Audio(audioUrl);
-      
-      // Preload the audio to ensure it's ready before playing
-      audio.preload = 'auto';
-      
-      // Set up error handler
-      setupErrorHandler(audio, audioUrl, false);
-      
-      // Set up event handlers
-      audio.onplay = () => {
-        console.log('▶️ Azure audio started');
-        options?.onStart?.();
-      };
-      
-      audio.onended = () => {
-        console.log('⏹️ Azure audio ended');
-        // Don't revoke URL or remove from cache - keep it for reuse
-        if (currentAudioElement === audio && activeAudioRequestId === audioRequestId) {
-          currentAudioElement = null;
-          activeAudioRequestId = null;
-        }
-        options?.onEnd?.();
-      };
-      
-      // Cache the audio element for future use
-      // Limit cache size by removing oldest entries
-      if (audioCache.size >= MAX_CACHE_SIZE) {
-        const firstKey = audioCache.keys().next().value;
-        if (firstKey) {
-          const oldAudio = audioCache.get(firstKey);
-          if (oldAudio) {
-            oldAudio.pause();
-            oldAudio.src = '';
-          }
-          audioCache.delete(firstKey);
-        }
-      }
-      audioCache.set(cacheKey, audio);
-    } else {
-      // For cached audio, re-setup play/end handlers
-      audio.onplay = () => {
-        console.log('▶️ Azure audio started (cached)');
-        options?.onStart?.();
-      };
-      
-      audio.onended = () => {
-        console.log('⏹️ Azure audio ended (cached)');
-        if (currentAudioElement === audio && activeAudioRequestId === audioRequestId) {
-          currentAudioElement = null;
-          activeAudioRequestId = null;
-        }
-        options?.onEnd?.();
-      };
-    }
-    
-    currentAudioElement = audio;
-    
-    // Wait for audio to be fully ready before playing to prevent cut-off
-    const waitForAudioReady = (): Promise<void> => {
-      return new Promise((resolve, reject) => {
-        // If already fully loaded, resolve immediately
-        if (audio.readyState >= HTMLMediaElement.HAVE_ENOUGH_DATA) {
-          // Double-check by waiting a tiny bit for decode to complete
-          setTimeout(() => resolve(), 10);
-          return;
-        }
-        
-        // Set up timeout to prevent infinite waiting
-        const timeout = setTimeout(() => {
-          reject(new Error('Audio loading timeout'));
-        }, 10000); // Increased timeout for larger files
-        
-        // Wait for canplaythrough event (entire audio loaded and ready to play)
-        // This is better than canplay as it ensures no buffering will occur
-        const onCanPlayThrough = () => {
-          clearTimeout(timeout);
-          audio.removeEventListener('canplaythrough', onCanPlayThrough);
-          audio.removeEventListener('error', onError);
-          // Small delay to ensure decode is complete
-          setTimeout(() => resolve(), 50);
-        };
-        
-        // Fallback to canplay if canplaythrough doesn't fire
-        const onCanPlay = () => {
-          // If we have enough data, we can proceed
-          if (audio.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
-            clearTimeout(timeout);
-            audio.removeEventListener('canplaythrough', onCanPlayThrough);
-            audio.removeEventListener('canplay', onCanPlay);
-            audio.removeEventListener('error', onError);
-            setTimeout(() => resolve(), 100);
-          }
-        };
-        
-        const onError = () => {
-          clearTimeout(timeout);
-          audio.removeEventListener('canplaythrough', onCanPlayThrough);
-          audio.removeEventListener('canplay', onCanPlay);
-          audio.removeEventListener('error', onError);
-          reject(new Error('Audio loading error'));
-        };
-        
-        audio.addEventListener('canplaythrough', onCanPlayThrough, { once: true });
-        audio.addEventListener('canplay', onCanPlay, { once: true });
-        audio.addEventListener('error', onError, { once: true });
-        
-        // Force load if not already loading
-        if (audio.readyState === HTMLMediaElement.HAVE_NOTHING) {
-          audio.load();
-        }
-      });
-    };
-    
-    // Attempt to play with error handling
-    try {
-      // Wait for audio to be fully ready before playing
-      await waitForAudioReady();
-      console.log('✅ Audio fully ready, starting playback');
-
-      if (activeAudioRequestId !== audioRequestId) {
-        console.log('⚠️ Audio playback skipped (superseded before play)');
-        return null;
-      }
-
-      // Give the media element a moment to settle at the real start of the file.
-      audio.pause();
-      audio.currentTime = 0;
-      await wait(AUDIO_SEEK_SETTLE_MS);
-
-      if (activeAudioRequestId !== audioRequestId) {
-        console.log('⚠️ Audio playback skipped (superseded during seek reset)');
-        return null;
-      }
-
-      await wait(AUDIO_PLAYBACK_SETTLE_MS);
-
-      if (activeAudioRequestId !== audioRequestId) {
-        console.log('⚠️ Audio playback skipped (superseded during start delay)');
-        return null;
-      }
-
-      // Play the audio
-      await audio.play();
-      return audio;
-    } catch (playError) {
-      console.error('❌ Failed to play audio:', playError);
-      if (audioUrl) {
-        URL.revokeObjectURL(audioUrl);
-      }
-      audioCache.delete(cacheKey);
-      if (currentAudioElement === audio) {
-        currentAudioElement = null;
-      }
-      
-      // Fallback to Web Speech API
-      console.log('⚠️ Audio play() failed, falling back to Web Speech API');
-      useAzureBackend = false;
-      return speakWithWebSpeech(text, options);
-    }
+    );
   } catch (error) {
+    if (activeAudioRequestId !== audioRequestId) {
+      return;
+    }
+
     console.error('❌ Azure TTS error:', error);
+    activeAudioRequestId = null;
+    resetAzurePlaybackState();
+
+    if (isWebSpeechSupported()) {
+      console.log('⚠️ Azure playback failed, falling back to Web Speech API');
+      useAzureBackend = false;
+      speakWithWebSpeech(text, options);
+      return;
+    }
+
     options?.onError?.(error);
-    throw error;
   }
 }
 
@@ -460,20 +464,16 @@ async function speakWithAzure(
  */
 function speakWithWebSpeech(
   text: string,
-  options?: {
-    lang?: string;
-    rate?: number;
-    pitch?: number;
-    volume?: number;
-    onStart?: () => void;
-    onEnd?: () => void;
-    onError?: (error: SpeechSynthesisErrorEvent) => void;
-  }
-): SpeechSynthesisUtterance | null {
+  options?: SpeakOptions
+): void {
   if (!isWebSpeechSupported()) {
     console.warn('❌ TTS is not supported in this browser');
-    return null;
+    options?.onError?.(new Error('Text-to-speech is not supported in this browser'));
+    return;
   }
+
+  activeAudioRequestId = null;
+  resetAzurePlaybackState();
 
   const webSpeechRequestId = Symbol('webSpeech');
   activeWebSpeechRequestId = webSpeechRequestId;
@@ -552,8 +552,6 @@ function speakWithWebSpeech(
       queueSpeech();
     }
   }, WEB_SPEECH_START_DELAY_MS + WEB_SPEECH_RETRY_DELAY_MS);
-  
-  return utterance;
 }
 
 /**
@@ -561,7 +559,7 @@ function speakWithWebSpeech(
  */
 export function isTTSSupported(): boolean {
   return typeof window !== 'undefined'
-    && (typeof Audio !== 'undefined' || 'speechSynthesis' in window);
+    && (isWebAudioSupported() || isWebSpeechSupported());
 }
 
 function isWebSpeechSupported(): boolean {
@@ -657,6 +655,10 @@ export function getPitch(): number {
  */
 export function setVolume(volume: number): void {
   currentVolume = Math.max(0, Math.min(1, volume));
+
+  if (currentAzurePlayback.gainNode) {
+    currentAzurePlayback.gainNode.gain.value = currentVolume;
+  }
 }
 
 /**
@@ -671,16 +673,8 @@ export function getVolume(): number {
  */
 export async function speak(
   text: string, 
-  options?: {
-    lang?: string;
-    rate?: number;
-    pitch?: number;
-    volume?: number;
-    onStart?: () => void;
-    onEnd?: () => void;
-    onError?: (error: unknown) => void;
-  }
-): Promise<SpeechSynthesisUtterance | HTMLAudioElement | null> {
+  options?: SpeakOptions
+): Promise<void> {
   // Check if Azure backend is available (only once)
   if (!azureHealthChecked) {
     await checkAzureHealth();
@@ -689,17 +683,19 @@ export async function speak(
   // Use Azure backend if available
   if (useAzureBackend) {
     try {
-      return await speakWithAzure(text, options);
+      await speakWithAzure(text, options);
+      return;
     } catch {
       // Fallback to Web Speech API on error
       console.log('⚠️ Azure Speech failed, falling back to Web Speech API');
       useAzureBackend = false;
-      return speakWithWebSpeech(text, options);
+      speakWithWebSpeech(text, options);
+      return;
     }
   }
   
   // Fallback to Web Speech API
-  return speakWithWebSpeech(text, options);
+  speakWithWebSpeech(text, options);
 }
 
 /**
@@ -707,18 +703,11 @@ export async function speak(
  */
 export async function speakPolish(
   text: string,
-  options?: {
-    onStart?: () => void;
-    onEnd?: () => void;
-    onError?: (error: unknown) => void;
-    rate?: number;
-    pitch?: number;
-    volume?: number;
-  } | (() => void)
-): Promise<SpeechSynthesisUtterance | HTMLAudioElement | null> {
+  options?: Omit<SpeakOptions, 'lang'> | (() => void)
+): Promise<void> {
   const resolvedOptions = typeof options === 'function' ? { onEnd: options } : options;
 
-  return speak(text, {
+  await speak(text, {
     lang: POLISH_LANG,
     ...resolvedOptions,
   });
@@ -729,18 +718,11 @@ export async function speakPolish(
  */
 export async function speakSlow(
   text: string,
-  options?: {
-    onStart?: () => void;
-    onEnd?: () => void;
-    onError?: (error: unknown) => void;
-    rate?: number;
-    pitch?: number;
-    volume?: number;
-  } | (() => void)
-): Promise<SpeechSynthesisUtterance | HTMLAudioElement | null> {
+  options?: Omit<SpeakOptions, 'lang'> | (() => void)
+): Promise<void> {
   const resolvedOptions = typeof options === 'function' ? { onEnd: options } : options;
 
-  return speak(text, {
+  await speak(text, {
     ...resolvedOptions,
     lang: POLISH_LANG,
     rate: resolvedOptions?.rate ?? 0.7,
@@ -755,11 +737,7 @@ export function stopSpeaking(): void {
   activeWebSpeechRequestId = null;
 
   // Stop Azure audio
-  if (currentAudioElement) {
-    currentAudioElement.pause();
-    currentAudioElement.currentTime = 0;
-    currentAudioElement = null;
-  }
+  resetAzurePlaybackState();
   
   // Stop Web Speech API
   if (isWebSpeechSupported()) {
@@ -771,11 +749,9 @@ export function stopSpeaking(): void {
  * Clear the client-side audio cache
  */
 export function clearAudioCache(): void {
-  for (const audio of audioCache.values()) {
-    audio.pause();
-    audio.src = '';
-  }
-  audioCache.clear();
+  decodedAudioCache.clear();
+  pendingDecodedAudio.clear();
+  requestHashCache.clear();
   console.log('🗑️ Audio cache cleared');
 }
 
@@ -784,8 +760,11 @@ export function clearAudioCache(): void {
  */
 export function pauseSpeaking(): void {
   // Pause Azure audio
-  if (currentAudioElement) {
-    currentAudioElement.pause();
+  if (currentAzurePlayback.sourceNode && currentAzurePlayback.audioBuffer) {
+    currentAzurePlayback.pausedOffset = getCurrentAzurePlaybackOffset();
+    currentAzurePlayback.isPaused = true;
+    stopCurrentAzureSource(false);
+    return;
   }
   
   // Pause Web Speech API
@@ -799,8 +778,9 @@ export function pauseSpeaking(): void {
  */
 export function resumeSpeaking(): void {
   // Resume Azure audio
-  if (currentAudioElement && currentAudioElement.paused) {
-    currentAudioElement.play();
+  if (currentAzurePlayback.isPaused) {
+    void resumeAzurePlayback();
+    return;
   }
   
   // Resume Web Speech API
@@ -814,7 +794,7 @@ export function resumeSpeaking(): void {
  */
 export function isSpeaking(): boolean {
   // Check Azure audio
-  if (currentAudioElement && !currentAudioElement.paused) {
+  if (currentAzurePlayback.sourceNode && !currentAzurePlayback.isPaused) {
     return true;
   }
   
@@ -828,8 +808,8 @@ export function isSpeaking(): boolean {
  */
 export function isPaused(): boolean {
   // Check Azure audio
-  if (currentAudioElement) {
-    return currentAudioElement.paused;
+  if (currentAzurePlayback.isPaused) {
+    return true;
   }
   
   // Check Web Speech API

@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "validate-content": "ts-node scripts/validate-content.ts",
-    "generate-word-coverage": "ts-node scripts/generate-word-coverage-report.ts"
+    "generate-word-coverage": "ts-node scripts/generate-word-coverage-report.ts",
+    "generate-sentence-candidates": "node scripts/generate-curated-sentence-candidates.js",
+    "enrich-curated-exercises": "node scripts/enrich-curated-exercises.js"
   },
   "dependencies": {
     "crypto-js": "^4.2.0",

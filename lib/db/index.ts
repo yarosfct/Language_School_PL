@@ -13,8 +13,16 @@ import {
   DailyStats
 } from '@/types/progress';
 import type { CustomFlashcardSet, FlashcardLearningRecord, FlashcardPracticeType } from '@/types/flashcards';
+import type {
+  FillBlankAttemptRecord,
+  FillBlankFavorite,
+  FillBlankPoolTarget,
+  FillBlankSentenceStats,
+  FillBlankWordStats,
+} from '@/types/fillBlanks';
 import type { NotebookEntry } from '@/types/notebook';
 import type { UserWordOverride } from '@/types/translations';
+import { calculateMasteryScore, nextDueAt, sentenceStatId } from '@/lib/fillBlanks/planner';
 
 export interface AttemptWithId extends AttemptRecord {
   id?: number;
@@ -45,9 +53,34 @@ export class PolskiOdZeraDB extends Dexie {
   flashcardLearning!: Table<FlashcardLearningRecord, string>;
   notebookEntries!: Table<NotebookEntry, string>;
   userWordOverrides!: Table<UserWordOverride, string>;
+  fillBlankAttempts!: Table<FillBlankAttemptRecord, number>;
+  fillBlankWordStats!: Table<FillBlankWordStats, string>;
+  fillBlankSentenceStats!: Table<FillBlankSentenceStats, string>;
+  fillBlankFavorites!: Table<FillBlankFavorite, string>;
+  fillBlankPoolTargets!: Table<FillBlankPoolTarget, string>;
   
   constructor() {
     super('PolskiOdZeraDB');
+
+    this.version(7).stores({
+      attempts: '++id, exerciseId, topicId, timestamp',
+      mistakes: 'id, exerciseId, topicId, timestamp, reviewed, errorType',
+      reviewCards: 'id, exerciseId, topicId, vocabId, cardType, due',
+      progress: 'id',
+      topicProgress: 'id, topicId, lastAccessed',
+      vocabReviewCards: 'id, topicId, due, state',
+      preferences: 'id',
+      dailyStats: 'date',
+      customFlashcardSets: 'id, name, updatedAt',
+      flashcardLearning: 'learningKey, cardId, practiceType, topicId, source, lastAttemptAt',
+      notebookEntries: 'id, name, updatedAt, contextKey, *categories',
+      userWordOverrides: 'id, normalizedToken, sectionId, updatedAt',
+      fillBlankAttempts: '++id, unitId, exerciseId, poolSource, mode, timestamp, correct, failed',
+      fillBlankWordStats: 'key, normalized, lemma, lastAttemptAt, dueAt, mastery',
+      fillBlankSentenceStats: 'id, exerciseId, poolSource, lastAttemptAt, dueAt, mastery',
+      fillBlankFavorites: 'id, kind, targetKey, exerciseId, poolSource, language, updatedAt',
+      fillBlankPoolTargets: 'id, kind, normalized, targetKey, language, active, updatedAt'
+    });
 
     this.version(6).stores({
       attempts: '++id, exerciseId, topicId, timestamp',
@@ -571,6 +604,204 @@ export async function getFlashcardLearningRecordsByPracticeType(
 
 export async function saveFlashcardLearningRecord(record: FlashcardLearningRecord): Promise<string> {
   return await db.flashcardLearning.put(record);
+}
+
+// ============================================
+// FILL BLANK PRACTICE HELPERS
+// ============================================
+
+export interface FillBlankWordStatInput {
+  key: string;
+  normalized: string;
+  lemma?: string;
+  displayText: string;
+  translation?: string;
+  partOfSpeech?: string;
+}
+
+export async function getAllFillBlankAttempts(): Promise<FillBlankAttemptRecord[]> {
+  return await db.fillBlankAttempts.toArray();
+}
+
+export async function getAllFillBlankWordStats(): Promise<FillBlankWordStats[]> {
+  return await db.fillBlankWordStats.toArray();
+}
+
+export async function getAllFillBlankSentenceStats(): Promise<FillBlankSentenceStats[]> {
+  return await db.fillBlankSentenceStats.toArray();
+}
+
+export async function getAllFillBlankFavorites(): Promise<FillBlankFavorite[]> {
+  return await db.fillBlankFavorites.toArray();
+}
+
+export async function getAllFillBlankPoolTargets(): Promise<FillBlankPoolTarget[]> {
+  return await db.fillBlankPoolTargets.toArray();
+}
+
+export async function saveFillBlankAttemptWithStats(
+  record: FillBlankAttemptRecord,
+  wordInputs: FillBlankWordStatInput[]
+): Promise<number> {
+  const attemptId = await db.fillBlankAttempts.add(record);
+  const uniqueWordInputs = uniqueBy(wordInputs, (input) => input.key);
+
+  for (const wordInput of uniqueWordInputs) {
+    await updateFillBlankWordStats(wordInput, record);
+  }
+
+  await updateFillBlankSentenceStats(record);
+  return attemptId;
+}
+
+export async function toggleFillBlankFavorite(favorite: Omit<FillBlankFavorite, 'createdAt' | 'updatedAt'>): Promise<FillBlankFavorite | null> {
+  const existing = await db.fillBlankFavorites.get(favorite.id);
+
+  if (existing) {
+    await db.fillBlankFavorites.delete(favorite.id);
+    return null;
+  }
+
+  const now = Date.now();
+  const next: FillBlankFavorite = {
+    ...favorite,
+    createdAt: now,
+    updatedAt: now,
+  };
+
+  await db.fillBlankFavorites.put(next);
+  return next;
+}
+
+export async function upsertFillBlankPoolTarget(input: {
+  language: FillBlankPoolTarget['language'];
+  targetKey: string;
+  normalized: string;
+  displayText: string;
+  matchCount: number;
+}): Promise<FillBlankPoolTarget> {
+  const id = `word:${input.language}:${input.targetKey}`;
+  const existing = await db.fillBlankPoolTargets.get(id);
+  const now = Date.now();
+  const target: FillBlankPoolTarget = {
+    id,
+    kind: 'word',
+    language: input.language,
+    targetKey: input.targetKey,
+    normalized: input.normalized,
+    displayText: input.displayText,
+    matchCount: input.matchCount,
+    active: true,
+    createdAt: existing?.createdAt ?? now,
+    updatedAt: now,
+  };
+
+  await db.fillBlankPoolTargets.put(target);
+  return target;
+}
+
+async function updateFillBlankWordStats(
+  input: FillBlankWordStatInput,
+  record: FillBlankAttemptRecord
+): Promise<void> {
+  const existing = await db.fillBlankWordStats.get(input.key);
+  const now = Date.now();
+  const attempts = (existing?.attempts ?? 0) + 1;
+  const correct = (existing?.correct ?? 0) + (record.correct ? 1 : 0);
+  const failures = (existing?.failures ?? 0) + (record.failed ? 1 : 0);
+  const learned = (existing?.learned ?? 0) + (record.learned ? 1 : 0);
+  const warnings = (existing?.warnings ?? 0) + record.warnings;
+  const hintsUsed = (existing?.hintsUsed ?? 0) + record.hintsUsed;
+  const streakCorrect = record.correct ? (existing?.streakCorrect ?? 0) + 1 : 0;
+  const streakWrong = record.correct ? 0 : (existing?.streakWrong ?? 0) + 1;
+  const mastery = calculateMasteryScore({ attempts, correct, failures, warnings, hintsUsed });
+
+  await db.fillBlankWordStats.put({
+    key: input.key,
+    normalized: input.normalized,
+    lemma: input.lemma,
+    displayText: input.displayText,
+    translation: input.translation,
+    partOfSpeech: input.partOfSpeech,
+    attempts,
+    correct,
+    failures,
+    learned,
+    warnings,
+    hintsUsed,
+    streakCorrect,
+    streakWrong,
+    mastery,
+    lastAttemptAt: record.timestamp,
+    dueAt: nextDueAt({
+      correct: record.correct,
+      failed: record.failed,
+      learned: record.learned,
+      hintsUsed: record.hintsUsed,
+      warnings: record.warnings,
+      streakCorrect,
+      now,
+    }),
+    updatedAt: now,
+  });
+}
+
+async function updateFillBlankSentenceStats(record: FillBlankAttemptRecord): Promise<void> {
+  const id = sentenceStatId(record.poolSource, record.exerciseId);
+  const existing = await db.fillBlankSentenceStats.get(id);
+  const now = Date.now();
+  const attempts = (existing?.attempts ?? 0) + 1;
+  const correct = (existing?.correct ?? 0) + (record.correct ? 1 : 0);
+  const failures = (existing?.failures ?? 0) + (record.failed ? 1 : 0);
+  const learned = (existing?.learned ?? 0) + (record.learned ? 1 : 0);
+  const warnings = (existing?.warnings ?? 0) + record.warnings;
+  const hintsUsed = (existing?.hintsUsed ?? 0) + record.hintsUsed;
+  const streakCorrect = record.correct ? (existing?.streakCorrect ?? 0) + 1 : 0;
+  const streakWrong = record.correct ? 0 : (existing?.streakWrong ?? 0) + 1;
+  const mastery = calculateMasteryScore({ attempts, correct, failures, warnings, hintsUsed });
+
+  await db.fillBlankSentenceStats.put({
+    id,
+    exerciseId: record.exerciseId,
+    poolSource: record.poolSource,
+    attempts,
+    correct,
+    failures,
+    learned,
+    warnings,
+    hintsUsed,
+    streakCorrect,
+    streakWrong,
+    mastery,
+    lastAttemptAt: record.timestamp,
+    dueAt: nextDueAt({
+      correct: record.correct,
+      failed: record.failed,
+      learned: record.learned,
+      hintsUsed: record.hintsUsed,
+      warnings: record.warnings,
+      streakCorrect,
+      now,
+    }),
+    updatedAt: now,
+  });
+}
+
+function uniqueBy<T>(items: T[], getter: (item: T) => string): T[] {
+  const seen = new Set<string>();
+  const result: T[] = [];
+
+  for (const item of items) {
+    const key = getter(item);
+    if (seen.has(key)) {
+      continue;
+    }
+
+    seen.add(key);
+    result.push(item);
+  }
+
+  return result;
 }
 
 // ============================================
